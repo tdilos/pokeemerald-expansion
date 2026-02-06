@@ -484,6 +484,9 @@ static void BattleTest_Run(void *data)
         DATA.recordedBattle.playersBattlers[i] = i;
     }
 
+    for (i = 0; i < STATE->battlersCount; i++)
+        DATA.currentMonIndexes[i] = i / 2;
+
     STATE->runRandomly = TRUE;
     STATE->runGiven = TRUE;
     STATE->runWhen = TRUE;
@@ -2171,6 +2174,8 @@ void ClosePokemon(u32 sourceLine)
             INVALID_IF(GetMonData(DATA.currentMon, MON_DATA_HP) == 0, "Battlers cannot be fainted");
         }
     }
+    data = FALSE;
+    SetMonData(DATA.currentMon, MON_DATA_IS_SHINY, &data);
     UpdateMonPersonality(&DATA.currentMon->box, GenerateNature(DATA.nature, DATA.gender % NUM_NATURES) | DATA.gender);
     data = DATA.isShiny;
     SetMonData(DATA.currentMon, MON_DATA_IS_SHINY, &data);
@@ -2315,6 +2320,48 @@ void Speed_(u32 sourceLine, u32 speed)
     SetMonData(DATA.currentMon, MON_DATA_HYPER_TRAINED_SPEED, &hyperTrainingFlag);
     DATA.hasExplicitSpeeds = TRUE;
     DATA.explicitSpeeds[DATA.battleTrainer] |= 1 << DATA.currentPartyIndex;
+}
+
+void HPIV_(u32 sourceLine, u32 hpIV)
+{
+    INVALID_IF(!DATA.currentMon, "HP IV outside of PLAYER/OPPONENT");
+    INVALID_IF(hpIV > MAX_PER_STAT_IVS, "Illegal HP IV: %d", hpIV);
+    SetMonData(DATA.currentMon, MON_DATA_HP_IV, &hpIV);
+}
+
+void AttackIV_(u32 sourceLine, u32 attackIV)
+{
+    INVALID_IF(!DATA.currentMon, "Attack IV outside of PLAYER/OPPONENT");
+    INVALID_IF(attackIV > MAX_PER_STAT_IVS, "Illegal attack IV: %d", attackIV);
+    SetMonData(DATA.currentMon, MON_DATA_ATK_IV, &attackIV);
+}
+
+void DefenseIV_(u32 sourceLine, u32 defenseIV)
+{
+    INVALID_IF(!DATA.currentMon, "Defense IV outside of PLAYER/OPPONENT");
+    INVALID_IF(defenseIV > MAX_PER_STAT_IVS, "Illegal defense IV: %d", defenseIV);
+    SetMonData(DATA.currentMon, MON_DATA_DEF_IV, &defenseIV);
+}
+
+void SpAttackIV_(u32 sourceLine, u32 spAttackIV)
+{
+    INVALID_IF(!DATA.currentMon, "SpAttack IV outside of PLAYER/OPPONENT");
+    INVALID_IF(spAttackIV > MAX_PER_STAT_IVS, "Illegal special attack IV: %d", spAttackIV);
+    SetMonData(DATA.currentMon, MON_DATA_SPATK_IV, &spAttackIV);
+}
+
+void SpDefenseIV_(u32 sourceLine, u32 spDefenseIV)
+{
+    INVALID_IF(!DATA.currentMon, "SpDefense IV outside of PLAYER/OPPONENT");
+    INVALID_IF(spDefenseIV > MAX_PER_STAT_IVS, "Illegal special defense IV: %d", spDefenseIV);
+    SetMonData(DATA.currentMon, MON_DATA_SPDEF_IV, &spDefenseIV);
+}
+
+void SpeedIV_(u32 sourceLine, u32 speedIV)
+{
+    INVALID_IF(!DATA.currentMon, "Speed IV outside of PLAYER/OPPONENT");
+    INVALID_IF(speedIV > MAX_PER_STAT_IVS, "Illegal speed IV: %d", speedIV);
+    SetMonData(DATA.currentMon, MON_DATA_SPEED_IV, &speedIV);
 }
 
 void HPIV_(u32 sourceLine, u32 hpIV)
@@ -2912,6 +2959,7 @@ static void TryMarkExpectMove(u32 sourceLine, struct BattlePokemon *battler, str
     DATA.expectedAiActions[battlerId][id].sourceLine = sourceLine;
     DATA.expectedAiActions[battlerId][id].actionSet = TRUE;
     DATA.expectedAiActions[battlerId][id].gimmick = ctx->explicitGimmick ? ctx->gimmick : GIMMICKS_COUNT;
+
     if (ctx->explicitNotExpected)
         DATA.expectedAiActions[battlerId][id].notMove = ctx->notExpected;
 

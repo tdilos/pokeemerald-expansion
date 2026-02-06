@@ -1,0 +1,36 @@
+SunkenIsle_Exterior_MapScripts::
+	.byte 0
+
+SunkenIsle_Exterior_EventScript_Finn::
+	trainerbattle_single TRAINER_FINN, SunkenIsle_Exterior_Text_FinnIntro, SunkenIsle_Exterior_Text_FinnDefeated
+	msgbox SunkenIsle_Exterior_Text_FinnPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SunkenIsle_Exterior_EventScript_Deirdre::
+	trainerbattle_single TRAINER_DEIRDRE, SunkenIsle_Exterior_Text_DeirdreIntro, SunkenIsle_Exterior_Text_DeirdreDefeated
+	msgbox SunkenIsle_Exterior_Text_DeirdrePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SunkenIsle_Exterior_EventScript_Killian::
+	trainerbattle_single TRAINER_KILLIAN, SunkenIsle_Exterior_Text_KillianIntro, SunkenIsle_Exterior_Text_KillianDefeated
+	msgbox SunkenIsle_Exterior_Text_KillianPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SunkenIsle_Exterior_EventScript_Brandy::
+	trainerbattle_single TRAINER_BRANDY, SunkenIsle_Exterior_Text_BrandyIntro, SunkenIsle_Exterior_Text_BrandyDefeated
+	msgbox SunkenIsle_Exterior_Text_BrandyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SunkenIsle_Exterior_EventScript_Desmond::
+	trainerbattle_single TRAINER_DESMOND, SunkenIsle_Exterior_Text_DesmondIntro, SunkenIsle_Exterior_Text_DesmondDefeated
+	msgbox SunkenIsle_Exterior_Text_DesmondPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SunkenIsle_Exterior_EventScript_Casca::
+	trainerbattle_single TRAINER_CASCA, SunkenIsle_Exterior_Text_CascaIntro, SunkenIsle_Exterior_Text_CascaDefeated
+	msgbox SunkenIsle_Exterior_Text_CascaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+
+

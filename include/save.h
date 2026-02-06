@@ -1,6 +1,7 @@
 #ifndef GUARD_SAVE_H
 #define GUARD_SAVE_H
 
+<<<<<<< Updated upstream
 #include "main.h"
 
 // Each 4 KiB flash sector contains 3968 bytes of actual data followed by 116 bytes of SaveBlock3 and then 12 bytes of footer.
@@ -8,6 +9,15 @@
 #define SAVE_BLOCK_3_CHUNK_SIZE 116
 #define SECTOR_FOOTER_SIZE 12
 #define SECTOR_SIZE (SECTOR_DATA_SIZE + SAVE_BLOCK_3_CHUNK_SIZE + SECTOR_FOOTER_SIZE)
+=======
+// Each 4 KiB flash sector contains 3968 bytes of actual data followed by a 128 byte footer.
+// Only 12 bytes of the footer are used.
+#define SECTOR_DATA_SIZE 4084
+#define SECTOR_FOOTER_SIZE 12
+//#define SECTOR_DATA_SIZE 3968
+//#define SECTOR_FOOTER_SIZE 128
+#define SECTOR_SIZE (SECTOR_DATA_SIZE + SECTOR_FOOTER_SIZE)
+>>>>>>> Stashed changes
 
 #define NUM_SAVE_SLOTS 2
 

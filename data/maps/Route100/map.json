@@ -1,0 +1,175 @@
+{
+  "id": "MAP_ROUTE100",
+  "name": "Route100",
+  "layout": "LAYOUT_ROUTE100",
+  "music": "MUS_EVER_GRANDE",
+  "region_map_section": "MAPSEC_ROUTE_100",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_UNDERWATER_ROUTE100",
+      "offset": 0,
+      "direction": "dive"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 89,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsshoVictoryRoad_EventScript_ItemDawnStone",
+      "flag": "FLAG_ITEM_ISSHO_VICTORY_ROAD_DAWN_STONE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "x": 81,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsshoVictoryRoad_EventScript_ItemTM93",
+      "flag": "FLAG_ITEM_ISSHO_VICTORY_ROAD_TM93"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DRAKE",
+      "x": 84,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_DUN_TOWN_BOATMAN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+      "x": 84,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_DUN_TOWN_BOATMAN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JACE",
+      "x": 0,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_JACE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_JACE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 81,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route100_EventScript_DragonTamer",
+      "flag": "FLAG_HIDE_SHORTCUT_NPCS"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 62,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_ISSHO_VICTORY_ROAD_1F_ISLAND1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 47,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_ISSHO_VICTORY_ROAD_1F_ISLAND2",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 29,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_ISSHO_VICTORY_ROAD_1F_ISLAND3",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 17,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_ISSHO_VICTORY_ROAD_1F_ISLAND4",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 81,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE100_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_JACE_STATE",
+      "var_value": "6",
+      "script": "Route100_EventScript_JaceTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 66,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_JACE_STATE",
+      "var_value": "6",
+      "script": "Route100_EventScript_JaceTrigger1"
+    }
+  ],
+  "bg_events": [
+
+  ]
+}

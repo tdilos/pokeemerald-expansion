@@ -11,7 +11,10 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_NORMAL]                             = TILE_FLAG_UNUSED,
     [MB_TALL_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_LONG_GRASS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
-    [MB_UNUSED_05]                          = TILE_FLAG_HAS_ENCOUNTERS,
+    //[MB_UNUSED_05]                          = TILE_FLAG_HAS_ENCOUNTERS,
+	[MB_SAND_GRASS]                         = TILE_FLAG_HAS_ENCOUNTERS,
+	[MB_RED_GRASS]                          = TILE_FLAG_HAS_ENCOUNTERS,
+	[MB_SNOW_GRASS]                         = TILE_FLAG_HAS_ENCOUNTERS,
     [MB_DEEP_SAND]                          = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_SHORT_GRASS]                        = TILE_FLAG_UNUSED,
     [MB_CAVE]                               = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
@@ -37,10 +40,14 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_SAND]                               = TILE_FLAG_UNUSED,
     [MB_SEAWEED]                            = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_STRENGTH_BUTTON]                    = TILE_FLAG_UNUSED,
+	[MB_STRENGTH_BRIDGE]                    = TILE_FLAG_UNUSED,
     [MB_ASHGRASS]                           = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_FOOTPRINTS]                         = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
     [MB_THIN_ICE]                           = TILE_FLAG_UNUSED,
     [MB_CRACKED_ICE]                        = TILE_FLAG_UNUSED,
+    [MB_RED_DANCE_FLOOR]                    = TILE_FLAG_UNUSED,
+    [MB_GREEN_DANCE_FLOOR]                  = TILE_FLAG_UNUSED,
+    [MB_BLUE_DANCE_FLOOR]                   = TILE_FLAG_UNUSED,
     [MB_HOT_SPRINGS]                        = TILE_FLAG_UNUSED,
     [MB_LAVARIDGE_GYM_B1F_WARP]             = TILE_FLAG_UNUSED,
     [MB_SEAWEED_NO_SURFACING]               = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE | TILE_FLAG_HAS_ENCOUNTERS,
@@ -66,10 +73,15 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_SLIDE_NORTH]                        = TILE_FLAG_UNUSED,
     [MB_SLIDE_SOUTH]                        = TILE_FLAG_UNUSED,
     [MB_TRICK_HOUSE_PUZZLE_8_FLOOR]         = TILE_FLAG_UNUSED,
+    [MB_SLIDE_CW]                           = TILE_FLAG_UNUSED,
+    [MB_SLIDE_CCW]                          = TILE_FLAG_UNUSED,
     [MB_EASTWARD_CURRENT]                   = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_WESTWARD_CURRENT]                   = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_NORTHWARD_CURRENT]                  = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
     [MB_SOUTHWARD_CURRENT]                  = TILE_FLAG_UNUSED | TILE_FLAG_SURFABLE,
+	[MB_WISTERIA_GRASS]                     = TILE_FLAG_HAS_ENCOUNTERS,
+	[MB_HAEWEN_GRASS]                       = TILE_FLAG_HAS_ENCOUNTERS,
+	[MB_BURGUNDY_GRASS]                     = TILE_FLAG_HAS_ENCOUNTERS,
     [MB_NON_ANIMATED_DOOR]                  = TILE_FLAG_UNUSED,
     [MB_LADDER]                             = TILE_FLAG_UNUSED,
     [MB_EAST_ARROW_WARP]                    = TILE_FLAG_UNUSED,
@@ -255,9 +267,17 @@ bool8 MetatileBehavior_IsEscalator(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 Unref_MetatileBehavior_IsUnused04(u8 metatileBehavior)
+/*bool8 Unref_MetatileBehavior_IsUnused04(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_UNUSED_04)
+        return TRUE;
+    else
+        return FALSE;
+}*/
+
+bool8 MetatileBehavior_IsHeadbuttTree(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_HEADBUTT)
         return TRUE;
     else
         return FALSE;
@@ -292,6 +312,14 @@ bool8 MetatileBehavior_IsDeepSouthWarp(u8 metatileBehavior)
 bool8 MetatileBehavior_IsSurfableWaterOrUnderwater(u8 metatileBehavior)
 {
     if ((sTileBitAttributes[metatileBehavior] & TILE_FLAG_SURFABLE))
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsShallowWater(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_SHALLOW_WATER)
         return TRUE;
     else
         return FALSE;
@@ -383,9 +411,52 @@ bool8 MetatileBehavior_IsTrickHouseSlipperyFloor(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 Unref_MetatileBehavior_IsUnused05(u8 metatileBehavior)
+//bool8 Unref_MetatileBehavior_IsUnused05(u8 metatileBehavior)
+bool8 MetatileBehavior_IsSandGrass(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_UNUSED_05)
+    if (metatileBehavior == MB_SAND_GRASS) //MB_UNUSED_05)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsRedGrass(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_RED_GRASS)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsSnowGrass(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_SNOW_GRASS)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsWisteriaGrass(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_WISTERIA_GRASS)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+
+bool8 MetatileBehavior_IsHaewenGrass(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_HAEWEN_GRASS)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+
+bool8 MetatileBehavior_IsBurgundyGrass(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_BURGUNDY_GRASS)
         return TRUE;
     else
         return FALSE;
@@ -482,6 +553,30 @@ bool8 MetatileBehavior_IsSlideWest(u8 metatileBehavior)
 bool8 MetatileBehavior_IsSlideEast(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_SLIDE_EAST)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsSlideCW(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_SLIDE_CW)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsSlideCCW(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_SLIDE_CCW)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsMagnetSwitchOn(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_MAGNET_SWITCH_ON)
         return TRUE;
     else
         return FALSE;
@@ -745,7 +840,9 @@ bool8 MetatileBehavior_IsPuddle(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsTallGrass(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS)
+    //if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_CYCLING_ROAD_PULL_DOWN_GRASS)
+    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_SAND_GRASS || metatileBehavior == MB_RED_GRASS || metatileBehavior == MB_SNOW_GRASS
+		|| metatileBehavior == MB_WISTERIA_GRASS || metatileBehavior == MB_HAEWEN_GRASS || metatileBehavior == MB_BURGUNDY_GRASS)
         return TRUE;
     else
         return FALSE;
@@ -914,6 +1011,30 @@ bool8 MetatileBehavior_IsThinIce(u8 metatileBehavior)
 bool8 MetatileBehavior_IsCrackedIce(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_CRACKED_ICE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsRedDanceFloor(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_RED_DANCE_FLOOR)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsGreenDanceFloor(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_GREEN_DANCE_FLOOR)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsBlueDanceFloor(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_BLUE_DANCE_FLOOR)
         return TRUE;
     else
         return FALSE;
@@ -1309,6 +1430,9 @@ bool8 MetatileBehavior_IsCuttableGrass(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_TALL_GRASS
      || metatileBehavior == MB_LONG_GRASS
+     || metatileBehavior == MB_SAND_GRASS
+	 || metatileBehavior == MB_RED_GRASS
+	 || metatileBehavior == MB_SNOW_GRASS
      || metatileBehavior == MB_ASHGRASS
      || metatileBehavior == MB_LONG_GRASS_SOUTH_EDGE)
         return TRUE;

@@ -9,6 +9,7 @@
 #include "field_effect_helpers.h"
 #include "field_screen_effect.h"
 #include "field_player_avatar.h"
+#include "field_control_avatar.h"
 #include "fieldmap.h"
 #include "follower_npc.h"
 #include "menu.h"
@@ -36,7 +37,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
 
-#define NUM_FORCED_MOVEMENTS 22
+#define NUM_FORCED_MOVEMENTS 24 //22
 #define NUM_ACRO_BIKE_COLLISIONS 5
 
 enum SpinDirection
@@ -93,6 +94,8 @@ static bool8 ForcedMovement_SpinRight(void);
 static bool8 ForcedMovement_SpinLeft(void);
 static bool8 ForcedMovement_SpinUp(void);
 static bool8 ForcedMovement_SpinDown(void);
+static bool8 ForcedMovement_SlideCW(void);
+static bool8 ForcedMovement_SlideCCW(void);
 static void PlaySpinSound(void);
 
 static void MovePlayerNotOnBike(enum Direction, u16);
@@ -141,6 +144,12 @@ static bool8 PushBoulder_Start(struct Task *, struct ObjectEvent *, struct Objec
 static bool8 PushBoulder_Move(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
 static bool8 PushBoulder_End(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
 
+static void StartMagnetRiseAnim(u8, u8);
+static void Task_PushMetal(u8);
+static bool8 PushMetal_Start(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
+static bool8 PushMetal_Move(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
+static bool8 PushMetal_End(struct Task *, struct ObjectEvent *, struct ObjectEvent *);
+
 static void DoPlayerMatJump(void);
 static void DoPlayerAvatarSecretBaseMatJump(u8);
 static u8 PlayerAvatar_DoSecretBaseMatJump(struct Task *, struct ObjectEvent *);
@@ -182,6 +191,8 @@ static bool8 (*const sForcedMovementTestFuncs[NUM_FORCED_MOVEMENTS])(u8) =
     MetatileBehavior_IsSpinLeft,
     MetatileBehavior_IsSpinUp,
     MetatileBehavior_IsSpinDown,
+    MetatileBehavior_IsSlideCW,
+    MetatileBehavior_IsSlideCCW,	
 };
 
 // + 1 for ForcedMovement_None, which is excluded above
@@ -210,6 +221,8 @@ static bool8 (*const sForcedMovementFuncs[NUM_FORCED_MOVEMENTS + 1])(void) =
     ForcedMovement_SpinLeft,
     ForcedMovement_SpinUp,
     ForcedMovement_SpinDown,
+	ForcedMovement_SlideCW,
+	ForcedMovement_SlideCCW,
 };
 
 static void (*const sPlayerNotOnBikeFuncs[])(enum Direction, u16) =
@@ -290,8 +303,10 @@ static const u8 sFRLGAvatarGfxIds[GENDER_COUNT] =
 
 static const u8 sRSAvatarGfxIds[GENDER_COUNT] =
 {
-    [MALE]   = OBJ_EVENT_GFX_LINK_RS_BRENDAN,
-    [FEMALE] = OBJ_EVENT_GFX_LINK_RS_MAY
+    //[MALE]   = OBJ_EVENT_GFX_LINK_RS_BRENDAN,
+    //[FEMALE] = OBJ_EVENT_GFX_LINK_RS_MAY
+	[MALE]   = OBJ_EVENT_GFX_RED,
+    [FEMALE] = OBJ_EVENT_GFX_LEAF
 };
 
 static const struct PACKED
@@ -331,6 +346,13 @@ static bool8 (*const sPushBoulderFuncs[])(struct Task *, struct ObjectEvent *, s
     PushBoulder_Start,
     PushBoulder_Move,
     PushBoulder_End,
+};
+
+static bool8 (*const sPushMetalFuncs[])(struct Task *, struct ObjectEvent *, struct ObjectEvent *) =
+{
+    PushMetal_Start,
+    PushMetal_Move,
+    PushMetal_End,
 };
 
 static bool8 (*const sPlayerAvatarSecretBaseMatJump[])(struct Task *, struct ObjectEvent *) =
@@ -652,6 +674,34 @@ static bool8 ForcedMovement_SlideEast(void)
     return ForcedMovement_Slide(DIR_EAST, PlayerWalkFast);
 }
 
+static bool8 ForcedMovement_SlideCW(void)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+	
+	if (playerObjEvent->movementDirection == DIR_NORTH)
+		return ForcedMovement_Slide(DIR_WEST, PlayerWalkFast);
+	else if (playerObjEvent->movementDirection == DIR_SOUTH)
+		return ForcedMovement_Slide(DIR_EAST, PlayerWalkFast);
+	else if (playerObjEvent->movementDirection == DIR_EAST)
+		return ForcedMovement_Slide(DIR_NORTH, PlayerWalkFast);
+	else //if (playerObjEvent->movementDirection == DIR_WEST)
+		return ForcedMovement_Slide(DIR_SOUTH, PlayerWalkFast);
+}
+
+static bool8 ForcedMovement_SlideCCW(void)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+	
+	if (playerObjEvent->movementDirection == DIR_NORTH)
+		return ForcedMovement_Slide(DIR_EAST, PlayerWalkFast);
+	else if (playerObjEvent->movementDirection == DIR_SOUTH)
+		return ForcedMovement_Slide(DIR_WEST, PlayerWalkFast);
+	else if (playerObjEvent->movementDirection == DIR_EAST)
+		return ForcedMovement_Slide(DIR_SOUTH, PlayerWalkFast);
+	else //if (playerObjEvent->movementDirection == DIR_WEST)
+		return ForcedMovement_Slide(DIR_NORTH, PlayerWalkFast);
+}
+
 static bool8 ForcedMovement_MatJump(void)
 {
     DoPlayerMatJump();
@@ -918,6 +968,7 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         return;
     }
 
+	// standard run behavior when on HOLD (i.e. MONO) mode
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
      && (heldKeys & B_BUTTON)
      && FlagGet(FLAG_SYS_B_DASH)
@@ -931,6 +982,47 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
             PlayerRun(direction);
 
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+		
+		if (heldKeys & A_BUTTON) // metal won't move unless A-button held
+			TryPullMetal(direction);
+        return;
+	}
+	// when playing on TOGGLE (i.e. STEREO) mode
+    else if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (gRunToggleBtnSet || FlagGet(FLAG_RUNNING_SHOES_TOGGLE) || (heldKeys & B_BUTTON))
+    && FlagGet(FLAG_SYS_B_DASH) && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
+	&& gSaveBlock2Ptr->optionsSound == OPTIONS_SOUND_STEREO)
+    {
+        if (gRunToggleBtnSet)
+        {
+            gRunToggleBtnSet = FALSE;
+            if (FlagGet(FLAG_RUNNING_SHOES_TOGGLE) == FALSE)
+            {
+                FlagSet(FLAG_RUNNING_SHOES_TOGGLE);
+                PlayerRun(direction);
+                gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+                return;
+            }
+            else
+            {
+                FlagClear(FLAG_RUNNING_SHOES_TOGGLE);
+                gRunToggleBtnSet = FALSE;
+                if (!(heldKeys & B_BUTTON))
+                {
+                    PlayerWalkNormal(direction);
+                }
+                else
+                {
+                    PlayerRun(direction);
+                    gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+                }
+                return;
+            } 
+        }
+        PlayerRun(direction);
+        gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+		
+		if (heldKeys & A_BUTTON) // metal won't move unless A-button held
+			TryPullMetal(direction);
         return;
     }
     else if (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON))
@@ -944,7 +1036,44 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
             PlayerWalkSlowStairs(direction);
         else
             PlayerWalkNormal(direction);
+
+		if (heldKeys & A_BUTTON) // metal won't move unless A-button held
+			TryPullMetal(direction);
     }
+}
+
+static void TryPullMetal(u8 direction)
+{
+    s16 x, y;
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+	u8 dirneg;
+	if (direction == DIR_SOUTH)
+		dirneg = DIR_NORTH;
+	if (direction == DIR_NORTH)
+		dirneg = DIR_SOUTH;
+	if (direction == DIR_WEST)
+		dirneg = DIR_EAST;
+	if (direction == DIR_EAST)
+		dirneg = DIR_WEST;
+	//else
+	//	dirneg = DIR_NONE;
+
+    x = playerObjEvent->currentCoords.x;
+    y = playerObjEvent->currentCoords.y;
+    MoveCoords(dirneg, &x, &y);
+    //MoveCoords(dirneg, &x, &y);
+    //TryPushMetal(x, y, direction);
+	
+    if (FlagGet(FLAG_SYS_USE_MAGNET_RISE))
+    {
+        u8 objectEventId = GetObjectEventIdByXY(x, y);
+
+        if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SCRAP_METAL
+			&& MetatileBehavior_IsMagnetSwitchOn(MapGridGetMetatileBehaviorAt(x, y)) == FALSE) // won't move if stuck to magnet switch
+            StartMagnetRiseAnim(objectEventId, direction);
+    }
+	return;
 }
 
 static enum Collision CheckForPlayerAvatarCollision(enum Direction direction)
@@ -985,6 +1114,9 @@ enum Collision CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16
         return COLLISION_LEDGE_JUMP;
     }
     if (collision == COLLISION_OBJECT_EVENT && TryPushBoulder(x, y, direction))
+        return COLLISION_PUSHED_BOULDER;
+	
+    if (collision == COLLISION_OBJECT_EVENT && TryPushMetal(x, y, direction))
         return COLLISION_PUSHED_BOULDER;
 
     if (collision == COLLISION_NONE)
@@ -1050,6 +1182,28 @@ static bool8 TryPushBoulder(s16 x, s16 y, enum Direction direction)
              && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
             {
                 StartStrengthAnim(objectEventId, direction);
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}
+
+static bool8 TryPushMetal(s16 x, s16 y, u8 direction)
+{
+    if (FlagGet(FLAG_SYS_USE_MAGNET_RISE))
+    {
+        u8 objectEventId = GetObjectEventIdByXY(x, y);
+
+        if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_SCRAP_METAL)
+        {
+            x = gObjectEvents[objectEventId].currentCoords.x;
+            y = gObjectEvents[objectEventId].currentCoords.y;
+            MoveCoords(direction, &x, &y);
+            if (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction) == COLLISION_NONE
+             && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == FALSE)
+            {
+                StartMagnetRiseAnim(objectEventId, direction);
                 return TRUE;
             }
         }
@@ -1870,6 +2024,8 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
         ObjectEventClearHeldMovementIfFinished(boulder);
         HandleBoulderFallThroughHole(boulder);
         HandleBoulderActivateVictoryRoadSwitch(boulder->currentCoords.x, boulder->currentCoords.y);
+		HandleBoulderActivateSwitch(boulder->currentCoords.x, boulder->currentCoords.y);
+		HandleMakeBoulderBridge(boulder->currentCoords.x, boulder->currentCoords.y);
         gPlayerAvatar.preventStep = FALSE;
         UnlockPlayerFieldControls();
         DestroyTask(FindTaskIdByFunc(Task_PushBoulder));
@@ -1879,6 +2035,83 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
 
 #undef tState
 #undef tBoulderObjId
+#undef tDirection
+
+/* MagnetRise */
+
+#define tState        data[0]
+#define tMetalObjId   data[1]
+#define tDirection    data[2]
+
+static void StartMagnetRiseAnim(u8 objectEventId, u8 direction)
+{
+    u8 taskId = CreateTask(Task_PushMetal, 0xFF);
+
+    gTasks[taskId].tMetalObjId = objectEventId;
+    gTasks[taskId].tDirection = direction;
+    Task_PushMetal(taskId);
+}
+
+static void Task_PushMetal(u8 taskId)
+{
+    while (sPushMetalFuncs[gTasks[taskId].tState](&gTasks[taskId],
+                                                     &gObjectEvents[gPlayerAvatar.objectEventId],
+                                                     &gObjectEvents[gTasks[taskId].tMetalObjId]))
+        ;
+}
+
+static bool8 PushMetal_Start(struct Task *task, struct ObjectEvent *player, struct ObjectEvent *metal)
+{
+    LockPlayerFieldControls();
+    gPlayerAvatar.preventStep = TRUE;
+    task->tState++;
+    return FALSE;
+}
+
+static bool8 PushMetal_Move(struct Task *task, struct ObjectEvent *player, struct ObjectEvent *metal)
+{
+    if (ObjectEventIsHeldMovementActive(player))
+        ObjectEventClearHeldMovementIfFinished(player);
+
+    if (ObjectEventIsHeldMovementActive(metal))
+        ObjectEventClearHeldMovementIfFinished(metal);
+
+    if (!ObjectEventIsMovementOverridden(player)
+     && !ObjectEventIsMovementOverridden(metal))
+    {
+        ObjectEventClearHeldMovementIfFinished(player);
+        ObjectEventClearHeldMovementIfFinished(metal);
+        ObjectEventSetHeldMovement(player, GetWalkInPlaceNormalMovementAction((u8)task->tDirection));
+        ObjectEventSetHeldMovement(metal, GetWalkSlowMovementAction((u8)task->tDirection));
+        gFieldEffectArguments[0] = metal->currentCoords.x;
+        gFieldEffectArguments[1] = metal->currentCoords.y;
+        gFieldEffectArguments[2] = metal->previousElevation;
+        gFieldEffectArguments[3] = gSprites[metal->spriteId].oam.priority;
+        FieldEffectStart(FLDEFF_SPARKLE);
+        PlaySE(SE_M_SCREECH);
+        task->tState++;
+    }
+    return FALSE;
+}
+
+static bool8 PushMetal_End(struct Task *task, struct ObjectEvent *player, struct ObjectEvent *metal)
+{
+    if (ObjectEventCheckHeldMovementStatus(player)
+     && ObjectEventCheckHeldMovementStatus(metal))
+    {
+        ObjectEventClearHeldMovementIfFinished(player);
+        ObjectEventClearHeldMovementIfFinished(metal);
+		//HandleBoulderActivateSwitch(metal->currentCoords.x, metal->currentCoords.y);
+		HandleMagnetizeMetal(metal->currentCoords.x, metal->currentCoords.y);
+        gPlayerAvatar.preventStep = FALSE;
+        UnlockPlayerFieldControls();
+        DestroyTask(FindTaskIdByFunc(Task_PushMetal));
+    }
+    return FALSE;
+}
+
+#undef tState
+#undef tMetalObjId
 #undef tDirection
 
 /* Some field effect */

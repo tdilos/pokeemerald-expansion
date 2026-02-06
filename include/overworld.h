@@ -59,7 +59,6 @@ enum {
     MUSIC_DISABLE_STOP,
     MUSIC_DISABLE_KEEP,
 };
-
 // Exported RAM declarations
 extern struct WarpData gLastUsedWarp;
 extern struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4];

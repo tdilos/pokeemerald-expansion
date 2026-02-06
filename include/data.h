@@ -354,4 +354,40 @@ static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
     return GetTrainerStructFromId(trainerId)->aiFlags;
 }
 
+
+static inline u16 SanitizeTrainerId(u16 trainerId)
+{
+    if (trainerId >= TRAINERS_COUNT)
+        return TRAINER_NONE;
+    return trainerId;
+}
+
+static inline const u16 *GetTrainerItemsFromId(u16 trainerId)
+{
+    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
+    //enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
+
+    //return gTrainers[difficulty][sanitizedTrainerId].items;
+	return gTrainers[sanitizedTrainerId].items;
+}
+
+//static inline const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
+/*const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
+{
+    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
+    //enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
+
+    //return gTrainers[difficulty][sanitizedTrainerId].party;
+	return gTrainers[sanitizedTrainerId].party;
+}*/
+
+static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
+{
+    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
+    //enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
+
+    //return gTrainers[difficulty][sanitizedTrainerId].aiFlags;
+	return gTrainers[sanitizedTrainerId].aiFlags;
+}
+
 #endif // GUARD_DATA_H

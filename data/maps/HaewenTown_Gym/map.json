@@ -1,0 +1,307 @@
+{
+  "id": "MAP_HAEWEN_TOWN_GYM",
+  "name": "HaewenTown_Gym",
+  "layout": "LAYOUT_HAEWEN_TOWN_GYM",
+  "music": "MUS_GYM",
+  "region_map_section": "MAPSEC_HAEWEN_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_GYM",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 12,
+      "y": 41,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 18,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 17,
+      "y": 41,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HaewenTown_Gym_EventScript_GymGuide",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 17,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "HaewenTown_Gym_EventScript_Hygelac",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 28,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "HaewenTown_Gym_EventScript_Domfrith",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 28,
+      "y": 29,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "HaewenTown_Gym_EventScript_Ricbert",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 16,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "HaewenTown_Gym_EventScript_Earendel",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TWIN",
+      "x": 5,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "HaewenTown_Gym_EventScript_Haereth",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ETHEL",
+      "x": 15,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HaewenTown_Gym_EventScript_Ethel",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "x": 7,
+      "y": 24,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "HaewenTown_Gym_EventScript_Eawynn",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "x": 18,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "HaewenTown_Gym_EventScript_Sigeric",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "x": 18,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "HaewenTown_Gym_EventScript_Thryth",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 22,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_14"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 5,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_13"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 15,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_HAEWEN_TOWN",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 16,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_HAEWEN_TOWN",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 19,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_HAEWEN_TOWN_GYM",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 14,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_HAEWEN_TOWN_GYM",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 4,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_HAEWEN_TOWN_GYM",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 14,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_HAEWEN_TOWN_GYM",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 33,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_HAEWEN_TOWN_GYM",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 38,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "99",
+      "script": "HaewenTown_Gym_EventScript_Bridge1"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 29,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "99",
+      "script": "HaewenTown_Gym_EventScript_Bridge2"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "99",
+      "script": "HaewenTown_Gym_EventScript_Bridge3"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_4",
+      "var_value": "99",
+      "script": "HaewenTown_Gym_EventScript_Bridge4"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 41,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "HaewenTown_Gym_EventScript_LeftGymStatue"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 41,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "HaewenTown_Gym_EventScript_RightGymStatue"
+    }
+  ]
+}

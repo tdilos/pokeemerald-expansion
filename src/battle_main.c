@@ -23,6 +23,7 @@
 #include "decompress.h"
 #include "dexnav.h"
 #include "dma3.h"
+#include "dns.h"
 #include "event_data.h"
 #include "evolution_scene.h"
 #include "frontier_util.h"
@@ -44,6 +45,7 @@
 #include "pokedex.h"
 #include "pokemon.h"
 #include "pokerus.h"
+//#include "quests.h"
 #include "random.h"
 #include "recorded_battle.h"
 #include "roamer.h"
@@ -296,6 +298,66 @@ const struct OamData gOamData_BattleSpritePlayerSide =
     .affineParam = 0,
 };
 
+/*const struct TrainerBall gTrainerBallTable[] = {
+    {TRAINER_CLASS_TEAM_AQUA, ITEM_NET_BALL},
+    {TRAINER_CLASS_AQUA_ADMIN, ITEM_NET_BALL},
+    {TRAINER_CLASS_AQUA_LEADER, ITEM_MASTER_BALL},
+    {TRAINER_CLASS_AROMA_LADY, ITEM_FRIEND_BALL},
+    {TRAINER_CLASS_RUIN_MANIAC, ITEM_DUSK_BALL},
+    {TRAINER_CLASS_INTERVIEWER, ITEM_REPEAT_BALL},
+    {TRAINER_CLASS_TUBER_F, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_TUBER_M, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_SIS_AND_BRO, ITEM_POKE_BALL},
+    {TRAINER_CLASS_COOLTRAINER, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_HEX_MANIAC, ITEM_DUSK_BALL},
+    {TRAINER_CLASS_LADY, ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_BEAUTY, ITEM_LOVE_BALL},
+    {TRAINER_CLASS_RICH_BOY, ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_POKEMANIAC, ITEM_MOON_BALL},
+    {TRAINER_CLASS_SWIMMER_M, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_BLACK_BELT, ITEM_HEAVY_BALL},
+    {TRAINER_CLASS_GUITARIST, ITEM_FAST_BALL},
+    {TRAINER_CLASS_KINDLER, ITEM_POKE_BALL},
+    {TRAINER_CLASS_CAMPER, ITEM_NEST_BALL},
+    {TRAINER_CLASS_OLD_COUPLE, ITEM_POKE_BALL},
+    {TRAINER_CLASS_BUG_MANIAC, ITEM_NET_BALL},
+    {TRAINER_CLASS_PSYCHIC, ITEM_DREAM_BALL},
+    {TRAINER_CLASS_GENTLEMAN, ITEM_LUXURY_BALL},
+    {TRAINER_CLASS_ELITE_FOUR, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_LEADER, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_SCHOOL_KID, ITEM_POKE_BALL},
+    {TRAINER_CLASS_SR_AND_JR, ITEM_POKE_BALL},
+    {TRAINER_CLASS_POKEFAN, ITEM_POKE_BALL},
+    {TRAINER_CLASS_EXPERT, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_YOUNGSTER, ITEM_POKE_BALL},
+    {TRAINER_CLASS_CHAMPION, ITEM_CHERISH_BALL},
+    {TRAINER_CLASS_FISHERMAN, ITEM_LURE_BALL},
+    {TRAINER_CLASS_TRIATHLETE, ITEM_FAST_BALL},
+    {TRAINER_CLASS_DRAGON_TAMER, ITEM_ULTRA_BALL},
+    {TRAINER_CLASS_BIRD_KEEPER, ITEM_QUICK_BALL},
+    {TRAINER_CLASS_NINJA_BOY, ITEM_QUICK_BALL},
+    {TRAINER_CLASS_BATTLE_GIRL, ITEM_HEAVY_BALL},
+    {TRAINER_CLASS_PARASOL_LADY, ITEM_POKE_BALL},
+    {TRAINER_CLASS_SWIMMER_F, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_PICNICKER, ITEM_FRIEND_BALL},
+    {TRAINER_CLASS_TWINS, ITEM_POKE_BALL},
+    {TRAINER_CLASS_SAILOR, ITEM_DIVE_BALL},
+    {TRAINER_CLASS_COLLECTOR, ITEM_REPEAT_BALL},
+    {TRAINER_CLASS_PKMN_TRAINER_3, ITEM_PREMIER_BALL},
+    {TRAINER_CLASS_PKMN_BREEDER, ITEM_TIMER_BALL},
+    {TRAINER_CLASS_PKMN_RANGER, ITEM_SAFARI_BALL},
+    {TRAINER_CLASS_TEAM_MAGMA, ITEM_NEST_BALL},
+    {TRAINER_CLASS_MAGMA_ADMIN, ITEM_NEST_BALL},
+    {TRAINER_CLASS_MAGMA_LEADER, ITEM_MASTER_BALL},
+    {TRAINER_CLASS_LASS, ITEM_POKE_BALL},
+    {TRAINER_CLASS_BUG_CATCHER, ITEM_NET_BALL},
+    {TRAINER_CLASS_HIKER, ITEM_HEAVY_BALL},
+    {TRAINER_CLASS_YOUNG_COUPLE, ITEM_LOVE_BALL},
+    {TRAINER_CLASS_WINSTRATE, ITEM_GREAT_BALL},
+    {TRAINER_CLASS_PKMN_TRAINER_2, ITEM_HEAVY_BALL},
+    {0xFF, ITEM_POKE_BALL},
+};*/
+
 static const s8 sCenterToCornerVecXs[8] ={-32, -16, -16, -32, -32};
 
 #include "data/types_info.h"
@@ -303,36 +365,58 @@ static const s8 sCenterToCornerVecXs[8] ={-32, -16, -16, -32, -32};
 // [TRAINER_CLASS_XYZ] = { _("name"), <money=5>, <ball=BALL_POKE> }
 const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 {
+	// Tourmaline classes
+    [TRAINER_CLASS_TEAM_GENESIS] = { _("TEAM GENESIS"), 5, BALL_MASTER },
+	[TRAINER_CLASS_ROCKER] = { _("ROCKER"), 8, BALL_TIMER} ,
+	[TRAINER_CLASS_PAINTER] = { _("PAINTER"), 4, BALL_LUXURY },
+	[TRAINER_CLASS_BURGLAR] = { _("BURGLAR"), 22, BALL_LUXURY} ,
+	// v0.2
+	[TRAINER_CLASS_OFFICER] = { _("OFFICER"), 8, BALL_GREAT },
+	[TRAINER_CLASS_BOARDER] = { _("BOARDER"), 8, BALL_GREAT },
+	[TRAINER_CLASS_SKIER] = { _("SKIER"), 8, BALL_GREAT },
+	[TRAINER_CLASS_JUGGLER] = { _("JUGGLER"), 6, BALL_LEVEL },
+	[TRAINER_CLASS_TAMER] = { _("TAMER"), 6, BALL_ULTRA },
+	[TRAINER_CLASS_ENGINEER] = { _("ENGINEER"), 10, BALL_HEAVY },
+	[TRAINER_CLASS_SCIENTIST] = { _("SCIENTIST"), 10, BALL_PREMIER },
+	[TRAINER_CLASS_COWGIRL] = { _("COWGIRL"), 4, BALL_GREAT },
+	[TRAINER_CLASS_RANCHER] = { _("RANCHER"), 4, BALL_GREAT },
+	[TRAINER_CLASS_LOGGER] = { _("LOGGER"), 6, BALL_NEST },
+	[TRAINER_CLASS_FAIRY_TALE_GIRL] = { _("FAIRY GIRL"), 6, BALL_FRIEND },
+	[TRAINER_CLASS_ROUGHNECK] = { _("ROUGHNECK"), 5, BALL_MOON },
+    [TRAINER_CLASS_GENESIS_ADMIN] = { _("GENESIS BOSS"), 20, BALL_MASTER },
+	// v0.3
+	[TRAINER_CLASS_UNKNOWN] = { _("UNKNOWN"), 0, BALL_DREAM },
+	
     [TRAINER_CLASS_PKMN_TRAINER_1] = { _("{PKMN} TRAINER") },
     [TRAINER_CLASS_PKMN_TRAINER_2] = { _("{PKMN} TRAINER") },
     [TRAINER_CLASS_HIKER] = { _("HIKER"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_ULTRA : BALL_POKE },
     [TRAINER_CLASS_TEAM_AQUA] = { _("TEAM AQUA") },
     [TRAINER_CLASS_PKMN_BREEDER] = { _("{PKMN} BREEDER"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_HEAL : BALL_FRIEND },
     [TRAINER_CLASS_COOLTRAINER] = { _("COOLTRAINER"), 12, BALL_ULTRA },
-    [TRAINER_CLASS_BIRD_KEEPER] = { _("BIRD KEEPER"), 8 },
+    [TRAINER_CLASS_BIRD_KEEPER] = { _("BIRD KEEPER"), 8, BALL_NEST },
     [TRAINER_CLASS_COLLECTOR] = { _("COLLECTOR"), 15, BALL_PREMIER },
     [TRAINER_CLASS_SWIMMER_M] = { _("SWIMMER♂"), 2, BALL_DIVE },
     [TRAINER_CLASS_TEAM_MAGMA] = { _("TEAM MAGMA") },
-    [TRAINER_CLASS_EXPERT] = { _("EXPERT"), 10 },
+    [TRAINER_CLASS_EXPERT] = { _("EXPERT"), 10, BALL_ULTRA },
     [TRAINER_CLASS_AQUA_ADMIN] = { _("AQUA ADMIN"), 10 },
     [TRAINER_CLASS_BLACK_BELT] = { _("BLACK BELT"), 8, BALL_ULTRA },
     [TRAINER_CLASS_AQUA_LEADER] = { _("AQUA LEADER"), 20, BALL_MASTER },
-    [TRAINER_CLASS_HEX_MANIAC] = { _("HEX MANIAC"), 6 },
+    [TRAINER_CLASS_HEX_MANIAC] = { _("HEX MANIAC"), 6, BALL_DUSK },
     [TRAINER_CLASS_AROMA_LADY] = { _("AROMA LADY"), 10 },
     [TRAINER_CLASS_RUIN_MANIAC] = { _("RUIN MANIAC"), 15 },
     [TRAINER_CLASS_INTERVIEWER] = { _("INTERVIEWER"), 12 },
     [TRAINER_CLASS_TUBER_F] = { _("TUBER"), 1 },
     [TRAINER_CLASS_TUBER_M] = { _("TUBER"), 1 },
-    [TRAINER_CLASS_LADY] = { _("LADY"), 50 },
+    [TRAINER_CLASS_LADY] = { _("LADY"), 50, BALL_LUXURY },
     [TRAINER_CLASS_BEAUTY] = { _("BEAUTY"), 20, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_GREAT : BALL_POKE },
-    [TRAINER_CLASS_RICH_BOY] = { _("RICH BOY"), 50 },
+    [TRAINER_CLASS_RICH_BOY] = { _("RICH BOY"), 50, BALL_LUXURY },
     [TRAINER_CLASS_POKEMANIAC] = { _("POKéMANIAC"), 15 },
-    [TRAINER_CLASS_GUITARIST] = { _("GUITARIST"), 8 },
+    [TRAINER_CLASS_GUITARIST] = { _("GUITARIST"), 8, BALL_FAST },
     [TRAINER_CLASS_KINDLER] = { _("KINDLER"), 8 },
-    [TRAINER_CLASS_CAMPER] = { _("CAMPER"), 4 },
-    [TRAINER_CLASS_PICNICKER] = { _("PICNICKER"), 4 },
-    [TRAINER_CLASS_BUG_MANIAC] = { _("BUG MANIAC"), 15 },
-    [TRAINER_CLASS_PSYCHIC] = { _("PSYCHIC"), 6 },
+    [TRAINER_CLASS_CAMPER] = { _("CAMPER"), 4, BALL_NEST },
+    [TRAINER_CLASS_PICNICKER] = { _("PICNICKER"), 4, BALL_NEST },
+    [TRAINER_CLASS_BUG_MANIAC] = { _("BUG MANIAC"), 15, BALL_NET },
+    [TRAINER_CLASS_PSYCHIC] = { _("PSYCHIC"), 6, BALL_MOON },
     [TRAINER_CLASS_GENTLEMAN] = { _("GENTLEMAN"), 20, BALL_LUXURY },
     [TRAINER_CLASS_ELITE_FOUR] = { _("ELITE FOUR"), 25, BALL_ULTRA },
     [TRAINER_CLASS_LEADER] = { _("LEADER"), 25, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_ULTRA : BALL_POKE },
@@ -342,11 +426,11 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_POKEFAN] = { _("POKéFAN"), 20 },
     [TRAINER_CLASS_YOUNGSTER] = { _("YOUNGSTER"), 4 },
     [TRAINER_CLASS_CHAMPION] = { _("CHAMPION"), 50, BALL_ULTRA },
-    [TRAINER_CLASS_FISHERMAN] = { _("FISHERMAN"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_DIVE : BALL_LURE },
-    [TRAINER_CLASS_TRIATHLETE] = { _("TRIATHLETE"), 10 },
+    [TRAINER_CLASS_FISHERMAN] = { _("FISHERMAN"), 10, BALL_LURE },
+    [TRAINER_CLASS_TRIATHLETE] = { _("TRIATHLETE"), 10, BALL_REPEAT },
     [TRAINER_CLASS_DRAGON_TAMER] = { _("DRAGON TAMER"), 12 },
-    [TRAINER_CLASS_NINJA_BOY] = { _("NINJA BOY"), 3 },
-    [TRAINER_CLASS_BATTLE_GIRL] = { _("BATTLE GIRL"), 6 },
+    [TRAINER_CLASS_NINJA_BOY] = { _("NINJA BOY"), 3, BALL_QUICK },
+    [TRAINER_CLASS_BATTLE_GIRL] = { _("BATTLE GIRL"), 6, BALL_ULTRA },
     [TRAINER_CLASS_PARASOL_LADY] = { _("PARASOL LADY"), 10 },
     [TRAINER_CLASS_SWIMMER_F] = { _("SWIMMER♀"), 2, BALL_DIVE },
     [TRAINER_CLASS_TWINS] = { _("TWINS"), 3 },
@@ -354,7 +438,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_COOLTRAINER_2] = { _("COOLTRAINER"), 5, BALL_ULTRA },
     [TRAINER_CLASS_MAGMA_ADMIN] = { _("MAGMA ADMIN"), 10 },
     [TRAINER_CLASS_RIVAL] = { _("{PKMN} TRAINER"), 15 },
-    [TRAINER_CLASS_BUG_CATCHER] = { _("BUG CATCHER"), 4 },
+    [TRAINER_CLASS_BUG_CATCHER] = { _("BUG CATCHER"), 4, BALL_NET },
     [TRAINER_CLASS_PKMN_RANGER] = { _("{PKMN} RANGER"), 12 },
     [TRAINER_CLASS_MAGMA_LEADER] = { _("MAGMA LEADER"), 20, BALL_MASTER },
     [TRAINER_CLASS_LASS] = { _("LASS"), 4 },
@@ -461,6 +545,10 @@ const u8 gStatusConditionString_SleepJpn[] = _("ねむり$$$$");
 const u8 gStatusConditionString_ParalysisJpn[] = _("まひ$$$$$");
 const u8 gStatusConditionString_BurnJpn[] = _("やけど$$$$");
 const u8 gStatusConditionString_IceJpn[] = _("こおり$$$$");
+const u8 gStatusConditionString_InfectJpn[] = _("かんせん$$$");
+const u8 gStatusConditionString_DazeJpn[] = _("しんとう$$$");
+const u8 gStatusConditionString_ExhaustJpn[] = _("ひろう$$$$");
+const u8 gStatusConditionString_FearJpn[] = _("おそれ$$$$");
 const u8 gStatusConditionString_ConfusionJpn[] = _("こんらん$$$");
 const u8 gStatusConditionString_LoveJpn[] = _("メロメロ$$$");
 
@@ -471,6 +559,10 @@ const u8 *const gStatusConditionStringsTable[][2] =
     {gStatusConditionString_ParalysisJpn, gText_Paralysis},
     {gStatusConditionString_BurnJpn, gText_Burn},
     {gStatusConditionString_IceJpn, gText_Ice},
+	{gStatusConditionString_InfectJpn, gText_Infect},
+	{gStatusConditionString_DazeJpn, gText_Daze},
+	{gStatusConditionString_ExhaustJpn, gText_Exhaust},
+	{gStatusConditionString_FearJpn, gText_Fear},
     {gStatusConditionString_ConfusionJpn, gText_Confusion},
     {gStatusConditionString_LoveJpn, gText_Love}
 };
@@ -1788,13 +1880,89 @@ static void CB2_HandleStartMultiBattle(void)
     }
 }
 
-void BattleMainCB2(void)
+bool8 InBattleChoosingMoves()
 {
-    AnimateSprites();
+    return gBattleMainFunc == HandleTurnActionSelectionState;
+}
+
+bool8 InBattleRunningActions()
+{
+    return gBattleMainFunc == RunTurnActionsFunctions;
+}
+
+u8 GetBattleFlow(bool8 forHealthbar)
+{
+    u8 battleFlowOption = gSaveBlock2Ptr->optionsBattleFlow;
+    u8 battleSceneOption = gSaveBlock2Ptr->optionsBattleSceneOff;
+	
+    // Always run at 1x speed when choosing moves
+    if(InBattleChoosingMoves())
+        return 1;
+		
+    // Always run at 1x speed when learning a new move
+    //if(gBattlescriptCurrInstr == BattleScript_ForgotAndLearnedNewMove)
+	//if(gBattlescriptCurrInstr == BattleScript_LevelUp)
+	/*if(gBattlescriptCurrInstr == BattleScript_TryLearnMoveLoop
+		|| gBattlescriptCurrInstr == BattleScript_ForgotAndLearnedNewMove
+		|| gBattlescriptCurrInstr == BattleScript_LevelUp)*/
+	/*if(gBattlescriptCurrInstr == BattleScript_LevelUp
+		|| gBattlescriptCurrInstr  == BattleScript_LearnMoveReturn
+		|| gBattlescriptCurrInstr == BattleScript_LearnedNewMove)*/
+	//if(HandleFaintedMonActions())
+	if(gBattleStruct->faintedActionsState != 0)
+        return 1;
+	
+	// Fix for glitch causing the game to freeze when throwing a pokeballl on higher speeds
+    if(gBattleStruct->throwingPokeBall == TRUE)
+        return 1;
+
+    // When battle anims are turned off, it's a bit too hard to read text, so force running at normal speed
+    if(!forHealthbar && battleSceneOption == TRUE && InBattleRunningActions())
+        return 1;
+
+    switch (battleFlowOption)
+    {
+    case OPTIONS_BATTLE_FLOW_1X:
+        return 1;
+
+    case OPTIONS_BATTLE_FLOW_2X:
+        return 2;
+
+    case OPTIONS_BATTLE_FLOW_3X:
+        return 3;
+
+    //case OPTIONS_BATTLE_FLOW_4X:
+    //    return 4;
+        //return forHealthbar ? 4 : 3;
+    }
+
+    return 1;
+}
+
+/*void BattleMainCB2(void)
+{
+    //AnimateSprites();
+	u8 s;
+    u8 battleFlow = GetBattleFlow(TRUE);
+	
+    for(s = 0; s < battleFlow; ++s)
+    {
+        AnimateSprites();
+    }
+	
     BuildOamBuffer();
-    RunTextPrinters();
-    UpdatePaletteFade();
-    RunTasks();
+    //RunTextPrinters();
+    //UpdatePaletteFade();
+    //RunTasks();
+	//DnsApplyFilters();
+	
+    for(s = 0; s < battleFlow; ++s)
+    {
+        RunTextPrinters();
+        UpdatePaletteFade();
+        RunTasks();
+		DnsApplyFilters();
+    }
 
     if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
     {
@@ -1803,6 +1971,78 @@ void BattleMainCB2(void)
         ResetPaletteFadeControl();
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         SetMainCallback2(CB2_QuitRecordedBattle);
+    }
+}*/
+
+void BattleMainCB2(void)
+{
+    //u8 speedScale = Rogue_GetBattleSpeedScale(FALSE);
+	u8 battleFlow = GetBattleFlow(TRUE);
+    //gMain.nativeSpeedUpActive = FALSE;
+
+    // If we are processing a palette fade we need to temporarily fall back to 1x speed otherwise there is graphical corruption
+    if(PrevPaletteFadeResult() == PALETTE_FADE_STATUS_LOADING)
+        battleFlow = 1;
+
+    if(battleFlow <= 1)
+    {
+        // Maintain OG order for compat
+        AnimateSprites();
+        BuildOamBuffer();
+        RunTextPrinters();
+        UpdatePaletteFade();
+        RunTasks();
+		DnsApplyFilters();
+    }
+    else
+    {
+        u8 s;
+        u8 fadeResult;
+
+        //gMain.nativeSpeedUpActive = TRUE;
+
+        // Update select entries at higher speed
+        // disable speed up during palette fades otherwise we run into issues with blending 
+        //(e.g. moves that change background like Psychic can get stuck or have their colours overflow)
+        for(s = 1; s < battleFlow; ++s)
+        {
+            AnimateSprites();
+            RunTextPrinters();
+            fadeResult = UpdatePaletteFade();
+
+            if(fadeResult == PALETTE_FADE_STATUS_LOADING)
+            {
+                // minimal final update as we've just started a fade
+                BuildOamBuffer();
+                RunTasks();
+				DnsApplyFilters();
+                break;
+            }
+            else
+            {
+                RunTasks();
+				DnsApplyFilters();
+                VBlankCB_Battle();
+
+                // Call it again to make sure everything is behaving as it should (this is crazy town now)
+                /*if (gMain.callback1)
+                    gMain.callback1();*/
+            }
+        }
+        
+        //gMain.nativeSpeedUpActive = FALSE;
+
+        if(fadeResult != PALETTE_FADE_STATUS_LOADING)
+        {
+            
+            // final update
+            AnimateSprites();
+            BuildOamBuffer();
+            RunTextPrinters();
+            UpdatePaletteFade();
+            RunTasks();
+			DnsApplyFilters();
+        }
     }
 }
 
@@ -1924,10 +2164,92 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
+u8 Utility_IsQuestCompleted(u8 quest)
+{
+	u8 index = quest * 5 / 8;
+	u8 bit = quest * 5 % 8;
+	u8 mask = 0;
+
+	// 0 : locked
+	// 1 : actived
+	// 2 : rewarded
+	// 3 : completed
+	// 4 : favorited
+
+	bit += 3;
+	
+	if (bit >= 8)
+	{
+		index += 1;
+		bit %= 8;
+	}
+	mask = 1 << bit;
+
+	return gSaveBlock2Ptr->questData[index] & mask;
+}
+
+u8 Utility_CountCompletedQuests(void)
+{
+	u8 q = 0, i = 0;
+
+	for (i = 0; i < QUEST_COUNT; i++)
+	{
+		if (Utility_IsQuestCompleted(i))
+		{
+			q++;
+		}
+	}
+	return q;
+}
+
+//u8 GetLevelFromKarma()
+u16 GetKarma()
+{
+	//u8 questsCompleted = CountCompletedQuests();
+	u16 questsCompleted = Utility_CountCompletedQuests();
+	u16 averageFriendship = 0;
+	u16 berriesPlanted = VarGet(VAR_BERRY_PLANT_COUNT);
+	u16 eggsHatched = VarGet(VAR_EGG_HATCH_COUNT); 
+	u16 i;
+	
+	for (i = 0; i < PARTY_SIZE; i++) // currently only averages party mons
+    {
+        averageFriendship += GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
+    }
+	averageFriendship /= PARTY_SIZE;
+	
+	//return (averageFriendship + berriesPlanted + eggsHatched + 3 * questsCompleted);
+	return (averageFriendship + 4 * berriesPlanted + 4 * eggsHatched + 7 * questsCompleted);
+}
+
+u16 GetLevelFromKarma(u16 karma)
+{
+	//return (106 - karma / 10);
+	u16 level = (99 - (karma - 70) / 10);
+	
+	if (level > 100)
+		level = 100;
+	if (level < 1)
+		level = 1;
+	
+	return level;
+}
+
+u16 GetBattleCountForKarmaBattle()
+{
+	u16 karma = GetKarma();
+	
+	//return (1500 / karma);
+	return (800 / karma);
+}
+
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
 {
-    u32 personalityValue;
-    s32 i;
+    //u8 karmaLevel = 0;
+	u16 karmaLevel;
+	u32 personalityValue;
+    u8 fixedIV;
+    s32 i, j;
     u8 monsCount;
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
@@ -1980,7 +2302,17 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otId.method = OT_ID_PRESET;
                 otId.value = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, personalityValue, otId);
+			
+			// Dynamic levels for karma boss
+			if (trainer->trainerClass == TRAINER_CLASS_UNKNOWN)
+			{
+				karmaLevel = GetLevelFromKarma(GetKarma()); //66
+				CreateMon(&party[i], partyData[monIndex].species, karmaLevel, personalityValue, otId);
+			}
+			else
+			{
+				CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, personalityValue, otId);
+			}
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
@@ -2072,6 +2404,14 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
         memcpy(&tempTrainer, GetTrainerStructFromId(trainerNum), sizeof(struct Trainer));
         const struct Trainer *origTrainer = GetTrainerStructFromId(tempTrainer.overrideTrainer);
 
+	// bug fix for persistent double battles glitch
+	//if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER
+    //                                                                    | BATTLE_TYPE_EREADER_TRAINER
+    //                                                                    | BATTLE_TYPE_TRAINER_HILL)))
+    //{
+    //    gBattleTypeFlags |= gTrainers[trainerNum].doubleBattle;
+    //}
+	
         tempTrainer.party = origTrainer->party;
 
         tempTrainer.poolSize = origTrainer->poolSize;
@@ -4063,6 +4403,11 @@ u8 IsRunningFromBattleImpossible(enum BattlerId battler)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DONT_LEAVE_BIRCH;
         return BATTLE_RUN_FORBIDDEN;
     }
+    if (FlagGet(FLAG_TEMP_DISABLE_BAG) == TRUE) // Prevent running from Houndoom + Melmetal
+    {
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE;
+        return BATTLE_RUN_FORBIDDEN;
+    }
     if (GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT && WILD_DOUBLE_BATTLE
         && IsBattlerAlive(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT))) // The second pokemon cannot run from a double wild battle, unless it's the only alive mon.
     {
@@ -4321,7 +4666,7 @@ static void HandleTurnActionSelectionState(void)
                     {
                         BtlController_EmitChoosePokemon(battler, B_COMM_TO_CONTROLLER, PARTY_ACTION_ABILITY_PREVENTS, PARTY_SIZE, gBattleMons[i - 1].ability, i - 1, gBattleStruct->battlerPartyOrders[battler]);
                     }
-                    else
+                    else 
                     {
                         if (battler == 2 && gChosenActionByBattler[0] == B_ACTION_SWITCH)
                             BtlController_EmitChoosePokemon(battler, B_COMM_TO_CONTROLLER, PARTY_ACTION_CHOOSE_MON, gBattleStruct->monToSwitchIntoId[0], ABILITY_NONE, 0, gBattleStruct->battlerPartyOrders[battler]);
@@ -4752,9 +5097,13 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
             speed *= 2;
         else if (ability == ABILITY_CHLOROPHYLL && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_SUN)
             speed *= 2;
+        else if (ability == ABILITY_SUNSTRIDE && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_SUN)
+            speed *= 2;
         else if (ability == ABILITY_SAND_RUSH   && gBattleWeather & B_WEATHER_SANDSTORM)
             speed *= 2;
         else if (ability == ABILITY_SLUSH_RUSH  && (gBattleWeather & B_WEATHER_ICY_ANY))
+            speed *= 2;
+        else if (ability == ABILITY_SHADOWSTEP  && gBattleWeather & B_WEATHER_FULLMOON)
             speed *= 2;
     }
 
@@ -4765,6 +5114,8 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
         speed *= 2;
     else if (ability == ABILITY_SLOW_START && gBattleMons[battler].volatiles.slowStartTimer != 0)
         speed /= 2;
+    else if (ability == ABILITY_NOCTURNAL && !(gBattleMons[battler].volatiles.transformed) && ((gBattleWeather & B_WEATHER_FULLMOON && HasWeatherEffect()) || gBattleMons[battler].volatiles.boosterEnergyActivated))
+        speed = (GetParadoxBoostedStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_PROTOSYNTHESIS && !(gBattleMons[battler].volatiles.transformed) && ((gBattleWeather & B_WEATHER_SUN && HasWeatherEffect()) || gBattleMons[battler].volatiles.boosterEnergyActivated))
         speed = (GetParadoxBoostedStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_QUARK_DRIVE && !(gBattleMons[battler].volatiles.transformed) && (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN || gBattleMons[battler].volatiles.boosterEnergyActivated))
@@ -4775,6 +5126,7 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
     // player's badge boost
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
         && ShouldGetStatBadgeBoost(B_FLAG_BADGE_BOOST_SPEED, battler)
+		&& gSaveBlock2Ptr->optionsDifficulty == 0
         && IsOnPlayerSide(battler))
     {
         speed = uq4_12_multiply_by_int_half_down(GetBadgeBoostModifier(), speed);
@@ -4797,6 +5149,10 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
     // paralysis drop
     if (gBattleMons[battler].status1 & STATUS1_PARALYSIS && ability != ABILITY_QUICK_FEET)
         speed /= GetConfig(B_PARALYSIS_SPEED) >= GEN_7 ? 2 : 4;
+	
+	// exhaust drop
+    if (gBattleMons[battler].status1 & STATUS1_EXHAUST && ability != ABILITY_QUICK_FEET)
+        speed /= 2;
 
     if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SWAMP)
         speed /= 4;
@@ -5425,6 +5781,8 @@ static void HandleEndTurn_BattleWon(void)
 
         switch (GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA))
         {
+        case TRAINER_CLASS_UNKNOWN: // No special music after entity battles.
+			break;
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_CHAMPION:
             PlayBGM(MUS_VICTORY_LEAGUE);
@@ -5435,6 +5793,8 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_MAGMA_LEADER:
+        case TRAINER_CLASS_TEAM_GENESIS:
+        case TRAINER_CLASS_GENESIS_ADMIN:
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
         case TRAINER_CLASS_LEADER:
@@ -5559,6 +5919,8 @@ static void HandleEndTurn_FinishBattle(void)
                                   | BATTLE_TYPE_FIRST_BATTLE
                                   | BATTLE_TYPE_SAFARI
                                   | BATTLE_TYPE_EREADER_TRAINER
+                                  | BATTLE_TYPE_WISTERIA_GAME_1
+                                  | BATTLE_TYPE_WISTERIA_GAME_2
                                   | BATTLE_TYPE_CATCH_TUTORIAL
                                   | BATTLE_TYPE_FRONTIER))
             && !(gBattleTypeFlags & BATTLE_TYPE_GHOST && IsGhostBattleWithoutScope()))
@@ -5613,6 +5975,8 @@ static void HandleEndTurn_FinishBattle(void)
                                   | BATTLE_TYPE_SAFARI
                                   | BATTLE_TYPE_FRONTIER
                                   | BATTLE_TYPE_EREADER_TRAINER
+                                  | BATTLE_TYPE_WISTERIA_GAME_1
+                                  | BATTLE_TYPE_WISTERIA_GAME_2
                                   | BATTLE_TYPE_CATCH_TUTORIAL))
             && gBattleResults.shinyWildMon)
         {
@@ -5682,6 +6046,8 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
                                   | BATTLE_TYPE_SAFARI
                                   | BATTLE_TYPE_FRONTIER
                                   | BATTLE_TYPE_EREADER_TRAINER
+                                  | BATTLE_TYPE_WISTERIA_GAME_1
+                                  | BATTLE_TYPE_WISTERIA_GAME_2
                                   | BATTLE_TYPE_CATCH_TUTORIAL))
             && (B_EVOLUTION_AFTER_WHITEOUT >= GEN_6
                 || gBattleOutcome == B_OUTCOME_WON
@@ -5773,6 +6139,11 @@ static void ReturnFromBattleToOverworld(void)
 
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {
+		if (gBattleOutcome == B_OUTCOME_CAUGHT || ((gBattleOutcome & B_OUTCOME_WON) && !CanRoamerRespawn(gEncounteredRoamerIndex)))
+            StopRoamer(gEncounteredRoamerIndex);
+	    else if (gBattleOutcome & B_OUTCOME_WON) // and roamer can respawn
+            HandleRoamerRespawnTimer();
+			
         UpdateRoamerHPStatus(&gEnemyParty[0]);
         ZeroEnemyPartyMons();
 
@@ -5848,6 +6219,9 @@ enum Type TrySetAteType(enum Move move, enum BattlerId battlerAtk, enum Ability 
     case ABILITY_GALVANIZE:
         ateType = TYPE_ELECTRIC;
         break;
+    case ABILITY_SYNCOPATE:
+        ateType = TYPE_ECHO;
+        break;
     default:
         ateType = TYPE_NONE;
         break;
@@ -5906,9 +6280,14 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
                     return TYPE_FIRE;
                 else if (gBattleWeather & B_WEATHER_ICY_ANY)
                     return TYPE_ICE;
+                else if (gBattleWeather & B_WEATHER_SMAZE)
+                    return TYPE_POISON;
+                else if (gBattleWeather & B_WEATHER_FULLMOON)
+                    return TYPE_FAIRY;
                 else
                     return moveType;
             }
+			
         }
         else
         {

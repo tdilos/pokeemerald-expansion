@@ -12,8 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
-  "object_events": [],
+  "connections": 0,
+  "object_events": [
+
+  ],
   "warp_events": [
     {
       "x": 5,
@@ -26,7 +28,7 @@
       "x": 5,
       "y": 2,
       "elevation": 0,
-      "dest_map": "MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM",
+      "dest_map": "MAP_EVER_GRANDE_CITY_GLACIAS_ROOM",
       "dest_warp_id": "0"
     },
     {
@@ -44,6 +46,10 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

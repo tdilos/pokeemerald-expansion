@@ -225,6 +225,10 @@ void Bubbles_InitVars(void);
 void Bubbles_Main(void);
 void Bubbles_InitAll(void);
 bool8 Bubbles_Finish(void);
+void FullMoon_InitVars(void);
+void FullMoon_Main(void);
+void FullMoon_InitAll(void);
+bool8 FullMoon_Finish(void);
 
 u8 GetSavedWeather(void);
 void SetSavedWeather(u32 weather);

@@ -3772,6 +3772,24 @@ void ShowBerryBlenderRecordWindow(void)
     CopyWindowToVram(gRecordsWindowId, COPYWIN_FULL);
 }
 
+void CheckBerryBlenderMaxRecord(void)
+{
+    u16 i;
+	u32 record = 0;
+	
+	for (i = 0; i < NUM_SCORE_TYPES; i++)
+    {
+		if (record < gSaveBlock1Ptr->berryBlenderRecords[i])
+			record = gSaveBlock1Ptr->berryBlenderRecords[i];
+    }
+	
+	//if (record > 15000)
+	if (record > 12000)
+		gSpecialVar_Result = TRUE;
+	else
+		gSpecialVar_Result = FALSE;
+}
+
 static void Task_PlayPokeblockFanfare(u8 taskId)
 {
     if (gTasks[taskId].data[0] == 0)

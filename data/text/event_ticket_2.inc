@@ -32,9 +32,10 @@ EventTicket_Text_OddTicketGetOnBoard:
 	.string "Get on board, youngster!$"
 
 FarawayIsland_Entrance_Text_SailorReturn:
-	.string "CAPT. BRINEY can be so maddeningly\n"
-	.string "fickle…\p"
-	.string "Do you want to return to LILYCOVE?$"
+	@.string "CAPT. BRINEY can be so maddeningly\n"
+	@.string "fickle…\p"
+	@.string "Do you want to return to LILYCOVE?$"
+	.string "Do you want to return to XANTHOS CITY?$"
 
 BirthIsland_Harbor_Text_SailorReturn:
 	.string "What an oddly shaped island, eh?\n"
@@ -54,6 +55,12 @@ EventTicket_Text_OddTicketsWhereTo:
 	.string "Where shall we sail first?$"
 
 NavelRock_Harbor_Text_SailorReturn:
+	.string "Did… Did you hear that?\n"
+	.string "That low growling from deep in there.\p"
+	.string "Are you sure it's safe?\n"
+	.string "Do you think we should leave?$"
+
+PerennialPillar_Harbor_Text_SailorReturn:
 	.string "Did… Did you hear that?\n"
 	.string "That low growling from deep in there.\p"
 	.string "Are you sure it's safe?\n"

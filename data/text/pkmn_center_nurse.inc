@@ -1,3 +1,16 @@
+gText_RestPkmnWithFee::
+	.string "Hello, and welcome to\n"
+	.string "the POKéMON CENTER.\p"
+	.string "It's ¥600 to restore your POKéMON\n"
+	.string "to full health.\p"
+	.string "Would you like to rest your POKéMON?$"
+
+gText_OhDearYouCantAffordIt::
+	.string "Oh dear, it seems you can't afford it.$"
+
+
+
+
 gText_WouldYouLikeToRestYourPkmn::
 	.string "Hello, and welcome to\n"
 	.string "the POKéMON CENTER.\p"

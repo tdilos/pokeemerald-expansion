@@ -8,9 +8,13 @@ void CreateScriptedDoubleWildMon(u16 species, u8 level, enum Item item, u16 spec
 void ScriptSetMonMoveSlot(u8 monIndex, enum Move move, u8 slot);
 void ReducePlayerPartyToSelectedMons(void);
 void HealPlayerParty(void);
+<<<<<<< Updated upstream
 void Script_GetChosenMonOffensiveEVs(void);
 void Script_GetChosenMonDefensiveEVs(void);
 void Script_GetChosenMonOffensiveIVs(void);
 void Script_GetChosenMonDefensiveIVs(void);
+=======
+void ScriptSetMonAbility(u8 partyIndex, u8 abilityNum);
+>>>>>>> Stashed changes
 
 #endif // GUARD_SCRIPT_POKEMON_UTIL_H

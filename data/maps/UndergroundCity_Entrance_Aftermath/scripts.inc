@@ -1,0 +1,11 @@
+UndergroundCity_Entrance_Aftermath_MapScripts::
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, UndergroundCity_Entrance_Aftermath_OnWarp
+	.byte 0
+
+UndergroundCity_Entrance_Aftermath_OnWarp:
+	map_script_2 VAR_TEMP_0, VAR_TEMP_0, UndergroundCity_Entrance_Aftermath_EventScript_UnsetForceOffscreenLoad
+	.2byte 0
+
+UndergroundCity_Entrance_Aftermath_EventScript_UnsetForceOffscreenLoad::
+	clearflag FLAG_FORCE_LOAD_OFFSCREEN_OBJEV
+	end

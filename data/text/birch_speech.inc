@@ -24,7 +24,7 @@ gText_Birch_MainSpeech::
 	.string "In fact, there are many, many\n"
 	.string "secrets surrounding POKéMON.\p"
 	.string "To unravel POKéMON mysteries,\n"
-	.string "I've been undertaking research.\l"
+	.string "We've been undertaking research.\l"
 	.string "That's what I do.\p"
 	.string "$"
 
@@ -35,6 +35,11 @@ gText_Birch_BoyOrGirl::
 	.string "Are you a boy?\n"
 	.string "Or are you a girl?$"
 
+gText_Birch_Difficulty::
+	.string "Aha…\p"
+	.string "And… What kind of adventurer\n"
+	.string "would you say you are?$"
+
 gText_Birch_WhatsYourName::
 	.string "All right.\n"
 	.string "What's your name?$"
@@ -44,8 +49,8 @@ gText_Birch_SoItsPlayer::
 
 gText_Birch_YourePlayer::
 	.string "Ah, okay!\p"
-	.string "You're {PLAYER}{KUN} who's moving to my\n"
-	.string "hometown of LITTLEROOT.\l"
+	.string "You're {PLAYER}{KUN} from UMBER TOWN\n"
+	.string "in the ISSHO region.\l"
 	.string "I get it now!\p"
 	.string "$"
 
@@ -56,6 +61,8 @@ gText_Birch_AreYouReady::
 	.string "Take courage, and leap into the\n"
 	.string "world of POKéMON where dreams,\l"
 	.string "adventure, and friendships await!\p"
-	.string "Well, I'll be expecting you later.\n"
-	.string "Come see me in my POKéMON LAB.\p"
+	.string "Be sure to stop by the lab\n"
+	.string "in UMBER TOWN.\p"
+	.string "I think you'll meet someone there who's\n"
+	.string "very knowledgeable about POKéMON.\p"
 	.string "$"

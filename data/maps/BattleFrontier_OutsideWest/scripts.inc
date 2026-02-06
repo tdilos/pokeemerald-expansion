@@ -7,6 +7,26 @@ BattleFrontier_OutsideWest_OnTransition:
 	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
 	end
 
+BattleFrontier_OutsideWest_EventScript_FerryAttendant2::
+	lock
+	faceplayer
+	msgbox BattleFrontier_OutsideWest_Text_ReturnToXanthosCity, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_CancelFerry
+	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
+	call BattleFrontier_OutsideWest_EventScript_BoardFerry
+	warp MAP_XANTHOS_CITY, 30, 32
+	waitstate
+	release
+	end
+
+BattleFrontier_OutsideWest_EventScript_CancelFerry::
+	release
+	end
+
+BattleFrontier_OutsideWest_Text_ReturnToXanthosCity:
+	.string "Would you like to return\n"
+	.string "to XANTHOS CITY?$"
+
 BattleFrontier_OutsideWest_EventScript_FerryAttendant::
 	lock
 	faceplayer

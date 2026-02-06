@@ -1,0 +1,362 @@
+{
+  "id": "MAP_UNDERGROUND_CITY_SEWER",
+  "name": "UndergroundCity_Sewer",
+  "layout": "LAYOUT_UNDERGROUND_CITY_SEWER",
+  "music": "MUS_HG_LIGHTHOUSE",
+  "region_map_section": "MAPSEC_UNDERGROUND_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 28,
+      "y": 39,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UndergroundCity_EventScript_ItemMaxRevive",
+      "flag": "FLAG_ITEM_UNDERGROUND_CITY_MAX_REVIVE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 49,
+      "y": 46,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UndergroundCity_EventScript_ItemTwistedSpoon",
+      "flag": "FLAG_ITEM_UNDERGROUND_CITY_TWISTED_SPOON"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 8,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UndergroundCity_EventScript_ItemHPUp",
+      "flag": "FLAG_ITEM_UNDERGROUND_CITY_HP_UP"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 44,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UndergroundCity_EventScript_ItemMaxPotion",
+      "flag": "FLAG_ITEM_UNDERGROUND_CITY_MAX_POTION"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "x": 9,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UndergroundCity_EventScript_ItemTM41",
+      "flag": "FLAG_ITEM_UNDERGROUND_CITY_TM41"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_F",
+      "x": 56,
+      "y": 43,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "UndergroundCity_EventScript_Grunt4",
+      "flag": "FLAG_DEFEATED_AZAMI"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 41,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_SEWER",
+      "dest_warp_id": "17"
+    },
+    {
+      "x": 57,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING5_2F",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 16,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING5_2F",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 16,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING1_3F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 1,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_SEWER",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 41,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_SEWER",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 25,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING1_4F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 44,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING6_1F",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 46,
+      "y": 50,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING6_2F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 57,
+      "y": 57,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING6_2F",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 48,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING1_1F",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING6_2F",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 48,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING6_2F",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 29,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING5_2F",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 10,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_SEWER_ROOMS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING6_1F",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 32,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_HALLWAY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_SEWER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_SEWER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 57,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING4_2F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 1,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING2_1F",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 0,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_Building6_1F_EventScript_ToBoss"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 37,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_Building2_1F_EventScript_ToMew"
+    },
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 35,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundADoor"
+    },
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 36,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundADoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 35,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundADoor"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 36,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundADoor"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundCDoor1"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundCDoor1"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundCDoor1"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundCDoor1"
+    },
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundCDoor2"
+    },
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundCDoor2"
+    },
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundCDoor2"
+    },
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UndergroundCity_EventScript_UndergroundCDoor2"
+    }
+  ]
+}

@@ -5,6 +5,7 @@
 #define TRADE_PARTNER 1
 
 // In-game Trade IDs
+<<<<<<< Updated upstream
 enum InGameTradeID
 {
     INGAME_TRADE_SEEDOT,
@@ -22,6 +23,23 @@ enum InGameTradeID
     INGAME_TRADE_TANGELA,
     INGAME_TRADE_SEEL,
 };
+=======
+#define INGAME_TRADE_SEEDOT     0
+#define INGAME_TRADE_PLUSLE     1
+#define INGAME_TRADE_HORSEA     2
+#define INGAME_TRADE_MEOWTH     3
+#define INGAME_TRADE_STUNFISK   4
+#define INGAME_TRADE_TIMBURR    5
+#define INGAME_TRADE_ROGGENROLA 6
+#define INGAME_TRADE_LITWICK    7
+#define INGAME_TRADE_KECLEON    8
+#define INGAME_TRADE_IMPIDIMP   9
+#define INGAME_TRADE_SIGILYPH   10
+#define INGAME_TRADE_TRUBBISH   11
+#define INGAME_TRADE_GASTLY     12
+#define INGAME_TRADE_SNEASEL    13
+#define INGAME_TRADE_CLOBBOPUS  14
+>>>>>>> Stashed changes
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0

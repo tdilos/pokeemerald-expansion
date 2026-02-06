@@ -210,14 +210,20 @@ static void Task_NewGameBirchSpeech_SlidePlatformAway(u8);
 static void Task_NewGameBirchSpeech_StartPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_WaitForPlayerFadeIn(u8);
 static void Task_NewGameBirchSpeech_BoyOrGirl(u8);
+static void Task_NewGameBirchSpeech_Difficulty(u8);
 static void LoadMainMenuWindowFrameTiles(u8, u16);
 static void DrawMainMenuWindowBorder(const struct WindowTemplate *, u16);
 static void Task_HighlightSelectedMainMenuItem(u8);
 static void Task_NewGameBirchSpeech_WaitToShowGenderMenu(u8);
 static void Task_NewGameBirchSpeech_ChooseGender(u8);
+static void Task_NewGameBirchSpeech_WaitToShowDifficultyMenu(u8);
+static void Task_NewGameBirchSpeech_ChooseDifficulty(u8);
 static void NewGameBirchSpeech_ShowGenderMenu(void);
 static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void);
 static void NewGameBirchSpeech_ClearGenderWindow(u8, u8);
+static void NewGameBirchSpeech_ShowDifficultyMenu(void);
+static s8 NewGameBirchSpeech_ProcessDifficultyMenuInput(void);
+static void NewGameBirchSpeech_ClearDifficultyWindow(u8, u8);
 static void Task_NewGameBirchSpeech_WhatsYourName(u8);
 static void Task_NewGameBirchSpeech_SlideOutOldGenderSprite(u8);
 static void Task_NewGameBirchSpeech_SlideInNewGenderSprite(u8);
@@ -419,6 +425,24 @@ static const struct WindowTemplate sNewGameBirchSpeechTextWindows[] =
         .paletteNum = 15,
         .baseBlock = 0x85
     },
+	{
+        .bg = 0,
+        .tilemapLeft = 3,
+        .tilemapTop = 5,
+        .width = 7,
+        .height = 6,
+        .paletteNum = 15,
+        .baseBlock = 0x6D
+    },
+    /*{
+        .bg = 0,
+        .tilemapLeft = 3,
+        .tilemapTop = 5,
+        .width = 7,
+        .height = 4,
+        .paletteNum = 15,
+        .baseBlock = 0x6D
+    },*/
     DUMMY_WIN_TEMPLATE
 };
 
@@ -476,8 +500,14 @@ static const struct MenuAction sMenuActions_Gender[] = {
     {gText_Girl, {NULL}}
 };
 
+static const struct MenuAction sMenuActions_Difficulty[] = {
+    {gText_Normal, NULL},
+    {gText_Hardcore, NULL},
+    {gText_Insane, NULL}
+};
+
 static const u8 *const sMalePresetNames[] = {
-    COMPOUND_STRING("STU"),
+    /*COMPOUND_STRING("STU"),
     COMPOUND_STRING("MILTON"),
     COMPOUND_STRING("TOM"),
     COMPOUND_STRING("KENNY"),
@@ -496,11 +526,16 @@ static const u8 *const sMalePresetNames[] = {
     COMPOUND_STRING("LANDON"),
     COMPOUND_STRING("COLLIN"),
     COMPOUND_STRING("STANLEY"),
-    COMPOUND_STRING("QUINCY")
+    COMPOUND_STRING("QUINCY")*/
+	COMPOUND_STRING("VERT"),
+	COMPOUND_STRING("DREW"),
+	COMPOUND_STRING("EWAN"),
+	COMPOUND_STRING("FORREST"),
+	COMPOUND_STRING("HARUKA")
 };
 
 static const u8 *const sFemalePresetNames[] = {
-    COMPOUND_STRING("KIMMY"),
+    /*COMPOUND_STRING("KIMMY"),
     COMPOUND_STRING("TIARA"),
     COMPOUND_STRING("BELLA"),
     COMPOUND_STRING("JAYLA"),
@@ -519,7 +554,12 @@ static const u8 *const sFemalePresetNames[] = {
     COMPOUND_STRING("LILLIE"),
     COMPOUND_STRING("TERRA"),
     COMPOUND_STRING("LUCY"),
-    COMPOUND_STRING("HALIE")
+    COMPOUND_STRING("HALIE")*/
+	COMPOUND_STRING("VIOLET"),
+	COMPOUND_STRING("CELESTE"),
+	COMPOUND_STRING("TWYLA"),
+	COMPOUND_STRING("ASTRID"),
+	COMPOUND_STRING("FUYUKO")
 };
 
 // The number of male vs. female names is assumed to be the same.
@@ -1405,7 +1445,7 @@ static void Task_NewGameBirchSpeechSub_InitPokeBall(u8 taskId)
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
-    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_LOTAD);
+    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_WYNAUT);
     gTasks[taskId].func = Task_NewGameBirchSpeechSub_WaitForLotad;
     gTasks[sBirchSpeechMainTaskId].tTimer = 0;
 }
@@ -1540,13 +1580,13 @@ static void Task_NewGameBirchSpeech_ChooseGender(u8 taskId)
         PlaySE(SE_SELECT);
         gSaveBlock2Ptr->playerGender = gender;
         NewGameBirchSpeech_ClearGenderWindow(1, 1);
-        gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_Difficulty;
         break;
     case FEMALE:
         PlaySE(SE_SELECT);
         gSaveBlock2Ptr->playerGender = gender;
         NewGameBirchSpeech_ClearGenderWindow(1, 1);
-        gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_Difficulty;
         break;
     default: //repeat task if nothing is selected
         break;
@@ -1603,6 +1643,62 @@ static void Task_NewGameBirchSpeech_SlideInNewGenderSprite(u8 taskId)
         }
     }
 }
+
+
+
+// difficulty modes
+static void Task_NewGameBirchSpeech_Difficulty(u8 taskId) //difficulty
+{
+    NewGameBirchSpeech_ClearWindow(0);
+    StringExpandPlaceholders(gStringVar4, gText_Birch_Difficulty);
+    AddTextPrinterForMessage(TRUE);
+    gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowDifficultyMenu;
+}
+
+static void Task_NewGameBirchSpeech_WaitToShowDifficultyMenu(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active())
+    {
+        NewGameBirchSpeech_ShowDifficultyMenu();
+        gTasks[taskId].func = Task_NewGameBirchSpeech_ChooseDifficulty;
+    }
+}
+
+static void Task_NewGameBirchSpeech_ChooseDifficulty(u8 taskId)
+{
+    int difficulty = NewGameBirchSpeech_ProcessDifficultyMenuInput();
+    switch (difficulty)
+    {
+        case 0:
+            PlaySE(SE_SELECT);
+            gSaveBlock2Ptr->optionsDifficulty = 0; //easy
+            //FlagClear(FLAG_DIFFICULTY_HARD);
+			//VarSet(VAR_DIFFICULTY, DIFFICULTY_NORMAL); //normal
+            NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
+            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+            break;
+        case 1:
+            PlaySE(SE_SELECT);
+            gSaveBlock2Ptr->optionsDifficulty = 1; //normal
+			gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET; //forces SET in case the player changed it before loading a new game
+            //FlagClear(FLAG_DIFFICULTY_HARD);
+			//VarSet(VAR_DIFFICULTY, DIFFICULTY_HARDCORE); //hardcore
+            NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
+            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+            break;
+        case 2:
+            PlaySE(SE_SELECT);
+            gSaveBlock2Ptr->optionsDifficulty = 2; //hard
+			gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET; //forces SET in case the player changed it before loading a new game
+            //FlagSet(FLAG_DIFFICULTY_HARD);
+			//VarSet(VAR_DIFFICULTY, DIFFICULTY_INSANE); //insane
+            NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
+            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+            break;
+    }
+}
+
+
 
 static void Task_NewGameBirchSpeech_WhatsYourName(u8 taskId)
 {
@@ -1909,7 +2005,7 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *sprite)
 
 static u8 NewGameBirchSpeech_CreateLotadSprite(u8 x, u8 y)
 {
-    return CreateMonPicSprite_Affine(SPECIES_LOTAD, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    return CreateMonPicSprite_Affine(SPECIES_WYNAUT, SHINY_ODDS, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
 }
 
 static void AddBirchSpeechObjects(u8 taskId)
@@ -2136,6 +2232,26 @@ static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
     return Menu_ProcessInputNoWrap();
 }
 
+// MORE DIFFICULTY FUNCTIONS
+static void NewGameBirchSpeech_ShowDifficultyMenu(void)
+{
+    DrawMainMenuWindowBorder(&sNewGameBirchSpeechTextWindows[3], 0xF3);
+    FillWindowPixelBuffer(3, PIXEL_FILL(1));
+    PrintMenuTable(3, 3, sMenuActions_Difficulty);
+    InitMenuInUpperLeftCornerNormal(3, 3, 0); //1);
+    PutWindowTilemap(3);
+    CopyWindowToVram(3, COPYWIN_FULL);
+}
+
+static s8 NewGameBirchSpeech_ProcessDifficultyMenuInput(void)
+{
+    return Menu_ProcessInputNoWrap();
+}
+
+
+
+
+
 void NewGameBirchSpeech_SetDefaultPlayerName(u8 nameId)
 {
     const u8 *name;
@@ -2265,6 +2381,20 @@ static void NewGameBirchSpeech_ClearGenderWindowTilemap(u8 bg, u8 x, u8 y, u8 wi
 static void NewGameBirchSpeech_ClearGenderWindow(u8 windowId, bool8 copyToVram)
 {
     CallWindowFunction(windowId, NewGameBirchSpeech_ClearGenderWindowTilemap);
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+    ClearWindowTilemap(windowId);
+    if (copyToVram == TRUE)
+        CopyWindowToVram(windowId, COPYWIN_FULL);
+}
+
+static void NewGameBirchSpeech_ClearDifficultyWindowTilemap(u8 bg, u8 x, u8 y, u8 width, u8 height, u8 unused)
+{
+    FillBgTilemapBufferRect(bg, 0, x + 255, y + 255, width + 3, height + 4, 2);
+}
+
+static void NewGameBirchSpeech_ClearDifficultyWindow(u8 windowId, bool8 copyToVram)
+{
+    CallWindowFunction(windowId, NewGameBirchSpeech_ClearDifficultyWindowTilemap);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
     ClearWindowTilemap(windowId);
     if (copyToVram == TRUE)

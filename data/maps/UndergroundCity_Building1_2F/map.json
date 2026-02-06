@@ -1,0 +1,93 @@
+{
+  "id": "MAP_UNDERGROUND_CITY_BUILDING1_2F",
+  "name": "UndergroundCity_Building1_2F",
+  "layout": "LAYOUT_UNDERGROUND_CITY_BUILDING1_2F",
+  "music": "MUS_HG_LIGHTHOUSE",
+  "region_map_section": "MAPSEC_UNDERGROUND_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCRAP_METAL",
+      "x": 6,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_MagnetRiseMetal",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCRAP_METAL",
+      "x": 5,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_MagnetRiseMetal",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCRAP_METAL",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_MagnetRiseMetal",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING5_2F",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 1,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING3_4F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING1_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERGROUND_CITY_BUILDING1_3F",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

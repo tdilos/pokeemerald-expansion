@@ -4,6 +4,7 @@
 #include "decompress.h"
 #include "decoration.h"
 #include "decoration_inventory.h"
+#include "event_data.h"
 #include "event_object_movement.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
@@ -100,7 +101,12 @@ struct ShopData
     u16 itemsShowed;
     u16 selectedRow;
     u16 scrollOffset;
+<<<<<<< Updated upstream
     u16 maxQuantity;
+=======
+    //u8 maxQuantity;
+	u16 maxQuantity;
+>>>>>>> Stashed changes
     u8 scrollIndicatorsTaskId;
     u8 iconSlot;
     u8 itemSpriteIds[2];
@@ -157,6 +163,222 @@ static void Task_HandleShopMenuBuy(u8 taskId);
 static void Task_HandleShopMenuSell(u8 taskId);
 static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, struct ListMenu *list);
 static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y);
+
+static const u16 sShopInventory_ZeroBadges[] = {
+    ITEM_POKE_BALL,
+    ITEM_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ANTIBIOTICS,
+	ITEM_DAZE_HEAL,
+	ITEM_STIMULANT,
+	ITEM_RELAXANT,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_OneBadge[] = {
+    ITEM_POKE_BALL,
+    ITEM_POTION,
+	ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ANTIBIOTICS,
+	ITEM_DAZE_HEAL,
+	ITEM_STIMULANT,
+	ITEM_RELAXANT,
+	ITEM_REPEL,
+	ITEM_FLUFFY_TAIL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_TwoBadges[] = {
+    ITEM_POKE_BALL,
+	ITEM_GREAT_BALL,
+    ITEM_POTION,
+	ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ANTIBIOTICS,
+	ITEM_DAZE_HEAL,
+	ITEM_STIMULANT,
+	ITEM_RELAXANT,
+	ITEM_ESCAPE_ROPE,
+	ITEM_REPEL,
+	ITEM_FLUFFY_TAIL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_ThreeBadges[] = {
+    ITEM_POKE_BALL,
+	ITEM_GREAT_BALL,
+    ITEM_POTION,
+	ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ANTIBIOTICS,
+	ITEM_DAZE_HEAL,
+	ITEM_STIMULANT,
+	ITEM_RELAXANT,
+	ITEM_ESCAPE_ROPE,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_FLUFFY_TAIL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_FourBadges[] = {
+    ITEM_POKE_BALL,
+	ITEM_GREAT_BALL,
+    ITEM_POTION,
+	ITEM_SUPER_POTION,
+	ITEM_HYPER_POTION,
+	ITEM_REVIVE,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ANTIBIOTICS,
+	ITEM_DAZE_HEAL,
+	ITEM_STIMULANT,
+	ITEM_RELAXANT,
+	ITEM_ESCAPE_ROPE,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_FLUFFY_TAIL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_FiveBadges[] = {
+    ITEM_POKE_BALL,
+	ITEM_GREAT_BALL,
+	ITEM_ULTRA_BALL,
+    ITEM_POTION,
+	ITEM_SUPER_POTION,
+	ITEM_HYPER_POTION,
+	ITEM_REVIVE,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ANTIBIOTICS,
+	ITEM_DAZE_HEAL,
+	ITEM_STIMULANT,
+	ITEM_RELAXANT,
+	ITEM_FULL_HEAL,
+	ITEM_ESCAPE_ROPE,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_FLUFFY_TAIL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_SixBadges[] = {
+    ITEM_POKE_BALL,
+	ITEM_GREAT_BALL,
+	ITEM_ULTRA_BALL,
+    ITEM_POTION,
+	ITEM_SUPER_POTION,
+	ITEM_HYPER_POTION,
+	ITEM_MAX_POTION,
+	ITEM_REVIVE,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ANTIBIOTICS,
+	ITEM_DAZE_HEAL,
+	ITEM_STIMULANT,
+	ITEM_RELAXANT,
+	ITEM_FULL_HEAL,
+	ITEM_ESCAPE_ROPE,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_FLUFFY_TAIL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_SevenBadges[] = {
+    ITEM_POKE_BALL,
+	ITEM_GREAT_BALL,
+	ITEM_ULTRA_BALL,
+    ITEM_POTION,
+	ITEM_SUPER_POTION,
+	ITEM_HYPER_POTION,
+	ITEM_MAX_POTION,
+	ITEM_REVIVE,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ANTIBIOTICS,
+	ITEM_DAZE_HEAL,
+	ITEM_STIMULANT,
+	ITEM_RELAXANT,
+	ITEM_FULL_HEAL,
+	ITEM_ESCAPE_ROPE,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_MAX_REPEL,
+	ITEM_FLUFFY_TAIL,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_EightBadges[] = {
+    ITEM_POKE_BALL,
+	ITEM_GREAT_BALL,
+	ITEM_ULTRA_BALL,
+    ITEM_POTION,
+	ITEM_SUPER_POTION,
+	ITEM_HYPER_POTION,
+	ITEM_MAX_POTION,
+	ITEM_FULL_RESTORE,
+	ITEM_REVIVE,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_ANTIBIOTICS,
+	ITEM_DAZE_HEAL,
+	ITEM_STIMULANT,
+	ITEM_RELAXANT,
+	ITEM_FULL_HEAL,
+	ITEM_ESCAPE_ROPE,
+	ITEM_REPEL,
+	ITEM_SUPER_REPEL,
+	ITEM_MAX_REPEL,
+	ITEM_FLUFFY_TAIL,
+    ITEM_NONE
+};
+
+static const u16 *const sShopInventories[] = 
+{
+    sShopInventory_ZeroBadges, 
+    sShopInventory_OneBadge,
+    sShopInventory_TwoBadges,
+    sShopInventory_ThreeBadges,
+    sShopInventory_FourBadges,
+    sShopInventory_FiveBadges,
+    sShopInventory_SixBadges,
+    sShopInventory_SevenBadges,
+    sShopInventory_EightBadges
+};
 
 static const struct YesNoFuncTable sShopPurchaseYesNoFuncs =
 {
@@ -378,11 +600,31 @@ static void SetShopMenuCallback(void (*callback)(void))
     sMartInfo.callback = callback;
 }
 
+static u8 GetNumberOfBadges(void)
+{
+    u16 badgeFlag;
+    u8 count = 0;
+    
+    for (badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++)
+    {
+        if (FlagGet(badgeFlag))
+            count++;
+    }
+    
+    return count;
+}
+
 static void SetShopItemsForSale(const u16 *items)
 {
     u16 i = 0;
-
-    sMartInfo.itemList = items;
+	u8 badgeCount = GetNumberOfBadges();
+	
+	if (items == NULL)
+		sMartInfo.itemList = sShopInventories[badgeCount];
+	else
+		sMartInfo.itemList = items;
+	
+    //sMartInfo.itemList = items;
     sMartInfo.itemCount = 0;
 
     // Read items until ITEM_NONE / DECOR_NONE is reached
@@ -643,8 +885,14 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
                 6);
         }
 
+<<<<<<< Updated upstream
         if (GetItemImportance(itemId) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
             StringCopy(gStringVar4, gText_SoldOut);
+=======
+        //StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
+		if (ItemId_GetPocket(itemId) == POCKET_TM_HM && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
+            StringCopy(gStringVar4, gText_SoldOut2);
+>>>>>>> Stashed changes
         else
             StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
         x = GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 120);
@@ -1007,8 +1255,14 @@ static void Task_BuyMenu(u8 taskId)
             else
                 sShopData->totalCost = gDecorations[itemId].price;
 
+<<<<<<< Updated upstream
             if (GetItemImportance(itemId) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
                 BuyMenuDisplayMessage(taskId, gText_ThatItemIsSoldOut, BuyMenuReturnToItemList);
+=======
+            //if (!IsEnoughMoney(&gSaveBlock1Ptr->money, sShopData->totalCost))
+			if (ItemId_GetPocket(itemId) == POCKET_TM_HM && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
+                BuyMenuDisplayMessage(taskId, gText_SoldOut, BuyMenuReturnToItemList);
+>>>>>>> Stashed changes
             else if (!IsEnoughMoney(&gSaveBlock1Ptr->money, sShopData->totalCost))
             {
                 BuyMenuDisplayMessage(taskId, gText_YouDontHaveMoney, BuyMenuReturnToItemList);
@@ -1020,6 +1274,7 @@ static void Task_BuyMenu(u8 taskId)
                     CopyItemName(itemId, gStringVar1);
                     if (GetItemImportance(itemId))
                     {
+<<<<<<< Updated upstream
                         ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                         tItemCount = 1;
@@ -1030,6 +1285,15 @@ static void Task_BuyMenu(u8 taskId)
                     {
                         StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(itemId)));
                         BuyMenuDisplayMessage(taskId, gText_Var1CertainlyHowMany2, Task_BuyHowManyDialogueInit);
+=======
+                        //StringCopy(gStringVar2, gMoveNames[ItemIdToBattleMoveId(itemId)]);
+                        //BuyMenuDisplayMessage(taskId, gText_Var1CertainlyHowMany2, Task_BuyHowManyDialogueInit);
+						ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+                        StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
+                        tItemCount = 1;
+                        sShopData->totalCost = (ItemId_GetPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+                        BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
+>>>>>>> Stashed changes
                     }
                     else
                     {
@@ -1059,7 +1323,8 @@ static void Task_BuyHowManyDialogueInit(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     u16 quantityInBag = CountTotalItemQuantityInBag(tItemId);
-    u16 maxQuantity;
+    //u16 maxQuantity;
+	u32 maxQuantity;
 
     DrawStdFrameWithCustomTileAndPalette(WIN_QUANTITY_IN_BAG, FALSE, 1, 13);
     ConvertIntToDecimalStringN(gStringVar1, quantityInBag, STR_CONV_MODE_RIGHT_ALIGN, MAX_ITEM_DIGITS + 1);
@@ -1135,9 +1400,16 @@ static void BuyMenuTryMakePurchase(u8 taskId)
     {
         if (AddBagItem(tItemId, tItemCount) == TRUE)
         {
+<<<<<<< Updated upstream
             GetSetItemObtained(tItemId, FLAG_SET_ITEM_OBTAINED);
             RecordItemPurchase(taskId);
             BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractMoney);
+=======
+            //BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractMoney);
+			RedrawListMenu(tListTaskId);
+            RecordItemPurchase(taskId);
+			BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractMoney);
+>>>>>>> Stashed changes
         }
         else
         {

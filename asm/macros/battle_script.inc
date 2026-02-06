@@ -944,6 +944,16 @@
 	.byte B_SCR_OP_SETSAFEGUARD
 	.endm
 
+	.macro setacidrain ptr:req
+	various BS_ATTACKER, VARIOUS_SETACIDRAIN
+	.4byte \ptr
+	.endm
+
+	.macro setfullmoon ptr:req
+	various BS_ATTACKER, VARIOUS_SETFULLMOON
+	.4byte \ptr
+	.endm
+	
 	.macro jumpifnopursuitswitchdmg jumpInstr:req
 	.byte B_SCR_OP_JUMPIFNOPURSUITSWITCHDMG
 	.4byte \jumpInstr
@@ -1048,6 +1058,11 @@
 
 	.macro settoxicspikes failInstr:req
 	.byte B_SCR_OP_SETTOXICSPIKES
+	.4byte \failInstr
+	.endm
+
+	.macro setfairydust failInstr:req
+	.byte B_SCR_OP_SETFAIRYDUST
 	.4byte \failInstr
 	.endm
 
@@ -1325,6 +1340,29 @@
 	.macro jumpifcantloseitem ptr:req
 	callnative BS_JumpIfCantLoseItem
 	.4byte \ptr
+	.endm
+
+	.macro trypetrify failInstr:req
+	callnative BS_TryPetrify
+	.4byte \failInstr
+	.endm
+
+	.macro handlemegaevo battler:req, case:req
+	callnative BS_HandleMegaEvolution
+	.byte \battler
+	.byte \case
+	.endm
+
+	.macro handleprimalreversion battler:req, case:req
+	callnative BS_HandlePrimalReversion
+	.byte \battler
+	.byte \case
+	.endm
+
+	.macro handleultraburst battler:req, case:req
+	callnative BS_HandleUltraBurst
+	.byte \battler
+	.byte \case
 	.endm
 
 	.macro jumpifshelltrap battler:req, jumpInstr:req
@@ -1952,6 +1990,16 @@
 	.4byte \failInstr
 	.endm
 
+	.macro setsmaze failInstr:req
+	callnative BS_SetSmaze
+	.4byte \failInstr
+	.endm
+
+	.macro setfullmoon failInstr:req
+	callnative BS_SetFullMoon
+	.4byte \failInstr
+	.endm
+	
 	.macro tryentrainment failInstr:req
 	callnative BS_TryEntrainment
 	.4byte \failInstr
@@ -2251,4 +2299,9 @@
 	callnative BS_TryActivateAbilityWithAbilityShield
 	.byte \battler
 	.byte \switchedItems
+	.endm
+
+	.macro trychitinize failInstr:req
+	various BS_ATTACKER, VARIOUS_CHITINIZE
+	.4byte \failInstr
 	.endm

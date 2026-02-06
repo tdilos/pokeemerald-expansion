@@ -3,6 +3,7 @@
 
 // AI Flags. Most run specific functions to update score, new flags are used for internal logic in other scripts
 // See docs/ai_flags.md for more details.
+
 #define AI_FLAG(x) ((u64)1 << x)
 
 #define AI_FLAG_CHECK_BAD_MOVE              AI_FLAG(0)  // AI will avoid using moves that are likely to fail or be ineffective in the current situation.
@@ -53,6 +54,11 @@
 #define AI_FLAG_ROAMING               AI_FLAG(61)
 #define AI_FLAG_SAFARI                AI_FLAG(62)
 #define AI_FLAG_FIRST_BATTLE          AI_FLAG(63)
+
+// Tourmaline flags
+#define AI_FLAG_GENESIS_GRUNT         (AI_FLAG_SMART_TRAINER | AI_FLAG_WILL_SUICIDE | AI_FLAG_TRY_TO_2HKO) // | AI_FLAG_RISKY)
+#define AI_FLAG_GENESIS_BOSS          (AI_FLAG_SMART_TRAINER | AI_FLAG_WILL_SUICIDE | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE)
+#define AI_FLAG_ENTITY                (AI_FLAG_SMART_TRAINER | AI_FLAG_STALL)
 
 #define AI_SCORE_DEFAULT 100 // Default score for all AI moves.
 

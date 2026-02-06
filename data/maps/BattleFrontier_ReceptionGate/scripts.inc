@@ -54,11 +54,21 @@ BattleFrontier_ReceptionGate_EventScript_ScottScene::
 	applymovement LOCALID_PLAYER, BattleFrontier_ReceptionGate_Movement_PlayerFaceScott
 	applymovement LOCALID_FRONTIER_RECEPTION_SCOTT, BattleFrontier_ReceptionGate_Movement_ScottEnter
 	waitmovement 0
-	msgbox BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere, MSGBOX_DEFAULT
+	@msgbox BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere, MSGBOX_DEFAULT
+	msgbox BattleFrontier_ReceptionGate_Text_BrendanGreatToSeeYouHere, MSGBOX_DEFAULT
 	closemessage
+<<<<<<< Updated upstream
 	applymovement LOCALID_FRONTIER_RECEPTION_SCOTT, BattleFrontier_ReceptionGate_Movement_ScottExit
 	waitmovement 0
 	removeobject LOCALID_FRONTIER_RECEPTION_SCOTT
+=======
+	@applymovement LOCALID_SCOTT, BattleFrontier_ReceptionGate_Movement_ScottExit
+	applymovement LOCALID_SCOTT, BattleFrontier_ReceptionGate_Movement_BrendanExit
+	waitmovement 0
+	removeobject LOCALID_SCOTT
+	playse SE_EXIT
+	waitse
+>>>>>>> Stashed changes
 	releaseall
 	end
 
@@ -101,6 +111,12 @@ BattleFrontier_ReceptionGate_Movement_ScottExit:
 	walk_up
 	walk_up
 	walk_up
+	step_end
+
+BattleFrontier_ReceptionGate_Movement_BrendanExit:
+	walk_right
+	walk_down
+	walk_down
 	step_end
 
 BattleFrontier_ReceptionGate_Movement_GreeterFaceScott:
@@ -322,12 +338,34 @@ BattleFrontier_ReceptionGate_Text_EnjoyBattleFrontier:
 	.string "FRONTIER has to offer!$"
 
 BattleFrontier_ReceptionGate_Text_IfItIsntPlayerYouCame:
-	.string "???: Well, if it isn't {PLAYER}{KUN}!\n"
-	.string "You came out here!$"
+	@.string "???: Well, if it isn't {PLAYER}{KUN}!\n"
+	.string "???????: Well, if it isn't {PLAYER}!\n"
+	@.string "You came out here!$"
+	.string "Fancy meeting you here!$"
 
 BattleFrontier_ReceptionGate_Text_OhMrScottGoodDay:
-	.string "GUIDE: Oh! MR. SCOTT, sir!\n"
+	@.string "GUIDE: Oh! MR. SCOTT, sir!\n"
+	.string "GUIDE: Oh! MR. BRENDAN, sir!\n"
 	.string "Good day to you, sir!$"
+
+BattleFrontier_ReceptionGate_Text_BrendanGreatToSeeYouHere:
+	.string "BRENDAN: Congratulations on becoming\n"
+	.string "ISSHO'S first official champion!\p"
+	.string "It seems you and I are peers now.\p"
+	.string "\p"
+	.string "I'd love to catch up with you more,\n"
+	.string "but I'm afraid I've got to be going.\p"
+	.string "Trouble brewing back in HOENN,\n"
+	.string "it seems...\p"
+	.string "\p"
+	.string "Well, don't let me spoil the mood for you.\n"
+	.string "You should enjoy your time here!\p"
+	.string "By the way, the owner of this\n"
+	.string "place is a good friend of mine.\p"
+	.string "His living quarters are here too.\n"
+	.string "You might pay him a visit sometime.\p"
+	.string "Well, best of luck, {PLAYER}.\n"
+	.string "Until we meet again.$"
 
 BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere:
 	.string "SCOTT: It's great to see you here,\n"

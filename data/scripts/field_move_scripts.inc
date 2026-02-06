@@ -1,3 +1,12 @@
+@ Bulldozable sand placeholder script
+EventScript_BulldozeSand::
+	msgbox Text_CantBulldoze, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Text_CantBulldoze:
+	.string "A mound of sand blocks the way.$"
+
 @ Interact with cuttable tree
 EventScript_CutTree::
 	lockall
@@ -15,12 +24,44 @@ EventScript_CutTreeCommon:
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
+<<<<<<< Updated upstream
 EventScript_CutTreeDown:: @ fallthrough
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+=======
+	goto EventScript_CutTreeDown
+	end
+
+@ Use cut from party menu
+EventScript_UseCut::
+	lockall
+	dofieldeffect FLDEFF_USE_CUT_ON_TREE
+	waitstate
+	goto EventScript_CutTreeDown
+	end
+
+EventScript_CutTreeDown::
+	addvar VAR_CUT_COUNT, 1
+>>>>>>> Stashed changes
 	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
+	special CutWildEncounter
+	@goto_if_eq VAR_RESULT, FALSE, EventScript_EndCut
+	goto_if_eq VAR_RESULT, FALSE, EventScript_TryCutItem
+	waitstate
+	releaseall
+	end
+
+EventScript_EndCut:
+	releaseall
+	end
+
+EventScript_TryCutItem::
+	special TryGetCutItem
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_EndCut
+	giveitem VAR_RESULT
 	releaseall
 	end
 
@@ -63,7 +104,12 @@ EventScript_UseRockSmash::
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
+<<<<<<< Updated upstream
 	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
+=======
+	goto_if_unset FLAG_BADGE02_GET, EventScript_CantSmashRock
+	checkpartymove MOVE_ROCK_SMASH
+>>>>>>> Stashed changes
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -78,20 +124,38 @@ EventScript_RockSmashCommon:
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
+<<<<<<< Updated upstream
 EventScript_SmashRock:: @ fallthrough
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+=======
+	goto EventScript_SmashRock
+	end
+
+@ Use rock smash from party menu
+EventScript_UseRockSmash::
+	lockall
+	dofieldeffect FLDEFF_USE_ROCK_SMASH
+	waitstate
+	goto EventScript_SmashRock
+	end
+
+EventScript_SmashRock::
+	addvar VAR_ROCK_SMASH_COUNT, 1
+>>>>>>> Stashed changes
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
-	specialvar VAR_RESULT, TryUpdateRusturfTunnelState
-	goto_if_eq VAR_RESULT, TRUE, EventScript_EndSmash
+	@specialvar VAR_RESULT, TryUpdateRusturfTunnelState
+	@goto_if_eq VAR_RESULT, TRUE, EventScript_EndSmash
 	special RockSmashWildEncounter
-	goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
+	@goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
+	goto_if_eq VAR_RESULT, FALSE, EventScript_TryRockSmashItem
 	waitstate
 	releaseall
 	end
 
+<<<<<<< Updated upstream
 EventScript_FollowerFieldMove:
 	getdirectiontoface VAR_0x8005, OBJ_EVENT_ID_FOLLOWER, OBJ_EVENT_ID_PLAYER
 	specialvar VAR_0x8006, GetPlayerFacingDirection
@@ -162,6 +226,15 @@ EventScript_FollowerJumpWest:
 	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_JumpLeft
 	waitmovement 0
 	return
+=======
+EventScript_TryRockSmashItem::
+	special TryGetRockSmashItem
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_EndSmash
+	giveitem VAR_RESULT
+	releaseall
+	end
+>>>>>>> Stashed changes
 
 EventScript_EndSmash::
 	releaseall
@@ -221,8 +294,90 @@ Text_CantSmash:
 	.string "It's a rugged rock, but a POKéMON\n"
 	.string "may be able to smash it.$"
 
+@ Interact with meltable ice
+EventScript_Thaw::
+	lockall
+	goto_if_unset FLAG_BADGE04_GET, EventScript_CantThawIce
+	checkpartymove MOVE_THAW
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantThawIce
+	setfieldeffectargument 0, VAR_RESULT
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	buffermovename STR_VAR_2, MOVE_THAW
+	msgbox Text_WantToThaw, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelThaw
+	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	closemessage
+	dofieldeffect FLDEFF_USE_THAW
+	waitstate
+	goto EventScript_ThawIce
+	end
+
+@ Use thaw from party menu
+EventScript_UseThaw::
+	lockall
+	dofieldeffect FLDEFF_USE_THAW
+	waitstate
+	goto EventScript_ThawIce
+	end
+
+EventScript_ThawIce::
+	addvar VAR_THAW_COUNT, 1
+	applymovement VAR_LAST_TALKED, Movement_ThawIce
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	special ThawWildEncounter
+	@goto_if_eq VAR_RESULT, FALSE, EventScript_EndThaw
+	goto_if_eq VAR_RESULT, FALSE, EventScript_TryThawItem
+	waitstate
+	releaseall
+	end
+
+EventScript_EndThaw::
+	releaseall
+	end
+
+EventScript_TryThawItem::
+	special TryGetThawItem
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_EndThaw
+	giveitem VAR_RESULT
+	releaseall
+	end
+
+Movement_ThawIce:
+	thaw_ice
+	step_end
+
+EventScript_CantThawIce::
+	msgbox Text_CantThaw, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CancelThaw::
+	closemessage
+	releaseall
+	end
+
+Text_WantToThaw:
+	.string "This ice appears to be meltable.\n"
+	.string "Would you like to use THAW?$"
+
+Text_CantThaw:
+	.string "It's a block of ice, but a POKéMON\n"
+	.string "may be able to melt it.$"
+
+
+
+
+
+
+
 EventScript_StrengthBoulder::
 	lockall
+<<<<<<< Updated upstream
+=======
+	goto_if_unset FLAG_BADGE03_GET, EventScript_CantStrength
+>>>>>>> Stashed changes
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
 	checkfieldmove FIELD_MOVE_STRENGTH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
@@ -281,9 +436,81 @@ Text_StrengthActivated:
 	.string "STRENGTH made it possible to move\n"
 	.string "boulders around.$"
 
+EventScript_MagnetRiseMetal::
+	lockall
+	goto_if_unset FLAG_BADGE07_GET, EventScript_CantMagnetRise
+	goto_if_set FLAG_SYS_USE_MAGNET_RISE, EventScript_CheckActivatedMetal
+	checkpartymove MOVE_MAGNET_RISE
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantMagnetRise
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_WantToMagnetRise, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelMagnetRise
+	closemessage
+	dofieldeffect FLDEFF_USE_MAGNET_RISE
+	waitstate
+	goto EventScript_ActivateMagnetRise
+	end
+
+EventScript_UseMagnetRise::
+	lockall
+	dofieldeffect FLDEFF_USE_MAGNET_RISE
+	waitstate
+	goto EventScript_ActivateMagnetRise
+	end
+
+EventScript_ActivateMagnetRise::
+	setflag FLAG_SYS_USE_MAGNET_RISE
+	msgbox Text_MonUsedMagnetRise, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CantMagnetRise::
+	msgbox Text_CantMagnetRise, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CheckActivatedMetal::
+	msgbox Text_MagnetRiseActivated, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CancelMagnetRise::
+	closemessage
+	releaseall
+	end
+
+Text_WantToMagnetRise:
+	.string "It's a piece of scrap metal, but\n"
+	.string "a POKéMON may be able to move it.\p"
+	.string "Would you like to use MAGNET RISE?$"
+
+Text_MonUsedMagnetRise:
+	.string "{STR_VAR_1} used MAGNET RISE!\p"
+	.string "{STR_VAR_1}'s MAGNET RISE made it\n"
+	.string "possible to move metal objects!$"
+
+Text_CantMagnetRise:
+	.string "It's a piece of scrap metal, but\n"
+	.string "a POKéMON may be able to move it.$"
+
+Text_MagnetRiseActivated:
+	.string "MAGNET RISE made it possible\n"
+	.string "to move metal objects around.$"
+
+
+
+
+
+
+
 EventScript_UseWaterfall::
 	lockall
+<<<<<<< Updated upstream
 	checkfieldmove FIELD_MOVE_WATERFALL
+=======
+	goto_if_unset FLAG_IS_CHAMPION, EventScript_CantWaterfall
+	checkpartymove MOVE_WATERFALL
+>>>>>>> Stashed changes
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -318,7 +545,12 @@ Text_MonUsedWaterfall:
 
 EventScript_UseDive::
 	lockall
+<<<<<<< Updated upstream
 	checkfieldmove FIELD_MOVE_DIVE
+=======
+	goto_if_unset FLAG_BADGE08_GET, EventScript_CantDive
+	checkpartymove MOVE_DIVE
+>>>>>>> Stashed changes
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
 	copyvar 0x8004 VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -370,6 +602,7 @@ EventScript_NoSurface::
 	releaseall
 	end
 
+<<<<<<< Updated upstream
 EventScript_DigCommon:
 	isfollowerfieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
@@ -398,6 +631,69 @@ EventScript_CutGrassCommon:
 EventScript_UseCutGrass::
 	lockall
 	goto EventScript_CutGrassCommon
+=======
+@ Interact with a tree a Pokémon can use headbutt on
+EventScript_Headbutt::
+	lockall
+	checkpartymove MOVE_HEADBUTT
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_eq EventScript_CantHeadbuttTree
+	setfieldeffectargument 0, VAR_RESULT
+	bufferpartymonnick 0, VAR_RESULT
+	buffermovename 1, MOVE_HEADBUTT
+	msgbox Text_WantToHeadbutt, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_CancelHeadbutt
+	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	closemessage
+	dofieldeffect FLDEFF_USE_HEADBUTT
+	waitstate
+	goto EventScript_HeadbuttTree
+	end
+
+EventScript_CantHeadbuttTree::
+	msgbox Text_CantHeadbuttTree, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CancelHeadbutt::
+	closemessage
+	releaseall
+	end
+
+@ Use headbutt from party menu
+EventScript_UseHeadbutt::
+	lockall
+	dofieldeffect FLDEFF_USE_HEADBUTT
+	waitstate
+EventScript_HeadbuttTree:
+	addvar VAR_HEADBUTT_COUNT, 1
+	setvar VAR_0x8004, 1  @ vertical pan
+	setvar VAR_0x8005, 1  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 5  @ shake delay
+	special ShakeCamera
+	waitstate
+	special HeadbuttWildEncounter
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_EndHeadbutt
+	waitstate
+EventScript_EndHeadbutt:
+	releaseall
+	end
+
+@ Use defog from party menu
+EventScript_UseDefog::
+	lockall
+	dofieldeffect FLDEFF_USE_DEFOG
+	waitstate
+	playse SE_M_TWISTER
+	setweather WEATHER_NONE
+	doweather
+	waitse
+	releaseall
+	end
+>>>>>>> Stashed changes
 
 Text_CantDive:
 	.string "The sea is deep here. A POKéMON\n"
@@ -417,6 +713,14 @@ Text_CantSurface:
 Text_WantToSurface:
 	.string "Light is filtering down from above.\n"
 	.string "Would you like to use DIVE?$"
+
+Text_WantToHeadbutt:
+	.string "It's a moderated sized tree.\n"
+	.string "Would you like to use HEADBUTT?$"
+
+Text_CantHeadbuttTree:
+	.string "There's a large, formidable tree.\n"
+	.string "It looks like it can be headbutted!$"
 
 EventScript_FailSweetScent::
 	msgbox Text_FailSweetScent, MSGBOX_SIGN

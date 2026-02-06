@@ -55,4 +55,16 @@ bool8 FldEff_UseRockSmash(void);
 bool32 SetUpFieldMove_Defog(void);
 bool8 FldEff_Defog(void);
 
+// headbutt
+bool8 SetUpFieldMove_Headbutt(void);
+bool8 FldEff_UseHeadbutt(void);
+
+// thaw
+bool8 SetUpFieldMove_Thaw(void);
+bool8 FldEff_UseThaw(void);
+
+// magnet rise
+bool8 SetUpFieldMove_MagnetRise(void);
+bool8 FldEff_UseMagnetRise(void);
+
 #endif // GUARD_FLDEFF_H

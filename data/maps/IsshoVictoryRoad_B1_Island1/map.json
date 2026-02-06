@@ -1,0 +1,105 @@
+{
+  "id": "MAP_ISSHO_VICTORY_ROAD_B1_ISLAND1",
+  "name": "IsshoVictoryRoad_B1_Island1",
+  "layout": "LAYOUT_ISSHO_VICTORY_ROAD_B1_ISLAND1",
+  "music": "MUS_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_VICTORY_ROAD",
+  "requires_flash": true,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ISSHO_VICTORY_ROAD_UNDERWATER_ISLAND1",
+      "offset": 0,
+      "direction": "dive"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 17,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 24,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsshoVictoryRoad_EventScript_ItemMaxEther",
+      "flag": "FLAG_ITEM_ISSHO_VICTORY_ROAD_MAX_ETHER"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 26,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 25,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsshoVictoryRoad_EventScript_ItemMaxRepel",
+      "flag": "FLAG_ITEM_ISSHO_VICTORY_ROAD_MAX_REPEL"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 28,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ISSHO_VICTORY_ROAD_1F_ISLAND1",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 28,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_ISSHO_VICTORY_ROAD_B2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_ISSHO_VICTORY_ROAD_B2",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

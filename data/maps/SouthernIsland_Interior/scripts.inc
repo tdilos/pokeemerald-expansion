@@ -14,8 +14,11 @@ SouthernIsland_Interior_EventScript_TryRemoveLati::
 	return
 
 SouthernIsland_Interior_OnTransition:
-	call_if_eq VAR_ROAMER_POKEMON, 0, SouthernIsland_Interior_EventScript_SetUpLatios
-	call_if_ne VAR_ROAMER_POKEMON, 0, SouthernIsland_Interior_EventScript_SetUpLatias
+	@call_if_eq VAR_ROAMER_POKEMON, 0, SouthernIsland_Interior_EventScript_SetUpLatios
+	@call_if_ne VAR_ROAMER_POKEMON, 0, SouthernIsland_Interior_EventScript_SetUpLatias
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, SouthernIsland_Interior_EventScript_SetUpLatias
+	call_if_eq VAR_RESULT, FEMALE, SouthernIsland_Interior_EventScript_SetUpLatios
 	call SouthernIsland_Interior_EventScript_SetUpPlayerGfx
 	end
 
@@ -103,11 +106,13 @@ SouthernIsland_Interior_EventScript_Sign::
 	end
 
 SouthernIsland_Interior_EventScript_SetLatiosBattleVars::
-	seteventmon SPECIES_LATIOS, 50, ITEM_SOUL_DEW
+	seteventmon SPECIES_LATIOS, 40, ITEM_SOUL_DEW
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	return
 
 SouthernIsland_Interior_EventScript_SetLatiasBattleVars::
-	seteventmon SPECIES_LATIAS, 50, ITEM_SOUL_DEW
+	seteventmon SPECIES_LATIAS, 40, ITEM_SOUL_DEW
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	return
 
 SouthernIsland_Interior_Movement_CameraPanUp:

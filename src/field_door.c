@@ -171,6 +171,18 @@ static const u8 sDoorAnimTiles_TrainerTowerRoofElevator[] = INCBIN_U8("graphics/
 
 #endif // IS_FRLG
 
+static const u8 sDoorAnimTiles_Turquoise[] = INCBIN_U8("graphics/door_anims/turquoise.4bpp");
+static const u8 sDoorAnimTiles_Mindaro[] = INCBIN_U8("graphics/door_anims/mindaro.4bpp");
+static const u8 sDoorAnimTiles_Maroon[] = INCBIN_U8("graphics/door_anims/maroon.4bpp");
+static const u8 sDoorAnimTiles_Offwite[] = INCBIN_U8("graphics/door_anims/offwite.4bpp");
+static const u8 sDoorAnimTiles_Pitchblak[] = INCBIN_U8("graphics/door_anims/pitchblak.4bpp");
+static const u8 sDoorAnimTiles_KendomaElevator[] = INCBIN_U8("graphics/door_anims/kendoma_elevator.4bpp");
+static const u8 sDoorAnimTiles_UndergroundElevator[] = INCBIN_U8("graphics/door_anims/underground_elevator.4bpp");
+static const u8 sDoorAnimTiles_Haewen[] = INCBIN_U8("graphics/door_anims/haewen.4bpp");
+static const u8 sDoorAnimTiles_Wisteria[] = INCBIN_U8("graphics/door_anims/wisteria.4bpp");
+static const u8 sDoorAnimTiles_Burgundy[] = INCBIN_U8("graphics/door_anims/burgundy.4bpp");
+//static const u8 sDoorAnimTiles_DreamResort[] = INCBIN_U8("graphics/door_anims/dream_resort.4bpp");
+
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
     {4, -1},
@@ -285,11 +297,24 @@ static const u8 sDoorAnimPalettes_BattleTent[] = {1, 1, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_BattleDomeCorridor[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_BattleTowerMultiCorridor[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_Unused[] = {1, 1, 1, 1, 1, 1, 1, 1};
-static const u8 sDoorAnimPalettes_BattleFrontier[] = {1, 1, 1, 1, 1, 1, 1, 1};
+//static const u8 sDoorAnimPalettes_BattleFrontier[] = {1, 1, 1, 1, 1, 1, 1, 1};
+static const u8 sDoorAnimPalettes_BattleFrontier[] = {6, 6, 6, 6, 6, 6, 6, 6};
 static const u8 sDoorAnimPalettes_BattleDomePreBattleRoom[] = {9, 9, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_BattleTentInterior[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
+// New
+static const u8 sDoorAnimPalettes_Turquoise[] = {6, 6, 6, 6, 6, 6, 6, 6};
+static const u8 sDoorAnimPalettes_Mindaro[] = {6, 6, 0, 0, 0, 0, 0, 0};
+static const u8 sDoorAnimPalettes_Maroon[] = {10, 10, 10, 10, 10, 10, 10, 10};
+static const u8 sDoorAnimPalettes_Offwite[] = {9, 9, 9, 9, 9, 9, 9, 9};
+static const u8 sDoorAnimPalettes_Pitchblak[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_KendomaElevator[] = {6, 6, 6, 6, 6, 6, 6, 6};
+static const u8 sDoorAnimPalettes_UndergroundElevator[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_Haewen[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_Wisteria[] = {6, 6, 6, 6, 6, 6, 6, 6};
+static const u8 sDoorAnimPalettes_Burgundy[] = {9, 9, 9, 9, 9, 9, 9, 9};
+//static const u8 sDoorAnimPalettes_DreamResort[] = {11, 11, 11, 11, 11, 11, 11, 11};
 
 #if IS_FRLG
 
@@ -386,6 +411,17 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_BattleTent_Door,                              &gTileset_BattleTent, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTentInterior, sDoorAnimPalettes_BattleTentInterior},
     {METATILE_TrainerHill_Door_Elevator_Lobby,              &gTileset_TrainerHill, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillLobbyElevator, sDoorAnimPalettes_TrainerHillLobbyElevator},
     {METATILE_TrainerHill_Door_Elevator_Roof,               &gTileset_TrainerHill, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillRoofElevator, sDoorAnimPalettes_TrainerHillRoofElevator},
+	// Tourmaline
+    {METATILE_Turquoise_Door,                               &gTileset_Turquoise, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Turquoise, sDoorAnimPalettes_Turquoise},
+    {METATILE_Mossdeep_Door_Mindaro,                        &gTileset_Mossdeep, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Mindaro, sDoorAnimPalettes_Mindaro},
+    {METATILE_Maroon_Door_Maroon,                           &gTileset_Maroon, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Maroon, sDoorAnimPalettes_Maroon},
+    {METATILE_Offwite_Door,                                 &gTileset_Offwite, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Offwite, sDoorAnimPalettes_Offwite},
+    {METATILE_Maroon_Door_Pitchblak,                        &gTileset_Maroon, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Pitchblak, sDoorAnimPalettes_Pitchblak},
+    {METATILE_KendomaCorp_Door_Elevator,                    &gTileset_gTileset_KendomCorp, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_KendomaElevator, sDoorAnimPalettes_KendomaElevator},
+    {METATILE_Facility2_Door_Elevator,                      &gTileset_Facility2, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_UndergroundElevator, sDoorAnimPalettes_UndergroundElevator},
+	{METATILE_Haewen_Door,                                  &gTileset_Haewen, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Haewen, sDoorAnimPalettes_Haewen},
+	{METATILE_Wisteria_Door,                                &gTileset_Wisteria, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Wisteria, sDoorAnimPalettes_Wisteria},
+	{METATILE_Wisteria_Door_Burgundy,                       &gTileset_Wisteria, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Burgundy, sDoorAnimPalettes_Burgundy},
 #else
     {METATILE_GeneralFrlg_Door,                             &gTileset_General_Frlg, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_GeneralFrlg, sDoorAnimPalettes_GeneralFrlg},
     {METATILE_GeneralFrlg_SlidingSingleDoor,                &gTileset_General_Frlg, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_SlidingSingle, sDoorAnimPalettes_SlidingSingle},

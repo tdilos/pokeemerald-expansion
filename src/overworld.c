@@ -9,6 +9,7 @@
 #include "credits_frlg.h"
 #include "clock.h"
 #include "dexnav.h"
+#include "dns.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
@@ -191,6 +192,7 @@ static bool8 MapLdr_Credits(void);
 static void CameraCB_CreditsPan(struct CameraObject *camera);
 static void Task_OvwldCredits_FadeOut(u8 taskId);
 static void Task_OvwldCredits_WaitFade(u8 taskId);
+static const u8 sMapsecToRegion[];
 
 static void *sUnusedOverworldCallback;
 static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
@@ -403,6 +405,9 @@ void Overworld_ResetStateAfterFly(void)
     FlagClear(FLAG_SYS_CRUISE_MODE);
     FlagClear(FLAG_SYS_SAFARI_MODE);
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
+    FlagClear(FLAG_SYS_INSIDE_MIRAGE_PALACE);
+	FlagClear(FLAG_FORCE_LOAD_OFFSCREEN_OBJEV);
+    FlagClear(FLAG_SYS_USE_MAGNET_RISE);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
 }
@@ -414,6 +419,9 @@ void Overworld_ResetStateAfterTeleport(void)
     FlagClear(FLAG_SYS_CRUISE_MODE);
     FlagClear(FLAG_SYS_SAFARI_MODE);
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
+    FlagClear(FLAG_SYS_INSIDE_MIRAGE_PALACE);
+	FlagClear(FLAG_FORCE_LOAD_OFFSCREEN_OBJEV);
+    FlagClear(FLAG_SYS_USE_MAGNET_RISE);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
     RunScriptImmediately(EventScript_ResetMrBriney);
@@ -426,6 +434,9 @@ void Overworld_ResetStateAfterDigEscRope(void)
     FlagClear(FLAG_SYS_CRUISE_MODE);
     FlagClear(FLAG_SYS_SAFARI_MODE);
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
+    FlagClear(FLAG_SYS_INSIDE_MIRAGE_PALACE);
+	FlagClear(FLAG_FORCE_LOAD_OFFSCREEN_OBJEV);
+    FlagClear(FLAG_SYS_USE_MAGNET_RISE);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
 }
@@ -461,6 +472,9 @@ static void Overworld_ResetStateAfterWhiteOut(void)
     FlagClear(FLAG_SYS_CRUISE_MODE);
     FlagClear(FLAG_SYS_SAFARI_MODE);
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
+    FlagClear(FLAG_SYS_INSIDE_MIRAGE_PALACE);
+	FlagClear(FLAG_FORCE_LOAD_OFFSCREEN_OBJEV);
+    FlagClear(FLAG_SYS_USE_MAGNET_RISE);
     FlagClear(FLAG_SYS_USE_STRENGTH);
     FlagClear(FLAG_SYS_USE_FLASH);
     if (B_RESET_FLAGS_VARS_AFTER_WHITEOUT == TRUE)
@@ -479,6 +493,7 @@ static void UpdateMiscOverworldStates(void)
 {
     FlagClear(FLAG_SYS_SAFARI_MODE);
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
+	// FlagClear(FLAG_SYS_INSIDE_MIRAGE_PALACE);      not sure if needed?
     ChooseAmbientCrySpecies();
     ResetCyclingRoadChallengeData();
     UpdateLocationHistoryForRoamer();
@@ -668,13 +683,161 @@ static void LoadCurrentMapData(void)
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
     gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
+	gMapHeader.region = sMapsecToRegion[gMapHeader.regionMapSectionId];
 }
 
 static void LoadSaveblockMapHeader(void)
 {
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gMapHeader.mapLayout = GetMapLayout(gSaveBlock1Ptr->mapLayoutId);
+    gMapHeader.mapLayout = GetMapLayout();
+	gMapHeader.region = sMapsecToRegion[gMapHeader.regionMapSectionId];
 }
+
+static const u8 sMapsecToRegion[] = {
+     [MAPSEC_LITTLEROOT_TOWN]            = REGION_HOENN,
+     [MAPSEC_OLDALE_TOWN]                = REGION_HOENN,
+     [MAPSEC_DEWFORD_TOWN]               = REGION_HOENN,
+     [MAPSEC_LAVARIDGE_TOWN]             = REGION_HOENN,
+     [MAPSEC_FALLARBOR_TOWN]             = REGION_HOENN,
+     [MAPSEC_VERDANTURF_TOWN]            = REGION_HOENN,
+     [MAPSEC_PACIFIDLOG_TOWN]            = REGION_HOENN,
+     [MAPSEC_PETALBURG_CITY]             = REGION_HOENN,
+     [MAPSEC_SLATEPORT_CITY]             = REGION_HOENN,
+     [MAPSEC_MAUVILLE_CITY]              = REGION_HOENN,
+     [MAPSEC_RUSTBORO_CITY]              = REGION_HOENN,
+     [MAPSEC_FORTREE_CITY]               = REGION_HOENN,
+     [MAPSEC_LILYCOVE_CITY]              = REGION_HOENN,
+     [MAPSEC_MOSSDEEP_CITY]              = REGION_HOENN,
+     [MAPSEC_SOOTOPOLIS_CITY]            = REGION_HOENN,
+     [MAPSEC_EVER_GRANDE_CITY]           = REGION_HOENN,
+     [MAPSEC_ROUTE_101]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_102]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_103]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_104]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_105]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_106]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_107]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_108]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_109]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_110]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_111]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_112]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_113]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_114]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_115]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_116]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_117]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_118]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_119]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_120]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_121]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_122]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_123]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_124]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_125]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_126]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_127]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_128]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_129]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_130]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_131]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_132]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_133]                  = REGION_HOENN,
+     [MAPSEC_ROUTE_134]                  = REGION_HOENN,
+     [MAPSEC_UNDERWATER_124]             = REGION_HOENN,
+     [MAPSEC_UNDERWATER_126]             = REGION_HOENN,
+     [MAPSEC_UNDERWATER_127]             = REGION_HOENN,
+     [MAPSEC_UNDERWATER_128]             = REGION_HOENN,
+     [MAPSEC_UNDERWATER_SOOTOPOLIS]      = REGION_HOENN,
+     [MAPSEC_GRANITE_CAVE]               = REGION_HOENN,
+     [MAPSEC_MT_CHIMNEY]                 = REGION_HOENN,
+     [MAPSEC_SAFARI_ZONE]                = REGION_HOENN,
+     [MAPSEC_BATTLE_FRONTIER]            = REGION_HOENN,
+     [MAPSEC_PETALBURG_WOODS]            = REGION_HOENN,
+     [MAPSEC_RUSTURF_TUNNEL]             = REGION_HOENN,
+     [MAPSEC_ABANDONED_SHIP]             = REGION_HOENN,
+     [MAPSEC_NEW_MAUVILLE]               = REGION_HOENN,
+     [MAPSEC_METEOR_FALLS]               = REGION_HOENN,
+     [MAPSEC_METEOR_FALLS2]              = REGION_HOENN,
+     [MAPSEC_MT_PYRE]                    = REGION_HOENN,
+     [MAPSEC_SHOAL_CAVE]                 = REGION_HOENN,
+     [MAPSEC_SEAFLOOR_CAVERN]            = REGION_HOENN,
+     [MAPSEC_UNDERWATER_SEAFLOOR_CAVERN] = REGION_HOENN,
+     [MAPSEC_VICTORY_ROAD]               = REGION_HOENN,
+     [MAPSEC_MIRAGE_ISLAND]              = REGION_HOENN,
+     [MAPSEC_CAVE_OF_ORIGIN]             = REGION_HOENN,
+     [MAPSEC_SOUTHERN_ISLAND]            = REGION_HOENN,
+     [MAPSEC_FIERY_PATH]                 = REGION_HOENN,
+     [MAPSEC_FIERY_PATH2]                = REGION_HOENN,
+     [MAPSEC_JAGGED_PASS]                = REGION_HOENN,
+     [MAPSEC_JAGGED_PASS2]               = REGION_HOENN,
+     [MAPSEC_SEALED_CHAMBER]             = REGION_HOENN,
+     [MAPSEC_UNDERWATER_SEALED_CHAMBER]  = REGION_HOENN,
+     [MAPSEC_SCORCHED_SLAB]              = REGION_HOENN,
+     [MAPSEC_ISLAND_CAVE]                = REGION_HOENN,
+     [MAPSEC_DESERT_RUINS]               = REGION_HOENN,
+     [MAPSEC_ANCIENT_TOMB]               = REGION_HOENN,
+     [MAPSEC_INSIDE_OF_TRUCK]            = REGION_HOENN,
+     [MAPSEC_SKY_PILLAR]                 = REGION_HOENN,
+     [MAPSEC_SECRET_BASE]                = REGION_HOENN,
+     [MAPSEC_DYNAMIC]                    = REGION_HOENN,
+	 // ISSHO
+     [MAPSEC_UMBER_TOWN]                 = REGION_ISSHO,
+     [MAPSEC_CINEROUS_TOWN]              = REGION_ISSHO,
+	 [MAPSEC_XANTHOS_CITY]               = REGION_ISSHO,
+	 [MAPSEC_RESEDA_TOWN]                = REGION_ISSHO,
+	 [MAPSEC_AMBER_CITY]                 = REGION_ISSHO,
+	 [MAPSEC_COBALT_CITY]                = REGION_ISSHO,
+	 [MAPSEC_ROUTE_78]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_79]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_80]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_81]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_82]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_83]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_84]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_85]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_86]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_87]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_88]                   = REGION_ISSHO,
+	 [MAPSEC_ROUTE_89]                   = REGION_ISSHO,
+	 [MAPSEC_QUARTZ_CAVE]                = REGION_ISSHO,
+	 [MAPSEC_SHUCKLE_SPRING]             = REGION_ISSHO,
+	 [MAPSEC_RESEDA_WOODS]               = REGION_ISSHO,
+	 [MAPSEC_POWER_STATION]              = REGION_ISSHO,
+	 [MAPSEC_SANDSHREAF]                 = REGION_ISSHO,
+	 [MAPSEC_CINEROUS_TOWER]             = REGION_ISSHO,
+	 [MAPSEC_DREAM_RESORT]               = REGION_ISSHO,
+	 //[MAPSEC_DREAM_RESORT_SPOOKY]        = REGION_ISSHO,
+	 //[MAPSEC_MT_SHIRO_NORTH]             = REGION_ISSHO,
+	 //[MAPSEC_MINDARO_GARDENS]            = REGION_ISSHO,
+	 [MAPSEC_AURORA_TEMPLE]              = REGION_ISSHO,
+	 [MAPSEC_MERIDIA_TEMPLE]             = REGION_ISSHO,
+	 [MAPSEC_VESPER_TEMPLE]              = REGION_ISSHO,
+     [MAPSEC_MEDIANOX_TEMPLE]            = REGION_ISSHO,
+	 //[MAPSEC_MT_SHIRO_CENTRAL]           = REGION_ISSHO,
+	 //[MAPSEC_SCARLET_WOODS]              = REGION_ISSHO,
+	 //[MAPSEC_OLD_SKYSCRAPER]             = REGION_ISSHO,
+	 //[MAPSEC_KENDOMA_CORP]               = REGION_ISSHO,
+	 //[MAPSEC_STEEL_MILL]                 = REGION_ISSHO,
+     [MAPSEC_AQUA_HIDEOUT]               = REGION_HOENN,
+     [MAPSEC_MAGMA_HIDEOUT]              = REGION_HOENN,
+     [MAPSEC_MIRAGE_TOWER]               = REGION_HOENN,
+     [MAPSEC_BIRTH_ISLAND]               = REGION_HOENN,
+     [MAPSEC_FARAWAY_ISLAND]             = REGION_HOENN,
+     [MAPSEC_ARTISAN_CAVE]               = REGION_HOENN,
+     [MAPSEC_MARINE_CAVE]                = REGION_HOENN,
+     [MAPSEC_UNDERWATER_MARINE_CAVE]     = REGION_HOENN,
+     [MAPSEC_TERRA_CAVE]                 = REGION_HOENN,
+     [MAPSEC_UNDERWATER_105]             = REGION_HOENN,
+     [MAPSEC_UNDERWATER_125]             = REGION_HOENN,
+     [MAPSEC_UNDERWATER_129]             = REGION_HOENN,
+     [MAPSEC_DESERT_UNDERPASS]           = REGION_HOENN,
+     [MAPSEC_ALTERING_CAVE]              = REGION_HOENN,
+     [MAPSEC_NAVEL_ROCK]                 = REGION_HOENN,
+     [MAPSEC_PERENNIAL_PILLAR]           = REGION_ISSHO,
+     [MAPSEC_TRAINER_HILL]               = REGION_HOENN
+};
 
 static void SetPlayerCoordsFromWarp(void)
 {
@@ -1790,7 +1953,8 @@ u8 UpdateSpritePaletteWithTime(u8 paletteNum)
 
 static void OverworldBasic(void)
 {
-    ScriptContext_RunScript();
+    DnsApplyFilters();
+	ScriptContext_RunScript();
     RunTasks();
     AnimateSprites();
     CameraUpdate();
@@ -1885,11 +2049,11 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
-    if (IS_FRLG)
+    /*if (IS_FRLG)
         gFieldCallback = FieldCB_WarpExitFadeFromBlack;
     else
         gFieldCallback = ExecuteTruckSequence;
-    gFieldCallback2 = NULL;
+    gFieldCallback2 = NULL;*/
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
     SetMainCallback1(CB1_Overworld);
@@ -3842,6 +4006,20 @@ bool8 ScrFunc_settimeofday(struct ScriptContext *ctx)
 {
     SetTimeOfDay(ScriptReadByte(ctx));
     return FALSE;
+}
+
+void ForceReloadMap(void)
+{
+    SetMainCallback2(CB2_LoadMap);
+	//sInitialPlayerAvatarState.direction = DIR_NORTH;
+    
+	//LoadCurrentMapData();
+	
+	//InitObjectEventsLocal();
+    //SetCameraToTrackPlayer();
+	//InitOverworldGraphicsRegisters();
+	//ResetFieldCamera();
+	//DrawWholeMapView();
 }
 
 // Credits

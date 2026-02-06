@@ -141,6 +141,7 @@ static const struct WeatherCallbacks sWeatherFuncs[] =
     [WEATHER_DROUGHT]            = {Drought_InitVars,       Drought_Main,       Drought_InitAll,       Drought_Finish},
     [WEATHER_DOWNPOUR]           = {Downpour_InitVars,      Thunderstorm_Main,  Downpour_InitAll,      Thunderstorm_Finish},
     [WEATHER_UNDERWATER_BUBBLES] = {Bubbles_InitVars,       Bubbles_Main,       Bubbles_InitAll,       Bubbles_Finish},
+    [WEATHER_FULL_MOON]          = {FullMoon_InitVars,      FullMoon_Main,      FullMoon_InitAll,      FullMoon_Finish},
 };
 
 void (*const gWeatherPalStateFuncs[])(void) =
@@ -365,6 +366,7 @@ static void FadeInScreenWithWeather(void)
     case WEATHER_RAIN_THUNDERSTORM:
     case WEATHER_DOWNPOUR:
     case WEATHER_SHADE:
+    case WEATHER_FULL_MOON:
         if (FadeInScreen_RainShowShade() == FALSE)
         {
             gWeatherPtr->colorMapIndex = 3;
@@ -768,6 +770,7 @@ void FadeSelectedPals(u8 mode, s8 delay, u32 selectedPalettes)
     case WEATHER_DOWNPOUR:
     case WEATHER_FOG_HORIZONTAL:
     case WEATHER_SHADE:
+    case WEATHER_FULL_MOON:
     case WEATHER_DROUGHT:
         useWeatherPal = TRUE;
         break;
@@ -1087,6 +1090,9 @@ static void UNUSED SetFieldWeather(u8 weather)
         break;
     case COORD_EVENT_WEATHER_SHADE:
         SetWeather(WEATHER_SHADE);
+        break;
+    case COORD_EVENT_WEATHER_FULL_MOON:
+        SetWeather(WEATHER_FULL_MOON);
         break;
     }
 }

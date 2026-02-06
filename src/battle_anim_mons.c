@@ -811,6 +811,49 @@ bool32 InitSpritePosToAnimBattler(enum AnimBattler animBattlerId, struct Sprite 
     return TRUE;
 }
 
+/*u8 GetBattlerSide(u8 battlerId)
+{
+    return GET_BATTLER_SIDE2(battlerId);
+}
+
+u8 GetBattlerPosition(u8 battlerId)
+{
+    return gBattlerPositions[battlerId];
+}
+
+u8 GetBattlerAtPosition(u8 position)
+{
+    u8 i;
+
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        if (gBattlerPositions[i] == position)
+            break;
+    }
+    return i;
+}
+
+u8 GetPartnerBattler(u8 battler)
+{
+    return GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(battler)));
+}
+
+u8 GetOppositeBattler(u8 battler)
+{
+    return GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler)));
+}
+
+static inline struct Pokemon *GetSideParty(u8 side)
+{
+    return side == B_SIDE_PLAYER ? gPlayerParty : gEnemyParty;
+}
+
+static inline struct Pokemon *GetBattlerParty(u8 battler)
+{
+    return GetSideParty(GetBattlerSide(battler));
+}*/
+
+
 bool8 IsBattlerSpritePresent(enum BattlerId battler)
 {
     if (IsContest())

@@ -1,0 +1,268 @@
+{
+  "id": "MAP_RESEDA_TOWN_GYM",
+  "name": "ResedaTown_Gym",
+  "layout": "LAYOUT_RESEDA_TOWN_GYM",
+  "music": "MUS_GYM",
+  "region_map_section": "MAPSEC_RESEDA_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_GYM",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ARTHUR",
+      "x": 10,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ResedaTown_Gym_EventScript_Arthur",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "ResedaTown_Gym_EventScript_Tim",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 18,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "ResedaTown_Gym_EventScript_Erik",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "x": 11,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ResedaTown_Gym_EventScript_GymGuide",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_RESEDA_TOWN",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 9,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_RESEDA_TOWN",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebSouth1"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebWest1"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebWest2"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebWest3"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebWest4"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebWest5"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebSouth2"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebSouth3"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebSouth4"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebEast1"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebEast2"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebEast3"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebEast4"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebEast5"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebNorth1"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebNorth2"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebNorth3"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_RESEDA_GYM_STATE",
+      "var_value": "0",
+      "script": "ResedaTown_Gym_EventScript_WebNorth4"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "ResedaTown_Gym_EventScript_LeftGymStatue"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "ResedaTown_Gym_EventScript_RightGymStatue"
+    }
+  ]
+}

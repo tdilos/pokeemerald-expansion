@@ -1,5 +1,89 @@
+.set STARTER_PRICE, 10
+.set STARTER_LEVEL, 10
+
 BattleFrontier_Lounge1_MapScripts::
 	.byte 0
+
+BattleFrontier_Lounge1_EventScript_Woman::
+	msgbox BattleFrontier_Lounge1_Text_Memorize, MSGBOX_NPC
+	end
+
+BattleFrontier_Lounge1_Text_Memorize:
+	.string "This business about POKéMON battes\n"
+	.string "is really something.\p"
+	.string "I don't know how you kids\n"
+	.string "memorize all this stuff.$"
+
+BattleFrontier_Lounge1_EventScript_GameboyKid::
+	lock
+	faceplayer
+	goto_if_set FLAG_FRONTIER_NPC_TRADE_2_COMPLETED, BattleFrontier_Lounge1_EventScript_TradeCompleted
+	setvar VAR_0x8008, INGAME_TRADE_GASTLY
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	msgbox BattleFrontier_Lounge1_Text_WillingToTradeIt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_Lounge1_EventScript_DeclineTrade
+	special ChoosePartyMon
+	waitstate
+	copyvar VAR_0x800A, VAR_0x8004
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_Lounge1_EventScript_DeclineTrade
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	goto_if_ne VAR_RESULT, VAR_0x8009, BattleFrontier_Lounge1_EventScript_NotRequestedMon
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	giveitem ITEM_COVENANT_ORB
+	waitfanfare
+	msgbox BattleFrontier_Lounge1_Text_UrAwesome, MSGBOX_DEFAULT
+	setflag FLAG_FRONTIER_NPC_TRADE_2_COMPLETED
+	release
+	end
+
+BattleFrontier_Lounge1_EventScript_DeclineTrade::
+	release
+	end
+
+BattleFrontier_Lounge1_EventScript_NotRequestedMon::
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox BattleFrontier_Lounge1_Text_WontAcceptAnyLessThanRealMon, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_Lounge1_EventScript_TradeCompleted::
+	msgbox BattleFrontier_Lounge1_Text_TradeWithOthers, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_Lounge1_Text_WillingToTradeIt:
+	.string "Hi! Do you have a {STR_VAR_1}!\p"
+	.string "Would you trade it for my {STR_VAR_2}?$"
+
+BattleFrontier_Lounge1_Text_UrAwesome:
+	.string "You're awesome! Thanks!$"
+
+BattleFrontier_Lounge1_Text_WontAcceptAnyLessThanRealMon:
+	.string "No, no, no! I won't accept any\n"
+	.string "less than a real {STR_VAR_1}!$"
+
+BattleFrontier_Lounge1_Text_TradeWithOthers:
+	.string "I trade with my friends in other\n"
+	.string "cities all the time.$"
+
+
+
+
+
+
+
+
+
+
 
 @ NPC that rates pokemon based on their IVs
 BattleFrontier_Lounge1_EventScript_Breeder::
@@ -15,7 +99,7 @@ BattleFrontier_Lounge1_EventScript_ChooseMonToShowBreeder::
 	chooseboxmon
 	waitstate
 	goto_if_ne VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_Lounge1_EventScript_ShowMonToBreeder
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_Lounge1_EventScript_CancelMonSelect
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_Lounge1_EventScript_CancelMonSelect2
 	end
 
 BattleFrontier_Lounge1_EventScript_BreederIntro::
@@ -137,7 +221,7 @@ BattleFrontier_Lounge1_EventScript_HighestIVMax::
 	goto BattleFrontier_Lounge1_EventScript_EndBreederComments
 	end
 
-BattleFrontier_Lounge1_EventScript_CancelMonSelect::
+BattleFrontier_Lounge1_EventScript_CancelMonSelect2::
 	msgbox BattleFrontier_Lounge1_Text_NoTimeForMyAdvice, MSGBOX_DEFAULT
 	release
 	end
@@ -255,4 +339,236 @@ BattleFrontier_Lounge1_Text_DidntDoAnythingSpecialRaisingIt:
 	.string "He said my POKéMON is outstanding!\n"
 	.string "But I didn't do anything special\l"
 	.string "raising it…$"
+
+
+
+
+
+
+
+
+
+
+
+BattleFrontier_Lounge1_EventScript_GrassStarterSeller::
+	lock
+	faceplayer
+	msgbox BattleFrontier_Lounge1_Text_ExchangeCoinsForPrizes, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, BattleFrontier_Lounge1_EventScript_ChooseMonPrizeMessage
+	release
+	end
+
+BattleFrontier_Lounge1_Text_ExchangeCoinsForPrizes:
+	.string "Looking for new POKéMON to raise?\n"
+	.string "I've got some really rare ones here.\p"
+	.string "I'll let you adopt one in exchange\n"
+	.string "for 10 Battle Points.\p"
+	.string "Have we got a deal?$"
+
+BattleFrontier_Lounge1_EventScript_ChooseMonPrizeMessage::
+	message BattleFrontier_Lounge1_Text_WhichPrize
+	waitmessage
+	setvar VAR_TEMP_1, 0
+	special ShowBattlePointsWindow
+	goto BattleFrontier_Lounge1_EventScript_ChooseMonPrize
+
+BattleFrontier_Lounge1_Text_WhichPrize:
+	.string "Which POKéMON would you like?$"
+
+BattleFrontier_Lounge1_EventScript_ReturnToChooseMonPrize::
+	message BattleFrontier_Lounge1_Text_WhichPrize
+	waitmessage
+	goto BattleFrontier_Lounge1_EventScript_ChooseMonPrize
+
+BattleFrontier_Lounge1_EventScript_ChooseMonPrize::
+	scrollingmultichoice 16, 22, 0, 6, TRUE
+	switch VAR_RESULT
+	case 0, BattleFrontier_Lounge1_EventScript_Bulbasaur
+	case 1, BattleFrontier_Lounge1_EventScript_Chikorita
+	case 2, BattleFrontier_Lounge1_EventScript_Treecko
+	case 3, BattleFrontier_Lounge1_EventScript_Turtwig
+	case 4, BattleFrontier_Lounge1_EventScript_Snivy
+	case 5, BattleFrontier_Lounge1_EventScript_Chespin
+	case 6, BattleFrontier_Lounge1_EventScript_Rowlet
+	case 7, BattleFrontier_Lounge1_EventScript_Grookey
+	case 8, BattleFrontier_Lounge1_EventScript_CancelMonSelect
+	goto BattleFrontier_Lounge1_EventScript_CancelMonSelect
+	end
+
+BattleFrontier_Lounge1_EventScript_CancelMonSelect::
+	special CloseBattlePointsWindow
+	release
+	end
+
+BattleFrontier_Lounge1_EventScript_Bulbasaur::
+	setvar VAR_TEMP_1, SPECIES_BULBASAUR
+	goto BattleFrontier_Lounge1_EventScript_ConfirmPrizeMon
+	end
+
+BattleFrontier_Lounge1_EventScript_Chikorita::
+	setvar VAR_TEMP_1, SPECIES_CHIKORITA
+	goto BattleFrontier_Lounge1_EventScript_ConfirmPrizeMon
+	end
+
+BattleFrontier_Lounge1_EventScript_Treecko::
+	setvar VAR_TEMP_1, SPECIES_TREECKO
+	goto BattleFrontier_Lounge1_EventScript_ConfirmPrizeMon
+	end
+
+BattleFrontier_Lounge1_EventScript_Turtwig::
+	setvar VAR_TEMP_1, SPECIES_TURTWIG
+	goto BattleFrontier_Lounge1_EventScript_ConfirmPrizeMon
+	end
+
+BattleFrontier_Lounge1_EventScript_Snivy::
+	setvar VAR_TEMP_1, SPECIES_SNIVY
+	goto BattleFrontier_Lounge1_EventScript_ConfirmPrizeMon
+	end
+
+BattleFrontier_Lounge1_EventScript_Chespin::
+	setvar VAR_TEMP_1, SPECIES_CHESPIN
+	goto BattleFrontier_Lounge1_EventScript_ConfirmPrizeMon
+	end
+
+BattleFrontier_Lounge1_EventScript_Rowlet::
+	setvar VAR_TEMP_1, SPECIES_ROWLET
+	goto BattleFrontier_Lounge1_EventScript_ConfirmPrizeMon
+	end
+
+BattleFrontier_Lounge1_EventScript_Grookey::
+	setvar VAR_TEMP_1, SPECIES_GROOKEY
+	goto BattleFrontier_Lounge1_EventScript_ConfirmPrizeMon
+	end
+
+BattleFrontier_Lounge1_EventScript_ConfirmPrizeMon::
+	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+	msgbox BattleFrontier_Lounge1_Text_YouWantPrize, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_Lounge1_EventScript_CancelMonSelect
+	specialvar VAR_TEMP_2, GetFrontierBattlePoints
+	goto_if_lt VAR_TEMP_2, STARTER_PRICE, BattleFrontier_Lounge1_EventScript_NotEnoughCoinsForMon
+	switch VAR_TEMP_1
+	case SPECIES_BULBASAUR,     BattleFrontier_Lounge1_EventScript_GiveBulbasaur
+	case SPECIES_CHIKORITA,     BattleFrontier_Lounge1_EventScript_GiveChikorita
+	case SPECIES_TREECKO,       BattleFrontier_Lounge1_EventScript_GiveTreecko
+	case SPECIES_TURTWIG,       BattleFrontier_Lounge1_EventScript_GiveTurtwig
+	case SPECIES_SNIVY,         BattleFrontier_Lounge1_EventScript_GiveSnivy
+	case SPECIES_CHESPIN,       BattleFrontier_Lounge1_EventScript_GiveChespin
+	case SPECIES_ROWLET,        BattleFrontier_Lounge1_EventScript_GiveRowlet
+	case SPECIES_GROOKEY,       BattleFrontier_Lounge1_EventScript_GiveGrookey
+	end
+
+BattleFrontier_Lounge1_Text_YouWantPrize::
+	.string "So, you want the {STR_VAR_1}?$"
+
+BattleFrontier_Lounge1_EventScript_GiveBulbasaur::
+	givemon VAR_TEMP_1, STARTER_LEVEL
+	goto BattleFrontier_Lounge1_EventScript_CheckReceivedMon
+	end
+
+BattleFrontier_Lounge1_EventScript_GiveChikorita::
+	givemon VAR_TEMP_1, STARTER_LEVEL
+	goto BattleFrontier_Lounge1_EventScript_CheckReceivedMon
+	end
+
+BattleFrontier_Lounge1_EventScript_GiveTreecko::
+	givemon VAR_TEMP_1, STARTER_LEVEL
+	goto BattleFrontier_Lounge1_EventScript_CheckReceivedMon
+	end
+
+BattleFrontier_Lounge1_EventScript_GiveTurtwig::
+	givemon VAR_TEMP_1, STARTER_LEVEL
+	goto BattleFrontier_Lounge1_EventScript_CheckReceivedMon
+	end
+
+BattleFrontier_Lounge1_EventScript_GiveSnivy::
+	givemon VAR_TEMP_1, STARTER_LEVEL
+	goto BattleFrontier_Lounge1_EventScript_CheckReceivedMon
+	end
+
+BattleFrontier_Lounge1_EventScript_GiveChespin::
+	givemon VAR_TEMP_1, STARTER_LEVEL
+	goto BattleFrontier_Lounge1_EventScript_CheckReceivedMon
+	end
+
+BattleFrontier_Lounge1_EventScript_GiveRowlet:
+	givemon VAR_TEMP_1, STARTER_LEVEL
+	goto BattleFrontier_Lounge1_EventScript_CheckReceivedMon
+	end
+
+BattleFrontier_Lounge1_EventScript_GiveGrookey::
+	givemon VAR_TEMP_1, STARTER_LEVEL
+	goto BattleFrontier_Lounge1_EventScript_CheckReceivedMon
+	end
+
+BattleFrontier_Lounge1_EventScript_CheckReceivedMon::
+	goto_if_eq VAR_RESULT, 0, BattleFrontier_Lounge1_EventScript_ReceivedMonParty
+	goto_if_eq VAR_RESULT, 1, BattleFrontier_Lounge1_EventScript_ReceivedMonPC
+	goto_if_eq VAR_RESULT, 2, BattleFrontier_Lounge1_EventScript_PartyFull
+	end
+
+BattleFrontier_Lounge1_EventScript_PartyFull::
+	msgbox BattleFrontier_Lounge1Text_NoMoreRoomForPokemon
+	special CloseBattlePointsWindow
+	release
+	end
+
+BattleFrontier_Lounge1Text_NoMoreRoomForPokemon::
+	.string "There's no more room for POKéMON!\p"
+	.string "The POKéMON BOXES are full and\n"
+	.string "can't accept any more!$"
+
+BattleFrontier_Lounge1_EventScript_NicknamePartyMon::
+	getpartysize
+	subvar VAR_RESULT, 1
+	copyvar VAR_0x8004, VAR_RESULT
+	call Common_EventScript_NameReceivedPartyMon
+	goto BattleFrontier_Lounge1_EventScript_CancelMonSelect
+	end
+
+BattleFrontier_Lounge1_EventScript_NotEnoughCoinsForMon::
+	msgbox BattleFrontier_Lounge1_Text_NotEnoughCoins
+	goto BattleFrontier_Lounge1_EventScript_CancelMonSelect
+	end
+
+BattleFrontier_Lounge1_Text_NotEnoughCoins:
+	.string "You don't have enough Battle Points.$"
+
+BattleFrontier_Lounge1_EventScript_ReceivedMonParty::
+	setvar VAR_0x8004, STARTER_PRICE
+	special TakeFrontierBattlePoints
+	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+	playfanfare MUS_LEVEL_UP
+	message Text_PlayerObtainedTheMon
+	waitmessage
+	waitfanfare
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, BattleFrontier_Lounge1_EventScript_NicknamePartyMon
+	goto BattleFrontier_Lounge1_EventScript_CancelMonSelect
+	end
+
+BattleFrontier_Lounge1_EventScript_ReceivedMonPC::
+	setvar VAR_0x8004, STARTER_PRICE
+	special TakeFrontierBattlePoints
+	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+	playfanfare MUS_LEVEL_UP
+	message Text_PlayerObtainedTheMon
+	waitmessage
+	waitfanfare
+	special UpdateBattlePointsWindow
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_Lounge1_EventScript_TransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto BattleFrontier_Lounge1_EventScript_TransferredToPC
+	end
+
+BattleFrontier_Lounge1_EventScript_TransferredToPC::
+	call Common_EventScript_TransferredToPC
+	goto BattleFrontier_Lounge1_EventScript_CancelMonSelect
+	end
+
+
+
+
+
+
 

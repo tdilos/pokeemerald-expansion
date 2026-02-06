@@ -6,6 +6,52 @@ static const struct MenuAction MultichoiceList_BrineyOnDewford[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_WeekdaySelect[] =
+{
+    {gText_Sunday},
+    {gText_Monday},
+    {gText_Tuesday},
+    {gText_Wednesday},
+    {gText_Thursday},
+    {gText_Friday},
+    {gText_Saturday},
+};
+
+static const struct MenuAction MultichoiceList_MtShiroFossil[] =
+{
+    {gText_Armor},
+    {gText_Jaw},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_MilkSeller[] =
+{
+    {gText_OneBottle},
+    {gText_TwelveBottles},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_XanthosFerry[] =
+{
+    {gText_Cobalt},
+    {gText_Turquoise},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_CobaltFerry[] =
+{
+    {gText_Turquoise},
+    {gText_Xanthos},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_TurquoiseFerry[] =
+{
+    {gText_Cobalt},
+    {gText_Xanthos},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_EnterInfo[] =
 {
     {COMPOUND_STRING("ENTER")},
@@ -321,6 +367,36 @@ static const struct MenuAction MultichoiceList_Floors[] =
     {gText_3F},
     {gText_2F},
     {gText_1F},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_KendomaLRElevator[] =
+{
+    {gText_8F},
+    {gText_6F},
+    {gText_5F},
+    {gText_4F},
+    {gText_3F},
+    {gText_2F},
+    {gText_1F},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_KendomaMElevator[] =
+{
+    {gText_10F},
+    {gText_9F},
+    {gText_8F},
+    {gText_7F},
+    {gText_6F},
+    {gText_5F},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_KendomaSElevator[] =
+{
+    {gText_10F},
+    {gText_B1F},
     {gText_Exit},
 };
 
@@ -1116,11 +1192,13 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BIKE]                       = MULTICHOICE(MultichoiceList_Bike),
     [MULTI_STATUS_INFO]                = MULTICHOICE(MultichoiceList_StatusInfo),
     [MULTI_BRINEY_OFF_DEWFORD]         = MULTICHOICE(MultichoiceList_BrineyOffDewford),
-    [MULTI_UNUSED_15]                  = MULTICHOICE(MultichoiceList_Exit),
+    //[MULTI_UNUSED_15]                  = MULTICHOICE(MultichoiceList_Exit),
+	[MULTI_MT_SHIRO_FOSSIL]            = MULTICHOICE(MultichoiceList_MtShiroFossil),
     [MULTI_VIEWED_PAINTINGS]           = MULTICHOICE(MultichoiceList_ViewedPaintings),
     [MULTI_YESNOINFO]                  = MULTICHOICE(MultichoiceList_YesNoInfo),
     [MULTI_BATTLE_MODE]                = MULTICHOICE(MultichoiceList_BattleMode),
-    [MULTI_UNUSED_19]                  = MULTICHOICE(MultichoiceList_Exit),
+    //[MULTI_UNUSED_19]                  = MULTICHOICE(MultichoiceList_Exit),
+	[MULTI_MILK_SELLER]                = MULTICHOICE(MultichoiceList_MilkSeller),
     [MULTI_YESNOINFO_2]                = MULTICHOICE(MultichoiceList_YesNoInfo2),
     [MULTI_UNUSED_21]                  = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_UNUSED_22]                  = MULTICHOICE(MultichoiceList_Exit),
@@ -1141,8 +1219,10 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_MECHADOLL5_Q1]              = MULTICHOICE(MultichoiceList_Mechadoll5_Q1),
     [MULTI_MECHADOLL5_Q2]              = MULTICHOICE(MultichoiceList_Mechadoll5_Q2),
     [MULTI_MECHADOLL5_Q3]              = MULTICHOICE(MultichoiceList_Mechadoll5_Q3),
-    [MULTI_UNUSED_40]                  = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_UNUSED_41]                  = MULTICHOICE(MultichoiceList_Exit),
+    //[MULTI_UNUSED_40]                  = MULTICHOICE(MultichoiceList_Exit),
+    //[MULTI_UNUSED_41]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_KENDOMA_LR_ELEVATOR]  = MULTICHOICE(MultichoiceList_KendomaLRElevator),
+    [MULTI_KENDOMA_M_ELEVATOR]   = MULTICHOICE(MultichoiceList_KendomaMElevator),
     [MULTI_VENDING_MACHINE]            = MULTICHOICE(MultichoiceList_VendingMachine),
     [MULTI_MACH_BIKE_INFO]             = MULTICHOICE(MultichoiceList_MachBikeInfo),
     [MULTI_ACRO_BIKE_INFO]             = MULTICHOICE(MultichoiceList_AcroBikeInfo),
@@ -1152,7 +1232,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_GAME_CORNER_DOLLS]          = MULTICHOICE(MultichoiceList_GameCornerDolls),
     [MULTI_GAME_CORNER_COINS]          = MULTICHOICE(MultichoiceList_GameCornerCoins),
     [MULTI_HOWS_FISHING]               = MULTICHOICE(MultichoiceList_HowsFishing),
-    [MULTI_UNUSED_51]                  = MULTICHOICE(MultichoiceList_Exit),
+    //[MULTI_UNUSED_51]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_KENDOMA_S_ELEVATOR]   = MULTICHOICE(MultichoiceList_KendomaSElevator),
     [MULTI_SSTIDAL_SLATEPORT_WITH_BF]  = MULTICHOICE(MultichoiceList_SSTidalSlateportWithBF),
     [MULTI_SSTIDAL_BATTLE_FRONTIER]    = MULTICHOICE(MultichoiceList_SSTidalBattleFrontier),
     [MULTI_RIGHTLEFT]                  = MULTICHOICE(MultichoiceList_RightLeft),
@@ -1190,10 +1271,14 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FORCED_START_MENU]          = MULTICHOICE(MultichoiceList_ForcedStartMenu),
     [MULTI_FRONTIER_GAMBLER_BET]       = MULTICHOICE(MultichoiceList_FrontierGamblerBet),
     [MULTI_TENT]                       = MULTICHOICE(MultichoiceList_Tent),
-    [MULTI_UNUSED_SSTIDAL_1]           = MULTICHOICE(MultichoiceList_UnusedSSTidal1),
-    [MULTI_UNUSED_SSTIDAL_2]           = MULTICHOICE(MultichoiceList_UnusedSSTidal2),
-    [MULTI_UNUSED_SSTIDAL_3]           = MULTICHOICE(MultichoiceList_UnusedSSTidal3),
-    [MULTI_UNUSED_SSTIDAL_4]           = MULTICHOICE(MultichoiceList_UnusedSSTidal4),
+    //[MULTI_UNUSED_SSTIDAL_1]           = MULTICHOICE(MultichoiceList_UnusedSSTidal1),
+    //[MULTI_UNUSED_SSTIDAL_2]           = MULTICHOICE(MultichoiceList_UnusedSSTidal2),
+    //[MULTI_UNUSED_SSTIDAL_3]           = MULTICHOICE(MultichoiceList_UnusedSSTidal3),
+    //[MULTI_UNUSED_SSTIDAL_4]           = MULTICHOICE(MultichoiceList_UnusedSSTidal4),
+	[MULTI_WEEKDAY_SELECT]             = MULTICHOICE(MultichoiceList_WeekdaySelect),
+	[MULTI_XANTHOS_FERRY]              = MULTICHOICE(MultichoiceList_XanthosFerry),
+	[MULTI_COBALT_FERRY]               = MULTICHOICE(MultichoiceList_CobaltFerry),
+	[MULTI_TURQUOISE_FERRY]            = MULTICHOICE(MultichoiceList_TurquoiseFerry),
     [MULTI_FOSSIL]                     = MULTICHOICE(MultichoiceList_Fossil),
     [MULTI_YESNO]                      = MULTICHOICE(MultichoiceList_YesNo),
     [MULTI_FRONTIER_RULES]             = MULTICHOICE(MultichoiceList_FrontierRules),
@@ -1325,13 +1410,14 @@ static const u8 *const sPCNameStrings[] =
 
 static const u8 *const sLilycoveSSTidalDestinations[SSTIDAL_SELECTION_COUNT] =
 {
-    [SSTIDAL_SELECTION_SLATEPORT]       = gText_SlateportCity,
-    [SSTIDAL_SELECTION_BATTLE_FRONTIER] = gText_BattleFrontier,
-    [SSTIDAL_SELECTION_SOUTHERN_ISLAND] = gText_SouthernIsland,
-    [SSTIDAL_SELECTION_NAVEL_ROCK]      = gText_NavelRock,
-    [SSTIDAL_SELECTION_BIRTH_ISLAND]    = gText_BirthIsland,
-    [SSTIDAL_SELECTION_FARAWAY_ISLAND]  = gText_FarawayIsland,
-    [SSTIDAL_SELECTION_EXIT]            = gText_Exit,
+    [SSTIDAL_SELECTION_SLATEPORT]        = gText_XanthosCity, //gText_SlateportCity,
+    [SSTIDAL_SELECTION_BATTLE_FRONTIER]  = gText_BattleFrontier,
+    [SSTIDAL_SELECTION_SOUTHERN_ISLAND]  = gText_SouthernIsland,
+    [SSTIDAL_SELECTION_NAVEL_ROCK]       = gText_NavelRock,
+    //[SSTIDAL_SELECTION_BIRTH_ISLAND]     = gText_BirthIsland,
+    [SSTIDAL_SELECTION_PERENNIAL_PILLAR] = gText_PerennialPillar,
+    [SSTIDAL_SELECTION_FARAWAY_ISLAND]   = gText_FarawayIsland,
+    [SSTIDAL_SELECTION_EXIT]             = gText_Exit,
 };
 
 static const u8 *const sCableClubOptions_WithRecordMix[] =

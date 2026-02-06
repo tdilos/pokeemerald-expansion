@@ -62,6 +62,7 @@ enum ProtectMethod
     PROTECT_WIDE_GUARD,
     PROTECT_QUICK_GUARD,
     PROTECT_CRAFTY_SHIELD,
+    PROTECT_REBOUND_ARMOR,
     PROTECT_MAT_BLOCK,
 };
 
@@ -565,7 +566,52 @@ static inline bool32 IsValidApprenticeMove(enum Move moveId)
     return gMovesInfo[SanitizeMoveId(moveId)].validApprenticeMove;
 }
 
-static inline u32 GetMoveTwoTurnAttackStringId(enum Move moveId)
+static inline u32 GetMoveTwoTurnAttackStatus(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].argument.twoTurnAttack.status;
+}
+
+static inline u32 GetMoveTwoTurnAttackWeather(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].argument.twoTurnAttack.status;
+}
+
+static inline enum ProtectMethod GetMoveProtectMethod(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].argument.protectMethod;
+}
+
+static inline u32 GetMoveTerrainFlag(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].argument.moveProperty;
+}
+
+static inline u32 GetMoveEffectArg_Status(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].argument.status;
+}
+
+static inline u32 GetMoveEffectArg_MoveProperty(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].argument.moveProperty;
+}
+
+static inline u32 GetMoveEffectArg_HoldEffect(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].argument.holdEffect;
+}
+
+static inline u32 GetMoveArgType(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].argument.type;
+}
+
+static inline u32 GetMoveFixedHPDamage(u32 moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].argument.fixedDamage;
+}
+
+static inline u32 GetMoveAbsorbPercentage(u32 moveId)
 {
     moveId = SanitizeMoveId(moveId);
     enum BattleMoveEffects effect = gMovesInfo[moveId].effect;

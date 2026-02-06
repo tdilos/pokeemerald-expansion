@@ -47,6 +47,7 @@
 #include "mystery_gift.h"
 #include "union_room_chat.h"
 #include "constants/map_groups.h"
+#include "quests.h"
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
@@ -101,9 +102,11 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
-    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
+    gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET; //OPTIONS_BATTLE_STYLE_SHIFT;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
+    gSaveBlock2Ptr->optionsDifficulty = 0; //Defaults to Normal
+    gSaveBlock2Ptr->optionsBattleFlow = 0; //Defaults to 1x
 }
 
 static void ClearPokedexFlags(void)
@@ -137,7 +140,8 @@ static void WarpToTruck(void)
     if (IS_FRLG)
         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
     else
-        SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+        //SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+		SetWarpDestination(MAP_GROUP(UMBER_TOWN_MALE_MCHOUSE_2F), MAP_NUM(UMBER_TOWN_MALE_MCHOUSE_2F), WARP_ID_NONE, -1, -1);
     WarpIntoMap();
 }
 
@@ -228,10 +232,16 @@ void NewGameInitData(void)
     ResetTrainerHillResults();
     ResetTrainerTowerResults();
     ResetContestLinkResults();
+
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
+
+    QuestMenu_ResetMenuSaveData();	
+	gSaveBlock1Ptr->registeredItemSelect = 0;
+    gSaveBlock1Ptr->registeredItemL = 0;
+    gSaveBlock1Ptr->registeredItemR = 0;
 }
 
 static void ResetMiniGamesRecords(void)

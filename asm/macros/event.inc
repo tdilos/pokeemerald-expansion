@@ -803,6 +803,22 @@
 	trainerbattle TRAINER_BATTLE_TWO_TRAINERS_NO_INTRO, OBJ_ID_NONE, \trainer_a, NULL, \lose_text_a, NULL, OBJ_ID_NONE, \trainer_b, NULL, \lose_text_b, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 	.endm
 
+	@@ Used for trainer battles affected by the karma meter
+	@.macrco trainerkarmabattle_no_intro trainer:req, lose_text:req
+	@trainerbattle TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT, \trainer, 0, \lose_text
+	@.endm
+
+	@ Starts a single trainer battle. Takes a trainer, intro text, loss text, and an event script which continues after the battle,regardless of the result.
+	@ When used with an event script, you can also pass in an optional flag to disable music
+    .macro trainerbattle_no_whiteout_continue_script trainer:req, intro_text:req, lose_text:req, event_script:req
+    trainerbattle TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT, \trainer, 0, \intro_text, \lose_text, \event_script
+	.endm
+
+	@ Starts a trainer battle, skipping intro text. Takes a trainer and loss text. Does not warp the player to last heal location if they lose. 
+	.macro trainerbattle_no_intro_no_whiteout trainer:req, lose_text:req
+	trainerbattle TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, \trainer, 0, \lose_text
+	.endm
+
 	@ Starts a trainer battle with victory text if the player loses. If flags is nonzero, the player will be healed after battle (and its assumed to be the tutorial battle)
 	.macro trainerbattle_earlyrival trainer:req, flags:req, lose_text:req, victory_text:req
 	trainerbattle TRAINER_BATTLE_EARLY_RIVAL, OBJ_ID_NONE, \trainer, NULL, \lose_text, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, \victory_text, NULL, FALSE, TRUE, FALSE, FALSE, \flags
@@ -1927,6 +1943,171 @@
 	.macro dynmultistack left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
+	
+	
+
+@ Quest stuff
+
+    .macro questmenu case:req, questId:req
+    .byte 0xe3
+    .byte \case
+    .byte \questId
+    .endm
+
+    .macro subquestmenu case:req, parentId:req, childId:req
+    .byte 0xe4
+    .byte \case
+    .2byte \parentId
+    .2byte \childId
+    .endm
+
+    @ Check the quest state and return a number associated with quest state
+    .macro returnqueststate questId:req
+    .byte 0xe5
+    .byte \questId
+    .endm
+    
+    .macro openquestmenu
+    questmenu 0 0
+    .endm
+
+    @ Starts the specified quest.
+	.macro startquest quest:req
+	closemessage
+	delay 30
+	questmenu QUEST_MENU_SET_ACTIVE, \quest
+	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
+    bufferstring 1 gText_QuestActive
+	playfanfare MUS_LEVEL_UP 
+	msgbox gText_QuestAnnounce, MSGBOX_SIGN
+	waitfanfare
+	.endm
+
+    @ Completes the specified quest.
+	.macro completequest quest:req
+	closemessage
+	delay 30
+	questmenu QUEST_MENU_COMPLETE_QUEST, \quest
+	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
+    bufferstring 1 gText_QuestComplete
+	playfanfare MUS_LEVEL_UP 
+	msgbox gText_QuestAnnounce, MSGBOX_SIGN
+	waitfanfare
+	.endm
+
+.macro goto_if_quest_inactive quest:req, dest:req
+	questmenu QUEST_MENU_CHECK_INACTIVE \quest
+	goto_if_eq VAR_RESULT, TRUE, \dest
+	.endm
+
+	.macro goto_if_quest_active quest:req, dest:req
+	questmenu QUEST_MENU_CHECK_ACTIVE \quest
+	goto_if_eq VAR_RESULT, TRUE, \dest
+	.endm
+
+	.macro goto_if_quest_reward quest:req, dest:req
+	questmenu QUEST_MENU_CHECK_REWARD \quest
+	goto_if_eq VAR_RESULT, TRUE, \dest
+	.endm
+
+	.macro goto_if_quest_complete quest:req, dest:req
+	questmenu QUEST_MENU_CHECK_COMPLETE \quest
+	goto_if_eq VAR_RESULT, TRUE, \dest
+	.endm
+
+    .macro goto_if_quest_not_inactive quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_INACTIVE \quest
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro goto_if_quest_not_active quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_ACTIVE \quest
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro goto_if_quest_not_reward quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_REWARD \quest
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro goto_if_quest_not_complete quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_COMPLETE \quest
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_quest_inactive quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_INACTIVE \quest
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_quest_active quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_ACTIVE \quest
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_quest_reward quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_REWARD \quest
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_quest_complete quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_COMPLETE \quest
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_quest_not_inactive quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_INACTIVE \quest
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_quest_not_active quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_ACTIVE \quest
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_quest_not_reward quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_REWARD \quest
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_quest_not_complete quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_COMPLETE \quest
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+	.macro completesubquest quest:req, subquest:req
+	closemessage
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, \quest, \subquest
+	.endm
+
+    .macro goto_if_subquest_complete parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
+    goto_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_subquest_complete parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro goto_if_subquest_not_complete parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_subquest_not_complete parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+	@ Replaces the ability of the Pokémon in the player's party at 'partyIndex' with the specified ability number.
+	@ If a value greater than PARTY_SIZE is given for partyIndex it will use the last Pokémon in the party instead.
+	@ Note that this means in vanilla a value equal to PARTY_SIZE for partyIndex will go out of bounds.
+	.macro setmonability partyIndex:req, abilityNum:req
+	.byte 0xe6
+	.byte \partyIndex
+	.byte \abilityNum
+	.endm
 
 @ Supplementary
 
@@ -2128,6 +2309,17 @@
 	setfieldeffectargument 1, \y
 	setfieldeffectargument 2, \priority
 	dofieldeffect FLDEFF_SPARKLE
+	.endm
+
+	@ From Dizzy Egg's script_multichoice branch
+	.macro scrollingmultichoice id:req, x:req, y:req, show:req, b:req
+	setvar VAR_0x8004, \id,
+	setvar VAR_0x8005, \x,
+	setvar VAR_0x8006, \y,
+	setvar VAR_0x8007, \show,
+	setvar VAR_0x8008, \b,
+	callnative ScriptMenu_ScrollingMultichoice
+	waitstate
 	.endm
 
 	@ Prints a braille message, waits for an A or B press, then closes the message.

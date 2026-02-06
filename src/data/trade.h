@@ -1211,6 +1211,198 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_PONYTA
+    },
+	
+	
+// New in-game trade NPCs
+	[INGAME_TRADE_STUNFISK] =
+    {
+        .nickname = _("Flapjack"),
+        .species = SPECIES_STUNFISK,
+        .ivs = {25, 10, 20, 5, 14, 15},
+        .abilityNum = 2,
+        .otId = 70007,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x4E,
+        .heldItem = ITEM_SAFETY_GOGGLES,
+        //.mailNum = -1,
+        .otName = _("STAN"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_WHISCASH
+    },
+	[INGAME_TRADE_TIMBURR] =
+    {
+        .nickname = _("Armstrong"),
+        .species = SPECIES_TIMBURR,
+        .ivs = {15, 25, 20, 14, 5, 10},
+        .abilityNum = 2,
+        .otId = 30495,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x69,
+        .heldItem = ITEM_FOCUS_BAND,
+        //.mailNum = -1,
+        .otName = _("ROLF"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MACHOP
+    },
+	[INGAME_TRADE_ROGGENROLA] =
+    {
+        .nickname = _("Rushmore"),
+        .species = SPECIES_ROGGENROLA,
+        .ivs = {14, 15, 25, 5, 10, 20},
+        .abilityNum = 2,
+        .otId = 75309,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x70,
+        .heldItem = ITEM_EJECT_BUTTON,
+        //.mailNum = -1,
+        .otName = _("MICK"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_GEODUDE
+    },
+	[INGAME_TRADE_LITWICK] =
+    {
+        .nickname = _("Charon"),
+        .species = SPECIES_LITWICK,
+        .ivs = {14, 5, 10, 20, 25, 15},
+        .abilityNum = 2,
+        .otId = 13666,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_METRONOME,
+        //.mailNum = -1,
+        .otName = _("FAUSTO"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_DUSKULL
+    },
+	[INGAME_TRADE_KECLEON] =
+    {
+        .nickname = _("Rango"),
+        .species = SPECIES_KECLEON,
+        .ivs = {20, 25, 14, 10, 5, 15}, // Should produce Electric type Kaleido Tongue
+        .abilityNum = 2,
+        .otId = 25252,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x25,
+        .heldItem = ITEM_COVERT_CLOAK,
+        //.mailNum = -1,
+        .otName = _("NICK"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_AIPOM
+    },
+	/*else if (gBattleMoves[move].effect == EFFECT_HIDDEN_POWER)
+    {
+        u8 typeBits  = ((gBattleMons[battlerAtk].hpIV & 1) << 0)
+                     | ((gBattleMons[battlerAtk].attackIV & 1) << 1)
+                     | ((gBattleMons[battlerAtk].defenseIV & 1) << 2)
+                     | ((gBattleMons[battlerAtk].speedIV & 1) << 3)
+                     | ((gBattleMons[battlerAtk].spAttackIV & 1) << 4)
+                     | ((gBattleMons[battlerAtk].spDefenseIV & 1) << 5);
+
+        // Subtract 4 instead of 1 below because 3 types are excluded (TYPE_NORMAL and TYPE_MYSTERY and TYPE_FAIRY)
+        // The final + 1 skips past Normal, and the following conditional skips TYPE_MYSTERY
+		// Change 4 to 2 to include TYPE_FAIRY and TYPE_ECHO
+        gBattleStruct->dynamicMoveType = ((NUMBER_OF_MON_TYPES - 2) * typeBits) / 63 + 1;*/
+	[INGAME_TRADE_IMPIDIMP] =
+    {
+        .nickname = _("Loki"),
+        .species = SPECIES_IMPIDIMP,
+        .ivs = {15, 25, 10, 14, 20, 5},
+        .abilityNum = 2,
+        .otId = 11665,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x44,
+        .heldItem = ITEM_BRIGHT_POWDER,
+        //.mailNum = -1,
+        .otName = _("SEAN"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_JIGGLYPUFF
+    },
+	[INGAME_TRADE_SIGILYPH] =
+    {
+        .nickname = _("Shiggy"),
+        .species = SPECIES_SIGILYPH,
+        .ivs = {20, 10, 15, 14, 25, 5},
+        .abilityNum = 2,
+        .otId = 54445,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x5F,
+        .heldItem = ITEM_SCOPE_LENS,
+        //.mailNum = -1,
+        .otName = _("MARCUS"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_NOCTOWL
+    },
+	[INGAME_TRADE_TRUBBISH] =
+    {
+        .nickname = _("Oscar"),
+        .species = SPECIES_TRUBBISH,
+        .ivs = {14, 10, 14, 20, 15, 15},
+        .abilityNum = 2,
+        .otId = 67889,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0xEA,
+        .heldItem = ITEM_NONE,
+        //.mailNum = -1,
+        .otName = _("BILL"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_GRIMER
+    },
+	[INGAME_TRADE_GASTLY] =
+    {
+        .nickname = _("Casper"),
+        .species = SPECIES_GASTLY,
+        .ivs = {14, 10, 14, 20, 15, 15},
+        .abilityNum = 2,
+        .otId = 75321,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x2A,
+        .heldItem = ITEM_NONE,
+        //.mailNum = -1,
+        .otName = _("DASTAN"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_SHUPPET
+    },
+	[INGAME_TRADE_SNEASEL] =
+    {
+        .nickname = _("Razor"),
+        .species = SPECIES_SNEASEL,
+        .ivs = {14, 10, 14, 20, 15, 15},
+        .abilityNum = 2,
+        .otId = 04200,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x14,
+        .heldItem = ITEM_NONE,
+        //.mailNum = -1,
+        .otName = _("ARVIND"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_SCRAGGY
+    },
+	[INGAME_TRADE_CLOBBOPUS] =
+    {
+        .nickname = _("Tako"),
+        .species = SPECIES_CLOBBOPUS,
+        .ivs = {14, 10, 14, 20, 15, 15},
+        .abilityNum = 2,
+        .otId = 38405,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x88,
+        .heldItem = ITEM_NONE,
+        //.mailNum = -1,
+        .otName = _("CHASE"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_FRILLISH
     }
 };
 

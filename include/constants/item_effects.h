@@ -14,6 +14,14 @@
 #define ITEM1_X_SPDEF           STAT_SPDEF
 #define ITEM1_X_ACCURACY        STAT_ACC
 
+// new field 2 masks
+/*#define ITEM2_INFECT            0x1
+#define ITEM2_DAZE              0x2
+#define ITEM2_EXHAUST           0x4
+#define ITEM2_FEAR              0x8
+
+#define ITEM2_STATUS_ALL        (ITEM2_INFECT | ITEM2_DAZE | ITEM2_EXHAUST | ITEM2_FEAR)*/
+
 // field 3 masks
 #define ITEM3_CONFUSION         0x1
 #define ITEM3_PARALYSIS         0x2
@@ -23,8 +31,17 @@
 #define ITEM3_SLEEP             0x20
 #define ITEM3_LEVEL_UP          0x40
 #define ITEM3_GUARD_SPEC        0x80 // Works the same way as the move Mist.
+#define ITEM3_INFECT            0x22 // Equiv to ITEM3_SLEEP | ITEM3_PARALYSIS
+#define ITEM3_DAZE              0x24 // Equiv to ITEM3_SLEEP | ITEM3_FREEZE
+#define ITEM3_EXHAUST           0x28 // Equiv to ITEM3_SLEEP | ITEM3_BURN
+#define ITEM3_FEAR              0x30 // Equiv to ITEM3_SLEEP | ITEM3_POISON
+//#define ITEM3_INFECT            0x100 // Not enough bits for these values
+//#define ITEM3_DAZE              0x200
+//#define ITEM3_EXHAUST           0x400
+//#define ITEM3_FEAR              0x800
 
 #define ITEM3_STATUS_ALL        (ITEM3_CONFUSION | ITEM3_PARALYSIS | ITEM3_FREEZE | ITEM3_BURN | ITEM3_POISON | ITEM3_SLEEP)
+// don't want ITEM3_INFECT | ITEM3_DAZE | ITEM3_EXHAUST | ITEM3_FEAR for bitwise operations
 
 // field 4 masks
 #define ITEM4_EV_HP             0x1
@@ -79,6 +96,10 @@ enum ItemEffectType
     ITEM_EFFECT_CURE_BURN,
     ITEM_EFFECT_CURE_FREEZE_FROSTBITE,
     ITEM_EFFECT_CURE_PARALYSIS,
+	ITEM_EFFECT_CURE_INFECT,
+	ITEM_EFFECT_CURE_DAZE,
+	ITEM_EFFECT_CURE_EXHAUST,
+	ITEM_EFFECT_CURE_FEAR,
     ITEM_EFFECT_CURE_CONFUSION,
     ITEM_EFFECT_CURE_INFATUATION,
     ITEM_EFFECT_SACRED_ASH,

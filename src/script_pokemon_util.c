@@ -177,6 +177,19 @@ void ScriptSetMonMoveSlot(u8 monIndex, enum Move move, u8 slot)
     SetMonMoveSlot(&gPlayerParty[monIndex], move, slot);
 }
 
+void ScriptSetMonAbility(u8 monIndex, u8 abilityNum)
+{
+// Allows monIndex to go out of bounds of gPlayerParty. Doesn't occur in vanilla
+#ifdef BUGFIX
+    if (monIndex >= PARTY_SIZE)
+#else
+    if (monIndex > PARTY_SIZE)
+#endif
+        monIndex = gPlayerPartyCount - 1;
+
+    SetMonData(&gPlayerParty[monIndex], MON_DATA_ABILITY_NUM, &abilityNum);
+}
+
 // Note: When control returns to the event script, gSpecialVar_Result will be
 // TRUE if the party selection was successful.
 void ChooseHalfPartyForBattle(void)

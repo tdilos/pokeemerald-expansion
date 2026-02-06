@@ -1,0 +1,53 @@
+{
+  "id": "MAP_PERENNIAL_PILLAR_B1",
+  "name": "PerennialPillar_B1",
+  "layout": "LAYOUT_PERENNIAL_PILLAR_B1",
+  "music": "MUS_DP_MT_CORONET",
+  "region_map_section": "MAPSEC_PERENNIAL_PILLAR",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRATINA",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PerennialPillar_EventScript_Giratina",
+      "flag": "FLAG_HIDE_GIRATINA"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PERENNIAL_PILLAR_1F",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "item": "ITEM_GRISEOUS_ORB",
+      "flag": "FLAG_HIDDEN_ITEM_PERENNIAL_PILLAR_GRISEOUS_ORB"
+    }
+  ]
+}

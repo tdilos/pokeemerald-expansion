@@ -1688,7 +1688,104 @@
 #define SPECIES_TATSUGIRI_STRETCHY_MEGA                 1571
 #define SPECIES_GLIMMORA_MEGA                           1572
 
-#define SPECIES_EGG                                     (SPECIES_GLIMMORA_MEGA + 1)
+
+
+#define TOURMALINE_START                               SPECIES_GLIMMORA_MEGA
+
+#define SPECIES_SELDAME                                (TOURMALINE_START + 1)
+#define SPECIES_PLUX                                   (TOURMALINE_START + 2)
+#define SPECIES_ATROCEON                               (TOURMALINE_START + 3)
+#define SPECIES_VOXEON                                 (TOURMALINE_START + 4)
+#define SPECIES_HOUNDEVIL                              (TOURMALINE_START + 5)
+#define SPECIES_SKARBY                                 (TOURMALINE_START + 6)
+#define SPECIES_MALEVILE                               (TOURMALINE_START + 7)
+#define SPECIES_GEMINEYE                               (TOURMALINE_START + 8)
+#define SPECIES_MEDIYOGI                               (TOURMALINE_START + 9)
+#define SPECIES_ARBINJ                                 (TOURMALINE_START + 10)
+#define SPECIES_ZIPPETTE                               (TOURMALINE_START + 11)
+#define SPECIES_PTROPA                                 (TOURMALINE_START + 12)
+#define SPECIES_DECIBELLE                              (TOURMALINE_START + 13)
+#define SPECIES_YETREE                                 (TOURMALINE_START + 14)
+#define SPECIES_NOAUDIA                                (TOURMALINE_START + 15)
+#define SPECIES_NEPHTOMB                               (TOURMALINE_START + 16)
+#define SPECIES_GOTHITEAU                              (TOURMALINE_START + 17)
+
+#define SPECIES_SHIFUR                                 (TOURMALINE_START + 18)
+#define SPECIES_BURSERKER                              (TOURMALINE_START + 19)
+#define SPECIES_MOIBELLE                               (TOURMALINE_START + 20)
+#define SPECIES_SLAYBELLE                              (TOURMALINE_START + 21)
+#define SPECIES_VOLBEAR                                (TOURMALINE_START + 22)
+#define SPECIES_DYNABEAR                               (TOURMALINE_START + 23)
+#define SPECIES_KOTORA                                 (TOURMALINE_START + 24)
+#define SPECIES_RAITORA                                (TOURMALINE_START + 25)
+
+#define SPECIES_SYCLAR                                 (TOURMALINE_START + 26)
+#define SPECIES_SYCLANT                                (TOURMALINE_START + 27)
+#define SPECIES_FAWNIFER                               (TOURMALINE_START + 28)
+#define SPECIES_ELECTRELK                              (TOURMALINE_START + 29)
+#define SPECIES_CARIBOLT                               (TOURMALINE_START + 30)
+#define SPECIES_MIASMITE                               (TOURMALINE_START + 31)
+#define SPECIES_MIASMAW                                (TOURMALINE_START + 32)
+#define SPECIES_MUMBAO                                 (TOURMALINE_START + 33)
+#define SPECIES_JUMBAO                                 (TOURMALINE_START + 34)
+#define SPECIES_VOLKRITTER                             (TOURMALINE_START + 35)
+#define SPECIES_VOLKRAKEN                              (TOURMALINE_START + 36)
+
+#define SPECIES_OMENDENZ                               (TOURMALINE_START + 37)
+
+// Isshoan Forms
+#define SPECIES_QUILLADIN_ISSHOAN                      (TOURMALINE_START + 38)
+#define SPECIES_CHESNAUGHT_ISSHOAN                     (TOURMALINE_START + 39)
+#define SPECIES_PIGNITE_ISSHOAN                        (TOURMALINE_START + 40)
+#define SPECIES_EMBOAR_ISSHOAN                         (TOURMALINE_START + 41)
+#define SPECIES_BRIONNE_ISSHOAN                        (TOURMALINE_START + 42)
+#define SPECIES_PRIMARINA_ISSHOAN                      (TOURMALINE_START + 43)
+#define SPECIES_WOOBAT_ISSHOAN                         (TOURMALINE_START + 44)
+#define SPECIES_SWOOBAT_ISSHOAN                        (TOURMALINE_START + 45)
+#define SPECIES_WOOLOO_ISSHOAN                         (TOURMALINE_START + 46)
+#define SPECIES_DUBWOOL_ISSHOAN                        (TOURMALINE_START + 47)
+#define SPECIES_SILICOBRA_ISSHOAN                      (TOURMALINE_START + 48)
+#define SPECIES_SANDACONDA_ISSHOAN                     (TOURMALINE_START + 49)
+#define SPECIES_PHANTUMP_ISSHOAN                       (TOURMALINE_START + 50)
+#define SPECIES_TREVENANT_ISSHOAN                      (TOURMALINE_START + 51)
+#define SPECIES_SKRELP_ISSHOAN                         (TOURMALINE_START + 52)
+#define SPECIES_DRAGALGE_ISSHOAN                       (TOURMALINE_START + 53)
+
+#define SPECIES_MUNNA_ISSHOAN                          (TOURMALINE_START + 54)
+#define SPECIES_MUSHARNA_ISSHOAN                       (TOURMALINE_START + 55)
+#define SPECIES_CUFANT_ISSHOAN                         (TOURMALINE_START + 56)
+#define SPECIES_COPPERAJAH_ISSHOAN                     (TOURMALINE_START + 57)
+#define SPECIES_GOLETT_ISSHOAN                         (TOURMALINE_START + 58)
+#define SPECIES_GOLURK_ISSHOAN                         (TOURMALINE_START + 59)
+#define SPECIES_VANILLITE_ISSHOAN                      (TOURMALINE_START + 60)
+#define SPECIES_VANILLISH_ISSHOAN                      (TOURMALINE_START + 61)
+#define SPECIES_VANILLUXE_ISSHOAN                      (TOURMALINE_START + 62)
+#define SPECIES_MORELULL_ISSHOAN                       (TOURMALINE_START + 63)
+#define SPECIES_SHIINOTIC_ISSHOAN                      (TOURMALINE_START + 64)
+
+#define SPECIES_ELGYEM_ISSHOAN                         (TOURMALINE_START + 65)
+#define SPECIES_BEHEEYEM_ISSHOAN                       (TOURMALINE_START + 66)
+#define SPECIES_DEINO_ISSHOAN                          (TOURMALINE_START + 67)
+#define SPECIES_ZWEILOUS_ISSHOAN                       (TOURMALINE_START + 68)
+#define SPECIES_HYDREIGON_ISSHOAN                      (TOURMALINE_START + 69)
+#define SPECIES_DREEPY_ISSHOAN                         (TOURMALINE_START + 70)
+#define SPECIES_DRAKLOAK_ISSHOAN                       (TOURMALINE_START + 71)
+#define SPECIES_DRAGAPULT_ISSHOAN                      (TOURMALINE_START + 72)
+
+// Misc. Forms
+#define SPECIES_UNOWN_A                                (TOURMALINE_START + 73)
+#define SPECIES_CASTFORM_SANDY                         (TOURMALINE_START + 74)
+#define SPECIES_CASTFORM_LOONY                         (TOURMALINE_START + 75)
+#define SPECIES_CASTFORM_SMAZY                         (TOURMALINE_START + 76)
+#define SPECIES_ROTOM_PLAY                             (TOURMALINE_START + 77)
+#define SPECIES_ARCEUS_ECHO                            (TOURMALINE_START + 78)
+#define SPECIES_SILVALLY_ECHO                          (TOURMALINE_START + 79)
+
+// Ultra Beasts
+#define SPECIES_MIMEKTIPLEX                            (TOURMALINE_START + 80)
+
+
+#define SPECIES_EGG                                    (SPECIES_MIMEKTIPLEX + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

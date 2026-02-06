@@ -14,6 +14,9 @@
 static void FieldCallback_Strength(void);
 static void StartStrengthFieldEffect(void);
 
+static void FieldCallback_MagnetRise(void);
+static void StartMagnetRiseFieldEffect(void);
+
 // text
 bool32 SetUpFieldMove_Strength(void)
 {
@@ -43,9 +46,43 @@ bool8 FldEff_UseStrength(void)
     return FALSE;
 }
 
+bool8 SetUpFieldMove_MagnetRise(void)
+{
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_SCRAP_METAL) == TRUE)
+    {
+        gSpecialVar_Result = GetCursorSelectionMonId();
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_MagnetRise;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static void FieldCallback_MagnetRise(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    ScriptContext_SetupScript(EventScript_UseMagnetRise);
+}
+
+bool8 FldEff_UseMagnetRise(void)
+{
+    u8 taskId = CreateFieldMoveTask();
+    gTasks[taskId].data[8] = (u32)StartMagnetRiseFieldEffect >> 16;
+    gTasks[taskId].data[9] = (u32)StartMagnetRiseFieldEffect;
+    GetMonNickname(&gPlayerParty[gFieldEffectArguments[0]], gStringVar1);
+    return FALSE;
+}
+
 // Just passes control back to EventScript_UseStrength
 static void StartStrengthFieldEffect(void)
 {
     FieldEffectActiveListRemove(FLDEFF_USE_STRENGTH);
+    ScriptContext_Enable();
+}
+
+// Just passes control back to EventScript_UseMagnetRise
+static void StartMagnetRiseFieldEffect(void)
+{
+    FieldEffectActiveListRemove(FLDEFF_USE_MAGNET_RISE);
     ScriptContext_Enable();
 }

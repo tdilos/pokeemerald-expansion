@@ -15,6 +15,7 @@ enum MapType
     MAP_TYPE_SECRET_BASE,
 };
 
+<<<<<<< Updated upstream
 enum MapBattleScene
 {
     MAP_BATTLE_SCENE_NORMAL,
@@ -27,6 +28,22 @@ enum MapBattleScene
     MAP_BATTLE_SCENE_DRAKE,
     MAP_BATTLE_SCENE_FRONTIER,
 };
+=======
+#define MAP_BATTLE_SCENE_NORMAL       0
+#define MAP_BATTLE_SCENE_GYM          1
+#define MAP_BATTLE_SCENE_MAGMA        2
+#define MAP_BATTLE_SCENE_AQUA         3
+#define MAP_BATTLE_SCENE_SIDNEY       4
+#define MAP_BATTLE_SCENE_PHOEBE       5
+#define MAP_BATTLE_SCENE_GLACIA       6
+#define MAP_BATTLE_SCENE_DRAKE        7
+#define MAP_BATTLE_SCENE_FRONTIER     8
+#define MAP_BATTLE_SCENE_LISIA        9
+#define MAP_BATTLE_SCENE_IAN          10
+#define MAP_BATTLE_SCENE_SIDNEY2      11
+#define MAP_BATTLE_SCENE_PETRA        12
+#define MAP_BATTLE_SCENE_NORMAN       13
+>>>>>>> Stashed changes
 
 #define MAP_BATTLE_SCENE_INDOOR_1 MAP_BATTLE_SCENE_NORMAL
 #define MAP_BATTLE_SCENE_INDOOR_2 MAP_BATTLE_SCENE_NORMAL

@@ -1,5 +1,8 @@
 EventScript_TV::
 	lockall
+	goto_if_eq VAR_LITTLEROOT_TOWN_STATE, 0, EventScript_ShowStatic           @Don't show swarms until after clock is set
+	goto EventScript_AnnounceSwarm
+
 	incrementgamestat GAME_STAT_WATCHED_TV
 	special ResetTVShowState
 	specialvar VAR_RESULT, CheckForPlayersHouseNews
@@ -11,6 +14,34 @@ EventScript_TV::
 	goto_if_eq VAR_RESULT, TRUE, EventScript_DoInSearchOfTrainers
 	goto EventScript_TryDoPokeNews
 	end
+
+EventScript_ShowStatic::
+	msgbox TV_Text_Static, MSGBOX_DEFAULT
+	releaseall
+	end
+
+TV_Text_Static:
+	.string "It's nothing but static.$"
+
+EventScript_AnnounceSwarm::
+	special BufferSwarmText
+	msgbox TV_Text_SwarmAnnouncement, MSGBOX_DEFAULT
+	releaseall
+	end
+
+TV_Text_SwarmAnnouncement:
+	.string "Welcome back. Here's our latest from\n"
+	.string "our rare POKéMON watch studio.\p"
+	.string "Reports from {STR_VAR_1} are\n"
+	.string "saying that wild {STR_VAR_2}\l"
+	.string "have been spotted.\p"
+	.string "{STR_VAR_2}, as you know, is a rare\n"
+	.string "sight here in ISSHO.\p"
+	.string "If you're a POKéMON trainer, this sounds\n"
+	.string "like a great opportunity to find rare\l"
+	.string "{STR_VAR_2} in the wild!\p"
+	.string "Tune in tomorrow for more from our\n"
+	.string "rare POKéMON watch studio.$"
 
 EventScript_TryDoTVShow::
 	specialvar VAR_0x8004, GetRandomActiveShowIdx

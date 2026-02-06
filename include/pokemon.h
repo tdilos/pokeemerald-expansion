@@ -21,6 +21,9 @@
 #define GET_BASE_SPECIES_ID(speciesId) (GetFormSpeciesId(speciesId, 0))
 #define FORM_SPECIES_END (0xffff)
 
+#define DAY_START 4
+#define NIGHT_START 18
+
 // Property labels for Get(Box)MonData / Set(Box)MonData
 enum MonData {
     MON_DATA_PERSONALITY,
@@ -30,6 +33,7 @@ enum MonData {
     MON_DATA_SANITY_IS_BAD_EGG,
     MON_DATA_SANITY_HAS_SPECIES,
     MON_DATA_SANITY_IS_EGG,
+	//MON_DATA_IN_PC,
     MON_DATA_OT_NAME,
     MON_DATA_MARKINGS,
     MON_DATA_CHECKSUM,
@@ -124,6 +128,7 @@ enum MonData {
     MON_DATA_GIGANTAMAX_FACTOR,
     MON_DATA_TERA_TYPE,
     MON_DATA_EVOLUTION_TRACKER,
+	//MON_DATA_NATURE,
 };
 
 struct PokemonSubstruct0
@@ -604,6 +609,36 @@ struct NatureInfo
     const u8 *natureGirlMessage;
 };
 
+/*struct Ability
+{
+    u8 name[ABILITY_NAME_LENGTH + 1];
+    const u8 *description;
+    s8 aiRating;
+    u8 cantBeCopied:1; // cannot be copied by Role Play or Doodle
+    u8 cantBeSwapped:1; // cannot be swapped with Skill Swap or Wandering Spirit
+    u8 cantBeTraced:1; // cannot be copied by Trace - same as cantBeCopied except for Wonder Guard
+    u8 cantBeSuppressed:1; // cannot be negated by Gastro Acid or Neutralizing Gas
+    u8 cantBeOverwritten:1; // cannot be overwritten by Entrainment, Worry Seed or Simple Beam (but can be by Mummy) - same as cantBeSuppressed except for Truant
+    u8 breakable:1; // can be bypassed by Mold Breaker and clones
+    u8 failsOnImposter:1; // doesn't work on an Imposter mon; when can we actually use this?
+};
+
+struct BattleMove
+{
+    u16 effect;
+    u16 power;  //higher than 255 for z moves
+    u8 type;
+    u8 accuracy;
+    u8 pp;
+    u8 secondaryEffectChance;
+    u16 target;
+    s8 priority;
+    u32 flags;
+    u8 split;
+    u16 argument;
+    u8 zMoveEffect;
+};*/
+
 #define SPINDA_SPOT_WIDTH 16
 #define SPINDA_SPOT_HEIGHT 16
 
@@ -724,6 +759,9 @@ extern const struct SpriteTemplate gBattlerSpriteTemplates[];
 extern const u32 sExpCandyExperienceTable[];
 extern const struct AbilityInfo gAbilitiesInfo[];
 extern const struct NatureInfo gNaturesInfo[];
+#if P_TUTOR_MOVES_ARRAY
+extern const u16 gTutorMoves[];
+#endif // P_TUTOR_MOVES_ARRAY
 
 void ZeroBoxMonData(struct BoxPokemon *boxMon);
 void ZeroMonData(struct Pokemon *mon);
@@ -790,7 +828,11 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg);
 void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg);
 void CopyMon(void *dest, void *src, size_t size);
 u8 GiveCapturedMonToPlayer(struct Pokemon *mon);
+u8 GiveMonToPlayer(struct Pokemon *mon);
 u8 CopyMonToPC(struct Pokemon *mon);
+//u8 SendMonToPC(struct Pokemon* mon);
+//u8 CalculatePartyCount(struct Pokemon *party);
+//u8 CalculatePartyCountOfSide(u32 battler, struct Pokemon *party);
 u8 CalculatePlayerPartyCount(void);
 u8 CalculateEnemyPartyCount(void);
 u8 CalculateEnemyPartyCountInSide(enum BattlerId battler);

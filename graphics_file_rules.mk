@@ -23,7 +23,11 @@ NAMINGGFXDIR := graphics/naming_screen
 SPINDAGFXDIR := graphics/pokemon/spinda/spots
 TITLESCREENGFXDIR := graphics/title_screen
 
+<<<<<<< Updated upstream
 types := none normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark fairy stellar
+=======
+types := normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark fairy echo
+>>>>>>> Stashed changes
 contest_types := cool beauty cute smart tough
 
 ### Tilesets ###
@@ -653,7 +657,7 @@ $(PKNAVGFXDIR)/match_call/ui.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 13 -Wnum_tiles
 
 $(POKEDEXGFXDIR)/region_map.8bpp: %.8bpp: %.png
-	$(GFX) $< $@ -num_tiles 232 -Wnum_tiles
+	$(GFX) $< $@ -num_tiles 192 -Wnum_tiles
 
 $(POKEDEXGFXDIR)/region_map_affine.8bpp: %.8bpp: %.png
 	$(GFX) $< $@ -num_tiles 233 -Wnum_tiles

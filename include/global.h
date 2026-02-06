@@ -26,6 +26,28 @@
 #include "constants/moves.h"
 #include "config/save.h"
 
+
+
+// free saveblock 1 defines
+#define FREE_EXTRA_SEEN_FLAGS           //free up extra pokedex seen flags. Frees up 104 bytes
+//#define FREE_FIELD_3598                 //frees up unused saveblock data. 384 bytes
+//#define FREE_TRAINER_HILL             //frees up trainer hill data. 28 bytes.                          WARNING THIS HAS BEEN SHOWN TO BREAK MULTI BATTLES
+//#define FREE_MYSTERY_EVENT_BUFFERS    //frees up mystery event and ramScript. roughly 1880 bytes       Needed by FREE_BATTLE_TOWER_E_READER
+//#define FREE_MATCH_CALL                 //frees up match call data. 104 bytes
+#define FREE_UNION_ROOM_CHAT            //frees up field unk3C88. 210 bytes
+//#define FREE_ENIGMA_BERRY               //frees up enigma berry. 52 bytes
+//#define FREE_LINK_BATTLE_RECORDS        //frees link battle record data. 88 bytes
+                                        // saveblock1 total: 1846 bytes
+//free saveblock 2 defines
+//#define FREE_BATTLE_TOWER_E_READER    //frees up battle tower e reader trainer data. 188 bytes.        WARNING THIS HAS BEEN SHOWN TO BREAK THE POKÉ MARTS' QUESTIONNAIRE
+//#define FREE_POKEMON_JUMP               //frees up pokemon jump data. 16 bytes
+//#define FREE_RECORD_MIXING_HALL_RECORDS //frees up hall records for record mixing. 1032 bytes
+                                        // saveblock2 total: 1236 bytes
+                                        
+                                        //grand total: 3082
+
+
+
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
 
@@ -67,6 +89,15 @@
 
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) >= (b) ? (a) : (b))
+
+#define Q_4_12_SHIFT (Q_4_12_SHIFT_EXP)
+#define UQ_4_12_SHIFT (Q_4_12_SHIFT_EXP)
+
+static inline u32 uq4_12_multiply(u32 a, u32 b)
+{
+    u32 product = (u32) a * b;
+    return (product + UQ_4_12_ROUND) >> UQ_4_12_SHIFT;
+}
 
 #if MODERN
 #define abs(x) (((x) < 0) ? -(x) : (x))
@@ -152,6 +183,12 @@
 #define FEATURE_FLAG_ASSERT(flag, id) STATIC_ASSERT(flag > TEMP_FLAGS_END || flag == 0, id)
 
 #define READ_OTID_FROM_SAVE T1_READ_32(gSaveBlock2Ptr->playerTrainerId)
+
+// Tourmaline difficulty settings
+#define DIFFICULTY_NORMAL        0
+#define DIFFICULTY_HARDCORE      1
+#define DIFFICULTY_INSANE        2
+
 
 // NOTE: This uses hardware timers 2 and 3; this will not work during active link connections or with the eReader
 static inline void CycleCountStart()
@@ -581,6 +618,9 @@ struct RankingHall2P
     //u8 padding;
 };
 
+// quest menu
+#include "constants/quests.h"
+
 struct SaveBlock2
 {
     /*0x00*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
@@ -600,14 +640,18 @@ struct SaveBlock2
              u16 regionMapZoom:1; // whether the map is zoomed in
              //u16 padding1:4;
              //u16 padding2;
+//			 u16 optionsDifficulty:2; //0=Normal, 1=Hardcore, 2=Insane
     /*0x18*/ struct Pokedex pokedex;
-    /*0x90*/ u8 filler_90[0x8];
+//    /*0x90*/ u8 filler_90[0x8];
+    /*0x90*/ u8 optionsDifficulty;  //0=Normal, 1=Hardcore, 2=Insane
+	/*0x91*/ u8 optionsBattleFlow;
+    /*0x92*/ u8 filler_91[0x6];
     /*0x98*/ struct Time localTimeOffset;
     /*0xA0*/ struct Time lastBerryTreeUpdate;
     /*0xA8*/ u32 gcnLinkFlags; // Read by Pokémon Colosseum/XD
     /*0xAC*/ u32 encryptionKey;
     /*0xB0*/ struct PlayersApprentice playerApprentice;
-    /*0xDC*/ struct Apprentice apprentices[APPRENTICE_COUNT];
+    /*0xDC*/ struct Apprentice apprentices[APPRENTICE_COUNT]; //272 bytes
     /*0x1EC*/ struct BerryCrush berryCrush;
 #if FREE_POKEMON_JUMP == FALSE
     /*0x1FC*/ struct PokemonJumpRecords pokeJump;
@@ -619,7 +663,15 @@ struct SaveBlock2
 #endif //FREE_RECORD_MIXING_HALL_RECORDS
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
-}; // sizeof=0xF2C
+//}; // sizeof=0xF2C
+
+#define QUEST_FLAGS_COUNT ROUND_BITS_TO_BYTES(QUEST_COUNT)
+#define SUB_FLAGS_COUNT ROUND_BITS_TO_BYTES(SUB_QUEST_COUNT)
+#define QUEST_STATES 5 //Number of different quest states tracked in the saveblock
+
+    u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
+    u8 subQuests[SUB_FLAGS_COUNT];
+}; 
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
 
@@ -690,8 +742,12 @@ struct Roamer
 {
     /*0x00*/ u32 ivs;
     /*0x04*/ u32 personality;
-    /*0x08*/ u16 species;
-    /*0x0A*/ u16 hp;
+    // /*0x08*/ u16 species;
+    // /*0x0A*/ u16 hp;
+    /*0x08*/ u16 species:11; // up to 2047 different species
+    /*0x09*/ u16 respawnMode:2; // 4 respawn modes
+    /*0x09*/ u16 daysToRespawn:3; // up to 7 days
+    /*0x0A*/ u16 damage; //track damage instead of HP to handle scaling roamers	
     /*0x0C*/ u8 level;
     /*0x0D*/ u8 statusA;
     /*0x0E*/ u8 cool;
@@ -1108,7 +1164,8 @@ struct SaveBlock1
     /*0x238*/ struct Pokemon playerParty[PARTY_SIZE];
     /*0x490*/ u32 money;
     /*0x494*/ u16 coins;
-    /*0x496*/ u16 registeredItem; // registered for use with SELECT button
+    // /*0x496*/ u16 registeredItem; // registered for use with SELECT button
+	/*0x496*/ u16 registeredItemSelect;
     /*0x498*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x560 -> 0x848 is bag storage*/
     /*0x560*/ struct Bag bag;
@@ -1140,8 +1197,8 @@ struct SaveBlock1
     /*0x278E*/ u8 decorationPosters[10];
     /*0x2798*/ u8 decorationDolls[40];
     /*0x27C0*/ u8 decorationCushions[10];
-    /*0x27CC*/ TVShow tvShows[TV_SHOWS_COUNT];
     /*0x27CA*/ //u8 padding4[2];
+    /*0x27CC*/ TVShow tvShows[TV_SHOWS_COUNT]; //900 bytes
     /*0x2B50*/ PokeNews pokeNews[POKE_NEWS_COUNT];
     /*0x2B90*/ u16 outbreakPokemonSpecies;
     /*0x2B92*/ u8 outbreakLocationMapNum;
@@ -1204,6 +1261,9 @@ struct SaveBlock1
     u8 rivalName[PLAYER_NAME_LENGTH + 1];
     struct DaycareMon route5DayCareMon;
 #endif
+    // sizeof: 0x3???
+	/*0x3???*/ u16 registeredItemL;
+    /*0x3???*/ u16 registeredItemR;
     // sizeof: 0x3???
 };
 

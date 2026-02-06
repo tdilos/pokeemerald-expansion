@@ -22,6 +22,8 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/metatile_labels.h"
 #include "constants/songs.h"
+#include "overworld.h"
+#include "constants/event_objects.h"
 
 
 EWRAM_DATA struct MapPosition gPlayerFacingPosition = {0};
@@ -72,6 +74,15 @@ static const u16 sSecretPowerPlant_Pal[] = INCBIN_U16("graphics/field_effects/pa
 static const u8 sSandPillar0_Gfx[] = INCBIN_U8("graphics/field_effects/pics/sand_pillar/0.4bpp");
 static const u8 sSandPillar1_Gfx[] = INCBIN_U8("graphics/field_effects/pics/sand_pillar/1.4bpp");
 static const u8 sSandPillar2_Gfx[] = INCBIN_U8("graphics/field_effects/pics/sand_pillar/2.4bpp");
+
+static void FieldMove_Headbutt(void);
+static void FieldCallback_Headbutt(void);
+
+static void FieldMove_Thaw(void);
+static void FieldCallback_Thaw(void);
+
+//static void FieldMove_Defog(void);
+static void FieldCallback_Defog(void);
 
 static const struct OamData sOam_SecretPower =
 {
@@ -1137,7 +1148,7 @@ void InteractWithShieldOrTVDecoration(void)
         if (!VarGet(VAR_CURRENT_SECRET_BASE))
             return;
 
-        VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_GOLD_SHIELD);
+        //VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_GOLD_SHIELD);
         break;
     case METATILE_SecretBase_SilverShield_Base1:
         ConvertIntToDecimalStringN(gStringVar1, 50, STR_CONV_MODE_LEFT_ALIGN, 2);
@@ -1148,7 +1159,7 @@ void InteractWithShieldOrTVDecoration(void)
         if (!VarGet(VAR_CURRENT_SECRET_BASE))
             return;
 
-        VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_SILVER_SHIELD);
+        //VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_SILVER_SHIELD);
         break;
     case METATILE_SecretBase_TV:
         gSpecialVar_Result = 1;
@@ -1156,7 +1167,7 @@ void InteractWithShieldOrTVDecoration(void)
         if (!VarGet(VAR_CURRENT_SECRET_BASE))
             return;
 
-        VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TV);
+        //VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TV);
         break;
     case METATILE_SecretBase_RoundTV:
         gSpecialVar_Result = 2;
@@ -1164,7 +1175,7 @@ void InteractWithShieldOrTVDecoration(void)
         if (!VarGet(VAR_CURRENT_SECRET_BASE))
             return;
 
-        VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TV);
+        //VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TV);
         break;
     case METATILE_SecretBase_CuteTV:
         gSpecialVar_Result = 3;
@@ -1172,7 +1183,7 @@ void InteractWithShieldOrTVDecoration(void)
         if (!VarGet(VAR_CURRENT_SECRET_BASE))
             return;
 
-        VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TV);
+        //VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_TV);
         break;
     }
 }
@@ -1325,3 +1336,165 @@ void DestroyRecordMixingLights(void)
         }
     }
 }
+
+// The important part is handled by EventScript_Headbutt, but I'm following Rock Smash's lead :P
+static void FieldMove_Headbutt(void)
+{
+    PlaySE(SE_NOT_EFFECTIVE);
+    FieldEffectActiveListRemove(FLDEFF_USE_HEADBUTT);
+    ScriptContext_Enable();
+}
+
+bool8 FldEff_UseHeadbutt(void)
+{
+    u8 taskId = CreateFieldMoveTask();
+
+    gTasks[taskId].data[8] = (u32)FieldMove_Headbutt >> 16;
+    gTasks[taskId].data[9] = (u32)FieldMove_Headbutt;
+    IncrementGameStat(GAME_STAT_USED_HEADBUTT);
+    return FALSE;
+}
+
+// Called when Headbutt is used from the party menu
+// For interacting with a headbuttable tree in the field, see EventScript_Headbutt
+bool8 SetUpFieldMove_Headbutt(void)
+{
+    GetXYCoordsOneStepInFrontOfPlayer(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
+    if (MapGridGetMetatileBehaviorAt(gPlayerFacingPosition.x, gPlayerFacingPosition.y) == MB_HEADBUTT)
+    {
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_Headbutt;
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+static void FieldCallback_Headbutt(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    ScriptContext_SetupScript(EventScript_UseHeadbutt);
+}
+
+// Thaw
+static void FieldMove_Thaw(void)
+{
+    //PlaySE(SE_M_ICY_WIND);
+	PlaySE(SE_M_BRICK_BREAK);
+    FieldEffectActiveListRemove(FLDEFF_USE_THAW);
+    ScriptContext_Enable();
+}
+
+bool8 FldEff_UseThaw(void)
+{
+    u8 taskId = CreateFieldMoveTask();
+
+    gTasks[taskId].data[8] = (u32)FieldMove_Thaw >> 16;
+    gTasks[taskId].data[9] = (u32)FieldMove_Thaw;
+    IncrementGameStat(GAME_STAT_USED_THAW);
+    return FALSE;
+}
+
+// Called when Thaw is used from the party menu
+// For interacting with meltable ice in the field, see EventScript_Thaw
+bool8 SetUpFieldMove_Thaw(void)
+{
+	if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_THAWABLE_ICE) == TRUE)
+    {
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_Thaw;
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+static void FieldCallback_Thaw(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    ScriptContext_SetupScript(EventScript_UseThaw);
+}
+
+// Defog
+static void FieldMove_Defog(void)
+{
+	//PlaySE(SE_M_TWISTER);
+    FieldEffectActiveListRemove(FLDEFF_USE_DEFOG);
+    ScriptContext_Enable();
+}
+
+bool8 FldEff_UseDefog(void)
+{
+    u8 taskId = CreateFieldMoveTask();
+
+    gTasks[taskId].data[8] = (u32)FieldMove_Defog >> 16;
+    gTasks[taskId].data[9] = (u32)FieldMove_Defog;
+    //IncrementGameStat(GAME_STAT_USED_DEFOG);
+    return FALSE;
+}
+
+// Called when Defog is used from the party menu
+bool8 SetUpFieldMove_Defog(void)
+{
+	if (IsMapTypeOutdoors(gMapHeader.mapType))
+    {
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_Defog;
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+static void FieldCallback_Defog(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    ScriptContext_SetupScript(EventScript_UseDefog);
+}
+
+// Bulldoze
+/*static void FieldMove_Bulldoze(void)
+{
+    //PlaySE(SE_M_ICY_WIND);
+	PlaySE(SE_M_BRICK_BREAK);
+    FieldEffectActiveListRemove(FLDEFF_USE_THAW);
+    ScriptContext_Enable();
+}
+
+bool8 FldEff_UseBulldoze(void)
+{
+    u8 taskId = CreateFieldMoveTask();
+
+    gTasks[taskId].data[8] = (u32)FieldMove_Bulldoze >> 16;
+    gTasks[taskId].data[9] = (u32)FieldMove_Bulldoze;
+    IncrementGameStat(GAME_STAT_USED_THAW);
+    return FALSE;
+}
+
+// Called when Bulldoze is used from the party menu
+// For interacting with bulldozable sand in the field, see EventScript_Bulldoze
+bool8 SetUpFieldMove_Bulldoze(void)
+{
+	if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BULLDOZABLE_SAND) == TRUE)
+    {
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_Bulldoze;
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+static void FieldCallback_Bulldoze(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    ScriptContext_SetupScript(EventScript_UseThaw);
+}*/

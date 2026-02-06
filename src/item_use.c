@@ -59,7 +59,11 @@ static void Task_StandingOnHiddenItem(u8);
 static void PlayerFaceHiddenItem(enum Direction);
 static void CheckForHiddenItemsInMapConnection(u8);
 static void Task_OpenRegisteredPokeblockCase(u8);
+<<<<<<< Updated upstream
 static void Task_AccessPokemonBoxLink(u8);
+=======
+
+>>>>>>> Stashed changes
 static void ItemUseOnFieldCB_Bike(u8);
 static void ItemUseOnFieldCB_Rod(u8);
 static void ItemUseOnFieldCB_Itemfinder(u8);
@@ -95,6 +99,12 @@ static const u8 sText_UsedVar2WildRepelled[] = _("{PLAYER} used the\n{STR_VAR_2}
 static const u8 sText_PlayedPokeFluteCatchy[] = _("Played the POKé FLUTE.\pNow, that's a catchy tune!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_PlayedPokeFlute[] = _("Played the POKé FLUTE.");
 static const u8 sText_PokeFluteAwakenedMon[] = _("The POKé FLUTE awakened sleeping\nPOKéMON.{PAUSE_UNTIL_PRESS}");
+
+static void CB2_BagShowRegionMap(void);
+void BagShowRegionMap(void);
+void ItemUseOutOfBattle_TownMap(u8 taskId);
+static void Task_UseTownMapFromField(u8 taskId);
+
 
 // EWRAM variables
 EWRAM_DATA static TaskFunc sItemUseOnFieldCB = NULL;
@@ -744,6 +754,7 @@ static void Task_OpenRegisteredPokeblockCase(u8 taskId)
     }
 }
 
+<<<<<<< Updated upstream
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)
 {
     sItemUseOnFieldCB = Task_AccessPokemonBoxLink;
@@ -756,6 +767,81 @@ static void Task_AccessPokemonBoxLink(u8 taskId)
     DestroyTask(taskId);
 }
 
+=======
+
+
+static void CB2_BagShowRegionMap(void)
+{
+    //FieldInitRegionMap(CB2_BagMenuFromStartMenu);
+	FieldInitRegionMap(CB2_ReturnToBagMenuPocket);
+}
+
+void BagShowRegionMap(void)
+{
+    SetMainCallback2(CB2_BagShowRegionMap);
+}
+
+
+
+
+
+void ItemUseOutOfBattle_TownMap(u8 taskId)
+{
+	if (MenuHelpers_IsLinkActive() == TRUE)
+    {
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
+    else if (gTasks[taskId].tUsingRegisteredKeyItem != TRUE)
+    {
+        //gBagMenu->newScreenCallback = CB2_OpenPokeblockFromBag;
+		gBagMenu->newScreenCallback = CB2_BagShowRegionMap;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        gFieldCallback = FieldCB_ReturnToFieldNoScript;
+        FadeScreen(FADE_TO_BLACK, 0);
+        gTasks[taskId].func = Task_UseTownMapFromField;
+    }
+}
+	
+    /*if (gTasks[taskId].data[3] == 0) // unregistered?
+    {
+        ItemMenu_SetExitCallback(BagShowRegionMap);
+        ItemMenu_StartFadeToExitCallback(taskId);
+    }
+    else // use registered item from bag?
+    {
+        //StopPokemonLeagueLightingEffectTask();
+        FadeScreen(FADE_TO_BLACK, 0);
+        gTasks[taskId].func = Task_UseTownMapFromField;
+    }*/
+
+//static void UseTownMapFromBag(void)
+//{
+//   InitRegionMapWithExitCB(REGIONMAP_TYPE_NORMAL, CB2_BagMenuFromStartMenu);
+//}
+
+static void Task_UseTownMapFromField(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        //SetFieldCallback2ForItemUse();
+        //InitRegionMapWithExitCB(REGIONMAP_TYPE_NORMAL, CB2_ReturnToField);
+		FieldInitRegionMap(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        DestroyTask(taskId);
+    }
+}
+
+
+
+
+
+
+
+
+>>>>>>> Stashed changes
 void ItemUseOutOfBattle_CoinCase(u8 taskId)
 {
     ConvertIntToDecimalStringN(gStringVar1, GetCoins(), STR_CONV_MODE_LEFT_ALIGN, 4);
@@ -915,10 +1001,33 @@ void ItemUseOutOfBattle_RareCandy(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+<<<<<<< Updated upstream
 void ItemUseOutOfBattle_DynamaxCandy(u8 taskId)
 {
     gItemUseCB = ItemUseCB_DynamaxCandy;
     SetUpItemUseCallback(taskId);
+=======
+void ItemUseOutOfBattle_ExpAll(u8 taskId)
+{
+    if (!FlagGet(FLAG_SYS_EXP_ALL))
+    {
+        FlagSet(FLAG_SYS_EXP_ALL);
+        PlaySE(SE_EXP_MAX);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_ExpAllOn, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, 1, gText_ExpAllOn, CloseItemMessage);
+    }
+    else
+    {
+        FlagClear(FLAG_SYS_EXP_ALL);
+        PlaySE(SE_PC_OFF);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_ExpAllOff, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, 1, gText_ExpAllOff, CloseItemMessage);
+    }
+>>>>>>> Stashed changes
 }
 
 void ItemUseOutOfBattle_TMHM(u8 taskId)

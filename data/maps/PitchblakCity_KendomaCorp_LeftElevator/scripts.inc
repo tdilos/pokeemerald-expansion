@@ -1,0 +1,179 @@
+PitchblakCity_KendomaCorp_LeftElevator_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PitchblakCity_KendomaCorp_LeftElevator_OnFrame
+	.byte 0
+
+PitchblakCity_KendomaCorp_LeftElevator_OnFrame:
+	map_script_2 VAR_TEMP_0, 0, PitchblakCity_KendomaCorp_LeftElevator_EventScript_SelectFloor
+	.2byte 0
+
+PitchblakCity_KendomaCorp_Text_StateDestination:
+	.string "Please state your destination.$"
+
+
+
+
+
+
+
+
+
+
+
+@PitchblakCity_KendomaCorp_LeftElevator_EventScript_Attendant::
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_SelectFloor:
+	lock
+	setvar VAR_TEMP_0, 1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	setvar VAR_0x8004, 0
+	call_if_unset FLAG_TEMP_2, PitchblakCity_KendomaCorp_LeftElevator_EventScript_SetFloor
+	copyvar VAR_0x8005, VAR_DEPT_STORE_FLOOR
+	special ShowDeptStoreElevatorFloorSelect
+	message PitchblakCity_KendomaCorp_Text_StateDestination
+	waitmessage
+	setvar VAR_0x8004, 0
+	specialvar VAR_RESULT, GetDeptStoreDefaultFloorChoice
+	switch VAR_RESULT
+	case 0, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom8th
+	case 1, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom6th
+	case 2, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom5th
+	case 3, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom4th
+	case 4, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom3rd
+	case 5, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom2nd
+	case 6, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom1st
+	end
+
+@ Below scripts ensure the cursor for floor select always starts on the current floor
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom8th::
+	multichoicedefault 0, 0, MULTI_KENDOMA_LR_ELEVATOR, 0, FALSE
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloor
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom6th::
+	multichoicedefault 0, 0, MULTI_KENDOMA_LR_ELEVATOR, 1, FALSE
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloor
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom5th::
+	multichoicedefault 0, 0, MULTI_KENDOMA_LR_ELEVATOR, 2, FALSE
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloor
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom4th::
+	multichoicedefault 0, 0, MULTI_KENDOMA_LR_ELEVATOR, 3, FALSE
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloor
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom3rd::
+	multichoicedefault 0, 0, MULTI_KENDOMA_LR_ELEVATOR, 4, FALSE
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloor
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom2nd::
+	multichoicedefault 0, 0, MULTI_KENDOMA_LR_ELEVATOR, 5, FALSE
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloor
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloorFrom1st::
+	multichoicedefault 0, 0, MULTI_KENDOMA_LR_ELEVATOR, 6, FALSE
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloor
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_ChooseFloor::
+	switch VAR_RESULT
+	case 0, PitchblakCity_KendomaCorp_LeftElevator_EventScript_8thFloor
+	case 1, PitchblakCity_KendomaCorp_LeftElevator_EventScript_6thFloor
+	case 2, PitchblakCity_KendomaCorp_LeftElevator_EventScript_5thFloor
+	case 3, PitchblakCity_KendomaCorp_LeftElevator_EventScript_4thFloor
+	case 4, PitchblakCity_KendomaCorp_LeftElevator_EventScript_3rdFloor
+	case 5, PitchblakCity_KendomaCorp_LeftElevator_EventScript_2ndFloor
+	case 6, PitchblakCity_KendomaCorp_LeftElevator_EventScript_1stFloor
+	case 7, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	case MULTI_B_PRESSED, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_1stFloor::
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_1F
+	setdynamicwarp MAP_PITCHBLAK_CITY_KENDOMA_CORP_1F, 5, 1
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_1F, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	call PitchblakCity_KendomaCorp_LeftElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_1F
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_2ndFloor::
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_2F
+	setdynamicwarp MAP_PITCHBLAK_CITY_KENDOMA_CORP_2F, 5, 1
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_2F, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	call PitchblakCity_KendomaCorp_LeftElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_2F
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_3rdFloor::
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_3F
+	setdynamicwarp MAP_PITCHBLAK_CITY_KENDOMA_CORP_3F, 5, 1
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_3F, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	call PitchblakCity_KendomaCorp_LeftElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_3F
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_4thFloor::
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_4F
+	setdynamicwarp MAP_PITCHBLAK_CITY_KENDOMA_CORP_4F, 5, 1
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_4F, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	call PitchblakCity_KendomaCorp_LeftElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_4F
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_5thFloor::
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_5F
+	setdynamicwarp MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F, 5, 1
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_5F, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	call PitchblakCity_KendomaCorp_LeftElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_5F
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_6thFloor::
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_6F
+	setdynamicwarp MAP_PITCHBLAK_CITY_KENDOMA_CORP_6F, 5, 1
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_6F, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	call PitchblakCity_KendomaCorp_LeftElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_6F
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_8thFloor::
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_8F
+	setdynamicwarp MAP_PITCHBLAK_CITY_KENDOMA_CORP_8F, 5, 1
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_8F, PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	call PitchblakCity_KendomaCorp_LeftElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_8F
+	goto PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_ExitFloorSelect::
+	special CloseDeptStoreElevatorWindow
+	release
+	end
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_MoveElevator::
+	special CloseDeptStoreElevatorWindow
+	closemessage
+	@applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
+	@waitmovement 0
+	waitse
+	special MoveElevator
+	waitstate
+	setflag FLAG_TEMP_2
+	return
+
+PitchblakCity_KendomaCorp_LeftElevator_EventScript_SetFloor::
+	special SetDeptStoreFloor
+	return
+

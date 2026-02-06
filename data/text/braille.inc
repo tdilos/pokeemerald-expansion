@@ -2,6 +2,30 @@
 @       The numbers are simply skipped over. If you'd like to omit
 @       this macro you must also stop it from skipping over this
 @       section by editing ScrCmd_braillemessage.
+
+IsshoTemple_Braille_GatherTheStones:
+	brailleformat 4, 6, 26, 13, 7, 9
+	.braille "GATHER THE\n"
+	.braille "STONES.$"
+
+MiragePalace_Braille_Rhyme:
+	brailleformat 4, 6, 26, 13, 7, 9
+	.braille "WHEN THE DAYTELL\n"
+	.braille "IS TOLD\n"
+	.braille "FOR THE NINTH\n"
+	.braille "TIME TODAY\n"
+	.braille "TWENTY CLICKS\n"
+	.braille "WITHHOLD\n"
+	.braille "BEFORE TIME\n"
+	.braille "SLIPS AWAY.$"
+
+
+
+
+
+
+
+
 Underwater_SealedChamber_Braille_GoUpHere:
 	brailleformat 4, 6, 26, 13, 7, 9
 	.braille "GO UP HERE.$"

@@ -55,6 +55,7 @@
 #include "tilesets.h"
 #include "tv.h"
 #include "wallclock.h"
+#include "wild_encounter.h"
 #include "window.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_pyramid.h"
@@ -79,6 +80,7 @@
 #include "battle_util.h"
 #include "naming_screen.h"
 #include "chooseboxmon.h"
+#include "rogue_voltorbflip.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -188,9 +190,19 @@ static const u8 sText_Winona[] = _("WINONA");
 static const u8 sText_Phoebe[] = _("PHOEBE");
 static const u8 sText_Glacia[] = _("GLACIA");
 
+extern const struct SwarmData gSwarmTable[];
+
+
 void Special_ShowDiploma(void)
 {
     SetMainCallback2(CB2_ShowDiploma);
+    LockPlayerFieldControls();
+}
+
+void Special_ViewVoltorbFlip(void)
+{
+    gMain.savedCallback = CB2_ReturnToField;
+    SetMainCallback2(CB2_ShowVoltorbFlip);
     LockPlayerFieldControls();
 }
 
@@ -238,7 +250,7 @@ static void DetermineCyclingRoadResults(u32 numFrames, u8 numBikeCollisions)
         StringCopy(gStringVar1, sText_99TimesPlus);
     }
 
-    if (numFrames < 3600)
+    if (numFrames < 7200)
     {
         ConvertIntToDecimalStringN(gStringVar2, numFrames / 60, STR_CONV_MODE_RIGHT_ALIGN, 2);
         gStringVar2[2] = CHAR_DEC_SEPARATOR;
@@ -262,15 +274,15 @@ static void DetermineCyclingRoadResults(u32 numFrames, u8 numBikeCollisions)
     else if (numBikeCollisions < 100)
         result = 1;
 
-    if (numFrames / 60 <= 10)
+    if (numFrames / 60 <= 45)
         result += 5;
-    else if (numFrames / 60 <= 15)
+    else if (numFrames / 60 <= 60)
         result += 4;
-    else if (numFrames / 60 <= 20)
+    else if (numFrames / 60 <= 75)
         result += 3;
-    else if (numFrames / 60 <= 40)
+    else if (numFrames / 60 <= 90)
         result += 2;
-    else if (numFrames / 60 < 60)
+    else if (numFrames / 60 < 120)
         result += 1;
 
     gSpecialVar_Result = result;
@@ -601,9 +613,9 @@ void SpawnLinkPartnerObjectEvent(void)
             case VERSION_RUBY:
             case VERSION_SAPPHIRE:
                 if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_LINK_RS_BRENDAN;
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL; //OBJ_EVENT_GFX_LINK_RS_BRENDAN;
                 else
-                    linkSpriteId = OBJ_EVENT_GFX_LINK_RS_MAY;
+                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL; //OBJ_EVENT_GFX_LINK_RS_MAY;
                 break;
             case VERSION_EMERALD:
                 if (gLinkPlayers[i].gender == 0)
@@ -632,8 +644,8 @@ static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEven
     u8 adjustedPaletteNum;
     // Note: This temp var is necessary; paletteNum += 6 doesn't match.
     adjustedPaletteNum = paletteNum + 6;
-    if (graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN ||
-        graphicsId == OBJ_EVENT_GFX_LINK_RS_MAY ||
+    if (//graphicsId == OBJ_EVENT_GFX_LINK_RED || //OBJ_EVENT_GFX_LINK_RS_BRENDAN ||
+        //graphicsId == OBJ_EVENT_GFX_LINK_LEAF || //OBJ_EVENT_GFX_LINK_RS_MAY ||
         graphicsId == OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL ||
         graphicsId == OBJ_EVENT_GFX_RIVAL_MAY_NORMAL)
     {
@@ -646,12 +658,12 @@ static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEven
 
             switch (graphicsId)
             {
-            case OBJ_EVENT_GFX_LINK_RS_BRENDAN:
+            /*case OBJ_EVENT_GFX_LINK_RS_BRENDAN:
                 LoadPalette(gObjectEventPal_RubySapphireBrendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
                 break;
             case OBJ_EVENT_GFX_LINK_RS_MAY:
                 LoadPalette(gObjectEventPal_RubySapphireMay, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
+                break;*/
             case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL:
                 LoadPalette(gObjectEventPal_Brendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
                 break;
@@ -987,6 +999,14 @@ void CableCarWarp(void)
         SetWarpDestination(MAP_GROUP(MAP_MT_CHIMNEY_CABLE_CAR_STATION), MAP_NUM(MAP_MT_CHIMNEY_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
 }
 
+void CableCarIsshoWarp(void)
+{
+    if (gSpecialVar_0x8004 != 0)
+        SetWarpDestination(MAP_GROUP(ROUTE96_CABLE_CAR_STATION), MAP_NUM(ROUTE96_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
+    else
+        SetWarpDestination(MAP_GROUP(OFFWITE_TOWN_CABLE_CAR_STATION), MAP_NUM(OFFWITE_TOWN_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
+}
+
 void SetHiddenItemFlag(void)
 {
     FlagSet(gSpecialVar_0x8004);
@@ -1004,6 +1024,28 @@ u16 GetWeekCount(void)
 u8 GetLeadMonFriendshipScore(void)
 {
     return GetMonFriendshipScore(&gPlayerParty[GetLeadMonIndex()]);
+}
+
+void CheckHighTeamFriendship(void)
+{
+    u8 i;
+	u8 friendship;
+    //u16 species;
+    //struct Pokemon *pokemon;
+    for (i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+		
+        //pokemon = &gPlayerParty[i];
+		friendship = GetMonFriendshipScore(&gPlayerParty[i]);
+        //if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG) && GetMonData(pokemon, MON_DATA_HP) != 0)
+		if (friendship < FRIENDSHIP_200_TO_254)
+        {
+			gSpecialVar_Result = FALSE;
+            return;
+		}
+	}
+	
+	gSpecialVar_Result = TRUE;
 }
 
 static void CB2_FieldShowRegionMap(void)
@@ -1851,29 +1893,101 @@ static const u16 sElevatorWindowTiles_Descending[ELEVATOR_WINDOW_HEIGHT][ELEVATO
 void SetDeptStoreFloor(void)
 {
     enum DeptStoreFloorNumber deptStoreFloor;
-    switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+	
+	if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(LILYCOVE_CITY_DEPARTMENT_STORE_1F))
     {
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_2F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_2F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_3F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_3F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_4F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_4F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_ROOFTOP;
-        break;
-    default:
-        deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
-        break;
+		switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+		{
+		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_1F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
+			break;
+		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_2F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_2F;
+			break;
+		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_3F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_3F;
+			break;
+		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_4F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_4F;
+			break;
+		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_5F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
+			break;
+		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_ROOFTOP;
+			break;
+		default:
+			deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
+			break;
+		}
+	}
+	// Mindaro Dept Store
+	else if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MINDARO_CITY_DEPARTMENT_STORE_1F))
+    {	
+		switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+		{
+		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_1F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
+			break;
+		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_2F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_2F;
+			break;
+		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_3F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_3F;
+			break;
+		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_4F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_4F;
+			break;
+		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_5F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
+			break;
+		default:
+			deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
+			break;
+		}
+	}		
+	// Kendoma Corp
+	else
+    {	
+		switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+		{
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_1F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_2F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_2F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_3F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_3F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_4F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_4F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_5F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_6F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_6F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_7F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_7F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_8F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_8F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_9F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_9F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_10F):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_10F;
+			break;
+		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_SECRET_BASEMENT):
+			deptStoreFloor = DEPT_STORE_FLOORNUM_B1F;
+			break;
+		default:
+			deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
+			break;
+		}
     }
     VarSet(VAR_DEPT_STORE_FLOOR, deptStoreFloor);
 }
@@ -1899,6 +2013,32 @@ u16 GetDeptStoreDefaultFloorChoice(void)
             sLilycoveDeptStore_DefaultFloorChoice = 3;
             break;
         case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F):
+            sLilycoveDeptStore_DefaultFloorChoice = 4;
+            break;
+        }
+    }
+    else if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MINDARO_CITY_DEPARTMENT_STORE_1F))
+    {
+        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+        {
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_5F):
+            sLilycoveDeptStore_NeverRead = 0;
+            sLilycoveDeptStore_DefaultFloorChoice = 0;
+            break;
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_4F):
+            sLilycoveDeptStore_NeverRead = 0;
+            sLilycoveDeptStore_DefaultFloorChoice = 1;
+            break;
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_3F):
+            sLilycoveDeptStore_NeverRead = 0;
+            sLilycoveDeptStore_DefaultFloorChoice = 2;
+            break;
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_2F):
+            sLilycoveDeptStore_NeverRead = 0;
+            sLilycoveDeptStore_DefaultFloorChoice = 3;
+            break;
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_1F):
+            sLilycoveDeptStore_NeverRead = 0;
             sLilycoveDeptStore_DefaultFloorChoice = 4;
             break;
         }
@@ -2429,6 +2569,26 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_1:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_2:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     case SCROLL_MULTI_BERRY_POWDER_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 12;
@@ -2460,6 +2620,39 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+	/*case SCROLL_MULTI_GREEN_SHARD_TUTOR:
+	case SCROLL_MULTI_RED_SHARD_TUTOR:
+	case SCROLL_MULTI_BLUE_SHARD_TUTOR:
+	case SCROLL_MULTI_YELLOW_SHARD_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 22;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_WEATHER_EXPLAIN:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 6;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+	case SCROLL_MULTI_STATUS_EXPLAIN:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;*/
     case SCROLL_MULTI_SS_TIDAL_DESTINATION:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
@@ -2574,7 +2767,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("HP UP{CLEAR_TO 0x64}1BP"),
         gText_Exit
     },
-    [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
+    /*[SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
         COMPOUND_STRING("LEFTOVERS{CLEAR_TO 0x5E}48BP"),
         COMPOUND_STRING("WHITE HERB{CLEAR_TO 0x5E}48BP"),
@@ -2585,6 +2778,45 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("KING'S ROCK{CLEAR_TO 0x5E}64BP"),
         COMPOUND_STRING("FOCUS BAND{CLEAR_TO 0x5E}64BP"),
         COMPOUND_STRING("SCOPE LENS{CLEAR_TO 0x5E}64BP"),
+        gText_Exit
+    },*/
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
+    {
+        gText_Magmarizer32BP,
+        gText_RazorClaw32BP,
+        gText_QuickClaw48BP,
+        gText_KingsRock48BP,
+        gText_FocusSash48BP,
+        gText_AirBalloon48BP,
+        gText_ChoiceScarf64BP,
+        gText_ChoiceSpecs64BP,
+        gText_ChoiceBand64BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_1] =
+    {
+        gText_Electirizer32BP,
+        gText_RazorFang32BP,
+		gText_LightClay48BP,
+		gText_FlameOrb48BP,
+		gText_ToxicOrb48BP,
+		gText_TerrainExtender48BP,
+		gText_Leftovers64BP,
+		gText_RedCard64BP,
+		gText_EjectButton64BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_2] =
+    {
+        gText_RareCandy1BP,
+        gText_Protector32BP,
+		gText_BindingBand32BP,
+		gText_AbsorbBulb32BP,
+		gText_CellBattery32BP,
+		gText_RingTarget48BP,
+		gText_BrightPowder48BP,
+		gText_SafetyGoggles48BP,
+		gText_LifeOrb64BP,
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
@@ -2643,13 +2875,135 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("FIRE PUNCH{CLEAR_TO 0x4E}48BP"),
         gText_Exit
     },
-    [SCROLL_MULTI_SS_TIDAL_DESTINATION] =
+	/*[SCROLL_MULTI_GREEN_SHARD_TUTOR] =
+    {
+        gText_HelpingHand2Shards,
+        gText_SonarWave2Shards,
+        gText_Snore2Shards,
+        gText_Charm4Shards,
+		gText_Defog4Shards,
+		gText_Endure4Shards,
+		gText_GastroAcid4Shards,
+        gText_DreamEater6Shards,
+		gText_MagnetRise6Shards,
+		gText_Petrify6Shards,
+		gText_Recycle6Shards,
+		gText_WorrySeed6Shards,
+        gText_MagicRoom8Shards,
+		gText_PainSplit8Shards,
+		gText_SeismicToss8Shards,
+		gText_WonderRoom8Shards,
+        gText_Gravity10Shards,
+		gText_LastResort10Shards,
+		gText_Tailwind10Shards,
+		gText_Fling12Shards,
+		gText_SleepTalk12Shards,
+        gText_Exit
+    },
+	[SCROLL_MULTI_RED_SHARD_TUTOR] =
+    {
+        gText_2Shards,
+        gText_2Shards,
+        gText_2Shards,
+        gText_4Shards,
+		gText_4Shards,
+		gText_4Shards,
+		gText_4Shards,
+        gText_6Shards,
+		gText_6Shards,
+		gText_6Shards,
+		gText_6Shards,
+		gText_6Shards,
+        gText_8Shards,
+		gText_8Shards,
+		gText_8Shards,
+		gText_8Shards,
+        gText_10Shards,
+		gText_10Shards,
+		gText_10Shards,
+		gText_12Shards,
+		gText_12Shards,
+        gText_Exit
+    },
+	[SCROLL_MULTI_BLUE_SHARD_TUTOR] =
+    {
+        gText_2Shards,
+        gText_2Shards,
+        gText_2Shards,
+        gText_4Shards,
+		gText_4Shards,
+		gText_4Shards,
+		gText_4Shards,
+        gText_6Shards,
+		gText_6Shards,
+		gText_6Shards,
+		gText_6Shards,
+		gText_6Shards,
+        gText_8Shards,
+		gText_8Shards,
+		gText_8Shards,
+		gText_8Shards,
+        gText_10Shards,
+		gText_10Shards,
+		gText_10Shards,
+		gText_12Shards,
+		gText_12Shards,
+        gText_Exit
+    },
+	[SCROLL_MULTI_YELLOW_SHARD_TUTOR] =
+    {
+        gText_2Shards,
+        gText_2Shards,
+        gText_2Shards,
+        gText_4Shards,
+		gText_4Shards,
+		gText_4Shards,
+		gText_4Shards,
+        gText_6Shards,
+		gText_6Shards,
+		gText_6Shards,
+		gText_6Shards,
+		gText_6Shards,
+        gText_8Shards,
+		gText_8Shards,
+		gText_8Shards,
+		gText_8Shards,
+        gText_10Shards,
+		gText_10Shards,
+		gText_10Shards,
+		gText_12Shards,
+		gText_12Shards,
+        gText_Exit
+    },
+	[SCROLL_MULTI_WEATHER_EXPLAIN] =
     {
         gText_SlateportCity,
         gText_BattleFrontier,
         gText_SouthernIsland,
         gText_NavelRock,
         gText_BirthIsland,
+        gText_FarawayIsland,
+        gText_Exit
+    },
+	[SCROLL_MULTI_STATUS_EXPLAIN] =
+    {
+        gText_SlateportCity,
+        gText_BattleFrontier,
+        gText_SouthernIsland,
+        gText_NavelRock,
+        gText_BirthIsland,
+        gText_FarawayIsland,
+        gText_Exit
+    },*/
+    [SCROLL_MULTI_SS_TIDAL_DESTINATION] =
+    {
+        //gText_SlateportCity,
+		gText_XanthosCity,
+        gText_BattleFrontier,
+        gText_SouthernIsland,
+        gText_NavelRock,
+        //gText_BirthIsland,
+        gText_PerennialPillar,
         gText_FarawayIsland,
         gText_Exit
     },
@@ -3107,6 +3461,7 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(enum ScrollMulti menu, u
     #include "data/battle_frontier/battle_frontier_exchange_corner.h"
 
     if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR)
+    //if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_2)
     {
         FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
         switch (menu)
@@ -3145,6 +3500,13 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(enum ScrollMulti menu, u
             AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
             ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_HoldItems[selection]);
             break;
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_1:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_AdditionalVendor1Descriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_AdditionalVendor1[selection]);
+            break;
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_2:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_AdditionalVendor2Descriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_AdditionalVendor2[selection]);
         default:
             break;
         }
@@ -3175,6 +3537,8 @@ static void HideFrontierExchangeCornerItemIcon(enum ScrollMulti menu, u16 unused
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_1:
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_2:
             // This makes sure deleting the icon will not clear palettes in use by object events
             FieldEffectFreeGraphicsResources(&gSprites[sScrollableMultichoice_ItemSpriteId]);
             break;
@@ -3700,10 +4064,11 @@ bool32 IsTrainerRegistered(void)
 // Always returns FALSE
 bool32 ShouldDistributeEonTicket(void)
 {
-    if (!VarGet(VAR_DISTRIBUTE_EON_TICKET))
+    /*if (!VarGet(VAR_DISTRIBUTE_EON_TICKET))
         return FALSE;
 
-    return TRUE;
+    return TRUE;*/
+	return FALSE;
 }
 
 #define tState data[0]
@@ -3980,6 +4345,23 @@ bool8 InPokemonCenter(void)
         MAP_TRADE_CENTER,
         MAP_RECORD_CORNER,
         MAP_BATTLE_COLOSSEUM_4P,
+		// Issho locations
+		//MAP_UMBER_TOWN_POKEMON_CENTER_1F,
+		MAP_CINEROUS_TOWN_POKEMON_CENTER,
+		MAP_RESEDA_TOWN_POKEMON_CENTER,
+		MAP_OFFWITE_TOWN_POKEMON_CENTER_1F,
+		MAP_SCARLET_TOWN_POKEMON_CENTER_1F,
+		MAP_HAEWEN_TOWN_POKEMON_CENTER_1F,
+		//MAP_BURGUNDY_TOWN_POKEMON_CENTER_1F,
+		MAP_DUN_TOWN_POKEMON_CENTER_1F,
+		MAP_XANTHOS_CITY_POKEMON_CENTER,
+		MAP_AMBER_CITY_POKEMON_CENTER,
+		MAP_COBALT_CITY_POKEMON_CENTER,
+		MAP_TURQUOISE_CITY_POKEMON_CENTER_1F,
+		MAP_MINDARO_CITY_POKEMON_CENTER_1F,
+		MAP_PITCHBLAK_CITY_POKEMON_CENTER_1F,
+		MAP_MAROON_CITY_POKEMON_CENTER_1F,
+		MAP_WISTERIA_CITY_POKEMON_CENTER_1F,
         MAP_UNDEFINED
     };
 
@@ -4704,6 +5086,506 @@ bool8 HasLearnedAllMovesFromCapeBrinkTutor(void)
     return (FlagGet(FLAG_TUTOR_FRENZY_PLANT) == TRUE)
         && (FlagGet(FLAG_TUTOR_BLAST_BURN) == TRUE)
         && (FlagGet(FLAG_TUTOR_HYDRO_CANNON) == TRUE);
+}
+
+void CheckIfTeamFainted(void)
+{
+    u8 i;
+    u16 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG)
+		&& GetMonData(pokemon, MON_DATA_HP) != 0)
+        {
+			gSpecialVar_Result = FALSE;
+            return;
+		}
+	}
+	
+	gSpecialVar_Result = TRUE;
+}
+
+//@Details: Buffers the map name where there is currently a swarm to buffer1,
+//			and the species name where there is currently a swarm to buffer2.
+//@Returns: Species roaming.
+//u16 sp058_BufferSwarmText(void)
+void BufferSwarmText(void)
+{
+	u8 index = VarGet(VAR_SWARM_INDEX);
+	u8 mapName = gSwarmTable[index].mapName;
+	u16 species = gSwarmTable[index].species;
+
+	GetMapName(gStringVar1, mapName, 0);
+	//StringCopy(sScriptStringVars[1], gSpeciesNames[species]);
+	StringCopy(gStringVar2, gSpeciesNames[species]);
+
+	//return species;
+}
+
+void GetDifficulty(void)
+{
+	//extern const u8 gText_Hardcore[];
+	//extern const u8 gText_Insane[];
+
+	//gSaveBlock2Ptr->optionsDifficulty = 1; //normal
+
+	u8 i;
+	//i = 0;
+
+	i = gSaveBlock2Ptr->optionsDifficulty;
+
+    /*if (gSaveBlock2Ptr->optionsDifficulty == 0)
+        //StringCopy(gStringVar1, "NORMAL");
+		gSaveBlock2Ptr->optionsDifficulty = 1;
+		//StringCopy(gStringVar1, gText_Normal);
+		//i = 0;
+    else if (gSaveBlock2Ptr->optionsDifficulty == 1)
+        //StringCopy(gStringVar1, "HARDCORE");
+		gSaveBlock2Ptr->optionsDifficulty = 0;
+		//StringCopy(gStringVar1, gText_Hardcore);
+        //i = 1;
+    else
+        //StringCopy(gStringVar1, "INSANE");
+		StringCopy(gStringVar1, gText_Insane);
+		//i = 2;
+	*/
+	//gSpecialVar_0x8004 = i;
+	gSpecialVar_Result = i;
+}
+
+void DecreaseDifficulty(void)
+{	
+	gSaveBlock2Ptr->optionsDifficulty -= 1;
+}
+
+void GetWeekday(void)
+{
+	u16 i;
+
+	i = VarGet(VAR_WEEKDAY);
+	gSpecialVar_Result = i;
+
+    switch (i)
+    {
+    case 0:
+		StringCopy(gStringVar1, gText_Sunday);
+        break;
+    case 1:
+		StringCopy(gStringVar1, gText_Monday);
+        break;
+    case 2:
+		StringCopy(gStringVar1, gText_Tuesday);
+        break;
+    case 3:
+		StringCopy(gStringVar1, gText_Wednesday);
+        break;
+    case 4:
+		StringCopy(gStringVar1, gText_Thursday);
+        break;
+    case 5:
+		StringCopy(gStringVar1, gText_Friday);
+        break;
+    case 6:
+		StringCopy(gStringVar1, gText_Saturday);
+        break;
+	default:
+		StringCopy(gStringVar1, gText_Sunday);
+		break;
+    }
+		
+}
+
+void GetRandomInt(void)
+{
+	u16 i;
+    u16 randomValue = Random();
+	
+	i = randomValue % 16;
+	gSpecialVar_Result = i;
+}
+
+void DailyMassageService(void)
+{
+    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_MASSAGE);
+    //VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 0);
+}
+
+void GetDanceStepCount(void)
+{
+	u16 steps = VarGet(VAR_DANCE_STEP_COUNT);
+	ConvertIntToDecimalStringN(gStringVar1, steps, STR_CONV_MODE_LEFT_ALIGN, 4);
+	//gSpecialVar_Result = i;
+}
+
+// IV checks
+u16 GetHpIV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_HP_IV, NULL);
+}
+u16 GetAtkIV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_ATK_IV, NULL);
+}
+u16 GetDefIV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_DEF_IV, NULL);
+}
+u16 GetSpAtkIV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPATK_IV, NULL);
+}
+u16 GetSpDefIV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPDEF_IV, NULL);
+}
+u16 GetSpeedIV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPEED_IV, NULL);
+}
+
+// EV checks
+u16 GetHpEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_HP_EV, NULL);
+}
+u16 GetAtkEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_ATK_EV, NULL);
+}
+u16 GetDefEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_DEF_EV, NULL);
+}
+u16 GetSpAtkEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPATK_EV, NULL);
+}
+u16 GetSpDefEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPDEF_EV, NULL);
+}
+u16 GetSpeedEV(void)
+{
+	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPEED_EV, NULL);
+}
+
+void CheckIfShinyLead(void)
+{
+	//if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_IS_SHINY))
+	if (IsMonShiny(&gPlayerParty[GetLeadMonIndex()]))
+    {
+			gSpecialVar_Result = TRUE;
+            return;
+	}
+	
+	gSpecialVar_Result = FALSE;
+}
+
+void SmeargleQuestCheck(void)
+{
+	if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES) != SPECIES_SMEARGLE)
+	{
+			gSpecialVar_Result = FALSE;
+            return;	
+	}
+	else if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE1) != MOVE_SOLAR_BEAM)
+    {
+			gSpecialVar_Result = FALSE;
+            return;
+	}
+	else if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE2) != MOVE_FIRE_BLAST)
+    {
+			gSpecialVar_Result = FALSE;
+            return;
+	}
+	else if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE3) != MOVE_HYDRO_PUMP)
+    {
+			gSpecialVar_Result = FALSE;
+            return;
+	}
+	else if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE4) != MOVE_THUNDER)
+    {
+			gSpecialVar_Result = FALSE;
+            return;
+	}
+	else
+		gSpecialVar_Result = TRUE;
+}
+
+void WisteriaGymWarp(void)
+{
+	u16 room = VarGet(VAR_WISTERIA_GYM_ROOM);
+	u16 mult = VarGet(VAR_WISTERIA_GYM_MULTIPLIER);
+
+	room = (mult * room) % 12;
+	
+    VarSet(VAR_WISTERIA_GYM_ROOM, room);
+	gSpecialVar_Result = room;
+}
+
+// Assumes that something is located at (gSpecialVar_0x8004, gSpecialVar_0x8005), used for trigger scripts
+void GetObjectEventLocalIdByXYCoords(void)
+{	
+	u32 i;
+	
+	for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        if (gObjectEvents[i].currentCoords.x == gSpecialVar_0x8004 && gObjectEvents[i].currentCoords.y == gSpecialVar_0x8005)
+        {
+            gSpecialVar_Result = 2; //gObjectEvents[i].localId; //i;
+			return;
+			//return i; //gObjectEvents[i].localId;
+        }
+    }
+			
+	//return 0; // failsafe if loop above somehow breaks
+}
+
+u16 GetTeamWeight(void)
+{
+    u8 i;
+	u32 weight;
+    u32 total = 0;
+    //struct Pokemon *pokemon;
+	//for (i = 0; i < CalculatePlayerPartyCount(); i++)
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+		if (GetMonData(&gPlayerParty[i],  MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG))
+		{
+			weight = GetPokedexHeightWeight( SpeciesToNationalPokedexNum(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES)), 1 );
+			total += weight * 0.2205; //convert to pounds
+		}
+	}
+	
+	return total;
+}
+
+/*u16 GetPokedexHeightWeight(u16 dexNum, u8 data)
+{
+    switch (data)
+    {
+    case 0:  // height
+        return gPokedexEntries[dexNum].height;
+    case 1:  // weight
+        return gPokedexEntries[dexNum].weight;
+    default:
+        return 1;
+    }
+}*/
+
+void CheckForTintedLensYanmega(void)
+{
+        if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_YANMEGA && GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_ABILITY_NUM, NULL) == 1)
+        {
+            gSpecialVar_Result = TRUE;
+            return;
+        }
+
+    gSpecialVar_Result = FALSE;
+}
+
+// Moved to src/pokemon.c
+/*void ChangePartyMonNature(void)
+{	
+	u32 personality;
+	u16 checksum;
+	u32 otid = gSaveBlock2Ptr->playerTrainerId[0]
+              | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+              | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+              | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+	u16 newNature = gSpecialVar_0x8005;
+	
+	//u16 newNature = 2;
+	
+	do
+    {
+        personality = Random32();
+        personality = ((((Random() % 8) ^ (HIHALF(otid) ^ LOHALF(otid))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+    } while (newNature != GetNatureFromPersonality(personality));
+	
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_FRIENDSHIP, &gSpeciesInfo[gSpecialVar_0x8004].friendship); // reset friendship
+    //SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_NATURE, &newNature);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY, &personality);
+	CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+	
+	checksum = CalculateBoxMonCheckSum(&gPlayerParty[gSpecialVar_0x8004]);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_CHECKSUM, &checksum);
+	
+	//CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}*/
+
+void CheckForCarbink(void)
+{
+    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_CARBINK)
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+
+    gSpecialVar_Result = FALSE;
+}
+
+void CheckForLuvdiscPair(void)
+{
+    u8 i;
+	u8 j;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+		for (j = i; j < PARTY_SIZE; j++)
+		{
+			if ( (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_LUVDISC)
+				&& (GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL) == SPECIES_LUVDISC)
+				&& !(GetMonGender(&gPlayerParty[i]) == GetMonGender(&gPlayerParty[j])) )
+			{
+				gSpecialVar_Result = TRUE;
+				//gSpecialVar_0x8004 = i;
+				//gSpecialVar_0x8005 = j;
+				
+				ZeroMonData(&gPlayerParty[j]);
+				ZeroMonData(&gPlayerParty[i]);
+				CompactPartySlots();
+				return;
+			}
+		}
+	}
+
+    gSpecialVar_Result = FALSE;
+}
+
+void CheckForRotom(void)
+{
+	//u8 i;
+	//u32 existingMove;
+	
+    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_FAN
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_FROST
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_HEAT
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_MOW
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_PLAY
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_WASH)
+    {
+		// Handle Rotom form moves
+		/*gSpecialVar_0x8002 = 4;
+		for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            existingMove = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE1 + i, NULL);
+            if ((existingMove == MOVE_THUNDER_SHOCK && GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM)
+				|| existingMove == MOVE_AIR_SLASH
+				|| existingMove == MOVE_BLIZZARD
+				|| existingMove == MOVE_OVERHEAT
+				|| existingMove == MOVE_LEAF_STORM
+				|| existingMove == MOVE_BOOMBURST
+				|| existingMove == MOVE_HYDRO_PUMP)
+            {
+                //SetMonMoveSlot(mon, MOVE_NONE, i);
+                //RemoveMonPPBonus(mon, i);
+                //for (j = i; j < MAX_MON_MOVES - 1; j++)
+                //    ShiftMoveSlot(mon, j, j + 1);
+				gSpecialVar_0x8002 = i;
+                break;
+            }
+        }*/
+		
+		gSpecialVar_0x8005 = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL); // Need to check for switching back to base Rotom
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+
+    gSpecialVar_Result = FALSE;
+}
+
+void HandleRotomFormChange(void)
+{
+	u8 i;
+	u32 existingMove;
+	u32 newMove;
+	u16 species = gSpecialVar_0x8004;
+	
+	switch (species)
+	{
+		case SPECIES_ROTOM_FAN:
+			newMove = MOVE_AIR_SLASH;
+			break;
+		case SPECIES_ROTOM_FROST:
+			newMove = MOVE_BLIZZARD;
+			break;
+		case SPECIES_ROTOM_HEAT:
+			newMove = MOVE_OVERHEAT;
+			break;
+		case SPECIES_ROTOM_MOW:
+			newMove = MOVE_LEAF_STORM;
+			break;
+		case SPECIES_ROTOM_PLAY:
+			newMove = MOVE_BOOMBURST;
+			break;
+		case SPECIES_ROTOM_WASH:
+			newMove = MOVE_HYDRO_PUMP;
+			break;
+		default:
+			newMove = MOVE_THUNDER_SHOCK;
+	}
+	
+	// Return to base Rotom if already the target species
+	if (species == GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL))
+	{
+		newMove = MOVE_THUNDER_SHOCK;
+		species = SPECIES_ROTOM;
+	}
+	
+	// Handle Rotom form moves
+	for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        existingMove = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE1 + i, NULL);
+        if ((existingMove == MOVE_THUNDER_SHOCK && GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM)
+			|| existingMove == MOVE_AIR_SLASH
+			|| existingMove == MOVE_BLIZZARD
+			|| existingMove == MOVE_OVERHEAT
+			|| existingMove == MOVE_LEAF_STORM
+			|| existingMove == MOVE_BOOMBURST
+			|| existingMove == MOVE_HYDRO_PUMP)
+        {
+            SetMonMoveSlot(&gPlayerParty[GetLeadMonIndex()], newMove, i);
+            RemoveMonPPBonus(&gPlayerParty[GetLeadMonIndex()], i);
+            break;
+        }
+    }
+	
+	// Change form
+	SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, &species);
+    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+}
+
+void SetSpecies(void)
+{
+    u16 species = gSpecialVar_0x8004;
+
+    SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, &species);
+    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+}
+
+void CheckForSuperAncientPokemon(void)
+{
+    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_OMANYTE
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_OMASTAR
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_LILEEP
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_CRADILY
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_SHIELDON
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_BASTIODON
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_TYRUNT
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_TYRANTRUM
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_AERODACTYL
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_OMENDENZ
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_RELICANTH)
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+
+    gSpecialVar_Result = FALSE;
 }
 
 void SetSeenMon(void)
@@ -5777,3 +6659,82 @@ bool8 CheckAddCoins(void)
     else
         return TRUE;
 }
+
+void CheckForDeoxys(void)
+{
+    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS_ATTACK
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS_DEFENSE
+		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS_SPEED)
+    {
+        gSpecialVar_Result = TRUE;
+        return;
+    }
+
+    gSpecialVar_Result = FALSE;
+}
+
+void CheckArceusRequirements(void)
+{
+	u8 i;
+	bool8 checkDialga = FALSE;
+	bool8 checkPalkia = FALSE;
+	bool8 checkGiratina = FALSE;
+	
+    if (!FlagGet(FLAG_RECEIVED_AZURE_FLUTE))
+    {
+		gSpecialVar_Result = FALSE;
+        return;
+	}
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+		if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_DIALGA)
+			checkDialga = TRUE;
+		
+		if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_PALKIA)
+			checkPalkia = TRUE;
+		
+		if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_GIRATINA)
+			checkGiratina = TRUE;
+	}
+
+    gSpecialVar_Result = checkDialga && checkPalkia && checkGiratina;
+}
+
+
+/*void ForceReloadMap(void)
+{
+    //SetMainCallback2(CB2_LoadMap);
+    LoadCurrentMapData();
+}*/
+
+/*u8 GetCompletedQuestCount(void)
+{
+	u8 q = 0, i = 0;
+
+	u8 parentQuest = sStateDataPtr->parentQuest;
+
+	if (IsSubquestMode())
+	{
+		for (i = 0; i < sSideQuests[parentQuest].numSubquests; i++)
+		{
+			if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_COMPLETED, i))
+			{
+				q++;
+			}
+		}
+	}
+	else
+	{
+		for (i = 0; i < QUEST_COUNT; i++)
+		{
+			if (QuestMenu_GetSetQuestState(i, FLAG_GET_COMPLETED))
+			{
+				q++;
+			}
+		}
+	}
+
+	return q;
+}*/

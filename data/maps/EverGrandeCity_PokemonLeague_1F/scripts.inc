@@ -5,7 +5,8 @@ EverGrandeCity_PokemonLeague_1F_MapScripts::
 
 EverGrandeCity_PokemonLeague_1F_OnTransition:
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE
-	setflag FLAG_LANDMARK_POKEMON_LEAGUE
+	@setflag FLAG_LANDMARK_POKEMON_LEAGUE
+	setflag FLAG_VISITED_EVER_GRANDE_CITY
 	call_if_unset FLAG_ENTERED_ELITE_FOUR, EverGrandeCity_PokemonLeague_1F_EventScript_GuardsBlockDoor
 	end
 
@@ -13,6 +14,17 @@ EverGrandeCity_PokemonLeague_1F_EventScript_GuardsBlockDoor::
 	setobjectxyperm LOCALID_LEAGUE_GUARD_1, 9, 2
 	setobjectxyperm LOCALID_LEAGUE_GUARD_2, 10, 2
 	return
+
+
+
+
+EverGrandeCity_PokemonLeague_1F_EventScript_Teala::
+	msgbox EverGrandeCity_PokemonLeague_1F_Text_Unavailable, MSGBOX_NPC
+	end
+
+EverGrandeCity_PokemonLeague_1F_Text_Unavailable:
+	.string "Our services are currently\n"
+	.string "unavailable.$"
 
 EverGrandeCity_PokemonLeague_1F_EventScript_Nurse::
 	setvar VAR_0x800B, LOCALID_LEAGUE_NURSE
@@ -54,7 +66,8 @@ EverGrandeCity_PokemonLeague_1F_EventScript_DoorGuard::
 	message EverGrandeCity_PokemonLeague_1F_Text_MustHaveAllGymBadges
 	waitmessage
 	delay 120
-	goto_if_unset FLAG_BADGE06_GET, EverGrandeCity_PokemonLeague_1F_EventScript_NotAllBadges
+	@goto_if_unset FLAG_BADGE06_GET, EverGrandeCity_PokemonLeague_1F_EventScript_NotAllBadges
+	goto_if_unset FLAG_BADGE05_GET, EverGrandeCity_PokemonLeague_1F_EventScript_NotAllBadges
 	closemessage
 	applymovement LOCALID_LEAGUE_GUARD_1, EverGrandeCity_PokemonLeague_1F_Movement_LeftGuardOutOfWay
 	applymovement LOCALID_LEAGUE_GUARD_2, EverGrandeCity_PokemonLeague_1F_Movement_RightGuardOutOfWay

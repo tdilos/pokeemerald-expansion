@@ -48,6 +48,7 @@
 #include "pokedex.h"
 #include "test/battle.h"
 #include "test/test_runner_battle.h"
+#include "event_data.h"
 
 static void PlayerHandleLoadMonSprite(enum BattlerId battler);
 static void PlayerHandleDrawTrainerPic(enum BattlerId battler);
@@ -392,6 +393,19 @@ static void HandleInputChooseAction(enum BattlerId battler)
     else if (JOY_NEW(START_BUTTON))
     {
         SwapHpBarsWithHpText();
+    }
+	else if (JOY_NEW(R_BUTTON))
+    {
+        if(!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+			&& (FlagGet(FLAG_TEMP_DISABLE_BAG) == FALSE)) // prevent running from Houndoom + Melmetal
+            {
+                PlaySE(SE_SELECT);
+                //ActionSelectionDestroyCursorAt(gActionSelectionCursor[gActiveBattler]);
+                //gActionSelectionCursor[gActiveBattler] = 3;
+                //ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
+				BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_RUN, 0);
+				PlayerBufferExecCompleted();
+            }
     }
     else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON))
     {
@@ -1997,6 +2011,8 @@ static void PlayerHandlePause(enum BattlerId battler)
 
 static void HandleChooseActionAfterDma3(enum BattlerId battler)
 {
+	//u8 *end;
+	
     if (!IsDma3ManagerBusyWithBgCopy())
     {
         gBattle_BG0_X = 0;
@@ -2120,11 +2136,17 @@ static void PlayerChooseMoveInBattlePalace(enum BattlerId battler)
 
 void PlayerHandleChooseMove(enum BattlerId battler)
 {
-    if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
+    if (gBattleTypeFlags & BATTLE_TYPE_PALACE) 
     {
         gBattleStruct->arenaMindPoints[battler] = 8;
         gBattlerControllerFuncs[battler] = PlayerChooseMoveInBattlePalace;
     }
+	// DAZ uses BattlePalace probabilities to select a move at random
+	else if ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_STATUS) == STATUS1_DAZE))
+	{
+        gBattleStruct->arenaMindPoints[battler] = 8;
+        gBattlerControllerFuncs[battler] = PlayerChooseMoveInBattlePalace;
+    }	 
     else
     {
         struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);

@@ -106,14 +106,14 @@ enum Language
 #define GIFT_RIBBONS_COUNT 11
 #define SAVED_TRENDS_COUNT 5
 #define PYRAMID_BAG_ITEMS_COUNT 10
-#define ROAMER_COUNT 1 // Number of maximum concurrent active roamers
+#define ROAMER_COUNT 8 //1 // Number of maximum concurrent active roamers
 
 // Bag constants
-#define BAG_ITEMS_COUNT 30
+#define BAG_ITEMS_COUNT 120 //30
 #define BAG_KEYITEMS_COUNT 30
 #define BAG_POKEBALLS_COUNT 16
-#define BAG_TMHM_COUNT 64
-#define BAG_BERRIES_COUNT 46
+#define BAG_TMHM_COUNT 120 //64
+#define BAG_BERRIES_COUNT 80 //46
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.
@@ -213,6 +213,23 @@ enum __attribute__((packed)) Direction
     DIR_NORTHWEST,
     DIR_NORTHEAST,
 };
+
+#define OPTIONS_BATTLE_FLOW_1X      0
+#define OPTIONS_BATTLE_FLOW_2X      1
+#define OPTIONS_BATTLE_FLOW_3X      2
+//#define OPTIONS_BATTLE_FLOW_4X      3
+#define OPTIONS_BATTLE_FLOW_COUNT   3 //4
+
+#define DIR_NONE        0
+#define DIR_SOUTH       1
+#define DIR_NORTH       2
+#define DIR_WEST        3
+#define DIR_EAST        4
+#define DIR_SOUTHWEST   5
+#define DIR_SOUTHEAST   6
+#define DIR_NORTHWEST   7
+#define DIR_NORTHEAST   8
+#define CARDINAL_DIRECTION_COUNT DIR_SOUTHWEST
 
 enum Connection
 {

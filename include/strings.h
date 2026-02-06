@@ -214,6 +214,49 @@ extern const u8 gText_SavingTime[];
 extern const u8 gText_BattlePyramidConfirmRest[];
 extern const u8 gText_BattlePyramidConfirmRetire[];
 
+// difficulty settings
+extern const u8 gText_Hardcore[];
+extern const u8 gText_Insane[];
+
+// weekdays
+extern const u8 gText_Sunday[];
+extern const u8 gText_Monday[];
+extern const u8 gText_Tuesday[];
+extern const u8 gText_Wednesday[];
+extern const u8 gText_Thursday[];
+extern const u8 gText_Friday[];
+extern const u8 gText_Saturday[];
+
+// option menu texts
+extern const u8 gText_TextSpeedSlow[];
+extern const u8 gText_TextSpeedMid[];
+extern const u8 gText_TextSpeedFast[];
+extern const u8 gText_BattleSceneOn[];
+extern const u8 gText_BattleSceneOff[];
+extern const u8 gText_BattleStyleShift[];
+extern const u8 gText_BattleStyleSet[];
+extern const u8 gText_BattleFlow_1x[];
+extern const u8 gText_BattleFlow_2x[];
+extern const u8 gText_BattleFlow_3x[];
+extern const u8 gText_BattleFlow_4x[];
+extern const u8 gText_SoundMono[];
+extern const u8 gText_SoundStereo[];
+extern const u8 gText_FrameTypeNumber[];
+extern const u8 gText_FrameType[];
+extern const u8 gText_ButtonTypeNormal[];
+extern const u8 gText_ButtonTypeLR[];
+extern const u8 gText_ButtonTypeLEqualsA[];
+extern const u8 gText_Option[];
+extern const u8 gText_OptionMenu[];
+extern const u8 gText_TextSpeed[];
+extern const u8 gText_BattleScene[];
+extern const u8 gText_BattleStyle[];
+extern const u8 gText_BattleFlow[];
+extern const u8 gText_Sound[];
+extern const u8 gText_Frame[];
+extern const u8 gText_OptionMenuCancel[];
+extern const u8 gText_ButtonMode[];
+
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];
 
@@ -226,10 +269,37 @@ extern const u8 gText_ThisIsAPokemon[];
 extern const u8 gText_Birch_MainSpeech[];
 extern const u8 gText_Birch_AndYouAre[];
 extern const u8 gText_Birch_BoyOrGirl[];
+extern const u8 gText_Birch_Difficulty[];
 extern const u8 gText_Birch_WhatsYourName[];
 extern const u8 gText_Birch_SoItsPlayer[];
 extern const u8 gText_Birch_YourePlayer[];
 extern const u8 gText_Birch_AreYouReady[];
+
+// default player names
+extern const u8 gText_DefaultNameVert[];
+extern const u8 gText_DefaultNameDrew[];
+extern const u8 gText_DefaultNameEwan[];
+extern const u8 gText_DefaultNameForrest[];
+extern const u8 gText_DefaultNameHaruka[];
+/*extern const u8 gText_DefaultNameSkyler[];
+extern const u8 gText_DefaultNamePerry[];
+extern const u8 gText_DefaultNameErin[];
+extern const u8 gText_DefaultNameMark[];
+extern const u8 gText_DefaultNameDonner[];
+extern const u8 gText_DefaultNameNishi[];
+extern const u8 gText_DefaultNameAsahi[];*/
+extern const u8 gText_DefaultNameViolet[];
+extern const u8 gText_DefaultNameCeleste[];
+extern const u8 gText_DefaultNameTwyla[];
+extern const u8 gText_DefaultNameAstrid[];
+extern const u8 gText_DefaultNameFuyuko[];
+/*extern const u8 gText_DefaultNameHeather[];
+extern const u8 gText_DefaultNameLila[];
+extern const u8 gText_DefaultNameJane[];
+extern const u8 gText_DefaultNameBlossom[];
+extern const u8 gText_DefaultNameKrystal[];
+extern const u8 gText_DefaultNameMinami[];
+extern const u8 gText_DefaultNameYoru[];*/
 
 extern const u8 gText_BirchInTrouble[];
 extern const u8 gText_ConfirmStarterChoice[];
@@ -298,6 +368,10 @@ extern const u8 gText_PkmnBurnHealed[];
 extern const u8 gText_PkmnFrostbiteHealed[];
 extern const u8 gText_PkmnThawedOut[];
 extern const u8 gText_PkmnCuredOfParalysis[];
+extern const u8 gText_PkmnCuredOfInfection[];
+extern const u8 gText_PkmnGotOverDaze[];
+extern const u8 gText_PkmnCuredOfExhaustion[];
+extern const u8 gText_PkmnGotOverFear[];
 extern const u8 gText_PkmnGotOverInfatuation[];
 extern const u8 gText_PkmnTransformed[];
 extern const u8 gText_PkmnBecameHealthy[];
@@ -437,6 +511,99 @@ extern const u8 gText_B4F[];
 extern const u8 gText_Rooftop[];
 extern const u8 gText_ElevatorNowOn[];
 
+/*extern const u8 gText_BlueFlute[];
+extern const u8 gText_YellowFlute[];
+extern const u8 gText_RedFlute[];
+extern const u8 gText_WhiteFlute[];
+extern const u8 gText_BlackFlute[];
+extern const u8 gText_PrettyChair[];
+extern const u8 gText_PrettyDesk[];
+
+extern const u8 gText_0Pts[];
+extern const u8 gText_10Pts[];
+extern const u8 gText_20Pts[];
+extern const u8 gText_30Pts[];
+extern const u8 gText_40Pts[];
+extern const u8 gText_50Pts[];
+extern const u8 gText_60Pts[];
+extern const u8 gText_70Pts[];
+extern const u8 gText_80Pts[];
+extern const u8 gText_90Pts[];
+extern const u8 gText_100Pts[];
+extern const u8 gText_QuestionMark[];
+
+extern const u8 gText_KissPoster16BP[];
+extern const u8 gText_KissCushion32BP[];
+extern const u8 gText_SmoochumDoll32BP[];
+extern const u8 gText_TogepiDoll48BP[];
+extern const u8 gText_MeowthDoll48BP[];
+extern const u8 gText_ClefairyDoll48BP[];
+extern const u8 gText_DittoDoll48BP[];
+extern const u8 gText_CyndaquilDoll80BP[];
+extern const u8 gText_ChikoritaDoll80BP[];
+extern const u8 gText_TotodileDoll80BP[];
+
+extern const u8 gText_LaprasDoll128BP[];
+extern const u8 gText_SnorlaxDoll128BP[];
+extern const u8 gText_VenusaurDoll256BP[];
+extern const u8 gText_CharizardDoll256BP[];
+extern const u8 gText_BlastoiseDoll256BP[];
+
+extern const u8 gText_Protein1BP[];
+extern const u8 gText_Calcium1BP[];
+extern const u8 gText_Iron1BP[];
+extern const u8 gText_Zinc1BP[];
+extern const u8 gText_Carbos1BP[];
+extern const u8 gText_HpUp1BP[];
+
+extern const u8 gText_Leftovers48BP[];
+extern const u8 gText_WhiteHerb48BP[];
+extern const u8 gText_QuickClaw48BP[];
+extern const u8 gText_MentalHerb48BP[];
+extern const u8 gText_BrightPowder64BP[];
+extern const u8 gText_ChoiceBand64BP[];
+extern const u8 gText_KingsRock64BP[];
+extern const u8 gText_FocusBand64BP[];
+extern const u8 gText_ScopeLens64BP[];
+
+extern const u8 gText_Magmarizer32BP[];
+extern const u8 gText_RazorClaw32BP[];
+extern const u8 gText_Electirizer32BP[];
+extern const u8 gText_RazorFang32BP[];
+extern const u8 gText_KingsRock48BP[];
+extern const u8 gText_FocusSash48BP[];
+extern const u8 gText_AirBalloon48BP[];
+extern const u8 gText_LightClay48BP[];
+extern const u8 gText_FlameOrb48BP[];
+extern const u8 gText_ToxicOrb48BP[];
+extern const u8 gText_TerrainExtender48BP[];
+extern const u8 gText_ChoiceScarf64BP[];
+extern const u8 gText_ChoiceSpecs64BP[];
+extern const u8 gText_Leftovers64BP[];
+extern const u8 gText_RedCard64BP[];
+extern const u8 gText_EjectButton64BP[];
+extern const u8 gText_RareCandy1BP[];
+extern const u8 gText_Protector32BP[];
+extern const u8 gText_BindingBand32BP[];
+extern const u8 gText_AbsorbBulb32BP[];
+extern const u8 gText_CellBattery32BP[];
+extern const u8 gText_RingTarget48BP[];
+extern const u8 gText_BrightPowder48BP[];
+extern const u8 gText_SafetyGoggles48BP[];
+extern const u8 gText_LifeOrb64BP[];
+
+extern const u8 gText_EnergyPowder50[];
+extern const u8 gText_EnergyRoot80[];
+extern const u8 gText_HealPowder50[];
+extern const u8 gText_RevivalHerb300[];
+extern const u8 gText_Protein1000[];
+extern const u8 gText_Iron1000[];
+extern const u8 gText_Carbos1000[];
+extern const u8 gText_Calcium1000[];
+extern const u8 gText_Zinc1000[];
+extern const u8 gText_HPUp1000[];
+extern const u8 gText_PPUp3000[];*/
+
 extern const u8 gText_BattleTower2[];
 extern const u8 gText_BattleDome[];
 extern const u8 gText_BattlePalace[];
@@ -448,11 +615,13 @@ extern const u8 gText_RankingHall[];
 extern const u8 gText_ExchangeService[];
 
 extern const u8 gText_SlateportCity[];
+extern const u8 gText_XanthosCity[];
 extern const u8 gText_BattleFrontier[];
 extern const u8 gText_SouthernIsland[];
 extern const u8 gText_NavelRock[];
 extern const u8 gText_BirthIsland[];
 extern const u8 gText_FarawayIsland[];
+extern const u8 gText_PerennialPillar[];
 
 extern const u8 gText_BattleTrainers[];
 extern const u8 gText_BattleBasics[];
@@ -555,6 +724,29 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ChoiceBandDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc[];
+
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MagmarizerDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RazorClawDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ElectirizerDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RazorFangDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FocusSashDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_AirBalloonDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_LightClayDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FlameOrbDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ToxicOrbDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_TerrainExtenderDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ChoiceScarfDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ChoiceSpecsDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RedCardDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_EjectButtonDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RareCandyDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ProtectorDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_BindingBandDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_AbsorbBulbDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_CellBatteryDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RingTargetDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_SafetyGogglesDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_LifeOrbDesc[];
 
 // Battle Frontier Move Tutors
 extern const u8 BattleFrontier_Lounge7_Text_SoftboiledDesc[];
@@ -689,6 +881,7 @@ extern const u8 gText_ShopSell[];
 extern const u8 gText_ShopQuit[];
 extern const u8 gText_ThatItemIsSoldOut[];
 extern const u8 gText_SoldOut[];
+extern const u8 gText_SoldOut2[];
 
 extern const u8 gText_HallOfFame[];
 extern const u8 gText_LogOff[];
@@ -696,7 +889,19 @@ extern const u8 gText_LanettesPC[];
 extern const u8 gText_BillsPc[];
 extern const u8 gText_SomeonesPC[];
 extern const u8 gText_PlayersPC[];
+extern const u8 gText_SaveGame[];
 extern const u8 gText_WhichPCShouldBeAccessed[];
+
+extern const u8 gText_OneBottle[];
+extern const u8 gText_TwelveBottles[];
+extern const u8 gText_Armor[];
+extern const u8 gText_Jaw[];
+extern const u8 gText_Petalburg[];
+extern const u8 gText_Slateport[];
+extern const u8 gText_Cobalt[];
+extern const u8 gText_Turquoise[];
+extern const u8 gText_Xanthos[];
+extern const u8 gText_Enter2[];
 
 extern const u8 gText_Info2[];
 extern const u8 gText_Decoration2[];
@@ -1336,6 +1541,10 @@ extern const u8 gText_Sleep[];
 extern const u8 gText_Paralysis[];
 extern const u8 gText_Burn[];
 extern const u8 gText_Ice[];
+extern const u8 gText_Infect[];
+extern const u8 gText_Daze[];
+extern const u8 gText_Exhaust[];
+extern const u8 gText_Fear[];
 extern const u8 gText_Confusion[];
 extern const u8 gText_Love[];
 
@@ -1354,6 +1563,9 @@ extern const u8 gText_PickCancel[];
 extern const u8 gText_AButtonExit[];
 extern const u8 gText_HOFCorrupted[];
 extern const u8 gText_WelcomeToHOF[];
+extern const u8 gText_HOFNormal[];
+extern const u8 gText_HOFHardcore[];
+extern const u8 gText_HOFInsane[];
 extern const u8 gText_Number[];
 extern const u8 gText_Level[];
 extern const u8 gText_IDNumber[];
@@ -1431,6 +1643,7 @@ extern const u8 gText_CantTradeWithTrainer[];
 extern const u8 gText_XWillBeSentToY[];
 extern const u8 gText_ByeByeVar1[];
 extern const u8 gText_XSentOverY[];
+//extern const u8 gText_ReceivedCovenantOrb[];
 extern const u8 gText_TakeGoodCareOfX[];
 extern const u8 gText_CommunicationStandby5[];
 
@@ -1974,6 +2187,16 @@ extern const u8 gText_YaySmileEmoji[];
 extern const u8 gText_ThankYou[];
 extern const u8 gText_ByeBye[];
 
+//BlackJack
+extern const u8 gText_Bust[];
+extern const u8 gText_YouLose[];
+extern const u8 gText_YouWin[];
+extern const u8 gText_Push[];
+extern const u8 gText_BlackJack[];
+extern const u8 gText_Betting[];
+extern const u8 gText_NoBetting[];
+extern const u8 gText_NoMoney[];
+
 // Mystery Gift
 extern const u8 gText_MysteryGift[];
 extern const u8 gText_PickOKCancel[];
@@ -2149,6 +2372,266 @@ extern const u8 gText_Smartness[];
 extern const u8 gText_Cuteness[];
 extern const u8 gText_Beauty3[];
 
+////side quests
+//generic strings
+extern const u8 gText_QuestAnnounce[];
+extern const u8 gText_QuestComplete[];
+extern const u8 gText_QuestActive[];
+
+//names
+extern const u8 gText_SideQuestName_1[];
+extern const u8 gText_SideQuestName_2[];
+extern const u8 gText_SideQuestName_3[];
+extern const u8 gText_SideQuestName_4[];
+extern const u8 gText_SideQuestName_5[];
+extern const u8 gText_SideQuestName_6[];
+extern const u8 gText_SideQuestName_7[];
+extern const u8 gText_SideQuestName_8[];
+extern const u8 gText_SideQuestName_9[];
+extern const u8 gText_SideQuestName_10[];
+extern const u8 gText_SideQuestName_11[];
+extern const u8 gText_SideQuestName_12[];
+extern const u8 gText_SideQuestName_13[];
+extern const u8 gText_SideQuestName_14[];
+extern const u8 gText_SideQuestName_15[];
+extern const u8 gText_SideQuestName_16[];
+extern const u8 gText_SideQuestName_17[];
+extern const u8 gText_SideQuestName_18[];
+extern const u8 gText_SideQuestName_19[];
+extern const u8 gText_SideQuestName_20[];
+extern const u8 gText_SideQuestName_21[];
+extern const u8 gText_SideQuestName_22[];
+extern const u8 gText_SideQuestName_23[];
+extern const u8 gText_SideQuestName_24[];
+extern const u8 gText_SideQuestName_25[];
+extern const u8 gText_SideQuestName_26[];
+extern const u8 gText_SideQuestName_27[];
+extern const u8 gText_SideQuestName_28[];
+extern const u8 gText_SideQuestName_29[];
+extern const u8 gText_SideQuestName_30[];
+extern const u8 gText_SideQuestName_31[];
+extern const u8 gText_SideQuestName_32[];
+extern const u8 gText_SideQuestName_33[];
+extern const u8 gText_SideQuestName_34[];
+extern const u8 gText_SideQuestName_35[];
+extern const u8 gText_SideQuestName_36[];
+extern const u8 gText_SideQuestName_37[];
+extern const u8 gText_SideQuestName_38[];
+extern const u8 gText_SideQuestName_39[];
+extern const u8 gText_SideQuestName_40[];
+extern const u8 gText_SideQuestName_41[];
+extern const u8 gText_SideQuestName_42[];
+extern const u8 gText_SideQuestName_43[];
+extern const u8 gText_SideQuestName_44[];
+
+//descriptions
+extern const u8 gText_SideQuestDesc_1[];
+extern const u8 gText_SideQuestDesc_2[];
+extern const u8 gText_SideQuestDesc_3[];
+extern const u8 gText_SideQuestDesc_4[];
+extern const u8 gText_SideQuestDesc_5[];
+extern const u8 gText_SideQuestDesc_6[];
+extern const u8 gText_SideQuestDesc_7[];
+extern const u8 gText_SideQuestDesc_8[];
+extern const u8 gText_SideQuestDesc_9[];
+extern const u8 gText_SideQuestDesc_10[];
+extern const u8 gText_SideQuestDesc_11[];
+extern const u8 gText_SideQuestDesc_12[];
+extern const u8 gText_SideQuestDesc_13[];
+extern const u8 gText_SideQuestDesc_14[];
+extern const u8 gText_SideQuestDesc_15[];
+extern const u8 gText_SideQuestDesc_16[];
+extern const u8 gText_SideQuestDesc_17[];
+extern const u8 gText_SideQuestDesc_18[];
+extern const u8 gText_SideQuestDesc_19[];
+extern const u8 gText_SideQuestDesc_20[];
+extern const u8 gText_SideQuestDesc_21[];
+extern const u8 gText_SideQuestDesc_22[];
+extern const u8 gText_SideQuestDesc_23[];
+extern const u8 gText_SideQuestDesc_24[];
+extern const u8 gText_SideQuestDesc_25[];
+extern const u8 gText_SideQuestDesc_26[];
+extern const u8 gText_SideQuestDesc_27[];
+extern const u8 gText_SideQuestDesc_28[];
+extern const u8 gText_SideQuestDesc_29[];
+extern const u8 gText_SideQuestDesc_30[];
+extern const u8 gText_SideQuestDesc_31[];
+extern const u8 gText_SideQuestDesc_32[];
+extern const u8 gText_SideQuestDesc_33[];
+extern const u8 gText_SideQuestDesc_34[];
+extern const u8 gText_SideQuestDesc_35[];
+extern const u8 gText_SideQuestDesc_36[];
+extern const u8 gText_SideQuestDesc_37[];
+extern const u8 gText_SideQuestDesc_38[];
+extern const u8 gText_SideQuestDesc_39[];
+extern const u8 gText_SideQuestDesc_40[];
+extern const u8 gText_SideQuestDesc_41[];
+extern const u8 gText_SideQuestDesc_42[];
+extern const u8 gText_SideQuestDesc_43[];
+extern const u8 gText_SideQuestDesc_44[];
+
+//completed quest description
+extern const u8 gText_SideQuestDoneDesc_1[];
+extern const u8 gText_SideQuestDoneDesc_2[];
+extern const u8 gText_SideQuestDoneDesc_3[];
+extern const u8 gText_SideQuestDoneDesc_4[];
+extern const u8 gText_SideQuestDoneDesc_5[];
+extern const u8 gText_SideQuestDoneDesc_6[];
+extern const u8 gText_SideQuestDoneDesc_7[];
+extern const u8 gText_SideQuestDoneDesc_8[];
+extern const u8 gText_SideQuestDoneDesc_9[];
+extern const u8 gText_SideQuestDoneDesc_10[];
+extern const u8 gText_SideQuestDoneDesc_11[];
+extern const u8 gText_SideQuestDoneDesc_12[];
+extern const u8 gText_SideQuestDoneDesc_13[];
+extern const u8 gText_SideQuestDoneDesc_14[];
+extern const u8 gText_SideQuestDoneDesc_15[];
+extern const u8 gText_SideQuestDoneDesc_16[];
+extern const u8 gText_SideQuestDoneDesc_17[];
+extern const u8 gText_SideQuestDoneDesc_18[];
+extern const u8 gText_SideQuestDoneDesc_19[];
+extern const u8 gText_SideQuestDoneDesc_20[];
+extern const u8 gText_SideQuestDoneDesc_21[];
+extern const u8 gText_SideQuestDoneDesc_22[];
+extern const u8 gText_SideQuestDoneDesc_23[];
+extern const u8 gText_SideQuestDoneDesc_24[];
+extern const u8 gText_SideQuestDoneDesc_25[];
+extern const u8 gText_SideQuestDoneDesc_26[];
+extern const u8 gText_SideQuestDoneDesc_27[];
+extern const u8 gText_SideQuestDoneDesc_28[];
+extern const u8 gText_SideQuestDoneDesc_29[];
+extern const u8 gText_SideQuestDoneDesc_30[];
+extern const u8 gText_SideQuestDoneDesc_31[];
+extern const u8 gText_SideQuestDoneDesc_32[];
+extern const u8 gText_SideQuestDoneDesc_33[];
+extern const u8 gText_SideQuestDoneDesc_34[];
+extern const u8 gText_SideQuestDoneDesc_35[];
+extern const u8 gText_SideQuestDoneDesc_36[];
+extern const u8 gText_SideQuestDoneDesc_37[];
+extern const u8 gText_SideQuestDoneDesc_38[];
+extern const u8 gText_SideQuestDoneDesc_39[];
+extern const u8 gText_SideQuestDoneDesc_40[];
+extern const u8 gText_SideQuestDoneDesc_41[];
+extern const u8 gText_SideQuestDoneDesc_42[];
+extern const u8 gText_SideQuestDoneDesc_43[];
+extern const u8 gText_SideQuestDoneDesc_44[];
+
+//map
+extern const u8 gText_SideQuestMap1[];
+extern const u8 gText_SideQuestMap2[];
+extern const u8 gText_SideQuestMap3[];
+extern const u8 gText_SideQuestMap4[];
+extern const u8 gText_SideQuestMap5[];
+extern const u8 gText_SideQuestMap6[];
+extern const u8 gText_SideQuestMap7[];
+extern const u8 gText_SideQuestMap8[];
+extern const u8 gText_SideQuestMap9[];
+extern const u8 gText_SideQuestMap10[];
+extern const u8 gText_SideQuestMap11[];
+extern const u8 gText_SideQuestMap12[];
+extern const u8 gText_SideQuestMap13[];
+extern const u8 gText_SideQuestMap14[];
+extern const u8 gText_SideQuestMap15[];
+extern const u8 gText_SideQuestMap16[];
+extern const u8 gText_SideQuestMap17[];
+extern const u8 gText_SideQuestMap18[];
+extern const u8 gText_SideQuestMap19[];
+extern const u8 gText_SideQuestMap20[];
+extern const u8 gText_SideQuestMap21[];
+extern const u8 gText_SideQuestMap22[];
+extern const u8 gText_SideQuestMap23[];
+extern const u8 gText_SideQuestMap24[];
+extern const u8 gText_SideQuestMap25[];
+extern const u8 gText_SideQuestMap26[];
+extern const u8 gText_SideQuestMap27[];
+extern const u8 gText_SideQuestMap28[];
+extern const u8 gText_SideQuestMap29[];
+extern const u8 gText_SideQuestMap30[];
+extern const u8 gText_SideQuestMap31[];
+extern const u8 gText_SideQuestMap32[];
+extern const u8 gText_SideQuestMap33[];
+extern const u8 gText_SideQuestMap34[];
+extern const u8 gText_SideQuestMap35[];
+extern const u8 gText_SideQuestMap36[];
+extern const u8 gText_SideQuestMap37[];
+extern const u8 gText_SideQuestMap38[];
+extern const u8 gText_SideQuestMap39[];
+extern const u8 gText_SideQuestMap40[];
+extern const u8 gText_SideQuestMap41[];
+extern const u8 gText_SideQuestMap42[];
+extern const u8 gText_SideQuestMap43[];
+extern const u8 gText_SideQuestMap44[];
+
+//subquests
+extern const u8 gText_SubQuest1_Name1[];
+extern const u8 gText_SubQuest1_Name2[];
+extern const u8 gText_SubQuest1_Name3[];
+extern const u8 gText_SubQuest1_Name4[];
+extern const u8 gText_SubQuest1_Name5[];
+extern const u8 gText_SubQuest1_Name6[];
+extern const u8 gText_SubQuest1_Name7[];
+extern const u8 gText_SubQuest1_Name8[];
+extern const u8 gText_SubQuest1_Name9[];
+extern const u8 gText_SubQuest1_Name10[];
+
+extern const u8 gText_SubQuest2_Name1[];
+extern const u8 gText_SubQuest2_Name2[];
+extern const u8 gText_SubQuest2_Name3[];
+extern const u8 gText_SubQuest2_Name4[];
+extern const u8 gText_SubQuest2_Name5[];
+extern const u8 gText_SubQuest2_Name6[];
+extern const u8 gText_SubQuest2_Name7[];
+extern const u8 gText_SubQuest2_Name8[];
+extern const u8 gText_SubQuest2_Name9[];
+extern const u8 gText_SubQuest2_Name10[];
+extern const u8 gText_SubQuest2_Name11[];
+extern const u8 gText_SubQuest2_Name12[];
+extern const u8 gText_SubQuest2_Name13[];
+extern const u8 gText_SubQuest2_Name14[];
+extern const u8 gText_SubQuest2_Name15[];
+extern const u8 gText_SubQuest2_Name16[];
+extern const u8 gText_SubQuest2_Name17[];
+extern const u8 gText_SubQuest2_Name18[];
+extern const u8 gText_SubQuest2_Name19[];
+extern const u8 gText_SubQuest2_Name20[];
+
+extern const u8 gText_SubQuest1_Desc1[];
+extern const u8 gText_SubQuest1_Desc2[];
+extern const u8 gText_SubQuest1_Desc3[];
+extern const u8 gText_SubQuest1_Desc4[];
+extern const u8 gText_SubQuest1_Desc5[];
+extern const u8 gText_SubQuest1_Desc6[];
+extern const u8 gText_SubQuest1_Desc7[];
+extern const u8 gText_SubQuest1_Desc8[];
+extern const u8 gText_SubQuest1_Desc9[];
+extern const u8 gText_SubQuest1_Desc10[];
+
+extern const u8 gText_SubQuest2_Desc1[];
+extern const u8 gText_SubQuest2_Desc2[];
+extern const u8 gText_SubQuest2_Desc3[];
+extern const u8 gText_SubQuest2_Desc4[];
+extern const u8 gText_SubQuest2_Desc5[];
+extern const u8 gText_SubQuest2_Desc6[];
+extern const u8 gText_SubQuest2_Desc7[];
+extern const u8 gText_SubQuest2_Desc8[];
+extern const u8 gText_SubQuest2_Desc9[];
+extern const u8 gText_SubQuest2_Desc10[];
+extern const u8 gText_SubQuest2_Desc11[];
+extern const u8 gText_SubQuest2_Desc12[];
+extern const u8 gText_SubQuest2_Desc13[];
+extern const u8 gText_SubQuest2_Desc14[];
+extern const u8 gText_SubQuest2_Desc15[];
+extern const u8 gText_SubQuest2_Desc16[];
+extern const u8 gText_SubQuest2_Desc17[];
+extern const u8 gText_SubQuest2_Desc18[];
+extern const u8 gText_SubQuest2_Desc19[];
+extern const u8 gText_SubQuest2_Desc20[];
+
+// Berry Blender
+extern const u8 gText_SavingDontTurnOff2[];
+extern const u8 gText_BlenderMaxSpeedRecord[];
+extern const u8 gText_234Players[];
+
 // Battle Factory Screen
 extern const u8 gText_RentalPkmn2[];
 extern const u8 gText_SelectFirstPkmn[];
@@ -2202,5 +2685,13 @@ extern const u8 gText_OakThisIsListOfPokemon[];
 extern const u8 gText_Boy[];
 extern const u8 gText_Girl[];
 
+// Switch Caught Mon into Party
+extern const u8 gText_CannotSendMonToBoxHM[];
+extern const u8 gText_CannotSendMonToBoxActive[];
+extern const u8 gText_CannotSendMonToBoxPartner[];
+
+// Exp. All
+extern const u8 gText_ExpAllOn[];
+extern const u8 gText_ExpAllOff[];
 
 #endif // GUARD_STRINGS_H

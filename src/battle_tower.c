@@ -1065,6 +1065,46 @@ void FillTentTrainerParty(u8 monsCount)
     FillTentTrainerParty_(TRAINER_BATTLE_PARAM.opponentA, 0, monsCount);
 }
 
+/*void FillEntityTrainerParty(u8 monsCount)
+{
+    ZeroEnemyPartyMons();
+    FillKarmaTrainerParty(gTrainerBattleOpponent_A, 0, monsCount);
+}
+
+static void FillKarmaTrainerParty(u16 trainerId, u8 firstMonId, u8 monsCount)
+{
+    u8 i, j;
+    u8 friendship;
+    u8 level = 66; //GetLevelFromKarma();
+    u8 fixedIV = MAX_PER_STAT_IVS;
+    u32 otID = 0;
+
+gEnemyParty
+
+    for (i = 0; i < monsCount; i++)
+    {
+        u16 monId = gFrontierTempParty[i];
+        CreateMonWithEVSpreadNatureOTID(&gEnemyParty[firstMonId + i],
+                                             gFacilityTrainerMons[monId].species,
+                                             level,
+                                             gFacilityTrainerMons[monId].nature,
+                                             fixedIV,
+                                             gFacilityTrainerMons[monId].evSpread,
+                                             otID);
+
+        friendship = 0;
+        for (j = 0; j < MAX_MON_MOVES; j++)
+        {
+            SetMonMoveAvoidReturn(&gEnemyParty[firstMonId + i], gFacilityTrainerMons[monId].moves[j], j);
+            if (gFacilityTrainerMons[monId].moves[j] == MOVE_FRUSTRATION)
+                friendship = 0;
+        }
+
+        SetMonData(&gEnemyParty[firstMonId + i], MON_DATA_FRIENDSHIP, &friendship);
+        SetMonData(&gEnemyParty[firstMonId + i], MON_DATA_HELD_ITEM, &gBattleFrontierHeldItems[gFacilityTrainerMons[monId].itemTableId]);
+    }
+}*/
+
 static void GetOpponentIntroSpeech(void)
 {
     u16 trainerId;

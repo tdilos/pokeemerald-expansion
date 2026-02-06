@@ -61,6 +61,17 @@ s32 MathUtil_Div32(s32 x, s32 y)
     return _x / y;
 }
 
+u32 MathUtil_Exponent(u32 x, u32 y)
+{
+    u32 index;
+	u32 result = 1;
+	
+    for (index = 0; index < y; index++)
+        result *= x;
+
+    return result;
+}
+
 s16 MathUtil_Inv16(s16 y)
 {
     s32 x;

@@ -1,0 +1,61 @@
+{
+  "id": "MAP_AMBER_CITY_MUSEUM_B1",
+  "name": "AmberCity_Museum_B1",
+  "layout": "LAYOUT_AMBER_CITY_MUSEUM_B1",
+  "music": "MUS_LILYCOVE_MUSEUM",
+  "region_map_section": "MAPSEC_AMBER_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
+      "x": 1,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AmberCity_Museum_B1_EventScript_Scientist",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 17,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_AMBER_CITY_MUSEUM_1F",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AmberCity_Museum_B1_EventScript_XenoresinDisplay"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AmberCity_Museum_B1_EventScript_XenoresinDisplay"
+    }
+  ]
+}

@@ -904,6 +904,41 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	delay 30
 	return
 
+LittlerootTown_EventScript_GiveStuffDemo::
+	lock
+	faceplayer
+	msgbox LittlerootTown_Text_TakeTM, MSGBOX_DEFAULT
+	giveitem ITEM_TM10
+	waitfanfare
+	giveitem ITEM_TM49
+	waitfanfare
+	giveitem ITEM_TM97
+	waitfanfare
+	msgbox LittlerootTown_Text_AndThese, MSGBOX_DEFAULT
+	giveitem ITEM_POKE_BALL, 20
+	waitfanfare
+	giveitem ITEM_ANTIBIOTICS, 10
+	giveitem ITEM_DAZE_HEAL, 10
+	giveitem ITEM_STIMULANT, 10
+	giveitem ITEM_RELAXANT, 10
+	waitfanfare
+	msgbox LittlerootTown_Text_SeeYa, MSGBOX_DEFAULT
+	removeobject 9
+	release
+	end
+
+LittlerootTown_Text_TakeTM:
+	.string "Please, take these TMs.$"
+
+LittlerootTown_Text_AndThese:
+	.string "And these balls.$"
+
+LittlerootTown_Text_ReceivedBalls:
+	.string "{PLAYER} received 20 Pokéballs!$"
+
+LittlerootTown_Text_SeeYa:
+	.string "See ya around, kid.$"
+
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "MOM: {PLAYER}, we're here, honey!\p"
 	.string "It must be tiring riding with our things\n"

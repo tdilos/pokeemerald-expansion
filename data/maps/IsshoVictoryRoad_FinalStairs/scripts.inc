@@ -1,0 +1,92 @@
+IsshoVictoryRoad_FinalStairs_MapScripts::
+	.byte 0
+
+IsshoVictoryRoad_EventScript_Chett::
+	trainerbattle_single TRAINER_CHETT, IsshoVictoryRoad_Text_ChettIntro, IsshoVictoryRoad_Text_ChettDefeated
+	msgbox IsshoVictoryRoad_Text_ChettPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Courtney::
+	trainerbattle_single TRAINER_COURTNEY, IsshoVictoryRoad_Text_CourtneyIntro, IsshoVictoryRoad_Text_CourtneyDefeated
+	msgbox IsshoVictoryRoad_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Brad::
+	trainerbattle_single TRAINER_BRAD, IsshoVictoryRoad_Text_BradIntro, IsshoVictoryRoad_Text_BradDefeated
+	msgbox IsshoVictoryRoad_Text_BradPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Kimberly::
+	trainerbattle_single TRAINER_KIMBERLY, IsshoVictoryRoad_Text_KimberlyIntro, IsshoVictoryRoad_Text_KimberlyDefeated
+	msgbox IsshoVictoryRoad_Text_KimberlyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Landon::
+	trainerbattle_single TRAINER_LANDON, IsshoVictoryRoad_Text_LandonIntro, IsshoVictoryRoad_Text_LandonDefeated
+	msgbox IsshoVictoryRoad_Text_LandonPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Cerise::
+	trainerbattle_single TRAINER_CERISE, IsshoVictoryRoad_Text_CeriseIntro, IsshoVictoryRoad_Text_CeriseDefeated
+	msgbox IsshoVictoryRoad_Text_CerisePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Kane::
+	trainerbattle_single TRAINER_KANE, IsshoVictoryRoad_Text_KaneIntro, IsshoVictoryRoad_Text_KaneDefeated
+	msgbox IsshoVictoryRoad_Text_KanePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Lionel::
+	trainerbattle_single TRAINER_LIONEL, IsshoVictoryRoad_Text_LionelIntro, IsshoVictoryRoad_Text_LionelDefeated
+	msgbox IsshoVictoryRoad_Text_LionelPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Xavier::
+	trainerbattle_single TRAINER_XAVIER, IsshoVictoryRoad_Text_XavierIntro, IsshoVictoryRoad_Text_XavierDefeated
+	msgbox IsshoVictoryRoad_Text_XavierPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Luna::
+	trainerbattle_single TRAINER_LUNA, IsshoVictoryRoad_Text_LunaIntro, IsshoVictoryRoad_Text_LunaDefeated
+	msgbox IsshoVictoryRoad_Text_LunaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Archer::
+	trainerbattle_single TRAINER_ARCHER, IsshoVictoryRoad_Text_ArcherIntro, IsshoVictoryRoad_Text_ArcherDefeated
+	msgbox IsshoVictoryRoad_Text_ArcherPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Harriet::
+	trainerbattle_single TRAINER_HARRIET, IsshoVictoryRoad_Text_HarrietIntro, IsshoVictoryRoad_Text_HarrietDefeated
+	msgbox IsshoVictoryRoad_Text_HarrietPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Selwyn::
+	trainerbattle_single TRAINER_SELWYN, IsshoVictoryRoad_Text_SelwynIntro, IsshoVictoryRoad_Text_SelwynDefeated
+	msgbox IsshoVictoryRoad_Text_SelwynPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Willow::
+	trainerbattle_single TRAINER_WILLOW, IsshoVictoryRoad_Text_WillowIntro, IsshoVictoryRoad_Text_WillowDefeated
+	msgbox IsshoVictoryRoad_Text_WillowPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Cruz::
+	trainerbattle_single TRAINER_CRUZ, IsshoVictoryRoad_Text_CruzIntro, IsshoVictoryRoad_Text_CruzDefeated
+	msgbox IsshoVictoryRoad_Text_CruzPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Marissa::
+	trainerbattle_single TRAINER_MARISSA, IsshoVictoryRoad_Text_MarissaIntro, IsshoVictoryRoad_Text_MarissaDefeated
+	msgbox IsshoVictoryRoad_Text_MarissaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+IsshoVictoryRoad_EventScript_Dewey::
+	trainerbattle_single TRAINER_DEWEY, IsshoVictoryRoad_Text_DeweyIntro, IsshoVictoryRoad_Text_DeweyDefeated
+	msgbox IsshoVictoryRoad_Text_DeweyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+
+
+

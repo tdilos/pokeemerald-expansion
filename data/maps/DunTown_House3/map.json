@@ -1,0 +1,48 @@
+{
+  "id": "MAP_DUN_TOWN_HOUSE3",
+  "name": "DunTown_House3",
+  "layout": "LAYOUT_DUN_TOWN_HOUSE3",
+  "music": "MUS_DP_CANALAVE_NIGHT",
+  "region_map_section": "MAPSEC_DUN_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_DUN_TOWN",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 6,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_DUN_TOWN",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DunTown_House3_EventScript_Notebook"
+    }
+  ]
+}

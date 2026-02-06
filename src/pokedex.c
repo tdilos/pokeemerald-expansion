@@ -1394,6 +1394,7 @@ static const struct SearchOptionText sDexSearchTypeOptions[] =
     {gText_DexEmptyString, gTypesInfo[TYPE_DRAGON].name},
     {gText_DexEmptyString, gTypesInfo[TYPE_DARK].name},
     {gText_DexEmptyString, gTypesInfo[TYPE_FAIRY].name},
+	{gText_DexEmptyString, gTypesInfo[TYPE_ECHO].name},
     {},
 };
 
@@ -1429,6 +1430,7 @@ static const enum Type sDexSearchTypeIds[NUMBER_OF_MON_TYPES] =
     TYPE_DRAGON,
     TYPE_DARK,
     TYPE_FAIRY,
+	TYPE_ECHO,
 };
 
 // Number pairs are the task data for tracking the cursor pos and scroll offset of each option list
@@ -4586,6 +4588,19 @@ u16 GetHoennPokedexCount(u8 caseID)
                 count++;
             break;
         }
+    }
+    return count;
+}
+
+u16 GetIsshoPokedexCount(void)
+{
+	u16 count = 0;
+    u16 i;
+
+    for (i = 0; i < HOENN_DEX_COUNT; i++)
+    {
+        if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
+            count++;
     }
     return count;
 }

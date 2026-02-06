@@ -1329,6 +1329,7 @@ static u16 RenderText(struct TextPrinter *textPrinter)
     u16 currChar;
     s32 width;
     s32 widthHelper;
+	u8 repeats;
 
     switch (textPrinter->state)
     {
@@ -1352,7 +1353,22 @@ static u16 RenderText(struct TextPrinter *textPrinter)
         else
             textPrinter->delayCounter = textPrinter->textSpeed;
 
-        currChar = *textPrinter->printerTemplate.currentChar;
+        switch (GetPlayerTextSpeed())
+		{
+			case OPTIONS_TEXT_SPEED_SLOW:
+				repeats = 1;
+				break;
+			case OPTIONS_TEXT_SPEED_MID:
+				repeats = 1;
+				break;
+			case OPTIONS_TEXT_SPEED_FAST:
+				repeats = 2;
+				break;
+		}
+		
+		do {
+		
+		currChar = *textPrinter->printerTemplate.currentChar;
         textPrinter->printerTemplate.currentChar++;
 
         switch (currChar)

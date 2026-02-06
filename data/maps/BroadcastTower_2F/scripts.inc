@@ -1,0 +1,20 @@
+BroadcastTower_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
+	map_script MAP_SCRIPT_ON_TRANSITION, CaveHole_FixCrackedGround
+	map_script MAP_SCRIPT_ON_RESUME, BroadcastTower_2F_SetHoleWarp
+	.byte 0
+
+BroadcastTower_2F_SetHoleWarp:
+	setstepcallback STEP_CB_CRACKED_FLOOR
+	setholewarp MAP_BROADCAST_TOWER_1F
+	end
+
+BroadcastTower_EventScript_Moishe::
+	trainerbattle_single TRAINER_MOISHE, BroadcastTower_Text_MoisheIntro, BroadcastTower_Text_MoisheDefeated
+	msgbox BroadcastTower_Text_MoishePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+BroadcastTower_EventScript_Hymie::
+	trainerbattle_single TRAINER_HYMIE, BroadcastTower_Text_HymieIntro, BroadcastTower_Text_HymieDefeated
+	msgbox BroadcastTower_Text_HymiePostBattle, MSGBOX_AUTOCLOSE
+	end

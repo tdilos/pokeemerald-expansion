@@ -1,0 +1,41 @@
+{
+  "id": "MAP_ARTISAN_CAVE_PUZZLE_CHAMBER4",
+  "name": "ArtisanCave_PuzzleChamber4",
+  "layout": "LAYOUT_ARTISAN_CAVE_PUZZLE_CHAMBER4",
+  "music": "MUS_SEALED_CHAMBER",
+  "region_map_section": "MAPSEC_UNOWN_CHAMBER_4",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_ARTISAN_CAVE_B1F",
+      "dest_warp_id": "5"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ArtisanCave_PuzzleChamber4_Puzzle"
+    }
+  ]
+}

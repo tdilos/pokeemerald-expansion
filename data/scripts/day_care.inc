@@ -267,6 +267,7 @@ EventScript_EggHatch::
 	msgbox Text_EggHatchHuh, MSGBOX_DEFAULT
 	special EggHatch
 	waitstate
+	addvar VAR_EGG_HATCH_COUNT, 1
 	releaseall
 	end
 

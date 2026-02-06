@@ -62,6 +62,7 @@ void ClearTempFieldEventData(void)
     FlagClear(FLAG_SYS_ENC_UP_ITEM);
     FlagClear(FLAG_SYS_ENC_DOWN_ITEM);
     FlagClear(FLAG_SYS_USE_STRENGTH);
+    FlagClear(FLAG_SYS_USE_MAGNET_RISE);
     FlagClear(FLAG_SYS_CTRL_OBJ_DELETE);
     FlagClear(FLAG_NURSE_UNION_ROOM_REMINDER);
 }
@@ -150,14 +151,14 @@ void ClearMysteryGiftFlags(void)
 
 void ClearMysteryGiftVars(void)
 {
-    VarSet(VAR_GIFT_PICHU_SLOT, 0);
-    VarSet(VAR_GIFT_UNUSED_1, 0);
+    //VarSet(VAR_GIFT_PICHU_SLOT, 0);
+    /*VarSet(VAR_GIFT_UNUSED_1, 0);
     VarSet(VAR_GIFT_UNUSED_2, 0);
     VarSet(VAR_GIFT_UNUSED_3, 0);
     VarSet(VAR_GIFT_UNUSED_4, 0);
     VarSet(VAR_GIFT_UNUSED_5, 0);
     VarSet(VAR_GIFT_UNUSED_6, 0);
-    VarSet(VAR_GIFT_UNUSED_7, 0);
+    VarSet(VAR_GIFT_UNUSED_7, 0);*/
 }
 
 void DisableResetRTC(void)

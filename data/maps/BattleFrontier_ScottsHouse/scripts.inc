@@ -32,8 +32,11 @@ BattleFrontier_ScottsHouse_EventScript_CheckSilverSymbols::
 	goto_if_unset FLAG_SYS_PIKE_SILVER, BattleFrontier_ScottsHouse_EventScript_CheckGiveShield
 	goto_if_unset FLAG_SYS_PYRAMID_SILVER, BattleFrontier_ScottsHouse_EventScript_CheckGiveShield
 	msgbox BattleFrontier_ScottsHouse_Text_YouveCollectedAllSilverSymbols, MSGBOX_DEFAULT
-	giveitem ITEM_LANSAT_BERRY
-	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ScottsHouse_EventScript_BerryPocketFull
+	@giveitem ITEM_LANSAT_BERRY
+	giveitem ITEM_APEX_TICKET
+	@goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ScottsHouse_EventScript_BerryPocketFull
+	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
+	setflag FLAG_ENABLE_SHIP_PERENNIAL_PILLAR
 	setflag FLAG_COLLECTED_ALL_SILVER_SYMBOLS
 	setflag FLAG_TEMP_4
 	release
@@ -48,6 +51,7 @@ BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols::
 	goto_if_unset FLAG_SYS_PIKE_GOLD, BattleFrontier_ScottsHouse_EventScript_CheckGiveShield
 	goto_if_unset FLAG_SYS_PYRAMID_GOLD, BattleFrontier_ScottsHouse_EventScript_CheckGiveShield
 	msgbox BattleFrontier_ScottsHouse_Text_YouveCollectedAllGoldSymbols, MSGBOX_DEFAULT
+	giveitem ITEM_LANSAT_BERRY
 	giveitem ITEM_STARF_BERRY
 	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_ScottsHouse_EventScript_BerryPocketFull
 	setflag FLAG_COLLECTED_ALL_GOLD_SYMBOLS
@@ -210,9 +214,15 @@ BattleFrontier_ScottsHouse_EventScript_ScottFaceAwayWest::
 	return
 
 BattleFrontier_ScottsHouse_Text_WelcomeToBattleFrontier:
-	.string "SCOTT: Well, hello and welcome!\n"
-	.string "Heheh… Sorry about the cramped space.\p"
-	.string "Anyway, {PLAYER}{KUN}, let me formally\n"
+	@.string "SCOTT: Well, hello and welcome!\n"
+	@.string "Heheh… Sorry about the cramped space.\p"
+	.string "SCOTT: Well, hello there!\n"
+	.string "You must be {PLAYER}.\p"
+	.string "My name is SCOTT.\n"
+	.string "BRENDAN already told me about you.\p"
+	.string "You're ISSHO's greenhorn champion,\n"
+	.string "I hear.\p"
+	.string "Ahem, {PLAYER}{KUN}, let me formally\n"
 	.string "welcome you to the BATTLE FRONTIER.\p"
 	.string "This is my dream come true.\n"
 	.string "It took me years and years, but I've\l"

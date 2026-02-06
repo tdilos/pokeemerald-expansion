@@ -1,0 +1,223 @@
+{
+  "id": "MAP_AMBER_CITY",
+  "name": "AmberCity",
+  "layout": "LAYOUT_AMBER_CITY",
+  "music": "MUS_SOOTOPOLIS",
+  "region_map_section": "MAPSEC_AMBER_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE85",
+      "offset": 1,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE86",
+      "offset": 8,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 11,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AmberCity_EventScript_Salesman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 6,
+      "y": 28,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AmberCity_EventScript_Boy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 19,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AmberCity_EventScript_Hiker",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 9,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AmberCity_EventScript_Woman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
+      "x": 8,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AmberCity_EventScript_Pokemon",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JACE",
+      "x": 5,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_JACE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 16,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AmberCity_EventScript_Thora",
+      "flag": "FLAG_HIDE_WEEKDAY_SIBLING"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 22,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_AMBER_CITY_POKEMON_CENTER",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 12,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_AMBER_CITY_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_AMBER_CITY_MUSEUM_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_AMBER_CITY_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_AMBER_CITY_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_AMBER_CITY_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_AMBER_CITY_BIKE_SHOP",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_SANDSHRAF_B2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_JACE_STATE",
+      "var_value": "0",
+      "script": "AmberCity_EventScript_JaceEncounter"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AmberCity_EventScript_TownSign"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AmberCity_EventScript_MuseumSign"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AmberCity_EventScript_BikeShopSign"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AmberCity_EventScript_GymSign"
+    }
+  ]
+}

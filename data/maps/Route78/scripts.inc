@@ -1,0 +1,60 @@
+Route78_MapScripts::
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route78_OnWarp
+	.byte 0
+
+Route78_OnWarp:
+	map_script_2 VAR_TEMP_0, VAR_TEMP_0, Route78_EventScript_UnsetForceOffscreenLoad
+	.2byte 0
+
+Route78_EventScript_UnsetForceOffscreenLoad::
+	clearflag FLAG_FORCE_LOAD_OFFSCREEN_OBJEV
+	end
+
+
+
+
+
+Route78_EventScript_Stormy::
+	trainerbattle_single TRAINER_STORMY, Route78_Text_StormyIntro, Route78_Text_StormyDefeated
+	msgbox Route78_Text_StormyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route78_EventScript_Petunia::
+	trainerbattle_single TRAINER_PETUNIA, Route78_Text_PetuniaIntro, Route78_Text_PetuniaDefeated
+	msgbox Route78_Text_PetuniaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route78_EventScript_Liv::
+	trainerbattle_double TRAINER_LIV_AND_TAY, Route78_Text_LivAndTayIntro, Route78_Text_LivAndTayDefeated, Route78_Text_LivAndTayNotEnoughMons
+	msgbox Route78_Text_LivPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route78_EventScript_Tay::
+	trainerbattle_double TRAINER_LIV_AND_TAY, Route78_Text_LivAndTayIntro, Route78_Text_LivAndTayDefeated, Route78_Text_LivAndTayNotEnoughMons
+	msgbox Route78_Text_TayPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route78_EventScript_Alister::
+	trainerbattle_single TRAINER_ALISTER, Route78_Text_AlisterIntro, Route78_Text_AlisterDefeated
+	msgbox Route78_Text_AlisterPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route78_EventScript_Stella::
+	trainerbattle_single TRAINER_STELLA, Route78_Text_StellaIntro, Route78_Text_StellaDefeated
+	msgbox Route78_Text_StellaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route78_EventScript_Wilbur::
+	trainerbattle_single TRAINER_WILBUR, Route78_Text_WilburIntro, Route78_Text_WilburDefeated
+	msgbox Route78_Text_WilburPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route78_EventScript_Orville::
+	trainerbattle_single TRAINER_ORVILLE, Route78_Text_OrvilleIntro, Route78_Text_OrvilleDefeated
+	msgbox Route78_Text_OrvillePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route78_EventScript_Hendrick::
+	trainerbattle_single TRAINER_HENDRICK, Route78_Text_HendrickIntro, Route78_Text_HendrickDefeated
+	msgbox Route78_Text_HendrickPostBattle, MSGBOX_AUTOCLOSE
+	end

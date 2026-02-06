@@ -85,6 +85,14 @@ enum ItemEffect
 #define CRITICAL_HIT_BLOCKED -1
 #define CRITICAL_HIT_ALWAYS  -2
 
+// Lowest and highest percentages used for damage roll calculations
+#define DMG_ROLL_PERCENT_LO 85
+#define DMG_ROLL_PERCENT_HI 100
+
+// Crit chance exceptions
+#define CRITICAL_HIT_BLOCKED -1
+#define CRITICAL_HIT_ALWAYS  -2
+
 // for Natural Gift and Fling
 struct TypePower
 {

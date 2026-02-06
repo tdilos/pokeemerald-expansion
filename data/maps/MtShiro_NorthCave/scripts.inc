@@ -1,0 +1,13 @@
+MtShiro_NorthCave_MapScripts::
+	.byte 0
+
+MtShiro_NorthCave_EventScript_Tyler::
+	trainerbattle_single TRAINER_TYLER, MtShiro_NorthCave_Text_TylerIntro, MtShiro_NorthCave_Text_TylerDefeated
+	msgbox MtShiro_NorthCave_Text_TylerPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MtShiro_NorthCave_EventScript_Ingrid::
+	trainerbattle_single TRAINER_INGRID, MtShiro_NorthCave_Text_IngridIntro, MtShiro_NorthCave_Text_IngridDefeated
+	msgbox MtShiro_NorthCave_Text_IngridPostBattle, MSGBOX_AUTOCLOSE
+	end
+

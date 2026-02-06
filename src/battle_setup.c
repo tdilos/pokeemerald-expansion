@@ -79,6 +79,7 @@ static void CB2_StartFirstBattle(void);
 static void CB2_EndFirstBattle(void);
 static void SaveChangesToPlayerParty(void);
 static void HandleBattleVariantEndParty(void);
+static bool8 BattleHasNoWhiteout(void);
 static void CB2_EndTrainerBattle(void);
 static bool32 IsPlayerDefeated(u32 battleOutcome);
 #if FREE_MATCH_CALL == FALSE
@@ -398,7 +399,21 @@ void BattleSetup_StartRoamerBattle(void)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_ROAMER;
-    CreateBattleStartTask(GetWildBattleTransition(), 0);
+    //CreateBattleStartTask(GetWildBattleTransition(), 0);
+	
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+    {
+    default:
+		CreateBattleStartTask(GetWildBattleTransition(), 0);
+		break;
+    case SPECIES_TORNADUS:
+    case SPECIES_THUNDURUS:
+    case SPECIES_LANDORUS:
+    case SPECIES_ENAMORUS:
+        //CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_C_VS_LEGEND_BEAST);
+        break;
+    }
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
@@ -481,6 +496,77 @@ void StartOldManTutorialBattle(void)
     CreateBattleStartTask(B_TRANSITION_SLICE, 0);
 }
 
+// Wisteria City game 1, withstand strong blow
+void StartWisteriaGame1(void)
+{
+	/*u16 level = 50; // or get level of player's lead mon?
+	u16 ability = 2; //ABILITY_BATTERY_POWERED;
+	u16 move1 = MOVE_EXPLOSION;
+	u16 move2 = MOVE_GAMMA_DECAY;
+	u16 move0 = MOVE_NONE;
+	u16 item1 = ITEM_NORMAL_GEM;
+	u16 item2 = ITEM_ELECTRIC_GEM;
+	u16 evs = 252;
+	u32 ivs1 = TRAINER_PARTY_IVS(31, 31, 0, 15, 0, 0);
+	u32 ivs2 = TRAINER_PARTY_IVS(31, 0, 0, 31, 31, 0);
+	
+    CreateMaleMon(&gEnemyParty[0], SPECIES_ELECTRODE, level);
+    SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &ability);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &move1);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE2, &move0);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE3, &move0);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE4, &move0);
+    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &item1);
+    SetMonData(&gEnemyParty[0], MON_DATA_ATK_EV, &evs);
+    SetMonData(&gEnemyParty[0], MON_DATA_SPEED_EV, &evs);
+    SetMonData(&gEnemyParty[0], MON_DATA_IVS, &ivs1);
+    CalculateMonStats(&gEnemyParty[0]);
+    CreateMaleMon(&gEnemyParty[1], SPECIES_ELECTRODE, level);
+    SetMonData(&gEnemyParty[1], MON_DATA_ABILITY_NUM, &ability);
+    SetMonData(&gEnemyParty[1], MON_DATA_MOVE1, &move2);
+    SetMonData(&gEnemyParty[1], MON_DATA_MOVE2, &move0);
+    SetMonData(&gEnemyParty[1], MON_DATA_MOVE3, &move0);
+    SetMonData(&gEnemyParty[1], MON_DATA_MOVE4, &move0);
+    SetMonData(&gEnemyParty[1], MON_DATA_HELD_ITEM, &item2);
+    SetMonData(&gEnemyParty[1], MON_DATA_SPATK_EV, &evs);
+    SetMonData(&gEnemyParty[1], MON_DATA_SPEED_EV, &evs);
+    SetMonData(&gEnemyParty[1], MON_DATA_IVS, &ivs2);
+    CalculateMonStats(&gEnemyParty[1]);*/
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    gBattleTypeFlags = BATTLE_TYPE_WISTERIA_GAME_1 | BATTLE_TYPE_DOUBLE;
+    CreateBattleStartTask(B_TRANSITION_SLICE, 0);
+}
+
+// Wisteria City game 2, deal strong blow
+void StartWisteriaGame2(void)
+{
+	/*u16 level = 50; // or get level of player's lead mon?
+	u16 ability = 0; //ABILITY_THICK_FAT;
+	u16 move1 = MOVE_FOCUS_PUNCH;
+	u16 move2 = MOVE_PAYBACK;
+	u16 move0 = MOVE_NONE;
+	u16 item = ITEM_ASSAULT_VEST;
+	u16 evs = 252;
+	u32 ivs = TRAINER_PARTY_IVS(31, 0, 31, 0, 0, 31);
+	
+	
+    CreateMaleMon(&gEnemyParty[0], SPECIES_HARIYAMA, level);
+    SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &ability);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &move1);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE2, &move2);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE3, &move0);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE4, &move0);
+    //SetMonData(mon, MON_DATA_MOVE2, MOVE_MIND_READER);
+    //SetMonData(mon, MON_DATA_MOVE3, MOVE_BULK_UP);
+    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &item);
+    SetMonData(&gEnemyParty[0], MON_DATA_HP_EV, &evs);
+    SetMonData(&gEnemyParty[0], MON_DATA_DEF_EV, &evs);
+    CalculateMonStats(&gEnemyParty[0]);*/
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    gBattleTypeFlags = BATTLE_TYPE_WISTERIA_GAME_2;
+    CreateBattleStartTask(B_TRANSITION_SLICE, 0);
+}
+
 void BattleSetup_StartScriptedWildBattle(void)
 {
     LockPlayerFieldControls();
@@ -544,6 +630,9 @@ void BattleSetup_StartLegendaryBattle(void)
 
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
     {
+    default:
+		CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+		break;
     case SPECIES_GROUDON:
     case SPECIES_GROUDON_PRIMAL:
         CreateBattleStartTask(B_TRANSITION_GROUDON, MUS_VS_KYOGRE_GROUDON);
@@ -568,7 +657,23 @@ void BattleSetup_StartLegendaryBattle(void)
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_MEW:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
+    case SPECIES_CELEBI:
+    case SPECIES_JIRACHI:
+    case SPECIES_MANAPHY:
+    case SPECIES_VICTINI:
+    case SPECIES_DIANCIE:
+    case SPECIES_SHAYMIN:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_DP_VS_UXIE_MESPRIT_AZELF);
+        break;
+    case SPECIES_DIALGA:
+    case SPECIES_PALKIA:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_DP_VS_DIALGA_PALKIA);
+        break;
+    case SPECIES_GIRATINA:
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_PL_VS_GIRATINA);
+        break;
+    case SPECIES_ARCEUS:
+        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_DP_VS_ARCEUS);
         break;
     }
 
@@ -719,6 +824,18 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
 
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
+    if (MetatileBehavior_IsSandGrass(tileBehavior))
+        return BATTLE_TERRAIN_SAND;
+    if (MetatileBehavior_IsRedGrass(tileBehavior))
+        return BATTLE_TERRAIN_RED_GRASS;
+    if (MetatileBehavior_IsSnowGrass(tileBehavior))
+        return BATTLE_TERRAIN_SNOW;
+	if (MetatileBehavior_IsWisteriaGrass(tileBehavior))
+        return BATTLE_TERRAIN_WISTERIA_GRASS;
+	if (MetatileBehavior_IsHaewenGrass(tileBehavior))
+        return BATTLE_TERRAIN_HAEWEN_GRASS;
+	if (MetatileBehavior_IsBurgundyGrass(tileBehavior))
+        return BATTLE_TERRAIN_BURGUNDY_GRASS;
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
@@ -733,6 +850,9 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     case MAP_TYPE_ROUTE:
         break;
     case MAP_TYPE_UNDERGROUND:
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERGROUND_CITY_SEWER)
+			|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERGROUND_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(UNDERGROUND_CITY)))
+            return BATTLE_TERRAIN_SEWER;
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
             return BATTLE_ENVIRONMENT_BUILDING;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
@@ -740,6 +860,8 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         return BATTLE_ENVIRONMENT_CAVE;
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:
+		if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERGROUND_CITY_SEWER))
+            return BATTLE_ENVIRONMENT_SEWER;
         return BATTLE_ENVIRONMENT_BUILDING;
     case MAP_TYPE_UNDERWATER:
         return BATTLE_ENVIRONMENT_UNDERWATER;
@@ -751,6 +873,8 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
         return BATTLE_ENVIRONMENT_WATER;
     if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
+        return BATTLE_ENVIRONMENT_POND;
+    if (MetatileBehavior_IsShallowWater(tileBehavior))
         return BATTLE_ENVIRONMENT_POND;
     if (MetatileBehavior_IsMountain(tileBehavior))
         return BATTLE_ENVIRONMENT_MOUNTAIN;
@@ -767,6 +891,31 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         return BATTLE_ENVIRONMENT_SAND;
     if (GetSavedWeather() == WEATHER_SANDSTORM)
         return BATTLE_ENVIRONMENT_SAND;
+	if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
+		return BATTLE_ENVIRONMENT_SAND;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE70) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE70))
+        return BATTLE_ENVIRONMENT_HAEWEN_GRASS;
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE67) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE67))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE66) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE66)))
+        return BATTLE_ENVIRONMENT_WISTERIA_GRASS;
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE65) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE65))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BURGUNDY_TOWN) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BURGUNDY_TOWN)))
+        return BATTLE_ENVIRONMENT_BURGUNDY_GRASS;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE97) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE97))
+        return BATTLE_ENVIRONMENT_SNOW;
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(PITCHBLAK_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(PITCHBLAK_CITY))
+        return BATTLE_ENVIRONMENT_BUILDING;
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE90) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE90))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE91) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE91))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE92) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE92))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE72) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE72))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE73) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE73))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SCARLET_WOODS_NORTH) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SCARLET_WOODS_NORTH))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SCARLET_WOODS_SOUTH) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SCARLET_WOODS_SOUTH))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE69) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE69))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE69) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE68))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAROON_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAROON_CITY)))
+        return BATTLE_ENVIRONMENT_PLAIN_RED;
 
     return BATTLE_ENVIRONMENT_PLAIN;
 }
@@ -867,6 +1016,35 @@ enum BattleTransition GetTrainerBattleTransition(void)
 
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
+
+    if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_CHAMPION)
+        //return B_TRANSITION_CHAMPION;
+        return B_TRANSITION_NORMAN;
+
+    // Entity battle
+	if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_UNKNOWN)
+        return B_TRANSITION_BLACKHOLE;
+
+    if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_ELITE_FOUR)
+    {
+        if (gTrainerBattleOpponent_A == TRAINER_SIDNEY)
+            return B_TRANSITION_SIDNEY;
+        if (gTrainerBattleOpponent_A == TRAINER_PHOEBE)
+            return B_TRANSITION_PHOEBE;
+        if (gTrainerBattleOpponent_A == TRAINER_GLACIA)
+            return B_TRANSITION_GLACIA;
+        if (gTrainerBattleOpponent_A == TRAINER_DRAKE)
+            return B_TRANSITION_DRAKE;
+        if (gTrainerBattleOpponent_A == TRAINER_LISIA_0)
+            return B_TRANSITION_LISIA;
+        if (gTrainerBattleOpponent_A == TRAINER_IAN_0)
+            return B_TRANSITION_IAN;
+        if (gTrainerBattleOpponent_A == TRAINER_SIDNEY_0)
+            return B_TRANSITION_SIDNEY2;
+        if (gTrainerBattleOpponent_A == TRAINER_PETRA_0)
+            return B_TRANSITION_PETRA;
+        return B_TRANSITION_CHAMPION;
+    }
 
     if (trainerClass == TRAINER_CLASS_TEAM_MAGMA
         || trainerClass == TRAINER_CLASS_MAGMA_LEADER
@@ -1117,11 +1295,13 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
     switch (TRAINER_BATTLE_PARAM.mode)
     {
     case TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT:
+	case TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT:
         return EventScript_DoNoIntroTrainerBattle;
     case TRAINER_BATTLE_DOUBLE:
         SetMapVarsToTrainerA();
         return EventScript_TryDoDoubleTrainerBattle;
     case TRAINER_BATTLE_CONTINUE_SCRIPT:
+	case TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT:
         if (gApproachingTrainerId == 0)
         {
             SetMapVarsToTrainerA();
@@ -1298,7 +1478,7 @@ void ClearTrainerFlag(u16 trainerId)
 }
 
 void BattleSetup_StartTrainerBattle(void)
-{
+{	
     if (gNoOfApproachingTrainers == 2)
     {
         if (FollowerNPCIsBattlePartner())
@@ -1318,6 +1498,14 @@ void BattleSetup_StartTrainerBattle(void)
             gBattleTypeFlags = (BATTLE_TYPE_TRAINER);
         }
     }
+	
+	
+	// For Wisteria games
+    if (FlagGet(FLAG_SYS_WISTERIA_GAME_IN_PROGRESS) && !FlagGet(FLAG_CLEARED_WISTERIA_GAME_1))
+        gBattleTypeFlags |= BATTLE_TYPE_WISTERIA_GAME_1;
+    else if (FlagGet(FLAG_SYS_WISTERIA_GAME_IN_PROGRESS) && !FlagGet(FLAG_CLEARED_WISTERIA_GAME_2))
+        gBattleTypeFlags |= BATTLE_TYPE_WISTERIA_GAME_2;
+
 
     if (GetTrainerBattleMode() == TRAINER_BATTLE_EARLY_RIVAL && GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL)
         gBattleTypeFlags |= BATTLE_TYPE_FIRST_BATTLE;
@@ -1425,10 +1613,20 @@ static void HandleBattleVariantEndParty(void)
     FlagClear(B_FLAG_SKY_BATTLE);
 }
 
+static bool8 BattleHasNoWhiteout()
+{
+    if (gTrainerBattleMode == TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT || gTrainerBattleMode == TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 static void CB2_EndTrainerBattle(void)
 {
     HandleBattleVariantEndParty();
 
+	gBattleTypeFlags = 0; // clear battle flags to fix a glitch with double battle trainers
+	
     gIsDebugBattle = FALSE;
     if (FollowerNPCIsBattlePartner())
     {
@@ -1476,7 +1674,7 @@ static void CB2_EndTrainerBattle(void)
     }
     else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
-        if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InTrainerHillChallenge() || (!NoAliveMonsForPlayer()) || FlagGet(B_FLAG_NO_WHITEOUT))
+        if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InTrainerHillChallenge() || (!NoAliveMonsForPlayer()) || FlagGet(B_FLAG_NO_WHITEOUT) || BattleHasNoWhiteout() )
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         else
             SetMainCallback2(CB2_WhiteOut);
@@ -1994,9 +2192,17 @@ static bool32 HasEnoughBadgesForRematch(void)
 #endif //FREE_MATCH_CALL
 
 #define STEP_COUNTER_MAX 255
+#define CARDIO_COUNTER_MAX 50000
 
 void IncrementRematchStepCounter(void)
 {
+	u16 *cardioStepCount;
+	
+	// should increase each time player takes a step, capping at 50000
+	cardioStepCount = GetVarPointer(VAR_CARDIO_STEP_COUNT);
+	if (*cardioStepCount < CARDIO_COUNTER_MAX)
+		(*cardioStepCount)++;
+	
 #if FREE_MATCH_CALL == FALSE
     if (!HasEnoughBadgesForRematch())
         return;

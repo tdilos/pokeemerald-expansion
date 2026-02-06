@@ -25,9 +25,15 @@ EverGrandeCity_DrakesRoom_EventScript_WalkInCloseDoor::
 	end
 
 EverGrandeCity_DrakesRoom_OnLoad:
+	call_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_TurnOffWeather
 	call_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom
 	call_if_eq VAR_ELITE_4_STATE, 4, EverGrandeCity_DrakesRoom_EventScript_CloseDoor
 	end
+
+EverGrandeCity_DrakesRoom_EventScript_TurnOffWeather::
+	setweather WEATHER_NONE
+	doweather
+	return
 
 EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom::
 	call PokemonLeague_EliteFour_EventScript_ResetAdvanceToNextRoom
@@ -36,6 +42,101 @@ EverGrandeCity_DrakesRoom_EventScript_ResetAdvanceToNextRoom::
 EverGrandeCity_DrakesRoom_EventScript_CloseDoor::
 	call PokemonLeague_EliteFour_EventScript_CloseDoor
 	return
+
+
+
+
+
+
+
+
+EverGrandeCity_DrakesRoom_EventScript_Petra::
+	lock
+	@faceplayer
+	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, EverGrandeCity_DrakesRoom_EventScript_PetraPostBattle
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox EverGrandeCity_DrakesRoom_Text_PetraIntro, MSGBOX_DEFAULT
+	setvar VAR_MUGSHOT_ID, MUGSHOT_PETRA
+	trainerbattle_no_intro TRAINER_PETRA_0, EverGrandeCity_DrakesRoom_Text_PetraDefeated
+	goto EverGrandeCity_DrakesRoom_EventScript_PetraDefeated
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_PetraPostBattle::
+	msgbox EverGrandeCity_DrakesRoom_Text_PetraPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_DrakesRoom_EventScript_PetraDefeated::
+	setflag FLAG_DEFEATED_ELITE_4_DRAKE
+	call EverGrandeCity_DrakesRoom_EventScript_TurnOffWeather
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	msgbox EverGrandeCity_DrakesRoom_Text_PetraPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_DrakesRoom_Text_PetraIntro:
+	.string "I am...\p"
+	.string "The last of...\n"
+	.string "The ELITE FOUR...\p"
+	@.string "PETRA of the Ancient World.\p"
+	.string "Some call me...\n"
+	.string "PETRA...\p"
+	.string "Shaman of...\n"
+	.string "The Ancient World...\p"
+	.string "There is...\n"
+	.string "No need...\l"
+	.string "For words...\p"
+	.string "Only action...\n"
+	.string "matters now.$"
+	@.string "Many trainers...\p"
+	@.string "I have known...\p"
+	@.string "History is marked...\p"
+	@.string "By their rise and fall...\p"
+	@.string "They are naught but...\p"
+	@.string "Ephemeral ebbs...\p"
+	@.string "In the sands of time...\p"
+	@.string "But sometimes...\n"
+	@.string "They cascade...\p"
+	@.string "Into a powerful sandstorm!\p"
+	@.string "{PLAYER}!\n"
+	@.string "Show me the storm that you will make!$"
+
+	@.string "I am the last of the ELITE FOUR,\n"
+	@.string "PETRA the Megalith!\p"
+	@.string "Many years have I wandered this world.\p"
+	@.string "Many great and powerful trainers\n"
+	@.string "I have met.\p"
+	@.string "You think you have what it takes\n"
+	@.string "to stand among them?\p"
+	@.string "A thousand generations of trainers\n"
+	@.string "have come before you.\p"
+	@.string "And a thousand times have fallen\n"
+	@.string "into ruin.\p"
+	@.string "As will you if you don't have what it takes.\p"
+	@.string "Behold the power of the ancient world!$"
+
+EverGrandeCity_DrakesRoom_Text_PetraDefeated:
+	@.string "Very well. You've earned my respect.$"
+	.string "Perhaps...\n"
+	.string "These old eyes...\p"
+	.string "Still have much to see.$"
+	@.string "Haven't seen everything just yet.$"
+
+EverGrandeCity_DrakesRoom_Text_PetraPostBattle:
+	.string "There is...\n"
+	.string "No need...\l"
+	.string "For words.\p"
+	.string "Go now...\n"
+	.string "The CHAMPION awaits.$"
+
+
+
+
+
+
+
+
+
 
 EverGrandeCity_DrakesRoom_EventScript_Drake::
 	lock

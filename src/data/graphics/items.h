@@ -89,6 +89,9 @@ const u16 gItemIconPalette_BeastBall[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_CherishBall[] = INCBIN_U32("graphics/items/icons/cherish_ball.4bpp.smol");
 const u16 gItemIconPalette_CherishBall[] = INCBIN_U16("graphics/items/icon_palettes/cherish_ball.gbapal");
 
+const u32 gItemIcon_GSBall[] = INCBIN_U32("graphics/items/icons/gs_ball.4bpp.lz");
+const u32 gItemIconPalette_GSBall[] = INCBIN_U32("graphics/items/icon_palettes/gs_ball.gbapal.lz");
+
 // Medicine
 
 const u32 gItemIcon_Potion[] = INCBIN_U32("graphics/items/icons/potion.4bpp.smol");
@@ -133,6 +136,8 @@ const u16 gItemIconPalette_RevivalHerb[] = INCBIN_U16("graphics/items/icon_palet
 
 const u16 gItemIconPalette_Antidote[] = INCBIN_U16("graphics/items/icon_palettes/antidote.gbapal");
 
+const u16 gItemIconPalette_DazeHeal[] = INCBIN_U16("graphics/items/icon_palettes/daze_heal.gbapal");
+
 const u32 gItemIcon_StatusHeal[] = INCBIN_U32("graphics/items/icons/status_heal.4bpp.smol");
 const u16 gItemIconPalette_ParalyzeHeal[] = INCBIN_U16("graphics/items/icon_palettes/paralyze_heal.gbapal");
 
@@ -144,6 +149,13 @@ const u16 gItemIconPalette_Awakening[] = INCBIN_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_FullHeal[] = INCBIN_U32("graphics/items/icons/full_heal.4bpp.smol");
 const u16 gItemIconPalette_FullHeal[] = INCBIN_U16("graphics/items/icon_palettes/full_heal.gbapal");
+
+const u16 gItemIconPalette_Antibiotics[] = INCBIN_U16("graphics/items/icon_palettes/antibiotics.gbapal");
+
+const u16 gItemIconPalette_Stimulant[] = INCBIN_U16("graphics/items/icon_palettes/stimulant.gbapal");
+
+const u16 gItemIconPalette_Relaxant[] = INCBIN_U16("graphics/items/icon_palettes/relaxant.gbapal");
+
 
 const u32 gItemIcon_Ether[] = INCBIN_U32("graphics/items/icons/ether.4bpp.smol");
 const u16 gItemIconPalette_Ether[] = INCBIN_U16("graphics/items/icon_palettes/ether.gbapal");
@@ -164,6 +176,9 @@ const u16 gItemIconPalette_SweetHeart[] = INCBIN_U16("graphics/items/icon_palett
 
 const u32 gItemIcon_MaxHoney[] = INCBIN_U32("graphics/items/icons/max_honey.4bpp.smol");
 const u16 gItemIconPalette_MaxHoney[] = INCBIN_U16("graphics/items/icon_palettes/max_honey.gbapal");
+
+const u32 gItemIcon_Hanamidango[] = INCBIN_U32("graphics/items/icons/hanamidango.4bpp.smol");
+const u16 gItemIconPalette_Hanamidango[] = INCBIN_U16("graphics/items/icon_palettes/hanamidango.gbapal");
 
 // Regional Specialties
 
@@ -388,6 +403,9 @@ const u16 gItemIconPalette_StrangeSouvenir[] = INCBIN_U16("graphics/items/icon_p
 
 // Fossils
 
+const u32 gItemIcon_Xenoresin[] = INCBIN_U32("graphics/items/icons/xenoresin.4bpp.smol");
+const u16 gItemIconPalette_Xenoresin[] = INCBIN_U16("graphics/items/icon_palettes/xenoresin.gbapal");
+
 const u32 gItemIcon_HelixFossil[] = INCBIN_U32("graphics/items/icons/helix_fossil.4bpp.smol");
 const u16 gItemIconPalette_KantoFossil[] = INCBIN_U16("graphics/items/icon_palettes/kanto_fossil.gbapal");
 
@@ -604,6 +622,9 @@ const u16 gItemIconPalette_FlowerSweet[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_StarSweet[] = INCBIN_U32("graphics/items/icons/star_sweet.4bpp.smol");
 const u16 gItemIconPalette_StarSweet[] = INCBIN_U16("graphics/items/icon_palettes/star_sweet.gbapal");
 
+const u32 gItemIcon_ZephyrStone[] = INCBIN_U32("graphics/items/icons/zephyr_stone.4bpp.smol");
+const u16 gItemIconPalette_ZephyrStone[] = INCBIN_U16("graphics/items/icon_palettes/zephyr_stone.gbapal");
+
 const u32 gItemIcon_RibbonSweet[] = INCBIN_U32("graphics/items/icons/ribbon_sweet.4bpp.smol");
 const u16 gItemIconPalette_RibbonSweet[] = INCBIN_U16("graphics/items/icon_palettes/ribbon_sweet.gbapal");
 
@@ -659,6 +680,9 @@ const u16 gItemIconPalette_DracoPlate[] = INCBIN_U16("graphics/items/icon_palett
 const u16 gItemIconPalette_DreadPlate[] = INCBIN_U16("graphics/items/icon_palettes/dread_plate.gbapal");
 const u16 gItemIconPalette_IronPlate[] = INCBIN_U16("graphics/items/icon_palettes/iron_plate.gbapal");
 const u16 gItemIconPalette_PixiePlate[] = INCBIN_U16("graphics/items/icon_palettes/pixie_plate.gbapal");
+
+const u32 gItemIcon_SoundPlate[] = INCBIN_U32("graphics/items/icons/sound_plate.4bpp.lz");
+const u32 gItemIconPalette_SoundPlate[] = INCBIN_U32("graphics/items/icon_palettes/sound_plate.gbapal.lz");
 
 // Drives
 
@@ -1032,8 +1056,7 @@ const u16 gItemIconPalette_DragonGem[] = INCBIN_U16("graphics/items/icon_palette
 const u16 gItemIconPalette_DarkGem[] = INCBIN_U16("graphics/items/icon_palettes/dark_gem.gbapal");
 const u16 gItemIconPalette_SteelGem[] = INCBIN_U16("graphics/items/icon_palettes/steel_gem.gbapal");
 const u16 gItemIconPalette_FairyGem[] = INCBIN_U16("graphics/items/icon_palettes/fairy_gem.gbapal");
-
-// Z-Crystals
+const u16 gItemIconPalette_EchoGem[] = INCBIN_U16("graphics/items/icon_palettes/echo_gem.gbapal");
 
 const u32 gItemIcon_NormaliumZ[] = INCBIN_U32("graphics/items/icons/normalium_z.4bpp.smol");
 const u16 gItemIconPalette_NormaliumZ[] = INCBIN_U16("graphics/items/icon_palettes/normalium_z.gbapal");
@@ -1134,11 +1157,11 @@ const u16 gItemIconPalette_MarshadiumZ[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_AloraichiumZ[] = INCBIN_U32("graphics/items/icons/aloraichium_z.4bpp.smol");
 const u16 gItemIconPalette_AloraichiumZ[] = INCBIN_U16("graphics/items/icon_palettes/aloraichium_z.gbapal");
 
-const u32 gItemIcon_PikashuniumZ[] = INCBIN_U32("graphics/items/icons/pikashunium_z.4bpp.smol");
-const u16 gItemIconPalette_PikashuniumZ[] = INCBIN_U16("graphics/items/icon_palettes/pikashunium_z.gbapal");
+//const u32 gItemIcon_PikashuniumZ[] = INCBIN_U32("graphics/items/icons/pikashunium_z.4bpp.smol");
+//const u16 gItemIconPalette_PikashuniumZ[] = INCBIN_U16("graphics/items/icon_palettes/pikashunium_z.gbapal");
 
-const u32 gItemIcon_UltranecroziumZ[] = INCBIN_U32("graphics/items/icons/ultranecrozium_z.4bpp.smol");
-const u16 gItemIconPalette_UltranecroziumZ[] = INCBIN_U16("graphics/items/icon_palettes/ultranecrozium_z.gbapal");
+//const u32 gItemIcon_UltranecroziumZ[] = INCBIN_U32("graphics/items/icons/ultranecrozium_z.4bpp.smol");
+//const u16 gItemIconPalette_UltranecroziumZ[] = INCBIN_U16("graphics/items/icon_palettes/ultranecrozium_z.gbapal");
 
 // Species-specific Held Items
 
@@ -1180,6 +1203,9 @@ const u16 gItemIconPalette_GriseousOrb[] = INCBIN_U16("graphics/items/icon_palet
 
 const u32 gItemIcon_SeaIncense[] = INCBIN_U32("graphics/items/icons/sea_incense.4bpp.smol");
 const u16 gItemIconPalette_SeaIncense[] = INCBIN_U16("graphics/items/icon_palettes/sea_incense.gbapal");
+
+const u32 gItemIcon_SilverIncense[] = INCBIN_U32("graphics/items/icons/tin_incense.4bpp.smol");
+const u16 gItemIconPalette_SilverIncense[] = INCBIN_U16("graphics/items/icon_palettes/tin_incense.gbapal");
 
 const u32 gItemIcon_LaxIncense[] = INCBIN_U32("graphics/items/icons/lax_incense.4bpp.smol");
 const u16 gItemIconPalette_LaxIncense[] = INCBIN_U16("graphics/items/icon_palettes/lax_incense.gbapal");
@@ -1314,6 +1340,12 @@ const u16 gItemIconPalette_ToxicOrb[] = INCBIN_U16("graphics/items/icon_palettes
 
 // Weather Rocks
 
+const u32 gItemIcon_SlimyRock[] = INCBIN_U32("graphics/items/icons/slimy_rock.4bpp.smol");
+const u16 gItemIconPalette_SlimyRock[] = INCBIN_U16("graphics/items/icon_palettes/slimy_rock.gbapal");
+
+const u32 gItemIcon_PitchRock[] = INCBIN_U32("graphics/items/icons/pitch_rock.4bpp.smol");
+const u16 gItemIconPalette_PitchRock[] = INCBIN_U16("graphics/items/icon_palettes/pitch_rock.gbapal");
+
 const u32 gItemIcon_DampRock[] = INCBIN_U32("graphics/items/icons/damp_rock.4bpp.smol");
 const u16 gItemIconPalette_DampRock[] = INCBIN_U16("graphics/items/icon_palettes/damp_rock.gbapal");
 
@@ -1341,6 +1373,12 @@ const u16 gItemIconPalette_AbsorbBulb[] = INCBIN_U16("graphics/items/icon_palett
 
 const u32 gItemIcon_CellBattery[] = INCBIN_U32("graphics/items/icons/cell_battery.4bpp.smol");
 const u16 gItemIconPalette_CellBattery[] = INCBIN_U16("graphics/items/icon_palettes/cell_battery.gbapal");
+
+const u32 gItemIcon_PinkBow[] = INCBIN_U32("graphics/items/icons/pink_bow.4bpp.smol");
+const u16 gItemIconPalette_PinkBow[] = INCBIN_U16("graphics/items/icon_palettes/pink_bow.gbapal");
+
+const u32 gItemIcon_Amplifier[] = INCBIN_U32("graphics/items/icons/amplifier.4bpp.smol");
+const u16 gItemIconPalette_Amplifier[] = INCBIN_U16("graphics/items/icon_palettes/amplifier.gbapal");
 
 const u32 gItemIcon_LuminousMoss[] = INCBIN_U32("graphics/items/icons/luminous_moss.4bpp.smol");
 const u16 gItemIconPalette_LuminousMoss[] = INCBIN_U16("graphics/items/icon_palettes/luminous_moss.gbapal");
@@ -1517,6 +1555,22 @@ const u16 gItemIconPalette_UtilityUmbrella[] = INCBIN_U16("graphics/items/icon_p
 
 const u32 gItemIcon_CheriBerry[] = INCBIN_U32("graphics/items/icons/cheri_berry.4bpp.smol");
 const u16 gItemIconPalette_CheriBerry[] = INCBIN_U16("graphics/items/icon_palettes/cheri_berry.gbapal");
+
+const u32 gItemIcon_GinemaBerry[] = INCBIN_U32("graphics/items/icons/ginema_berry.4bpp.smol");
+const u16 gItemIconPalette_GinemaBerry[] = INCBIN_U16("graphics/items/icon_palettes/ginema_berry.gbapal");
+
+const u32 gItemIcon_DrashBerry[] = INCBIN_U32("graphics/items/icons/drash_berry.4bpp.smol");
+const u16 gItemIconPalette_DrashBerry[] = INCBIN_U16("graphics/items/icon_palettes/drash_berry.gbapal");
+
+const u32 gItemIcon_EggantBerry[] = INCBIN_U32("graphics/items/icons/eggant_berry.4bpp.smol");
+const u16 gItemIconPalette_EggantBerry[] = INCBIN_U16("graphics/items/icon_palettes/eggant_berry.gbapal");
+
+const u32 gItemIcon_TougaBerry[] = INCBIN_U32("graphics/items/icons/touga_berry.4bpp.smol");
+const u16 gItemIconPalette_TougaBerry[] = INCBIN_U16("graphics/items/icon_palettes/touga_berry.gbapal");
+
+const u32 gItemIcon_PumkinBerry[] = INCBIN_U32("graphics/items/icons/pumkin_berry.4bpp.smol");
+const u16 gItemIconPalette_PumkinBerry[] = INCBIN_U16("graphics/items/icon_palettes/pumkin_berry.gbapal");
+
 
 const u32 gItemIcon_ChestoBerry[] = INCBIN_U32("graphics/items/icons/chesto_berry.4bpp.smol");
 const u16 gItemIconPalette_ChestoBerry[] = INCBIN_U16("graphics/items/icon_palettes/chesto_berry.gbapal");
@@ -1758,6 +1812,8 @@ const u16 gItemIconPalette_SteelTMHM[] = INCBIN_U16("graphics/items/icon_palette
 
 const u16 gItemIconPalette_FairyTMHM[] = INCBIN_U16("graphics/items/icon_palettes/fairy_tm_hm.gbapal");
 
+const u32 gItemIconPalette_EchoTMHM[] = INCBIN_U32("graphics/items/icon_palettes/echo_tm_hm.gbapal.lz");
+
 // Charms
 
 const u32 gItemIcon_OvalCharm[] = INCBIN_U32("graphics/items/icons/oval_charm.4bpp.smol");
@@ -1820,6 +1876,13 @@ const u16 gItemIconPalette_DynamaxBand[] = INCBIN_U16("graphics/items/icon_palet
 
 const u32 gItemIcon_Bicycle[] = INCBIN_U32("graphics/items/icons/bicycle.4bpp.smol");
 const u16 gItemIconPalette_Bicycle[] = INCBIN_U16("graphics/items/icon_palettes/bicycle.gbapal");
+
+const u32 gItemIcon_UnownReport[] = INCBIN_U32("graphics/items/icons/unown_report.4bpp.smol");
+const u16 gItemIconPalette_UnownReport[] = INCBIN_U16("graphics/items/icon_palettes/unown_report.gbapal");
+
+const u32 gItemIcon_AzureFlute[] = INCBIN_U32("graphics/items/icons/azure_flute.4bpp.smol");
+const u16 gItemIconPalette_AzureFlute[] = INCBIN_U16("graphics/items/icon_palettes/azure_flute.gbapal");
+
 
 const u32 gItemIcon_MachBike[] = INCBIN_U32("graphics/items/icons/mach_bike.4bpp.smol");
 const u16 gItemIconPalette_MachBike[] = INCBIN_U16("graphics/items/icon_palettes/mach_bike.gbapal");
@@ -1930,7 +1993,9 @@ const u32 gItemIcon_Meteorite[] = INCBIN_U32("graphics/items/icons/meteorite.4bp
 const u16 gItemIconPalette_Meteorite[] = INCBIN_U16("graphics/items/icon_palettes/meteorite.gbapal");
 
 const u32 gItemIcon_MagmaEmblem[] = INCBIN_U32("graphics/items/icons/magma_emblem.4bpp.smol");
-const u16 gItemIconPalette_MagmaEmblem[] = INCBIN_U16("graphics/items/icon_palettes/magma_emblem.gbapal");
+//const u16 gItemIconPalette_MagmaEmblem[] = INCBIN_U16("graphics/items/icon_palettes/magma_emblem.gbapal");
+const u16 gItemIconPalette_MagmaEmblem[] = INCBIN_U16("graphics/items/icon_palettes/winter_emblem.gbapal");
+
 
 const u32 gItemIcon_ContestPass[] = INCBIN_U32("graphics/items/icons/contest_pass.4bpp.smol");
 const u16 gItemIconPalette_ContestPass[] = INCBIN_U16("graphics/items/icon_palettes/contest_pass.gbapal");
@@ -2016,6 +2081,16 @@ const u16 gItemIconPalette_TeraOrb[] = INCBIN_U16("graphics/items/icon_palettes/
 
 const u32 gItemIcon_TinyBambooShoot[] = INCBIN_U32("graphics/items/icons/tiny_bamboo_shoot.4bpp.smol");
 const u16 gItemIconPalette_TinyBambooShoot[] = INCBIN_U16("graphics/items/icon_palettes/tiny_bamboo_shoot.gbapal");
+
+const u32 gItemIcon_CovenantOrb[] = INCBIN_U32("graphics/items/icons/covenant_orb.4bpp.smol");
+const u16 gItemIconPalette_CovenantOrb[] = INCBIN_U16("graphics/items/icon_palettes/covenant_orb.gbapal");
+
+const u32 gItemIcon_OniMask[] = INCBIN_U32("graphics/items/icons/oni_mask.4bpp.smol");
+const u16 gItemIconPalette_OniMask[] = INCBIN_U16("graphics/items/icon_palettes/oni_mask.gbapal");
+
+const u32 gItemIcon_RoadSalt[] = INCBIN_U32("graphics/items/icons/road_salt.4bpp.smol");
+const u16 gItemIconPalette_RoadSalt[] = INCBIN_U16("graphics/items/icon_palettes/road_salt.gbapal");
+
 
 // Tera Shards
 

@@ -12,7 +12,14 @@
 #define AILMENT_BRN   5
 #define AILMENT_PKRS  6
 #define AILMENT_FNT   7
+<<<<<<< Updated upstream
 #define AILMENT_FRB   8
+=======
+#define AILMENT_INF   8
+#define AILMENT_DAZ   9
+#define AILMENT_EXH   10
+#define AILMENT_FER   11
+>>>>>>> Stashed changes
 
 #define PARTY_LAYOUT_SINGLE          0
 #define PARTY_LAYOUT_DOUBLE          1

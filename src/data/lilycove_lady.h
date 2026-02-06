@@ -4,6 +4,7 @@
 
 struct LilycoveContestLadyValues
 {
+<<<<<<< Updated upstream
     u16 monGfxId;
     u16 monSpecies;
     const u8 *monName;
@@ -70,6 +71,13 @@ static const struct LilycoveContestLadyValues sContestLadyValues[] =
         .categoryName = COMPOUND_STRING("toughness"),
         .contestName = gText_ToughnessContest,
     },
+=======
+    [CONTEST_CATEGORY_COOL]   = OBJ_EVENT_GFX_ZIGZAGOON_1,
+    [CONTEST_CATEGORY_BEAUTY] = OBJ_EVENT_GFX_GLAMEOW, //OBJ_EVENT_GFX_SKITTY,
+    [CONTEST_CATEGORY_CUTE]   = OBJ_EVENT_GFX_POOCHYENA,
+    [CONTEST_CATEGORY_SMART]  = OBJ_EVENT_GFX_KECLEON,
+    [CONTEST_CATEGORY_TOUGH]  = OBJ_EVENT_GFX_PIKACHU
+>>>>>>> Stashed changes
 };
 
 // Quiz Lady data
@@ -423,3 +431,43 @@ static const struct LilycoveFavorLady sFavorLady[] =
     {.request = COMPOUND_STRING("sticky"),   .acceptedItems = sFavorLadyAcceptedItems_Sticky,   .prize = ITEM_RARE_CANDY},
     {.request = COMPOUND_STRING("pointy"),   .acceptedItems = sFavorLadyAcceptedItems_Pointy,   .prize = ITEM_PP_MAX},
 };
+<<<<<<< Updated upstream
+=======
+
+
+static const u8 *const sContestLadyMonNames[] =
+{
+    [CONTEST_CATEGORY_COOL]   = gText_ContestLady_Handsome,
+    [CONTEST_CATEGORY_BEAUTY] = gText_ContestLady_Vinny,
+    [CONTEST_CATEGORY_CUTE]   = gText_ContestLady_Moreme,
+    [CONTEST_CATEGORY_SMART]  = gText_ContestLady_Ironhard,
+    [CONTEST_CATEGORY_TOUGH]  = gText_ContestLady_Muscle
+};
+
+static const u8 *const sContestLadyCategoryNames[] =
+{
+    [CONTEST_CATEGORY_COOL]   = gText_ContestLady_Coolness,
+    [CONTEST_CATEGORY_BEAUTY] = gText_ContestLady_Beauty,
+    [CONTEST_CATEGORY_CUTE]   = gText_ContestLady_Cuteness,
+    [CONTEST_CATEGORY_SMART]  = gText_ContestLady_Smartness,
+    [CONTEST_CATEGORY_TOUGH]  = gText_ContestLady_Toughness
+};
+
+static const u8 *const sContestNames[] =
+{
+    [CONTEST_CATEGORY_COOL]   = gText_CoolnessContest,
+    [CONTEST_CATEGORY_BEAUTY] = gText_BeautyContest,
+    [CONTEST_CATEGORY_CUTE]   = gText_CutenessContest,
+    [CONTEST_CATEGORY_SMART]  = gText_SmartnessContest,
+    [CONTEST_CATEGORY_TOUGH]  = gText_ToughnessContest
+};
+
+static const u16 sContestLadyMonSpecies[] =
+{
+    [CONTEST_CATEGORY_COOL]   = SPECIES_ZIGZAGOON,
+    [CONTEST_CATEGORY_BEAUTY] = SPECIES_GLAMEOW, //SPECIES_SKITTY,
+    [CONTEST_CATEGORY_CUTE]   = SPECIES_POOCHYENA,
+    [CONTEST_CATEGORY_SMART]  = SPECIES_KECLEON,
+    [CONTEST_CATEGORY_TOUGH]  = SPECIES_PIKACHU
+};
+>>>>>>> Stashed changes

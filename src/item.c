@@ -20,6 +20,7 @@
 #include "constants/moves.h"
 #include "constants/item_effects.h"
 #include "constants/hold_effects.h"
+#include "constants/item_effects.h"
 
 #define DUMMY_PC_BAG_POCKET                 \
 {                                           \
@@ -378,11 +379,11 @@ static bool32 NONNULL BagPocket_RemoveItem(struct BagPocket *pocket, enum Item i
 
     if (totalQuantity >= count) // We have enough of the item
     {
-        if (CurMapIsSecretBase() == TRUE)
+        /*if (CurMapIsSecretBase() == TRUE)
         {
             VarSet(VAR_SECRET_BASE_LOW_TV_FLAGS, VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) | SECRET_BASE_USED_BAG);
             VarSet(VAR_SECRET_BASE_LAST_ITEM_USED, itemId);
-        }
+        }*/
 
         // Update the quantities correctly with the items removed
         for (--itemRemoveIndex; itemRemoveIndex < itemLookupIndex; itemRemoveIndex++)
@@ -504,13 +505,36 @@ void CompactPCItems(void)
 
 void SwapRegisteredBike(void)
 {
-    switch (gSaveBlock1Ptr->registeredItem)
+    //switch (gSaveBlock1Ptr->registeredItem)
+	switch (gSaveBlock1Ptr->registeredItemSelect)
     {
     case ITEM_MACH_BIKE:
-        gSaveBlock1Ptr->registeredItem = ITEM_ACRO_BIKE;
+        //gSaveBlock1Ptr->registeredItem = ITEM_ACRO_BIKE;
+		gSaveBlock1Ptr->registeredItemSelect = ITEM_ACRO_BIKE;
         break;
     case ITEM_ACRO_BIKE:
-        gSaveBlock1Ptr->registeredItem = ITEM_MACH_BIKE;
+        //gSaveBlock1Ptr->registeredItem = ITEM_MACH_BIKE;
+		gSaveBlock1Ptr->registeredItemSelect = ITEM_MACH_BIKE;
+        break;
+    }
+
+    switch (gSaveBlock1Ptr->registeredItemL)
+    {
+    case ITEM_MACH_BIKE:
+        gSaveBlock1Ptr->registeredItemL = ITEM_ACRO_BIKE;
+        break;
+    case ITEM_ACRO_BIKE:
+        gSaveBlock1Ptr->registeredItemL = ITEM_MACH_BIKE;
+        break;
+    }
+
+    switch (gSaveBlock1Ptr->registeredItemR)
+    {
+    case ITEM_MACH_BIKE:
+        gSaveBlock1Ptr->registeredItemR = ITEM_ACRO_BIKE;
+        break;
+    case ITEM_ACRO_BIKE:
+        gSaveBlock1Ptr->registeredItemR = ITEM_MACH_BIKE;
         break;
     }
 }
@@ -879,6 +903,10 @@ enum EffectItem GetItemBattleUsage(enum Item itemId)
         case ITEM_EFFECT_CURE_BURN:
         case ITEM_EFFECT_CURE_FREEZE_FROSTBITE:
         case ITEM_EFFECT_CURE_PARALYSIS:
+        case ITEM_EFFECT_CURE_INFECT:
+        case ITEM_EFFECT_CURE_DAZE:
+        case ITEM_EFFECT_CURE_EXHAUST:
+        case ITEM_EFFECT_CURE_FEAR:
         case ITEM_EFFECT_CURE_ALL_STATUS:
         case ITEM_EFFECT_CURE_CONFUSION:
         case ITEM_EFFECT_CURE_INFATUATION:

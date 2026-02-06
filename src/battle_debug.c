@@ -137,6 +137,10 @@ enum
     LIST_STATUS1_TOXIC_POISON,
     LIST_STATUS1_TOXIC_COUNTER,
     LIST_STATUS1_FROSTBITE,
+    LIST_STATUS1_INFECT,
+    LIST_STATUS1_DAZE,
+    LIST_STATUS1_EXHAUST,
+    LIST_STATUS1_FEAR,
 };
 
 enum
@@ -237,6 +241,7 @@ static const u8 sText_Ability[] = _("Ability");
 static const u8 sText_HeldItem[] = _("Held Item");
 static const u8 sText_HoldEffect[] = _("Hold Effect");
 static const u8 sText_EmptyString[] = _("");
+static const u8 sText_IsSwitching[] = _("Switching to ");
 
 static const struct BitfieldInfo sStatus1Bitfield[] =
 {
@@ -248,6 +253,10 @@ static const struct BitfieldInfo sStatus1Bitfield[] =
     {/*Toxic Poison*/ 1, 7},
     {/*Toxic Counter*/ 4, 8},
     {/*Frostbite*/ 1, 12},
+	{/*Infect*/ 1, 13},
+	{/*Daze*/ 1, 14},
+	{/*Exhaust*/ 1, 15},
+	{/*Fear*/ 1, 16},
 };
 
 static const struct BitfieldInfo sStatus3Bitfield[] =
@@ -352,6 +361,10 @@ static const struct ListMenuItem sStatus1ListItems[] =
     {COMPOUND_STRING("Toxic Poison"),  LIST_STATUS1_TOXIC_POISON},
     {COMPOUND_STRING("Toxic Counter"), LIST_STATUS1_TOXIC_COUNTER},
     {COMPOUND_STRING("Frostbite"),     LIST_STATUS1_FROSTBITE},
+    {COMPOUND_STRING("Infection"),     LIST_STATUS1_INFECT},
+    {COMPOUND_STRING("Daze"),          LIST_STATUS1_DAZE},
+    {COMPOUND_STRING("Exhaustion"),    LIST_STATUS1_EXHAUST},
+    {COMPOUND_STRING("Fear"),          LIST_STATUS1_FEAR},
 };
 
 static const struct ListMenuItem sVolatileStatusListItems[] =
@@ -948,10 +961,10 @@ static void PutAiPartyText(struct BattleDebugMenu *data)
             text[0] = CHAR_LV;
             txtPtr = ConvertIntToDecimalStringN(text + 1, aiMons[i].level, STR_CONV_MODE_LEFT_ALIGN, 3);
             *txtPtr++ = CHAR_SPACE;
-            if (aiMons[i].gender == MON_MALE)
+            /*if (aiMons[i].gender == MON_MALE)
                 *txtPtr++ = CHAR_MALE;
             else if (aiMons[i].gender == MON_FEMALE)
-                *txtPtr++ = CHAR_FEMALE;
+                *txtPtr++ = CHAR_FEMALE;*/
             *txtPtr = EOS;
             AddTextPrinterParameterized5(data->aiMovesWindowId, FONT_SMALL_NARROW, text, i * 41, 0, 0, NULL, 0, 0);
         }
@@ -2168,6 +2181,10 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_CURE_PSN]         = COMPOUND_STRING("Cure Psn"),
     [HOLD_EFFECT_CURE_BRN]         = COMPOUND_STRING("Cure Brn"),
     [HOLD_EFFECT_CURE_FRZ]         = COMPOUND_STRING("Cure Frz"),
+    [HOLD_EFFECT_CURE_INF]         = COMPOUND_STRING("Cure Inf");
+    [HOLD_EFFECT_CURE_DAZ]         = COMPOUND_STRING("Cure Daz");
+    [HOLD_EFFECT_CURE_EXH]         = COMPOUND_STRING("Cure Exh");
+    [HOLD_EFFECT_CURE_FER]         = COMPOUND_STRING("Cure Fer");
     [HOLD_EFFECT_RESTORE_PP]       = COMPOUND_STRING("Restore Pp"),
     [HOLD_EFFECT_CURE_CONFUSION]   = COMPOUND_STRING("Cure Confusion"),
     [HOLD_EFFECT_CURE_STATUS]      = COMPOUND_STRING("Cure Status"),
@@ -2291,6 +2308,8 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_BOOSTER_ENERGY]   = COMPOUND_STRING("Booster Energy"),
     [HOLD_EFFECT_OGERPON_MASK]     = COMPOUND_STRING("Ogerpon Mask"),
     [HOLD_EFFECT_BERSERK_GENE]     = COMPOUND_STRING("Berserk Gene"),
+    [HOLD_EFFECT_SLIMY_ROCK]       = COMPOUND_STRING("Slimy Rock"),
+    [HOLD_EFFECT_PITCH_ROCK]       = COMPOUND_STRING("Pitch Rock"),
 };
 
 static const u8 *GetHoldEffectName(enum HoldEffect holdEffect)

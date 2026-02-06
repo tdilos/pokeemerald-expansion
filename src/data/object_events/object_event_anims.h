@@ -1579,6 +1579,16 @@ static const union AnimCmd *const sAnimTable_CuttableTree[] = {
     [ANIM_REMOVE_OBSTACLE] = sAnim_TreeCut,
 };
 
+static const union AnimCmd *const sAnimTable_ThawableIce[] = {
+    [ANIM_STAY_STILL] = sAnim_StayStill,
+    [ANIM_REMOVE_OBSTACLE] = sAnim_RockBreak,
+};
+
+static const union AnimCmd *const sAnimTable_BulldozableSand[] = {
+    [ANIM_STAY_STILL] = sAnim_StayStill,
+    [ANIM_REMOVE_OBSTACLE] = sAnim_TreeCut,
+};
+
 static const union AnimCmd *const sAnimTable_Fishing[] = {
     [ANIM_TAKE_OUT_ROD_SOUTH] = sAnim_TakeOutRodSouth,
     [ANIM_TAKE_OUT_ROD_NORTH] = sAnim_TakeOutRodNorth,

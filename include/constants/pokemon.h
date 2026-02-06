@@ -23,8 +23,9 @@ enum __attribute__((packed)) Type
     TYPE_ICE = 16,
     TYPE_DRAGON = 17,
     TYPE_DARK = 18,
-    TYPE_FAIRY = 19,
-    TYPE_STELLAR = 20,
+	TYPE_FAIRY = 19,
+    TYPE_ECHO = 20,
+    TYPE_STELLAR = 21,
     NUMBER_OF_MON_TYPES
 };
 
@@ -101,7 +102,7 @@ enum __attribute__((packed)) Stat
 #define MAX_STAT_STAGE    12
 
 // Shiny odds
-#define SHINY_ODDS 8 // Actual probability is SHINY_ODDS/65536
+#define SHINY_ODDS 64 //8 // Actual probability is SHINY_ODDS/65536
 
 // Ribbon IDs used by TV and Pokénav
 #define CHAMPION_RIBBON       0
@@ -191,7 +192,7 @@ enum OtIdMethod
 // Constants for AdjustFriendship
 #define FRIENDSHIP_EVENT_GROW_LEVEL       0
 #define FRIENDSHIP_EVENT_VITAMIN          1 // unused, handled by PokemonUseItemEffects
-#define FRIENDSHIP_EVENT_BATTLE_ITEM      2 // unused, handled by PokemonUseItemEffects
+#define FRIENDSHIP_EVENT_MASSAGE          2 //FRIENDSHIP_EVENT_BATTLE_ITEM      2 // unused, handled by PokemonUseItemEffects
 #define FRIENDSHIP_EVENT_LEAGUE_BATTLE    3
 #define FRIENDSHIP_EVENT_LEARN_TMHM       4
 #define FRIENDSHIP_EVENT_WALKING          5

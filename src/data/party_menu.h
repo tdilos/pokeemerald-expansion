@@ -731,6 +731,25 @@ struct
     [MENU_CATALOG_MOWER]   = {COMPOUND_STRING("Lawn mower"),      CursorCb_CatalogMower},
     [MENU_CHANGE_FORM]     = {COMPOUND_STRING("Change form"),     CursorCb_ChangeForm},
     [MENU_CHANGE_ABILITY]  = {COMPOUND_STRING("Change Ability"),  CursorCb_ChangeAbility},
+    /*[MENU_FIELD_MOVES + FIELD_MOVE_CUT] = {gMoveNames[MOVE_CUT], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_FLASH] = {gMoveNames[MOVE_FLASH], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_ROCK_SMASH] = {gMoveNames[MOVE_ROCK_SMASH], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_STRENGTH] = {gMoveNames[MOVE_STRENGTH], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_SURF] = {gMoveNames[MOVE_SURF], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_FLY] = {gMoveNames[MOVE_FLY], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_DIVE] = {gMoveNames[MOVE_DIVE], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_WATERFALL] = {gMoveNames[MOVE_WATERFALL], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_TELEPORT] = {gMoveNames[MOVE_TELEPORT], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_DIG] = {gMoveNames[MOVE_DIG], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_SECRET_POWER] = {gMoveNames[MOVE_SECRET_POWER], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK] = {gMoveNames[MOVE_MILK_DRINK], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_SOFT_BOILED] = {gMoveNames[MOVE_SOFT_BOILED], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_SWEET_SCENT] = {gMoveNames[MOVE_SWEET_SCENT], CursorCb_FieldMove},
+	[MENU_FIELD_MOVES + FIELD_MOVE_HEADBUTT] = {gMoveNames[MOVE_HEADBUTT], CursorCb_FieldMove},
+	[MENU_FIELD_MOVES + FIELD_MOVE_THAW] = {gMoveNames[MOVE_THAW], CursorCb_FieldMove},
+	[MENU_FIELD_MOVES + FIELD_MOVE_BULLDOZE] = {gMoveNames[MOVE_BULLDOZE], CursorCb_FieldMove},
+	[MENU_FIELD_MOVES + FIELD_MOVE_DEFOG] = {gMoveNames[MOVE_DEFOG], CursorCb_FieldMove},
+	[MENU_FIELD_MOVES + FIELD_MOVE_MAGNET_RISE] = {gMoveNames[MOVE_MAGNET_RISE], CursorCb_FieldMove},*/
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};
@@ -790,6 +809,60 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_ROTOM_CATALOG] = ARRAY_COUNT(sPartyMenuAction_RotomCatalog),
     [ACTIONS_ZYGARDE_CUBE]  = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
 };
+/*
+//static const u16 sFieldMoves[FIELD_MOVES_COUNT + 1] =
+static const u16 sFieldMoves[FIELD_MOVES_COUNT] =
+{
+    [FIELD_MOVE_CUT]          = MOVE_CUT,
+    [FIELD_MOVE_FLASH]        = MOVE_FLASH,
+    [FIELD_MOVE_ROCK_SMASH]   = MOVE_ROCK_SMASH,
+    [FIELD_MOVE_STRENGTH]     = MOVE_STRENGTH,
+    [FIELD_MOVE_SURF]         = MOVE_SURF,
+    [FIELD_MOVE_FLY]          = MOVE_FLY,
+    [FIELD_MOVE_DIVE]         = MOVE_DIVE,
+    [FIELD_MOVE_WATERFALL]    = MOVE_WATERFALL,
+    [FIELD_MOVE_TELEPORT]     = MOVE_TELEPORT,
+    [FIELD_MOVE_DIG]          = MOVE_DIG,
+    [FIELD_MOVE_SECRET_POWER] = MOVE_SECRET_POWER,
+    [FIELD_MOVE_MILK_DRINK]   = MOVE_MILK_DRINK,
+    [FIELD_MOVE_SOFT_BOILED]  = MOVE_SOFT_BOILED,
+    [FIELD_MOVE_SWEET_SCENT]  = MOVE_SWEET_SCENT,
+    // NOTE: This value is used as the terminal value for the table. There's no reason to do this, as the size of the table is known.
+    //       Whichever move shares this value (MOVE_SWORDS_DANCE by default) if present will be treated as the end of the array rather than a field move.
+    //[FIELD_MOVES_COUNT]       = FIELD_MOVES_COUNT
+	[FIELD_MOVE_HEADBUTT]     = MOVE_HEADBUTT,
+	[FIELD_MOVE_THAW]         = MOVE_THAW,
+	[FIELD_MOVE_BULLDOZE]     = MOVE_BULLDOZE,
+	[FIELD_MOVE_DEFOG]        = MOVE_DEFOG,
+	[FIELD_MOVE_MAGNET_RISE]  = MOVE_MAGNET_RISE,
+};
+
+struct
+{
+    bool8 (*fieldMoveFunc)(void);
+    u8 msgId;
+} static const sFieldMoveCursorCallbacks[FIELD_MOVES_COUNT] =
+{
+    [FIELD_MOVE_CUT]          = {SetUpFieldMove_Cut,         PARTY_MSG_NOTHING_TO_CUT},
+    [FIELD_MOVE_FLASH]        = {SetUpFieldMove_Flash,       PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_ROCK_SMASH]   = {SetUpFieldMove_RockSmash,   PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_STRENGTH]     = {SetUpFieldMove_Strength,    PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_SURF]         = {SetUpFieldMove_Surf,        PARTY_MSG_CANT_SURF_HERE},
+    [FIELD_MOVE_FLY]          = {SetUpFieldMove_Fly,         PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_DIVE]         = {SetUpFieldMove_Dive,        PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_WATERFALL]    = {SetUpFieldMove_Waterfall,   PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_TELEPORT]     = {SetUpFieldMove_Teleport,    PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_DIG]          = {SetUpFieldMove_Dig,         PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_SECRET_POWER] = {SetUpFieldMove_SecretPower, PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_MILK_DRINK]   = {SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP},
+    [FIELD_MOVE_SOFT_BOILED]  = {SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP},
+    [FIELD_MOVE_SWEET_SCENT]  = {SetUpFieldMove_SweetScent,  PARTY_MSG_CANT_USE_HERE},
+	[FIELD_MOVE_HEADBUTT]     = {SetUpFieldMove_Headbutt,    PARTY_MSG_CANT_USE_HERE},
+	[FIELD_MOVE_THAW]         = {SetUpFieldMove_Thaw,        PARTY_MSG_CANT_USE_HERE},
+	[FIELD_MOVE_BULLDOZE]     = {SetUpFieldMove_Thaw,        PARTY_MSG_CANT_USE_HERE},
+	[FIELD_MOVE_DEFOG]        = {SetUpFieldMove_Defog,       PARTY_MSG_CANT_USE_HERE},
+	[FIELD_MOVE_MAGNET_RISE]  = {SetUpFieldMove_MagnetRise,  PARTY_MSG_CANT_USE_HERE},
+};*/
 
 static const u8 *const sUnionRoomTradeMessages[] =
 {
@@ -1057,6 +1130,30 @@ static const union AnimCmd sSpriteAnim_StatusFrostbite[] =
     ANIMCMD_END
 };
 
+static const union AnimCmd sSpriteAnim_StatusInfect[] =
+{
+    ANIMCMD_FRAME(32, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_StatusDaze[] =
+{
+    ANIMCMD_FRAME(36, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_StatusExhaust[] =
+{
+    ANIMCMD_FRAME(40, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_StatusFear[] =
+{
+    ANIMCMD_FRAME(44, 0),
+    ANIMCMD_END
+};
+
 static const union AnimCmd *const sSpriteTemplate_StatusCondition[] =
 {
     sSpriteAnim_StatusPoison,
@@ -1066,12 +1163,16 @@ static const union AnimCmd *const sSpriteTemplate_StatusCondition[] =
     sSpriteAnim_StatusBurn,
     sSpriteAnim_StatusPokerus,
     sSpriteAnim_StatusFaint,
-    sSpriteAnim_StatusFrostbite
+    sSpriteAnim_StatusFrostbite,
+	sSpriteAnim_StatusInfect,
+	sSpriteAnim_StatusDaze,
+	sSpriteAnim_StatusExhaust,
+	sSpriteAnim_StatusFear
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_StatusIcons =
 {
-    gStatusGfx_Icons, 0x400, TAG_STATUS_ICONS
+    gStatusGfx_Icons, 0x600, TAG_STATUS_ICONS
 };
 
 static const struct SpritePalette sSpritePalette_StatusIcons =
@@ -1103,6 +1204,7 @@ static const u8 *const sUnused_StatStrings[] =
 #define ROTOM_FROST_MOVE MOVE_BLIZZARD
 #define ROTOM_FAN_MOVE   MOVE_AIR_SLASH
 #define ROTOM_MOW_MOVE   MOVE_LEAF_STORM
+#define ROTOM_MOW_MOVE   MOVE_BOOMBURST
 
 static const u16 sRotomFormChangeMoves[5] =
 {
@@ -1111,4 +1213,5 @@ static const u16 sRotomFormChangeMoves[5] =
     ROTOM_FROST_MOVE,
     ROTOM_FAN_MOVE,
     ROTOM_MOW_MOVE,
+    ROTOM_PLAY_MOVE,
 };

@@ -1,0 +1,132 @@
+{
+  "map_sections": [
+    {
+      "map_section": "MAPSEC_UMBER_TOWN",
+      "name": "Umber Town",
+      "x": 11,
+      "y": 1,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_CINEROUS_TOWN",
+      "name": "Cinerous Town",
+      "x": 15,
+      "y": 1,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_XANTHOS_CITY",
+      "name": "Xanthos City",
+      "x": 14,
+      "y": 4,
+      "width": 2,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_RESEDA_TOWN",
+      "name": "Reseda Town",
+      "x": 19,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_AMBER_CITY",
+      "name": "Amber City",
+      "x": 22,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_COBALT_CITY",
+      "name": "Cobalt City",
+      "x": 8,
+      "y": 5,
+      "width": 1,
+      "height": 2
+    },
+    {
+      "map_section": "MAPSEC_TURQUOISE_CITY",
+      "name": "Turquoise City",
+      "x": 14,
+      "y": 7,
+      "width": 1,
+      "height": 2
+    },
+    {
+      "map_section": "MAPSEC_MINDARO_CITY",
+      "name": "Mindaro City",
+      "x": 11,
+      "y": 13,
+      "width": 1,
+      "height": 2
+    },
+    {
+      "map_section": "MAPSEC_PITCHBLACK_CITY",
+      "name": "Pitchblack City",
+      "x": 23,
+      "y": 7,
+      "width": 1,
+      "height": 2
+    },
+    {
+      "map_section": "MAPSEC_SCARLET_TOWN",
+      "name": "Scarlet Town",
+      "x": 18,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_ROUGE_CITY",
+      "name": "Rouge City",
+      "x": 18,
+      "y": 14,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_IVORY_TOWN",
+      "name": "Ivory Town",
+      "x": 14,
+      "y": 14,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_HAEWEN_TOWN",
+      "name": "Haewen Town",
+      "x": 25,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_WISTERIA_CITY",
+      "name": "Wisteria City",
+      "x": 25,
+      "y": 14,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_BURGUNDY_TOWN",
+      "name": "Burgundy Town",
+      "x": 26,
+      "y": 8,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_DUN_TOWN",
+      "name": "Dun Town",
+      "x": 3,
+      "y": 13,
+      "width": 1,
+      "height": 1
+    }
+  ]
+}

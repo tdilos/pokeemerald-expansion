@@ -171,6 +171,9 @@ u8 MovementAction_RockSmashBreak_Step2(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_CutTree_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_CutTree_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_CutTree_Step2(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_ThawIce_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_ThawIce_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_ThawIce_Step2(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SetFixedPriority_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_ClearFixedPriority_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_InitAffineAnim_Step0(struct ObjectEvent *, struct Sprite *);
@@ -488,6 +491,8 @@ u8 (*const gMovementActionFuncs_SpinUp[])(struct ObjectEvent *, struct Sprite *)
 u8 (*const gMovementActionFuncs_SpinLeft[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_SpinRight[])(struct ObjectEvent *, struct Sprite *);
 
+u8 (*const gMovementActionFuncs_ThawIce[])(struct ObjectEvent *, struct Sprite *);
+
 u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *) = {
     [MOVEMENT_ACTION_FACE_DOWN] = gMovementActionFuncs_FaceDown,
     [MOVEMENT_ACTION_FACE_UP] = gMovementActionFuncs_FaceUp,
@@ -581,6 +586,7 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_REVEAL_TRAINER] = gMovementActionFuncs_RevealTrainer,
     [MOVEMENT_ACTION_ROCK_SMASH_BREAK] = gMovementActionFuncs_RockSmashBreak,
     [MOVEMENT_ACTION_CUT_TREE] = gMovementActionFuncs_CutTree,
+	[MOVEMENT_ACTION_THAW_ICE] = gMovementActionFuncs_ThawIce,
     [MOVEMENT_ACTION_SET_FIXED_PRIORITY] = gMovementActionFuncs_SetFixedPriority,
     [MOVEMENT_ACTION_CLEAR_FIXED_PRIORITY] = gMovementActionFuncs_ClearFixedPriority,
     [MOVEMENT_ACTION_INIT_AFFINE_ANIM] = gMovementActionFuncs_InitAffineAnim,
@@ -1286,6 +1292,13 @@ u8 (*const gMovementActionFuncs_CutTree[])(struct ObjectEvent *, struct Sprite *
     MovementAction_CutTree_Step0,
     MovementAction_CutTree_Step1,
     MovementAction_CutTree_Step2,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_ThawIce[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_ThawIce_Step0,
+    MovementAction_ThawIce_Step1,
+    MovementAction_ThawIce_Step2,
     MovementAction_Finish,
 };
 

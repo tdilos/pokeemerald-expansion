@@ -56,6 +56,7 @@ static void SootopolisGymIcePerStepCallback(u8);
 static void CrackedFloorPerStepCallback(u8);
 static void IcefallCaveIcePerStepCallback(u8);
 static void Task_MuddySlope(u8);
+static void PitchblakGymFloorPerStepCallback(u8);
 
 static const TaskFunc sPerStepCallbacks[] =
 {
@@ -64,6 +65,7 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_FORTREE_BRIDGE]    = FortreeBridgePerStepCallback,
     [STEP_CB_PACIFIDLOG_BRIDGE] = PacifidlogBridgePerStepCallback,
     [STEP_CB_SOOTOPOLIS_ICE]    = SootopolisGymIcePerStepCallback,
+    [STEP_CB_DANCE_FLOOR]       = PitchblakGymFloorPerStepCallback,
     [STEP_CB_TRUCK]             = EndTruckSequence,
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
@@ -148,6 +150,37 @@ static const u16 sSootopolisGymIceRowVars[] =
     0,
     0
 };
+
+// Each element corresponds to a y coordinate row in the pitchblak gym map.
+/*static const u16 sPitchblakGymDanceRowVars[] =
+{
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    VAR_TEMP_1,
+    VAR_TEMP_2,
+    VAR_TEMP_3,
+    VAR_TEMP_4,
+    VAR_TEMP_5,
+    0,
+    0,
+    VAR_TEMP_6,
+    VAR_TEMP_7,
+    VAR_TEMP_8,
+    VAR_TEMP_9,
+    0,
+    0,
+    VAR_TEMP_A,
+    VAR_TEMP_B,
+    VAR_TEMP_C,
+    0,
+    0,
+    0
+};*/
 
 #define tCallbackId data[0]
 
@@ -758,6 +791,216 @@ static void SootopolisGymIcePerStepCallback(u8 taskId)
 #undef tIceY
 #undef tDelay
 
+// Boundaries of the dance floor puzzle in Pitchblak Gym
+#define DANCE_PUZZLE_L 4
+#define DANCE_PUZZLE_R 14
+#define DANCE_PUZZLE_T 7
+#define DANCE_PUZZLE_B 22
+
+#define DANCE_PUZZLE_WIDTH  (DANCE_PUZZLE_R - DANCE_PUZZLE_L + 1)
+#define DANCE_PUZZLE_HEIGHT (DANCE_PUZZLE_B - DANCE_PUZZLE_T + 1)
+
+//#define BLUE_FLOOR_T 7
+//#define BLUE_FLOOR_B 22
+#define RED_FLOOR_T 13
+#define RED_FLOOR_B 19
+//#define GREEN_FLOOR_T 7
+//#define GREEN_FLOOR_B 22
+
+/*static bool32 CoordInDancePuzzleRegion(s16 x, s16 y)
+{
+    if ((u16)(x - DANCE_PUZZLE_L) < DANCE_PUZZLE_WIDTH
+     && (u16)(y - DANCE_PUZZLE_T) < DANCE_PUZZLE_HEIGHT
+     && sPitchblakGymDanceRowVars[y])
+        return TRUE;
+    else
+        return FALSE;
+}*/
+
+/*static void MarkDancePuzzleCoordVisited(s16 x, s16 y)
+{
+    if (CoordInIcePuzzleRegion(x, y))
+        *GetVarPointer(sPitchblakGymDanceRowVars[y]) |= (1 << (x - DANCE_PUZZLE_L));
+}*/
+
+/*static bool32 IsDancePuzzleCoordVisited(s16 x, s16 y)
+{
+    u16 var;
+    if (!CoordInDancePuzzleRegion(x, y))
+        return FALSE;
+
+    var = VarGet(sPitchblakGymDanceRowVars[y]);
+    if (var &= (1 << (x - DANCE_PUZZLE_L)))
+        return TRUE;
+    else
+        return FALSE;
+}*/
+
+/*void SetSootopolisGymCrackedIceMetatiles(void)
+{
+    s32 x, y;
+    s32 width = gMapHeader.mapLayout->width;
+    s32 height = gMapHeader.mapLayout->height;
+    for (x = 0; x < width; x++)
+    {
+        for (y = 0; y < height; y++)
+        {
+            if (IsIcePuzzleCoordVisited(x, y) == TRUE)
+                MapGridSetMetatileIdAt(x + MAP_OFFSET, y + MAP_OFFSET, METATILE_SootopolisGym_Ice_Cracked);
+        }
+    }
+}*/
+
+#define tState data[1]
+#define tPrevX data[2]
+#define tPrevY data[3]
+#define tFloorX  data[4]
+#define tFloorY  data[5]
+#define tDelay data[6]
+
+static void PitchblakGymFloorPerStepCallback(u8 taskId)
+{
+    s16 x, y;
+    u16 tileBehavior;
+    u16 *danceStepCount;
+    s16 *data = gTasks[taskId].data;
+    switch (tState)
+    {
+    case 0:
+        PlayerGetDestCoords(&x, &y);
+        tPrevX = x;
+        tPrevY = y;
+        tState = 1;
+        break;
+    case 1:
+        PlayerGetDestCoords(&x, &y);
+        // End if player hasn't moved
+        if (x == tPrevX && y == tPrevY)
+            return;
+
+        tPrevX = x;
+        tPrevY = y;
+        tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+        danceStepCount = GetVarPointer(VAR_DANCE_STEP_COUNT); 
+	
+	
+	
+        // Red dance floor, cycle to green
+        if (MetatileBehavior_IsRedDanceFloor(tileBehavior) == TRUE)
+        {
+            // Increment puzzle counter if going from red to green on top puzzle
+			//if (y < RED_FLOOR_T)
+			//	(*danceStepCount)++;
+            // Decrement puzzle counter if going from red to green on middle puzzle
+			//if ((y > RED_FLOOR_T) && (y < RED_FLOOR_B))
+			//	(*danceStepCount)--;
+			(*danceStepCount)++;
+            tDelay = 4;
+            tState = 2;
+            tFloorX = x;
+            tFloorY = y;
+			break;
+        }
+        // Green dance floor, cycle to blue	
+        else if (MetatileBehavior_IsGreenDanceFloor(tileBehavior) == TRUE)
+        {
+            // Decrement puzzle counter if going from green to blue on top puzzle
+			//if (y < RED_FLOOR_T)
+			//	(*danceStepCount)--;
+            // Increment puzzle counter if going from green to blue on bottom puzzle
+			//if (y > RED_FLOOR_B)
+			//	(*danceStepCount)++;
+			(*danceStepCount)--;
+            tDelay = 4;
+            tState = 3;
+            tFloorX = x;
+            tFloorY = y;
+			break;
+        }
+        // Blue dance floor, cycle to red	
+        else if (MetatileBehavior_IsBlueDanceFloor(tileBehavior) == TRUE) //(MetatileBehavior_IsGreenDanceFloor(tileBehavior) == TRUE)
+        {
+            // Decrement puzzle counter if going from blue to red on bottom puzzle
+			//if (y > RED_FLOOR_B)
+			//	(*danceStepCount)--;
+            // Increment puzzle counter if going from blue to red on middle puzzle
+			//if ((y > RED_FLOOR_T) && (y < RED_FLOOR_B))
+			//	(*danceStepCount)++;
+            tDelay = 4;
+            tState = 4;
+            tFloorX = x;
+            tFloorY = y;
+			break;
+        }
+		
+        break;
+    case 2:
+        if (tDelay != 0)
+        {
+            tDelay--;
+        }
+        else
+        {
+            // Cycle red to green
+            x = tFloorX;
+            y = tFloorY;
+            PlaySE(SE_NOTE_E);
+            //PlaySE(SE_M_BUBBLE);
+            MapGridSetMetatileIdAt(x, y, METATILE_GymsIssho_Pitchblak_GreenFloor);
+            CurrentMapDrawMetatileAt(x, y);
+			
+            //MarkIcePuzzleCoordVisited(x - MAP_OFFSET, y - MAP_OFFSET);
+            tState = 0;
+        }
+        break;
+    case 3:
+        if (tDelay != 0)
+        {
+            tDelay--;
+        }
+        else
+        {
+            // Cycle green to blue
+            x = tFloorX;
+            y = tFloorY;
+            PlaySE(SE_NOTE_G);
+            //PlaySE(SE_M_EMBER);
+            MapGridSetMetatileIdAt(x, y, METATILE_GymsIssho_Pitchblak_BlueFloor);
+            CurrentMapDrawMetatileAt(x, y);
+			
+            //MarkIcePuzzleCoordVisited(x - MAP_OFFSET, y - MAP_OFFSET);
+            tState = 0;
+        }
+        break;
+    case 4:
+        if (tDelay != 0)
+        {
+            tDelay--;
+        }
+        else
+        {
+            // Cycle blue to red
+            x = tFloorX;
+            y = tFloorY;
+            PlaySE(SE_NOTE_C);
+            //PlaySE(SE_CLICK);
+            MapGridSetMetatileIdAt(x, y, METATILE_GymsIssho_Pitchblak_RedFloor);
+            CurrentMapDrawMetatileAt(x, y);
+			
+            //MarkIcePuzzleCoordVisited(x - MAP_OFFSET, y - MAP_OFFSET);
+            tState = 0;
+        }
+        break;
+    }
+}
+
+#undef tState
+#undef tPrevX
+#undef tPrevY
+#undef tFloorX
+#undef tFloorY
+#undef tDelay
+
 #define tPrevX data[1]
 #define tPrevY data[2]
 
@@ -890,6 +1133,13 @@ static const u16 sMuddySlopeMetatiles[] = {
     METATILE_General_MuddySlope_Frame1
 };
 
+static const u16 sSandySlopeMetatiles[] = {
+    METATILE_GymsIssho_SandySlope_Frame0,
+    METATILE_GymsIssho_SandySlope_Frame3,
+    METATILE_GymsIssho_SandySlope_Frame2,
+    METATILE_GymsIssho_SandySlope_Frame1
+};
+
 #define SLOPE_ANIM_TIME 32
 #define SLOPE_ANIM_STEP_TIME (SLOPE_ANIM_TIME / (int)ARRAY_COUNT(sMuddySlopeMetatiles))
 
@@ -897,13 +1147,22 @@ static void SetMuddySlopeMetatile(s16 *data, s16 x, s16 y)
 {
     u16 metatileId;
     if ((--data[SLOPE_TIME]) == 0)
-        metatileId = METATILE_General_MuddySlope_Frame0;
+		if (IsMapTypeIndoors(GetCurrentMapType()) == TRUE)
+			metatileId = METATILE_GymsIssho_SandySlope_Frame0;
+		else
+			metatileId = METATILE_General_MuddySlope_Frame0;
     else
-        metatileId = sMuddySlopeMetatiles[data[SLOPE_TIME] / SLOPE_ANIM_STEP_TIME];
+        if (IsMapTypeIndoors(GetCurrentMapType()) == TRUE)
+			metatileId = sSandySlopeMetatiles[data[SLOPE_TIME] / SLOPE_ANIM_STEP_TIME];
+		else
+			metatileId = sMuddySlopeMetatiles[data[SLOPE_TIME] / SLOPE_ANIM_STEP_TIME];
 
     MapGridSetMetatileIdAt(x, y, metatileId);
     CurrentMapDrawMetatileAt(x, y);
-    MapGridSetMetatileIdAt(x, y, METATILE_General_MuddySlope_Frame0);
+	if (IsMapTypeIndoors(GetCurrentMapType()) == TRUE)
+		MapGridSetMetatileIdAt(x, y, METATILE_GymsIssho_SandySlope_Frame0);
+	else
+		MapGridSetMetatileIdAt(x, y, METATILE_General_MuddySlope_Frame0);
 }
 
 static void Task_MuddySlope(u8 taskId)

@@ -1,0 +1,211 @@
+{
+  "id": "MAP_CINEROUS_TOWN",
+  "name": "CinerousTown",
+  "layout": "LAYOUT_CINEROUS_TOWN",
+  "music": "MUS_FALLARBOR",
+  "region_map_section": "MAPSEC_CINEROUS_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE81",
+      "offset": 2,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE82",
+      "offset": -4,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+      "x": 8,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CinerousTown_EventScript_OldWoman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
+      "x": 15,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CinerousTown_EventScript_Boy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 7,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CinerousTown_EventScript_Woman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 25,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CinerousTown_EventScript_OpenGate",
+      "flag": "FLAG_RESCUED_HEADBUTT_TUTOR"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_CINEROUS_TOWN_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_CINEROUS_TOWN_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_CINEROUS_TOWN_POKEMON_CENTER",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 2,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_CINEROUS_TOWN_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_CINEROUS_TOWER_EXTERIOR",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 11,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_CINEROUS_TOWER_EXTERIOR",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 3,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_UMBER_TOWN_FEMALE_MCHOUSE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_CINEROUS_TOWN_STATE",
+      "var_value": "1",
+      "script": "CinerousTown_EventScript_OPCTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_CINEROUS_TOWN_STATE",
+      "var_value": "1",
+      "script": "CinerousTown_EventScript_OPCTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_CINEROUS_TOWN_STATE",
+      "var_value": "1",
+      "script": "CinerousTown_EventScript_OPCTrigger3"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CinerousTown_EventScript_TownSign"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CinerousTown_EventScript_OPCHouseSign"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemonCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemonCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemartSign"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Common_EventScript_ShowPokemartSign"
+    }
+  ]
+}

@@ -204,11 +204,13 @@ static const struct {
     u16 moves[MAX_MON_MOVES];
     u8 level;
     u8 location;
+	//u8 mapGroup; // 0 for routes, 24 for dungeons
 } sPokeOutbreakSpeciesList[] = {
     {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_BIDE, MOVE_HARDEN, MOVE_LEECH_SEED},
+        .species = SPECIES_STARLY,
+        .moves = {MOVE_TACKLE, MOVE_GROWL},
         .level = 3,
+<<<<<<< Updated upstream
         .location = MAP_NUM(MAP_ROUTE102)
     },
     {
@@ -234,6 +236,87 @@ static const struct {
         .moves = {MOVE_GROWL, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_ATTRACT},
         .level = 8,
         .location = MAP_NUM(MAP_ROUTE116),
+=======
+        .location = MAP_NUM(ROUTE81),
+		//.mapGroup = MAP_GROUP(ROUTE81),
+    },
+	{
+        .species = SPECIES_PATRAT,
+        .moves = {MOVE_TACKLE, MOVE_LEER},
+        .level = 3,
+        .location = MAP_NUM(ROUTE82),
+		//.mapGroup = MAP_GROUP(ROUTE82),
+    },
+    {
+        .species = SPECIES_GULPIN,
+        .moves = {MOVE_POUND, MOVE_YAWN},
+        .level = 5,
+        .location = MAP_NUM(ROUTE83),
+		//.mapGroup = MAP_GROUP(ROUTE83),
+    },
+	{
+        .species = SPECIES_BLITZLE,
+        .moves = {MOVE_QUICK_ATTACK, MOVE_TAIL_WHIP},
+        .level = 7,
+        .location = MAP_NUM(ROUTE84),
+		//.mapGroup = MAP_GROUP(ROUTE84),
+    },
+   /* {
+        .species = SPECIES_MUDBRAY,
+        .moves = {MOVE_MUD_SLAP, MOVE_ROCK_SMASH, MOVE_IRON_DEFENSE},
+        .level = 7,
+        .location = MAP_NUM(ROUTE84),
+		//.mapGroup = MAP_GROUP(ROUTE84),
+    },*/
+    {
+        .species = SPECIES_CUBONE,
+        .moves = {MOVE_MUD_SLAP, MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_FALSE_SWIPE},
+        .level = 9,
+        .location = MAP_NUM(ROUTE85),
+		//.mapGroup = MAP_GROUP(ROUTE85),
+    },
+    {
+        .species = SPECIES_MARACTUS,
+        .moves = {MOVE_SWEET_SCENT, MOVE_GROWTH, MOVE_VIBRATE, MOVE_PIN_MISSILE},
+        .level = 11,
+        .location = MAP_NUM(ROUTE86),
+		//.mapGroup = MAP_GROUP(ROUTE86),
+    },
+    {
+        .species = SPECIES_SANDILE,
+        .moves = {MOVE_RAGE, MOVE_SAND_ATTACK, MOVE_BITE, MOVE_TORMENT},
+        .level = 12,
+        .location = MAP_NUM(ROUTE87),
+		//.mapGroup = MAP_GROUP(ROUTE87),
+    },
+    {
+        .species = SPECIES_SOLOSIS,
+        .moves = {MOVE_CONFUSION, MOVE_RECOVER, MOVE_ENDEAVOR, MOVE_PSYBEAM},
+        .level = 12,
+        .location = MAP_NUM(ROUTE88),
+		//.mapGroup = MAP_GROUP(ROUTE88),
+    },
+	{
+        .species = SPECIES_EMOLGA,
+        .moves = {MOVE_NUZZLE, MOVE_TAIL_WHIP, MOVE_DOUBLE_TEAM},
+        .level = 7,
+        .location = MAP_NUM(ROUTE89),
+		//.mapGroup = MAP_GROUP(ROUTE89),
+    },
+    {
+		.species = SPECIES_DWEBBLE,
+        .moves = {MOVE_WITHDRAW, MOVE_SMACK_DOWN, MOVE_BUG_BITE, MOVE_FLAIL},
+        .level = 16,
+        .location = MAP_NUM(ROUTE79),
+		//.mapGroup = MAP_GROUP(ROUTE79),
+    },
+    {
+        .species = SPECIES_SHELMET,
+        .moves = {MOVE_BILE_BREATH, MOVE_CURSE, MOVE_BIDE, MOVE_ACID},
+        .level = 16,
+        .location = MAP_NUM(ROUTE78),
+		//.mapGroup = MAP_GROUP(ROUTE78),
+>>>>>>> Stashed changes
     }
 };
 
@@ -835,6 +918,8 @@ u8 FindAnyTVShowOnTheAir(void)
 
 void UpdateTVScreensOnMap(int width, int height)
 {
+	SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On); // For new swarms, all TV's should always be on
+	
     FlagSet(FLAG_SYS_TV_WATCH);
     switch (CheckForPlayersHouseNews())
     {
@@ -844,7 +929,7 @@ void UpdateTVScreensOnMap(int width, int height)
     case PLAYERS_HOUSE_TV_MOVIE:
         // Don't flash TV for movie text in player's house
         break;
-//  case PLAYERS_HOUSE_TV_NONE:
+ // case PLAYERS_HOUSE_TV_NONE:
     default:
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F))
@@ -1562,7 +1647,8 @@ void PutNameRaterShowOnTheAir(void)
 
 void StartMassOutbreak(void)
 {
-    TVShow *show = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004];
+    //TVShow *show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
+	TVShow *show = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8004];
     gSaveBlock1Ptr->outbreakPokemonSpecies = show->massOutbreak.species;
     gSaveBlock1Ptr->outbreakLocationMapNum = show->massOutbreak.locationMapNum;
     gSaveBlock1Ptr->outbreakLocationMapGroup = show->massOutbreak.locationMapGroup;
@@ -1643,8 +1729,68 @@ static void TryStartRandomMassOutbreak(void)
     u8 i;
     u16 outbreakIdx;
     TVShow *show;
+	
+	/*for (i = 0; i < LAST_TVSHOW_IDX; i++)
+    {
+        if (gSaveBlock1Ptr->tvShows[i].common.kind == TVSHOW_MASS_OUTBREAK)
+            return;
+    }*/
+	
+	// no longers checks E4 clear or random bernoulli trial
+	sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
+    if (sCurTVShowSlot != -1)
+    {
+        outbreakIdx = Random() % ARRAY_COUNT(sPokeOutbreakSpeciesList);
+        show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
+        show->massOutbreak.kind = TVSHOW_MASS_OUTBREAK;
+        show->massOutbreak.active = TRUE;
+        show->massOutbreak.level = sPokeOutbreakSpeciesList[outbreakIdx].level;
+        show->massOutbreak.unused1 = 0;
+        show->massOutbreak.unused3 = 0;
+        show->massOutbreak.species = sPokeOutbreakSpeciesList[outbreakIdx].species;
+        show->massOutbreak.unused2 = 0;
+        show->massOutbreak.moves[0] = sPokeOutbreakSpeciesList[outbreakIdx].moves[0];
+        show->massOutbreak.moves[1] = sPokeOutbreakSpeciesList[outbreakIdx].moves[1];
+        show->massOutbreak.moves[2] = sPokeOutbreakSpeciesList[outbreakIdx].moves[2];
+        show->massOutbreak.moves[3] = sPokeOutbreakSpeciesList[outbreakIdx].moves[3];
+        show->massOutbreak.locationMapNum = sPokeOutbreakSpeciesList[outbreakIdx].location;
+        show->massOutbreak.locationMapGroup = 0;
+		//show->massOutbreak.locationMapGroup = sPokeOutbreakSpeciesList[outbreakIdx].mapGroup;
+        show->massOutbreak.unused4 = 0;
+        show->massOutbreak.probability = 50;
+        show->massOutbreak.unused5 = 0;
+        show->massOutbreak.daysLeft = 1;
+        StorePlayerIdInNormalShow(show);
+        show->massOutbreak.language = gGameLanguage;
+    }
+	
+	/*sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
+    if (sCurTVShowSlot != -1)
+    {
+        outbreakIdx = Random() % ARRAY_COUNT(sPokeOutbreakSpeciesList);
+        show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
+        show->massOutbreak.kind = TVSHOW_MASS_OUTBREAK;
+        show->massOutbreak.active = TRUE;
+        show->massOutbreak.level = sPokeOutbreakSpeciesList[outbreakIdx].level;
+        show->massOutbreak.unused1 = 0;
+        show->massOutbreak.unused3 = 0;
+        show->massOutbreak.species = sPokeOutbreakSpeciesList[outbreakIdx].species;
+        show->massOutbreak.unused2 = 0;
+        show->massOutbreak.moves[0] = sPokeOutbreakSpeciesList[outbreakIdx].moves[0];
+        show->massOutbreak.moves[1] = sPokeOutbreakSpeciesList[outbreakIdx].moves[1];
+        show->massOutbreak.moves[2] = sPokeOutbreakSpeciesList[outbreakIdx].moves[2];
+        show->massOutbreak.moves[3] = sPokeOutbreakSpeciesList[outbreakIdx].moves[3];
+        show->massOutbreak.locationMapNum = sPokeOutbreakSpeciesList[outbreakIdx].location;
+        show->massOutbreak.locationMapGroup = 0;
+        show->massOutbreak.unused4 = 0;
+        show->massOutbreak.probability = 50;
+        show->massOutbreak.unused5 = 0;
+        show->massOutbreak.daysLeft = 1;
+        StorePlayerIdInNormalShow(show);
+        show->massOutbreak.language = gGameLanguage;
+    }*/
 
-    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+    /*if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
         for (i = 0; i < LAST_TVSHOW_IDX; i++)
         {
@@ -1679,7 +1825,7 @@ static void TryStartRandomMassOutbreak(void)
                 show->massOutbreak.language = gGameLanguage;
             }
         }
-    }
+    }*/
 }
 
 void EndMassOutbreak(void)
@@ -1699,9 +1845,12 @@ void EndMassOutbreak(void)
     gSaveBlock1Ptr->outbreakDaysLeft = 0;
 }
 
-void UpdateTVShowsPerDay(u16 days)
+void UpdateTVShowsPerDay(u16 days) // Modified to automatically cycle mass outbreaks every day
 {
-    UpdateMassOutbreakTimeLeft(days);
+    //EndMassOutbreak();
+	//TryStartRandomMassOutbreak();
+	//StartMassOutbreak();
+	UpdateMassOutbreakTimeLeft(days);
     TryEndMassOutbreak(days);
     UpdatePokeNewsCountdown(days);
     ResolveWorldOfMastersShow(days);
@@ -2430,13 +2579,13 @@ void TryPutSecretBaseSecretsOnAir(void)
             show->secretBaseSecrets.kind = TVSHOW_SECRET_BASE_SECRETS;
             show->secretBaseSecrets.active = FALSE; // NOTE: Show is not active until passed via Record Mix.
             StringCopy(show->secretBaseSecrets.playerName, gSaveBlock2Ptr->playerName);
-            show->secretBaseSecrets.stepsInBase = VarGet(VAR_SECRET_BASE_STEP_COUNTER);
+            //show->secretBaseSecrets.stepsInBase = VarGet(VAR_SECRET_BASE_STEP_COUNTER);
             CopyCurSecretBaseOwnerName_StrVar1();
             StringCopy(strbuf, gStringVar1);
             StripExtCtrlCodes(strbuf);
             StringCopy(show->secretBaseSecrets.baseOwnersName, strbuf);
-            show->secretBaseSecrets.item = VarGet(VAR_SECRET_BASE_LAST_ITEM_USED);
-            show->secretBaseSecrets.flags = VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) + (VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) << 16);
+            //show->secretBaseSecrets.item = VarGet(VAR_SECRET_BASE_LAST_ITEM_USED);
+            //show->secretBaseSecrets.flags = VarGet(VAR_SECRET_BASE_LOW_TV_FLAGS) + (VarGet(VAR_SECRET_BASE_HIGH_TV_FLAGS) << 16);
             StorePlayerIdInRecordMixShow(show);
             show->secretBaseSecrets.language = gGameLanguage;
             if (show->secretBaseSecrets.language == LANGUAGE_JAPANESE || gSaveBlock1Ptr->secretBases[VarGet(VAR_CURRENT_SECRET_BASE)].language == LANGUAGE_JAPANESE)
@@ -4147,7 +4296,7 @@ void SanitizeTVShowLocationsForRuby(TVShow *shows)
 
     for (i = 0; i < LAST_TVSHOW_IDX; i++)
     {
-        switch (shows[i].common.kind)
+        /*switch (shows[i].common.kind)
         {
         case TVSHOW_WORLD_OF_MASTERS:
             if (shows[i].worldOfMasters.location > KANTO_MAPSEC_START)
@@ -4157,7 +4306,7 @@ void SanitizeTVShowLocationsForRuby(TVShow *shows)
             if (shows[i].pokemonTodayFailed.location > KANTO_MAPSEC_START)
                 memset(&shows[i], 0, sizeof(TVShow));
             break;
-        }
+        }*/
     }
 }
 

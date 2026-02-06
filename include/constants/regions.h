@@ -15,6 +15,7 @@ enum Region
     REGION_GALAR,
     REGION_HISUI,
     REGION_PALDEA,
+	REGION_ISSHO,
     REGIONS_COUNT,
 };
 
@@ -25,6 +26,27 @@ enum KantoSubRegion
     KANTO_SUBREGION_SEVII45,
     KANTO_SUBREGION_SEVII67,
     KANTO_SUBREGION_COUNT
+};
+
+enum UltraSpaceRegion
+{
+    X_COSMOPOLIS,
+    X_STARFIELD,
+    X_FUNFAIR,
+    X_PELAGO,
+    X_HOLT,
+    X_GREENHOUSE,
+    X_SLOUGH,
+    X_WASTE,
+    X_LABYRINTH,
+    X_CALDERA,
+    X_JUNGLE,
+    X_CLOUD,
+    X_TUNDRA,
+    X_MERE,
+    X_RUIN,
+    X_SYNESTIA,
+    ULTRA_SPACE_REGION_COUNT
 };
 
 #endif  // GUARD_CONSTANTS_REGIONS_H

@@ -1,3 +1,11 @@
+<<<<<<< Updated upstream
+=======
+@.set LOCALID_WALLACE, 1
+.set LOCALID_NORMAN, 1
+.set LOCALID_RIVAL, 2
+.set LOCALID_BIRCH, 3
+
+>>>>>>> Stashed changes
 EverGrandeCity_ChampionsRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_ChampionsRoom_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EverGrandeCity_ChampionsRoom_OnWarp
@@ -28,7 +36,8 @@ EverGrandeCity_ChampionsRoom_EventScript_EnterRoom::
 	applymovement LOCALID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerApproachWallace
 	waitmovement 0
 	setvar VAR_TEMP_1, 1
-	goto EverGrandeCity_ChampionsRoom_EventScript_Wallace
+	@goto EverGrandeCity_ChampionsRoom_EventScript_Wallace
+	goto EverGrandeCity_ChampionsRoom_EventScript_Norman
 	releaseall
 	end
 
@@ -36,6 +45,109 @@ EverGrandeCity_ChampionsRoom_Movement_PlayerApproachWallace:
 	walk_up
 	walk_up
 	step_end
+
+EverGrandeCity_ChampionsRoom_EventScript_Norman::
+	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
+	msgbox EverGrandeCity_ChampionsRoom_Text_NormanIntro, MSGBOX_DEFAULT
+	setvar VAR_MUGSHOT_ID, MUGSHOT_NORMAN
+	trainerbattle_no_intro TRAINER_NORMAN_0, EverGrandeCity_ChampionsRoom_Text_NormanDefeated
+	goto EverGrandeCity_ChampionsRoom_EventScript_NormanDefeated
+	end
+
+EverGrandeCity_ChampionsRoom_Text_NormanIntro:
+	.string "NORMAN: Welcome, {PLAYER}{KUN}.\p"
+	.string "I had a feeling I'd see you\n"
+	.string "here one day.\p"
+	.string "BRENDAN told me about your heroic\n"
+	.string "actions in XANTHOS CITY.\p"
+	.string "You bravely stood up to TEAM GENESIS'S\n"
+	.string "boss all on your own.\p"
+	.string "I had a good feeling about you when\n"
+	.string "I met you back in MAROON CITY.\p"
+	.string "\p"
+	.string "Now then, let's get down to business.\n"
+	.string "You came here to prove something, right?\p"
+	.string "As the reigning CHAMPION of ISSHO,\n"
+	.string "I accept your challenge, {PLAYER}.\p"
+	.string "Show me what comes after my era!$"
+
+EverGrandeCity_ChampionsRoom_Text_NormanDefeated:
+	.string "It's just like all those years ago...$"
+
+EverGrandeCity_ChampionsRoom_EventScript_NormanDefeated::
+	playse SE_DOOR
+	setmetatile 6, 1, METATILE_EliteFour_OpenDoorChampion_Frame, FALSE
+	setmetatile 6, 2, METATILE_EliteFour_OpenDoorChampion_Opening, FALSE
+	special DrawWholeMapView
+	playbgm MUS_DUMMY, FALSE
+	msgbox EverGrandeCity_ChampionsRoom_Text_NormanPostBattleSpeech, MSGBOX_DEFAULT
+	closemessage
+	delay 60
+	msgbox EverGrandeCity_ChampionsRoom_Text_NormanPostBattleSpeech2, MSGBOX_DEFAULT
+	closemessage
+	delay 60
+	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	msgbox EverGrandeCity_ChampionsRoom_Text_NormanPostBattleSpeech3, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_NORMAN, Common_Movement_FaceUp
+	waitmovement 0
+	delay 20
+	applymovement LOCALID_NORMAN, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox EverGrandeCity_ChampionsRoom_Text_NormanComeWithMe, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	applymovement LOCALID_NORMAN, EverGrandeCity_ChampionsRoom_Movement_WallaceExitStart
+	applymovement OBJ_EVENT_ID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerExitStart
+	waitmovement 0
+	completequest QUEST_1
+	delay 20
+	applymovement LOCALID_NORMAN, EverGrandeCity_ChampionsRoom_Movement_WallaceExit
+	applymovement OBJ_EVENT_ID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerExit
+	waitmovement 0
+	setflag FLAG_HIDE_PETALBURG_GYM_GREETER
+	warp MAP_EVER_GRANDE_CITY_HALL_OF_FAME, 7, 16
+	waitstate
+	releaseall
+	end
+
+EverGrandeCity_ChampionsRoom_Text_NormanPostBattleSpeech:
+	.string "Well done, {PLAYER}. I can see now\n"
+	.string "the bond between you and your POKéMON.\p"
+	.string "They put their trust in you, and you\n"
+	.string "led them to victory.\p"
+	.string "Now at last, it seems the ISSHO region\n"
+	.string "has a worthy trainer to succeed me.$"
+
+EverGrandeCity_ChampionsRoom_Text_NormanPostBattleSpeech2:
+	.string "NORMAN: In truth, my time here in\n"
+	.string "EVER GRANDE CITY ended long ago.\p"
+	.string "But since our union with the ISSHO region,\n"
+	.string "the LEAGUE has long awaited\l"
+	.string "a proper CHAMPION of ISSHO.\p"
+	.string "I now pass the mantle, CHAMPION of the\n"
+	.string "ISSHO region to you, {PLAYER}.\p"
+	.string "You'll be on equal standing with my son,\n"
+	.string "the CHAMPION of the HOENN region.\p"
+	.string "The fate of both regions I leave\n"
+	.string "to the two of you.$"
+
+EverGrandeCity_ChampionsRoom_Text_NormanPostBattleSpeech3:
+	.string "NORMAN: Wahahaha!\n"
+	.string "No need to look so grim.\p"
+	.string "Congratulations, {PLAYER}!\n"
+	.string "You should be proud to stand here!\p"
+	.string "I'm sure you'll make an excellent\n"
+	.string "steward of the ISSHO region!$"
+
+EverGrandeCity_ChampionsRoom_Text_NormanComeWithMe:
+	.string "NORMAN: There's just one last thing.\n"
+	.string "Come with me, {PLAYER}.$"
+
+
+
+
 
 EverGrandeCity_ChampionsRoom_EventScript_Wallace::
 	playbgm MUS_ENCOUNTER_CHAMPION, FALSE

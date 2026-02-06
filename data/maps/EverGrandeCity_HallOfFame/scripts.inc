@@ -43,9 +43,15 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame::
 	delay 40
 	setvar VAR_TEMP_1, 1
 	call EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_GameClearMale
-	goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_GameClearFemale
+	@checkplayergender
+	@goto_if_eq VAR_RESULT, MALE, EverGrandeCity_HallOfFame_EventScript_GameClearMale
+	@goto_if_eq VAR_RESULT, FEMALE, EverGrandeCity_HallOfFame_EventScript_GameClearFemale
+
+	setrespawn HEAL_LOCATION_UMBER_TOWN_MALE_MCHOUSE_2F
+	fadescreenspeed FADE_TO_BLACK, 24
+	special GameClear
+	waitstate
+	releaseall
 	end
 
 EverGrandeCity_HallOfFame_EventScript_GameClearMale::
@@ -82,7 +88,7 @@ EverGrandeCity_HallOfFame_Movement_WalkIntoHallOfFame2:
 	step_end
 
 EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions:
-	.string "WALLACE: This room…\p"
+	.string "NORMAN: This room…\p"
 	.string "This is where we keep records of\n"
 	.string "POKéMON that prevailed through\l"
 	.string "harsh battles.\p"
@@ -90,7 +96,7 @@ EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions:
 	.string "are honored.$"
 
 EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames:
-	.string "WALLACE: Come on, let's record your\n"
+	.string "NORMAN: Come on, let's record your\n"
 	.string "name as a TRAINER who triumphed over\l"
 	.string "the POKéMON LEAGUE, and the names of\l"
 	.string "the partners who battled with you.$"

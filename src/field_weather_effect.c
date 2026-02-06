@@ -775,7 +775,11 @@ void Snow_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
+<<<<<<< Updated upstream
     gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES;
+=======
+    gWeatherPtr->targetSnowflakeSpriteCount = 32; //16;
+>>>>>>> Stashed changes
     gWeatherPtr->snowflakeVisibleCounter = 0;
     Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
     gWeatherPtr->noShadows = FALSE;
@@ -946,6 +950,11 @@ static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
 
 static void UNUSED WaitSnowflakeSprite(struct Sprite *sprite)
 {
+<<<<<<< Updated upstream
+=======
+    // Timer is never incremented
+    //if (gWeatherPtr->snowflakeTimer > 18)
+>>>>>>> Stashed changes
     if (++gWeatherPtr->snowflakeTimer > 18)
     {
         sprite->invisible = FALSE;
@@ -974,6 +983,35 @@ static void UpdateSnowflakeSprite(struct Sprite *sprite)
         sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
     else if (x > 242)
         sprite->x = -3 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+<<<<<<< Updated upstream
+=======
+
+    /*y = (sprite->y + sprite->centerToCornerVecY + gSpriteCoordOffsetY) & 0xFF;
+    if (y > 163 && y < 171)
+    {
+        sprite->y = 250 - (gSpriteCoordOffsetY + sprite->centerToCornerVecY);
+        sprite->tPosY = sprite->y * 128;
+        sprite->tFallCounter = 0;
+        sprite->tFallDuration = 220;
+    }
+    else if (y > 242 && y < 250)
+    {
+        sprite->y = 163;
+        sprite->tPosY = sprite->y * 128;
+        sprite->tFallCounter = 0;
+        sprite->tFallDuration = 220;
+        sprite->invisible = TRUE;
+        sprite->callback = WaitSnowflakeSprite;
+    }
+
+    if (++sprite->tFallCounter == sprite->tFallDuration)
+    {
+        InitSnowflakeSpriteMovement(sprite);
+        sprite->y = 250;
+        sprite->invisible = TRUE;
+        sprite->callback = WaitSnowflakeSprite;
+    }*/
+>>>>>>> Stashed changes
 }
 
 #undef tPosY
@@ -2276,6 +2314,31 @@ bool8 Shade_Finish(void)
 }
 
 //------------------------------------------------------------------------------
+// WEATHER_FULL_MOON
+//------------------------------------------------------------------------------
+
+void FullMoon_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->targetColorMapIndex = 3;
+    gWeatherPtr->colorMapStepDelay = 20;
+}
+
+void FullMoon_InitAll(void)
+{
+    FullMoon_InitVars();
+}
+
+void FullMoon_Main(void)
+{
+}
+
+bool8 FullMoon_Finish(void)
+{
+    return FALSE;
+}
+
+//------------------------------------------------------------------------------
 // WEATHER_UNDERWATER_BUBBLES
 //------------------------------------------------------------------------------
 
@@ -2612,6 +2675,7 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_FOG_DIAGONAL:       return WEATHER_FOG_DIAGONAL;
     case WEATHER_UNDERWATER:         return WEATHER_UNDERWATER;
     case WEATHER_SHADE:              return WEATHER_SHADE;
+    case WEATHER_FULL_MOON:          return WEATHER_FULL_MOON;
     case WEATHER_DROUGHT:            return WEATHER_DROUGHT;
     case WEATHER_DOWNPOUR:           return WEATHER_DOWNPOUR;
     case WEATHER_UNDERWATER_BUBBLES: return WEATHER_UNDERWATER_BUBBLES;

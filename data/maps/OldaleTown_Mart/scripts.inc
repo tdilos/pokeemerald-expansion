@@ -66,3 +66,16 @@ OldaleTown_Mart_Text_RestoreHPWithPotion:
 	.string "To prevent your POKéMON from fainting,\n"
 	.string "restore its HP with a POTION.$"
 
+OldaleTown_Mart_EventScript_Glameow::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_GLAMEOW, CRY_MODE_NORMAL
+	msgbox OldaleTown_Mart_Text_Glameow, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+OldaleTown_Mart_Text_Glameow:
+	.string "Glam{EMOJI_TILDE}$"
+

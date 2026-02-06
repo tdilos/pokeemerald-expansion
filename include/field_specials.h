@@ -38,5 +38,9 @@ bool32 CheckObjectAtXY(u32, u32);
 bool32 CheckPartyHasSpecies(u32);
 bool8 CutMoveRuinValleyCheck(void);
 void CutMoveOpenDottedHoleDoor(void);
+void DailyMassageService(void);
+void GetDanceStepCount(void);
+void CheckHighTeamFriendship(void);
+void SmeargleQuestCheck(void);
 
 #endif // GUARD_FIELD_SPECIALS_H

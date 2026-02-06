@@ -1,0 +1,47 @@
+{
+  "id": "MAP_UNDERWATER_SUNKEN_ISLE_EXTERIOR",
+  "name": "Underwater_SunkenIsle_Exterior",
+  "layout": "LAYOUT_UNDERWATER_SUNKEN_ISLE_EXTERIOR",
+  "music": "MUS_UNDERWATER",
+  "region_map_section": "MAPSEC_ROYAL_REEF",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERWATER",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_SUNKEN_ISLE_EXTERIOR",
+      "offset": 0,
+      "direction": "emerge"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 31,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_SUNKEN_ISLE_INTERIOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 32,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_SUNKEN_ISLE_INTERIOR",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

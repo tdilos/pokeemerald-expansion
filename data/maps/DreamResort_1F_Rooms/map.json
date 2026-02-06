@@ -1,0 +1,115 @@
+{
+  "id": "MAP_DREAM_RESORT_1F_ROOMS",
+  "name": "DreamResort_1F_Rooms",
+  "layout": "LAYOUT_DREAM_RESORT_1F_ROOMS",
+  "music": "MUS_RG_POKE_TOWER",
+  "region_map_section": "MAPSEC_DREAM_RESORT",
+  "requires_flash": false,
+  "weather": "WEATHER_FOG_HORIZONTAL",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SOUL_SHARD",
+      "x": 25,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DreamResort_EventScript_Triangle6",
+      "flag": "FLAG_BATTLED_SPIRITOMB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 16,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DreamResort_EventScript_ItemSpellTag",
+      "flag": "FLAG_ITEM_DREAM_RESORT_SPELL_TAG"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DREAM_RESORT_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DREAM_RESORT_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DREAM_RESORT_1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 19,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DREAM_RESORT_1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 25,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DREAM_RESORT_1F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 26,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DREAM_RESORT_1F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 46,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DREAM_RESORT_1F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 47,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DREAM_RESORT_1F",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 43,
+      "y": 4,
+      "elevation": 0,
+      "item": "ITEM_POKE_DOLL",
+      "flag": "FLAG_HIDDEN_ITEM_DREAM_RESORT_POKE_DOLL"
+    }
+  ]
+}

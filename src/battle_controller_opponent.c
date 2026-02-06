@@ -437,6 +437,9 @@ static void OpponentHandleChooseMove(enum BattlerId battler)
     u32 chosenMoveIndex;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
 
+	//if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
+	//	gAiBattleData->actionFlee = TRUE;
+
     if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_SAFARI | BATTLE_TYPE_ROAMER)
      || IsWildMonSmart())
     {
@@ -453,6 +456,27 @@ static void OpponentHandleChooseMove(enum BattlerId battler)
         {
             gAiBattleData->choiceWatch = FALSE;
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SAFARI_WATCH_CAREFULLY, 0);
+        }
+        else if (gAiBattleData->actionFlee)
+        {
+            gAiBattleData->actionFlee = FALSE;
+            BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_RUN, 0);
+        }
+		// Roamer attempts to flee
+		else if (gBattleTypeFlags & BATTLE_TYPE_ROAMER && CanBattlerEscape(gActiveBattler) && !IsAbilityPreventingEscape(gActiveBattler))
+		{
+			gAiBattleData->actionFlee = FALSE;
+            BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_RUN, 0);
+		}
+		// DAZ effect
+		else if ((GetMonData(&gEnemyParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_STATUS) == STATUS1_DAZE))
+		{
+            BtlController_EmitTwoReturnValues(BUFFER_B, 10, ChooseMoveAndTargetInBattlePalace());
+        }
+        else if (gAiBattleData->choiceWatch)
+        {
+            gAiBattleData->choiceWatch = FALSE;
+            BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_SAFARI_WATCH_CAREFULLY, 0);
         }
         else
         {
@@ -486,6 +510,12 @@ static void OpponentHandleChooseMove(enum BattlerId battler)
                 SetAIUsingGimmick(battler, NO_GIMMICK);
                 BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, (chosenMoveIndex) | (gBattlerTarget << 8));
             }
+                    /*if (ShouldUseZMove(gActiveBattler, gBattlerTarget, chosenMove))
+                        QueueZMove(gActiveBattler, chosenMove);*/
+                    if (CanMegaEvolve(gActiveBattler)) // If opponent can mega evolve, do it.
+                        BtlController_EmitTwoReturnValues(BUFFER_B, 10, (chosenMoveId) | (RET_MEGA_EVOLUTION) | (gBattlerTarget << 8));
+                    else
+                        BtlController_EmitTwoReturnValues(BUFFER_B, 10, (chosenMoveId) | (gBattlerTarget << 8));
         }
         BtlController_Complete(battler);
     }
@@ -499,7 +529,12 @@ static void OpponentHandleChooseMove(enum BattlerId battler)
         } while (move == MOVE_NONE);
 
         enum MoveTarget moveTarget = GetBattlerMoveTargetType(battler, move);
-        if (moveTarget == TARGET_USER || moveTarget == TARGET_USER_OR_ALLY)
+        // DAZ effect
+		if ((GetMonData(&gEnemyParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_STATUS) == STATUS1_DAZE))
+		{
+            BtlController_EmitTwoReturnValues(BUFFER_B, 10, ChooseMoveAndTargetInBattlePalace());
+        }
+        else if (moveTarget == TARGET_USER || moveTarget == TARGET_USER_OR_ALLY)
         {
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, (chosenMoveIndex) | (battler << 8));
         }

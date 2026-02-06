@@ -4,6 +4,42 @@ Common_EventScript_PkmnCenterNurse::
 	setvar VAR_0x8004, 0
 	specialvar VAR_RESULT, CountPlayerTrainerStars
 	goto_if_eq VAR_RESULT, 4, EventScript_PkmnCenterNurse_GoldCard
+	@goto_if_eq VAR_DIFFICULTY, 0, EventScript_PkmnCenterNurseWithoutFee
+	special GetDifficulty
+	goto_if_lt VAR_RESULT, 2, EventScript_PkmnCenterNurseWithoutFee
+	showmoneybox 0, 0
+	msgbox gText_RestPkmnWithFee, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_HealFee
+	hidemoneybox
+	goto_if_eq VAR_RESULT, NO, EventScript_PkmnCenterNurse_Goodbye
+	end
+
+EventScript_PkmnCenterNurse_HealFee::
+	checkmoney 600
+	goto_if_eq VAR_RESULT, 0, EventScript_PkmnCenterNurse_NotEnoughMoney
+	playse SE_SHOP
+	removemoney 600        @ Dummy value until after further testing
+	updatemoneybox
+	delay 50
+	hidemoneybox
+	goto EventScript_PkmnCenterNurse_HealPkmn
+	end
+
+EventScript_PkmnCenterNurse_NotEnoughMoney::
+	applymovement VAR_0x800B, Common_Movement_WalkInPlaceFasterLeft
+	playse SE_PIN
+	waitmovement 0
+	msgbox gText_OhDearYouCantAffordIt, MSGBOX_DEFAULT
+	goto EventScript_PkmnCenterNurse_Goodbye
+	end
+
+
+
+
+
+
+
+EventScript_PkmnCenterNurseWithoutFee::
 	msgbox gText_WouldYouLikeToRestYourPkmn, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_HealPkmn
 	goto_if_eq VAR_RESULT, NO, EventScript_PkmnCenterNurse_Goodbye
@@ -11,6 +47,8 @@ Common_EventScript_PkmnCenterNurse::
 
 EventScript_PkmnCenterNurse_Goodbye::
 	message gText_WeHopeToSeeYouAgain
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
 	return
 
 @ VAR_0x8004 is 1 when player has Gold Card; jumps are identical
@@ -20,8 +58,9 @@ EventScript_PkmnCenterNurse_HealPkmn::
 	call_if_eq VAR_0x8004, 1, EventScript_PkmnCenterNurse_IllTakeYourPkmn2
 	waitmessage
 	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
-	goto_if_unset FLAG_POKERUS_EXPLAINED, EventScript_PkmnCenterNurse_CheckPokerus
-	goto EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom
+	@goto_if_unset FLAG_POKERUS_EXPLAINED, EventScript_PkmnCenterNurse_CheckPokerus
+	@goto EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom
+	goto EventScript_PkmnCenterNurse_ReturnPkmn
 	end
 
 EventScript_PkmnCenterNurse_IllTakeYourPkmn::

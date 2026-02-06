@@ -1,0 +1,35 @@
+Route99_MapScripts::
+	.byte 0
+
+Route99_EventScript_Apollo::
+	trainerbattle_single TRAINER_APOLLO, Route99_Text_ApolloIntro, Route99_Text_ApolloDefeated
+	msgbox Route99_Text_ApolloPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route99_EventScript_Moira::
+	trainerbattle_single TRAINER_MOIRA, Route99_Text_MoiraIntro, Route99_Text_MoiraDefeated
+	msgbox Route99_Text_MoiraPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route99_EventScript_Natalie::
+	trainerbattle_single TRAINER_NATALIE, Route99_Text_NatalieIntro, Route99_Text_NatalieDefeated
+	msgbox Route99_Text_NataliePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route99_EventScript_Kenneth::
+	trainerbattle_single TRAINER_KENNETH, Route99_Text_KennethIntro, Route99_Text_KennethDefeated
+	msgbox Route99_Text_KennethPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route99_EventScript_Ava::
+	trainerbattle_double TRAINER_AVA_AND_BART, Route99_Text_AvaAndBartIntro, Route99_Text_AvaAndBartDefeated, Route99_Text_AvaAndBartNotEnoughMons
+	msgbox Route99_Text_AvaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route99_EventScript_Bart::
+	trainerbattle_double TRAINER_AVA_AND_BART, Route99_Text_AvaAndBartIntro, Route99_Text_AvaAndBartDefeated, Route99_Text_AvaAndBartNotEnoughMons
+	msgbox Route99_Text_BartPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+

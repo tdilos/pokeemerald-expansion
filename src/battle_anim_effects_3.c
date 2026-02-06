@@ -442,6 +442,32 @@ const struct SpriteTemplate gTriAttackTriangleSpriteTemplate =
     .callback = AnimTriAttackTriangle,
 };
 
+const struct SpriteTemplate gSomaAttackTriangleSpriteTemplate =
+{
+    //.tileTag = ANIM_TAG_SOMA_ATTACK_TRIANGLE,
+    .tileTag = ANIM_TAG_TRI_ATTACK_TRIANGLE,
+    //.paletteTag = ANIM_TAG_SOMA_ATTACK_TRIANGLE,
+    .paletteTag = ANIM_TAG_TEAPOT,
+    .oam = &gOamData_AffineDouble_ObjNormal_64x64,
+    .anims = gTriAttackTriangleAnimTable,
+    .images = NULL,
+    .affineAnims = gTriAttackTriangleAffineAnimTable,
+    .callback = AnimTriAttackTriangle,
+};
+
+const struct SpriteTemplate gPhrenoAttackTriangleSpriteTemplate =
+{
+    //.tileTag = ANIM_TAG_PHRENO_ATTACK_TRIANGLE,
+    .tileTag = ANIM_TAG_TRI_ATTACK_TRIANGLE,
+	//.paletteTag = ANIM_TAG_PHRENO_ATTACK_TRIANGLE,
+    .paletteTag = ANIM_TAG_TEAPOT,
+    .oam = &gOamData_AffineDouble_ObjNormal_64x64,
+    .anims = gTriAttackTriangleAnimTable,
+    .images = NULL,
+    .affineAnims = gTriAttackTriangleAffineAnimTable,
+    .callback = AnimTriAttackTriangle,
+};
+
 const union AnimCmd gEclipsingOrbAnimCmds[] =
 {
     ANIMCMD_FRAME(0, 3),
@@ -767,7 +793,7 @@ const union AffineAnimCmd gSmokeBallEscapeCloudAffineAnimCmds1[] =
     AFFINEANIMCMD_FRAME(4, 6, 0, 16),
     AFFINEANIMCMD_JUMP(0),
 };
-
+ 
 const union AffineAnimCmd gSmokeBallEscapeCloudAffineAnimCmds2[] =
 {
     AFFINEANIMCMD_FRAME(0xC0, 0xC0, 0, 0),
@@ -5665,6 +5691,10 @@ void AnimTask_GetWeather(u8 taskId)
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_SNOW;
     else if (gWeatherMoveAnim & B_WEATHER_FOG)
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_FOG;
+	else if (gWeatherMoveAnim & B_WEATHER_SMAZE)
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_SMAZE;
+	else if (gWeatherMoveAnim & B_WEATHER_FULLMOON)
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_FULLMOON;
 
     DestroyAnimVisualTask(taskId);
 }

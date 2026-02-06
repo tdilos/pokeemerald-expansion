@@ -8,6 +8,15 @@ Common_EventScript_SetGymTrainers::
 	case 6, FortreeCity_Gym_SetGymTrainers
 	case 7, MossdeepCity_Gym_SetGymTrainers
 	case 8, SootopolisCity_Gym_SetGymTrainers
+
+	case 9, ResedaTown_Gym_SetGymTrainers
+	case 10, AmberCity_Gym_SetGymTrainers
+	case 11, CobaltCity_Gym_SetGymTrainers
+	case 12, MindaroCity_Gym_SetGymTrainers
+	case 13, PitchblakCity_Gym_SetGymTrainers
+	case 14, MaroonCity_Gym_SetGymTrainers
+	case 15, HaewenTown_Gym_SetGymTrainers
+	case 16, WisteriaCity_Gym_SetGymTrainers
 	end
 	
 Common_EventScript_SetGymTrainers_Frlg::
@@ -166,4 +175,39 @@ EventScript_SetViridianGymTrainers::
 	settrainerflag TRAINER_COOLTRAINER_SAMUEL
 	settrainerflag TRAINER_COOLTRAINER_YUJI
 	settrainerflag TRAINER_COOLTRAINER_WARREN
+
+
+
+
+ResedaTown_Gym_SetGymTrainers::
+	settrainerflag TRAINER_TIM
+	settrainerflag TRAINER_ERIK
+	return
+
+AmberCity_Gym_SetGymTrainers::
+	settrainerflag TRAINER_GAVIN
+	settrainerflag TRAINER_JOSIAH
+	settrainerflag TRAINER_BEAUFORD
+	return
+
+CobaltCity_Gym_SetGymTrainers::
+	settrainerflag TRAINER_GRIFFIN
+	settrainerflag TRAINER_EMILY
+	settrainerflag TRAINER_LLUVIA
+	settrainerflag TRAINER_HEATHER
+	return
+
+MindaroCity_Gym_SetGymTrainers::
+	return
+
+PitchblakCity_Gym_SetGymTrainers::
+	return
+
+MaroonCity_Gym_SetGymTrainers::
+	return
+
+HaewenTown_Gym_SetGymTrainers::
+	return
+
+WisteriaCity_Gym_SetGymTrainers::
 	return

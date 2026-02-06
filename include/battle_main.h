@@ -21,6 +21,12 @@ struct MultiPartnerMenuPokemon
     /*0x1D*/ u8 language;
 };
 
+/*struct TrainerBall
+{
+    u8 classId;
+    u8 Ball; // make this a u16 if needed
+};*/
+
 // defines for the 'DoBounceEffect' function
 #define BOUNCE_MON          0x0
 #define BOUNCE_HEALTHBOX    0x1
@@ -107,6 +113,8 @@ void RunBattleScriptCommands(void);
 enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId battler, enum MonState monInBattle);
 void SetTypeBeforeUsingMove(enum Move move, enum BattlerId battler);
 bool32 IsWildMonSmart(void);
+s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move);
+u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, u32 holdEffect);
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags);
 void ModifyPersonalityForNature(u32 *personality, u32 newNature);
 u32 GeneratePersonalityForGender(u32 gender, u32 species);
@@ -129,9 +137,13 @@ extern const u8 gStatusConditionString_SleepJpn[8];
 extern const u8 gStatusConditionString_ParalysisJpn[8];
 extern const u8 gStatusConditionString_BurnJpn[8];
 extern const u8 gStatusConditionString_IceJpn[8];
+extern const u8 gStatusConditionString_InfectJpn[8];
+extern const u8 gStatusConditionString_DazeJpn[8];
+extern const u8 gStatusConditionString_ExhaustJpn[8];
+extern const u8 gStatusConditionString_FearJpn[8];
 extern const u8 gStatusConditionString_ConfusionJpn[8];
 extern const u8 gStatusConditionString_LoveJpn[8];
 
-extern const u8 *const gStatusConditionStringsTable[7][2];
+extern const u8 *const gStatusConditionStringsTable[11][2];
 
 #endif // GUARD_BATTLE_MAIN_H

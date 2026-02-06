@@ -29,8 +29,12 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/weather.h"
+#include "rtc.h" // needed for DNS encounter tables
 
 extern const u8 EventScript_SprayWoreOff[];
+
+//extern const struct SwarmData gSwarmTable[];
+//extern const u16 gSwarmTableLength;
 
 #define MAX_ENCOUNTER_RATE 2880
 
@@ -65,7 +69,29 @@ EWRAM_DATA bool8 gIsFishingEncounter = 0;
 EWRAM_DATA bool8 gIsSurfingEncounter = 0;
 EWRAM_DATA u8 gChainFishingDexNavStreak = 0;
 
+static bool8 UnlockedUnownOrAreNotInUnown(void);
+static u32 GenerateUnownPersonalityByLetter(u8 letter);
+u8 GetUnownLetterByPersonalityLoByte(u32 personality);
+
 #include "data/wild_encounters.h"
+
+// unlike FRLG, these slots are chosen with uniform probability
+/*static const u8 sUnownLetterSlots[][LAND_WILD_COUNT] = {
+  //  A   A   A   A   A   A   A   A   A   A   A   ?
+    { 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 27},
+  //  C   C   C   D   D   D   H   H   H   U   U   O
+    { 2,  2,  2,  3,  3,  3,  7,  7,  7, 20, 20, 14},
+  //  N   N   N   N   S   S   S   S   I   I   E   E
+    {13, 13, 13, 13, 18, 18, 18, 18,  8,  8,  4,  4},
+  //  P   P   L   L   J   J   R   R   R   Q   Q   Q
+    {15, 15, 11, 11,  9,  9, 17, 17, 17, 16, 16, 16},
+  //  Y   Y   T   T   G   G   G   F   F   F   K   K
+    {24, 24, 19, 19,  6,  6,  6,  5,  5,  5, 10, 10},
+  //  V   V   V   W   W   W   X   X   M   M   B   B
+    {21, 21, 21, 22, 22, 22, 23, 23, 12, 12,  1,  1},
+  //  Z   Z   Z   Z   Z   Z   Z   Z   Z   Z   Z   !
+    {25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26},
+};*/
 
 static const struct WildPokemon sWildFeebas = {20, 25, SPECIES_FEEBAS};
 
@@ -81,6 +107,163 @@ void DisableWildEncounters(bool8 disabled)
 {
     sWildEncountersDisabled = disabled;
 }
+
+const struct SwarmData gSwarmTable[] =
+{
+	/*{
+		.mapName = 0xFF,
+		.species = 0xFFFF,
+	},*/
+	{
+        .species = SPECIES_STARLY,
+        .mapName = MAPSEC_ROUTE_81,
+        //.mapName = MAP_NUM(ROUTE81),
+    },
+	{
+        .species = SPECIES_PATRAT,
+        .mapName = MAPSEC_ROUTE_82,
+        //.mapName = MAP_NUM(ROUTE82),
+    },
+    {
+        .species = SPECIES_GULPIN,
+		.mapName = MAPSEC_ROUTE_83,
+        //.mapName = MAP_NUM(ROUTE83),
+    },
+	{
+        .species = SPECIES_EMOLGA,
+		.mapName = MAPSEC_RESEDA_WOODS,
+        //.mapName = MAP_NUM(ROUTE89),
+    },
+	{
+        .species = SPECIES_BLITZLE,
+		.mapName = MAPSEC_ROUTE_84,
+        //.mapName = MAP_NUM(ROUTE84),
+    },
+    {
+        .species = SPECIES_MARACTUS,
+		.mapName = MAPSEC_ROUTE_86,
+        //.mapName = MAP_NUM(ROUTE86),
+    },
+    {
+        .species = SPECIES_SANDILE,
+		.mapName = MAPSEC_ROUTE_87,
+        //.mapName = MAP_NUM(ROUTE87),
+    },
+    {
+        .species = SPECIES_YAMASK,
+		.mapName = MAPSEC_ROUTE_88,
+        //.mapName = MAP_NUM(ROUTE88),
+    },
+    {
+		.species = SPECIES_DWEBBLE,
+		.mapName = MAPSEC_ROUTE_79,
+        //.mapName = MAP_NUM(ROUTE79),
+    },
+    {
+        .species = SPECIES_SHELMET,
+		.mapName = MAPSEC_ROUTE_78,
+        //.mapName = MAP_NUM(ROUTE78),
+    },
+
+	{
+        .species = SPECIES_LILLIPUP,
+		.mapName = MAPSEC_ROUTE_94,
+        //.mapName = MAP_NUM(ROUTE94),
+    },
+	{
+        .species = SPECIES_LITLEO,
+		.mapName = MAPSEC_ROUTE_93,
+        //.mapName = MAP_NUM(ROUTE93),
+    },
+	{
+        .species = SPECIES_RIOLU,
+		.mapName = MAPSEC_MINDARO_GARDENS,
+        //.mapName = MAP_NUM(ROUTE95),
+    },
+	{
+        .species = SPECIES_GOTHITA,
+		.mapName = MAPSEC_ROUTE_96,
+        //.mapName = MAP_NUM(ROUTE96),
+    },
+	{
+        .species = SPECIES_BERGMITE,
+		.mapName = MAPSEC_MT_SHIRO,
+        //.mapName = MAP_NUM(ROUTE97),
+    },
+	{
+        .species = SPECIES_KARRABLAST,
+		.mapName = MAPSEC_ROUTE_92,
+        //.mapName = MAP_NUM(ROUTE92),
+    },
+	{
+        .species = SPECIES_MIENFOO,
+		.mapName = MAPSEC_ROUTE_91,
+        //.mapName = MAP_NUM(ROUTE91),
+    },
+	{
+        .species = SPECIES_SCRAGGY,
+		.mapName = MAPSEC_ROUTE_90,
+        //.mapName = MAP_NUM(ROUTE90),
+    },	
+	{
+        .species = SPECIES_JOLTIK,
+		.mapName = MAPSEC_SCARLET_WOODS,
+        //.mapName = MAP_NUM(ROUTE69),
+    },
+	
+    {
+        .species = SPECIES_AXEW,
+		.mapName = MAPSEC_SANDSHREAF,
+        //.mapName = MAP_NUM(SANDSHREAF),
+    },
+	{
+        .species = SPECIES_KLINK,
+		.mapName = MAPSEC_STEEL_MILL,
+        //.mapName = MAP_NUM(ROUTE89),
+    },
+	{
+        .species = SPECIES_BRUXISH,
+		.mapName = MAPSEC_ROUTE_77,
+        //.mapName = MAP_NUM(ROUTE77),
+    },
+	{
+        .species = SPECIES_CLAUNCHER,
+		.mapName = MAPSEC_ROUTE_75,
+        //.mapName = MAP_NUM(ROUTE75),
+    },
+	{
+        .species = SPECIES_FRILLISH,
+		.mapName = MAPSEC_ROUTE_74,
+        //.mapName = MAP_NUM(ROUTE74),
+    },
+	{
+        .species = SPECIES_ALOMOMOLA,
+		.mapName = MAPSEC_ROUTE_73,
+        //.mapName = MAP_NUM(ROUTE73),
+    },
+	{
+        .species = SPECIES_DRUDDIGON,
+		.mapName = MAPSEC_ROUTE_70,
+        //.mapName = MAP_NUM(ROUTE70),
+    },
+	{
+        .species = SPECIES_PAWNIARD,
+		.mapName = MAPSEC_ROUTE_67,
+        //.mapName = MAP_NUM(ROUTE67),
+    },
+	{
+        .species = SPECIES_ABSOL,
+		.mapName = MAPSEC_ROUTE_66,
+        //.mapName = MAP_NUM(ROUTE66),
+    },
+	{
+        .species = SPECIES_CARBINK,
+		.mapName = MAPSEC_DUSK_MOUNTAIN,
+        //.mapName = MAP_NUM(ROUTE65),
+    }
+};
+
+const u16 gSwarmTableLength = NELEMS(gSwarmTable);
 
 // Each fishing spot on Route 119 is given a number between 1 and NUM_FISHING_SPOTS inclusive.
 // The number is determined by counting the valid fishing spots left to right top to bottom.
@@ -355,7 +538,7 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIn
         if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         {
             enum Ability ability = GetMonAbility(&gPlayerParty[0]);
-            if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE)
+            if (ability == ABILITY_HUSTLE || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_PRESSURE || ability == ABILITY_AMPLIFY)
             {
                 if (Random() % 2 == 0)
                     return max;
@@ -381,11 +564,17 @@ u16 GetCurrentMapWildMonHeaderId(void)
 {
     u16 i;
 
+	if (!UnlockedUnownOrAreNotInUnown())
+        return HEADER_NONE;
+
     for (i = 0; ; i++)
     {
         const struct WildPokemonHeader *wildHeader = &gWildMonHeaders[i];
         if (wildHeader->mapGroup == MAP_GROUP(MAP_UNDEFINED))
             break;
+		
+        //if (!UnlockedUnownOrAreNotInUnown())
+        //    break;
 
         if (gWildMonHeaders[i].mapGroup == gSaveBlock1Ptr->location.mapGroup &&
             gWildMonHeaders[i].mapNum == gSaveBlock1Ptr->location.mapNum)
@@ -398,6 +587,33 @@ u16 GetCurrentMapWildMonHeaderId(void)
                     alteringCaveId = 0;
 
                 i += alteringCaveId;
+            }
+			
+			// current locations with DNS tables
+			if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE82) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE82))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE83) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE83))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(RESEDA_WOODS) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(RESEDA_WOODS))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE84) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE84))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE89) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE89))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE86) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE86))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE87) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE87))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(CINEROUS_TOWER_EXTERIOR) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(CINEROUS_TOWER_EXTERIOR))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE79) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE79))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE78) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE78))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE97) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE97))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE95) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE95))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE94) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE94))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE93) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE93))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE92) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE92))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE91) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE91))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE90) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE90))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE69) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE69)))
+            {
+                u8 hour = gLocalTime.hours;
+				if (hour < 4 || hour >= 20) // night
+					i += 1;
+				if (4 <= hour && hour < 10) // morning
+					i += 2;
             }
 
             return i;
@@ -475,6 +691,162 @@ void CreateWildMon(u16 species, u8 level)
     u32 personality = GetMonPersonality(species, GetSynchronizedGender(WILDMON_ORIGIN, species), PickWildMonNature(species), RANDOM_UNOWN_LETTER);
     CreateMonWithIVs(&gEnemyParty[0], species, level, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);
     GiveMonInitialMoveset(&gEnemyParty[0]);
+    bool32 checkCuteCharm = TRUE;
+	u32 personality;
+	u8 letter;
+
+    ZeroEnemyPartyMons();
+
+    switch (gSpeciesInfo[species].genderRatio)
+    {
+    case MON_MALE:
+    case MON_FEMALE:
+    case MON_GENDERLESS:
+        checkCuteCharm = FALSE;
+        break;
+    }
+
+    if (checkCuteCharm
+        && !GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG)
+        && GetMonAbility(&gPlayerParty[0]) == ABILITY_CUTE_CHARM
+        && Random() % 3 != 0)
+    {
+        u16 leadingMonSpecies = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES);
+        u32 leadingMonPersonality = GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY);
+        u8 gender = GetGenderFromSpeciesAndPersonality(leadingMonSpecies, leadingMonPersonality);
+
+        // misses mon is genderless check, although no genderless mon can have cute charm as ability
+        if (gender == MON_FEMALE)
+            gender = MON_MALE;
+        else
+            gender = MON_FEMALE;
+
+        CreateMonWithGenderNatureLetter(&gEnemyParty[0], species, level, USE_RANDOM_IVS, gender, PickWildMonNature(), 0);
+        return;
+    }
+
+    //CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
+	// DJAX chamber requires special handling, since there is no separate UNOWN_A form
+	if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ARTISAN_CAVE_PUZZLE_CHAMBER1)
+		&& gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER1))
+	{
+		//do {
+		//	letter = Random() % 28;
+		//} while (letter != 0 || letter != 3 || letter != 9 || letter != 23);
+		letter = 4;
+		personality = GenerateUnownPersonalityByLetter(letter);
+        CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
+		//CreateMonWithGenderNatureLetter(&gEnemyParty[0], SPECIES_UNOWN, level, USE_RANDOM_IVS, MON_GENDERLESS, PickWildMonNature(), letter);
+	}
+	else
+		CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
+    /*if (species != SPECIES_UNOWN)
+    {
+        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
+    }
+    else
+    {
+		slot = Random() % LAND_WILD_COUNT;
+        chamber = gSaveBlock1Ptr->location.mapNum - MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER1);
+        personality = GenerateUnownPersonalityByLetter(sUnownLetterSlots[chamber][slot]);
+        CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
+    }*/
+}
+
+static bool8 UnlockedUnownOrAreNotInUnown(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ARTISAN_CAVE_PUZZLE_CHAMBER1))
+        return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER1)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_1))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER2)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_2))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER3)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_3))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER4)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_4))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER5)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_5))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER6)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_6))
+        return TRUE;
+    return FALSE;
+}
+
+/*static void GenerateWildMon(u16 species, u8 level, u8 slot)
+{
+    u32 personality;
+    s8 chamber;
+    ZeroEnemyPartyMons();
+    if (species != SPECIES_UNOWN)
+    {
+        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, Random() % NUM_NATURES);
+    }
+    else
+    {
+        chamber = gSaveBlock1Ptr->location.mapNum - MAP_NUM(MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER);
+        personality = GenerateUnownPersonalityByLetter(sUnownLetterSlots[chamber][slot]);
+        CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
+    }
+}*/
+
+static u32 GenerateUnownPersonalityByLetter(u8 letter)
+{
+    u32 personality;
+    do
+    {
+        personality = (Random() << 16) | Random();
+    } while (GetUnownLetterByPersonalityLoByte(personality) != letter);
+    return personality;
+}
+
+u8 GetUnownLetterByPersonalityLoByte(u32 personality)
+{
+    return GET_UNOWN_LETTER(personality);
+}
+
+void TryUpdateSwarm(void)
+{
+	//#ifdef TIME_ENABLED //Otherwise causes lags
+	//u32 backupVar = VarGet(VAR_SWARM_DAILY_EVENT) | (VarGet(VAR_SWARM_DAILY_EVENT + 1) << 16);
+
+	//if (CheckAndSetDailyEvent(VAR_SWARM_DAILY_EVENT, TRUE))
+	//{
+		u16 index = Random() % gSwarmTableLength;
+		VarSet(VAR_SWARM_INDEX, index);
+
+		//u32 daysSince = GetDaysSinceTimeInValue(backupVar);
+		//UpdatePartyPokerusTime(daysSince);
+		//ClearDailyEventFlags();
+	//}
+	//#endif
+}
+
+#define SWARM_CHANCE 50 //Change this to the percentage that swarming Pokemon will appear if they can be found on the current route.
+
+static bool8 TryGenerateSwarmMon(u8 level)
+{
+	//if (gSwarmTableLength == 0)
+	//	return FALSE;
+
+	//u16 index = 0;
+	u16 index = VarGet(VAR_SWARM_INDEX);
+	u8 mapName = gSwarmTable[index].mapName;
+	u16 species = gSwarmTable[index].species;
+
+	if (mapName == GetCurrentRegionMapSectionId()
+	&&  Random() % 100 < SWARM_CHANCE)
+	{
+		CreateWildMon(species, level);
+		return TRUE;
+	}
+
+	return FALSE;
 }
 
 #ifdef BUGFIX
@@ -536,8 +908,9 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
         return FALSE;
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
-
-    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+	if (!TryGenerateSwarmMon(level))
+		CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    //CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return TRUE;
 }
 
@@ -793,6 +1166,159 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
     return FALSE;
 }
 
+void HiddenGrottoWildEncounter(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId != HEADER_NONE)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].landMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE) == TRUE
+         && TryGenerateWildMon(wildPokemonInfo, WILD_AREA_LAND, 0) == TRUE)
+        {
+			//gEnemyParty[0].hiddenAbility = TRUE;
+			u8 value;
+			value = 2;
+			SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &value);
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void GetGrottoItem(void)
+{
+	u16 GrottoItems[] = 
+	{
+		ITEM_POKE_BALL,
+		ITEM_REPEL,
+		ITEM_POTION,
+		ITEM_ENERGY_ROOT,
+		ITEM_ETHER
+		//ITEM_NONE
+	};
+	u16 GrottoUncommonItems[] = 
+	{
+		ITEM_GREAT_BALL,
+		ITEM_SUPER_REPEL,
+		ITEM_SUPER_POTION,
+		ITEM_HP_UP,
+		ITEM_PP_UP
+		//ITEM_NONE
+	};
+	
+	u16 GrottoRareItems[] = 
+	{
+		ITEM_ULTRA_BALL,
+		ITEM_MAX_REPEL,
+		ITEM_HYPER_POTION,
+		ITEM_RARE_CANDY,
+		ITEM_PP_MAX
+		//ITEM_NONE
+	};
+	
+	u16 GrottoGreenTreeItems[] = 
+	{
+		ITEM_LEAF_STONE,
+		ITEM_ONI_MASK,
+		
+		ITEM_SUN_STONE,
+		
+		ITEM_SHINY_STONE,
+		ITEM_DAWN_STONE
+		//ITEM_NONE
+	};
+	
+	u16 GrottoRedTreeItems[] = 
+	{
+		ITEM_LEAF_STONE,
+		ITEM_ONI_MASK,
+		
+		ITEM_MOON_STONE,
+
+		ITEM_DUSK_STONE,
+		ITEM_DAWN_STONE
+		//ITEM_NONE
+	};
+	
+	u16 GrottoYellowCaveItems[] = 
+	{
+		ITEM_ZEPHYR_STONE,
+		ITEM_FIRE_STONE,
+		
+		ITEM_SUN_STONE,
+		
+		ITEM_SHINY_STONE,
+		ITEM_DAWN_STONE
+		//ITEM_NONE
+	};
+	
+	u16 GrottoBlueCaveItems[] = 
+	{
+		ITEM_ICE_STONE,
+		ITEM_WATER_STONE,
+		
+		ITEM_MOON_STONE,
+		
+		ITEM_DUSK_STONE,
+		ITEM_DAWN_STONE
+		//ITEM_NONE
+	};
+	
+	u8 itemId = Random() % (sizeof(GrottoItems)/sizeof(GrottoItems[0]));
+	u8 uncommonitemId = Random() % (sizeof(GrottoUncommonItems)/sizeof(GrottoUncommonItems[0]));
+	u8 rareitemId = Random() % (sizeof(GrottoRareItems)/sizeof(GrottoRareItems[0]));
+
+	u8 greentreeitemId = Random() % (sizeof(GrottoGreenTreeItems)/sizeof(GrottoGreenTreeItems[0]));
+	u8 redtreeitemId = Random() % (sizeof(GrottoRedTreeItems)/sizeof(GrottoRedTreeItems[0]));
+	u8 yellowcaveitemId = Random() % (sizeof(GrottoYellowCaveItems)/sizeof(GrottoYellowCaveItems[0]));
+	u8 bluecaveitemId = Random() % (sizeof(GrottoBlueCaveItems)/sizeof(GrottoBlueCaveItems[0]));
+	
+    if (GrottoItems[itemId] != ITEM_NONE && (Random() % 100) < 50) // 40% chance to get common item
+    {
+		gSpecialVar_Result = GrottoItems[itemId];
+    }
+	else if(GrottoItems[itemId] == ITEM_NONE && 
+			GrottoUncommonItems[uncommonitemId] != ITEM_NONE &&
+			(Random() % 100) < 50) // 20% chance to get uncommon item
+	{
+		gSpecialVar_Result = GrottoRareItems[uncommonitemId];
+    }
+	else if(GrottoItems[itemId] == ITEM_NONE && 
+			GrottoRareItems[rareitemId] != ITEM_NONE &&
+			(Random() % 100) < 50) // 10% chance to get rare item
+	{
+		gSpecialVar_Result = GrottoRareItems[rareitemId];
+    }
+	else // 10% chance to get a map specific rare item
+	{
+		if (GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_85 || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_70 || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_87) // yellow cave grottos
+			gSpecialVar_Result = GrottoYellowCaveItems[yellowcaveitemId];
+		if (GetCurrentRegionMapSectionId() == MAPSEC_QUARTZ_CAVE || GetCurrentRegionMapSectionId() == MAPSEC_MT_SHIRO || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_66 || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_97) // blue cave grottos
+			gSpecialVar_Result = GrottoBlueCaveItems[bluecaveitemId];
+		if (GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_92 || GetCurrentRegionMapSectionId() == MAPSEC_SCARLET_WOODS || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_91) // red tree grottos
+			gSpecialVar_Result = GrottoRedTreeItems[redtreeitemId];
+		else // green tree grottos
+			gSpecialVar_Result = GrottoGreenTreeItems[greentreeitemId];
+    }
+}
+
+
+
+
 void RockSmashWildEncounter(void)
 {
     u32 headerId = GetCurrentMapWildMonHeaderId();
@@ -833,6 +1359,153 @@ void RockSmashWildEncounter(void)
     {
         gSpecialVar_Result = FALSE;
     }
+}
+
+void TryGetRockSmashItem(void)
+{
+	u16 RockSmashItems[] = 
+	{
+		/*ITEM_RED_SHARD,
+		ITEM_BLUE_SHARD,
+		ITEM_GREEN_SHARD,
+		ITEM_HARD_STONE,
+		ITEM_ICY_ROCK,
+		ITEM_SMOOTH_ROCK,
+		ITEM_HEAT_ROCK,
+		ITEM_DAMP_ROCK,
+		ITEM_LIGHT_CLAY,*/
+		ITEM_RED_SHARD,
+		ITEM_YELLOW_SHARD,
+		ITEM_FLOAT_STONE,
+		ITEM_NONE
+	};
+
+	u16 RockSmashRareItems[] = 
+	{
+		/*ITEM_ODD_KEYSTONE,
+		ITEM_ARMOR_FOSSIL,
+		ITEM_SKULL_FOSSIL,
+		ITEM_HELIX_FOSSIL,
+		ITEM_DOME_FOSSIL,
+		ITEM_COVER_FOSSIL,
+		ITEM_PLUME_FOSSIL,
+		ITEM_JAW_FOSSIL,
+		ITEM_SAIL_FOSSIL,
+		ITEM_ROOT_FOSSIL,
+		ITEM_CLAW_FOSSIL,
+		ITEM_INSECT_PLATE,
+		ITEM_DREAD_PLATE,
+		ITEM_DRACO_PLATE,
+		ITEM_ZAP_PLATE,
+		ITEM_PIXIE_PLATE,
+		ITEM_FIST_PLATE,
+		ITEM_FLAME_PLATE,
+		ITEM_SKY_PLATE,
+		ITEM_SPOOKY_PLATE,
+		ITEM_MEADOW_PLATE,
+		ITEM_EARTH_PLATE,
+		ITEM_ICICLE_PLATE,
+		ITEM_TOXIC_PLATE,
+		ITEM_MIND_PLATE,
+		ITEM_STONE_PLATE,
+		ITEM_IRON_PLATE,
+		ITEM_SPLASH_PLATE,*/
+		ITEM_STAR_PIECE,
+		ITEM_ROCK_GEM,
+		ITEM_HARD_STONE,
+		ITEM_HELIX_FOSSIL,
+		ITEM_ROOT_FOSSIL,
+		ITEM_NONE
+	};
+	
+	u8 itemId = Random() % (sizeof(RockSmashItems)/sizeof(RockSmashItems[0]));
+	u8 rareitemId = Random() % (sizeof(RockSmashRareItems)/sizeof(RockSmashRareItems[0]));
+	
+    if (RockSmashItems[itemId] != ITEM_NONE && (Random() % 100) < 50)
+    {
+		gSpecialVar_Result = RockSmashItems[itemId];
+    }
+	else if(RockSmashItems[itemId] == ITEM_NONE && 
+			RockSmashRareItems[rareitemId] != ITEM_NONE &&
+			(Random() % 100) < 20)
+	{
+		gSpecialVar_Result = RockSmashRareItems[rareitemId];
+    }
+	else
+	gSpecialVar_Result = FALSE;
+}
+
+void TryGetCutItem(void)
+{
+	u16 CutItems[] = 
+	{
+		ITEM_GREEN_SHARD,
+		ITEM_TINY_MUSHROOM,
+		ITEM_NONE
+	};
+
+	u16 CutRareItems[] = 
+	{
+		ITEM_BIG_MUSHROOM,
+		ITEM_GRASS_GEM,
+		ITEM_MIRACLE_SEED,
+		ITEM_LEEK,
+		ITEM_BIG_ROOT,
+		ITEM_NONE
+	};
+	
+	u8 itemId = Random() % (sizeof(CutItems)/sizeof(CutItems[0]));
+	u8 rareitemId = Random() % (sizeof(CutRareItems)/sizeof(CutRareItems[0]));
+	
+    if (CutItems[itemId] != ITEM_NONE && (Random() % 100) < 50)
+    {
+		gSpecialVar_Result = CutItems[itemId];
+    }
+	else if(CutItems[itemId] == ITEM_NONE && 
+			CutRareItems[rareitemId] != ITEM_NONE &&
+			(Random() % 100) < 20)
+	{
+		gSpecialVar_Result = CutRareItems[rareitemId];
+    }
+	else
+	gSpecialVar_Result = FALSE;
+}
+
+
+void TryGetThawItem(void)
+{
+	u16 ThawItems[] = 
+	{
+		ITEM_BLUE_SHARD,
+		ITEM_PEARL,
+		ITEM_NONE
+	};
+
+	u16 ThawRareItems[] = 
+	{
+		ITEM_BIG_PEARL,
+		ITEM_ICE_GEM,
+		ITEM_NEVER_MELT_ICE,
+		ITEM_ARMOR_FOSSIL,
+		ITEM_JAW_FOSSIL,
+		ITEM_NONE
+	};
+	
+	u8 itemId = Random() % (sizeof(ThawItems)/sizeof(ThawItems[0]));
+	u8 rareitemId = Random() % (sizeof(ThawRareItems)/sizeof(ThawRareItems[0]));
+	
+    if (ThawItems[itemId] != ITEM_NONE && (Random() % 100) < 50)
+    {
+		gSpecialVar_Result = ThawItems[itemId];
+    }
+	else if(ThawItems[itemId] == ITEM_NONE && 
+			ThawRareItems[rareitemId] != ITEM_NONE &&
+			(Random() % 100) < 20)
+	{
+		gSpecialVar_Result = ThawRareItems[rareitemId];
+    }
+	else
+	gSpecialVar_Result = FALSE;
 }
 
 bool8 SweetScentWildEncounter(void)
@@ -1172,6 +1845,94 @@ static void ApplyCleanseTagEncounterRateMod(u32 *encRate)
 {
     if (GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM) == ITEM_CLEANSE_TAG)
         *encRate = *encRate * 2 / 3;
+}
+
+void CutWildEncounter(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId != HEADER_NONE)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].cutMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE) == TRUE
+         //&& TryGenerateWildMon(wildPokemonInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+        {
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void HeadbuttWildEncounter(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId != 0xFFFF)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].headbuttMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, 1) == TRUE
+         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+        {
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void ThawWildEncounter(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId != 0xFFFF)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].thawMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, 1) == TRUE
+         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+        {
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
 }
 
 bool8 TryDoDoubleWildBattle(void)

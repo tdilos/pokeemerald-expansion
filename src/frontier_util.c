@@ -2200,6 +2200,8 @@ static void CheckPartyIneligibility(void)
     #undef numEligibleMons
 }
 
+#undef SPECIES_PER_LINE
+
 static void ValidateVisitingTrainer(void)
 {
     ValidateEReaderTrainer();

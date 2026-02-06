@@ -41,6 +41,8 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
+#include "constants/metatile_behaviors.h"
+#include "mirage_palace.h"
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;
@@ -94,8 +96,8 @@ void FieldClearPlayerInput(struct FieldInput *input)
     input->heldDirection2 = FALSE;
     input->tookStep = FALSE;
     input->pressedBButton = FALSE;
+	input->pressedLButton = FALSE;
     input->pressedRButton = FALSE;
-    input->input_field_1_1 = FALSE;
     input->input_field_1_2 = FALSE;
     input->input_field_1_3 = FALSE;
     input->dpadDirection = 0;
@@ -119,6 +121,8 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
                 input->pressedAButton = TRUE;
             if (newKeys & B_BUTTON)
                 input->pressedBButton = TRUE;
+			if (newKeys & L_BUTTON)
+                input->pressedLButton = TRUE;
             if (newKeys & R_BUTTON)
                 input->pressedRButton = TRUE;
         }
@@ -146,6 +150,13 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         input->dpadDirection = DIR_WEST;
     else if (heldKeys & DPAD_RIGHT)
         input->dpadDirection = DIR_EAST;
+	
+	// If B is pressed, field controls are allowed, and the player is either running or walking.
+    if ((newKeys & B_BUTTON) && (!ArePlayerFieldControlsLocked())
+    && (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_DASH | PLAYER_AVATAR_FLAG_ON_FOOT)))
+    {
+        gRunToggleBtnSet = TRUE;
+    }
 
     if (DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
     {
@@ -232,7 +243,13 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->tookStep && TryFindHiddenPokemon())
         return TRUE;
 
-    if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+    //if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+		
+	if (input->pressedSelectButton && UseRegisteredKeyItemOnField(0))
+        return TRUE;
+    else if (input->pressedLButton && UseRegisteredKeyItemOnField(1))
+        return TRUE;
+    else if (input->pressedRButton && UseRegisteredKeyItemOnField(2))
         return TRUE;
 
     if (input->pressedRButton && TryStartDexNavSearch())
@@ -305,11 +322,15 @@ static bool8 TryStartInteractionScript(struct MapPosition *position, u16 metatil
 
 static const u8 *GetInteractionScript(struct MapPosition *position, u8 metatileBehavior, enum Direction direction)
 {
-    const u8 *script = GetInteractedObjectEventScript(position, metatileBehavior, direction);
+    /*const u8 *script = GetInteractedObjectEventScript(position, metatileBehavior, direction);
+    if (script != NULL)
+        return script;*/
+
+    const u8 *script = GetInteractedBackgroundEventScript(position, metatileBehavior, direction);
     if (script != NULL)
         return script;
-
-    script = GetInteractedBackgroundEventScript(position, metatileBehavior, direction);
+	
+	script = GetInteractedObjectEventScript(position, metatileBehavior, direction);
     if (script != NULL)
         return script;
 
@@ -594,6 +615,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
     }
     if (MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
         return EventScript_UseRockClimb;
+	if (MetatileBehavior_IsHeadbuttTree(metatileBehavior) == TRUE)
+        return EventScript_Headbutt;
 
     elevation = position->elevation;
     if (elevation == MapGridGetElevationAt(position->x, position->y))
@@ -808,6 +831,8 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     }
 
     if (SafariZoneTakeStep() == TRUE)
+        return TRUE;
+    if (MiragePalaceTakeStep() == TRUE)
         return TRUE;
     if (CountSSTidalStep(1) == TRUE)
     {
@@ -1368,6 +1393,97 @@ void CancelSignPostMessageBox(struct FieldInput *input)
         return;
 
     CreateTask(Task_OpenStartMenu, 8);
+
+}
+
+void HandleBoulderActivateSwitch(u16 x, u16 y)
+{
+    int i;
+    const struct CoordEvent * events = gMapHeader.events->coordEvents;
+    int n = gMapHeader.events->coordEventCount;
+
+    if (MapGridGetMetatileBehaviorAt(x, y) == MB_STRENGTH_BUTTON)
+    {
+        for (i = 0; i < n; i++)
+        {
+            if (events[i].x + MAP_OFFSET == x && events[i].y + MAP_OFFSET == y)
+            {
+                //QuestLog_CutRecording();
+                ScriptContext_SetupScript(events[i].script);
+                LockPlayerFieldControls();
+            }
+        }
+    }
+}
+
+void HandleMakeBoulderBridge(u16 x, u16 y)
+{
+    int i;
+    const struct CoordEvent * events = gMapHeader.events->coordEvents;
+    int n = gMapHeader.events->coordEventCount;
+	
+    //struct ObjectEvent * obs = gSaveBlock1Ptr->objectEvents;
+	//int j;
+	//u8 objEventId;
+	//struct ObjectEvent * objectEvent;
+    //int m = gMapHeader.events->objectEventCount;
+	
+
+    if (MapGridGetMetatileBehaviorAt(x, y) == MB_STRENGTH_BRIDGE)
+    {
+       /* for (j = 0; j < OBJECT_EVENTS_COUNT; j++)
+        {
+            if (gObjectEvents[j].currentCoords.x == x && gObjectEvents[j].currentCoords.y == y)
+            {
+				//TryGetObjectEventIdByLocalIdAndMap(templates[i].localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &objEventId);
+				//objectEvent = &gObjectEvents[objEventId];
+				gSpecialVar_0x8006 = gMapHeader.events->objectEvents[j].localId;
+            }
+        }*/
+
+        for (i = 0; i < n; i++)
+        {
+            if (events[i].x + MAP_OFFSET == x && events[i].y + MAP_OFFSET == y)
+            {
+                //QuestLog_CutRecording();
+				//gSpecialVar_0x8004 = i;
+                ScriptContext_SetupScript(events[i].script);
+                LockPlayerFieldControls();
+            }
+        }
+    }
+}
+
+void HandleMagnetizeMetal(u16 x, u16 y)
+{
+    int i;
+    const struct CoordEvent * events = gMapHeader.events->coordEvents;
+    int n = gMapHeader.events->coordEventCount;
+	int j;
+	int graphicsId;
+	
+    if (MapGridGetMetatileBehaviorAt(x, y) == MB_STRENGTH_BUTTON)
+    {
+        for (i = 0; i < n; i++)
+        {
+			/*for (j = 0; j < OBJECT_EVENTS_COUNT; j++)
+			{
+				if (gObjectEvents[j].currentCoords.x == x && gObjectEvents[j].currentCoords.y == y)
+				{
+					graphicsId = VarGetObjectEventGraphicsId(j);
+					VarSet(graphicsId, OBJ_EVENT_GFX_MAGNETIZED_METAL);
+				}
+			}*/
+		
+            if (events[i].x + MAP_OFFSET == x && events[i].y + MAP_OFFSET == y)
+            {
+                //QuestLog_CutRecording();
+				//gSpecialVar_0x8004 = i;
+                ScriptContext_SetupScript(events[i].script);
+                LockPlayerFieldControls();
+            }
+        }
+    }
 }
 
 u16 GetBoulderRevealFlagByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)

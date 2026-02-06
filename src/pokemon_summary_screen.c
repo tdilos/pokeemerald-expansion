@@ -314,6 +314,7 @@ static void SpriteCB_MoveSelector(struct Sprite *);
 static void DestroyMoveSelectorSprites(u8);
 static void SetMainMoveSelectorColor(u8);
 static void KeepMoveSelectorVisible(u8);
+static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n);
 static void SummaryScreen_DestroyAnimDelayTask(void);
 static bool32 ShouldShowMoveRelearner(void);
 static bool32 ShouldShowRename(void);
@@ -933,10 +934,17 @@ static const union AnimCmd sSpriteAnim_TypeFairy[] = {
     ANIMCMD_FRAME(TYPE_FAIRY * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
-static const union AnimCmd sSpriteAnim_TypeStellar[] = {
-    ANIMCMD_FRAME(TYPE_STELLAR * 8, 0, FALSE, FALSE),
+
+static const union AnimCmd sSpriteAnim_TypeEcho[] = {
+    ANIMCMD_FRAME(TYPE_ECHO * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+
+static const union AnimCmd sSpriteAnim_TypeStellar[] = {
+    ANIMCMD_FRAME(TYPE_STELLAR * 8, 0, FALSE, FALSE),
+	ANIMCMD_END
+};
+
 static const union AnimCmd sSpriteAnim_CategoryCool[] = {
     ANIMCMD_FRAME((CONTEST_CATEGORY_COOL + NUMBER_OF_MON_TYPES) * 8, 0, FALSE, FALSE),
     ANIMCMD_END
@@ -978,6 +986,7 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     [TYPE_DRAGON] = sSpriteAnim_TypeDragon,
     [TYPE_DARK] = sSpriteAnim_TypeDark,
     [TYPE_FAIRY] = sSpriteAnim_TypeFairy,
+	[TYPE_ECHO] = sSpriteAnim_TypeEcho,
     [TYPE_STELLAR] = sSpriteAnim_TypeStellar,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = sSpriteAnim_CategoryCool,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = sSpriteAnim_CategoryBeauty,
@@ -999,6 +1008,35 @@ const struct SpriteTemplate gSpriteTemplate_MoveTypes =
     .oam = &sOamData_MoveTypes,
     .anims = sSpriteAnimTable_MoveTypes,
 };
+
+/*static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT] =
+{
+    [TYPE_NORMAL] = 13,
+    [TYPE_FIGHTING] = 13,
+    [TYPE_FLYING] = 14,
+    [TYPE_POISON] = 14,
+    [TYPE_GROUND] = 13,
+    [TYPE_ROCK] = 13,
+    [TYPE_BUG] = 15,
+    [TYPE_GHOST] = 14,
+    [TYPE_STEEL] = 13,
+    [TYPE_MYSTERY] = 15,
+    [TYPE_FIRE] = 13,
+    [TYPE_WATER] = 14,
+    [TYPE_GRASS] = 15,
+    [TYPE_ELECTRIC] = 13,
+    [TYPE_PSYCHIC] = 14,
+    [TYPE_ICE] = 14,
+    [TYPE_DRAGON] = 15,
+    [TYPE_DARK] = 13,
+    [TYPE_FAIRY] = 14,
+	[TYPE_ECHO] = 15,
+    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = 13,
+    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = 14,
+    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = 14,
+    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_SMART] = 15,
+    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_TOUGH] = 13,
+};*/
 
 static const struct OamData sOamData_MoveSelector =
 {
@@ -1135,6 +1173,23 @@ static const union AnimCmd sSpriteAnim_StatusFrostbite[] = {
     ANIMCMD_FRAME(28, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_StatusInfect[] = {
+    ANIMCMD_FRAME(28, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_StatusDaze[] = {
+    ANIMCMD_FRAME(32, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_StatusExhaust[] = {
+    ANIMCMD_FRAME(36, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_StatusFear[] = {
+    ANIMCMD_FRAME(40, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+
 static const union AnimCmd *const sSpriteAnimTable_StatusCondition[] = {
     sSpriteAnim_StatusPoison,
     sSpriteAnim_StatusParalyzed,
@@ -1144,11 +1199,16 @@ static const union AnimCmd *const sSpriteAnimTable_StatusCondition[] = {
     sSpriteAnim_StatusPokerus,
     sSpriteAnim_StatusFaint,
     sSpriteAnim_StatusFrostbite,
+	sSpriteAnim_StatusInfect,
+	sSpriteAnim_StatusDaze,
+	sSpriteAnim_StatusExhaust,
+	sSpriteAnim_StatusFear,
 };
 static const struct CompressedSpriteSheet sStatusIconsSpriteSheet =
 {
     .data = gStatusGfx_Icons,
-    .size = 0x400,
+    //.size = 0x400,
+    .size = 0x580,
     .tag = TAG_MON_STATUS
 };
 static const struct SpritePalette sStatusIconsSpritePalette =
@@ -1514,6 +1574,15 @@ static void CopyMonToSummaryStruct(struct Pokemon *mon)
     {
         struct BoxPokemon *boxMon = sMonSummaryScreen->monList.boxMons;
         BoxMonToMon(&boxMon[sMonSummaryScreen->curMonIndex], mon);
+        /*if (GetMonData(mon, MON_DATA_IN_PC))  // If the Pokemon's summary is coming from the PC as a BoxMon
+        {
+            u16 hp = GetHPFromBoxHP(mon);
+            u32 status = GetStatusFromBoxStatus(mon);
+            SetMonData(mon, MON_DATA_HP, &hp);
+            SetMonData(mon, MON_DATA_STATUS, &status);
+        }
+        else
+            MonRestorePP(mon);*/
     }
 }
 
@@ -2172,6 +2241,27 @@ static void Task_ChangeSummaryMon(u8 taskId)
 static s8 AdvanceMonIndex(s8 delta)
 {
     struct Pokemon *mon = sMonSummaryScreen->monList.mons;
+    u8 index = sMonSummaryScreen->curMonIndex;
+    u8 numMons = sMonSummaryScreen->maxMonIndex + 1;
+    delta += numMons;
+
+    index = (index + delta) % numMons;
+
+    // skip over any Eggs unless on the Info Page
+    if (sMonSummaryScreen->currPageIndex != PSS_PAGE_INFO)
+        while (GetMonData(&mon[index], MON_DATA_IS_EGG))
+            index = (index + delta) % numMons;
+
+    // to avoid "scrolling" to the same Pokemon
+    if (index == sMonSummaryScreen->curMonIndex)
+        return -1;
+    else
+        return index;
+}
+
+/*static s8 AdvanceMonIndex(s8 delta)
+{
+    struct Pokemon *mon = sMonSummaryScreen->monList.mons;
 
     if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
     {
@@ -2194,7 +2284,7 @@ static s8 AdvanceMonIndex(s8 delta)
         } while (GetMonData(&mon[index], MON_DATA_IS_EGG));
         return index;
     }
-}
+}*/
 
 static s8 AdvanceMultiBattleMonIndex(s8 delta)
 {
@@ -2773,12 +2863,13 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
 
 static bool8 CanReplaceMove(void)
 {
-    if (sMonSummaryScreen->firstMoveIndex == MAX_MON_MOVES
+    /*if (sMonSummaryScreen->firstMoveIndex == MAX_MON_MOVES
         || sMonSummaryScreen->newMove == MOVE_NONE
         || !CannotForgetMove(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]))
         return TRUE;
     else
-        return FALSE;
+        return FALSE;*/
+	return TRUE;
 }
 
 static void ShowCantForgetHMsWindow(u8 taskId)
@@ -3990,11 +4081,14 @@ static void BufferLeftColumnStats(void)
     u8 *defenseString = Alloc(20);
 
     DynamicPlaceholderTextUtil_Reset();
+	const s8 *natureMod = gNatureStatTable[sMonSummaryScreen->summary.nature];
 
     BufferStat(currentHPString, STAT_HP, sMonSummaryScreen->summary.currentHP, 0, 3);
     BufferStat(maxHPString, STAT_HP, sMonSummaryScreen->summary.maxHP, 1, 3);
-    BufferStat(attackString, STAT_ATK, sMonSummaryScreen->summary.atk, 2, 7);
-    BufferStat(defenseString, STAT_DEF, sMonSummaryScreen->summary.def, 3, 7);
+    //BufferStat(attackString, STAT_ATK, sMonSummaryScreen->summary.atk, 2, 7);
+    //BufferStat(defenseString, STAT_DEF, sMonSummaryScreen->summary.def, 3, 7);
+	BufferStat(attackString, natureMod[STAT_ATK - 1], sMonSummaryScreen->summary.atk, 2, 7);
+    BufferStat(defenseString, natureMod[STAT_DEF - 1], sMonSummaryScreen->summary.def, 3, 7);
 
     DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsLeftColumnLayout);
 
@@ -4038,10 +4132,14 @@ static void PrintLeftColumnStats(void)
 static void BufferRightColumnStats(void)
 {
     DynamicPlaceholderTextUtil_Reset();
+	const s8 *natureMod = gNatureStatTable[sMonSummaryScreen->summary.nature];
 
-    BufferStat(gStringVar1, STAT_SPATK, sMonSummaryScreen->summary.spatk, 0, 3);
-    BufferStat(gStringVar2, STAT_SPDEF, sMonSummaryScreen->summary.spdef, 1, 3);
-    BufferStat(gStringVar3, STAT_SPEED, sMonSummaryScreen->summary.speed, 2, 3);
+    //BufferStat(gStringVar1, STAT_SPATK, sMonSummaryScreen->summary.spatk, 0, 3);
+    //BufferStat(gStringVar2, STAT_SPDEF, sMonSummaryScreen->summary.spdef, 1, 3);
+    //BufferStat(gStringVar3, STAT_SPEED, sMonSummaryScreen->summary.speed, 2, 3);
+	BufferStat(gStringVar1, natureMod[STAT_SPATK - 1], sMonSummaryScreen->summary.spatk, 0, 3);
+    BufferStat(gStringVar2, natureMod[STAT_SPDEF - 1], sMonSummaryScreen->summary.spdef, 1, 3);
+    BufferStat(gStringVar3, natureMod[STAT_SPEED - 1], sMonSummaryScreen->summary.speed, 2, 3);
 
     DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
 }
@@ -4495,6 +4593,36 @@ static void SetMoveTypeIcons(void)
         }
     }
 }
+{
+    u8 i;
+    struct PokeSummary *summary = &sMonSummaryScreen->summary;
+    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (summary->moves[i] != MOVE_NONE) {
+            if (summary->moves[i] == MOVE_HIDDEN_POWER || summary->moves[i] == MOVE_KALEIDO_TONGUE) {
+                u8 typeBits  = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
+                     | ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
+                     | ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
+                     | ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
+                     | ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
+                     | ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
+
+                u8 type = ((NUMBER_OF_MON_TYPES - 2) * typeBits) / 63 + 1;
+                if (type >= TYPE_MYSTERY)
+                    type++;
+                //type |= 0xC0;
+                //SetTypeSpritePosAndPal(type & 0x3F, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+				SetTypeSpritePosAndPal(type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+            } else {
+                SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+            }
+        }
+        else
+            SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
+    }
+}
 
 static void SetContestMoveTypeIcons(void)
 {
@@ -4527,9 +4655,26 @@ static void SetNewMoveTypeIcon(void)
     else
     {
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
-        {
-            SetTypeSpritePosAndPal(type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
-        }
+		{
+            //SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+		    if (sMonSummaryScreen->newMove == MOVE_HIDDEN_POWER || sMonSummaryScreen->newMove == MOVE_KALEIDO_TONGUE) {
+                u8 typeBits  = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
+                     | ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
+                     | ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
+                     | ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
+                     | ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
+                     | ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
+
+                u8 type = ((NUMBER_OF_MON_TYPES - 2) * typeBits) / 63 + 1;
+                if (type >= TYPE_MYSTERY)
+                    type++;
+                //type |= 0xC0;
+                //SetTypeSpritePosAndPal(type & 0x3F, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+				SetTypeSpritePosAndPal(type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+            } else {
+                SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+            }
+		}
         else
         {
             SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + GetMoveContestCategory(sMonSummaryScreen->newMove), 85, 96, SPRITE_ARR_ID_TYPE + 4);
@@ -4986,4 +5131,22 @@ static void CB2_ReturnToSummaryScreenFromNamingScreen(void)
 static void CB2_PssChangePokemonNickname(void)
 {
     ChangePokemonNicknameWithCallback(CB2_ReturnToSummaryScreenFromNamingScreen);
+}
+
+static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n)
+{
+    static const u8 sTextNatureDown[] = _("{COLOR}{08}");
+    static const u8 sTextNatureUp[] = _("{COLOR}{05}");
+    static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
+    u8 *txtPtr;
+
+    if (natureMod == 0)
+        txtPtr = StringCopy(dst, sTextNatureNeutral);
+    else if (natureMod > 0)
+        txtPtr = StringCopy(dst, sTextNatureUp);
+    else
+        txtPtr = StringCopy(dst, sTextNatureDown);
+
+    ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
+    DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
 }

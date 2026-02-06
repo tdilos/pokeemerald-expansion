@@ -33,6 +33,105 @@ OldaleTown_EventScript_Girl::
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
 	end
 
+OldaleTown_EventScript_GivePokemonDemo::
+	lock
+	faceplayer
+	msgbox OldaleTown_Text_TakePokemon, MSGBOX_DEFAULT
+	getpartysize
+	compare VAR_RESULT, 6
+	goto_if_eq OldaleTown_EventScript_PlayerHasFullParty
+	@giveegg SPECIES_SILICOBRA_ISSHOAN
+	givemon SPECIES_MORGREM, 24, ITEM_GINEMA_BERRY
+	givemon SPECIES_ZIPPETTE, 44, ITEM_DRASH_BERRY
+	givemon SPECIES_HOUNDOUR, 18, ITEM_EGGANT_BERRY
+	givemon SPECIES_SILICOBRA_ISSHOAN, 16, ITEM_PUMKIN_BERRY
+	@givemon SPECIES_ATROCEON, 28, ITEM_TOUGA_BERRY
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox OldaleTown_Text_ReceivedPokemon, MSGBOX_DEFAULT
+	waitfanfare
+	setmonmove 1, 2, MOVE_FIEND_FIRE
+	setmonmove 2, 2, MOVE_WITHER_BREATH
+	setmonmove 3, 3, MOVE_DARKNESS_DREAM
+	setmonmove 3, 0, MOVE_THAW
+	msgbox OldaleTown_Text_SeeYa, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_EventScript_PlayerHasFullParty::
+	msgbox OldaleTown_Text_PlayerHasFullParty, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_Text_TakePokemon:
+	.string "Please, take this Pokémon.$"
+
+OldaleTown_Text_ReceivedPokemon:
+	.string "{PLAYER} received a Pokémon!$"
+
+OldaleTown_Text_PlayerHasFullParty:
+	.string "Ah, your party is full.$"
+
+OldaleTown_Text_SeeYa:
+	.string "See ya around, kid.$"
+
+OldaleTown_EventScript_GiveMoreStuff::
+	lock
+	faceplayer
+	msgbox OldaleTown_Text_TakePokemon, MSGBOX_DEFAULT
+	getpartysize
+	compare VAR_RESULT, 6
+	goto_if_eq OldaleTown_EventScript_PlayerHasFullParty
+	givemon SPECIES_GROWLITHE, 5, ITEM_NONE
+	givemon SPECIES_BIDOOF, 5, ITEM_NONE
+	givemon SPECIES_PARAS, 5, ITEM_NONE
+	@givemon SPECIES_SMEARGLE, 5, ITEM_NONE
+	@givemon SPECIES_LEDIAN, 5, ITEM_NONE
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox OldaleTown_Text_ReceivedPokemon, MSGBOX_DEFAULT
+	waitfanfare
+	setmonmove 1, 2, MOVE_THAW
+	setmonmove 2, 2, MOVE_HEADBUTT
+	setmonmove 3, 1, MOVE_CUT
+	setmonmove 3, 2, MOVE_BLIGHT
+	@setmonmove 4, 0, MOVE_POWDER_PUNCH
+	@setmonmove 4, 1, MOVE_CLEAR_SMOG
+	@setmonmove 4, 2, MOVE_DARKNESS_DREAM
+	@setmonmove 5, 0, MOVE_ICE_PUNCH
+	@setmonmove 5, 1, MOVE_COMET_PUNCH
+	@setmonmove 5, 2, MOVE_POWER_UP_PUNCH
+	@setmonmove 5, 3, MOVE_BLIGHT
+	msgbox OldaleTown_Text_SeeYa, MSGBOX_DEFAULT
+	release
+	end
+
+OldaleTown_EventScript_EvenMoreStuff::
+	lock
+	faceplayer
+	msgbox OldaleTown_Text_TakePokemon, MSGBOX_DEFAULT
+	getpartysize
+	compare VAR_RESULT, 6
+	goto_if_eq OldaleTown_EventScript_PlayerHasFullParty
+	givemon SPECIES_PLUX, 35, ITEM_NONE
+	givemon SPECIES_BIDOOF, 5, ITEM_NONE
+	givemon SPECIES_PARAS, 5, ITEM_NONE
+	@givemon SPECIES_SMEARGLE, 5, ITEM_NONE
+	@givemon SPECIES_LEDIAN, 5, ITEM_NONE
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox OldaleTown_Text_ReceivedPokemon, MSGBOX_DEFAULT
+	waitfanfare
+	setmonmove 1, 2, MOVE_THAW
+	setmonmove 2, 2, MOVE_HEADBUTT
+	setmonmove 3, 1, MOVE_CUT
+	setmonmove 3, 2, MOVE_BLIGHT
+	msgbox OldaleTown_Text_SeeYa, MSGBOX_DEFAULT
+	@removeobject 6
+	release
+	end
+
+
+
+
+
 OldaleTown_EventScript_MartEmployee::
 	lock
 	faceplayer

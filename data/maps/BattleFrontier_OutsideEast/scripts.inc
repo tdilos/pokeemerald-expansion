@@ -298,13 +298,17 @@ BattleFrontier_OutsideEast_Text_DidScottBringYouHere:
 	.string "ever.$"
 
 BattleFrontier_OutsideEast_Text_BelieveInYouBuddy:
-	.string "ZIGG!\n"
-	.string "I believe in you, little buddy!\p"
-	.string "I'll make my little ZIGG any favorite\n"
-	.string "tasty treats you like if you win!$"
+	@.string "ZIGG!\n"
+	@.string "I believe in you, little buddy!\p"
+	@.string "I'll make my little ZIGG any favorite\n"
+	@.string "tasty treats you like if you win!$"
+	.string "Check it out!\n"
+	.string "My POKéMON is from GALAR!\p"
+	.string "The ZIGZAGOON are different there.$"
 
 BattleFrontier_OutsideEast_Text_ZigzagoonLooksVacant:
-	.string "ZIGZAGOON looks vacant…$"
+	@.string "ZIGZAGOON looks vacant…$"
+	.string "ZIGZAGOON: Brraaaarr!$"
 
 BattleFrontier_OutsideEast_Text_PeopleCallMeBusybody:
 	.string "People call me a busybody,\n"

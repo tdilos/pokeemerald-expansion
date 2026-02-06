@@ -55,7 +55,10 @@
 #define GAME_STAT_PLAYED_BERRY_CRUSH          51
 #define GAME_STAT_DEXNAV_SCANNED              52
 
-#define NUM_USED_GAME_STATS                   53
+#define GAME_STAT_USED_HEADBUTT               53
+#define GAME_STAT_USED_THAW                   54
+
+#define NUM_USED_GAME_STATS                   55
 #define NUM_GAME_STATS                        64
 
 #endif // GUARD_CONSTANTS_GAME_STAT_H

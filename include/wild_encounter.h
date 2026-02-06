@@ -34,6 +34,15 @@ struct WildEncounterTypes
     const struct WildPokemonInfo *rockSmashMonsInfo;
     const struct WildPokemonInfo *fishingMonsInfo;
     const struct WildPokemonInfo *hiddenMonsInfo;
+	const struct WildPokemonInfo *cutMonsInfo;
+	const struct WildPokemonInfo *headbuttMonsInfo;
+	const struct WildPokemonInfo *thawMonsInfo;
+};
+
+struct SwarmData
+{
+	u8 mapName;
+	u16 species;
 };
 
 struct WildPokemonHeader
@@ -68,5 +77,6 @@ u32 ChooseWildMonIndex_Rocks(void);
 u32 ChooseHiddenMonIndex(void);
 bool32 MapHasNoEncounterData(void);
 enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area);
+void TryUpdateSwarm(void);
 
 #endif // GUARD_WILD_ENCOUNTER_H

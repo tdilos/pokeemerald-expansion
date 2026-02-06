@@ -56,6 +56,7 @@ NavelRock_Top_EventScript_HoOh::
 	waitmovement 0
 	special RemoveCameraObject
 	seteventmon SPECIES_HO_OH, 70
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

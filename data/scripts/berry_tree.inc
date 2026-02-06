@@ -78,10 +78,15 @@ BerryTree_EventScript_ChooseBerryToPlant::
 	goto_if_eq VAR_ITEM_ID, 0, BerryTree_EventScript_CancelPlanting
 	removeitem VAR_ITEM_ID
 	call BerryTree_EventScript_PlantBerry
+	call_if_lt VAR_BERRY_PLANT_COUNT, 255, BerryTree_EventScript_IncrementBerryCounter
 
 BerryTree_EventScript_CancelPlanting::
 	release
 	end
+
+BerryTree_EventScript_IncrementBerryCounter:
+	addvar VAR_BERRY_PLANT_COUNT, 1
+	return
 
 BerryTree_EventScript_CheckBerryStage1::
 	lockall

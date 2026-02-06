@@ -3341,6 +3341,9 @@ static void BufferTradeSceneStrings(void)
         ingameTrade = &sIngameTrades[gSpecialVar_0x8005];
         StringCopy(gStringVar1, ingameTrade->otName);
         StringCopy_Nickname(gStringVar3, ingameTrade->nickname);
+        //GetMonData(&gEnemyParty[0], MON_DATA_OT_NAME, gStringVar1);
+        //GetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, name);
+        //StringCopy_Nickname(gStringVar3, name);
         if (gSpecialVar_0x8004 == PC_MON_CHOSEN)
             GetMonData(&gEnemyParty[TRADEMON_FROM_PC], MON_DATA_NICKNAME, name);
         else
@@ -3405,6 +3408,7 @@ enum {
     STATE_GBA_ZOOM_IN,
     STATE_FADE_OUT_TO_NEW_MON,
     // 53-59 unused
+	//STATE_GIVE_COVENANT_ORB = 59,
     STATE_WAIT_FADE_OUT_TO_NEW_MON = 60,
     STATE_FADE_IN_TO_NEW_MON,
     STATE_WAIT_FADE_IN_TO_NEW_MON,
@@ -4341,6 +4345,12 @@ static bool8 DoTradeAnim_Wireless(void)
         if (IsCryFinished())
             sTradeAnim->state = STATE_TAKE_CARE_OF_MON;
         break;
+	/*case STATE_GIVE_COVENANT_ORB:
+        StringExpandPlaceholders(gStringVar4, gText_ReceivedCovenantOrb);
+        DrawTextOnTradeWindow(0, gStringVar4, 0);
+		
+        sTradeAnim->state = STATE_TAKE_CARE_OF_MON;
+        break;*/
     case STATE_TAKE_CARE_OF_MON:
         if (++sTradeAnim->timer == 10)
             PlayFanfare(MUS_EVOLVED);
@@ -4571,12 +4581,13 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
     CreateMon(pokemon, inGameTrade->species, level, inGameTrade->personality, OTID_STRUCT_PRESET(inGameTrade->otId));
     GiveMonInitialMoveset(pokemon);
 
-    SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
-    SetMonData(pokemon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);
-    SetMonData(pokemon, MON_DATA_DEF_IV, &inGameTrade->ivs[2]);
-    SetMonData(pokemon, MON_DATA_SPEED_IV, &inGameTrade->ivs[3]);
-    SetMonData(pokemon, MON_DATA_SPATK_IV, &inGameTrade->ivs[4]);
-    SetMonData(pokemon, MON_DATA_SPDEF_IV, &inGameTrade->ivs[5]);
+	// Commenting out randomizes NPC trade IVs
+    //SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
+    //SetMonData(pokemon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);
+    //SetMonData(pokemon, MON_DATA_DEF_IV, &inGameTrade->ivs[2]);
+    //SetMonData(pokemon, MON_DATA_SPEED_IV, &inGameTrade->ivs[3]);
+    //SetMonData(pokemon, MON_DATA_SPATK_IV, &inGameTrade->ivs[4]);
+    //SetMonData(pokemon, MON_DATA_SPDEF_IV, &inGameTrade->ivs[5]);
     SetMonData(pokemon, MON_DATA_NICKNAME, inGameTrade->nickname);
     SetMonData(pokemon, MON_DATA_OT_NAME, inGameTrade->otName);
     SetMonData(pokemon, MON_DATA_OT_GENDER, &inGameTrade->otGender);

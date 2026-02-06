@@ -190,12 +190,22 @@ u16 ChooseMoveAndTargetInBattlePalace(enum BattlerId battler)
     // Pass selected moves to AI, pick one
     if (selectedMoves != 0)
     {
+<<<<<<< Updated upstream
         // Lower 4 bits of palaceFlags are flags for each battler.
         // Clear the rest of palaceFlags, then set the selected moves in the upper 4 bits.
         gBattleStruct->palaceFlags &= (1 << MAX_BATTLERS_COUNT) - 1;
         gBattleStruct->palaceFlags |= (selectedMoves << MAX_BATTLERS_COUNT);
         BattleAI_SetupAIData(selectedMoves, battler);
         chosenMoveIndex = BattleAI_ChooseMoveIndex(battler);
+=======
+        gBattleStruct->palaceFlags &= 0xF;
+        gBattleStruct->palaceFlags |= (selectedMoves << 4);
+        //sBattler_AI = gActiveBattler;
+        //BattleAI_SetupAIData(selectedMoves);
+        //chosenMoveId = BattleAI_ChooseMoveOrAction();
+        BattleAI_SetupAIData(selectedMoves, gActiveBattler);
+        chosenMoveId = BattleAI_ChooseMoveIndex(gActiveBattler);
+>>>>>>> Stashed changes
     }
 
     // If no moves matched the selected group, pick a new move from groups the Pokémon has
@@ -476,7 +486,19 @@ void InitAndLaunchChosenStatusAnimation(enum BattlerId battler, bool32 isVolatil
         else if (status & STATUS1_SLEEP)
             LaunchStatusAnimation(battler, B_ANIM_STATUS_SLP);
         else if (status == STATUS1_PARALYSIS)
+<<<<<<< Updated upstream
             LaunchStatusAnimation(battler, B_ANIM_STATUS_PRZ);
+=======
+            LaunchStatusAnimation(gActiveBattler, B_ANIM_STATUS_PRZ);
+		else if (status == STATUS1_INFECT)
+            LaunchStatusAnimation(gActiveBattler, B_ANIM_STATUS_INF);
+		else if (status == STATUS1_DAZE)
+            LaunchStatusAnimation(gActiveBattler, B_ANIM_STATUS_DAZ);
+		else if (status == STATUS1_EXHAUST)
+            LaunchStatusAnimation(gActiveBattler, B_ANIM_STATUS_EXH);
+		else if (status == STATUS1_FEAR)
+            LaunchStatusAnimation(gActiveBattler, B_ANIM_STATUS_FER);
+>>>>>>> Stashed changes
         else // no animation
             gBattleSpritesDataPtr->healthBoxesData[battler].statusAnimActive = 0;
     }
@@ -554,8 +576,13 @@ static bool8 ShouldAnimBeDoneRegardlessOfSubstitute(u8 animId)
     case B_ANIM_SUN_CONTINUES:
     case B_ANIM_SANDSTORM_CONTINUES:
     case B_ANIM_HAIL_CONTINUES:
+<<<<<<< Updated upstream
     case B_ANIM_SNOW_CONTINUES:
     case B_ANIM_FOG_CONTINUES:
+=======
+    case B_ANIM_ACIDRAIN_CONTINUES:
+    case B_ANIM_FULLMOON_CONTINUES:
+>>>>>>> Stashed changes
     case B_ANIM_SNATCH_MOVE:
     case B_ANIM_STATS_CHANGE:
         return TRUE;

@@ -1,0 +1,73 @@
+{
+  "id": "MAP_UNDERWATER_SUNKEN_ISLE_INTERIOR",
+  "name": "Underwater_SunkenIsle_Interior",
+  "layout": "LAYOUT_UNDERWATER_SUNKEN_ISLE_INTERIOR",
+  "music": "MUS_UNDERWATER",
+  "region_map_section": "MAPSEC_ROYAL_REEF",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERWATER",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_SUNKEN_ISLE_INTERIOR",
+      "offset": 0,
+      "direction": "emerge"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANAPHY",
+      "x": 29,
+      "y": 44,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Underwater_SunkenIsle_Interior_EventScript_Manaphy",
+      "flag": "FLAG_BATTLED_MANAPHY"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 35,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_SUNKEN_ISLE_EXTERIOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 33,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_SUNKEN_ISLE_INTERIOR",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 34,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_SUNKEN_ISLE_INTERIOR",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 29,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_SUNKEN_ISLE_INTERIOR",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

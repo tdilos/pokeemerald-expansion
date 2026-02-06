@@ -13,20 +13,29 @@ EverGrandeCity_PhoebesRoom_EventScript_PlayerTurnNorth::
 	end
 
 EverGrandeCity_PhoebesRoom_OnFrame:
-	map_script_2 VAR_ELITE_4_STATE, 1, EverGrandeCity_PhoebesRoom_EventScript_WalkInCloseDoor
+	@map_script_2 VAR_ELITE_4_STATE, 1, EverGrandeCity_PhoebesRoom_EventScript_WalkInCloseDoor
+	map_script_2 VAR_ELITE_4_STATE, 2, EverGrandeCity_PhoebesRoom_EventScript_WalkInCloseDoor
 	.2byte 0
 
 EverGrandeCity_PhoebesRoom_EventScript_WalkInCloseDoor::
 	lockall
 	call PokemonLeague_EliteFour_EventScript_WalkInCloseDoor
-	setvar VAR_ELITE_4_STATE, 2
+	@setvar VAR_ELITE_4_STATE, 2
+	setvar VAR_ELITE_4_STATE, 3
 	releaseall
 	end
 
 EverGrandeCity_PhoebesRoom_OnLoad:
+	call_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_TurnOffWeather
 	call_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_ResetAdvanceToNextRoom
-	call_if_eq VAR_ELITE_4_STATE, 2, EverGrandeCity_PhoebesRoom_EventScript_CloseDoor
+	@call_if_eq VAR_ELITE_4_STATE, 2, EverGrandeCity_PhoebesRoom_EventScript_CloseDoor
+	call_if_eq VAR_ELITE_4_STATE, 3, EverGrandeCity_PhoebesRoom_EventScript_CloseDoor
 	end
+
+EverGrandeCity_PhoebesRoom_EventScript_TurnOffWeather::
+	setweather WEATHER_NONE
+	doweather
+	return
 
 EverGrandeCity_PhoebesRoom_EventScript_ResetAdvanceToNextRoom::
 	call PokemonLeague_EliteFour_EventScript_ResetAdvanceToNextRoom
@@ -35,6 +44,66 @@ EverGrandeCity_PhoebesRoom_EventScript_ResetAdvanceToNextRoom::
 EverGrandeCity_PhoebesRoom_EventScript_CloseDoor::
 	call PokemonLeague_EliteFour_EventScript_CloseDoor
 	return
+
+
+
+
+
+
+
+EverGrandeCity_PhoebesRoom_EventScript_Sidney::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, EverGrandeCity_PhoebesRoom_EventScript_SidneyPostBattle
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox EverGrandeCity_PhoebesRoom_Text_SidneyIntro, MSGBOX_DEFAULT
+	setvar VAR_MUGSHOT_ID, MUGSHOT_SIDNEY
+	trainerbattle_no_intro TRAINER_SIDNEY_0, EverGrandeCity_PhoebesRoom_Text_SidneyDefeated
+	goto EverGrandeCity_PhoebesRoom_EventScript_SidneyDefeated
+	end
+
+EverGrandeCity_PhoebesRoom_EventScript_SidneyPostBattle::
+	msgbox EverGrandeCity_PhoebesRoom_Text_SidneyPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_PhoebesRoom_EventScript_SidneyDefeated::
+	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
+	call EverGrandeCity_PhoebesRoom_EventScript_TurnOffWeather
+	call PokemonLeague_EliteFour_SetAdvanceToNextRoomMetatiles
+	msgbox EverGrandeCity_PhoebesRoom_Text_SidneyPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+EverGrandeCity_PhoebesRoom_Text_SidneyIntro:
+	.string "Welcome, challenger!\n"
+	.string "I'm SIDNEY of the ELITE FOUR.\p"
+	.string "I like that look you're giving me.\p"
+	.string "It reminds me of another trainer\n"
+	.string "I fought years ago.\p"
+	.string "Alright then, let's dance!\n"
+	.string "You and me!\p"
+	@.string "Come on and show me how an elite\n"
+	@.string "trainer battles!$"
+	.string "I'll show you how an elite trainer battles!$"
+
+EverGrandeCity_PhoebesRoom_Text_SidneyDefeated:
+	.string "So that's your elite battle style?\n"
+	.string "Haha, not bad!$"
+
+EverGrandeCity_PhoebesRoom_Text_SidneyPostBattle:
+	.string "I hope you enjoyed that battle\n"
+	.string "as much as I did.\p"
+	.string "Well I won't hold you up.\n"
+	.string "Go on and face your next challenge!$"
+
+
+
+
+
+
+
+
 
 EverGrandeCity_PhoebesRoom_EventScript_Phoebe::
 	lock

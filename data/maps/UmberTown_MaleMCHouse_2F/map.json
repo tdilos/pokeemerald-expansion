@@ -1,0 +1,65 @@
+{
+  "id": "MAP_UMBER_TOWN_MALE_MCHOUSE_2F",
+  "name": "UmberTown_MaleMCHouse_2F",
+  "layout": "LAYOUT_UMBER_TOWN_MALE_MCHOUSE_2F",
+  "music": "MUS_OLDALE",
+  "region_map_section": "MAPSEC_UMBER_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_UMBER_TOWN_MALE_MCHOUSE",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var_value": "0",
+      "script": "UmberTown_MaleMCHouse_2F_EventScript_ClockTurnback"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UmberTown_MaleMCHouse_2F_EventScript_WallClock"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "UmberTown_MaleMCHouse_2F_EventScript_CheckPlayersPC"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EventScript_RegionMap"
+    }
+  ]
+}

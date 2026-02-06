@@ -11,8 +11,10 @@ LilycoveCity_ContestLobby_OnTransition:
 	end
 
 LilycoveCity_ContestLobby_EventScript_TryShowBlendMaster::
-	getpokenewsactive POKENEWS_BLENDMASTER
-	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_ContestLobby_EventScript_ShowBlendMaster
+	@getpokenewsactive POKENEWS_BLENDMASTER
+	@goto_if_eq VAR_RESULT, TRUE, LilycoveCity_ContestLobby_EventScript_ShowBlendMaster
+	special GetWeekday
+	goto_if_eq VAR_RESULT, 0, LilycoveCity_ContestLobby_EventScript_ShowBlendMaster
 	clearflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER_REPLACEMENT
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER
 	return
@@ -1081,4 +1083,66 @@ LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily:
 	.string "Big Sister. They turned out great!\p"
 	.string "I bet you can make smoother, better\n"
 	.string "{POKEBLOCK}S if you have more people.$"
+
+
+
+
+
+
+
+LilycoveCity_ContestLobby_EventScript_LittleBoy::
+	lock
+	faceplayer
+	questmenu QUEST_MENU_CHECK_COMPLETE QUEST_12
+	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_ContestLobby_EventScript_QuestComplete
+	questmenu QUEST_MENU_CHECK_ACTIVE QUEST_12
+	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_ContestLobby_EventScript_QuestInProgress
+	msgbox LilycoveCity_ContestLobby_Text_BlendingIsFun, MSGBOX_DEFAULT
+	startquest QUEST_12
+	release
+	end
+
+LilycoveCity_ContestLobby_Text_BlendingIsFun:
+	.string "Blending berries sure is fun!\n"
+	.string "What's your best record?\p"
+	.string "Mine is 150 RPM.\n"
+	.string "See if you can top that!$"
+
+LilycoveCity_ContestLobby_EventScript_QuestInProgress::
+	special CheckBerryBlenderMaxRecord
+	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_ContestLobby_EventScript_NewRecord
+	msgbox LilycoveCity_ContestLobby_Text_BlendingRecord, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_ContestLobby_Text_BlendingRecord:
+	.string "My blending record is 150 RPM.\n"
+	.string "And nobody here has ever beat it!$"
+
+LilycoveCity_ContestLobby_EventScript_NewRecord::
+	msgbox LilycoveCity_ContestLobby_Text_NewRecord, MSGBOX_DEFAULT
+	giveitem ITEM_ENIGMA_BERRY
+	completequest QUEST_12
+	release
+	end
+
+LilycoveCity_ContestLobby_Text_NewRecord:
+	.string "No way!\n"
+	.string "You broke my record?\p"
+	.string "Not even the BERRY MASTER\n"
+	.string "could do that!\p"
+	.string "That makes you the new blend master!\n"
+	.string "Take this, king.$"
+
+LilycoveCity_ContestLobby_EventScript_QuestComplete::
+	msgbox LilycoveCity_ContestLobby_Text_BlendingIsFun2, MSGBOX_DEFAULT	
+	release
+	end
+
+LilycoveCity_ContestLobby_Text_BlendingIsFun2:
+	.string "Blending berries sure is fun!\n"
+	.string "I'm gonna go for a new record today!$"
+
+
+
 

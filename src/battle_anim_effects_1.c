@@ -404,6 +404,17 @@ const struct SpriteTemplate gFeintZoomSpriteTemplate =
     .callback = AnimMoveFeintZoom,
 };
 
+const struct SpriteTemplate gBlightParticleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BLIGHT,
+    .paletteTag = ANIM_TAG_BLIGHT,
+    .oam = &gOamData_AffineOff_ObjNormal_8x16,
+    .anims = gPowderParticlesAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimMovePowderParticle,
+};
+
 const struct SpriteTemplate gSleepPowderParticleSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SLEEP_POWDER,

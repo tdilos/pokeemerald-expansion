@@ -4,6 +4,7 @@
 #include "field_effect.h"
 #include "field_specials.h"
 #include "item.h"
+#include "list_menu.h"
 #include "menu.h"
 #include "palette.h"
 #include "script.h"
@@ -733,18 +734,27 @@ static void CreatePCMultichoice(void)
     // Include Hall of Fame option if player is champion
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
-        numChoices = 4;
-        windowId = CreateWindowFromRect(0, 0, width, 8);
+        //numChoices = 4;
+        //windowId = CreateWindowFromRect(0, 0, width, 8);
+		numChoices = 5;
+        windowId = CreateWindowFromRect(0, 0, width, 10);
         SetStandardWindowBorderStyle(windowId, FALSE);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_HallOfFame, x, 33, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 49, TEXT_SKIP_DRAW, NULL);
+        //AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_HallOfFame, x, 33, TEXT_SKIP_DRAW, NULL);
+        //AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 49, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_SaveGame, x, 33, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_HallOfFame, x, 49, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 65, TEXT_SKIP_DRAW, NULL);
     }
     else
     {
-        numChoices = 3;
-        windowId = CreateWindowFromRect(0, 0, width, 6);
+        //numChoices = 3;
+        //windowId = CreateWindowFromRect(0, 0, width, 6);
+		numChoices = 4;
+        windowId = CreateWindowFromRect(0, 0, width, 8);
         SetStandardWindowBorderStyle(windowId, FALSE);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 33, TEXT_SKIP_DRAW, NULL);
+        //AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 33, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_SaveGame, x, 33, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 49, TEXT_SKIP_DRAW, NULL);
     }
 
     // Change PC name if player has met Lanette
@@ -806,12 +816,14 @@ static void CreateLilycoveSSTidalMultichoice(void)
 
     GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_WIDTH);
 
-    if (gSpecialVar_0x8004 == 0)
+    //if (gSpecialVar_0x8004 == 0)
+    if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
     {
         sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_SLATEPORT;
         selectionCount++;
 
-        if (FlagGet(FLAG_MET_SCOTT_ON_SS_TIDAL) == TRUE)
+        //if (FlagGet(FLAG_MET_SCOTT_ON_SS_TIDAL) == TRUE)
+        if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
         {
             sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_BATTLE_FRONTIER;
             selectionCount++;
@@ -820,37 +832,40 @@ static void CreateLilycoveSSTidalMultichoice(void)
 
     if (CheckBagHasItem(ITEM_EON_TICKET, 1) == TRUE && FlagGet(FLAG_ENABLE_SHIP_SOUTHERN_ISLAND) == TRUE)
     {
-        if (gSpecialVar_0x8004 == 0)
+        //if (gSpecialVar_0x8004 == 0)
+		if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
         {
             sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_SOUTHERN_ISLAND;
             selectionCount++;
         }
 
-        if (gSpecialVar_0x8004 == 1 && FlagGet(FLAG_SHOWN_EON_TICKET) == FALSE)
+        /*if (gSpecialVar_0x8004 == 1 && FlagGet(FLAG_SHOWN_EON_TICKET) == FALSE)
         {
             sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_SOUTHERN_ISLAND;
             selectionCount++;
             FlagSet(FLAG_SHOWN_EON_TICKET);
-        }
+        }*/
     }
 
-    if (CheckBagHasItem(ITEM_MYSTIC_TICKET, 1) == TRUE && FlagGet(FLAG_ENABLE_SHIP_NAVEL_ROCK) == TRUE)
+    //if (CheckBagHasItem(ITEM_MYSTIC_TICKET, 1) == TRUE && FlagGet(FLAG_ENABLE_SHIP_NAVEL_ROCK) == TRUE)
+    if (CheckBagHasItem(ITEM_RAINBOW_PASS, 1) == TRUE && FlagGet(FLAG_ENABLE_SHIP_NAVEL_ROCK) == TRUE)
     {
-        if (gSpecialVar_0x8004 == 0)
+        //if (gSpecialVar_0x8004 == 0)
+		if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
         {
             sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_NAVEL_ROCK;
             selectionCount++;
         }
 
-        if (gSpecialVar_0x8004 == 1 && FlagGet(FLAG_SHOWN_MYSTIC_TICKET) == FALSE)
+        /*if (gSpecialVar_0x8004 == 1 && FlagGet(FLAG_SHOWN_MYSTIC_TICKET) == FALSE)
         {
             sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_NAVEL_ROCK;
             selectionCount++;
             FlagSet(FLAG_SHOWN_MYSTIC_TICKET);
-        }
+        }*/
     }
 
-    if (CheckBagHasItem(ITEM_AURORA_TICKET, 1) == TRUE && FlagGet(FLAG_ENABLE_SHIP_BIRTH_ISLAND) == TRUE)
+    /*if (CheckBagHasItem(ITEM_AURORA_TICKET, 1) == TRUE && FlagGet(FLAG_ENABLE_SHIP_BIRTH_ISLAND) == TRUE)
     {
         if (gSpecialVar_0x8004 == 0)
         {
@@ -864,28 +879,46 @@ static void CreateLilycoveSSTidalMultichoice(void)
             selectionCount++;
             FlagSet(FLAG_SHOWN_AURORA_TICKET);
         }
+    }*/
+    if (CheckBagHasItem(ITEM_APEX_TICKET, 1) == TRUE && FlagGet(FLAG_ENABLE_SHIP_PERENNIAL_PILLAR) == TRUE)
+    {
+        //if (gSpecialVar_0x8004 == 0)
+		if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
+        {
+            sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_PERENNIAL_PILLAR;
+            selectionCount++;
+        }
+
+        /*if (gSpecialVar_0x8004 == 1 && FlagGet(FLAG_SHOWN_APEX_TICKET) == FALSE)
+        {
+            sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_PERENNIAL_PILLAR;
+            selectionCount++;
+            FlagSet(FLAG_SHOWN_APEX_TICKET);
+        }*/
     }
 
     if (CheckBagHasItem(ITEM_OLD_SEA_MAP, 1) == TRUE && FlagGet(FLAG_ENABLE_SHIP_FARAWAY_ISLAND) == TRUE)
     {
-        if (gSpecialVar_0x8004 == 0)
+        //if (gSpecialVar_0x8004 == 0)
+		if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
         {
             sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_FARAWAY_ISLAND;
             selectionCount++;
         }
 
-        if (gSpecialVar_0x8004 == 1 && FlagGet(FLAG_SHOWN_OLD_SEA_MAP) == FALSE)
+        /*if (gSpecialVar_0x8004 == 1 && FlagGet(FLAG_SHOWN_OLD_SEA_MAP) == FALSE)
         {
             sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_FARAWAY_ISLAND;
             selectionCount++;
             FlagSet(FLAG_SHOWN_OLD_SEA_MAP);
-        }
+        }*/
     }
-
+	
     sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_EXIT;
     selectionCount++;
 
-    if (gSpecialVar_0x8004 == 0 && FlagGet(FLAG_MET_SCOTT_ON_SS_TIDAL) == TRUE)
+    //if (gSpecialVar_0x8004 == 0 && FlagGet(FLAG_MET_SCOTT_ON_SS_TIDAL) == TRUE)
+    if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
     {
         count = selectionCount;
     }
@@ -1155,6 +1188,7 @@ int ScriptMenu_AdjustLeftCoordFromWidth(int left, int width)
     return adjustedLeft;
 }
 
+
 // FRLG
 #define FOSSIL_PIC_PAL_NUM  13
 
@@ -1306,4 +1340,667 @@ u16 GetSelectedSeagallopDestination(void)
             return gSpecialVar_Result;
     }
     return SEAGALLOP_VERMILION_CITY;
+}
+
+/////////////////////////////////////////////////
+////////// SCROLLING MULTICHOICE MENUS //////////
+/////////////////////////////////////////////////
+
+static const u8 sText_TutorCancel[] = _("Cancel");
+
+// Green shard tutor
+static const u8 sText_Green1[] = _("2. Helping Hand");
+static const u8 sText_Green2[] = _("2. Sonar Wave");
+static const u8 sText_Green3[] = _("2. Snore");
+static const u8 sText_Green4[] = _("4. Charm");
+static const u8 sText_Green5[] = _("4. Defog");
+static const u8 sText_Green6[] = _("4. Endure");
+static const u8 sText_Green7[] = _("4. Gastro Acid");
+static const u8 sText_Green8[] = _("6. Dream Eater");
+static const u8 sText_Green9[] = _("6. Magnet Rise");
+static const u8 sText_Green10[] = _("6. Petrify");
+static const u8 sText_Green11[] = _("6. Recycle");
+static const u8 sText_Green12[] = _("6. Worry Seed");
+static const u8 sText_Green13[] = _("8. Magic Room");
+static const u8 sText_Green14[] = _("8. Pain Split");
+static const u8 sText_Green15[] = _("8. Seismic Toss");
+static const u8 sText_Green16[] = _("8. Wonder Room");
+static const u8 sText_Green17[] = _("10. Fling");
+static const u8 sText_Green18[] = _("10. Gravity");
+static const u8 sText_Green19[] = _("10. Tailwind");
+static const u8 sText_Green20[] = _("12. Last Resort");
+static const u8 sText_Green21[] = _("12. Sleep Talk");
+static const u8 sText_Green22[] = _("14. Foul Play");
+
+// Red shard tutor
+static const u8 sText_Red1[] = _("2. Covet");
+static const u8 sText_Red2[] = _("2. Fury Cutter");
+static const u8 sText_Red3[] = _("2. Low Kick");
+static const u8 sText_Red4[] = _("4. Counter");
+static const u8 sText_Red5[] = _("4. Knock Off");
+static const u8 sText_Red6[] = _("4. Retaliate");
+static const u8 sText_Red7[] = _("4. Secret Power");
+static const u8 sText_Red8[] = _("6. Bounce");
+static const u8 sText_Red9[] = _("6. Drain Punch");
+static const u8 sText_Red10[] = _("6. Iron Head");
+static const u8 sText_Red11[] = _("6. Mega Punch");
+static const u8 sText_Red12[] = _("6. Zen Headbutt");
+static const u8 sText_Red13[] = _("8. Flip Turn");
+static const u8 sText_Red14[] = _("8. Gyro Ball");
+static const u8 sText_Red15[] = _("8. Iron Tail");
+static const u8 sText_Red16[] = _("8. Wild Frenzy");
+static const u8 sText_Red17[] = _("10. Fire Punch");
+static const u8 sText_Red18[] = _("10. Ice Punch");
+static const u8 sText_Red19[] = _("10. Thunder Punch");
+static const u8 sText_Red20[] = _("12. Mega Kick");
+static const u8 sText_Red21[] = _("12. Superpower");
+static const u8 sText_Red22[] = _("14. Body Press");
+
+// Blue shard tutor
+static const u8 sText_Blue1[] = _("2. Incinerate");
+static const u8 sText_Blue2[] = _("2. Sand Tomb");
+static const u8 sText_Blue3[] = _("2. Whirlpool");
+static const u8 sText_Blue4[] = _("4. Icy Wind");
+static const u8 sText_Blue5[] = _("4. Struggle Bug");
+static const u8 sText_Blue6[] = _("4. Swift");
+static const u8 sText_Blue7[] = _("4. Vacuum Wave");
+static const u8 sText_Blue8[] = _("6. Giga Drain");
+static const u8 sText_Blue9[] = _("6. Signal Beam");
+static const u8 sText_Blue10[] = _("6. Phreno Attack");
+static const u8 sText_Blue11[] = _("6. Soma Attack");
+static const u8 sText_Blue12[] = _("6. Tri Attack");
+static const u8 sText_Blue13[] = _("8. Blue Noise");
+static const u8 sText_Blue14[] = _("8. Psychosis");
+static const u8 sText_Blue15[] = _("8. Drone Wave");
+static const u8 sText_Blue16[] = _("8. Volt Switch");
+static const u8 sText_Blue17[] = _("10. Dragon Pulse");
+static const u8 sText_Blue18[] = _("10. Earth Power");
+static const u8 sText_Blue19[] = _("10. Psyshock");
+static const u8 sText_Blue20[] = _("12. Heat Wave");
+static const u8 sText_Blue21[] = _("12. UV Burst");
+static const u8 sText_Blue22[] = _("14. Force of Will");
+
+// Yellow shard tutor
+static const u8 sText_Yellow1[] = _("2. Baby Doll Eyes");
+static const u8 sText_Yellow2[] = _("2. Heal Bell");
+static const u8 sText_Yellow3[] = _("2. Confide");
+static const u8 sText_Yellow4[] = _("4. Crystalize");
+static const u8 sText_Yellow5[] = _("4. Iron Defense");
+static const u8 sText_Yellow6[] = _("4. Quash");
+static const u8 sText_Yellow7[] = _("4. Spite");
+static const u8 sText_Yellow8[] = _("6. Aurora Veil");
+static const u8 sText_Yellow9[] = _("6. Darkness Dream");
+static const u8 sText_Yellow10[] = _("6. Embargo");
+static const u8 sText_Yellow11[] = _("6. Super Fang");
+static const u8 sText_Yellow12[] = _("6. Role Play");
+static const u8 sText_Yellow13[] = _("8. Roost");
+static const u8 sText_Yellow14[] = _("8. Softboiled");
+static const u8 sText_Yellow15[] = _("8. Shore Up");
+static const u8 sText_Yellow16[] = _("8. Synthesis");
+static const u8 sText_Yellow17[] = _("10. Endeavor");
+static const u8 sText_Yellow18[] = _("10. Snatch");
+static const u8 sText_Yellow19[] = _("10. Trick");
+static const u8 sText_Yellow20[] = _("12. Fairy Dust");
+static const u8 sText_Yellow21[] = _("12. Stealth Rock");
+static const u8 sText_Yellow22[] = _("14. Baton Pass");
+
+// Weather explainer
+static const u8 sText_FullMoon[] = _("Full Moon");
+static const u8 sText_Hail[] = _("Hail");
+static const u8 sText_RainDance[] = _("Rain Dance");
+static const u8 sText_Sandstorm[] = _("Sandstorm");
+static const u8 sText_Smaze[] = _("Smaze");
+static const u8 sText_SunnyDay[] = _("Sunny Day");
+
+// Status explainer
+static const u8 sText_BRN[] = _("BRN");
+static const u8 sText_DAZ[] = _("DAZ");
+static const u8 sText_EXH[] = _("EXH");
+static const u8 sText_FER[] = _("FER");
+static const u8 sText_FRZ[] = _("FRZ");
+static const u8 sText_INF[] = _("INF");
+static const u8 sText_PAR[] = _("PAR");
+static const u8 sText_PSN[] = _("PSN");
+static const u8 sText_SLP[] = _("SLP");
+
+// Xanthos Library quiz
+static const u8 sText_Bug[] = _("BUG");
+static const u8 sText_Echo[] = _("ECHO");
+static const u8 sText_Electric[] = _("ELECTRIC");
+static const u8 sText_Fairy[] = _("FAIRY");
+static const u8 sText_Fighting[] = _("FIGHTING");
+static const u8 sText_Grass[] = _("GRASS");
+static const u8 sText_Ground[] = _("GROUND");
+static const u8 sText_Ice[] = _("ICE");
+static const u8 sText_Normal[] = _("NORMAL");
+static const u8 sText_Poison[] = _("POISON");
+static const u8 sText_Rock[] = _("ROCK");
+static const u8 sText_Steel[] = _("STEEL");
+static const u8 sText_Water[] = _("WATER");
+
+// Pledge tutor
+static const u8 sText_GrassPledge[] = _("Grass Pledge");
+static const u8 sText_FirePledge[] = _("Fire Pledge");
+static const u8 sText_WaterPledge[] = _("Water Pledge");
+
+// Elemntal HB tutor
+static const u8 sText_FrenzyPlant[] = _("Frenzy Plant");
+static const u8 sText_BlastBurn[] = _("Blast Burn");
+static const u8 sText_HydroCannon[] = _("Hydro Cannon");
+
+// Nature Changer
+static const u8 sText_Hardy[] = _("Hardy");
+static const u8 sText_Lonely[] = _("Lonely");
+static const u8 sText_Brave[] = _("Brave");
+static const u8 sText_Adamant[] = _("Adamant");
+static const u8 sText_Naughty[] = _("Naughty");
+static const u8 sText_Bold[] = _("Bold");
+static const u8 sText_Docile[] = _("Docile");
+static const u8 sText_Relaxed[] = _("Relaxed");
+static const u8 sText_Impish[] = _("Impish");
+static const u8 sText_Lax[] = _("Lax");
+static const u8 sText_Timid[] = _("Timid");
+static const u8 sText_Hasty[] = _("Hasty");
+static const u8 sText_Serious[] = _("Serious");
+static const u8 sText_Jolly[] = _("Jolly");
+static const u8 sText_Naive[] = _("Naive");
+static const u8 sText_Modest[] = _("Modest");
+static const u8 sText_Mild[] = _("Mild");
+static const u8 sText_Quiet[] = _("Quiet");
+static const u8 sText_Bashful[] = _("Bashful");
+static const u8 sText_Rash[] = _("Rash");
+static const u8 sText_Calm[] = _("Calm");
+static const u8 sText_Gentle[] = _("Gentle");
+static const u8 sText_Sassy[] = _("Sassy");
+static const u8 sText_Careful[] = _("Careful");
+static const u8 sText_Quirky[] = _("Quirky");
+
+// Game Corner Item Prizes
+static const u8 sText_DubiousDisc[] = _("Dubious Disc (1000c)");
+static const u8 sText_KingsRock[] =   _("King's Rock (1000c)");
+static const u8 sText_OniMask[] =     _("Oni Mask (1000c)");
+static const u8 sText_ReaperCloth[] = _("Reaper Cloth (1000c)");
+static const u8 sText_Upgrade[] =     _("Upgrade (1000c)");
+
+// Game Corner Pokemon Prizes
+static const u8 sText_Solosis[] =   _("Solosis (800c)");
+static const u8 sText_Cryogonal[] = _("Cryogonal (1600c)");
+static const u8 sText_Klefki[] =    _("Klefki (3200c)");
+static const u8 sText_Larvitar[] =  _("Larvitar (4800c)");
+static const u8 sText_Beldum[] =    _("Beldum (4800c)");
+static const u8 sText_Deino[] =     _("Deino (4800c)");
+static const u8 sText_Dreepy[] =    _("Dreepy (4800c)");
+static const u8 sText_Porygon[] =   _("Porygon (9999c)");
+
+// Starters
+static const u8 sText_Bulbasaur[] = _("Bulbasaur");
+static const u8 sText_Chikorita[] = _("Chikorita");
+static const u8 sText_Treecko[] = _("Treecko");
+static const u8 sText_Turtwig[] = _("Turtwig");
+static const u8 sText_Snivy[] = _("Snivy");
+static const u8 sText_Chespin[] = _("Chespin");
+static const u8 sText_Rowlet[] = _("Rowlet");
+static const u8 sText_Grookey[] = _("Grookey");
+
+static const u8 sText_Charmander[] = _("Charmander");
+static const u8 sText_Cyndaquil[] = _("Cyndaquil");
+static const u8 sText_Torchic[] = _("Torchic");
+static const u8 sText_Chimchar[] = _("Chimchar");
+static const u8 sText_Tepig[] = _("Tepig");
+static const u8 sText_Fennekin[] = _("Fennekin");
+static const u8 sText_Litten[] = _("Litten");
+static const u8 sText_Scorbunny[] = _("Scorbunny");
+
+static const u8 sText_Squirtle[] = _("Squirtle");
+static const u8 sText_Totodile[] = _("Totodile");
+static const u8 sText_Mudkip[] = _("Mudkip");
+static const u8 sText_Piplup[] = _("Piplup");
+static const u8 sText_Oshawott[] = _("Oshawott");
+static const u8 sText_Froakie[] = _("Froakie");
+static const u8 sText_Popplio[] = _("Popplio");
+static const u8 sText_Sobble[] = _("Sobble");
+
+static const u8 sText_Pikachu[] = _("Pikachu");
+static const u8 sText_Plusle[] = _("Plusle");
+static const u8 sText_Minun[] = _("Minun");
+static const u8 sText_Pachirisu[] = _("Pachirisu");
+static const u8 sText_Emolga[] = _("Emolga");
+static const u8 sText_Dedenne[] = _("Dedenne");
+static const u8 sText_Togedemaru[] = _("Togedemaru");
+static const u8 sText_Morpeko[] = _("Morpeko");
+
+// Kendom Corp burglar
+static const u8 sText_ClearanceACard[] =  _("Clearance A Card");
+static const u8 sText_ClearanceBCard[] =  _("Clearance B Card");
+
+// Underground City burglar
+static const u8 sText_GenesisACard[] =  _("Genesis A Card");
+static const u8 sText_GenesisBCard[] =  _("Genesis B Card");
+static const u8 sText_GenesisCCard[] =  _("Genesis C Card");
+
+// Sets of multichoices.
+static const struct ListMenuItem sUndergroundCityBurglar[] =
+{
+    {sText_GenesisACard,        0},
+    {sText_GenesisBCard,        1},
+    {sText_GenesisCCard,        2},
+	{sText_TutorCancel,         3},
+};
+
+static const struct ListMenuItem sKendomCorpBurglar[] =
+{
+    {sText_ClearanceACard,        0},
+    {sText_ClearanceBCard,        1},
+	{sText_TutorCancel,           2},
+};
+
+static const struct ListMenuItem sGrassStarters[] =
+{
+    {sText_Bulbasaur,        0},
+    {sText_Chikorita,        1},
+    {sText_Treecko,          2},
+    {sText_Turtwig,          3},
+    {sText_Snivy,            4},
+    {sText_Chespin,          5},
+    {sText_Rowlet,           6},
+    {sText_Grookey,          7},
+	{sText_TutorCancel,      8},
+};
+
+static const struct ListMenuItem sFireStarters[] =
+{
+    {sText_Charmander,       0},
+    {sText_Cyndaquil,        1},
+    {sText_Torchic,          2},
+    {sText_Chimchar,         3},
+    {sText_Tepig,            4},
+    {sText_Fennekin,         5},
+    {sText_Litten,           6},
+    {sText_Scorbunny,        7},
+	{sText_TutorCancel,      8},
+};
+
+static const struct ListMenuItem sWaterStarters[] =
+{
+    {sText_Squirtle,         0},
+    {sText_Totodile,         1},
+    {sText_Mudkip,           2},
+    {sText_Piplup,           3},
+    {sText_Oshawott,         4},
+    {sText_Froakie,          5},
+    {sText_Popplio,          6},
+    {sText_Sobble,           7},
+	{sText_TutorCancel,      8},
+};
+
+static const struct ListMenuItem sElectricStarters[] =
+{
+    {sText_Pikachu,          0},
+    {sText_Plusle,           1},
+    {sText_Minun,            2},
+    {sText_Pachirisu,        3},
+    {sText_Emolga,           4},
+    {sText_Dedenne,          5},
+    {sText_Togedemaru,       6},
+    {sText_Morpeko,          7},
+	{sText_TutorCancel,      8},
+};
+
+static const struct ListMenuItem sGameCornerItems[] =
+{
+    {sText_DubiousDisc,    0},
+    {sText_KingsRock,      1},
+    {sText_OniMask,        2},
+    {sText_ReaperCloth,    3},
+    {sText_Upgrade,        4},
+	{sText_TutorCancel,    5},
+};
+
+static const struct ListMenuItem sGameCornerMons[] =
+{
+    {sText_Solosis,       0},
+    {sText_Cryogonal,     1},
+    {sText_Klefki,        2},
+    {sText_Larvitar,      3},
+    {sText_Beldum,        4},
+    {sText_Deino,         5},
+    {sText_Dreepy,        6},
+    {sText_Porygon,       7},
+	{sText_TutorCancel,   8},
+};
+
+static const struct ListMenuItem sQuizQuestion1[] =
+{
+    {sText_Echo,    0},
+    {sText_Ice,     1},
+    {sText_Water,   2},
+    {sText_Grass,   3},
+};
+
+static const struct ListMenuItem sQuizQuestion2[] =
+{
+    {sText_Poison,     0},
+    {sText_Echo,       1},
+    {sText_Steel,      2},
+    {sText_Fighting,   3},
+};
+
+static const struct ListMenuItem sQuizQuestion3[] =
+{
+    {sText_Electric,   0},
+    {sText_Ground,     1},
+    {sText_Ice,        2},
+    {sText_Poison,     3},
+};
+
+static const struct ListMenuItem sQuizQuestion4[] =
+{
+    {sText_Rock,       0},
+    {sText_Water,      1},
+    {sText_Normal,     2},
+    {sText_Echo,       3},
+};
+
+static const struct ListMenuItem sQuizQuestion5[] =
+{
+    {sText_Normal,  0},
+    {sText_Steel,   1},
+    {sText_Echo,    2},
+    {sText_Rock,    3},
+};
+
+static const struct ListMenuItem sWeatherExplainer[] =
+{
+    {sText_FullMoon,    0},
+    {sText_Hail,        1},
+    {sText_RainDance,   2},
+    {sText_Sandstorm,   3},
+    {sText_Smaze,       4},
+    {sText_SunnyDay,    5},
+	{sText_TutorCancel, 6},
+};
+
+static const struct ListMenuItem sStatusExplainer[] =
+{
+    {sText_BRN,   0},
+    {sText_DAZ,   1},
+    {sText_EXH,   2},
+    {sText_FER,   3},
+    {sText_FRZ,   4},
+    {sText_INF,   5},
+    {sText_PAR,   6},
+    {sText_PSN,   7},
+    {sText_SLP,   8},
+	{sText_TutorCancel, 9},
+};
+
+static const struct ListMenuItem sGreenSet[] =
+{
+    {sText_Green1,   0},
+    {sText_Green2,   1},
+    {sText_Green3,   2},
+    {sText_Green4,   3},
+    {sText_Green5,   4},
+    {sText_Green6,   5},
+    {sText_Green7,   6},
+    {sText_Green8,   7},
+    {sText_Green9,   8},
+	{sText_Green10,  9},
+	{sText_Green11, 10},
+    {sText_Green12, 11},
+    {sText_Green13, 12},
+    {sText_Green14, 13},
+    {sText_Green15, 14},
+    {sText_Green16, 15},
+    {sText_Green17, 16},
+    {sText_Green18, 17},
+    {sText_Green19, 18},
+	{sText_Green20, 19},
+	{sText_Green21, 20},
+	{sText_Green22, 21},
+	{sText_TutorCancel, 22},
+};
+
+static const struct ListMenuItem sRedSet[] =
+{
+    {sText_Red1,   0},
+    {sText_Red2,   1},
+    {sText_Red3,   2},
+    {sText_Red4,   3},
+    {sText_Red5,   4},
+    {sText_Red6,   5},
+    {sText_Red7,   6},
+    {sText_Red8,   7},
+    {sText_Red9,   8},
+	{sText_Red10,  9},
+	{sText_Red11, 10},
+    {sText_Red12, 11},
+    {sText_Red13, 12},
+    {sText_Red14, 13},
+    {sText_Red15, 14},
+    {sText_Red16, 15},
+    {sText_Red17, 16},
+    {sText_Red18, 17},
+    {sText_Red19, 18},
+	{sText_Red20, 19},
+	{sText_Red21, 20},
+	{sText_Red22, 21},
+	{sText_TutorCancel, 22},
+};
+
+static const struct ListMenuItem sBlueSet[] =
+{
+    {sText_Blue1,   0},
+    {sText_Blue2,   1},
+    {sText_Blue3,   2},
+    {sText_Blue4,   3},
+    {sText_Blue5,   4},
+    {sText_Blue6,   5},
+    {sText_Blue7,   6},
+    {sText_Blue8,   7},
+    {sText_Blue9,   8},
+	{sText_Blue10,  9},
+	{sText_Blue11, 10},
+    {sText_Blue12, 11},
+    {sText_Blue13, 12},
+    {sText_Blue14, 13},
+    {sText_Blue15, 14},
+    {sText_Blue16, 15},
+    {sText_Blue17, 16},
+    {sText_Blue18, 17},
+    {sText_Blue19, 18},
+	{sText_Blue20, 19},
+	{sText_Blue21, 20},
+	{sText_Blue22, 21},
+	{sText_TutorCancel, 22},
+};
+
+static const struct ListMenuItem sYellowSet[] =
+{
+    {sText_Yellow1,   0},
+    {sText_Yellow2,   1},
+    {sText_Yellow3,   2},
+    {sText_Yellow4,   3},
+    {sText_Yellow5,   4},
+    {sText_Yellow6,   5},
+    {sText_Yellow7,   6},
+    {sText_Yellow8,   7},
+    {sText_Yellow9,   8},
+	{sText_Yellow10,  9},
+	{sText_Yellow11, 10},
+    {sText_Yellow12, 11},
+    {sText_Yellow13, 12},
+    {sText_Yellow14, 13},
+    {sText_Yellow15, 14},
+    {sText_Yellow16, 15},
+    {sText_Yellow17, 16},
+    {sText_Yellow18, 17},
+    {sText_Yellow19, 18},
+	{sText_Yellow20, 19},
+	{sText_Yellow21, 20},
+	{sText_Yellow22, 21},
+	{sText_TutorCancel, 22},
+};
+
+static const struct ListMenuItem sPledgeTutor[] =
+{
+    {sText_GrassPledge,   0},
+    {sText_FirePledge,    1},
+    {sText_WaterPledge,   2},
+	{sText_TutorCancel,   3},
+};
+
+static const struct ListMenuItem sElementalHBTutor[] =
+{
+    {sText_GrassPledge,   0},
+    {sText_FirePledge,    1},
+    {sText_WaterPledge,   2},
+	{sText_TutorCancel,   3},
+};
+
+static const struct ListMenuItem sNatureChanger[] =
+{
+	{sText_Hardy,           0},
+	{sText_Lonely,          1},
+	{sText_Brave,           2},
+	{sText_Adamant,         3},
+	{sText_Naughty,         4},
+	{sText_Bold,            5},
+	{sText_Docile,          6},
+	{sText_Relaxed,         7},
+	{sText_Impish,          8},
+	{sText_Lax,             9},
+	{sText_Timid,           10},
+	{sText_Hasty,           11},
+	{sText_Serious,         12},
+	{sText_Jolly,           13},
+	{sText_Naive,           14},
+	{sText_Modest,          15},
+	{sText_Mild,            16},
+	{sText_Quiet,           17},
+	{sText_Bashful,         18},
+	{sText_Rash,            19},
+	{sText_Calm,            20},
+	{sText_Gentle,          21},
+	{sText_Sassy,           22},
+	{sText_Careful,         23},
+	{sText_Quirky,          24},
+	{sText_TutorCancel,     25},
+};
+
+// Table of your multichoice sets.
+struct
+{
+    const struct ListMenuItem *set;
+    int count;
+} static const sScrollingSets[] =
+{
+    {sGreenSet, ARRAY_COUNT(sGreenSet)},
+    {sRedSet, ARRAY_COUNT(sRedSet)},
+	{sBlueSet, ARRAY_COUNT(sBlueSet)},
+	{sYellowSet, ARRAY_COUNT(sYellowSet)},
+	{sStatusExplainer, ARRAY_COUNT(sStatusExplainer)},
+	{sWeatherExplainer, ARRAY_COUNT(sWeatherExplainer)},
+	{sQuizQuestion1, ARRAY_COUNT(sQuizQuestion1)},
+	{sQuizQuestion2, ARRAY_COUNT(sQuizQuestion2)},
+	{sQuizQuestion3, ARRAY_COUNT(sQuizQuestion3)},
+	{sQuizQuestion4, ARRAY_COUNT(sQuizQuestion4)},
+	{sQuizQuestion5, ARRAY_COUNT(sQuizQuestion5)},
+	{sPledgeTutor, ARRAY_COUNT(sPledgeTutor)},
+	{sElementalHBTutor, ARRAY_COUNT(sElementalHBTutor)},
+	{sNatureChanger, ARRAY_COUNT(sNatureChanger)},
+	{sGameCornerItems, ARRAY_COUNT(sGameCornerItems)},
+	{sGameCornerMons, ARRAY_COUNT(sGameCornerMons)},
+	{sGrassStarters, ARRAY_COUNT(sGrassStarters)},
+	{sFireStarters, ARRAY_COUNT(sFireStarters)},
+	{sWaterStarters, ARRAY_COUNT(sWaterStarters)},
+	{sElectricStarters, ARRAY_COUNT(sElectricStarters)},
+	{sKendomCorpBurglar, ARRAY_COUNT(sKendomCorpBurglar)},
+	{sUndergroundCityBurglar, ARRAY_COUNT(sUndergroundCityBurglar)},
+};
+
+static void Task_ScrollingMultichoiceInput(u8 taskId);
+
+static const struct ListMenuTemplate sMultichoiceListTemplate =
+{
+    .header_X = 0,
+    .item_X = 8,
+    .cursor_X = 0,
+    .upText_Y = 1,
+    .cursorPal = 2,
+    .fillValue = 1,
+    .cursorShadowPal = 3,
+    .lettersSpacing = 1,
+    .itemVerticalPadding = 0,
+    .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
+    .fontId = 1,
+    .cursorKind = 0
+};
+
+// 0x8004 = set id
+// 0x8005 = window X
+// 0x8006 = window y
+// 0x8007 = showed at once
+// 0x8008 = Allow B press
+void ScriptMenu_ScrollingMultichoice(void)
+{
+    int i, windowId, taskId, width = 0;
+    int setId = gSpecialVar_0x8004;
+    int left = gSpecialVar_0x8005;
+    int top = gSpecialVar_0x8006;
+    int maxShowed = gSpecialVar_0x8007;
+
+    for (i = 0; i < sScrollingSets[setId].count; i++)
+        width = DisplayTextAndGetWidth(sScrollingSets[setId].set[i].name, width);
+
+    width = ConvertPixelWidthToTileWidth(width);
+    left = ScriptMenu_AdjustLeftCoordFromWidth(left, width);
+    windowId = CreateWindowFromRect(left, top, width, maxShowed * 2);
+    SetStandardWindowBorderStyle(windowId, 0);
+    CopyWindowToVram(windowId, 3);
+
+    gMultiuseListMenuTemplate = sMultichoiceListTemplate;
+    gMultiuseListMenuTemplate.windowId = windowId;
+    gMultiuseListMenuTemplate.items = sScrollingSets[setId].set;
+    gMultiuseListMenuTemplate.totalItems = sScrollingSets[setId].count;
+    gMultiuseListMenuTemplate.maxShowed = maxShowed;
+
+    taskId = CreateTask(Task_ScrollingMultichoiceInput, 0);
+    gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate, 0, 0);
+    gTasks[taskId].data[1] = gSpecialVar_0x8008;
+    gTasks[taskId].data[2] = windowId;
+}
+
+static void Task_ScrollingMultichoiceInput(u8 taskId)
+{
+    bool32 done = FALSE;
+    s32 input = ListMenu_ProcessInput(gTasks[taskId].data[0]);
+
+    switch (input)
+    {
+    case LIST_HEADER:
+    case LIST_NOTHING_CHOSEN:
+        break;
+    case LIST_CANCEL:
+        if (gTasks[taskId].data[1])
+        {
+            gSpecialVar_Result = 0x7F;
+            done = TRUE;
+        }
+        break;
+    default:
+        gSpecialVar_Result = input;
+        done = TRUE;
+        break;
+    }
+
+    if (done)
+    {
+        DestroyListMenuTask(gTasks[taskId].data[0], NULL, NULL);
+        ClearStdWindowAndFrame(gTasks[taskId].data[2], TRUE);
+        RemoveWindow(gTasks[taskId].data[2]);
+        //EnableBothScriptContexts();
+        DestroyTask(taskId);
+		ScriptContext_Enable();
+    }
 }

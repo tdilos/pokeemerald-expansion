@@ -1,0 +1,329 @@
+{
+  "id": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+  "name": "PitchblakCity_KendomaCorp_5F",
+  "layout": "LAYOUT_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+  "music": "MUS_B_FACTORY",
+  "region_map_section": "MAPSEC_KENDOMA_CORP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
+      "x": 17,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PitchblakCity_KendomaCorp_5F_EventScript_ComputerGuy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
+      "x": 29,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "5",
+      "script": "PitchblakCity_KendomaCorp_EventScript_Grunt8",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 36,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "KendomaCorp_EventScript_ItemFullHeal",
+      "flag": "FLAG_ITEM_KENDOMA_CORP_FULL_HEAL"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 23,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_8F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_10F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_6F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 13,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 25,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 11,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 15,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 13,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_4F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_9F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 23,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_8F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 25,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_7F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_6F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 23,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_6F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 15,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_9F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 23,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_8F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 25,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_10F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 11,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_4F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 13,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_3F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 11,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_7F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 13,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_10F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 11,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+      "dest_warp_id": "23"
+    },
+    {
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F",
+      "dest_warp_id": "22"
+    },
+    {
+      "x": 13,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_4F",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 1,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_6F",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 8,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_3F",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 36,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_9F",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_LEFT_ELEVATOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_RIGHT_ELEVATOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PITCHBLAK_CITY_KENDOMA_CORP_MIDDLE_ELEVATOR",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "KendomaCorp_5F_EventScript_DoorA1"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "KendomaCorp_5F_EventScript_DoorA1"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "KendomaCorp_5F_EventScript_DoorA1"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "KendomaCorp_5F_EventScript_DoorA1"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "KendomaCorp_5F_EventScript_DoorA1"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "KendomaCorp_5F_EventScript_DoorA1"
+    }
+  ]
+}

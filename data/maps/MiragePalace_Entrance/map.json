@@ -1,0 +1,174 @@
+{
+  "id": "MAP_MIRAGE_PALACE_ENTRANCE",
+  "name": "MiragePalace_Entrance",
+  "layout": "LAYOUT_MIRAGE_PALACE_ENTRANCE",
+  "music": "MUS_B_PALACE",
+  "region_map_section": "MAPSEC_MIRAGE_PALACE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 19,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE70",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MIRAGE_PALACE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_MIRAGE_PALACE_1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 27,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_MIRAGE_PALACE_1F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 37,
+      "y": 45,
+      "elevation": 0,
+      "dest_map": "MAP_MIRAGE_PALACE_1F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 20,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE70",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE70",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 20,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE70",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 19,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE70",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 20,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE70",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 19,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE70",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 20,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE70",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiragePalace_Entrance_EventScript_Rhyme"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiragePalace_Entrance_EventScript_Rhyme"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiragePalace_Entrance_EventScript_Rhyme"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiragePalace_Entrance_EventScript_Rhyme"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiragePalace_Entrance_EventScript_Rhyme"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiragePalace_Entrance_EventScript_Rhyme"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 46,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiragePalace_Entrance_EventScript_Rhyme"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 46,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MiragePalace_Entrance_EventScript_Rhyme"
+    }
+  ]
+}

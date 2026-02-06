@@ -4780,6 +4780,7 @@ Route134_Text_HudsonPostBattle:
 	.string "My buddy's a timid fellow, so I'm\n"
 	.string "worried about him.$"
 
+<<<<<<< Updated upstream
 VSSeeker_Text_BatteryNotChargedNeedXSteps::
 	.string "The battery isn't charged enough.\p"
 	.string "No. of steps required to fully\n"
@@ -4794,3 +4795,3118 @@ VSSeeker_Text_TrainersNotReady::
 	.string "The other Trainers don't appear\n"
 	.string "to be ready for battle.\p"
 	.string "Let's wait till later.{PAUSE_UNTIL_PRESS}$"
+=======
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@ NEW TRAINERS @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Route82_Text_KennyIntro:
+	.string "Our eyes met! That means you can't\n"
+	.string "say no to my challenge!$"
+
+Route82_Text_KennyDefeated:
+	.string "Arrgh, my POKéMON!$"
+
+Route82_Text_KennyPostBattle:
+	.string "Listen, you. If you're strong,\n"
+	.string "you should have told me before!$"
+
+Route82_Text_JaneIntro:
+	.string "Won't you play with my POKéMON?$"
+
+Route82_Text_JaneDefeated:
+	.string "M-my POKéMON!$"
+
+Route82_Text_JanePostBattle:
+	.string "You play too rough. Hmph!$"
+
+Route82_Text_DenzelIntro:
+	.string "Go, BUG POKéMON!$"
+
+Route82_Text_DenzelDefeated:
+	.string "Oh, geez...$"
+
+Route82_Text_DenzelPostBattle:
+	.string "BUG POKéMON might not be that strong,\n"
+	.string "but I won't stop loving them.$"
+
+Route83_Text_CaitlynIntro:
+	.string "The air here is misty.$"
+
+Route83_Text_CaitlynDefeated:
+	.string "Ohh, no!$"
+
+Route83_Text_CaitlynPostBattle:
+	.string "Here the water from the dam mixes with\n"
+	.string "the water from the sea.\p"
+	.string "You can see rainbows here all the time!$"
+
+
+
+ResedaWoods_Text_PedroIntro:
+	.string "Uhhh, have you seen any rare POKéMON?$"
+
+ResedaWoods_Text_PedroDefeated:
+	.string "Woah, what tough POKéMON!$"
+
+ResedaWoods_Text_PedroPostBattle:
+	.string "Some POKéMON around here only appear\n"
+	.string "at certain times of the day.\p"
+	.string "Trying to find them all isn't easy.$"
+
+ResedaWoods_Text_OliverIntro:
+	.string "Let me prove to you why BUG POKéMON\n"
+	.string "are the best!$"
+
+ResedaWoods_Text_OliverDefeated:
+	.string "That's not fair!\n"
+	.string "Using supereffective types!$"
+
+ResedaWoods_Text_OliverPostBattle:
+	.string "Some BUG POKéMON can poison.\n"
+	.string "Others can infect.\p"
+	.string "Some are unpredictable and\n"
+	.string "can do both!$"
+
+ResedaWoods_Text_LoganIntro:
+	.string "Check out the cool POKéMON\n"
+	.string "I caught in my net!$"
+
+ResedaWoods_Text_LoganDefeated:
+	.string "Aw, crud.$"
+
+ResedaWoods_Text_LoganPostBattle:
+	.string "I heard some POKéMON here only live\n"
+	.string "live in the trees.\p"
+	.string "How am I supposed to reach my net\n"
+	.string "all the way up there?$"
+
+ResedaWoods_Text_GordieIntro:
+	.string "The gym in RESEDA TOWN uses\n"
+	.string "BUG POKéMON too.\p"
+	.string "If I train up enough, they\n"
+	.string "might let me join!$"
+
+ResedaWoods_Text_GordieDefeated:
+	.string "I guess I'm still not ready.$"
+
+ResedaWoods_Text_GordiePostBattle:
+	.string "The RESEDA gym leader, ARTHUR,\n"
+	.string "trains here sometimes.\p"
+	.string "He's the one who first taught me\n"
+	.string "about BUG POKéMON!$"
+
+ResedaWoods_Text_IrwinIntro:
+	.string "Bugs aren't the only things that live\n"
+	.string "in the woods.\p"
+	.string "I'll show you my bird POKéMON!$"
+
+ResedaWoods_Text_IrwinDefeated:
+	.string "We couldn't wing it!$"
+
+ResedaWoods_Text_IrwinPostBattle:
+	.string "I tried using FLYING types at the gym\n"
+	.string "in RESEDA TOWN, but still lost...\p"
+	.string "Sometimes type advantage\n"
+	.string "isn't everything.$"
+
+ResedaWoods_Text_AustinIntro:
+	.string "Hey! You're not lost, are you?$"
+
+ResedaWoods_Text_AustinDefeated:
+	.string "Not good enough!$"
+
+ResedaWoods_Text_AustinPostBattle:
+	.string "How could anyone get lost here?\p"
+	.string "It's basically a straight line.$"
+
+
+
+
+
+
+
+Route84_Text_MayaAndJoyNotEnoughMons:
+	.string "Uh-oh, you have only one\n"
+	.string "POKéMON with you.\l"
+	.string "You can't battle us like that.$"
+
+Route84_Text_MayaAndJoyIntro:
+	.string "We challenge you to a double battle!$"
+
+Route84_Text_MayaAndJoyDefeated:
+	.string "We lost!$"
+
+Route84_Text_MayaPostBattle:
+	.string "MAYA: I want to see a Miltank!$"
+
+Route84_Text_JoyPostBattle:
+	.string "JOY: I want to see a Ponyta!$"
+
+Route84_Text_ToddIntro:
+	.string "My POKéMON are itching to fight.\n"
+	.string "Let's go!$"
+
+Route84_Text_ToddDefeated:
+	.string "Hey now, take it easy.$"
+
+Route84_Text_ToddPostBattle:
+	.string "If you try, you might not succeed.\p"
+	.string "If you don't try, you'll never succeed.\p"
+	.string "That's why we're going to keep on\n"
+	.string "trying to be better!$"
+
+Route84_Text_QuentinIntro:
+	.string "Listen up and I'll tell you how\n"
+	.string "to beat the RESEDA GYM.$"
+
+Route84_Text_QuentinDefeated:
+	.string "Whoops.$"
+
+Route84_Text_QuentinPostBattle:
+	.string "You already have a MANDIBLE BADGE?\p"
+	.string "You should've told me.$"
+
+Route84_Text_MasonIntro:
+	.string "Go HOOTHOOT! Prepare for takeoff!$"
+
+Route84_Text_MasonDefeated:
+	.string "Crash landing!$"
+
+Route84_Text_MasonPostBattle:
+	.string "Some people use SPEAROW to fly\n"
+	.string "between cities.\p"
+	.string "I still haven't figured out\n"
+	.string "how they do it...$"
+
+Route84_Text_KierstenIntro:
+	.string "You should carry plenty of items\n"
+	.string "in case of emergencies.$"
+
+Route84_Text_KierstenDefeated:
+	.string "Like this one.$"
+
+Route84_Text_KierstenPostBattle:
+	.string "I like to carry potions with me\n"
+	.string "in case my POKéMON get hurt.$"
+
+
+
+Route89_Text_AngusIntro:
+	.string "Woah now!\n"
+	.string "Don't sneak up on me like that.$"
+
+Route89_Text_AngusDefeated:
+	.string "Lost the battle and the fish.$"
+
+Route89_Text_AngusPostBattle:
+	.string "This strait here is a quick\n"
+	.string "shortcut to PITCHBLAK CITY.\p"
+	.string "But you'll need a POKéMON\n"
+	.string "that knows SURF.$"
+
+
+
+PowerStation_Text_HiramIntro:
+	.string "Hehehehe. This place is full\n"
+	.string "of valuable loot.$"
+
+PowerStation_Text_HiramDefeated:
+	.string "My bag!$"
+
+PowerStation_Text_HiramPostBattle:
+	.string "Hey, don't judge me kid.\p"
+	.string "One man's trash is another man's\n"
+	.string "treasure. Am I right?$"
+
+PowerStation_Text_ChaimIntro:
+	.string "Oy kid, you scared me.$"
+
+PowerStation_Text_ChaimDefeated:
+	.string "Settle down now.$"
+
+PowerStation_Text_ChaimPostBattle:
+	.string "I thought I saw something\n"
+	.string "glowing back there.\p"
+	.string "But I couldn't get to it.$"
+	@.string "to look for it.\p"
+	@.string "If only I had a POKéMON that could\n"
+	@.string "push boulders.$"
+
+
+
+Route85_Text_TysonIntro:
+	.string "Behold! Our ROCK SMASH technique!$"
+
+Route85_Text_TysonDefeated:
+	.string "Not good enough!$"
+
+Route85_Text_TysonPostBattle:
+	.string "The AMBER CITY GYM badge allows your\n"
+	.string "POKéMON to smash rocks in the field.\p"
+	.string "But only if your POKéMON know\n"
+	.string "the move ROCK SMASH.$"
+
+Route85_Text_MaddyIntro:
+	.string "The POKéMON in this area are different.$"
+
+Route85_Text_MaddyDefeated:
+	.string "Oof.$"
+
+Route85_Text_MaddyPostBattle:
+	.string "If you want to avoid wild POKéMON,\n"
+	.string "you should carry lots of repels.$"
+
+Route85_Text_LiamIntro:
+	.string "It's a long road to AMBER CITY.\n"
+	.string "Are you sure you can make it?$"
+
+Route85_Text_LiamDefeated:
+	.string "You seem well prepared.$"
+
+Route85_Text_LiamPostBattle:
+	.string "I live in AMBER CITY, but I like to\n"
+	.string "explore the wilderness with my POKéMON.$"
+
+Route85_Text_CletusIntro:
+	.string "The thing I like most about canyons is\n"
+	.string "hearing your voice yell back at you.$"
+
+Route85_Text_CletusDefeated:
+	.string "Echoooo!$"
+
+Route85_Text_CletusPostBattle:
+	.string "It's times like these I wish\n"
+	.string "I had brought more FRESH WATER.\p"
+	.string "My throat is sore from shouting...$"
+
+Route85_Text_AveryIntro:
+	.string "The air currents in this canyon\n"
+	.string "are crazy.$"
+
+Route85_Text_AveryDefeated:
+	.string "Out of control!$"
+
+Route85_Text_AveryPostBattle:
+	.string "I come here to see birds that live\n"
+	.string "in this canyon.$"
+
+Route85_Text_OlympiaIntro:
+	.string "You dare interrupt our training!$"
+
+Route85_Text_OlympiaDefeated:
+	.string "My MANKEY!$"
+
+Route85_Text_OlympiaPostBattle:
+	.string "Pain is merely weakness leaving the body.$"
+
+Route85_Text_DanielIntro:
+	.string "Woah watch out! You almost\n"
+	.string "stepped in my campfire!$"
+
+Route85_Text_DanielDefeated:
+	.string "Get some water!$"
+
+Route85_Text_DanielPostBattle:
+	.string "Nothing's better on a warm summer\n"
+	.string "afternoon than a cookout!$"
+
+
+
+
+
+
+Route86_Text_BreeIntro:
+	.string "Come join us!\n"
+	.string "We're having a picnic!$"
+
+Route86_Text_BreeDefeated:
+	.string "You're no fun!$"
+
+Route86_Text_BreePostBattle:
+	.string "Are you looking for the temple?\n"
+	.string "It's due west from here.\p"
+	.string "Be careful. There are frequent\n"
+	.string "sandstorms out there.$" 
+
+Route86_Text_BrookIntro:
+	.string "A beautiful day for a\n"
+	.string "POKéMON battle!$"
+
+Route86_Text_BrookDefeated:
+	.string "Oh well...$"
+
+Route86_Text_BrookPostBattle:
+	.string "There's something so magical\n"
+	.string "about the desert.\p"
+	.string "Don't you think?$"
+
+Route86_Text_NickIntro:
+	.string "Haha! Let's get a fire going!$"
+
+Route86_Text_NickDefeated:
+	.string "I need more wood!$"
+
+Route86_Text_NickPostBattle:
+	.string "There isn't much timber around here.\p"
+	.string "Maybe I should look somewhere else...$"
+
+Route86_Text_SummerIntro:
+	.string "Can you believe it!?\n"
+	.string "A flat tire way out here!$"
+
+Route86_Text_SummerDefeated:
+	.string "Just my luck...$"
+
+Route86_Text_SummerPostBattle:
+	.string "This area is popular for\n"
+	.string "dirt bike enthusiasts.$"
+
+Route86_Text_HoganIntro:
+	.string "Test of strength! Go!$"
+
+Route86_Text_HoganDefeated:
+	.string "Too strong!$"
+
+Route86_Text_HoganPostBattle:
+	.string "To live is to fight.\p"
+	.string "One must never forget that.$"
+
+
+
+Route87_Text_SethIntro:
+	.string "Did you know there are POKéMON\n"
+	.string "that can swim in the desert?$"
+
+Route87_Text_SethDefeated:
+	.string "Ah drat!$"
+
+Route87_Text_SethPostBattle:
+	.string "It's true! I saw a POKéMON come\n"
+	.string "out of the sand over there.\l"
+	.string "It was huge!$"
+
+Route87_Text_MeganIntro:
+	.string "We're in top form and ready to go!$"
+
+Route87_Text_MeganDefeated:
+	.string "Oh no!$"
+
+Route87_Text_MeganPostBattle:
+	.string "This sand is irritating.\p"
+	.string "I wish my POKéMON could use DEFOG.$"
+
+Route87_Text_VinceIntro:
+	.string "Ack! I've got sand in my eyes!$"
+
+Route87_Text_VinceDefeated:
+	.string "Wipeout!$"
+
+Route87_Text_VincePostBattle:
+	.string "Always wear GOGOGGLES when dirt biking.$"
+
+Route87_Text_NigelIntro:
+	.string "Do you know the legends of this place?$"
+
+Route87_Text_NigelDefeated:
+	.string "Then I shall tell you.$"
+
+Route87_Text_NigelPostBattle:
+	.string "There are four temples in ISSHO built\n"
+	.string "long ago to honor a certain POKéMON.\p"
+	.string "We believe the temple builders would\n"
+	.string "call the POKéMON in times of hardship.\p"
+	.string "There's an inscription inside the temple\n"
+	.string "but we haven't been able to translate it.$"
+
+Route87_Text_RutherfordIntro:
+	.string "Woah! A sandstorm's a-brewing!$"
+
+Route87_Text_RutherfordDefeated:
+	.string "Petered out.$"
+
+Route87_Text_RutherfordPostBattle:
+	.string "This desert here goes on as far\n"
+	.string "as the eye can see.\p"
+	.string "All the way to the ocean,\n"
+	.string "folks say.$"
+
+Route87_Text_GusIntro:
+	.string "Fires are dangerous if you don't know\n"
+	.string "how to handle them properly.$"
+
+Route87_Text_GusDefeated:
+	.string "Doused our flame.$"
+
+Route87_Text_GusPostBattle:
+	.string "Have you heard of the contests\n"
+	.string "in SINNOH?\p"
+	.string "I've heard they bake some strange\n"
+	.string "bread instead of making POKéBLOCKS.$"
+
+
+
+Route88_Text_FeliksIntro:
+	.string "I foresaw your arrival!$"
+
+Route88_Text_FeliksDefeated:
+	.string "I didn't foresee my defeat...$"
+
+Route88_Text_FeliksPostBattle:
+	.string "The tricky thing about looking into\n"
+	.string "the future,\p"
+	.string "Is that the future's always changing!$"
+
+Route88_Text_SaraAndMiaNotEnoughMons:
+	.string "Uh-oh, you have only one\n"
+	.string "POKéMON with you.\l"
+	.string "You can't battle us like that.$"
+
+Route88_Text_SaraAndMiaIntro:
+	.string "We're going on an adventure!$"
+
+Route88_Text_SaraAndMiaDefeated:
+	.string "We couldn't win!$"
+
+Route88_Text_SaraPostBattle:
+	.string "SARA: What kinds of adventures have\n"
+	.string "you been on, big trainer?$"
+
+Route88_Text_MiaPostBattle:
+	.string "MIA: I'm hungry. I want to go home now.$"
+
+Route88_Text_GinnyIntro:
+	.string "Gah! I get lost navigating\n"
+	.string "these ledges!$"
+
+Route88_Text_GinnyDefeated:
+	.string "Where was I now?$"
+
+Route88_Text_GinnyPostBattle:
+	.string "I wonder if I could get to\n"
+	.string "AMBER CITY faster with a bike.$"
+
+
+
+QuartzCave_Text_SeanIntro:
+	.string "Aha! Caught a trainer!$"
+
+QuartzCave_Text_SeanDefeated:
+	.string "Slipped away.$"
+
+QuartzCave_Text_SeanPostBattle:
+	.string "What am I doing here?\p"
+	.string "I heard there was a fishing spot\n"
+	.string "in this cave somewhere,\l"
+	.string "but I haven't seen any water yet.$"
+
+QuartzCave_Text_CecilIntro:
+	.string "Who goes there?$"
+
+QuartzCave_Text_CecilDefeated:
+	.string "It was a trainer!$"
+
+QuartzCave_Text_CecilPostBattle:
+	.string "You snuck up on me. I thought you were\n"
+	.string "a wild POKéMON.$"
+
+QuartzCave_Text_AxelIntro:
+	.string "Hey kid, name my band.$"
+
+QuartzCave_Text_AxelDefeated:
+	.string "Bummer.$"
+
+QuartzCave_Text_AxelPostBattle:
+	.string "Any ideas?$"
+
+QuartzCave_Text_NeilIntro:
+	.string "Go, WOOBAT ensemble!$"
+
+QuartzCave_Text_NeilDefeated:
+	.string "Out of synch.$"
+
+QuartzCave_Text_NeilPostBattle:
+	.string "I use my WOOBAT to provide\n"
+	.string "background effects.$"
+
+QuartzCave_Text_BruceIntro:
+	.string "The acoustics in this cave are great!$"
+
+QuartzCave_Text_BruceDefeated:
+	.string "Drowned out.$"
+
+QuartzCave_Text_BrucePostBattle:
+	.string "Too bad I can plug my equipment\n"
+	.string "in anywhere...$"
+
+QuartzCave_Text_PatricIntro:
+	.string "Who's afraid of the dark?\n"
+	.string "Not me!$"
+
+QuartzCave_Text_PatricDefeated:
+	.string "Ahh! What!?$"
+
+QuartzCave_Text_PatricPostBattle:
+	.string "I'm not pacing because I'm scared.\n"
+	.string "Not me!$"
+
+QuartzCave_Text_ChloeIntro:
+	.string "This cave is dark and scary!$"
+
+QuartzCave_Text_ChloeDefeated:
+	.string "Eek!$"
+
+QuartzCave_Text_ChloePostBattle:
+	.string "I wish I had a POKéMON that knows FLASH.$"
+
+QuartzCave_Text_WendelIntro:
+	.string "Ugh, this cave has me confused.$"
+
+QuartzCave_Text_WendelDefeated:
+	.string "Huh?$"
+
+QuartzCave_Text_WendelPostBattle:
+	.string "I wonder if there's another way out\n"
+	.string "of this cave somewhere.$" 
+
+QuartzCave_Text_EgbertIntro:
+	.string "Have you seen any rare POKéMON here?$"
+
+QuartzCave_Text_EgbertDefeated:
+	.string "Uwaah!$"
+
+QuartzCave_Text_EgbertPostBattle:
+	.string "There are supposed to be rare\n"
+	.string "POKéMON at the end of this cave.\p"
+	.string "Now where could they be...$"
+
+QuartzCave_Text_AuroraIntro:
+	.string "I predict I will win!$"
+
+QuartzCave_Text_AuroraDefeated:
+	.string "My prediction!$"
+
+QuartzCave_Text_AuroraPostBattle:
+	.string "Where does psychic power come from?\p"
+	.string "One cannot explain it. One just knows.$"
+
+
+
+Route80_Text_DahliaIntro:
+	.string "Breathe in the fresh mountain air!$"
+
+Route80_Text_DahliaDefeated:
+	.string "Too much.$"
+
+Route80_Text_DahliaPostBattle:
+	.string "Sweet Scent is a move that attracts\n"
+	.string "wild POKéMON.\p"
+	.string "Use it in tall grass or a cave, and\n"
+	.string "a wild POKéMON will appear!$"
+
+
+
+Route79_Text_ReillyIntro:
+	.string "Hook, line, and sinker!$"
+
+Route79_Text_ReillyDefeated:
+	.string "Blast it!$"
+
+Route79_Text_ReillyPostBattle:
+	.string "My MAGIKARP may not be\n"
+	.string "the strongest POKéMON.\p"
+	.string "But I wouldn't battle with\n"
+	.string "anyone else!$"
+
+Route79_Text_EoinIntro:
+	.string "Woah, it's a big one!$"
+
+Route79_Text_EoinDefeated:
+	.string "Nope, just a trainer.$"
+
+Route79_Text_EoinPostBattle:
+	.string "The sea of ISSHO is famous for its\n"
+	.string "diversity of POKéMON.\p"
+	.string "Try fishing near different cities,\n"
+	.string "and see what you can find.$"
+
+Route79_Text_AmosIntro:
+	.string "Quiet now, you'll scare the fish.$"
+
+Route79_Text_AmosDefeated:
+	.string "Got away.$"
+
+Route79_Text_AmosPostBattle:
+	.string "If only I had a SUPER ROD...\p"
+	.string "I heard you can find different POKéMON\n"
+	.string "that way.$"
+
+Route79_Text_LaytonIntro:
+	.string "I'm a cool guy. I have a girlfriend.$"
+
+Route79_Text_LaytonDefeated:
+	.string "Awww man.$"
+
+Route79_Text_LaytonPostBattle:
+	.string "Don't tell my girlfriend you beat me.$"
+
+Route79_Text_MarinaIntro:
+	.string "It's such a beautiful day. Won't you\n"
+	.string "join us in the sunshine?$"
+
+Route79_Text_MarinaDefeated:
+	.string "Oh well.$"
+
+Route79_Text_MarinaPostBattle:
+	.string "The warmth of the sun,\n"
+	.string "feeling the sea breeze,\l"
+	.string "watching the ocean waves.\l"
+	.string "I could stay out here forever.$"
+
+Route79_Text_BrittanyIntro:
+	.string "Are your POKéMON getting tired?\n"
+	.string "Why don't you stop here and rest?$"
+
+Route79_Text_BrittanyDefeated:
+	.string "Oh shoot.$"
+
+Route79_Text_BrittanyPostBattle:
+	.string "Remember to take a break every\n"
+	.string "now and then.\p"
+	.string "Don't spend all your time thinking\n"
+	.string "about POKéMON battles.$"
+
+Route79_Text_LeeIntro:
+	.string "We train here four hours a day,\n"
+	.string "seven days a week.\p"
+	.string "You can't possibly hope to defeat us!$"
+
+Route79_Text_LeeDefeated:
+	.string "This power! Overwhelming!$"
+
+Route79_Text_LeePostBattle:
+	.string "I need to train harder if I want to beat\n"
+	.string "the gym leader in COBALT CITY.$"
+
+Route79_Text_DelmusIntro:
+	.string "Woah now! What's the hurry?$"
+
+Route79_Text_DelmusDefeated:
+	.string "Looks like I'm the one that\n"
+	.string "was too eager!$"
+
+Route79_Text_DelmusPostBattle:
+	.string "No matter how busy you feel, it's good\n"
+	.string "to slow down every once in a while\l"
+	.string "to appreciate what you have.$"
+
+Route79_Text_GeddyIntro:
+	.string "It's here, I know it!$"
+
+Route79_Text_GeddyDefeated:
+	.string "Impossible!$"
+
+Route79_Text_GeddyPostBattle:
+	.string "The rare POKéMON. Where could it be?$"
+
+
+
+Route78_Text_StormyIntro:
+	.string "You don't have an umbrella? Aren't you\n"
+	.string "concerned you'll get soaked?$"
+
+Route78_Text_StormyDefeated:
+	.string "Looks like rain doesn't bother you.$"
+
+Route78_Text_StormyPostBattle:
+	.string "This area gets a lot of rain.\n"
+	.string "I always carry my parasol just in case.$"
+
+Route78_Text_PetuniaIntro:
+	.string "The gentle patter of droplets on leaves.\n"
+	.string "It's a symphony for the senses!$"
+
+Route78_Text_PetuniaDefeated:
+	.string "The quiet coda of defeat...$"
+
+Route78_Text_PetuniaPostBattle:
+	.string "Flowers smell best just before the rain.\n"
+	.string "It's why we train in a place like this!$"
+
+Route78_Text_LivAndTayNotEnoughMons:
+	.string "It looks like you only have\n"
+	.string "one POKéMON with you.\l"
+	.string "You can't battle us like that.$"
+
+Route78_Text_LivAndTayIntro:
+	.string "Nothing can stop our combination!$"
+
+Route78_Text_LivAndTayDefeated:
+	.string "Our combination failed!$"
+
+Route78_Text_LivPostBattle:
+	.string "LIV: I'm training here with\n"
+	.string "my junior partner.\p"
+	.string "If I don't win, I'll lose face.$"
+
+Route78_Text_TayPostBattle:
+	.string "TAY: Please forgive me, LIV.\n"
+	.string "I'll do better next time!$"
+
+Route78_Text_AlisterIntro:
+	.string "Did you come here to see the temple\n"
+	.string "as well?$"
+
+Route78_Text_AlisterDefeated:
+	.string "Zounds, how remarkable!$"
+
+Route78_Text_AlisterPostBattle:
+	.string "My colleagues have been investigating\n"
+	.string "the temples of ISSHO for some time now.\p"
+	.string "It's my conjecture that they each\n"
+	.string "correspond to a different season.\p"
+	.string "I wonder if something special happens\n"
+	.string "during that time...$"
+
+Route78_Text_StellaIntro:
+	.string "Can you feel the energy in this place?$"
+
+Route78_Text_StellaDefeated:
+	.string "The energy between you and\n"
+	.string "your POKéMON!$"
+
+Route78_Text_StellaPostBattle:
+	.string "There is a sacred energy connecting the\n"
+	.string "hearts of all people and POKéMON.\p"
+	.string "Don't you think so?$"
+
+Route78_Text_WilburIntro:
+	.string "Shall I teach your POKéMON\n"
+	.string "how to fly?$"
+
+Route78_Text_WilburDefeated:
+	.string "Mayday! Mayday!$"
+
+Route78_Text_WilburPostBattle:
+	.string "To soar through the air like\n"
+	.string "a majestic flying POKéMON.\p"
+	.string "That is my dream.$"
+
+Route78_Text_OrvilleIntro:
+	.string "Nothing can keep us down!$"
+
+Route78_Text_OrvilleDefeated:
+	.string "Darn...$"
+
+Route78_Text_OrvillePostBattle:
+	.string "I wonder what the world looks like\n"
+	.string "to a bird POKéMON in the sky.$"
+
+Route78_Text_HendrickIntro:
+	.string "Ha! I bet you thought I use\n"
+	.string "bird POKéMON!$"
+
+Route78_Text_HendrickDefeated:
+	.string "Ah, wait! My POKéMON!$"
+
+Route78_Text_HendrickPostBattle:
+	.string "The gym in COBALT CITY uses\n"
+	.string "GRASS type POKéMON.\p"
+	.string "ECHO and ELECTRIC types are\n"
+	.string "no good there.$"
+
+
+
+DreamResort_Text_CelineIntro:
+	.string "Oh, who are you?\n"
+	.string "You're not room service.$"
+
+DreamResort_Text_CelineDefeated:
+	.string "Oh dear!$"
+
+DreamResort_Text_CelinePostBattle:
+	.string "Hmph. You're obviously an\n"
+	.string "uncivilized brute!$"
+
+DreamResort_Text_JeanIntro:
+	.string "Let us, how you say, battle.$"
+
+DreamResort_Text_JeanDefeated:
+	.string "I am, how you say, defeated.$"
+
+DreamResort_Text_JeanPostBattle:
+	.string "You and your POKéMON.\p"
+	.string "You have a certain...\n"
+	.string "Je ne sais quoi.$"
+
+DreamResort_Text_ElaineIntro:
+	.string "Come create a dazzling spectacle\n"
+	.string "with us!$"
+
+DreamResort_Text_ElaineDefeated:
+	.string "That was marvelous!$"
+
+DreamResort_Text_ElainePostBattle:
+	.string "I want my paintings to capture the\n"
+	.string "bond between people and POKéMON.$"
+
+DreamResort_Text_TrishaIntro:
+	.string "Show me your beautiful POKéMON!$"
+
+DreamResort_Text_TrishaDefeated:
+	.string "Your POKéMON are amazing!$"
+
+DreamResort_Text_TrishaPostBattle:
+	.string "To become a world class painter\n"
+	.string "in HOENN. That was my dream.\p"
+	.string "But fear of pursuing that dream\n"
+	.string "always held me back...$"
+	@.string "Remember that every moment of life is precious.\p"
+	@.string "And the only thing stopping you from pursuing\n"
+	@.string "your dreams is you.$"
+
+DreamResort_Text_CoreyIntro:
+	.string "Ahoy! Ye came looking for a battle,\n"
+	.string "din't ye?$"
+
+DreamResort_Text_CoreyDefeated:
+	.string "Hahaha, I knew it!$"
+
+DreamResort_Text_CoreyPostBattle:
+	.string "Fancy meeting a salty dog like me\n"
+	.string "in a cozy hotel like this one, aye?\p"
+	.string "Even us seamen take vacations,\n"
+	.string "ye know.$"
+
+DreamResort_Text_OscarIntro:
+	.string "Where's room service? We've been\n"
+	.string "waiting forever!$"
+
+DreamResort_Text_OscarDefeated:
+	.string "Not yet!$"
+
+DreamResort_Text_OscarPostBattle:
+	.string "The hotel staff sure don't like\n"
+	.string "the fourth floor for some reason.$"
+
+DreamResort_Text_MimiIntro:
+	.string "Won't you play with my darling POKéMON?$"
+
+DreamResort_Text_MimiDefeated:
+	.string "Oh, you were so cute!$"
+
+DreamResort_Text_MimiPostBattle:
+	.string "What did you think of my babies?\n"
+	.string "Aren't they adorable?$"
+
+DreamResort_Text_YolandaIntro:
+	.string "The spirits! Something's wrong with\n"
+	.string "this place.$"
+
+DreamResort_Text_YolandaDefeated:
+	.string "It's coming!$"
+
+DreamResort_Text_YolandaPostBattle:
+	.string "Yes, I can feel it all around you.\p"
+	.string "You must leave this place!\p"
+	.string "Whatever you do, don't go to the\n"
+	.string "forbidden room.$"
+
+DreamResort_Text_EugeneIntro:
+	.string "Ar'right, put em up!$"
+
+DreamResort_Text_EugeneDefeated:
+	.string "Avast!$"
+
+DreamResort_Text_EugenePostBattle:
+	.string "Ye're tougher than ye look, landlubber.$"
+
+
+
+
+
+
+
+Route94_Text_CharleneIntro:
+	.string "Alright! Only one more lap to go!$"
+
+Route94_Text_CharleneDefeated:
+	.string "I can't believe it!$"
+
+Route94_Text_CharlenePostBattle:
+	.string "Whatever it is that keeps you moving,\n"
+	.string "hold on to it.\p"
+	.string "And don't stop chasing the future!$"
+
+Route94_Text_PollyIntro:
+	.string "Hold still! This is for my masterpiece!$"
+
+Route94_Text_PollyDefeated:
+	.string "Stunning!$"
+
+Route94_Text_PollyPostBattle:
+	.string "The scenery here is spectacular!\p"
+	.string "But so are the people and POKéMON!$"
+
+Route94_Text_BlossomIntro:
+	.string "Have you ever seen such\n"
+	.string "pretty wheat fields?$"
+
+Route94_Text_BlossomDefeated:
+	.string "Absolutely gourgeous!$"
+
+Route94_Text_BlossomPostBattle:
+	.string "It's like a blank canvas ready\n"
+	.string "to be dripped in paint.$"
+
+
+
+
+Route93_Text_MinervaIntro:
+	.string "Show me how you raise your POKéMON.$"
+
+Route93_Text_MinervaDefeated:
+	.string "Amazing!$"
+
+Route93_Text_MinervaPostBattle:
+	.string "Raising POKéMON is not as\n"
+	.string "straightforward as it seems.\p"
+	.string "Sometimes you may want it to learn\n"
+	.string "a move before evolving.$"
+
+Route93_Text_DustinIntro:
+	.string "What's this? A challenger?$"
+
+Route93_Text_DustinDefeated:
+	.string "I admit defeat.$"
+
+Route93_Text_DustinPostBattle:
+	.string "The rocks in MT SHIRO aren't safe\n"
+	.string "to break with fists.\p"
+	.string "Maybe I could try heating them up?$"
+
+Route93_Text_JimIntro:
+	.string "Help us practice our quick turns.$"
+
+Route93_Text_JimDefeated:
+	.string "You got it!$"
+
+Route93_Text_JimPostBattle:
+	.string "Well, what do you think?\n"
+	.string "How's my steering?$"
+
+Route93_Text_HarleyIntro:
+	.string "Howdy there! Ain't seen you\n"
+	.string "around here.$"
+
+Route93_Text_HarleyDefeated:
+	.string "Golly!$"
+
+Route93_Text_HarleyPostBattle:
+	.string "My granpappy used to say:\p"
+	.string "Ain't no use putting lipstick\n"
+	.string "on a GRUMPIG.\p"
+	.string "I wonder what that's supposed to mean.$"
+
+Route93_Text_DukeIntro:
+	.string "You're not from around here, are you?$"
+
+Route93_Text_DukeDefeated:
+	.string "Sweet mother of Jefferson Davis!$"
+
+Route93_Text_DukePostBattle:
+	.string "Most folks don't wander into a grass\n"
+	.string "patch like this unless they're lost.$"
+
+Route93_Text_ThompsonIntro:
+	.string "Have you been raising your\n"
+	.string "POKéMON properly?$"
+
+Route93_Text_ThompsonDefeated:
+	.string "You sure have!$"
+
+Route93_Text_ThompsonPostBattle:
+	.string "Some POKéMON only evolve after they\n"
+	.string "really grown attached to you.\p"
+	.string "And some only evolve at certain\n"
+	.string "times of the day.$"
+
+Route93_Text_EnisIntro:
+	.string "Shhhh. You'll scare the fish!$"
+
+Route93_Text_EnisDefeated:
+	.string "Too late!$"
+
+Route93_Text_EnisPostBattle:
+	.string "You know, fishing's not as easy\n"
+	.string "as it looks.\p"
+	.string "It takes a certain kind of patience.$"
+
+Route93_Text_ClydeIntro:
+	.string "Let's put on a show together!$"
+
+Route93_Text_ClydeDefeated:
+	.string "Marvelous!$"
+
+Route93_Text_ClydePostBattle:
+	.string "We're a traveling troupe!\p"
+	.string "But right now, we're having some\n"
+	.string "trouble finding our next show.$"
+
+Route93_Text_KeithIntro:
+	.string "Check out my new song!$"
+
+Route93_Text_KeithDefeated:
+	.string "Broke my G string.$"
+
+Route93_Text_KeithPostBattle:
+	.string "Sorry, dude.\n"
+	.string "No encores.\p"
+	.string "If you want to hear it again, you'll\n"
+	.string "have to buy my album.$"
+
+Route93_Text_MarcusIntro:
+	.string "Here, catch!$"
+
+Route93_Text_MarcusDefeated:
+	.string "Dropped my balls.$"
+
+Route93_Text_MarcusPostBattle:
+	.string "Juggling is all about consistency.\p"
+	.string "How long can you stay focused?$"
+
+Route93_Text_GideonIntro:
+	.string "Behold! My prize POKéMON!$"
+
+Route93_Text_GideonDefeated:
+	.string "Curses, foiled again...$"
+
+Route93_Text_GideonPostBattle:
+	.string "Some POKéMON only appear at\n"
+	.string "odd times of the day.\p"
+	.string "I wish I had a time machine to look\n"
+	.string "for them whenever I want.$"
+
+Route93_Text_SueIntro:
+	.string "When I'm with pa, nobody can stop us!$"
+
+Route93_Text_SueDefeated:
+	.string "Well, I'll be.$"
+
+Route93_Text_SuePostBattle:
+	.string "I guess there's a first time\n"
+	.string "for everything.$"
+
+Route93_Text_MoIntro:
+	.string "Git along, little doggies!$"
+
+Route93_Text_MoDefeated:
+	.string "Git git git git!$"
+
+Route93_Text_MoPostBattle:
+	.string "You're pretty good for a city-slicker.$"
+
+
+
+
+
+
+Route95_Text_WilsonIntro:
+	.string "Halt! Who goes there?$"
+
+Route95_Text_WilsonDefeated:
+	.string "False alarm.$"
+
+Route95_Text_WilsonPostBattle:
+	.string "You wouldn't believe what kinds of\n"
+	.string "maniacs come through here.$"
+
+Route95_Text_KrisIntro:
+	.string "Just the warmup I needed.$"
+
+Route95_Text_KrisDefeated:
+	.string "Wait... slow down...$"
+
+Route95_Text_KrisPostBattle:
+	.string "Never quit on yourself.\p"
+	.string "Life only stops when you do.$"
+
+Route95_Text_TrevorIntro:
+	.string "We're in top form and ready to go!$"
+
+Route95_Text_TrevorDefeated:
+	.string "Not ready for that.$"
+
+Route95_Text_TrevorPostBattle:
+	.string "Who says you're too old to try\n"
+	.string "new things?$"
+
+
+
+
+Route97_Text_GundaIntro:
+	.string "What are you doing out here\n"
+	.string "dressed like that?$"
+
+Route97_Text_GundaDefeated:
+	.string "Gasp.$"
+
+Route97_Text_GundaPostBattle:
+	.string "Aren't you cold?$"
+
+Route97_Text_FrodeIntro:
+	.string "Hey, do you know how to get\n"
+	.string "to the summit?$"
+
+Route97_Text_FrodeDefeated:
+	.string "No good.$"
+
+Route97_Text_FrodePostBattle:
+	.string "I wanted to board down MT SHIRO\n"
+	.string "starting all the way at the top.\p"
+	.string "But I still can't figure out\n"
+	.string "to get up there.\p"
+	.string "Maybe if I came at it from a\n"
+	.string "different direction...$"
+
+Route97_Text_BenedictIntro:
+	.string "Brrr. I say, you'll freeze\n"
+	.string "to death out here like that!$"
+
+Route97_Text_BenedictDefeated:
+	.string "Brrrrrr.$"
+
+Route97_Text_BenedictPostBattle:
+	.string "Brrrr. It's so dreadfully cold.\p"
+	.string "No wonder my colleagues never\n"
+	.string "come here...$"
+
+
+
+
+Route98_Text_GiselleIntro:
+	.string "Hey! Watch where you're going!$"
+
+Route98_Text_GiselleDefeated:
+	.string "Ughh.$"
+
+Route98_Text_GisellePostBattle:
+	.string "Sometimes I run just to take\n"
+	.string "my mind off other things.$"
+
+Route98_Text_BrettIntro:
+	.string "Come on! Step it up!$"
+
+Route98_Text_BrettDefeated:
+	.string "Too slow.$"
+
+Route98_Text_BrettPostBattle:
+	.string "Physical activity helps you blow\n"
+	.string "off some steam.\p"
+	.string "Try it the next time you're feeling\n"
+	.string "angry or frustrated.$"
+
+Route98_Text_CodyIntro:
+	.string "Wait, our castle's not ready yet!$"
+
+Route98_Text_CodyDefeated:
+	.string "Aw, rats.$"
+
+Route98_Text_CodyPostBattle:
+	.string "We're building a sand castle.\p"
+	.string "But the tide keeps washing\n"
+	.string "it away...$"
+
+Route98_Text_TudyIntro:
+	.string "Ooh, a guest!$"
+
+Route98_Text_TudyDefeated:
+	.string "Our castle!$"
+
+Route98_Text_TudyPostBattle:
+	.string "Oh no! And we were almost done!$"
+
+Route98_Text_MickIntro:
+	.string "Have ye got yer sea legs?$"
+
+Route98_Text_MickDefeated:
+	.string "Aye, ye did.$"
+
+Route98_Text_MickPostBattle:
+	.string "Wooooh, a sailor's life for me!$"
+
+
+
+
+
+Route96_Text_KyleIntro:
+	.string "Have you come to find the\n"
+	.string "rare POKéMON?$"
+
+Route96_Text_KyleDefeated:
+	.string "This is so frustrating.$"
+
+Route96_Text_KylePostBattle:
+	.string "It's here somewhere. I know it!$"
+
+Route96_Text_GoroIntro:
+	.string "Do you like my disguise?$"
+
+Route96_Text_GoroDefeated:
+	.string "You saw right through me.$"
+
+Route96_Text_GoroPostBattle:
+	.string "Maybe my disguise isn't so good\n"
+	.string "after all...$"
+
+
+
+
+
+
+
+Route69_Text_LuanneIntro:
+	.string "You're not from around these parts,\n"
+	.string "are ya?$"
+
+Route69_Text_LuanneDefeated:
+	.string "Alright. I'll let you on a little\n"
+	.string "secret.$"
+
+Route69_Text_LuannePostBattle:
+	.string "Round here, folks say this forest\n"
+	.string "is cursed.\p"
+	.string "It sure makes ya feel like yer going\n"
+	.string "in circles.$"
+
+
+
+
+
+
+
+
+
+Route92_Text_JoIntro:
+	.string "Check out our POKéMON.\n"
+	.string "They won best in show!$"
+
+Route92_Text_JoDefeated:
+	.string "Now that's a prize pig!$"
+
+Route92_Text_JoPostBattle:
+	.string "You've got some mighty impressive\n"
+	.string "POKéMON, trainer.\p"
+	.string "You should try entering them in a\n"
+	.string "POKéMON CONTEST.$"
+
+Route92_Text_EddIntro:
+	.string "Let's have ourselves a hoedown!$"
+
+Route92_Text_EddDefeated:
+	.string "What in tarnation!$"
+
+Route92_Text_EddPostBattle:
+	.string "The contests around here are\n"
+	.string "held in COBALT CITY.\p"
+	.string "Every year, we enter with the\n"
+	.string "new POKéMON we raised.$"
+
+Route92_Text_YelenaIntro:
+	.string "Let's be friends forever.$"
+
+Route92_Text_YelenaDefeated:
+	.string "Waaah.$"
+
+Route92_Text_YelenaPostBattle:
+	.string "Sniff. Won't you be my friend?$"
+
+Route92_Text_NoahIntro:
+	.string "The wilds can be unpredictable.\p"
+	.string "But that's what makes it exciting,\n"
+	.string "right?$"
+
+Route92_Text_NoahDefeated:
+	.string "Impressive!$"
+
+Route92_Text_NoahPostBattle:
+	.string "The forest is full of life.\p"
+	.string "Even dead trees become homes\n"
+	.string "for POKéMON.$"
+
+Route92_Text_AmbroseIntro:
+	.string "Are you by chance heading to\n"
+	.string "PITCHBLAK CITY?$"
+
+Route92_Text_AmbroseDefeated:
+	.string "Wohohoho.$"
+
+Route92_Text_AmbrosePostBattle:
+	.string "The air around PITCHBLAK CITY\n"
+	.string "is full of toxic emissions.\l"
+	.string "It's a health hazard!\p"
+	.string "As for me, I prefer the clear\n"
+	.string "mountain air around here.$"
+
+Route92_Text_BurtIntro:
+	.string "Hey, be careful now.\n"
+	.string "Forest fires are no joke.$"
+
+Route92_Text_BurtDefeated:
+	.string "Smoldered.$"
+
+Route92_Text_BurtPostBattle:
+	.string "Forest fires are dangerous\n"
+	.string "for people and POKéMON.\p"
+	.string "But they're not all bad.\p"
+	.string "They clear away dead trees\n"
+	.string "and vegetation.\p"
+	.string "And make way for new life\n"
+	.string "to grow.$"
+
+Route92_Text_DeidreIntro:
+	.string "All sorts of POKéMON migrate\n"
+	.string "through here year round.\p"
+	.string "Have you kept up with the\n"
+	.string "TV reports?$"
+
+Route92_Text_DeidreDefeated:
+	.string "Blown away.$"
+
+Route92_Text_DeidrePostBattle:
+	.string "The news in ISSHO has a special\n"
+	.string "on POKéMON swarms each day.\p"
+	.string "It's great if you're hunting for\n"
+	.string "rare POKéMON.$"
+
+Route92_Text_YeagerIntro:
+	.string "Us POKéMON RANGERS have to make sure\n"
+	.string "people stay safe.\p"
+	.string "You're prepared in case\n"
+	.string "of emergencies, right?$"
+
+Route92_Text_YeagerDefeated:
+	.string "Well that wasn't supposed to happen.$"
+
+Route92_Text_YeagerPostBattle:
+	.string "The POKéMON RANGER HQ is in\n"
+	.string "MAROON CITY.\p"
+	.string "You should check it out sometime.\p"
+	.string "We're always looking for\n"
+	.string "more volunteers.$"
+
+
+
+
+
+Route91_Text_HollyIntro:
+	.string "I'm lost. Can you help me find my way?$"
+
+Route91_Text_HollyDefeated:
+	.string "Of course!$"
+
+Route91_Text_HollyPostBattle:
+	.string "I remember now. Heehee.$"
+
+Route91_Text_SousukeIntro:
+	.string "Behold!\n"
+	.string "My secret technique!$"
+
+Route91_Text_SousukeDefeated:
+	.string "Inconceivable!$"
+
+Route91_Text_SousukePostBattle:
+	.string "Secret leaf technique.\n"
+	.string "Silent retreat.$"
+
+Route91_Text_EiichiroIntro:
+	.string "Ha ha! Did I surprise you?$"
+
+Route91_Text_EiichiroDefeated:
+	.string "Uh oh...$"
+
+Route91_Text_EiichiroPostBattle:
+	.string "Calmness of mind, even in defeat.\n"
+	.string "That's my ninja way!$"
+
+Route91_Text_HayaoIntro:
+	.string "Hey, you found me!$"
+
+Route91_Text_HayaoDefeated:
+	.string "You saw right through me.$"
+
+Route91_Text_HayaoPostBattle:
+	.string "How did you know I was hiding here?\n"
+	.string "I need to refine my technique...$"
+
+Route91_Text_YoshiIntro:
+	.string "From the shadows I strike!$"
+
+Route91_Text_YoshiDefeated:
+	.string "Curses. Foiled again.$"
+
+Route91_Text_YoshiPostBattle:
+	.string "You may have beaten me in a\n"
+	.string "POKéMON battle.\p"
+	.string "But you'd stand no chance against\n"
+	.string "me in a ninjutsu competition!$"
+
+Route91_Text_PercivalIntro:
+	.string "Excuse me. Do you know where to\n"
+	.string "find the temple around here?$"
+
+Route91_Text_PercivalDefeated:
+	.string "By Jove!$"
+
+Route91_Text_PercivalPostBattle:
+	.string "My colleagues and I are investigating\n"
+	.string "the temples of ISSHO.\p"
+	.string "I'm here to study VESPER TEMPLE.\p"
+	.string "But I can't seem to locate it...$"
+
+Route91_Text_MacyIntro:
+	.string "Be my sparring partner!$"
+
+Route91_Text_MacyDefeated:
+	.string "Excellent.$"
+
+Route91_Text_MacyPostBattle:
+	.string "The only way to get stronger is\n"
+	.string "to keep fighting strong opponents.$"
+
+
+
+
+
+
+
+
+Route90_Text_NedryIntro:
+	.string "Mwahahahahaha!\n"
+	.string "I finally found it!$"
+
+Route90_Text_NedryDefeated:
+	.string "The rare POKéMON!$"
+
+Route90_Text_NedryPostBattle:
+	.string "What's the secret to finding\n"
+	.string "rare POKéMON, you ask?\p"
+	.string "Mwahahahaha! If I told you that,\n"
+	.string "they wouldn't be rare anymore!$"
+
+Route90_Text_DaveIntro:
+	.string "Hey, hey, where do you think\n"
+	.string "you're going?$"
+
+Route90_Text_DaveDefeated:
+	.string "Hey, what was that?$"
+
+Route90_Text_DavePostBattle:
+	.string "Hey now, I'm just minding my\n"
+	.string "own business here.$"
+
+Route90_Text_BiffIntro:
+	.string "Don't think you can waltz around\n"
+	.string "in my turf!$"
+
+Route90_Text_BiffDefeated:
+	.string "... Dang.$"
+
+Route90_Text_BiffPostBattle:
+	.string "Maybe I should start looking for\n"
+	.string "greener pastures.$"
+
+Route90_Text_EuniceIntro:
+	.string "Evil spirits, begone!$"
+
+Route90_Text_EuniceDefeated:
+	.string "Silence.$"
+
+Route90_Text_EunicePostBattle:
+	.string "Shadow on the peak.\n"
+	.string "DUSK MOUNTAIN whispers softly.\l"
+	.string "Night claims all below.$"
+
+Route90_Text_ReeseIntro:
+	.string "3... 2... 1... Go!$"
+
+Route90_Text_ReeseDefeated:
+	.string "Boom!$"
+
+Route90_Text_ReesePostBattle:
+	.string "You're a real virtuoso, kid!$"
+
+Route90_Text_CorbinIntro:
+	.string "I just juggle whatever I find\n"
+	.string "on the ground.$"
+
+Route90_Text_CorbinDefeated:
+	.string "Oops...$"
+
+Route90_Text_CorbinPostBattle:
+	.string "Juggling can be hard sometimes.\p"
+	.string "Maybe I should try 3 of the\n"
+	.string "same object...$"
+
+Route90_Text_BlayneIntro:
+	.string "How tough are ya?$"
+
+Route90_Text_BlayneDefeated:
+	.string "Pretty tough.$"
+
+Route90_Text_BlaynePostBattle:
+	.string "I'm so tough, I eat nails\n"
+	.string "for breakfast.\p"
+	.string "Without the milk.$"
+
+Route90_Text_KazukiIntro:
+	.string "Not so fast!$"
+
+Route90_Text_KazukiDefeated:
+	.string "My ambush didn't work!$"
+
+Route90_Text_KazukiPostBattle:
+	.string "A ninja must be able to\n"
+	.string "hide even in open places.\p"
+	.string "That's why we conceal ourselves\n"
+	.string "beneath these leaves.$"
+
+Route90_Text_KaisukeIntro:
+	.string "Haha! Bet you weren't expecting me!$"
+
+Route90_Text_KaisukeDefeated:
+	.string "Even with the element of surprise,\n"
+	.string "I couldn't defeat you.$"
+
+Route90_Text_KaisukePostBattle:
+	.string "Advantage isn't everything\n"
+	.string "in a battle.\p"
+	.string "A cunning warrior can turn an\n"
+	.string "opponent's hubris against them.$"
+
+
+
+
+BroadcastTower_Text_MoisheIntro:
+	.string "Watch your step now.$"
+
+BroadcastTower_Text_MoisheDefeated:
+	.string "Wop wop wop.$"
+
+BroadcastTower_Text_MoishePostBattle:
+	.string "So many treasures here!\p"
+	.string "But I can't reach them.\p"
+	.string "It makes me angry!$"
+
+BroadcastTower_Text_HymieIntro:
+	.string "Looking for something, my dear?$"
+
+BroadcastTower_Text_HymieDefeated:
+	.string "Oy vey!$"
+
+BroadcastTower_Text_HymiePostBattle:
+	.string "There are many ways to the\n"
+	.string "bottom of the tower.\p"
+	.string "Try falling through another hole,\n"
+	.string "my dear.$"
+
+
+
+
+
+Route72_Text_BarbaraIntro:
+	.string "A scenic vista. The perfect place\n"
+	.string "for a beautiful battle!$"
+
+Route72_Text_BarbaraDefeated:
+	.string "Magnificent!$"
+
+Route72_Text_BarbaraPostBattle:
+	.string "The winds blow all the smog from\n"
+	.string "PITCHBLAK CITY to the south,\l"
+	.string "so the air is always clear here.\p"
+	.string "And the view to the sea is\n"
+	.string "just... mwah!$"
+
+Route72_Text_RandyIntro:
+	.string "An intrepid young trainer.\n"
+	.string "Or the seasoned beach master.\p"
+	.string "Who will win?$"
+
+Route72_Text_RandyDefeated:
+	@.string "A winner is you!$"
+	.string "Well met, trainer.$"
+
+Route72_Text_RandyPostBattle:
+	@.string "Many people fight to become strong.\p"
+	@.string "But the truly strong fight for those\n"
+	@.string "who can't fight for themselves.$"
+	.string "There are no limits, only plateaus.\n"
+	.string "A man must constantly exceed his level.$"
+
+
+
+
+Route73_Text_NobuoIntro:
+	.string "A true warrior shows no mercy!$"
+
+Route73_Text_NobuoDefeated:
+	.string "No mercy indeed.$"
+
+Route73_Text_NobuoPostBattle:
+	.string "A true warrior knows when\n"
+	.string "to admit defeat.$"
+
+Route73_Text_PeytonIntro:
+	.string "What are you looking at, punk?$"
+
+Route73_Text_PeytonDefeated:
+	.string "Jiminy Kricketot!$"
+
+Route73_Text_PeytonPostBattle:
+	.string "Yeah, I'm a buff guy walking my\n"
+	.string "POKéMON on the beach.\p"
+	.string "What of it?$"
+
+
+
+
+ScarletWoods_North_Text_AspenIntro:
+	.string "Hey now, I'm on my break here.$"
+
+ScarletWoods_North_Text_AspenDefeated:
+	.string "Wasted.$"
+
+ScarletWoods_North_Text_AspenPostBattle:
+	.string "Old folks used to say this\n"
+	.string "forest is cursed.\p"
+	.string "Something about seeing ghosts\n"
+	.string "walk around, I think it was.$"
+
+ScarletWoods_North_Text_HeathIntro:
+	.string "You look a bit turned around.$"
+
+ScarletWoods_North_Text_HeathDefeated:
+	.string "Now I'm all turned around!$"
+
+ScarletWoods_North_Text_HeathPostBattle:
+	.string "This forest confuses everybody\n"
+	.string "on their first trip through.\p"
+	.string "You get used to it.$"
+
+ScarletWoods_North_Text_MorganIntro:
+	.string "We'll test your POKéMON to see\n"
+	.string "if they're buff and tough.$"
+
+ScarletWoods_North_Text_MorganDefeated:
+	.string "Looks like you pass.$"
+
+ScarletWoods_North_Text_MorganPostBattle:
+	.string "You still have a long way\n"
+	.string "to go yet.\p"
+	.string "Make sure you're stocked up\n"
+	.string "and prepared.$"
+
+ScarletWoods_North_Text_ConnorIntro:
+	.string "Hey you aren't lost, are you?$"
+
+ScarletWoods_North_Text_ConnorDefeated:
+	.string "Okay.$"
+
+ScarletWoods_North_Text_ConnorPostBattle:
+	.string "The trick to navigating\n"
+	.string "these woods?\p"
+	.string "Act like you're walking\n"
+	.string "in a circle.$"
+
+ScarletWoods_North_Text_ZeldaIntro:
+	.string "Something's amiss here!\n"
+	.string "I'm sure of it!$"
+
+ScarletWoods_North_Text_ZeldaDefeated:
+	.string "Could it be...?$"
+
+ScarletWoods_North_Text_ZeldaPostBattle:
+	.string "Spirits of lost souls...\p"
+	.string "But why would they linger here?$"
+
+
+
+
+
+
+
+ScarletWoods_South_Text_RamieIntro:
+	.string "What's up with this place?$"
+
+ScarletWoods_South_Text_RamieDefeated:
+	.string "Geez oh man.$"
+
+ScarletWoods_South_Text_RamiePostBattle:
+	.string "This forest really gives me\n"
+	.string "the creeps.\p"
+	.string "I thought there'd be rare\n"
+	.string "BUG POKéMON here...$"
+
+ScarletWoods_South_Text_BerniceIntro:
+	.string "Did you know this forest is enchanted?$"
+
+ScarletWoods_South_Text_BerniceDefeated:
+	.string "Tee hee hee.$"
+
+ScarletWoods_South_Text_BernicePostBattle:
+	.string "Another one finds it way into\n"
+	.string "my grasp. How marvelous!$"
+
+ScarletWoods_South_Text_GertrudeIntro:
+	.string "I'll hold you tight and never\n"
+	.string "let go!$"
+
+ScarletWoods_South_Text_GertrudeDefeated:
+	.string "How magical!$"
+
+ScarletWoods_South_Text_GertrudePostBattle:
+	.string "Getting out of here isn't as\n"
+	.string "easy as you thought, huh?\p"
+	.string "Maybe you should try retracing\n"
+	.string "your steps.$"
+
+
+
+
+
+
+
+MtShiro_NorthCave_Text_TylerIntro:
+	.string "This ain't no ordinary cave,\n"
+	.string "says I.$"
+
+MtShiro_NorthCave_Text_TylerDefeated:
+	.string "Woah now.$"
+
+MtShiro_NorthCave_Text_TylerPostBattle:
+	.string "This cave is a lot deeper\n"
+	.string "than it looks.\p"
+	.string "It connects all the way to\n"
+	.string "the bowels of MT SHIRO.$"
+
+MtShiro_NorthCave_Text_IngridIntro:
+	.string "Do you wanna have\n"
+	.string "a good time?$"
+
+MtShiro_NorthCave_Text_IngridDefeated:
+	.string "Fahrvergnugen.$"
+
+MtShiro_NorthCave_Text_IngridPostBattle:
+	.string "Ugh. I pizzaed when\n"
+	.string "I should have french fried.$"
+
+MtShiro_EastCave_Text_EarlIntro:
+	.string "I can't believe I'm stuck here.$"
+
+MtShiro_EastCave_Text_EarlDefeated:
+	.string "How exhausting.$"
+
+MtShiro_EastCave_Text_EarlPostBattle:
+	.string "It's no use going down there.\p"
+	.string "There's no way around those\n"
+	.string "ice blocks.\p"
+	.string "Not unless you got a POKéMON\n"
+	.string "that can melt 'em.$"
+
+
+
+
+
+
+
+Route77_Text_ZoeAndRossIntro:
+	.string "Check out our brother-sister combo!$"
+
+Route77_Text_ZoeAndRossNotEnoughMons:
+	.string "You can't battle us with\n"
+	.string "only one POKéMON!$"
+
+Route77_Text_ZoeAndRossDefeated:
+	.string "Looks like we need to practice more.$"
+
+Route77_Text_ZoePostBattle:
+	.string "I'm teaching my brother here\n"
+	.string "how to swim.\p"
+	.string "But it's not going so well...$"
+
+Route77_Text_RossPostBattle:
+	.string "Who cares about swimming?\n"
+	.string "Let's have another POKéMON battle!$"
+
+Route77_Text_RalphIntro:
+	.string "Behold our DIVE technique!$"
+
+Route77_Text_RalphDefeated:
+	.string "Not again!$"
+
+Route77_Text_RalphPostBattle:
+	.string "Sometimes you'll see dark patches\n"
+	.string "of water.\p"
+	.string "If your POKéMON knows DIVE, you can use\n"
+	.string "it there to explore underwater.$"
+
+Route77_Text_BonnieIntro:
+	.string "On your mark. Get set. Go!$"
+
+Route77_Text_BonnieDefeated:
+	.string "Great job!$"
+
+Route77_Text_BonniePostBattle:
+	.string "Flip turn.\n"
+	.string "And back again.$"
+
+
+
+
+
+
+
+
+
+ShamrockIsle_Interior_Text_GaleIntro:
+	.string "Mwahahahaha!\n"
+	.string "I'll mimic your every move!$"
+
+ShamrockIsle_Interior_Text_GaleDefeated:
+	.string "Curses! Foiled again!$"
+
+ShamrockIsle_Interior_Text_GalePostBattle:
+	.string "There are supposed to be rare bugs here.\p"
+	.string "Where could they be?$"
+
+ShamrockIsle_Interior_Text_TheoIntro:
+	.string "No, no, no, no, no, no.\n"
+	.string "You're doing it all wrong!\p"
+	.string "Here, let me show you.$"
+
+ShamrockIsle_Interior_Text_TheoDefeated:
+	.string "That's more like it.$"
+
+ShamrockIsle_Interior_Text_TheoPostBattle:
+	.string "This place is a wildlife sanctuary.\p"
+	.string "There are rare POKéMON here that\n"
+	.string "you can't find anywhere else!$"
+
+ShamrockIsle_Interior_Text_JoaquinIntro:
+	.string "Ugh, I think I got water\n"
+	.string "in my shoes.$"
+
+ShamrockIsle_Interior_Text_JoaquinDefeated:
+	.string "Bogged down.$"
+
+ShamrockIsle_Interior_Text_JoaquinPostBattle:
+	.string "The ground here is so muddy.\p"
+	.string "I knew I should've worn boots...$"
+
+ShamrockIsle_Interior_Text_NevilleIntro:
+	.string "I've got bees in my brain!$"
+
+ShamrockIsle_Interior_Text_NevilleDefeated:
+	.string "Bzzzzzt.$"
+
+ShamrockIsle_Interior_Text_NevillePostBattle:
+	.string "Just bee yourself!$"
+
+
+
+
+
+
+
+
+
+
+Route76_Text_SashaIntro:
+	.string "Hey, you're breaking my concentration!$"
+
+Route76_Text_SashaDefeated:
+	.string "Aw shucks.$"
+
+Route76_Text_SashaPostBattle:
+	.string "It's not easy to juggle calamari.$"
+
+Route76_Text_MalachiIntro:
+	.string "Out here all day and no luck.$"
+
+Route76_Text_MalachiDefeated:
+	.string "No luck battling either.$"
+
+Route76_Text_MalachiPostBattle:
+	.string "Fishing is not a hobby for\n"
+	.string "the impatient.$"
+
+Route76_Text_SwainIntro:
+	.string "Come test your might!$"
+
+Route76_Text_SwainDefeated:
+	.string "By the Trinity!$"
+
+Route76_Text_SwainPostBattle:
+	.string "Even the mightiest must know\n"
+	.string "how to admit defeat.$"
+
+Route76_Text_VeronicaIntro:
+	.string "Care to test your strength\n"
+	.string "against a little elegance?$"
+
+Route76_Text_VeronicaDefeated:
+	.string "No way!$"
+
+Route76_Text_VeronicaPostBattle:
+	.string "You won't believe how I met this guy.$"
+
+
+
+
+
+
+
+
+Route75_Text_AudreyIntro:
+	.string "You're riding a POKéMON.\n"
+	.string "Don't you know how to swim?$"
+
+Route75_Text_AudreyDefeated:
+	.string "Eep!$"
+
+Route75_Text_AudreyPostBattle:
+	.string "Swimming is easy!\n"
+	.string "You should give it a shot!$"
+
+Route75_Text_AndersIntro:
+	.string "Huff, huff... I'm almost there.$"
+
+Route75_Text_AndersDefeated:
+	.string "On the bright side, I passed\n"
+	.string "the baton to you.$"
+
+Route75_Text_AndersPostBattle:
+	.string "When you've come this far, don't look back.\p"
+	.string "But that doesn't mean you can't remember\n"
+	.string "what drives you forward.$"
+
+Route75_Text_MurielIntro:
+	.string "Not so fast, kiddo!$"
+
+Route75_Text_MurielDefeated:
+	.string "Hohohohoho.$"
+
+Route75_Text_MurielPostBattle:
+	.string "I'm too old to be afraid of things.\n"
+	.string "I would rather live life in the moment!$"
+
+
+
+
+
+
+
+
+Route74_Text_RhiannonIntro:
+	.string "Three down. Five to go.$"
+
+Route74_Text_RhiannonDefeated:
+	.string "Back to square one.$"
+
+Route74_Text_RhiannonPostBattle:
+	.string "Every day is a new challenge.\p"
+	.string "Every day we can try to be a\n"
+	.string "little bit better.$"
+
+Route74_Text_BettyIntro:
+	.string "My POKéMON are rough and tough\n"
+	.string "and ready to go!$"
+
+Route74_Text_BettyDefeated:
+	.string "Looks like you out-muscled us.$"
+
+Route74_Text_BettyPostBattle:
+	.string "I grew up with three brothers.\n"
+	.string "Don't worry about it.$"
+
+Route74_Text_RavenIntro:
+	.string "I shall predict your every move.$"
+
+Route74_Text_RavenDefeated:
+	.string "This wasn't the future I saw!$"
+
+Route74_Text_RavenPostBattle:
+	.string "Nothing is set in stone.\n"
+	.string "Never forget that.$"
+
+Route74_Text_CrystalIntro:
+	.string "Show me what you got!$"
+
+Route74_Text_CrystalDefeated:
+	.string "That's the stuff!$"
+
+Route74_Text_CrystalPostBattle:
+	.string "Do you like POKéMON because\n"
+	.string "they're strong?\p"
+	.string "Or is there some other reason?$"
+
+Route74_Text_BrommIntro:
+	.string "Let's get dangerous!$"
+
+Route74_Text_BrommDefeated:
+	.string "No way!$"
+
+Route74_Text_BrommPostBattle:
+	.string "POKéMON are beasts to be bred for battle!\p"
+	.string "A POKéMON that can't fight is worthless!$"
+
+Route74_Text_SewardIntro:
+	.string "We're on a winning streak and\n"
+	.string "about to set a new record!$"
+
+Route74_Text_SewardDefeated:
+	.string "You sunk our ambitions.$"
+
+Route74_Text_SewardPostBattle:
+	.string "You wanna see me swim to the\n"
+	.string "ocean floor and back?\p"
+	.string "\p"
+	.string "You wanna see me do it again?$"
+
+Route74_Text_DunstanIntro:
+	.string "Agh! I got water in my goggles!$"
+
+Route74_Text_DunstanDefeated:
+	.string "Waterlogged.$"
+
+Route74_Text_DunstanPostBattle:
+	.string "You wanna the trick to get water\n"
+	.string "out of your ears?\p"
+	.string "Use rubbing alcohol.$"
+
+Route74_Text_FrancineIntro:
+	.string "Excuse me. Do you know the way\n"
+	.string "to TURQUOISE CITY?$"
+
+Route74_Text_FrancineDefeated:
+	.string "We're all washed up.$"
+
+Route74_Text_FrancinePostBattle:
+	.string "These island chains are confusing.\p"
+	.string "I get lost trying to find anything.$"
+
+
+
+
+
+
+
+
+
+
+SunkenIsle_Exterior_Text_FinnIntro:
+	.string "You call that swimming!?\n"
+	.string "Come on, give me ten laps!$"
+
+SunkenIsle_Exterior_Text_FinnDefeated:
+	.string "Now that's more like it!$"
+
+SunkenIsle_Exterior_Text_FinnPostBattle:
+	.string "Form matters more than strength\n"
+	.string "when it comes to swimming.\p"
+	.string "Make sure your POKéMON know that too!$"
+
+SunkenIsle_Exterior_Text_DeirdreIntro:
+	.string "You're not lost at sea, are you?$"
+
+SunkenIsle_Exterior_Text_DeirdreDefeated:
+	.string "My goodness!$"
+
+SunkenIsle_Exterior_Text_DeirdrePostBattle:
+	.string "There are so many islands\n"
+	.string "in the sea of ISSHO.\p"
+	.string "It's easy to get lost when\n"
+	.string "you're looking for one.$"
+
+SunkenIsle_Exterior_Text_KillianIntro:
+	.string "Have you heard the tale of\n"
+	.string "the prince of the sea?$"
+
+SunkenIsle_Exterior_Text_KillianDefeated:
+	.string "That's a wrap.$"
+
+SunkenIsle_Exterior_Text_KillianPostBattle:
+	.string "Long ago, the prince of the sea used its\n"
+	.string "power to prevent a natural disaster here.\p"
+	.string "Many islands were saved, but one of them\n"
+	.string "sank into the ocean as a result.$"
+
+SunkenIsle_Exterior_Text_BrandyIntro:
+	.string "Do you know how to get to\n"
+	.string "the sunken island?$"
+
+SunkenIsle_Exterior_Text_BrandyDefeated:
+	.string "Oh phooey.$"
+
+SunkenIsle_Exterior_Text_BrandyPostBattle:
+	.string "There's supposed to be an island around\n"
+	.string "where everything but the trees is underwater.\p"
+	.string "I wonder how it got like that.$"
+
+SunkenIsle_Exterior_Text_DesmondIntro:
+	.string "Let's make a splash!$"
+
+SunkenIsle_Exterior_Text_DesmondDefeated:
+	.string "Too much!$"
+
+SunkenIsle_Exterior_Text_DesmondPostBattle:
+	.string "We ride or we die!$"
+
+SunkenIsle_Exterior_Text_CascaIntro:
+	.string "I wish I were, I wish I were\n"
+	.string "a WATER POKéMON!$"
+
+SunkenIsle_Exterior_Text_CascaDefeated:
+	.string "Gulp gulp gulp.$"
+
+SunkenIsle_Exterior_Text_CascaPostBattle:
+	.string "It must be so nice to breath\n"
+	.string "underwater...$"
+
+
+
+
+
+
+
+
+Route73_Text_FlynnIntro:
+	.string "Check out my hot bod.$"
+
+Route73_Text_FlynnDefeated:
+	.string "We couldn't cut it.$"
+
+Route73_Text_FlynnPostBattle:
+	.string "Swimming is a full body workout.\p"
+	.string "Try it some time!$"
+
+Route73_Text_CoralIntro:
+	.string "Did you come here to see the islands?$"
+
+Route73_Text_CoralDefeated:
+	.string "Glub glub glub...$"
+
+Route73_Text_CoralPostBattle:
+	.string "There's something soothing about\n"
+	.string "being in the water.\p"
+	.string "Don't you agree?$"
+
+Route73_Text_RydenIntro:
+	.string "The wind is on our side today!$"
+
+Route73_Text_RydenDefeated:
+	.string "Maybe not.$"
+
+Route73_Text_RydenPostBattle:
+	.string "Clear skies with a light breeze\n"
+	.string "from the southwest.\p"
+	.string "The perfect weather for flying!$"
+
+Route73_Text_HowardIntro:
+	.string "Attack from the port side!$"
+
+Route73_Text_HowardDefeated:
+	.string "Mayday mayday...$"
+
+Route73_Text_HowardPostBattle:
+	.string "Hmmm. The charts say there's supposed\n"
+	.string "to be an island around here.\p"
+	.string "Could something have happened to it?$"
+
+Route73_Text_DallasIntro:
+	.string "Are you having a go, matey?$"
+
+Route73_Text_DallasDefeated:
+	.string "Not a chance!$"
+
+Route73_Text_DallasPostBattle:
+	.string "Red skies by night, sailor's delight.\p"
+	.string "Red skies by morning, sailor take warning.$"
+
+Route73_Text_SusanIntro:
+	.string "Excuse me, I'm trying to sunbathe here.$"
+
+Route73_Text_SusanDefeated:
+	.string "You're blocking my sun!$"
+
+Route73_Text_SusanPostBattle:
+	.string "I knew I should've brought more sunscreen.$"
+
+Route73_Text_LearyIntro:
+	.string "Hey, I got one!$"
+
+Route73_Text_LearyDefeated:
+	.string "That's not what I wanted!$"
+
+Route73_Text_LearyPostBattle:
+	.string "Cast many hooks.\n"
+	.string "You never know what you'll find!$"
+
+Route73_Text_SeamusIntro:
+	.string "I am the master baiter.$"
+
+Route73_Text_SeamusDefeated:
+	.string "Blew my shot.$"
+
+Route73_Text_SeamusPostBattle:
+	.string "Have you been to DUN TOWN?\p"
+	.string "They've got the best rods in\n"
+	.string "all of ISSHO.$"
+
+Route73_Text_RoddyIntro:
+	.string "You're in my house now!$"
+
+Route73_Text_RoddyDefeated:
+	.string "Oooh yeaah!$"
+
+Route73_Text_RoddyPostBattle:
+	.string "There's nothing like training\n"
+	.string "on your own private beach.$"
+
+
+
+
+
+
+
+
+
+Route89_Text_ArleyIntro:
+	.string "Just two more laps to go!$"
+
+Route89_Text_ArleyDefeated:
+	.string "Ugh. Cramp.$"
+
+Route89_Text_ArleyPostBattle:
+	.string "Always remember to stay hydrated\n"
+	.string "and keep your electrolytes up.$"
+
+Route89_Text_MillieIntro:
+	.string "Let me teach you how to breaststroke.$"
+
+Route89_Text_MillieDefeated:
+	.string "It goes like this.$"
+
+Route89_Text_MilliePostBattle:
+	.string "Breathe. Pull. Kick. Then glide.$"
+
+
+
+
+
+
+
+Route71_Text_BaileyIntro:
+	.string "Help! I've been marooned!$"
+
+Route71_Text_BaileyDefeated:
+	.string "SOS. Send out SURF.$"
+
+Route71_Text_BaileyPostBattle:
+	.string "Oh yeah. I forgot I could just\n"
+	.string "fly back to PITCHBLAK CITY.$"
+
+Route71_Text_CadmonIntro:
+	.string "I want to get away!\n"
+	.string "I want to get away!$"
+
+Route71_Text_CadmonDefeated:
+	.string "I wanna FLYYYYYYY away!$"
+
+Route71_Text_CadmonPostBattle:
+	.string "Yeah, yeah, yeah.\n"
+	.string "I know I can't sing.$"
+
+Route71_Text_ShanksIntro:
+	.string "Hold on, the tide's coming in!$"
+
+Route71_Text_ShanksDefeated:
+	.string "There she blows!$"
+
+Route71_Text_ShanksPostBattle:
+	.string "Be careful. It rough seas out here.$"
+
+Route71_Text_KellyIntro:
+	.string "This place makes me dizzy.$"
+
+Route71_Text_KellyDefeated:
+	.string "Now where was I?$"
+
+Route71_Text_KellyPostBattle:
+	.string "Oh dear. It seems I've gotten\n"
+	.string "turned around again.$"
+
+Route71_Text_JakeIntro:
+	.string "These ocean currents can't slow me down!$"
+
+Route71_Text_JakeDefeated:
+	.string "But that might.$"
+
+Route71_Text_JakePostBattle:
+	.string "Have you ever tried swimming\n"
+	.string "against the current?\p"
+	.string "It's harder than it looks!$"
+
+
+
+
+
+
+
+
+Route70_Text_SigmundIntro:
+	.string "Can you hear the voices?$"
+
+Route70_Text_SigmundDefeated:
+	.string "The voice in the air.$"
+
+Route70_Text_SigmundPostBattle:
+	.string "I hear the voices now. They're\n"
+	.string "whispering to their friends in space.$"
+
+Route70_Text_EustaceIntro:
+	.string "I'm on a 30 year winning streak!$"
+
+Route70_Text_EustaceDefeated:
+	.string "All good things must come to an end.$"
+
+Route70_Text_EustacePostBattle:
+	.string "Losing just means you still\n"
+	.string "have more to learn.\p"
+	.string "Why, I'm still learning things even\n"
+	.string "at my old age!$"
+
+Route70_Text_AdrianIntro:
+	.string "This harsh environment is the\n"
+	.string "perfect place to train!$"
+
+Route70_Text_AdrianDefeated:
+	.string "I bow my head in defeat.$"
+
+Route70_Text_AdrianPostBattle:
+	.string "Do you live to fight?\n"
+	.string "Or fight to live?$"
+
+Route70_Text_XenaIntro:
+	.string "Only the strongest trainers survive here.\n"
+	.string "I'll put you to the test!$"
+
+Route70_Text_XenaDefeated:
+	.string "Strength indeed.$"
+
+Route70_Text_XenaPostBattle:
+	.string "You're no normal trainer to come here.\p"
+	.string "This strength you're seeking.\n"
+	.string "What makes you pursue it?$"
+
+Route70_Text_CasperIntro:
+	.string "For my next trick, I shall make\n"
+	.string "your POKéMON disappear!$"
+
+Route70_Text_CasperDefeated:
+	.string "Not like that!$"
+
+Route70_Text_CasperPostBattle:
+	.string "Just because something isn't real doesn't\n"
+	.string "mean you can't fool people with it.\p"
+	.string "That's the real magic spell!$"
+
+Route70_Text_WrenIntro:
+	.string "Does our unseen power frighten you?$"
+
+Route70_Text_WrenDefeated:
+	.string "How scary!$"
+
+Route70_Text_WrenPostBattle:
+	.string "Fear of the unknown.\p"
+	.string "For many people, that's the scariest thing.$"
+
+Route70_Text_AshmundIntro:
+	.string "Watch your step!\n"
+	.string "It's dangerous here!$"
+
+Route70_Text_AshmundDefeated:
+	.string "Too much!$"
+
+Route70_Text_AshmundPostBattle:
+	.string "Lava is so hot, even the air around\n"
+	.string "it is dangerous.\p"
+	.string "Just because you can't see it\n"
+	.string "doesn't mean it can't burn you!$"
+
+Route70_Text_EdithIntro:
+	.string "Our spirits are all fired up!\n"
+	.string "Can you take us on?$"
+
+Route70_Text_EdithDefeated:
+	.string "I see now.$"
+
+Route70_Text_EdithPostBattle:
+	.string "Why do we fall?\p"
+	.string "To learn how to pick ourselves\n"
+	.string "back up, of course.$"
+
+Route70_Text_AlphonseIntro:
+	.string "I predict this will be a cinch.$"
+
+Route70_Text_AlphonseDefeated:
+	.string "A cinch for you, that is.$"
+
+Route70_Text_AlphonsePostBattle:
+	.string "Looking into the future is boring.\n"
+	.string "It's more fun to live in the moment.$"
+
+
+
+
+
+
+
+
+Sandshraf_Text_WilmaIntro:
+	.string "Ufufufufu!\n"
+	.string "I'm simply mad about games!$"
+
+Sandshraf_Text_WilmaDefeated:
+	.string "Marvelous, kiddo!$"
+
+Sandshraf_Text_WilmaPostBattle:
+	.string "Ufufufufu! You've got to keep on\n"
+	.string "your toes in this game!\p"
+	.string "The sand's always shifting{EMOJI_TILDE}\n"
+	.string "The ground's always rifting{EMOJI_TILDE}$"
+
+
+
+
+
+
+
+
+
+SteelMill_Text_HansIntro:
+	.string "Hey kid!\n"
+	.string "This ain't no playground!$"
+
+SteelMill_Text_HansDefeated:
+	.string "Ach!$"
+
+SteelMill_Text_HansPostBattle:
+	.string "An assembly line is no place\n"
+	.string "for children.\p"
+	.string "These machines aren't toys, you hear?\p"
+	.string "They're dangerous!$"
+
+SteelMill_Text_BernardIntro:
+	.string "Let's go! Double time!$"
+
+SteelMill_Text_BernardDefeated:
+	.string "Aaand stop!$"
+
+SteelMill_Text_BernardPostBattle:
+	.string "You know, this place wasn't always\n"
+	.string "in bad shape like this.\p"
+	.string "We used to make timber into construction\n"
+	.string "materials for the whole ISSHO region!$"
+
+SteelMill_Text_KlausIntro:
+	.string "Do you know about the secret room?$"
+
+SteelMill_Text_KlausDefeated:
+	.string "Scheibenkleister.$"
+
+SteelMill_Text_KlausPostBattle:
+	.string "In the basement, the old foreman had a\n"
+	.string "secret room installed.\p"
+	.string "No one was allowed in, so no one knows\n"
+	.string "what was actually inside it.\p"
+	.string "All I do know is that\n"
+	.string "in all these years since,\l"
+	.string "that door hasn't been opened once!$"
+
+SteelMill_Text_OttoIntro:
+	.string "You're not a thief, are you?$"
+
+SteelMill_Text_OttoDefeated:
+	.string "Och.$"
+
+SteelMill_Text_OttoPostBattle:
+	.string "This place may be a junkyard now.\p"
+	.string "But I still can't bear to watch all manner\n"
+	.string "of miscreants desecrate its legacy!$"
+
+
+
+
+
+
+
+
+
+
+Route68_Text_LloydIntro:
+	.string "Just one more lap to go!$"
+
+Route68_Text_LloydDefeated:
+	.string "New record!$"
+
+Route68_Text_LloydPostBattle:
+	.string "Not now, can't you see I'm training?$"
+
+Route68_Text_DianeIntro:
+	.string "Oh, you're not a WATER type POKéMON.$"
+
+Route68_Text_DianeDefeated:
+	.string "What a shame.$"
+
+Route68_Text_DianePostBattle:
+	.string "I love the ocean!\n"
+	.string "It's like a giant swimming pool.$"
+
+Route68_Text_StacyIntro:
+	.string "Check it out. The view here is gorgeous!$"
+
+Route68_Text_StacyDefeated:
+	.string "Oh foo.$"
+
+Route68_Text_StacyPostBattle:
+	.string "Sigh.\n"
+	.string "If only there were a luxury hotel here.$"
+
+Route68_Text_SladeIntro:
+	.string "My POKéMON will tear you apart!$"
+
+Route68_Text_SladeDefeated:
+	.string "Not like that!$"
+
+Route68_Text_SladePostBattle:
+	.string "Hey kid. Seen any rare\n"
+	.string "POKéMON around here?$"
+
+Route68_Text_TannerIntro:
+	.string "It's a dangerous road to WISTERIA CITY.\p"
+	.string "I'll check to make sure you and\n"
+	.string "your POKéMON are prepared.$"
+
+Route68_Text_TannerDefeated:
+	.string "Looks like you can handle yourself.$"
+
+Route68_Text_TannerPostBattle:
+	.string "Be careful. WISTERIA CITY is not\n"
+	.string "exactly a friendly place.\p"
+	.string "You meet all kinds of\n"
+	.string "shady people there.$"
+
+Route68_Text_JudithIntro:
+	.string "Hmm, let's see. Did I miss any\n"
+	.string "POKéMON on this route?$"
+
+Route68_Text_JudithDefeated:
+	.string "Aaand done.$"
+
+Route68_Text_JudithPostBattle:
+	.string "Did you know some species of\n"
+	.string "POKéMON are endangered?\p"
+	.string "And not just from poaching either.\p"
+	.string "Habitat encroachment is\n"
+	.string "a serious problem.\p"
+	@.string "It's important to remember that we\n"
+	@.string "share the planet with.$"
+	.string "If left unchecked, all the wild POKéMON\n"
+	.string "would have no place left to live.\p"
+	.string "And who would want to live in\n"
+	.string "a world like that?$"
+
+Route68_Text_WoodyIntro:
+	.string "Woah now, what's the hurry?$"
+
+Route68_Text_WoodyDefeated:
+	.string "Over already?$"
+
+Route68_Text_WoodyPostBattle:
+	.string "Life's too short to rush through\n"
+	.string "everything.\p"
+	.string "Take some time to see the forest\n"
+	.string "for the trees!$"
+
+Route68_Text_EoghanIntro:
+	.string "Hey now, don't scare the fish!$"
+
+Route68_Text_EoghanDefeated:
+	.string "Another got away...$"
+
+Route68_Text_EoghanPostBattle:
+	.string "The key to fishing is patience.$"
+
+Route68_Text_CooperIntro:
+	.string "Scuse me. Do you know the way\n"
+	.string "to WISTERIA CITY?$"
+
+Route68_Text_CooperDefeated:
+	.string "Figures...$"
+
+Route68_Text_CooperPostBattle:
+	.string "These caverns have me all confused.\n"
+	.string "Which one did I come out of again?$"
+
+Route68_Text_CirceIntro:
+	.string "Ha!\n"
+	.string "Face-to-foot style!$"
+
+Route68_Text_CirceDefeated:
+	.string "How'd ya like it?$"
+
+Route68_Text_CircePostBattle:
+	.string "I think my technique needs some work.$"
+
+Route68_Text_QuillenIntro:
+	.string "Are you perhaps the chosen one?$"
+
+Route68_Text_QuillenDefeated:
+	.string "Hmmm...$"
+
+Route68_Text_QuillenPostBattle:
+	.string "Nevermind, it seems I was mistaken.$"
+
+
+
+
+
+Route67_Text_ZedIntro:
+	.string "Where do you think you're going, kid?$"
+
+Route67_Text_ZedDefeated:
+	.string "Alright, enough already!$"
+
+Route67_Text_ZedPostBattle:
+	.string "Just so you know, the rest of\n"
+	.string "my gang is in town.\p"
+	.string "We don't want any troublemakers\n"
+	.string "around here.\p"
+	.string "So don't go lookin' for trouble,\n"
+	.string "capiche?$"
+
+Route67_Text_YuriIntro:
+	.string "I'm a rough and tumblin' kinda guy!$"
+
+Route67_Text_YuriDefeated:
+	.string "Shoulda stayed in school.$"
+
+Route67_Text_YuriPostBattle:
+	.string "Eh, you aren't worth it.$"
+
+Route67_Text_VelmaIntro:
+	.string "Careful. I have a mean streak.$"
+
+Route67_Text_VelmaDefeated:
+	.string "This wasn't supposed to happen!$"
+
+Route67_Text_VelmaPostBattle:
+	.string "You're good. But my boyfriend could\n"
+	.string "totally beat you in a fist fight.$"
+
+Route67_Text_BuzzIntro:
+	.string "Are these falls something or what?$"
+
+Route67_Text_BuzzDefeated:
+	.string "No good.$"
+
+Route67_Text_BuzzPostBattle:
+	.string "Getting to this place ain't easy,\n"
+	.string "let me tell ya.$"
+
+Route67_Text_FayeIntro:
+	.string "This city is so drab.\n"
+	.string "Let's liven things up a bit!$"
+
+Route67_Text_FayeDefeated:
+	.string "That's more like it!$"
+
+Route67_Text_FayePostBattle:
+	.string "Apparently most of WISTERIA CITY\n"
+	.string "is deserted now.\p"
+	.string "Now it's just thugs and other\n"
+	.string "lowlifes.$"
+
+
+
+
+
+
+
+
+Route66_Text_GlennIntro:
+	.string "Gah! I've got to find it!$"
+
+Route66_Text_GlennDefeated:
+	.string "The rare POKéMON!$"
+
+Route66_Text_GlennPostBattle:
+	.string "Hmm. It must be here somewhere.\p"
+	.string "Maybe if I tried going\n"
+	.string "deeper underground?$"
+
+Route66_Text_LesterIntro:
+	.string "It's still a long way up the mountain.\n"
+	.string "Why don't you sit a spell?$"
+
+Route66_Text_LesterDefeated:
+	.string "Hohoho!$"
+
+Route66_Text_LesterPostBattle:
+	.string "DUSK MOUNTAIN is a dangerous place.\p"
+	.string "They say the POKéMON get stronger\n"
+	.string "the higher up you go.$"
+
+Route66_Text_YvonneIntro:
+	.string "Won't you be my friend?$"
+
+Route66_Text_YvonneDefeated:
+	.string "Hehehehehe.$"
+
+Route66_Text_YvonnePostBattle:
+	.string "Let's be friends forever.$"
+
+
+
+
+
+
+
+
+
+
+DuskMountain_Text_CurtIntro:
+	.string "This place is not as it seems.$"
+
+DuskMountain_Text_CurtDefeated:
+	.string "Strength beyond your years.$"
+
+DuskMountain_Text_CurtPostBattle:
+	.string "How do you follow that which\n"
+	.string "cannot be seen?\p"
+	.string "With your wits, of course.$"
+
+DuskMountain_Text_OlgaIntro:
+	.string "You won't even see us coming!$"
+
+DuskMountain_Text_OlgaDefeated:
+	.string "Looks like you saw through us after all.$"
+
+DuskMountain_Text_OlgaPostBattle:
+	.string "It takes a sharp mind to fight\n"
+	.string "in an invisible arena.$"
+
+DuskMountain_Text_TristanIntro:
+	.string "Witness power like you've never\n"
+	.string "seen before!$"
+
+DuskMountain_Text_TristanDefeated:
+	.string "Inconceivable!$"
+
+DuskMountain_Text_TristanPostBattle:
+	.string "DUSK MOUNTAIN is home to some rare\n"
+	.string "and powerful POKéMON.\p"
+	.string "They get even stronger\n"
+	.string "the deeper you go.$"
+
+
+
+
+
+
+
+
+
+
+Route99_Text_AvaAndBartIntro:
+	.string "When we're together, we can't lose!$"
+
+Route99_Text_AvaAndBartNotEnoughMons:
+	.string "You only have one POKéMON?\p"
+	.string "You can't face our brother-sister\n"
+	.string "combo like that!$"
+
+Route99_Text_AvaAndBartDefeated:
+	.string "Our brother-sister combo!$"
+
+Route99_Text_AvaPostBattle:
+	.string "My brother is also my swimming coach.\p"
+	.string "He watches me swim whether\n"
+	.string "he wants to or not.$"
+
+Route99_Text_BartPostBattle:
+	.string "I'm sick of floating out here.\n"
+	.string "Can we go back to the beach now?$"
+
+Route99_Text_KennethIntro:
+	.string "Woah! You get a line, I'll get\n"
+	.string "a pole, matey!$"
+
+Route99_Text_KennethDefeated:
+	.string "You get a line, I'll get a pole, friend!$"
+
+Route99_Text_KennethPostBattle:
+	.string "You get a line, I'll get a pole!\n"
+	.string "We'll go fishin' in that CRAWDAUNT hole!\l"
+	.string "Buddy, pal o' mine!$"
+
+Route99_Text_NatalieIntro:
+	.string "You'll pay for breaking my concentration!$"
+
+Route99_Text_NatalieDefeated:
+	.string "Not like this!$"
+
+Route99_Text_NataliePostBattle:
+	.string "There's nothing more calming than\n"
+	.string "meditating on a beach.$"
+
+Route99_Text_ApolloIntro:
+	.string "Left, right, left, right.\n"
+	.string "Now flip turn!$"
+
+Route99_Text_ApolloDefeated:
+	.string "Break time!$"
+
+Route99_Text_ApolloPostBattle:
+	.string "Training for a triathlon isn't easy.\n"
+	.string "It's like three races in a row.$"
+
+Route99_Text_MoiraIntro:
+	.string "Let's practice our form!$"
+
+Route99_Text_MoiraDefeated:
+	.string "Not too shabby.$"
+
+Route99_Text_MoiraPostBattle:
+	.string "Nothing is too hard if you\n"
+	.string "put your mind to it.$"
+
+
+
+
+
+
+
+
+
+
+
+
+IsshoVictoryRoad_Text_ChettIntro:
+	.string "Your ZANGOOSE is cooked!$"
+
+IsshoVictoryRoad_Text_ChettDefeated:
+	.string "Done like dinner.$"
+
+IsshoVictoryRoad_Text_ChettPostBattle:
+	.string "Man, this cave is long.\n"
+	.string "I'm starting to get hungry...$"
+
+IsshoVictoryRoad_Text_CourtneyIntro:
+	.string "VICTORY ROAD isn't a playground\n"
+	.string "for kids, you know.\p"
+	.string "Are you sure you belong here?$"
+
+IsshoVictoryRoad_Text_CourtneyDefeated:
+	.string "Hey, hold on now!$"
+
+IsshoVictoryRoad_Text_CourtneyPostBattle:
+	.string "VICTORY ROAD is long and filled\n"
+	.string "with powerful trainers.\p"
+	.string "I'd expect nothing less from the\n"
+	.string "final stairway to the LEAGUE.$"
+
+IsshoVictoryRoad_Text_BradIntro:
+	.string "You are not prepared!$"
+
+IsshoVictoryRoad_Text_BradDefeated:
+	.string "I guess I'm the one who wasn't\n"
+	.string "prepared for you.$"
+
+IsshoVictoryRoad_Text_BradPostBattle:
+	.string "VICTORY ROAD is longer than I thought.\n"
+	.string "I knew I should've brought more items.$"
+
+IsshoVictoryRoad_Text_KimberlyIntro:
+	.string "I'll use you as a warmup for\n"
+	.string "my LEAGUE challenge.$"
+
+IsshoVictoryRoad_Text_KimberlyDefeated:
+	.string "This wasn't supposed to happen!$"
+
+IsshoVictoryRoad_Text_KimberlyPostBattle:
+	.string "It looks like I still have a lot to learn.$"
+
+IsshoVictoryRoad_Text_LandonIntro:
+	.string "I think I'm lost again.$"
+
+IsshoVictoryRoad_Text_LandonDefeated:
+	.string "Where was I again?$"
+
+IsshoVictoryRoad_Text_LandonPostBattle:
+	.string "Gah, I've been going in circles!\p"
+	.string "There must be a way to get\n"
+	.string "to the next island...$"
+
+IsshoVictoryRoad_Text_CeriseIntro:
+	.string "Do you know why we're called\n"
+	.string "COOL TRAINERS?$"
+
+IsshoVictoryRoad_Text_CeriseDefeated:
+	.string "That's not cool...$"
+
+IsshoVictoryRoad_Text_CerisePostBattle:
+	.string "Why are we called COOL TRAINERS?\p"
+	.string "Because we keep our cool,\n"
+	.string "even when we lose.$"
+
+IsshoVictoryRoad_Text_KaneIntro:
+	.string "Ah! This contraption has me confounded!$"
+
+IsshoVictoryRoad_Text_KaneDefeated:
+	.string "Now I have a headache...$"
+
+IsshoVictoryRoad_Text_KanePostBattle:
+	.string "There should be a button around here\n"
+	.string "that opens the passageway.\p"
+	.string "Perhaps a heavy object will do it?$"
+
+IsshoVictoryRoad_Text_LionelIntro:
+	.string "Play for me the song of your people.$"
+
+IsshoVictoryRoad_Text_LionelDefeated:
+	.string "So that is how you dance.$"
+
+IsshoVictoryRoad_Text_LionelPostBattle:
+	.string "Burning fires, burning hearts.\n"
+	.string "On the long VICTORY ROAD.\p"
+	.string "Through highs and hardship.\n"
+	.string "So far away from home.$"
+
+IsshoVictoryRoad_Text_XavierIntro:
+	.string "Don't say a word!\n"
+	.string "I know you're here to battle!$"
+
+IsshoVictoryRoad_Text_XavierDefeated:
+	.string "Just as I predicted!$"
+
+IsshoVictoryRoad_Text_XavierPostBattle:
+	.string "It is impossible to live in the past,\n"
+	.string "difficult to live in the present.\p"
+	.string "And a waste to live in the future.$"
+
+IsshoVictoryRoad_Text_LunaIntro:
+	.string "Are you familiar to me?$"
+
+IsshoVictoryRoad_Text_LunaDefeated:
+	.string "Could it be...$"
+
+IsshoVictoryRoad_Text_LunaPostBattle:
+	.string "Have we met on some distant field?$"
+
+IsshoVictoryRoad_Text_ArcherIntro:
+	.string "Show me how high your ceiling goes.$"
+
+IsshoVictoryRoad_Text_ArcherDefeated:
+	.string "How interesting.$"
+
+IsshoVictoryRoad_Text_ArcherPostBattle:
+	.string "There is a hidden potential\n"
+	.string "within all of us.\p"
+	.string "It is up to you to discover it.$"
+
+IsshoVictoryRoad_Text_HarrietIntro:
+	.string "Fufufufufufufu.\n"
+	.string "Are you lost, child?$"
+
+IsshoVictoryRoad_Text_HarrietDefeated:
+	.string "Fufufufufufufu.$"
+
+IsshoVictoryRoad_Text_HarrietPostBattle:
+	.string "Fufufufufufufu.\n"
+	.string "Alright, I'll give you a hint.\p"
+	.string "Look for the hidden entrance\n"
+	.string "to the last island.$"
+
+IsshoVictoryRoad_Text_SelwynIntro:
+	.string "Have you come to learn\n"
+	.string "my secret technique?$"
+
+IsshoVictoryRoad_Text_SelwynDefeated:
+	.string "Ohoho, quite a talent you have\n"
+	.string "for battling, young trainer.$"
+
+IsshoVictoryRoad_Text_SelwynPostBattle:
+	.string "The secret technique is called\n"
+	.string "self-mastery.\p"
+	.string "Oftentimes, you'll find that you are\n"
+	.string "your own biggest obstacle.$"
+
+IsshoVictoryRoad_Text_WillowIntro:
+	.string "Will you humor an old woman\n"
+	.string "with a battle?$"
+
+IsshoVictoryRoad_Text_WillowDefeated:
+	.string "Ohohohohohoho!$"
+
+IsshoVictoryRoad_Text_WillowPostBattle:
+	.string "If you keep training your whole life,\n"
+	.string "you'll be as spry as me when you're older.$"
+
+IsshoVictoryRoad_Text_CruzIntro:
+	.string "There's no need to interfere.\n"
+	.string "I'll defeat this one, master!$"
+
+IsshoVictoryRoad_Text_CruzDefeated:
+	.string "Forgive me, master!$"
+
+IsshoVictoryRoad_Text_CruzPostBattle:
+	.string "Training with the master can be\n"
+	.string "confusing sometimes.\p"
+	.string "Some exercises only make sense\n"
+	.string "in hindsight.$"
+
+IsshoVictoryRoad_Text_MarissaIntro:
+	.string "Are you sure you know where\n"
+	.string "you're going?$"
+
+IsshoVictoryRoad_Text_MarissaDefeated:
+	.string "That's not right!$"
+
+IsshoVictoryRoad_Text_MarissaPostBattle:
+	.string "You did remember to stock\n"
+	.string "up on POTIONS, right?$"
+
+IsshoVictoryRoad_Text_DeweyIntro:
+	.string "Some people don't think BUG POKéMON\n"
+	.string "are strong enough for the big leagues.\p"
+	.string "I'll show them!\n"
+	.string "I'll show them all!!$"
+
+IsshoVictoryRoad_Text_DeweyDefeated:
+	.string "That wasn't what I wanted to show you...$"
+
+IsshoVictoryRoad_Text_DeweyPostBattle:
+	.string "Sometimes you train POKéMON not because\n"
+	.string "they're very strong, but because you\l"
+	.string "love them. You know what I mean?$"
+
+
+
+
+
+
+
+>>>>>>> Stashed changes

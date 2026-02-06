@@ -76,16 +76,20 @@ static const struct WindowTemplate sFieldRegionMapWindowTemplates[] =
 {
     [WIN_MAPSEC_NAME] = {
         .bg = 0,
-        .tilemapLeft = 17,
-        .tilemapTop = 17,
-        .width = 12,
+        //.tilemapLeft = 17,
+		.tilemapLeft = 1,
+        //.tilemapTop = 10,
+		.tilemapTop = 17,
+        //.width = 12,
+		.width = 10,
         .height = 2,
         .paletteNum = 15,
         .baseBlock = 1
     },
     [WIN_TITLE] = {
         .bg = 0,
-        .tilemapLeft = 22,
+        //.tilemapLeft = 22,
+		.tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 7,
         .height = 2,

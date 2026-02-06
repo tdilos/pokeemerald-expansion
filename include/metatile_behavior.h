@@ -198,4 +198,19 @@ bool8 MetatileBehavior_IsVideoGame(u8 metatileBehavior);
 bool8 MetatileBehavior_IsBurglary(u8 metatileBehavior);
 bool8 MetatileBehavior_IsTrainerTowerMonitor(u8 metatileBehavior);
 
+bool8 MetatileBehavior_IsShallowWater(u8);
+bool8 MetatileBehavior_IsHeadbuttTree(u8);
+bool8 MetatileBehavior_IsSandGrass(u8);
+bool8 MetatileBehavior_IsRedDanceFloor(u8);
+bool8 MetatileBehavior_IsGreenDanceFloor(u8);
+bool8 MetatileBehavior_IsBlueDanceFloor(u8);
+bool8 MetatileBehavior_IsRedGrass(u8);
+bool8 MetatileBehavior_IsSnowGrass(u8);
+bool8 MetatileBehavior_IsWisteriaGrass(u8);
+bool8 MetatileBehavior_IsHaewenGrass(u8);
+bool8 MetatileBehavior_IsBurgundyGrass(u8);
+bool8 MetatileBehavior_IsMagnetSwitchOn(u8);
+bool8 MetatileBehavior_IsSlideCW(u8);
+bool8 MetatileBehavior_IsSlideCCW(u8);
+
 #endif // GUARD_METATILE_BEHAVIOR_H

@@ -11,11 +11,19 @@
 static EWRAM_DATA u16 sWinNumberDigit = 0;
 static EWRAM_DATA u16 sOtIdDigit = 0;
 
-static const u16 sLotteryPrizes[] =
+/*static const u16 sLotteryPrizes[] =
 {
     ITEM_PP_UP,
     ITEM_EXP_SHARE,
     ITEM_MAX_REVIVE,
+    ITEM_MASTER_BALL,
+};*/
+
+static const u16 sLotteryPrizes[] =
+{
+    ITEM_RARE_CANDY,
+    ITEM_MAX_REVIVE,
+    ITEM_DAWN_STONE,
     ITEM_MASTER_BALL,
 };
 

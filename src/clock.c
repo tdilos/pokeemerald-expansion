@@ -15,9 +15,17 @@
 #include "wallclock.h"
 #include "constants/form_change_types.h"
 #include "apricorn_tree.h"
+#include "roamer.h"
+#include "wild_encounter.h"
+#include "shop.h"
+#include "random.h"
+#include "wonder_trade.h"
 
 static void UpdatePerDay(struct Time *localTime);
 static void UpdatePerMinute(struct Time *localTime);
+
+void UpdateWeekday(u16 increment);
+void UpdateEmporiumVendors();
 
 void InitTimeBasedEvents(void)
 {
@@ -48,6 +56,10 @@ static void UpdatePerDay(struct Time *localTime)
         ClearDailyFlags();
         UpdateDewfordTrendPerDay(daysSince);
         UpdateTVShowsPerDay(daysSince);
+		TryUpdateWonderTrades();
+		TryUpdateSwarm();
+		UpdateWeekday(daysSince);
+		UpdateEmporiumVendors();
         UpdateWeatherPerDay(daysSince);
         UpdatePartyPokerusTime(daysSince);
         UpdateMirageRnd(daysSince);
@@ -86,6 +98,27 @@ void FormChangeTimeUpdate()
     {
         TryFormChange(&gPlayerParty[i], FORM_CHANGE_TIME_OF_DAY);
     }
+}
+
+void UpdateWeekday(u16 increment)
+{
+	u32 newDay;
+	u32 oldDay = VarGet(VAR_WEEKDAY);
+	
+	newDay = oldDay + increment;
+	newDay %= 7;
+	VarSet(VAR_WEEKDAY, newDay);
+}
+
+void UpdateEmporiumVendors()
+{
+	u32 random1 = Random() % 16;
+	u32 random2 = Random() % 16;
+	u32 random3 = Random() % 16;
+	
+	VarSet(VAR_EMPORIUM_VENDOR_1, random1);
+	VarSet(VAR_EMPORIUM_VENDOR_2, random2);
+	VarSet(VAR_EMPORIUM_VENDOR_3, random3);
 }
 
 static void ReturnFromStartWallClock(void)

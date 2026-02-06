@@ -72,6 +72,9 @@
 #include "constants/vars.h"
 #include "constants/weather.h"
 #include "constants/speaker_names.h"
+#include "constants/quests.h"
+#include "constants/battle_transition.h"
+#include "constants/sliding_puzzles.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -1378,7 +1381,8 @@ gText_SandstormIsVicious::
 
 gText_SelectWithoutRegisteredItem::
 	.string "An item in the BAG can be\n"
-	.string "registered to SELECT for easy use.$"
+	@.string "registered to SELECT for easy use.$"
+	.string "registered for easy use.$"
 
 gText_PokemonTrainerSchoolEmail::
 	.string "There's an e-mail from POKéMON TRAINER\n"
@@ -1619,6 +1623,19 @@ Common_EventScript_LegendaryFlewAway::
 	msgbox gText_LegendaryFlewAway, MSGBOX_DEFAULT
 	release
 	end
+	
+EventScript_DoWonderTrade::
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, EventScript_End
+	special ChoosePartyMon
+	waitstate
+	goto_if_ge VAR_0x8004, PARTY_SIZE, EventScript_End
+	copyvar VAR_0x8005, VAR_0x8004
+	special CreateWonderTradePokemon
+	special DoInGameTradeScene
+	waitstate
+EventScript_End:
+	end
 
 EventScript_VsSeekerChargingDone::
 	special VsSeekerFreezeObjectsAfterChargeComplete
@@ -1737,3 +1754,826 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+	.include "data/scripts/kendoma_doors.inc"
+	.include "data/scripts/mirage_palace.inc"
+	.include "data/scripts/underground_city_doors.inc"
+
+	.include "data/maps/UmberTown/scripts.inc"
+
+	.include "data/maps/CinerousTown/scripts.inc"
+
+	.include "data/maps/XanthosCity/scripts.inc"
+
+	.include "data/maps/ResedaTown/scripts.inc"
+
+	.include "data/maps/AmberCity/scripts.inc"
+
+	.include "data/maps/CobaltCity/scripts.inc"
+
+	.include "data/maps/Route80/scripts.inc"
+
+	.include "data/maps/Route81/scripts.inc"
+
+	.include "data/maps/Route82/scripts.inc"
+
+	.include "data/maps/Route83/scripts.inc"
+
+	.include "data/maps/Route84/scripts.inc"
+
+	.include "data/maps/Route89/scripts.inc"
+
+	.include "data/maps/Route85/scripts.inc"
+
+	.include "data/maps/Route86/scripts.inc"
+
+	.include "data/maps/Route87/scripts.inc"
+
+	.include "data/maps/Route88/scripts.inc"
+
+	.include "data/maps/Route79/scripts.inc"
+
+	.include "data/maps/Route78/scripts.inc"
+
+	.include "data/maps/ShuckleSpring_1F/scripts.inc"
+
+	.include "data/maps/ShuckleSpring_B1F/scripts.inc"
+
+	.include "data/maps/ShuckleSpring_B2F/scripts.inc"
+
+	.include "data/maps/ResedaWoods/scripts.inc"
+
+	.include "data/maps/PowerStation/scripts.inc"
+
+	.include "data/maps/ResedaTown_House1/scripts.inc"
+
+	.include "data/maps/ResedaTown_House2/scripts.inc"
+
+	.include "data/maps/CinerousTown_PokemonCenter/scripts.inc"
+
+	.include "data/maps/XanthosCity_PokemonCenter/scripts.inc"
+
+	.include "data/maps/ResedaTown_PokemonCenter/scripts.inc"
+
+	.include "data/maps/AmberCity_PokemonCenter/scripts.inc"
+
+	.include "data/maps/CobaltCity_PokemonCenter/scripts.inc"
+
+	.include "data/maps/CinerousTown_Mart/scripts.inc"
+
+	.include "data/maps/XanthosCity_Mart/scripts.inc"
+
+	.include "data/maps/ResedaTown_Mart/scripts.inc"
+
+	.include "data/maps/AmberCity_Mart/scripts.inc"
+
+	.include "data/maps/CobaltCity_Mart/scripts.inc"
+
+	.include "data/maps/CinerousTown_House1/scripts.inc"
+
+	.include "data/maps/CinerousTown_House2/scripts.inc"
+
+	.include "data/maps/QuartzCave_1F/scripts.inc"
+
+	.include "data/maps/QuartzCave_B1/scripts.inc"
+
+	.include "data/maps/QuartzCave_B2/scripts.inc"
+
+	.include "data/maps/QuartzCave_B3/scripts.inc"
+
+	.include "data/maps/QuartzCave_B4/scripts.inc"
+
+	.include "data/maps/Sandshraf_1F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat1_1F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat1_2F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat1_3F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat1_4F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat2_1F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat2_2F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat2_3F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat3_1F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat3_2F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Flat3_3F/scripts.inc"
+
+	.include "data/maps/XanthosCity_Harbor/scripts.inc"
+
+	.include "data/maps/CobaltCity_Harbor/scripts.inc"
+
+	.include "data/maps/UmberTown_MaleMCHouse/scripts.inc"
+
+	.include "data/maps/UmberTown_MaleMCHouse_2F/scripts.inc"
+
+	.include "data/maps/UmberTown_FemaleMCHouse/scripts.inc"
+
+	.include "data/maps/UmberTown_FemaleMCHouse_2F/scripts.inc"
+
+	.include "data/maps/UmberTown_JaceHouse/scripts.inc"
+
+	.include "data/maps/UmberTown_JaceHouse_2F/scripts.inc"
+
+	.include "data/maps/Sandshraf_B1/scripts.inc"
+
+	.include "data/maps/Sandshraf_B2/scripts.inc"
+
+	.include "data/maps/CinerousTower_Exterior/scripts.inc"
+
+	.include "data/maps/CinerousTower_1F/scripts.inc"
+
+	.include "data/maps/CinerousTower_2F/scripts.inc"
+
+	.include "data/maps/CinerousTower_3F/scripts.inc"
+
+	.include "data/maps/CinerousTower_4F/scripts.inc"
+
+	.include "data/maps/CinerousTower_5F/scripts.inc"
+
+	.include "data/maps/AmberCity_Museum_1F/scripts.inc"
+
+	.include "data/maps/CobaltyCity_DreamResort/scripts.inc"
+
+	.include "data/maps/AmberCity_House1/scripts.inc"
+
+	.include "data/maps/AmberCity_House2/scripts.inc"
+
+	.include "data/maps/Route88_BerryHouse/scripts.inc"
+
+	.include "data/maps/Route88_SecretHouse/scripts.inc"
+
+	.include "data/maps/CobaltCity_DreamResort_2F/scripts.inc"
+
+	.include "data/maps/CobaltCity_DreamResort_3F/scripts.inc"
+
+	.include "data/maps/CobaltCity_DreamResort_4F/scripts.inc"
+
+	.include "data/maps/CobaltCity_DreamResort_1F_Rooms/scripts.inc"
+
+	.include "data/maps/CobaltCity_DreamResort_2F_Rooms/scripts.inc"
+
+	.include "data/maps/CobaltCity_DreamResort_3F_Rooms/scripts.inc"
+
+	.include "data/maps/CobaltCity_DreamResort_4F_Rooms/scripts.inc"
+
+	.include "data/maps/DreamResort_1F/scripts.inc"
+
+	.include "data/maps/DreamResort_2F/scripts.inc"
+
+	.include "data/maps/DreamResort_3F/scripts.inc"
+
+	.include "data/maps/DreamResort_4F/scripts.inc"
+
+	.include "data/maps/DreamResort_1F_Rooms/scripts.inc"
+
+	.include "data/maps/DreamResort_2F_Rooms/scripts.inc"
+
+	.include "data/maps/DreamResort_3F_Rooms/scripts.inc"
+
+	.include "data/maps/DreamResort_4F_Rooms/scripts.inc"
+
+	.include "data/maps/XanthosCity_WestTunnelEntrance/scripts.inc"
+
+	.include "data/maps/XanthosCity_EastTunnelEntrance/scripts.inc"
+
+	.include "data/maps/XanthosCity_XanthosUnderground/scripts.inc"
+
+	.include "data/maps/Route84_House/scripts.inc"
+
+	.include "data/maps/MeridiaTemple_1F/scripts.inc"
+
+	.include "data/maps/AuroraTemple_1F/scripts.inc"
+
+	.include "data/maps/MedianoxTemple_1F/scripts.inc"
+
+	.include "data/maps/VesperTemple_1F/scripts.inc"
+
+	.include "data/maps/MtShiro_Summit/scripts.inc"
+
+	.include "data/maps/UmberTown_HazelsLab/scripts.inc"
+
+	.include "data/maps/ResedaTown_Gym/scripts.inc"
+
+	.include "data/maps/AmberCity_Gym/scripts.inc"
+
+	.include "data/maps/CobaltCity_Gym/scripts.inc"
+
+	.include "data/maps/CobaltCity_House1/scripts.inc"
+
+	.include "data/maps/CobaltCity_House2/scripts.inc"
+
+	.include "data/maps/CobaltCity_House3/scripts.inc"
+
+	.include "data/maps/AmberCity_BikeShop/scripts.inc"
+
+	.include "data/maps/XanthosCity_MaysHouse/scripts.inc"
+
+	.include "data/maps/Route83_Hydroplant_1F/scripts.inc"
+
+	.include "data/maps/Route83_Hydroplant_B1/scripts.inc"
+
+	.include "data/maps/Route80_RestStop/scripts.inc"
+
+	.include "data/maps/XanthosCity_Library_1F/scripts.inc"
+
+	.include "data/maps/Route77/scripts.inc"
+
+	.include "data/maps/XanthosCity_Library_2F/scripts.inc"
+
+	.include "data/maps/Route76/scripts.inc"
+
+	.include "data/maps/Route75/scripts.inc"
+
+	.include "data/maps/Route74/scripts.inc"
+
+	.include "data/maps/Route73/scripts.inc"
+
+	.include "data/maps/Route72/scripts.inc"
+
+	.include "data/maps/Route71/scripts.inc"
+
+	.include "data/maps/Route70/scripts.inc"
+
+	.include "data/maps/TurquoiseCity/scripts.inc"
+
+	.include "data/maps/MindaroCity/scripts.inc"
+
+	.include "data/maps/OffwiteTown/scripts.inc"
+
+	.include "data/maps/ScarletTown/scripts.inc"
+
+	.include "data/maps/PitchblakCity/scripts.inc"
+
+	.include "data/maps/MaroonCity/scripts.inc"
+
+	.include "data/maps/Route99/scripts.inc"
+
+	.include "data/maps/Route98/scripts.inc"
+
+	.include "data/maps/Route97/scripts.inc"
+
+	.include "data/maps/Route96/scripts.inc"
+
+	.include "data/maps/Route95/scripts.inc"
+
+	.include "data/maps/Route94/scripts.inc"
+
+	.include "data/maps/Route93/scripts.inc"
+
+	.include "data/maps/Route92/scripts.inc"
+
+	.include "data/maps/Route91/scripts.inc"
+
+	.include "data/maps/Route90/scripts.inc"
+
+	.include "data/maps/MindaroCity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/ScarletTown_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/MaroonCity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/MaroonCity_Mart/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Mart/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_Mart/scripts.inc"
+
+	.include "data/maps/ScarletTown_Mart/scripts.inc"
+
+	.include "data/maps/MindaroCity_Gym/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Gym/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_Harbor/scripts.inc"
+
+	.include "data/maps/MindaroGardens/scripts.inc"
+
+	.include "data/maps/MindaroCity_DepartmentStore_1F/scripts.inc"
+
+	.include "data/maps/MindaroCity_DepartmentStore_2F/scripts.inc"
+
+	.include "data/maps/MindaroCity_DepartmentStore_3F/scripts.inc"
+
+	.include "data/maps/MindaroCity_DepartmentStore_4F/scripts.inc"
+
+	.include "data/maps/MindaroCity_DepartmentStore_5F/scripts.inc"
+
+	.include "data/maps/MindaroCity_DepartmentStoreRoof/scripts.inc"
+
+	.include "data/maps/MindaroCity_DepartmentStore_B1/scripts.inc"
+
+	.include "data/maps/MindaroCity_DepartmentStoreElevator/scripts.inc"
+
+	.include "data/maps/MindaroGardens_MansionLobby/scripts.inc"
+
+	.include "data/maps/MindaroGardens_MansionOffices/scripts.inc"
+
+	.include "data/maps/MindaroGardens_MansionBallroom/scripts.inc"
+
+	.include "data/maps/HaewenTown/scripts.inc"
+
+	.include "data/maps/WisteriaCity/scripts.inc"
+
+	.include "data/maps/DunTown/scripts.inc"
+
+	.include "data/maps/BurgundyTown/scripts.inc"
+
+	.include "data/maps/Route69/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_Warehouse/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_Warehouse_B1/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_House1/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_House2/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_House3/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_House4/scripts.inc"
+
+	.include "data/maps/Route93_House1/scripts.inc"
+
+	.include "data/maps/Route93_House2/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route82/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_ResedaWoods/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route85/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_QuartzCave/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route93/scripts.inc"
+
+	.include "data/maps/Route96_CableCarStation/scripts.inc"
+
+	.include "data/maps/OffwiteTown_CableCarStation/scripts.inc"
+
+	.include "data/maps/ScarletTown_House1/scripts.inc"
+
+	.include "data/maps/ScarletTown_House2/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route96/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route92/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_ScarletWoods/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_MtShiro/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route70/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route66/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_ShamrockIsle/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route87/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route78/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route91/scripts.inc"
+
+	.include "data/maps/HiddenGrotto_Route97/scripts.inc"
+
+	.include "data/maps/MindaroCity_Flat1_1F/scripts.inc"
+
+	.include "data/maps/MindaroCity_Flat2_1F/scripts.inc"
+
+	.include "data/maps/MindaroCity_Flat3_1F/scripts.inc"
+
+	.include "data/maps/MindaroCity_Flat1_2F/scripts.inc"
+
+	.include "data/maps/MindaroCity_Flat2_2F/scripts.inc"
+
+	.include "data/maps/MindaroCity_Flat3_2F/scripts.inc"
+
+	.include "data/maps/MindaroCity_Flat1_3F/scripts.inc"
+
+	.include "data/maps/MindaroCity_Flat2_3F/scripts.inc"
+
+	.include "data/maps/MindaroCity_Flat3_3F/scripts.inc"
+
+	.include "data/maps/BroadcastTower_1F/scripts.inc"
+
+	.include "data/maps/BroadcastTower_2F/scripts.inc"
+
+	.include "data/maps/BroadcastTower_3F/scripts.inc"
+
+	.include "data/maps/BroadcastTower_4F/scripts.inc"
+
+	.include "data/maps/BroadcastTower_5F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Plaza/scripts.inc"
+
+	.include "data/maps/ScarletWoods_North/scripts.inc"
+
+	.include "data/maps/ScarletWoods_South/scripts.inc"
+
+	.include "data/maps/MtShiro_EastCave/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Plaza_Roof/scripts.inc"
+
+	.include "data/maps/MaroonCity_Gym/scripts.inc"
+
+	.include "data/maps/MtShiro_NorthCave/scripts.inc"
+
+	.include "data/maps/MtShiro_WestCave/scripts.inc"
+
+	.include "data/maps/MtShiro_SouthCave/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_1F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_2F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_3F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_4F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_5F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_6F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_7F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_8F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_9F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_10F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_SecretBasement/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_LeftElevator/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_RightElevator/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_MiddleElevator/scripts.inc"
+
+	.include "data/maps/PitchblakCity_KendomaCorp_SecretElevator/scripts.inc"
+
+	.include "data/maps/MtShiro_CentralRoom/scripts.inc"
+
+	.include "data/maps/OffwiteTown_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/OffwiteTown_House1/scripts.inc"
+
+	.include "data/maps/OffwiteTown_House2/scripts.inc"
+
+	.include "data/maps/OffwiteTown_House3/scripts.inc"
+
+	.include "data/maps/MaroonCity_Flat1_1F/scripts.inc"
+
+	.include "data/maps/MaroonCity_Flat2_1F/scripts.inc"
+
+	.include "data/maps/MaroonCity_Flat1_2F/scripts.inc"
+
+	.include "data/maps/MaroonCity_Flat2_2F/scripts.inc"
+
+	.include "data/maps/MaroonCity_Flat1_3F/scripts.inc"
+
+	.include "data/maps/MaroonCity_Flat2_3F/scripts.inc"
+
+	.include "data/maps/MtShiro_UpperCave/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat1_1F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat1_2F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat2_1F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat2_2F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat3_1F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat3_2F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat4_1F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat4_2F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat5_1F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat5_2F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat6_1F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_Flat6_2F/scripts.inc"
+
+	.include "data/maps/MaroonCity_PokeballEmporium/scripts.inc"
+
+	.include "data/maps/HaewenTown_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/WisteriaCity_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/BurgundyTown_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/DunTown_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/ShamrockIsle_Exterior/scripts.inc"
+
+	.include "data/maps/DunTown_Motel_1F/scripts.inc"
+
+	.include "data/maps/DunTown_Motel_2F/scripts.inc"
+
+	.include "data/maps/ShamrockIsle_Interior/scripts.inc"
+
+	.include "data/maps/SunkenIsle_Exterior/scripts.inc"
+
+	.include "data/maps/Route68/scripts.inc"
+
+	.include "data/maps/Route67/scripts.inc"
+
+	.include "data/maps/Route66/scripts.inc"
+
+	.include "data/maps/Route65/scripts.inc"
+
+	.include "data/maps/Underwater_Route75/scripts.inc"
+
+	.include "data/maps/Underwater_SunkenIsle_Exterior/scripts.inc"
+
+	.include "data/maps/SunkenIsle_Interior/scripts.inc"
+
+	.include "data/maps/Underwater_SunkenIsle_Interior/scripts.inc"
+
+	.include "data/maps/SteelMill_1F/scripts.inc"
+
+	.include "data/maps/SteelMill_B1/scripts.inc"
+
+	.include "data/maps/MiragePalace_1F/scripts.inc"
+
+	.include "data/maps/MiragePalace_2F/scripts.inc"
+
+	.include "data/maps/MiragePalace_3F/scripts.inc"
+
+	.include "data/maps/MiragePalace_4F/scripts.inc"
+
+	.include "data/maps/MiragePalace_5F/scripts.inc"
+
+	.include "data/maps/MiragePalace_Entrance/scripts.inc"
+
+	.include "data/maps/Underground_Route68/scripts.inc"
+
+	.include "data/maps/Underground_Route70/scripts.inc"
+
+	.include "data/maps/Underground_HaewenTown/scripts.inc"
+
+	.include "data/maps/Route100/scripts.inc"
+
+	.include "data/maps/Underwater_Route100/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_1F_Island1/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_1F_Island2/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_1F_Island3/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_1F_Island4/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_B1_Island1/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_B1_Island2/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_B1_Island3/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_B1_Island4/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_Underwater_Island1/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_Underwater_Island2/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_Underwater_Island3/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_Underwater_Island4/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_B2/scripts.inc"
+
+	.include "data/maps/IsshoVictoryRoad_FinalStairs/scripts.inc"
+
+	.include "data/maps/DunTown_House1/scripts.inc"
+
+	.include "data/maps/DunTown_House2/scripts.inc"
+
+	.include "data/maps/DunTown_House3/scripts.inc"
+
+	.include "data/maps/HaewenTown_House1/scripts.inc"
+
+	.include "data/maps/HaewenTown_House2/scripts.inc"
+
+	.include "data/maps/HaewenTown_Mart/scripts.inc"
+
+	.include "data/maps/WisteriaCity_Mart/scripts.inc"
+
+	.include "data/maps/HaewenTown_Gym/scripts.inc"
+
+	.include "data/maps/WisteriaCity_Gym/scripts.inc"
+
+	.include "data/maps/HaewenTown_House3/scripts.inc"
+
+	.include "data/maps/MtShiro_Tunnel/scripts.inc"
+
+	.include "data/maps/PokemonLaboratory_1F/scripts.inc"
+
+	.include "data/maps/PokemonLaboratory_B1/scripts.inc"
+
+	.include "data/maps/DuskMountain_WaterfallRoom/scripts.inc"
+
+	.include "data/maps/DuskMountain_PitRoom/scripts.inc"
+
+	.include "data/maps/DuskMountain_DeepBasements/scripts.inc"
+
+	.include "data/maps/WisteriaCity_House1/scripts.inc"
+
+	.include "data/maps/WisteriaCity_House2/scripts.inc"
+
+	.include "data/maps/DuskMountain_VoidMaze/scripts.inc"
+
+	.include "data/maps/DuskMountain_NorthCave/scripts.inc"
+
+	.include "data/maps/Route90_House1/scripts.inc"
+
+	.include "data/maps/Route68_House1/scripts.inc"
+
+	.include "data/maps/MaroonCity_RangerHQ_1F/scripts.inc"
+
+	.include "data/maps/MaroonCity_RangerHQ_2F/scripts.inc"
+
+	.include "data/maps/MaroonCity_RangerHQ_3F/scripts.inc"
+
+	.include "data/maps/WisteriaCity_House3/scripts.inc"
+
+	.include "data/maps/WisteriaCity_House4/scripts.inc"
+
+	.include "data/maps/PokemonLaboratory_B2/scripts.inc"
+
+	.include "data/maps/UndergroundCity/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Entrance/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building1_1F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building1_2F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building1_3F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building1_4F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building2_1F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building2_2F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building2_3F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building2_4F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building3_1F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building3_2F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building3_3F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building3_4F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building4_1F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building4_2F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building5_1F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building5_2F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building6_1F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Building6_2F/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Sewer/scripts.inc"
+
+	.include "data/maps/UndergroundCity_SewerRooms/scripts.inc"
+
+	.include "data/maps/BurgundyTown_House1/scripts.inc"
+
+	.include "data/maps/BurgundyTown_House2/scripts.inc"
+
+	.include "data/maps/BurgundyTown_House3/scripts.inc"
+
+	.include "data/maps/DuskMountain_SouthMaze/scripts.inc"
+
+	.include "data/maps/WisteriaCity_Flat1_1F/scripts.inc"
+
+	.include "data/maps/WisteriaCity_Flat1_2F/scripts.inc"
+
+	.include "data/maps/WisteriaCity_Flat2_1F/scripts.inc"
+
+	.include "data/maps/WisteriaCity_Flat2_2F/scripts.inc"
+
+	.include "data/maps/AmberCity_Museum_B1/scripts.inc"
+
+	.include "data/maps/BurgundyTown_House4/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_GameCorner/scripts.inc"
+
+	.include "data/maps/Underground_Route70_Stairs/scripts.inc"
+
+	.include "data/maps/UndergroundCity_FinalRoom/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Hallway/scripts.inc"
+
+	.include "data/maps/UndergroundCity_Entrance_Aftermath/scripts.inc"
+
+	.include "data/maps/PokemonLaboratory_B3/scripts.inc"
+
+	.include "data/maps/Route100_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/Sandshraf_TrialRoom/scripts.inc"
+
+	.include "data/maps/Route65_SecretHouse/scripts.inc"
+
+	.include "data/maps/CinerousTown_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/XanthosCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/ResedaTown_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/AmberCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/CobaltCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/TurquoiseCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/MindaroCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/OffwiteTown_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/ScarletTown_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/PitchblakCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/MaroonCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/HaewenTown_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/WisteriaCity_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/DunTown_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/Route100_PokemonCenter_2F/scripts.inc"
+
+	.include "data/maps/ShamrockIsle_SecretHollow/scripts.inc"
+
+	.include "data/maps/BurgundyTown_House5/scripts.inc"
+
+	.include "data/maps/PokemonLaboratory_PuzzleRoom/scripts.inc"
+
+	.include "data/maps/PowerStation_PuzzleRoom/scripts.inc"
+
+	.include "data/maps/ArtisanCave_PuzzleChamber1/scripts.inc"
+
+	.include "data/maps/ArtisanCave_PuzzleChamber2/scripts.inc"
+
+	.include "data/maps/ArtisanCave_PuzzleChamber3/scripts.inc"
+
+	.include "data/maps/ArtisanCave_PuzzleChamber4/scripts.inc"
+
+	.include "data/maps/ArtisanCave_PuzzleChamber5/scripts.inc"
+
+	.include "data/maps/ArtisanCave_PuzzleChamber6/scripts.inc"
+
+	.include "data/maps/PerennialPillar_Exterior/scripts.inc"
+
+	.include "data/maps/PerennialPillar_Harbor/scripts.inc"
+
+	.include "data/maps/XanthosCity_BattleCafe/scripts.inc"
+
+	.include "data/maps/PerennialPillar_1F/scripts.inc"
+
+	.include "data/maps/PerennialPillar_2F/scripts.inc"
+
+	.include "data/maps/PerennialPillar_B1/scripts.inc"
+
+	.include "data/maps/PerennialPillar_3F_West/scripts.inc"
+
+	.include "data/maps/PerennialPillar_3F_East/scripts.inc"
+
+	.include "data/maps/PerennialPillar_4F_West/scripts.inc"
+
+	.include "data/maps/PerennialPillar_4F_East/scripts.inc"
+
+	.include "data/maps/DewfordMeadow/scripts.inc"
+
+	.include "data/maps/StationRing/scripts.inc"
+
+	.include "data/maps/StationCity/scripts.inc"
+
+	.include "data/maps/StationCity_Building1_1F/scripts.inc"
+
+	.include "data/maps/StationCity_Building1_B1/scripts.inc"

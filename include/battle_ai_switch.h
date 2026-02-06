@@ -43,6 +43,16 @@ enum SwitchType
     SWITCH_MID_BATTLE_OPTIONAL,
 };
 
+enum
+{
+    AI_ITEM_FULL_RESTORE = 1,
+    AI_ITEM_HEAL_HP,
+    AI_ITEM_CURE_CONDITION,
+    AI_ITEM_X_STAT,
+    AI_ITEM_GUARD_SPEC,
+    AI_ITEM_NOT_RECOGNIZABLE
+};
+
 u32 GetMostSuitableMonToSwitchInto(enum BattlerId battler, enum SwitchType switchType);
 bool32 ShouldSwitch(enum BattlerId battler);
 void ModifySwitchAfterMoveScoring(enum BattlerId battler);

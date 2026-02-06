@@ -1,0 +1,81 @@
+{
+  "id": "MAP_DUSK_MOUNTAIN_VOID_MAZE",
+  "name": "DuskMountain_VoidMaze",
+  "layout": "LAYOUT_DUSK_MOUNTAIN_VOID_MAZE",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_DUSK_MOUNTAIN",
+  "requires_flash": true,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_DUSK_MOUNTAIN_VOID_MAZE",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_DUSK_MOUNTAIN_VOID_MAZE",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_DUSK_MOUNTAIN_VOID_MAZE",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_DUSK_MOUNTAIN_VOID_MAZE",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
+      "x": 18,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DuskMountain_VoidMaze_EventScript_HexManiac",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_DUSK_MOUNTAIN_DEEP_BASEMENTS",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 15,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_DUSK_MOUNTAIN_DEEP_BASEMENTS",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 25,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_DUSK_MOUNTAIN_DEEP_BASEMENTS",
+      "dest_warp_id": "15"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

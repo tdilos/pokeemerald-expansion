@@ -1,0 +1,17 @@
+#ifndef GUARD_CONSTANTS_BATTLE_TRANSITION_H
+#define GUARD_CONSTANTS_BATTLE_TRANSITION_H
+
+#define MUGSHOT_SIDNEY      0
+#define MUGSHOT_PHOEBE      1
+#define MUGSHOT_GLACIA      2
+#define MUGSHOT_DRAKE       3
+#define MUGSHOT_CHAMPION    4
+#define MUGSHOT_LISIA       5
+#define MUGSHOT_IAN         6
+#define MUGSHOT_SIDNEY2     7
+#define MUGSHOT_PETRA       8
+#define MUGSHOT_NORMAN      9
+
+#define MUGSHOTS_COUNT      10
+
+#endif //GUARD_CONSTANTS_BATTLE_TRANSITION_H

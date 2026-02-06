@@ -78,7 +78,7 @@
 #define ANIM_TAG_BROWN_TRIANGLE             (ANIM_SPRITES_START + 66) // unused
 #define ANIM_TAG_SLEEP_POWDER               (ANIM_SPRITES_START + 67)
 #define ANIM_TAG_STUN_SPORE                 (ANIM_SPRITES_START + 68)
-#define ANIM_TAG_POWDER                     (ANIM_SPRITES_START + 69) // unused
+#define ANIM_TAG_BLIGHT                     (ANIM_SPRITES_START + 69) // #define ANIM_TAG_POWDER
 #define ANIM_TAG_SPARKLE_3                  (ANIM_SPRITES_START + 70)
 #define ANIM_TAG_SPARKLE_4                  (ANIM_SPRITES_START + 71)
 #define ANIM_TAG_MUSIC_NOTES                (ANIM_SPRITES_START + 72)
@@ -423,7 +423,11 @@
 #define ANIM_TAG_TATSUGIRI_CURLY            (ANIM_SPRITES_START + 409)
 #define ANIM_TAG_TATSUGIRI_DROOPY           (ANIM_SPRITES_START + 410)
 #define ANIM_TAG_TATSUGIRI_STRETCHY         (ANIM_SPRITES_START + 411)
-#define ANIM_TAG_SAFARI_BAIT                (ANIM_SPRITES_START + 412)
+// New!
+#define ANIM_TAG_PHRENO_ATTACK_TRIANGLE     (ANIM_SPRITES_START + 412)
+#define ANIM_TAG_SOMA_ATTACK_TRIANGLE       (ANIM_SPRITES_START + 413)
+
+#define ANIM_TAG_SAFARI_BAIT                (ANIM_SPRITES_START + 414)
 #define ANIM_TAG_COUNT                      GET_TRUE_SPRITE_INDEX(ANIM_TAG_SAFARI_BAIT + 1)
 
 // battlers
@@ -605,7 +609,10 @@ enum AnimBattler
 #define B_ANIM_SAFARI_REACTION          60
 #define B_ANIM_FORM_CHANGE_INSTANT      61
 #define B_ANIM_FORM_CHANGE_DISGUISE     62
-#define NUM_B_ANIMS_GENERAL             63
+// New!
+#define B_ANIM_SMAZE_CONTINUES          63
+#define B_ANIM_FULLMOON_CONTINUES       64
+#define NUM_B_ANIMS_GENERAL             65
 
 // special animations table (sBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
@@ -630,8 +637,12 @@ enum AnimBattler
 #define B_ANIM_STATUS_CURSED            7
 #define B_ANIM_STATUS_NIGHTMARE         8
 #define B_ANIM_STATUS_FRB               9
+#define B_ANIM_STATUS_INF               10
+#define B_ANIM_STATUS_DAZ               11
+#define B_ANIM_STATUS_EXH               12
+#define B_ANIM_STATUS_FER               13
 
-#define NUM_B_ANIMS_STATUS              10
+#define NUM_B_ANIMS_STATUS              14
 
 // Tasks with return values often assign them to gBattleAnimArgs[7].
 #define ARG_RET_ID 7
@@ -659,6 +670,8 @@ enum AnimBattler
 #define ANIM_WEATHER_HAIL 4
 #define ANIM_WEATHER_SNOW 5
 #define ANIM_WEATHER_FOG 6
+#define ANIM_WEATHER_SMAZE 7
+#define ANIM_WEATHER_FULLMOON 8
 
 // horseshoe/fist frames
 #define ANIM_RIGHT_FIST  0

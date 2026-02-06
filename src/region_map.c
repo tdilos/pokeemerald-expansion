@@ -111,6 +111,7 @@ static void SetFlyMapCallback(void callback(void));
 static void DrawFlyDestTextWindow(void);
 static void LoadFlyDestIcons(void);
 static void CreateFlyDestIcons(void);
+u16 GetIsshoMapSecFromFlyFlag(u16 canFlyFlag);
 static void TryCreateRedOutlineFlyDestIcons(void);
 static void SpriteCB_FlyDestIcon(struct Sprite *sprite);
 static void CB_FadeInFlyMap(void);
@@ -120,13 +121,17 @@ static void CB_ExitFlyMap(void);
 static const u16 sRegionMapCursorPal[] = INCBIN_U16("graphics/pokenav/region_map/cursor.gbapal");
 static const u32 sRegionMapCursorSmallGfxLZ[] = INCBIN_U32("graphics/pokenav/region_map/cursor_small.4bpp.smol");
 static const u32 sRegionMapCursorLargeGfxLZ[] = INCBIN_U32("graphics/pokenav/region_map/cursor_large.4bpp.smol");
-static const u16 sRegionMapBg_Pal[] = INCBIN_U16("graphics/pokenav/region_map/map.gbapal");
-static const u32 sRegionMapBg_GfxLZ[] = INCBIN_U32("graphics/pokenav/region_map/map.8bpp.smol");
-static const u32 sRegionMapBg_TilemapLZ[] = INCBIN_U32("graphics/pokenav/region_map/map.bin.smolTM");
-static const u16 sRegionMapPlayerIcon_BrendanPal[] = INCBIN_U16("graphics/pokenav/region_map/brendan_icon.gbapal");
-static const u8 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U8("graphics/pokenav/region_map/brendan_icon.4bpp");
-static const u16 sRegionMapPlayerIcon_MayPal[] = INCBIN_U16("graphics/pokenav/region_map/may_icon.gbapal");
-static const u8 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U8("graphics/pokenav/region_map/may_icon.4bpp");
+static const u16 sRegionMapBg_Pal[] = INCBIN_U16("graphics/pokenav/region_map/issho.gbapal");
+static const u32 sRegionMapBg_GfxLZ[] = INCBIN_U32("graphics/pokenav/region_map/issho.8bpp.smol");
+static const u32 sRegionMapBg_TilemapLZ[] = INCBIN_U32("graphics/pokenav/region_map/issho.bin.smolTM");
+//static const u16 sRegionMapPlayerIcon_BrendanPal[] = INCBIN_U16("graphics/pokenav/region_map/brendan_icon.gbapal");
+//static const u8 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U8("graphics/pokenav/region_map/brendan_icon.4bpp");
+//static const u16 sRegionMapPlayerIcon_MayPal[] = INCBIN_U16("graphics/pokenav/region_map/may_icon.gbapal");
+//static const u8 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U8("graphics/pokenav/region_map/may_icon.4bpp");
+static const u16 sRegionMapPlayerIcon_BrendanPal[] = INCBIN_U16("graphics/pokenav/region_map/player_icon_red.gbapal");
+static const u8 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U8("graphics/pokenav/region_map/player_icon_red.4bpp");
+static const u16 sRegionMapPlayerIcon_MayPal[] = INCBIN_U16("graphics/pokenav/region_map/player_icon_leaf.gbapal");
+static const u8 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U8("graphics/pokenav/region_map/player_icon_leaf.4bpp");
 static const u16 sRegionMapPlayerIcon_RedPal[] = INCBIN_U16("graphics/pokenav/region_map/red_icon.gbapal");
 static const u8 sRegionMapPlayerIcon_RedGfx[] = INCBIN_U8("graphics/pokenav/region_map/red_icon.4bpp");
 static const u16 sRegionMapPlayerIcon_LeafPal[] = INCBIN_U16("graphics/pokenav/region_map/leaf_icon.gbapal");
@@ -168,6 +173,26 @@ static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
     {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
     {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},
+	// Issho
+    {MAPSEC_SHUCKLE_SPRING,             MAPSEC_ROUTE_81},
+    {MAPSEC_QUARTZ_CAVE,                MAPSEC_ROUTE_80},
+    {MAPSEC_RESEDA_WOODS,               MAPSEC_ROUTE_83},
+    {MAPSEC_CINEROUS_TOWER,             MAPSEC_CINEROUS_TOWN},
+    {MAPSEC_POWER_STATION,              MAPSEC_ROUTE_89},
+    {MAPSEC_DREAM_RESORT,               MAPSEC_COBALT_CITY},
+    {MAPSEC_MINDARO_GARDENS,            MAPSEC_MINDARO_CITY},
+    {MAPSEC_SCARLET_WOODS,              MAPSEC_ROUTE_69},
+    {MAPSEC_BROADCAST_TOWER,            MAPSEC_PITCHBLACK_CITY},
+    {MAPSEC_STEEL_MILL,                 MAPSEC_ROUGE_CITY},
+    {MAPSEC_MIRAGE_PALACE,              MAPSEC_ROUTE_70},
+    {MAPSEC_UNDERWATER_ROYAL_REEF,      MAPSEC_ROYAL_REEF},
+    {MAPSEC_POKEMON_LABORATORY,         MAPSEC_WISTERIA_CITY},
+    {MAPSEC_ISSHO_VICTORY_ROAD,         MAPSEC_ROUTE_100},
+    {MAPSEC_MERIDIA_TEMPLE,             MAPSEC_ROUTE_87},
+    {MAPSEC_AURORA_TEMPLE,              MAPSEC_ROUTE_78},
+    {MAPSEC_MEDIANOX_TEMPLE,            MAPSEC_ROUTE_97},
+    {MAPSEC_VESPER_TEMPLE,              MAPSEC_ROUTE_91},
+    {MAPSEC_UNDERGROUND_CITY,           MAPSEC_XANTHOS_CITY},
     {MAPSEC_NONE,                       MAPSEC_NONE}
 };
 
@@ -284,7 +309,8 @@ static const mapsec_u8_t sMapSecIdsOffMap[] =
 {
     MAPSEC_BIRTH_ISLAND,
     MAPSEC_FARAWAY_ISLAND,
-    MAPSEC_NAVEL_ROCK
+    MAPSEC_NAVEL_ROCK,
+    MAPSEC_PERENNIAL_PILLAR
 };
 
 static const u16 sRegionMapFramePal[] = INCBIN_U16("graphics/pokenav/region_map/frame.gbapal");
@@ -535,6 +561,59 @@ static const u8 sMapHealLocations[][3] =
     [MAPSEC_RIXY_CHAMBER] = {MAP_GROUP(MAP_PALLET_TOWN), MAP_NUM(MAP_PALLET_TOWN), HEAL_LOCATION_NONE},
     [MAPSEC_VIAPOIS_CHAMBER] = {MAP_GROUP(MAP_PALLET_TOWN), MAP_NUM(MAP_PALLET_TOWN), HEAL_LOCATION_NONE},
     [MAPSEC_EMBER_SPA] = {MAP_GROUP(MAP_PALLET_TOWN), MAP_NUM(MAP_PALLET_TOWN), HEAL_LOCATION_NONE},
+	// Issho
+    [MAPSEC_UMBER_TOWN] = {MAP_GROUP(UMBER_TOWN), MAP_NUM(UMBER_TOWN), HEAL_LOCATION_UMBER_TOWN},
+    [MAPSEC_CINEROUS_TOWN] = {MAP_GROUP(CINEROUS_TOWN), MAP_NUM(CINEROUS_TOWN), HEAL_LOCATION_CINEROUS_TOWN},
+    [MAPSEC_XANTHOS_CITY] = {MAP_GROUP(XANTHOS_CITY), MAP_NUM(XANTHOS_CITY), HEAL_LOCATION_XANTHOS_CITY},
+    [MAPSEC_RESEDA_TOWN] = {MAP_GROUP(RESEDA_TOWN), MAP_NUM(RESEDA_TOWN), HEAL_LOCATION_RESEDA_TOWN},
+    [MAPSEC_AMBER_CITY] = {MAP_GROUP(AMBER_CITY), MAP_NUM(AMBER_CITY), HEAL_LOCATION_AMBER_CITY},
+    [MAPSEC_COBALT_CITY] = {MAP_GROUP(COBALT_CITY), MAP_NUM(COBALT_CITY), HEAL_LOCATION_COBALT_CITY},
+    [MAPSEC_TURQUOISE_CITY] = {MAP_GROUP(TURQUOISE_CITY), MAP_NUM(TURQUOISE_CITY), HEAL_LOCATION_TURQUOISE_CITY},
+    [MAPSEC_MINDARO_CITY] = {MAP_GROUP(MINDARO_CITY), MAP_NUM(MINDARO_CITY), HEAL_LOCATION_MINDARO_CITY},
+    [MAPSEC_IVORY_TOWN] = {MAP_GROUP(OFFWITE_TOWN), MAP_NUM(OFFWITE_TOWN), HEAL_LOCATION_OFFWITE_TOWN},
+    [MAPSEC_SCARLET_TOWN] = {MAP_GROUP(SCARLET_TOWN), MAP_NUM(SCARLET_TOWN), HEAL_LOCATION_SCARLET_TOWN},
+    [MAPSEC_PITCHBLACK_CITY] = {MAP_GROUP(PITCHBLAK_CITY), MAP_NUM(PITCHBLAK_CITY), HEAL_LOCATION_PITCHBLAK_CITY},
+    [MAPSEC_ROUGE_CITY] = {MAP_GROUP(MAROON_CITY), MAP_NUM(MAROON_CITY), HEAL_LOCATION_MAROON_CITY},
+    [MAPSEC_HAEWEN_TOWN] = {MAP_GROUP(HAEWEN_TOWN), MAP_NUM(HAEWEN_TOWN), HEAL_LOCATION_HAEWEN_TOWN},
+    [MAPSEC_WISTERIA_CITY] = {MAP_GROUP(WISTERIA_CITY), MAP_NUM(WISTERIA_CITY), HEAL_LOCATION_WISTERIA_CITY},
+    [MAPSEC_DUN_TOWN] = {MAP_GROUP(DUN_TOWN), MAP_NUM(DUN_TOWN), HEAL_LOCATION_DUN_TOWN},
+    [MAPSEC_BURGUNDY_TOWN] = {MAP_GROUP(BURGUNDY_TOWN), MAP_NUM(BURGUNDY_TOWN), HEAL_LOCATION_BURGUNDY_TOWN},
+	[MAPSEC_ROUTE_100] = {MAP_GROUP(ROUTE100), MAP_NUM(ROUTE100), HEAL_LOCATION_ROUTE_100},
+    [MAPSEC_ROUTE_99] = {MAP_GROUP(ROUTE99), MAP_NUM(ROUTE99), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_98] = {MAP_GROUP(ROUTE98), MAP_NUM(ROUTE98), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_97] = {MAP_GROUP(ROUTE97), MAP_NUM(ROUTE97), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_96] = {MAP_GROUP(ROUTE96), MAP_NUM(ROUTE96), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_95] = {MAP_GROUP(ROUTE95), MAP_NUM(ROUTE95), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_94] = {MAP_GROUP(ROUTE94), MAP_NUM(ROUTE94), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_93] = {MAP_GROUP(ROUTE93), MAP_NUM(ROUTE93), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_92] = {MAP_GROUP(ROUTE92), MAP_NUM(ROUTE92), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_91] = {MAP_GROUP(ROUTE91), MAP_NUM(ROUTE91), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_90] = {MAP_GROUP(ROUTE90), MAP_NUM(ROUTE90), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_89] = {MAP_GROUP(ROUTE89), MAP_NUM(ROUTE89), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_88] = {MAP_GROUP(ROUTE88), MAP_NUM(ROUTE88), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_87] = {MAP_GROUP(ROUTE87), MAP_NUM(ROUTE87), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_86] = {MAP_GROUP(ROUTE86), MAP_NUM(ROUTE86), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_85] = {MAP_GROUP(ROUTE85), MAP_NUM(ROUTE85), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_84] = {MAP_GROUP(ROUTE84), MAP_NUM(ROUTE84), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_83] = {MAP_GROUP(ROUTE83), MAP_NUM(ROUTE83), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_82] = {MAP_GROUP(ROUTE82), MAP_NUM(ROUTE82), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_81] = {MAP_GROUP(ROUTE81), MAP_NUM(ROUTE81), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_80] = {MAP_GROUP(ROUTE80), MAP_NUM(ROUTE80), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_79] = {MAP_GROUP(ROUTE79), MAP_NUM(ROUTE79), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_78] = {MAP_GROUP(ROUTE78), MAP_NUM(ROUTE78), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_77] = {MAP_GROUP(ROUTE77), MAP_NUM(ROUTE77), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_76] = {MAP_GROUP(ROUTE76), MAP_NUM(ROUTE76), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_75] = {MAP_GROUP(ROUTE75), MAP_NUM(ROUTE75), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_74] = {MAP_GROUP(ROUTE74), MAP_NUM(ROUTE74), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_73] = {MAP_GROUP(ROUTE73), MAP_NUM(ROUTE73), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_72] = {MAP_GROUP(ROUTE72), MAP_NUM(ROUTE72), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_71] = {MAP_GROUP(ROUTE71), MAP_NUM(ROUTE71), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_70] = {MAP_GROUP(ROUTE70), MAP_NUM(ROUTE70), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_69] = {MAP_GROUP(ROUTE69), MAP_NUM(ROUTE69), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_68] = {MAP_GROUP(ROUTE68), MAP_NUM(ROUTE68), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_67] = {MAP_GROUP(ROUTE67), MAP_NUM(ROUTE67), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_66] = {MAP_GROUP(ROUTE66), MAP_NUM(ROUTE66), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_65] = {MAP_GROUP(ROUTE65), MAP_NUM(ROUTE65), HEAL_LOCATION_NONE},
 };
 
 static const u8 *const sEverGrandeCityNames[] =
@@ -584,18 +663,24 @@ static const struct WindowTemplate sFlyMapWindowTemplates[] =
 {
     [WIN_MAPSEC_NAME] = {
         .bg = 0,
-        .tilemapLeft = 17,
-        .tilemapTop = 17,
-        .width = 12,
+        //.tilemapLeft = 17,
+        //.tilemapTop = 17,
+        .tilemapLeft = 1,
+        .tilemapTop = 1,
+        //.width = 12,
+        .width = 10,
         .height = 2,
         .paletteNum = 15,
         .baseBlock = 0x01
     },
     [WIN_MAPSEC_NAME_TALL] = {
         .bg = 0,
-        .tilemapLeft = 17,
-        .tilemapTop = 15,
-        .width = 12,
+        //.tilemapLeft = 17,
+        //.tilemapTop = 15,
+        .tilemapLeft = 1,
+        .tilemapTop = 1,
+        //.width = 12,
+        .width = 10,
         .height = 4,
         .paletteNum = 15,
         .baseBlock = 0x19
@@ -621,8 +706,10 @@ static const struct SpritePalette sFlyTargetIconsSpritePalette =
 static const mapsec_u16_t sRedOutlineFlyDestinations[][2] =
 {
     {
-        FLAG_LANDMARK_BATTLE_FRONTIER,
-        MAPSEC_BATTLE_FRONTIER
+        //FLAG_LANDMARK_BATTLE_FRONTIER,
+        //MAPSEC_BATTLE_FRONTIER
+        -1,
+        MAPSEC_NONE
     },
     {
         -1,
@@ -1458,10 +1545,12 @@ static u8 GetMapsecType(mapsec_u16_t mapSecId)
         return FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_EVER_GRANDE_CITY:
         return FlagGet(FLAG_VISITED_EVER_GRANDE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+        //return FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_BATTLE_FRONTIER:
         return FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER) ? MAPSECTYPE_BATTLE_FRONTIER : MAPSECTYPE_NONE;
     case MAPSEC_SOUTHERN_ISLAND:
         return FlagGet(FLAG_LANDMARK_SOUTHERN_ISLAND) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
+	// Kanto
     case MAPSEC_PALLET_TOWN:
         return FlagGet(FLAG_WORLD_MAP_PALLET_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_VIRIDIAN_CITY:
@@ -1502,6 +1591,41 @@ static u8 GetMapsecType(mapsec_u16_t mapSecId)
         return FlagGet(FLAG_WORLD_MAP_ROUTE4_POKEMON_CENTER_1F) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_ROUTE_10_POKECENTER:
         return FlagGet(FLAG_WORLD_MAP_ROUTE10_POKEMON_CENTER_1F) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+	// Issho
+    case MAPSEC_UMBER_TOWN:
+        return FlagGet(FLAG_VISITED_UMBER_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_CINEROUS_TOWN:
+        return FlagGet(FLAG_VISITED_CINEROUS_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_XANTHOS_CITY:
+        return FlagGet(FLAG_VISITED_XANTHOS_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_RESEDA_TOWN:
+        return FlagGet(FLAG_VISITED_RESEDA_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_AMBER_CITY:
+        return FlagGet(FLAG_VISITED_AMBER_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_COBALT_CITY:
+        return FlagGet(FLAG_VISITED_COBALT_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_TURQUOISE_CITY:
+        return FlagGet(FLAG_VISITED_TURQUOISE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_MINDARO_CITY:
+        return FlagGet(FLAG_VISITED_MINDARO_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_IVORY_TOWN:
+        return FlagGet(FLAG_VISITED_OFFWITE_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_SCARLET_TOWN:
+        return FlagGet(FLAG_VISITED_SCARLET_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_PITCHBLACK_CITY:
+        return FlagGet(FLAG_VISITED_PITCHBLAK_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_ROUGE_CITY:
+        return FlagGet(FLAG_VISITED_MAROON_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_HAEWEN_TOWN:
+        return FlagGet(FLAG_VISITED_HAEWEN_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_WISTERIA_CITY:
+        return FlagGet(FLAG_VISITED_WISTERIA_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_BURGUNDY_TOWN:
+        return FlagGet(FLAG_VISITED_BURGUNDY_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_DUN_TOWN:
+        return FlagGet(FLAG_VISITED_DUN_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_ROUTE_100:
+        return FlagGet(FLAG_LANDMARK_ROUTE_100) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;		
     default:
         return MAPSECTYPE_ROUTE;
     }
@@ -2074,7 +2198,8 @@ static void DrawFlyDestTextWindow(void)
                     namePrinted = TRUE;
                     ClearStdWindowAndFrameToTransparent(WIN_MAPSEC_NAME, FALSE);
                     DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME_TALL, FALSE, 101, 13);
-                    AddTextPrinterParameterized(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL);
+                    //DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME_TALL, FALSE, 5, 13);
+					AddTextPrinterParameterized(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL);
                     name = sMultiNameFlyDestinations[i].name[sFlyMap->regionMap.posWithinMapSec];
                     AddTextPrinterParameterized(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, name, GetStringRightAlignXOffset(FONT_NORMAL, name, 96), 17, 0, NULL);
                     ScheduleBgCopyTilemapToVram(0);
@@ -2089,6 +2214,7 @@ static void DrawFlyDestTextWindow(void)
             {
                 ClearStdWindowAndFrameToTransparent(WIN_MAPSEC_NAME_TALL, FALSE);
                 DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 101, 13);
+				//DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 5, 13);
             }
             else
             {
@@ -2106,7 +2232,8 @@ static void DrawFlyDestTextWindow(void)
         if (sDrawFlyDestTextWindow == TRUE)
         {
             ClearStdWindowAndFrameToTransparent(WIN_MAPSEC_NAME_TALL, FALSE);
-            DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 101, 13);
+			//DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 101, 13);
+            DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 5, 13);
         }
         FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(1));
         CopyWindowToVram(WIN_MAPSEC_NAME, COPYWIN_GFX);
@@ -2367,7 +2494,119 @@ static void CreateFlyDestIcons(void)
             gSprites[spriteId].sIconMapSec = sFlyLocations[i].mapsec;
         }
     }
+	// Issho settlements
+	//canFlyFlag = FLAG_VISITED_UMBER_TOWN;
+	for (canFlyFlag = FLAG_VISITED_UMBER_TOWN; canFlyFlag <= FLAG_VISITED_WISTERIA_CITY; canFlyFlag++)
+    {
+		mapSecId = GetIsshoMapSecFromFlyFlag(canFlyFlag);
+		
+        GetMapSecDimensions(mapSecId, &x, &y, &width, &height);
+        x = (x + MAPCURSOR_X_MIN) * 8 + 4;
+        y = (y + MAPCURSOR_Y_MIN) * 8 + 4;
+
+        if (width == 2)
+            shape = SPRITE_SHAPE(16x8);
+        else if (height == 2)
+            shape = SPRITE_SHAPE(8x16);
+        else
+            shape = SPRITE_SHAPE(8x8);
+
+        spriteId = CreateSprite(&sFlyDestIconSpriteTemplate, x, y, 10);
+        if (spriteId != MAX_SPRITES)
+        {
+            gSprites[spriteId].oam.shape = shape;
+
+            if (FlagGet(canFlyFlag))
+                gSprites[spriteId].callback = SpriteCB_FlyDestIcon;
+            else
+                shape += 3;
+
+            StartSpriteAnim(&gSprites[spriteId], shape);
+            gSprites[spriteId].sIconMapSec = mapSecId;
+        }
+    }
 }
+
+// Issho fly flags and map sec ids don't match up like Hoenn's do; need to link these carefully
+u16 GetIsshoMapSecFromFlyFlag(u16 canFlyFlag)
+{
+    u16 mapSecId;
+
+	switch (canFlyFlag - FLAG_VISITED_UMBER_TOWN)
+    {
+    case 0:
+        mapSecId = MAPSEC_UMBER_TOWN;
+        break;
+    case 1:
+        mapSecId = MAPSEC_CINEROUS_TOWN;
+        break;
+    case 2:
+        mapSecId = MAPSEC_RESEDA_TOWN;
+        break;
+    case 3:
+        mapSecId = MAPSEC_IVORY_TOWN;
+        break;
+    case 4:
+        mapSecId = MAPSEC_SCARLET_TOWN;
+        break;
+    case 5:
+        mapSecId = MAPSEC_HAEWEN_TOWN;
+        break;
+    case 6:
+        mapSecId = MAPSEC_DUN_TOWN;
+        break;
+    case 7:
+        mapSecId = MAPSEC_BURGUNDY_TOWN;
+        break;
+    case 8:
+        mapSecId = MAPSEC_XANTHOS_CITY;
+        break;
+    case 9:
+        mapSecId = MAPSEC_AMBER_CITY;
+        break;
+    case 10:
+        mapSecId = MAPSEC_COBALT_CITY;
+        break;
+    case 11:
+        mapSecId = MAPSEC_TURQUOISE_CITY;
+        break;
+    case 12:
+        mapSecId = MAPSEC_MINDARO_CITY;
+        break;
+    case 13:
+        mapSecId = MAPSEC_PITCHBLACK_CITY;
+        break;
+    case 14:
+        mapSecId = MAPSEC_ROUGE_CITY;
+        break;
+    case 15:
+        mapSecId = MAPSEC_WISTERIA_CITY;
+        break;
+	default:
+        mapSecId = MAPSEC_UMBER_TOWN;
+        break;
+    }
+	
+	return mapSecId;
+}
+
+// Issho Towns and Cities
+/*#define FLAG_VISITED_UMBER_TOWN                     (SYSTEM_FLAGS + 0x85)
+#define FLAG_VISITED_CINEROUS_TOWN                  (SYSTEM_FLAGS + 0x86)
+#define FLAG_VISITED_RESEDA_TOWN                    (SYSTEM_FLAGS + 0x87)
+#define FLAG_VISITED_OFFWITE_TOWN                   (SYSTEM_FLAGS + 0x88)
+#define FLAG_VISITED_SCARLET_TOWN                   (SYSTEM_FLAGS + 0x89)
+#define FLAG_VISITED_HAEWEN_TOWN                    (SYSTEM_FLAGS + 0x8A)
+#define FLAG_VISITED_DUN_TOWN                       (SYSTEM_FLAGS + 0x8B)
+#define FLAG_VISITED_BURGUNDY_TOWN                  (SYSTEM_FLAGS + 0x8C)
+#define FLAG_VISITED_XANTHOS_CITY                   (SYSTEM_FLAGS + 0x8D)
+#define FLAG_VISITED_AMBER_CITY                     (SYSTEM_FLAGS + 0x8E)
+#define FLAG_VISITED_COBALT_CITY                    (SYSTEM_FLAGS + 0x8F)
+#define FLAG_VISITED_TURQUOISE_CITY                 (SYSTEM_FLAGS + 0x90)
+#define FLAG_VISITED_MINDARO_CITY                   (SYSTEM_FLAGS + 0x91)
+#define FLAG_VISITED_PITCHBLAK_CITY                 (SYSTEM_FLAGS + 0x92)
+#define FLAG_VISITED_MAROON_CITY                    (SYSTEM_FLAGS + 0x93)
+#define FLAG_VISITED_WISTERIA_CITY                  (SYSTEM_FLAGS + 0x94)*/
 
 // Draw a red outline box on the mapsec if its corresponding flag has been set
 // Only used for Battle Frontier, but set up to handle more

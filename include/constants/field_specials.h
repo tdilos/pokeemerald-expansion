@@ -37,6 +37,7 @@ enum SSTidalState
 #define SS_TIDAL_MAX_STEPS 205
 
 // Scrollable Multichoice Menus
+<<<<<<< Updated upstream
 enum ScrollMulti
 {
     SCROLL_MULTI_NONE,
@@ -55,9 +56,36 @@ enum ScrollMulti
     SCROLL_MULTI_BADGES,
     SCROLL_MULTI_SILPHCO_FLOORS,
 };
+=======
+#define SCROLL_MULTI_NONE                                  0
+#define SCROLL_MULTI_GLASS_WORKSHOP_VENDOR                 1
+#define SCROLL_MULTI_POKEMON_FAN_CLUB_RATER                2
+#define SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1     3
+#define SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2     4
+#define SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_1 5
+#define SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_2 6
+#define SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR     7
+#define SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR   8
+#define SCROLL_MULTI_BERRY_POWDER_VENDOR                   9
+#define SCROLL_MULTI_BF_RECEPTIONIST                      10
+#define SCROLL_MULTI_BF_MOVE_TUTOR_1                      11
+#define SCROLL_MULTI_BF_MOVE_TUTOR_2                      12
+#define SCROLL_MULTI_SS_TIDAL_DESTINATION                 13
+#define SCROLL_MULTI_BATTLE_TENT_RULES                    14
+//#define SCROLL_MULTI_GREEN_SHARD_TUTOR                    13
+//#define SCROLL_MULTI_RED_SHARD_TUTOR                      14
+//#define SCROLL_MULTI_BLUE_SHARD_TUTOR                     15
+//#define SCROLL_MULTI_YELLOW_SHARD_TUTOR                   16
+//#define SCROLL_MULTI_WEATHER_EXPLAIN                      13
+//#define SCROLL_MULTI_STATUS_EXPLAIN                       14
+//#define SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_1 13
+//#define SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_2 14
+
+>>>>>>> Stashed changes
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6
 #define MAX_SCROLL_MULTI_LENGTH 16
+//#define MAX_SCROLL_MULTI_LENGTH 32
 
 // Dept Store Floor Numbers
 enum DeptStoreFloorNumber

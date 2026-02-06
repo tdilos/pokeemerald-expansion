@@ -1,0 +1,29 @@
+ScarletWoods_North_MapScripts::
+	.byte 0
+
+ScarletWoods_North_EventScript_Connor::
+	trainerbattle_single TRAINER_CONNOR, ScarletWoods_North_Text_ConnorIntro, ScarletWoods_North_Text_ConnorDefeated
+	msgbox ScarletWoods_North_Text_ConnorPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+ScarletWoods_North_EventScript_Morgan::
+	trainerbattle_single TRAINER_MORGAN, ScarletWoods_North_Text_MorganIntro, ScarletWoods_North_Text_MorganDefeated
+	msgbox ScarletWoods_North_Text_MorganPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+ScarletWoods_North_EventScript_Zelda::
+	trainerbattle_single TRAINER_ZELDA, ScarletWoods_North_Text_ZeldaIntro, ScarletWoods_North_Text_ZeldaDefeated
+	msgbox ScarletWoods_North_Text_ZeldaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+ScarletWoods_North_EventScript_Heath::
+	trainerbattle_single TRAINER_HEATH, ScarletWoods_North_Text_HeathIntro, ScarletWoods_North_Text_HeathDefeated
+	msgbox ScarletWoods_North_Text_HeathPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+ScarletWoods_North_EventScript_Aspen::
+	trainerbattle_single TRAINER_ASPEN, ScarletWoods_North_Text_AspenIntro, ScarletWoods_North_Text_AspenDefeated
+	msgbox ScarletWoods_North_Text_AspenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+

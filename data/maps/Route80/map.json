@@ -1,0 +1,171 @@
+{
+  "id": "MAP_ROUTE80",
+  "name": "Route80",
+  "layout": "LAYOUT_ROUTE80",
+  "music": "MUS_RG_ROUTE1",
+  "region_map_section": "MAPSEC_ROUTE_80",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_UMBER_TOWN",
+      "offset": 2,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE79",
+      "offset": -22,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route80_EventScript_Hiker",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 15,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route80_EventScript_Hiker2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 9,
+      "y": 42,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route80_EventScript_Dahlia",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "x": 4,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route80_EventScript_ItemTM29",
+      "flag": "FLAG_ITEM_ROUTE_80_TM29"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JACE",
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_JACE"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 16,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_QUARTZ_CAVE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_QUARTZ_CAVE_B1",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 11,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE80_REST_STOP",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_QUARTZ_CAVE_1F",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "1",
+      "script": "Route80_EventScript_JaceStopsPlayer1"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "1",
+      "script": "Route80_EventScript_JaceStopsPlayer2"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var_value": "1",
+      "script": "Route80_EventScript_JaceStopsPlayer3"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route80_EventScript_RouteSign"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 38,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route80_EventScript_TrainerTipsBagSort"
+    }
+  ]
+}

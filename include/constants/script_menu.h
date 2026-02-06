@@ -23,11 +23,13 @@
 #define MULTI_BIKE                         12
 #define MULTI_STATUS_INFO                  13
 #define MULTI_BRINEY_OFF_DEWFORD           14
-#define MULTI_UNUSED_15                    15
+//#define MULTI_UNUSED_15                    15
+#define MULTI_MT_SHIRO_FOSSIL              15
 #define MULTI_VIEWED_PAINTINGS             16
 #define MULTI_YESNOINFO                    17
 #define MULTI_BATTLE_MODE                  18
-#define MULTI_UNUSED_19                    19
+//#define MULTI_UNUSED_19                    19
+#define MULTI_MILK_SELLER                  19
 #define MULTI_YESNOINFO_2                  20
 #define MULTI_UNUSED_21                    21
 #define MULTI_UNUSED_22                    22
@@ -48,8 +50,10 @@
 #define MULTI_MECHADOLL5_Q1                37
 #define MULTI_MECHADOLL5_Q2                38
 #define MULTI_MECHADOLL5_Q3                39
-#define MULTI_UNUSED_40                    40
-#define MULTI_UNUSED_41                    41
+//#define MULTI_UNUSED_40                    40
+//#define MULTI_UNUSED_41                    41
+#define MULTI_KENDOMA_LR_ELEVATOR          40
+#define MULTI_KENDOMA_M_ELEVATOR           41
 #define MULTI_VENDING_MACHINE              42
 #define MULTI_MACH_BIKE_INFO               43
 #define MULTI_ACRO_BIKE_INFO               44
@@ -59,7 +63,8 @@
 #define MULTI_GAME_CORNER_DOLLS            48
 #define MULTI_GAME_CORNER_COINS            49
 #define MULTI_HOWS_FISHING                 50
-#define MULTI_UNUSED_51                    51
+//#define MULTI_UNUSED_51                    51
+#define MULTI_KENDOMA_S_ELEVATOR           51
 #define MULTI_SSTIDAL_SLATEPORT_WITH_BF    52
 #define MULTI_SSTIDAL_BATTLE_FRONTIER      53
 #define MULTI_RIGHTLEFT                    54
@@ -97,10 +102,14 @@
 #define MULTI_FORCED_START_MENU            86
 #define MULTI_FRONTIER_GAMBLER_BET         87
 #define MULTI_TENT                         88
-#define MULTI_UNUSED_SSTIDAL_1             89 // These 4 were replaced by CreateLilycoveSSTidalMultichoice
-#define MULTI_UNUSED_SSTIDAL_2             90 //
-#define MULTI_UNUSED_SSTIDAL_3             91 //
-#define MULTI_UNUSED_SSTIDAL_4             92 //
+//#define MULTI_UNUSED_SSTIDAL_1             89 // These 4 were replaced by CreateLilycoveSSTidalMultichoice
+//#define MULTI_UNUSED_SSTIDAL_2             90 //
+//#define MULTI_UNUSED_SSTIDAL_3             91 //
+//#define MULTI_UNUSED_SSTIDAL_4             92 //
+#define MULTI_WEEKDAY_SELECT               89
+#define MULTI_XANTHOS_FERRY                90
+#define MULTI_COBALT_FERRY                 91
+#define MULTI_TURQUOISE_FERRY              92
 #define MULTI_FOSSIL                       93
 #define MULTI_YESNO                        94
 #define MULTI_FRONTIER_RULES               95
@@ -175,7 +184,8 @@
 #define SSTIDAL_SELECTION_BATTLE_FRONTIER  1
 #define SSTIDAL_SELECTION_SOUTHERN_ISLAND  2
 #define SSTIDAL_SELECTION_NAVEL_ROCK       3
-#define SSTIDAL_SELECTION_BIRTH_ISLAND     4
+//#define SSTIDAL_SELECTION_BIRTH_ISLAND     4
+#define SSTIDAL_SELECTION_PERENNIAL_PILLAR 4
 #define SSTIDAL_SELECTION_FARAWAY_ISLAND   5
 #define SSTIDAL_SELECTION_EXIT             6
 #define SSTIDAL_SELECTION_COUNT            7

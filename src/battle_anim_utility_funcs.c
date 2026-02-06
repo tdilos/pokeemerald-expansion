@@ -107,6 +107,53 @@ void AnimTask_SetCamouflageBlend(u8 taskId)
 {
     u32 selectedPalettes = UnpackSelectedBattlePalettes(gBattleAnimArgs[0]);
     gBattleAnimArgs[4] = gBattleEnvironmentInfo[gBattleEnvironment].camouflageBlend;
+/*
+    switch (gBattleEnvironment)
+    {
+    case BATTLE_ENVIRONMENT_GRASS:
+        gBattleAnimArgs[4] = RGB(12, 24, 2);
+        break;
+    case BATTLE_ENVIRONMENT_RED_GRASS:
+        gBattleAnimArgs[4] = RGB(24, 12, 2);
+        break;
+    case BATTLE_ENVIRONMENT_WISTERIA_GRASS:
+        gBattleAnimArgs[4] = RGB(8, 20, 12);
+        break;
+    case BATTLE_ENVIRONMENT_HAEWEN_GRASS:
+        gBattleAnimArgs[4] = RGB(10, 10, 12);
+        break;
+    case BATTLE_ENVIRONMENT_BURGUNDY_GRASS:
+        gBattleAnimArgs[4] = RGB(31, 22, 25);
+        break;
+    case BATTLE_ENVIRONMENT_LONG_GRASS:	
+        gBattleAnimArgs[4] = RGB(0, 15, 2);
+        break;
+    case BATTLE_ENVIRONMENT_SAND:
+        gBattleAnimArgs[4] = RGB(30, 24, 11);
+        break;
+    case BATTLE_ENVIRONMENT_UNDERWATER:
+        gBattleAnimArgs[4] = RGB(0, 0, 18);
+        break;
+    case BATTLE_ENVIRONMENT_WATER:
+        gBattleAnimArgs[4] = RGB(11, 22, 31);
+        break;
+    case BATTLE_ENVIRONMENT_POND:
+        gBattleAnimArgs[4] = RGB(11, 22, 31);
+        break;
+    case BATTLE_ENVIRONMENT_MOUNTAIN:
+        gBattleAnimArgs[4] = RGB(22, 16, 10);
+        break;
+    case BATTLE_ENVIRONMENT_CAVE:
+        gBattleAnimArgs[4] = RGB(14, 9, 3);
+        break;
+    case BATTLE_ENVIRONMENT_BUILDING:
+        gBattleAnimArgs[4] = RGB_WHITE;
+        break;
+    case BATTLE_ENVIRONMENT_PLAIN:
+    default:
+        gBattleAnimArgs[4] = RGB_WHITE;
+        break;
+    }*/
     StartBlendAnimSpriteColor(taskId, selectedPalettes);
 }
 

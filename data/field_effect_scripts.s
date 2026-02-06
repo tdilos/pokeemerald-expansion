@@ -87,6 +87,9 @@ gFieldEffectScriptPointers::
 	.4byte gFldEffScript_SmileyFaceIcon    		        @ FLDEFF_SMILEY_FACE_ICON
 	.4byte gFieldEffectScript_HallOfFameRecordFrlg      @ FLDEFF_HALL_OF_FAME_RECORD_FRLG
 	.4byte gFldEffScript_PhotoFlash      		        @ FLDEFF_PHOTO_FLASH
+	.4byte gFieldEffectScript_UseHeadbutt               @ FLDEFF_USE_HEADBUTT
+	.4byte gFieldEffectScript_UseThaw                   @ FLDEFF_USE_THAW
+	.4byte gFieldEffectScript_UseMagnetRise             @ FLDEFF_USE_MAGNET_RISE
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -244,7 +247,7 @@ gFieldEffectScript_UseRockSmash::
 gFieldEffectScript_UseStrength::
 	field_eff_callnative FldEff_UseStrength
 	field_eff_end
-
+	
 gFieldEffectScript_UseDig::
 	field_eff_callnative FldEff_UseDig
 	field_eff_end
@@ -397,6 +400,18 @@ gFieldEffectScript_UseRockClimb:: @ 82DBC3F
 
 gFieldEffectScript_RockClimbDust:: @ 82DBB28
 	field_eff_loadfadedpal_callnative gSpritePalette_BigDust, FldEff_RockClimbDust
+	field_eff_end
+
+gFieldEffectScript_UseHeadbutt::
+	field_eff_callnative FldEff_UseHeadbutt
+	field_eff_end
+	
+gFieldEffectScript_UseThaw::
+	field_eff_callnative FldEff_UseThaw
+	field_eff_end
+
+gFieldEffectScript_UseMagnetRise::
+	field_eff_callnative FldEff_UseMagnetRise
 	field_eff_end
 
 gFieldEffectScript_ORASDowse::

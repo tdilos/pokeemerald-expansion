@@ -2432,4 +2432,302 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+	
+	
+	// Tourmaline abilities
+	[ABILITY_AMPLIFY] =
+    {
+        .name = _("Amplify"),
+        .description = COMPOUND_STRING("Trades accuracy for power."),
+        .aiRating = 7,
+    },
+	
+	[ABILITY_SHADOWSTEP] =
+    {
+        .name = _("Shadowstep"),
+        .description = COMPOUND_STRING("Raises Speed in moonlight."),
+        .aiRating = 6,
+    },
+	
+	[ABILITY_SEARING_TOUCH] =
+    {
+        .name = _("Searing Touch"),
+        .description = COMPOUND_STRING("Burns foe on contact."),
+        .aiRating = 4,
+    },
+	
+	[ABILITY_SOUL_FLAME] =
+    {
+        .name = _("Soul Flame"),
+        .description = COMPOUND_STRING("Prefers heat to moisture."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_EQUALIZE] = 
+    {
+        .name = _("Equalize"),
+        .description = COMPOUND_STRING("Copies all stat changes."),
+        .aiRating = 6,
+    },
+	
+	[ABILITY_STERILE] = =
+    {
+        .name = _("Sterile"),
+        .description = COMPOUND_STRING("Prevents infect."),
+        .aiRating = 4,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_FLUID] = =
+    {
+        .name = _("Fluid"),
+        .description = COMPOUND_STRING("Prevents daze."),
+        .aiRating = 4,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_WILD_HEART] =
+    {
+        .name = _("Wild Heart"),
+        .description = COMPOUND_STRING("Prevents fear."),
+        .aiRating = 4,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_RESONANT] = 
+    {
+        .name = _("Resonant"),
+        .description = COMPOUND_STRING("Dazes foe on contact."),
+        .aiRating = 4,
+    },
+	
+	[ABILITY_DIURNAL] = 
+    {
+        .name = _("Diurnal"),
+        .description = COMPOUND_STRING("Raises Speed in sunshine."),
+        .aiRating = 6,
+    },
+	
+	[ABILITY_PHOTOTONIC] = 
+    {
+        .name = _("Phototonic"),
+        .description = COMPOUND_STRING("Powers up in sunlight."),
+        .aiRating = 4,
+    },
+	
+	[ABILITY_NOCTURNAL] = 
+    {
+        .name = _("Nocturnal"),
+        .description = COMPOUND_STRING("Moon boosts best stat."),
+        .aiRating = 7,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+        .failsOnImposter = TRUE,
+    },
+	
+	[ABILITY_LEGENDARY_SCALE] =
+    {
+        .name = _("Legendary Scale"),
+        .description = COMPOUND_STRING("Raises Sp. Def."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_PSYCH_OUT] = 
+    {
+        .name = _("Psych Out"),
+        .description = COMPOUND_STRING("Lowers the foe's Sp. Atk."),
+        .aiRating = 7,
+    },
+	
+	[ABILITY_MULTI_ARM] =
+    {
+        .name = _("Multi-Arm"),
+        .description = COMPOUND_STRING("Punches multiple times."),
+        .aiRating = 8,
+    },
+	
+	[ABILITY_ECLIPSE] =
+    {
+        .name = _("Eclipse"),
+        .description = COMPOUND_STRING("Summons moonlight in battle."),
+        .aiRating = 9,
+    },
+	
+	[ABILITY_TOXIC_FUMES] =
+    {
+        .name = _("Toxic Fumes"),
+        .description = COMPOUND_STRING("Summons smaze in battle."),
+        .aiRating = 9,
+    },
+	
+	[ABILITY_CARBON_BODY] = 
+    {
+        .name = _("Carbon Body"),
+        .description = COMPOUND_STRING("Changes fire into HP."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_HOLLOW_BODY] = 
+    {
+        .name = _("Hollow Body"),
+        .description = COMPOUND_STRING("Flying increases Sp. Atk."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_RADIATOR] =
+    {
+        .name = _("Radiator"),
+        .description = COMPOUND_STRING("Hurts battlers each turn."),
+        .aiRating = 8,
+    },
+	
+	[ABILITY_SHARP_BODY] =
+    {
+        .name = _("Sharp Body"),
+        .description = COMPOUND_STRING("Hurts to touch."),
+        .aiRating = 6,
+    },
+	
+	[ABILITY_PROWESS] =
+    {
+        .name = _("Prowess"),
+        .description = COMPOUND_STRING("Raises Sp. Atk."),
+        .aiRating = 10,
+    },
+	
+	[ABILITY_STAINLESS] =
+    {
+        .name = _("Stainless"),
+        .description = COMPOUND_STRING("Only damaged by attacks."),
+        .aiRating = 9,
+    },
+	
+	[ABILITY_SYNCOPATE] =
+    {
+        .name = _("Syncopate"),
+        .description = COMPOUND_STRING("Normal moves become Echo."),
+        .aiRating = 8,
+    },
+	
+	[ABILITY_PLASTIC_BODY] =
+    {
+        .name = _("Plastic Body"),
+        .description = COMPOUND_STRING("Resists elements, not heat"),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_UPDRAFT] = 
+    {
+        .name = _("Updraft"),
+        .description = COMPOUND_STRING("Flying increases Speed."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_SMOKE_SHROUD] =
+    {
+        .name = _("Smoke Shroud"),
+        .description = COMPOUND_STRING("Ups evasion in smaze."),
+        .aiRating = 3,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_MUSCLE_MEMORY] =
+    {
+        .name = _("Muscle Memory"),
+        .description = COMPOUND_STRING("Gradually boosts Acc."),
+        .aiRating = 9,
+    },
+	
+	[ABILITY_SNOW_PACK] = 
+    {
+        .name = _("Snow Pack"),
+        .description = COMPOUND_STRING("Changes ice into HP."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_MOONBATHE] =
+    {
+        .name = _("Moonbathe"),
+        .description = COMPOUND_STRING("Slight HP recovery in moon."),
+        .aiRating = 3,
+    },
+	
+	[ABILITY_LUNAR_MIGHT] =
+    {
+        .name = _("Lunar Might"),
+        .description = COMPOUND_STRING("Powers up in moonlight."),
+        .aiRating = 3,
+    },
+	
+	[ABILITY_STONE_BODY] =
+    {
+        .name = _("Stone Body"),
+        .description = COMPOUND_STRING("Changes rock into HP."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+	[ABILITY_INSECTIVORE] = 
+    {
+        .name = _("Insectivore"),
+        .description = COMPOUND_STRING("Bug increases Attack."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+    [ABILITY_HYDROPHOBIC] =
+    {
+        .name = _("Hydrophobic"),
+        .description = COMPOUND_STRING("Moisture protection."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+    [ABILITY_DISORIENT] =
+    {
+        .name = _("Disorient"),
+        .description = COMPOUND_STRING("Confuses foe on contact."),
+        .aiRating = 4,
+    },
+	
+    [ABILITY_ACOUSTIC_BODY] =
+    {
+        .name = _("Acoustic Body"),
+        .description = COMPOUND_STRING("Ups a random stat on contact."),
+        .aiRating = 4,
+    },
+	
+    [ABILITY_FOOD_FOR_THOUGHT] =
+    {
+        .name = _("Food for Thought"),
+        .description = COMPOUND_STRING("Changes psychic into HP."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+    [ABILITY_BATTERY_POWER] =
+    {
+        .name = _("Battery Power"),
+        .description = COMPOUND_STRING("Electric increases Attack."),
+        .aiRating = 7,
+        .breakable = TRUE,
+    },
+	
+    [ABILITY_ANNIHILATOR] =
+    {
+        .name = _("Annihilator"),
+        .description = COMPOUND_STRING("Protection from effects."),
+        .aiRating = 10,
+        .cantBeCopied = TRUE,
+        .cantBeSwapped = TRUE,
+        .cantBeTraced = TRUE,
+    },
 };

@@ -352,13 +352,91 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 {
     u32 experience;
     struct Pokemon pokemon;
+	
+	//Level cap stuff
+	u8 cap = 16;
+
+    if (FlagGet(FLAG_BADGE01_GET))
+        cap = 24;
+	if (FlagGet(FLAG_BADGE02_GET))
+        cap = 32;
+	if (FlagGet(FLAG_BADGE03_GET))
+        cap = 40;
+    if (FlagGet(FLAG_BADGE04_GET) && FlagGet(FLAG_BADGE05_GET))
+        cap = 48;
+	else if (FlagGet(FLAG_BADGE04_GET) || FlagGet(FLAG_BADGE05_GET))
+        cap = 44;
+    if (FlagGet(FLAG_BADGE06_GET))
+        cap = 52;
+    if (FlagGet(FLAG_BADGE07_GET) && FlagGet(FLAG_BADGE08_GET))
+        cap = 60;
+	else if (FlagGet(FLAG_BADGE07_GET) || FlagGet(FLAG_BADGE08_GET))
+        cap = 56;
+	if (FlagGet(FLAG_DEFEATED_AZAMI))
+		cap = 64;
+	
+	if (gSaveBlock2Ptr->optionsDifficulty == 1) //level caps for hardcore
+	{
+		cap = 15;
+		
+		if (FlagGet(FLAG_BADGE01_GET))
+			cap = 22;
+		if (FlagGet(FLAG_BADGE02_GET))
+			cap = 30;
+		if (FlagGet(FLAG_BADGE03_GET))
+			cap = 37;
+		if (FlagGet(FLAG_BADGE04_GET) && FlagGet(FLAG_BADGE05_GET))
+			cap = 44;
+		else if (FlagGet(FLAG_BADGE04_GET) || FlagGet(FLAG_BADGE05_GET))
+			cap = 40;
+		if (FlagGet(FLAG_BADGE06_GET))
+			cap = 49;
+		if (FlagGet(FLAG_BADGE07_GET) && FlagGet(FLAG_BADGE08_GET))
+			cap = 55;
+		else if (FlagGet(FLAG_BADGE07_GET) || FlagGet(FLAG_BADGE08_GET))
+			cap = 52;
+		if (FlagGet(FLAG_DEFEATED_AZAMI))
+			cap = 60;
+	}
+	else if (gSaveBlock2Ptr->optionsDifficulty == 2) //level caps for insane
+	{
+		cap = 14;
+		
+		if (FlagGet(FLAG_BADGE01_GET))
+			cap = 21;
+		if (FlagGet(FLAG_BADGE02_GET))
+			cap = 28;
+		if (FlagGet(FLAG_BADGE03_GET))
+			cap = 35;
+		if (FlagGet(FLAG_BADGE04_GET) && FlagGet(FLAG_BADGE05_GET))
+			cap = 42;
+		else if (FlagGet(FLAG_BADGE04_GET) || FlagGet(FLAG_BADGE05_GET))
+			cap = 39;
+		if (FlagGet(FLAG_BADGE06_GET))
+			cap = 46;
+		if (FlagGet(FLAG_BADGE07_GET) && FlagGet(FLAG_BADGE08_GET))
+			cap = 53;
+		else if (FlagGet(FLAG_BADGE07_GET) || FlagGet(FLAG_BADGE08_GET))
+			cap = 49;
+		if (FlagGet(FLAG_DEFEATED_AZAMI))
+			cap = 57;
+	}
+	
+	if (FlagGet(FLAG_IS_CHAMPION))
+		cap = 100;
+	
 
     GetBoxMonNickname(&daycareMon->mon, gStringVar1);
     BoxMonToMon(&daycareMon->mon, &pokemon);
 
     TryFormChange(&pokemon, FORM_CHANGE_WITHDRAW);
 
+<<<<<<< Updated upstream
     if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetCurrentLevelCap())
+=======
+    //if (GetMonData(&pokemon, MON_DATA_LEVEL) != MAX_LEVEL)
+	if (GetMonData(&pokemon, MON_DATA_LEVEL) < cap)
+>>>>>>> Stashed changes
     {
         experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
         u32 maxExp = GetExpAtLevelCap(&pokemon);
@@ -946,6 +1024,28 @@ void RejectEggFromDayCare(void)
     RemoveEggFromDayCare(&gSaveBlock1Ptr->daycare);
 }
 
+<<<<<<< Updated upstream
+=======
+static const struct {
+  u16 currSpecies;
+  u16 item;
+  u16 babySpecies;
+} IncenseBabyTable[][3] =
+{
+    // Regular offspring,   Item,              Incense Offspring
+    { SPECIES_WOBBUFFET,    ITEM_LAX_INCENSE,    SPECIES_WYNAUT },
+    { SPECIES_MARILL,       ITEM_SEA_INCENSE,    SPECIES_AZURILL },
+    { SPECIES_SNORLAX,      ITEM_FULL_INCENSE,   SPECIES_MUNCHLAX },
+    { SPECIES_CHANSEY,      ITEM_LUCK_INCENSE,   SPECIES_HAPPINY },
+    { SPECIES_MR_MIME,      ITEM_ODD_INCENSE,    SPECIES_MIME_JR },
+    { SPECIES_CHIMECHO,     ITEM_PURE_INCENSE,   SPECIES_CHINGLING },
+    { SPECIES_SUDOWOODO,    ITEM_ROCK_INCENSE,   SPECIES_BONSLY },
+    { SPECIES_ROSELIA,      ITEM_ROSE_INCENSE,   SPECIES_BUDEW },
+    { SPECIES_MANTINE,      ITEM_WAVE_INCENSE,   SPECIES_MANTYKE },
+    { SPECIES_SKARMORY,     ITEM_SILVER_INCENSE, SPECIES_SKARBY },
+};
+
+>>>>>>> Stashed changes
 static void AlterEggSpeciesWithIncenseItem(u16 *species, struct DayCare *daycare)
 {
     u32 i;
