@@ -1154,6 +1154,12 @@ static const union AnimCmd sSpriteAnim_StatusFear[] =
     ANIMCMD_END
 };
 
+static const union AnimCmd sSpriteAnim_Blank[] =
+{
+    ANIMCMD_FRAME(48, 0),
+    ANIMCMD_END
+};
+
 static const union AnimCmd *const sSpriteTemplate_StatusCondition[] =
 {
     sSpriteAnim_StatusPoison,
@@ -1204,7 +1210,7 @@ static const u8 *const sUnused_StatStrings[] =
 #define ROTOM_FROST_MOVE MOVE_BLIZZARD
 #define ROTOM_FAN_MOVE   MOVE_AIR_SLASH
 #define ROTOM_MOW_MOVE   MOVE_LEAF_STORM
-#define ROTOM_MOW_MOVE   MOVE_BOOMBURST
+#define ROTOM_PLAY_MOVE  MOVE_BOOMBURST
 
 static const u16 sRotomFormChangeMoves[5] =
 {

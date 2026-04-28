@@ -1347,6 +1347,11 @@
 	.4byte \failInstr
 	.endm
 
+	.macro trypetrify failInstr:req
+	various BS_ATTACKER, VARIOUS_TRY_PETRIFY
+	.4byte \failInstr
+	.endm
+
 	.macro handlemegaevo battler:req, case:req
 	callnative BS_HandleMegaEvolution
 	.byte \battler
@@ -2299,6 +2304,11 @@
 	callnative BS_TryActivateAbilityWithAbilityShield
 	.byte \battler
 	.byte \switchedItems
+	.endm
+
+	.macro trychitinize failInstr:req
+	various BS_ATTACKER, VARIOUS_CHITINIZE
+	.4byte \failInstr
 	.endm
 
 	.macro trychitinize failInstr:req

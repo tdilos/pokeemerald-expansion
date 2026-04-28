@@ -463,15 +463,15 @@ static void OpponentHandleChooseMove(enum BattlerId battler)
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_RUN, 0);
         }
 		// Roamer attempts to flee
-		else if (gBattleTypeFlags & BATTLE_TYPE_ROAMER && CanBattlerEscape(gActiveBattler) && !IsAbilityPreventingEscape(gActiveBattler))
+		else if (gBattleTypeFlags & BATTLE_TYPE_ROAMER && CanBattlerEscape(battler) && !IsAbilityPreventingEscape(battler))
 		{
 			gAiBattleData->actionFlee = FALSE;
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_RUN, 0);
 		}
 		// DAZ effect
-		else if ((GetMonData(&gEnemyParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_STATUS) == STATUS1_DAZE))
+		else if ((GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_STATUS) == STATUS1_DAZE))
 		{
-            BtlController_EmitTwoReturnValues(BUFFER_B, 10, ChooseMoveAndTargetInBattlePalace());
+            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, ChooseMoveAndTargetInBattlePalace(battler));
         }
         else if (gAiBattleData->choiceWatch)
         {
@@ -510,8 +510,8 @@ static void OpponentHandleChooseMove(enum BattlerId battler)
                 SetAIUsingGimmick(battler, NO_GIMMICK);
                 BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, (chosenMoveIndex) | (gBattlerTarget << 8));
             }
-                    /*if (ShouldUseZMove(gActiveBattler, gBattlerTarget, chosenMove))
-                        QueueZMove(gActiveBattler, chosenMove);*/
+                    if (ShouldUseZMove(gActiveBattler, gBattlerTarget, chosenMove))
+                        QueueZMove(gActiveBattler, chosenMove);
                     if (CanMegaEvolve(gActiveBattler)) // If opponent can mega evolve, do it.
                         BtlController_EmitTwoReturnValues(BUFFER_B, 10, (chosenMoveId) | (RET_MEGA_EVOLUTION) | (gBattlerTarget << 8));
                     else
@@ -532,7 +532,7 @@ static void OpponentHandleChooseMove(enum BattlerId battler)
         // DAZ effect
 		if ((GetMonData(&gEnemyParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_STATUS) == STATUS1_DAZE))
 		{
-            BtlController_EmitTwoReturnValues(BUFFER_B, 10, ChooseMoveAndTargetInBattlePalace());
+            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_EXEC_SCRIPT, ChooseMoveAndTargetInBattlePalace(battler));
         }
         else if (moveTarget == TARGET_USER || moveTarget == TARGET_USER_OR_ALLY)
         {

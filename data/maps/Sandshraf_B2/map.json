@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -156,6 +156,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Sandshraf_B2_EventScript_Biker",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WORMHOLE_LARGE",
+      "x": 26,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_BONUS_WORLD_1"
     }
   ],
   "warp_events": [
@@ -185,7 +198,5 @@
       "script": "Sandshraf_B2_EventScript_CyclingChallengeEnd"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

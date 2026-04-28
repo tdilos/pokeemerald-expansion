@@ -394,9 +394,7 @@ const u8 gItemEffect_EvoItem[6] = {
     [4] = ITEM4_EVO_STONE,
 };
 
-<<<<<<< Updated upstream
-=======
-const u8 gItemEffect_CheriBerry[6] = {
+/*const u8 gItemEffect_CheriBerry[6] = {
     [3] = ITEM3_PARALYSIS,
 };
 
@@ -430,9 +428,8 @@ const u8 gItemEffect_TougaBerry[6] = {
 
 const u8 gItemEffect_PumkinBerry[6] = {
     [3] = ITEM3_FEAR,
-};
+};*/
 
->>>>>>> Stashed changes
 const u8 gItemEffect_LeppaBerry[7] = {
     [4] = ITEM4_HEAL_PP_ONE | ITEM4_HEAL_PP,
     [6] = 10, // Amount of PP to recover
@@ -498,10 +495,8 @@ const u8 gItemEffect_TamatoBerry[10] = {
     [6] = ITEM6_SUBTRACT_EV,
     EV_BERRY_FRIENDSHIP_CHANGE,
 };
-<<<<<<< Updated upstream
-=======
 
-const u8 *const gItemEffectTable[ITEMS_COUNT] =
+/*const u8 *const gItemEffectTable[ITEMS_COUNT] =
 {
     // Medicine
     [ITEM_POTION]             = gItemEffect_Potion,
@@ -658,5 +653,4 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
     [ITEM_GREPA_BERRY]        = gItemEffect_GrepaBerry,
     [ITEM_TAMATO_BERRY]       = gItemEffect_TamatoBerry,
     [LAST_BERRY_INDEX]        = NULL,
-};
->>>>>>> Stashed changes
+};*/

@@ -57,18 +57,12 @@ BattleFrontier_ReceptionGate_EventScript_ScottScene::
 	@msgbox BattleFrontier_ReceptionGate_Text_ScottGreatToSeeYouHere, MSGBOX_DEFAULT
 	msgbox BattleFrontier_ReceptionGate_Text_BrendanGreatToSeeYouHere, MSGBOX_DEFAULT
 	closemessage
-<<<<<<< Updated upstream
-	applymovement LOCALID_FRONTIER_RECEPTION_SCOTT, BattleFrontier_ReceptionGate_Movement_ScottExit
+	@applymovement LOCALID_FRONTIER_RECEPTION_SCOTT, BattleFrontier_ReceptionGate_Movement_ScottExit
+	applymovement LOCALID_FRONTIER_RECEPTION_SCOTT, BattleFrontier_ReceptionGate_Movement_BrendanExit
 	waitmovement 0
 	removeobject LOCALID_FRONTIER_RECEPTION_SCOTT
-=======
-	@applymovement LOCALID_SCOTT, BattleFrontier_ReceptionGate_Movement_ScottExit
-	applymovement LOCALID_SCOTT, BattleFrontier_ReceptionGate_Movement_BrendanExit
-	waitmovement 0
-	removeobject LOCALID_SCOTT
 	playse SE_EXIT
 	waitse
->>>>>>> Stashed changes
 	releaseall
 	end
 

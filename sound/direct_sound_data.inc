@@ -8738,7 +8738,6 @@ Cry_Pecharunt::
 	.incbin "sound/direct_sound_samples/cries/pecharunt.bin"
 .endif
 .endif @ P_FAMILY_PECHARUNT
-.endif @ P_CRIES_ENABLED
 
 .if TESTING == TRUE
 @ Tests use a single shared cry for all mons, and Fletchling is the standard measurement
@@ -8746,66 +8745,109 @@ Cry_Pecharunt::
 	.incbin "sound/direct_sound_samples/cries/fletchling.bin"
 .endif
 
+
+
+.if P_FAMILY_FARFETCHD == TRUE
+	.align 2
+Cry_Seldame::
+	.incbin "sound/direct_sound_samples/cries/quaquaval.bin"
+.endif @ P_FAMILY_FARFETCHD
+
+.if P_FAMILY_PINSIR == TRUE
 	.align 2
 Cry_Plux::
 	.incbin "sound/direct_sound_samples/cries/plux.bin"
+.endif @ P_FAMILY_PINSIR
 
+.if P_FAMILY_HOUNDOUR == TRUE
+	.align 2
+Cry_Houndevil::
+	.incbin "sound/direct_sound_samples/cries/houndoom_mega.bin"
+.endif @ P_FAMILY_HOUNDOUR
+
+.if P_FAMILY_SKARMORY == TRUE
+	.align 2
+Cry_Skarby::
+	.incbin "sound/direct_sound_samples/cries/wattrel.bin"
+.endif @ P_FAMILY_SKARMORY
+
+.if P_FAMILY_SABLEYE == TRUE
+	.align 2
+Cry_Gemineye::
+	.incbin "sound/direct_sound_samples/cries/sableye_mega.bin"
+.endif @ P_FAMILY_SABLEYE
+
+.if P_FAMILY_MAWILE == TRUE
+	.align 2
+Cry_Malevile::
+	.incbin "sound/direct_sound_samples/cries/mawile_mega.bin"
+.endif @ P_FAMILY_MAWILE
+
+.if P_FAMILY_MEDITITE == TRUE
+	.align 2
+Cry_Mediyogi::
+	.incbin "sound/direct_sound_samples/cries/medicham_mega.bin"
+.endif @ P_FAMILY_MEDITITE
+
+.if P_FAMILY_ == TRUE
+	.align 2
+Cry_Ptropa::
+	.incbin "sound/direct_sound_samples/cries/ptropa.bin"
+.endif @ P_FAMILY_TROPIUS
+
+.if P_FAMILY_CHIMECHO == TRUE
+	.align 2
+Cry_Decibelle::
+	.incbin "sound/direct_sound_samples/cries/decibelle.bin"
+.endif @ P_FAMILY_CHIMECHO
+
+.if P_FAMILY_ABSOL == TRUE
+	.align 2
+Cry_Arbinj::
+	.incbin "sound/direct_sound_samples/cries/absol_mega.bin"
+.endif @ P_FAMILY_ABSOL
+
+.if P_FAMILY_SHUPPET == TRUE
+	.align 2
+Cry_Zippette::
+	.incbin "sound/direct_sound_samples/cries/banette_mega.bin"
+.endif @ P_FAMILY_SHUPPET
+
+.if P_FAMILY_SNOVER == TRUE
+	.align 2
+Cry_Yetree::
+	.incbin "sound/direct_sound_samples/cries/abomasnow_mega.bin"
+.endif @ P_FAMILY_SNOVER
+
+.if P_FAMILY_AUDINO == TRUE
+	.align 2
+Cry_Noaudia::
+	.incbin "sound/direct_sound_samples/cries/audino_mega.bin"
+.endif @ P_FAMILY_AUDINO
+
+.if P_FAMILY_YAMASK == TRUE
+	.align 2
+Cry_Nephtomb::
+	.incbin "sound/direct_sound_samples/cries/nephtomb.bin"
+.endif @ P_FAMILY_YAMASK
+
+.if P_FAMILY_GOTHITA == TRUE
+	.align 2
+Cry_Gothiturge::
+	.incbin "sound/direct_sound_samples/cries/gothiturge.bin"
+.endif @ P_FAMILY_GOTHITA
+
+.if P_FAMILY_EEVEE == TRUE
 	.align 2
 Cry_Voxeon::
 	.incbin "sound/direct_sound_samples/cries/voxeon.bin"
 
 	.align 2
-Cry_Ptropa::
-	.incbin "sound/direct_sound_samples/cries/ptropa.bin"
+Cry_Atroceon::
+	.incbin "sound/direct_sound_samples/cries/atroceon.bin"
+.endif @ P_FAMILY_EEVEE
 
-	.align 2
-Cry_Decibelle::
-	.incbin "sound/direct_sound_samples/cries/decibelle.bin"
-
-	.align 2
-Cry_Nephtomb::
-	.incbin "sound/direct_sound_samples/cries/nephtomb.bin"
-
-	.align 2
-Cry_Gothiteau::
-	.incbin "sound/direct_sound_samples/cries/gothiteau.bin"
-
-	.align 2
-Cry_Varoom::
-	.incbin "sound/direct_sound_samples/cries/varoom.bin"
-
-	.align 2
-Cry_Revavroom::
-	.incbin "sound/direct_sound_samples/cries/revavroom.bin"
-
-	.align 2
-Cry_Omendenz::
-	.incbin "sound/direct_sound_samples/cries/omendenz.bin"
-
-	.align 2
-Cry_Skarby::
-	.incbin "sound/direct_sound_samples/cries/wattrel.bin"
-
-	.align 2
-Cry_Seldame::
-	.incbin "sound/direct_sound_samples/cries/quaquaval.bin"
-
-	.align 2
-Cry_Shifur::
-	.incbin "sound/direct_sound_samples/cries/cry_unused_265.bin"
-
-	.align 2
-Cry_Burserker::
-	.incbin "sound/direct_sound_samples/cries/cry_unused_268.bin"
-
-	.align 2
-Cry_Kotora::
-	.incbin "sound/direct_sound_samples/cries/raging_bolt.bin"
-
-	.align 2
-Cry_Raitora::
-	.incbin "sound/direct_sound_samples/cries/archaludon.bin"
-
+.if P_FAMILY_MOIBELLE == TRUE
 	.align 2
 Cry_Moibelle::
 	.incbin "sound/direct_sound_samples/cries/sprigatito.bin"
@@ -8813,7 +8855,19 @@ Cry_Moibelle::
 	.align 2
 Cry_Slaybelle::
 	.incbin "sound/direct_sound_samples/cries/meowscarada.bin"
+.endif @ P_FAMILY_MOIBELLE
 
+.if P_FAMILY_SHIFUR == TRUE
+	.align 2
+Cry_Shifur::
+	.incbin "sound/direct_sound_samples/cries/cry_unused_265.bin"
+
+	.align 2
+Cry_Burserker::
+	.incbin "sound/direct_sound_samples/cries/cry_unused_268.bin"
+.endif @ P_FAMILY_SHIFUR
+
+.if P_FAMILY_VOLBEAR == TRUE
 	.align 2
 Cry_Volbear::
 	.incbin "sound/direct_sound_samples/cries/gouging_fire.bin"
@@ -8821,15 +8875,19 @@ Cry_Volbear::
 	.align 2
 Cry_Dynabear::
 	.incbin "sound/direct_sound_samples/cries/okidogi.bin"
+.endif @ P_FAMILY_VOLBEAR
+
+.if P_FAMILY_KOTORA == TRUE
+	.align 2
+Cry_Kotora::
+	.incbin "sound/direct_sound_samples/cries/raging_bolt.bin"
 
 	.align 2
-Cry_Mumbao::
-	.incbin "sound/direct_sound_samples/cries/dolliv.bin"
+Cry_Raitora::
+	.incbin "sound/direct_sound_samples/cries/archaludon.bin"
+.endif @ P_FAMILY_KOTORA
 
-	.align 2
-Cry_Jumbao::
-	.incbin "sound/direct_sound_samples/cries/garganacl.bin"
-
+.if P_FAMILY_SYCLAR == TRUE
 	.align 2
 Cry_Syclar::
 	.incbin "sound/direct_sound_samples/cries/nymble.bin"
@@ -8837,7 +8895,9 @@ Cry_Syclar::
 	.align 2
 Cry_Syclant::
 	.incbin "sound/direct_sound_samples/cries/lokix.bin"
+.endif @ P_FAMILY_SYCLAR
 
+.if P_FAMILY_FAWNIFER == TRUE
 	.align 2
 Cry_Fawnifer::
 	.incbin "sound/direct_sound_samples/cries/fuecoco.bin"
@@ -8849,7 +8909,19 @@ Cry_Electrelk::
 	.align 2
 Cry_Caribolt::
 	.incbin "sound/direct_sound_samples/cries/skeledirge.bin"
+.endif @ P_FAMILY_FAWNIFER
 
+.if P_FAMILY_MUMBAO == TRUE
+	.align 2
+Cry_Mumbao::
+	.incbin "sound/direct_sound_samples/cries/dolliv.bin"
+
+	.align 2
+Cry_Jumbao::
+	.incbin "sound/direct_sound_samples/cries/garganacl.bin"
+.endif @ P_FAMILY_MUMBAO
+
+.if P_FAMILY_MIASMAW == TRUE
 	.align 2
 Cry_Miasmite::
 	.incbin "sound/direct_sound_samples/cries/wiglett.bin"
@@ -8857,7 +8929,9 @@ Cry_Miasmite::
 	.align 2
 Cry_Miasmaw::
 	.incbin "sound/direct_sound_samples/cries/slither_wing.bin"
+.endif @ P_FAMILY_MIASMAW
 
+.if P_FAMILY_VOLKRITTER == TRUE
 	.align 2
 Cry_Volkritter::
 	.incbin "sound/direct_sound_samples/cries/toedscool.bin"
@@ -8865,6 +8939,21 @@ Cry_Volkritter::
 	.align 2
 Cry_Volkraken::
 	.incbin "sound/direct_sound_samples/cries/toedscruel.bin"
+.endif @ P_FAMILY_VOLKRITTER
+
+.if P_FAMILY_OMENDENZ == TRUE
+	.align 2
+Cry_Omendenz::
+	.incbin "sound/direct_sound_samples/cries/omendenz.bin"
+.endif @ P_FAMILY_OMENDENZ
+
+.if P_FAMILY_MIMEKTIPLEX == TRUE
+	.align 2
+Cry_Mimektiplex::
+	.incbin "sound/direct_sound_samples/cries/mimektiplex.bin"
+.endif @ P_FAMILY_MIMEKTIPLEX
+.endif @ P_CRIES_ENABLED
+
 
 
 	.align 2

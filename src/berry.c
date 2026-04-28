@@ -68,6 +68,18 @@ static const u8 sBerryDescriptionPart2_Pumkin[] = _("heavy due to its immense fi
 static const u8 sBerryDescriptionPart1_Ginema[] = _("A perfectly round berry under the");
 static const u8 sBerryDescriptionPart2_Ginema[] = _("thin skin. Very dry and sour.");
 
+// New berries
+static const u8 sBerryDescriptionPart1_Drash[] = _("When it ripens, this sweet Berry");
+static const u8 sBerryDescriptionPart2_Drash[] = _("falls and sticks to the ground.");
+static const u8 sBerryDescriptionPart1_Eggant[] = _("Very dry tasting, especially the");
+static const u8 sBerryDescriptionPart2_Eggant[] = _("parts not exposed to the sun.");
+static const u8 sBerryDescriptionPart1_Touga[] = _("Awfully spicy. No one has ever");
+static const u8 sBerryDescriptionPart2_Touga[] = _("eaten it whole.");
+static const u8 sBerryDescriptionPart1_Pumkin[] = _("This Berry is amazingly sour. It's");
+static const u8 sBerryDescriptionPart2_Pumkin[] = _("heavy due to its immense filling.");
+static const u8 sBerryDescriptionPart1_Ginema[] = _("A perfectly round berry under the");
+static const u8 sBerryDescriptionPart2_Ginema[] = _("thin skin. Very dry and sour.");
+
 const struct Berry gBerries[] =
 {
     [ITEM_CHERI_BERRY - FIRST_BERRY_INDEX] =
@@ -183,6 +195,78 @@ const struct Berry gBerries[] =
         .waterBonus = 10,
         .weedsBonus = 2,
         .pestsBonus = 6,
+    },
+	
+	[ITEM_DRASH_BERRY - FIRST_BERRY_INDEX] =
+    {
+        .name = _("DRASH"),
+        .firmness = BERRY_FIRMNESS_VERY_HARD,
+        .size = 134,
+        .maxYield = 3,
+        .minYield = 2,
+        .description1 = sBerryDescriptionPart1_Drash,
+        .description2 = sBerryDescriptionPart2_Drash,
+        .stageDuration = 3,
+        .spicy = 0,
+        .dry = 0,
+        .sweet = 40,
+        .bitter = 0,
+        .sour = 0,
+        .smoothness = 65,
+    },
+	
+	[ITEM_EGGANT_BERRY - FIRST_BERRY_INDEX] =
+    {
+        .name = _("EGGANT"),
+        .firmness = BERRY_FIRMNESS_SOFT,
+        .size = 41,
+        .maxYield = 3,
+        .minYield = 2,
+        .description1 = sBerryDescriptionPart1_Eggant,
+        .description2 = sBerryDescriptionPart2_Eggant,
+        .stageDuration = 3,
+        .spicy = 0,
+        .dry = 40,
+        .sweet = 0,
+        .bitter = 0,
+        .sour = 0,
+        .smoothness = 65,
+    },
+	
+	[ITEM_TOUGA_BERRY - FIRST_BERRY_INDEX] =
+    {
+        .name = _("TOUGA"),
+        .firmness = BERRY_FIRMNESS_SUPER_HARD,
+        .size = 153,
+        .maxYield = 3,
+        .minYield = 2,
+        .description1 = sBerryDescriptionPart1_Touga,
+        .description2 = sBerryDescriptionPart2_Touga,
+        .stageDuration = 3,
+        .spicy = 40,
+        .dry = 0,
+        .sweet = 0,
+        .bitter = 0,
+        .sour = 0,
+        .smoothness = 65,
+    },
+	
+	[ITEM_PUMKIN_BERRY - FIRST_BERRY_INDEX] =
+    {
+        .name = _("PUMKIN"),
+        .firmness = BERRY_FIRMNESS_SUPER_HARD,
+        .size = 48,
+        .maxYield = 3,
+        .minYield = 2,
+        .description1 = sBerryDescriptionPart1_Pumkin,
+        .description2 = sBerryDescriptionPart2_Pumkin,
+        .stageDuration = 3,
+        .spicy = 0,
+        .dry = 0,
+        .sweet = 0,
+        .bitter = 0,
+        .sour = 40,
+        .smoothness = 65,
     },
 	
 	[ITEM_DRASH_BERRY - FIRST_BERRY_INDEX] =
@@ -1359,6 +1443,24 @@ const struct Berry gBerries[] =
         .waterBonus = 10,
         .weedsBonus = 1,
         .pestsBonus = 4,
+    },
+	
+	[ITEM_GINEMA_BERRY - FIRST_BERRY_INDEX] =
+    {
+        .name = _("GINEMA"),
+        .firmness = BERRY_FIRMNESS_VERY_HARD,
+        .size = 35,
+        .maxYield = 5,
+        .minYield = 2,
+        .description1 = sBerryDescriptionPart1_Ginema,
+        .description2 = sBerryDescriptionPart2_Ginema,
+        .stageDuration = 18,
+        .spicy = 0,
+        .dry = 30,
+        .sweet = 0,
+        .bitter = 0,
+        .sour = 30,
+        .smoothness = 70,
     },
 	
 	[ITEM_GINEMA_BERRY - FIRST_BERRY_INDEX] =

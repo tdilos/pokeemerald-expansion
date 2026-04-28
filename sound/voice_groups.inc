@@ -202,7 +202,7 @@
 .include "sound/voicegroups/rg_sevii_67.inc"
 .include "sound/voicegroups/drumsets/rg_credits.inc"
 
-@ Tourmaline stuff
+@ Gen 4 stuff for Tourmaline
 .include "sound/voicegroups/voicegroup129.inc"
 .include "sound/voicegroups/voicegroup130.inc"
 .include "sound/voicegroups/voicegroup131.inc"

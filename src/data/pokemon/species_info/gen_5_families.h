@@ -356,7 +356,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sTepigLevelUpLearnset,
         .teachableLearnset = sTepigTeachableLearnset,
         .eggMoveLearnset = sTepigEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE}),
+        //.evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE, CONDITIONS({IF_NOT_REGION, REGION_ISSHO})},
+                                {EVO_LEVEL, 17, SPECIES_PIGNITE_ISSHO, CONDITIONS({IF_REGION, REGION_ISSHO})},
     },
 
     [SPECIES_PIGNITE] =
@@ -424,6 +426,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sPigniteLevelUpLearnset,
         .teachableLearnset = sPigniteTeachableLearnset,
+        .formSpeciesIdTable = sPigniteFormSpeciesIdTable,
+        .formChangeTable = sPigniteFormChangeTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_EMBOAR}),
     },
 
@@ -2617,6 +2621,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sWoobatLevelUpLearnset,
         .teachableLearnset = sWoobatTeachableLearnset,
         .eggMoveLearnset = sWoobatEggMoveLearnset,
+        .formSpeciesIdTable = sWoobatFormSpeciesIdTable,
+        .formChangeTable = sWoobatFormChangeTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_SWOOBAT, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
     },
 
@@ -2689,6 +2695,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sSwoobatLevelUpLearnset,
         .teachableLearnset = sSwoobatTeachableLearnset,
+        .formSpeciesIdTable = sSwoobatFormSpeciesIdTable,
+        .formChangeTable = sSwoobatFormChangeTable,
     },
 #endif //P_FAMILY_WOOBAT
 

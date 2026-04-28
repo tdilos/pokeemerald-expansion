@@ -104,7 +104,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_WORMHOLE_LARGE",
       "x": 12,
       "y": 5,
       "elevation": 0,
@@ -113,8 +113,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Sandshraf_EventScript_ItemHeavyDutyBoots",
-      "flag": "FLAG_ITEM_SANDSHRAF_HEAVY_DUTY_BOOTS"
+      "script": "NULL",
+      "flag": "FLAG_HIDE_BONUS_WORLD_2"
     }
   ],
   "warp_events": [

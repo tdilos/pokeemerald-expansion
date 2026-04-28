@@ -2242,4 +2242,95 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleScript = BattleScript_EffectHit,
         .battleTvScore = 0, // TODO: Assign points
     },
+	
+	
+	// Tourmaline move effects
+    [EFFECT_UV_BURST] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+    [EFFECT_PETRIFY] =
+    {
+        .battleScript = BattleScript_EffectPetrify,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+    [EFFECT_THAW] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+    [EFFECT_SPECIAL_DEFENSE_UP_3] =
+    {
+        .battleScript = BattleScript_EffectSpecialDefenseUp3,
+        .battleTvScore = 1,
+        .encourageEncore = TRUE,
+    },
+    [EFFECT_SMAZE] =
+    {
+        .battleScript = BattleScript_EffectSmaze,
+        .battleTvScore = 4,
+        .encourageEncore = TRUE,
+    },
+    [EFFECT_FULLMOON] =
+    {
+        .battleScript = BattleScript_EffectFullMoon,
+        .battleTvScore = 4,
+        .encourageEncore = TRUE,
+    },
+    [EFFECT_AFTERSHOCK] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+    [EFFECT_FORCE_OF_WILL] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+    [EFFECT_HIGH_NOTE] =
+    {
+        .battleScript = BattleScript_EffectHighNote,
+        .battleTvScore = 1,
+        .encourageEncore = TRUE,
+    },
+    [EFFECT_SALT_SPRAY] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+    [EFFECT_SPECIAL_ATTACK_ACCURACY_UP] =
+    {
+        .battleScript = BattleScript_EffectSpecialAttackAccUp,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+    [EFFECT_OVERCLOCK] =
+    {
+        .battleScript = BattleScript_EffectOverclock,
+        .battleTvScore = 1,
+        .encourageEncore = TRUE,
+    },
+    [EFFECT_CHITINIZE] =
+    {
+        .battleScript = BattleScript_EffectChitinize,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+    [EFFECT_FAIRY_DUST] =
+    {
+        .battleScript = BattleScript_EffectFairyDust,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+    [EFFECT_MOONBLAST] =
+        .battleScript = BattleScript_EffectTwoTurnsAttack,
+        .battleTvScore = 1,
+        .twoTurnEffect = TRUE,
+    },
+    [EFFECT_METAMORPHOSE] =
+    {
+        .battleScript = BattleScript_EffectMetamorphose,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
 };

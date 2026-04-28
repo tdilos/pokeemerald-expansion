@@ -16,7 +16,7 @@ static bool32 IsFieldMoveUnlocked_Cut(void)
     return FlagGet(FLAG_BADGE01_GET);
 }
 
-static bool32 IsFieldMoveUnlocked_Flash(void)
+static bool32 IsFieldMoveUnlocked_RockSmash(void)
 {
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE01_GET);
@@ -24,7 +24,7 @@ static bool32 IsFieldMoveUnlocked_Flash(void)
     return FlagGet(FLAG_BADGE02_GET);
 }
 
-static bool32 IsFieldMoveUnlocked_RockSmash(void)
+static bool32 IsFieldMoveUnlocked_Strength(void)
 {
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE06_GET);
@@ -32,17 +32,17 @@ static bool32 IsFieldMoveUnlocked_RockSmash(void)
     return FlagGet(FLAG_BADGE03_GET);
 }
 
-static bool32 IsFieldMoveUnlocked_Strength(void)
+static bool32 IsFieldMoveUnlocked_Thaw(void)
 {
     return FlagGet(FLAG_BADGE04_GET);
 }
 
-static bool32 IsFieldMoveUnlocked_Surf(void)
+static bool32 IsFieldMoveUnlocked_Fly(void)
 {
     return FlagGet(FLAG_BADGE05_GET);
 }
 
-static bool32 IsFieldMoveUnlocked_Fly(void)
+static bool32 IsFieldMoveUnlocked_Surf(void)
 {
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE03_GET);
@@ -50,17 +50,38 @@ static bool32 IsFieldMoveUnlocked_Fly(void)
     return FlagGet(FLAG_BADGE06_GET);
 }
 
-static bool32 IsFieldMoveUnlocked_Dive(void)
+static bool32 IsFieldMoveUnlocked_MagnetRise(void)
 {
     return FlagGet(FLAG_BADGE07_GET);
 }
 
-static bool32 IsFieldMoveUnlocked_Waterfall(void)
+static bool32 IsFieldMoveUnlocked_Dive(void)
 {
     if (IS_FRLG)
         return FlagGet(FLAG_BADGE07_GET);
 
     return FlagGet(FLAG_BADGE08_GET);
+}
+
+static bool32 IsFieldMoveUnlocked_Waterfall(void)
+{
+    return FlagGet(FLAG_IS_CHAMPION);
+}
+
+static bool32 IsFieldMoveUnlocked_Flash(void)
+{
+    return TRUE;
+}
+
+static bool32 IsFieldMoveUnlocked_Headbutt(void)
+{
+    //return FlagGet(FLAG_RESCUED_HEADBUTT_TUTOR);
+	return TRUE;
+}
+
+static bool32 IsFieldMoveUnlocked_Bulldoze(void)
+{
+    return FlagGet(FLAG_IS_CHAMPION);
 }
 
 #if OW_ROCK_CLIMB_FIELD_MOVE == TRUE
@@ -238,4 +259,32 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 #endif
+    [FIELD_MOVE_THAW] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Thaw,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Thaw,
+        .moveID = MOVE_THAW,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+    [FIELD_MOVE_MAGNET_RISE] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_MagnetRise,
+        .isUnlockedFunc = IsFieldMoveUnlocked_MagnetRise,
+        .moveID = MOVE_MAGNET_RISE,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+    [FIELD_MOVE_HEADBUTT] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Headbutt,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Headbutt,
+        .moveID = MOVE_HEADBUTT,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+    [FIELD_MOVE_BULLDOZE] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_Bulldoze,
+        .isUnlockedFunc = IsFieldMoveUnlocked_Bulldoze,
+        .moveID = MOVE_BULLDOZE,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
 };

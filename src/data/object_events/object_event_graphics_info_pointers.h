@@ -444,6 +444,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvi
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ApricornTree;
 
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shaymin;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Melmetal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Volcarona;

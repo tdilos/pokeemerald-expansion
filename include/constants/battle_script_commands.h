@@ -532,6 +532,7 @@ enum CmdVarious
 #define VARIOUS_TRY_PETRIFY                         173
 #define VARIOUS_CHITINIZE                           174
 */
+
 // Cmd_manipulatedamage
 #define DMG_1_8_TARGET_HP       0 // Used by bad dreams
 

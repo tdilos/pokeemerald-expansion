@@ -59,6 +59,8 @@ struct SpinData
     u32 VBlanksSpinning:11; //34,1 seconds
 };
 
+EWRAM_DATA bool8 gRunToggleBtnSet = FALSE;
+
 static EWRAM_DATA u8 sSpinStartFacingDir = 0;
 EWRAM_DATA struct ObjectEvent gObjectEvents[OBJECT_EVENTS_COUNT] = {};
 EWRAM_DATA struct PlayerAvatar gPlayerAvatar = {};
@@ -1037,6 +1039,9 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         else
             PlayerWalkNormal(direction);
 
+        gRunToggleBtnSet = FALSE;
+		PlayerWalkNormal(direction);
+		
 		if (heldKeys & A_BUTTON) // metal won't move unless A-button held
 			TryPullMetal(direction);
     }

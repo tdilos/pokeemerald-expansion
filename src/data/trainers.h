@@ -10433,7 +10433,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         .items = {},
         .doubleBattle = FALSE,
@@ -10445,7 +10445,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         .items = {},
         .doubleBattle = FALSE,
@@ -10457,7 +10457,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         .items = {},
         .doubleBattle = FALSE,
@@ -10469,7 +10469,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_SUPER_POTION, ITEM_SUPER_POTION},
@@ -10482,7 +10482,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_SUPER_POTION, ITEM_SUPER_POTION},
@@ -10495,7 +10495,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_SUPER_POTION, ITEM_SUPER_POTION},
@@ -10508,7 +10508,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_SUPER_POTION, ITEM_SUPER_POTION},
@@ -10521,7 +10521,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_SUPER_POTION, ITEM_SUPER_POTION},
@@ -10534,7 +10534,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_SUPER_POTION, ITEM_SUPER_POTION},
@@ -10547,7 +10547,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_HYPER_POTION},
@@ -10560,7 +10560,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_HYPER_POTION},
@@ -10573,7 +10573,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_HYPER_POTION},
@@ -10586,7 +10586,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_MAX_POTION, ITEM_MAX_POTION, ITEM_MAX_POTION},
@@ -10599,7 +10599,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_MAX_POTION, ITEM_MAX_POTION, ITEM_MAX_POTION},
@@ -10612,7 +10612,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAWYER,
+        .trainerPic = TRAINER_PIC_JACE,
         .trainerName = _("JACE"),
         //.items = {},
 		.items = {ITEM_MAX_POTION, ITEM_MAX_POTION, ITEM_MAX_POTION},
@@ -11215,7 +11215,7 @@ const struct Trainer gTrainers[] = {
         .party = NO_ITEM_DEFAULT_MOVES(sParty_Beauford),
     },
 
-    [TRAINER_TARAH_1] =
+    [TRAINER_TARA_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -11224,7 +11224,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_SUPER_POTION, ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_SMART_TRAINER, //AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = EVERYTHING_CUSTOMIZED(sParty_Tarah1),
+        .party = EVERYTHING_CUSTOMIZED(sParty_Tara1),
     },
 
 //**********ROUTE 86**********/

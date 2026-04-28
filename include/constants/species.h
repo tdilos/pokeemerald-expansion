@@ -1689,7 +1689,6 @@
 #define SPECIES_GLIMMORA_MEGA                           1572
 
 
-
 #define TOURMALINE_START                               SPECIES_GLIMMORA_MEGA
 
 #define SPECIES_SELDAME                                (TOURMALINE_START + 1)

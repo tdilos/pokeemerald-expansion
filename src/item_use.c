@@ -59,11 +59,10 @@ static void Task_StandingOnHiddenItem(u8);
 static void PlayerFaceHiddenItem(enum Direction);
 static void CheckForHiddenItemsInMapConnection(u8);
 static void Task_OpenRegisteredPokeblockCase(u8);
-<<<<<<< Updated upstream
-static void Task_AccessPokemonBoxLink(u8);
-=======
 
->>>>>>> Stashed changes
+static void Task_AccessPokemonBoxLink(u8);
+
+
 static void ItemUseOnFieldCB_Bike(u8);
 static void ItemUseOnFieldCB_Rod(u8);
 static void ItemUseOnFieldCB_Itemfinder(u8);
@@ -99,6 +98,12 @@ static const u8 sText_UsedVar2WildRepelled[] = _("{PLAYER} used the\n{STR_VAR_2}
 static const u8 sText_PlayedPokeFluteCatchy[] = _("Played the POKé FLUTE.\pNow, that's a catchy tune!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_PlayedPokeFlute[] = _("Played the POKé FLUTE.");
 static const u8 sText_PokeFluteAwakenedMon[] = _("The POKé FLUTE awakened sleeping\nPOKéMON.{PAUSE_UNTIL_PRESS}");
+
+static void CB2_BagShowRegionMap(void);
+void BagShowRegionMap(void);
+void ItemUseOutOfBattle_TownMap(u8 taskId);
+static void Task_UseTownMapFromField(u8 taskId);
+
 
 static void CB2_BagShowRegionMap(void);
 void BagShowRegionMap(void);
@@ -754,7 +759,6 @@ static void Task_OpenRegisteredPokeblockCase(u8 taskId)
     }
 }
 
-<<<<<<< Updated upstream
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)
 {
     sItemUseOnFieldCB = Task_AccessPokemonBoxLink;
@@ -767,7 +771,6 @@ static void Task_AccessPokemonBoxLink(u8 taskId)
     DestroyTask(taskId);
 }
 
-=======
 
 
 static void CB2_BagShowRegionMap(void)
@@ -840,8 +843,6 @@ static void Task_UseTownMapFromField(u8 taskId)
 
 
 
-
->>>>>>> Stashed changes
 void ItemUseOutOfBattle_CoinCase(u8 taskId)
 {
     ConvertIntToDecimalStringN(gStringVar1, GetCoins(), STR_CONV_MODE_LEFT_ALIGN, 4);
@@ -1001,12 +1002,12 @@ void ItemUseOutOfBattle_RareCandy(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
-<<<<<<< Updated upstream
 void ItemUseOutOfBattle_DynamaxCandy(u8 taskId)
 {
     gItemUseCB = ItemUseCB_DynamaxCandy;
     SetUpItemUseCallback(taskId);
-=======
+}
+
 void ItemUseOutOfBattle_ExpAll(u8 taskId)
 {
     if (!FlagGet(FLAG_SYS_EXP_ALL))
@@ -1027,7 +1028,6 @@ void ItemUseOutOfBattle_ExpAll(u8 taskId)
         else
             DisplayItemMessage(taskId, 1, gText_ExpAllOff, CloseItemMessage);
     }
->>>>>>> Stashed changes
 }
 
 void ItemUseOutOfBattle_TMHM(u8 taskId)

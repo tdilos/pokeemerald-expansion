@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 // gen 4+ data from urpg's contest movedex
 const struct ContestMove gContestMoves[MOVES_COUNT] =
 {
@@ -6752,7 +6750,6 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
     [MOVE_HYDRO_STEAM] = {0}, // TODO
 };
 
->>>>>>> Stashed changes
 const struct ContestEffect gContestEffects[] =
 {
     [CONTEST_EFFECT_HIGHLY_APPEALING] =

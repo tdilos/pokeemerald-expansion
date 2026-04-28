@@ -202,7 +202,6 @@ static inline struct ItemSlot GetBagItemIdAndQuantity(enum Pocket pocketId, u32 
     return BagPocket_GetSlotData(&gBagPockets[pocketId], pocketPos);
 }
 
-u16 GetBagItemQuantity(u16 *quantity);
 void ApplyNewEncryptionKeyToBagItems(u32 newKey);
 void SetBagItemsPointers(void);
 u8 *CopyItemName(enum Item itemId, u8 *dst);

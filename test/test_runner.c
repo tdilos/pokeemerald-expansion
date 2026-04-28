@@ -10,10 +10,7 @@
 #include "constants/characters.h"
 #include "test_runner.h"
 #include "test/test.h"
-<<<<<<< Updated upstream
 #include "test/battle.h"
-=======
->>>>>>> Stashed changes
 
 #define TIMEOUT_SECONDS 60
 
@@ -74,7 +71,6 @@ static bool32 PrefixMatch(const char *pattern, const char *string)
     }
 }
 
-<<<<<<< Updated upstream
 static bool32 InfixMatch(const char *pattern, const char *string)
 {
     if (string == NULL)
@@ -83,8 +79,6 @@ static bool32 InfixMatch(const char *pattern, const char *string)
     return strstr(string, &pattern[1]) != NULL;
 }
 
-=======
->>>>>>> Stashed changes
 enum
 {
     STATE_INIT,
@@ -200,7 +194,6 @@ void TestRunner_CheckMemory(void)
         }
     }
 }
-<<<<<<< Updated upstream
 
 static void ClearSaveBlocks(void)
 {
@@ -208,8 +201,6 @@ static void ClearSaveBlocks(void)
     ClearSav2();
     ClearSav3();
 }
-=======
->>>>>>> Stashed changes
 
 void CB2_TestRunner(void)
 {
@@ -225,7 +216,6 @@ top:
             return;
         }
 
-<<<<<<< Updated upstream
         gTestRunnerState.filterMode = DetectFilterMode(gTestRunnerArgv);
 
         MoveSaveBlocks_ResetHeap();
@@ -236,20 +226,6 @@ top:
         if (gPersistentTestRunnerState.address != 0)
         {
             ClearSaveBlocks();
-=======
-        MoveSaveBlocks_ResetHeap();
-        ClearSav1();
-        ClearSav2();
-        ClearSav3();
-
-        gIntrTable[7] = Intr_Timer2;
-
-        gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
-
-        // The current test restarted the ROM (e.g. by jumping to NULL).
-        if (gPersistentTestRunnerState.address != 0)
-        {
->>>>>>> Stashed changes
             gTestRunnerState.test = __start_tests;
             while ((uintptr_t)gTestRunnerState.test != gPersistentTestRunnerState.address)
             {
@@ -273,11 +249,8 @@ top:
             }
             else
             {
-<<<<<<< Updated upstream
                 // Cost must be assigned to the test that crashed, otherwise tests will be desynched
                 AssignCostToRunner();
-=======
->>>>>>> Stashed changes
                 gTestRunnerState.state = STATE_REPORT_RESULT;
                 gTestRunnerState.result = TEST_RESULT_CRASH;
             }
@@ -299,10 +272,7 @@ top:
         break;
 
     case STATE_ASSIGN_TEST:
-<<<<<<< Updated upstream
         ClearSaveBlocks();
-=======
->>>>>>> Stashed changes
         while (1)
         {
             if (gTestRunnerState.test == __stop_tests)
@@ -310,7 +280,6 @@ top:
                 gTestRunnerState.state = STATE_EXIT;
                 return;
             }
-<<<<<<< Updated upstream
             if (gTestRunnerState.test->runner != &gAssumptionsRunner)
             {
                 if ((gTestRunnerState.filterMode == TEST_FILTER_MODE_TEST_NAME_PREFIX && !PrefixMatch(gTestRunnerArgv, gTestRunnerState.test->name))
@@ -322,13 +291,6 @@ top:
                 }
             }
             break;
-=======
-            if (gTestRunnerState.test->runner != &gAssumptionsRunner
-              && !PrefixMatch(gTestRunnerArgv, gTestRunnerState.test->name))
-                ++gTestRunnerState.test;
-            else
-                break;
->>>>>>> Stashed changes
         }
 
         Test_MgbaPrintf(":N%s", gTestRunnerState.test->name);
@@ -633,7 +595,6 @@ static bool32 FunctionTest_CheckProgress(void *data)
     return madeProgress;
 }
 
-<<<<<<< Updated upstream
 static u32 FunctionTest_RandomUniform(enum RandomTag tag, u32 lo, u32 hi, bool32 (*reject)(u32), void *caller)
 {
     //rigged
@@ -703,20 +664,15 @@ static const void* FunctionTest_RandomElementArray(enum RandomTag tag, const voi
     return RandomElementArrayDefaultValue(tag, array, size, count, caller);
 }
 
-=======
->>>>>>> Stashed changes
 const struct TestRunner gFunctionTestRunner =
 {
     .setUp = FunctionTest_SetUp,
     .run = FunctionTest_Run,
     .tearDown = FunctionTest_TearDown,
     .checkProgress = FunctionTest_CheckProgress,
-<<<<<<< Updated upstream
     .randomUniform = FunctionTest_RandomUniform,
     .randomWeightedArray = FunctionTest_RandomWeightedArray,
     .randomElementArray = FunctionTest_RandomElementArray,
-=======
->>>>>>> Stashed changes
 };
 
 static void Assumptions_Run(void *data)
@@ -1055,7 +1011,6 @@ u32 SourceLineOffset(u32 sourceLine)
     else
         return sourceLine - test->sourceLine;
 }
-<<<<<<< Updated upstream
 
 u32 RandomUniform(enum RandomTag tag, u32 lo, u32 hi)
 {
@@ -1155,5 +1110,3 @@ void SetupRiggedRng(u32 sourceLine, enum RandomTag randomTag, u32 value)
     if (i == RIGGED_RNG_COUNT)
         Test_ExitWithResult(TEST_RESULT_FAIL, __LINE__, ":L%s:%d: Too many rigged RNGs to set up", gTestRunnerState.test->filename, sourceLine);
 }
-=======
->>>>>>> Stashed changes

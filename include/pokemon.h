@@ -621,7 +621,7 @@ struct NatureInfo
     u8 cantBeOverwritten:1; // cannot be overwritten by Entrainment, Worry Seed or Simple Beam (but can be by Mummy) - same as cantBeSuppressed except for Truant
     u8 breakable:1; // can be bypassed by Mold Breaker and clones
     u8 failsOnImposter:1; // doesn't work on an Imposter mon; when can we actually use this?
-};
+};*/
 
 struct BattleMove
 {
@@ -637,7 +637,7 @@ struct BattleMove
     u8 split;
     u16 argument;
     u8 zMoveEffect;
-};*/
+};
 
 #define SPINDA_SPOT_WIDTH 16
 #define SPINDA_SPOT_HEIGHT 16

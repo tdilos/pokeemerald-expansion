@@ -332,7 +332,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SOUNDPROOF] =
     {
         .name = _("Soundproof"),
-        .description = COMPOUND_STRING("Avoids sound-based moves."),
+        //.description = COMPOUND_STRING("Avoids sound-based moves."),
+        .description = COMPOUND_STRING("Echo increases Sp. Def."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -545,7 +546,8 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_VITAL_SPIRIT] =
     {
         .name = _("Vital Spirit"),
-        .description = COMPOUND_STRING("Prevents sleep."),
+        //.description = COMPOUND_STRING("Prevents sleep."),
+        .description = COMPOUND_STRING("Prevents exhaust."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -2433,7 +2435,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
     },
 	
-	
+
 	// Tourmaline abilities
 	[ABILITY_AMPLIFY] =
     {

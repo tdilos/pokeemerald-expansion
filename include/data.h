@@ -134,6 +134,41 @@ struct Trainer
     enum TrainerPicID trainerBackPic;
 };
 
+/*#define NO_ITEM_DEFAULT_MOVES(party) { .NoItemDefaultMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = 0
+#define NO_ITEM_CUSTOM_MOVES(party) { .NoItemCustomMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET
+#define ITEM_DEFAULT_MOVES(party) { .ItemDefaultMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_HELD_ITEM
+#define ITEM_CUSTOM_MOVES(party) { .ItemCustomMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM
+#define EVERYTHING_CUSTOMIZED(party) { .EverythingCustomized = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_EVERYTHING_CUSTOMIZED
+
+union TrainerMonPtr
+{
+    const struct TrainerMonNoItemDefaultMoves *NoItemDefaultMoves;
+    const struct TrainerMonNoItemCustomMoves *NoItemCustomMoves;
+    const struct TrainerMonItemDefaultMoves *ItemDefaultMoves;
+    const struct TrainerMonItemCustomMoves *ItemCustomMoves;
+    const struct TrainerMonCustomized *EverythingCustomized; 
+
+struct Trainer
+{
+    /*0x00*/ u64 aiFlags;
+    /*0x04*/ const struct TrainerMon *party;
+    /*0x08*/ u16 items[MAX_TRAINER_ITEMS];
+    /*0x10*/ u8 trainerClass;
+    /*0x11*/ u8 encounterMusic_gender; // last bit is gender
+    /*0x12*/ u8 trainerPic;
+    /*0x13*/ u8 trainerName[TRAINER_NAME_LENGTH + 1];
+    /*0x1E*/ u8 battleType:2;
+             u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
+    /*0x1F*/ u8 mugshotColor;
+    /*0x20*/ u8 partySize;
+    /*0x21*/ u8 poolSize;
+    /*0x22*/ u8 poolRuleIndex;
+    /*0x23*/ u8 poolPickIndex;
+    /*0x24*/ u8 poolPruneIndex;
+    /*0x25*/ u16 overrideTrainer;
+    /*0x26*/ u8 trainerBackPic;
+};*/
+
 struct TrainerClass
 {
     u8 name[13];
@@ -352,42 +387,6 @@ static inline const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
 static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
 {
     return GetTrainerStructFromId(trainerId)->aiFlags;
-}
-
-
-static inline u16 SanitizeTrainerId(u16 trainerId)
-{
-    if (trainerId >= TRAINERS_COUNT)
-        return TRAINER_NONE;
-    return trainerId;
-}
-
-static inline const u16 *GetTrainerItemsFromId(u16 trainerId)
-{
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    //enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
-
-    //return gTrainers[difficulty][sanitizedTrainerId].items;
-	return gTrainers[sanitizedTrainerId].items;
-}
-
-//static inline const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
-/*const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
-{
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    //enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
-
-    //return gTrainers[difficulty][sanitizedTrainerId].party;
-	return gTrainers[sanitizedTrainerId].party;
-}*/
-
-static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
-{
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    //enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
-
-    //return gTrainers[difficulty][sanitizedTrainerId].aiFlags;
-	return gTrainers[sanitizedTrainerId].aiFlags;
 }
 
 #endif // GUARD_DATA_H

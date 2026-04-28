@@ -414,11 +414,8 @@ static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 static const struct SpriteTemplate sSpriteTemplate_HeartIcon =
 {
     .tileTag = TAG_NONE,
-<<<<<<< Updated upstream
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
-=======
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_WHITE, //FLDEFF_PAL_TAG_GENERAL_0,
->>>>>>> Stashed changes
+    //.paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_WHITE,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_HeartIcon,
@@ -1085,8 +1082,8 @@ u8 FldEff_HeartIcon(void)
         struct Sprite *sprite = &gSprites[spriteId];
 
         SetIconSpriteData(sprite, FLDEFF_HEART_ICON, 0);
-<<<<<<< Updated upstream
-        UpdateSpritePaletteByTemplate(&sSpriteTemplate_HeartIcon, sprite);
+        //UpdateSpritePaletteByTemplate(&sSpriteTemplate_HeartIcon, sprite);
+        sprite->oam.paletteNum = 1; //2;
     }
 
     return 0;
@@ -1117,9 +1114,6 @@ u8 FldEff_XIcon(void)
 
         SetIconSpriteData(sprite, FLDEFF_X_ICON, 3);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, sprite);
-=======
-        sprite->oam.paletteNum = 1; //2;
->>>>>>> Stashed changes
     }
 
     return 0;

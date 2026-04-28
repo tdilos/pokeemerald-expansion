@@ -14,6 +14,7 @@
 #define TRAINER_SECRET_BASE                 2051 //1024
 #define TRAINER_LINK_OPPONENT               2048
 #define TRAINER_UNION_ROOM                  3072
+
 //#define TRAINER_STEVEN_PARTNER              3075
 //#define TRAINER_VERT_PARTNER                3076
 //#define TRAINER_VIOLET_PARTNER              3077 
@@ -569,6 +570,7 @@ enum TrainerClassID
     TRAINER_CLASS_RUIN_MANIAC_FRLG,
     TRAINER_CLASS_LADY_FRLG,
     TRAINER_CLASS_PAINTER_FRLG,
+
 // Tourmaline classes
 	TRAINER_CLASS_ROCKER,
 	TRAINER_CLASS_OFFICER,

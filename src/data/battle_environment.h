@@ -67,6 +67,92 @@
 
 const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] =
 {
+	
+    [BATTLE_ENVIRONMENT_RED_GRASS] =
+    {
+    #if B_NATURE_POWER_MOVES >= GEN_6
+        .naturePower = MOVE_ENERGY_BALL,
+    #elif B_NATURE_POWER_MOVES >= GEN_4
+        .naturePower = MOVE_SEED_BOMB,
+    #else
+        .naturePower = MOVE_STUN_SPORE,
+    #endif
+        .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
+        .camouflageType = TYPE_GRASS,
+        .background = ENVIRONMENT_BACKGROUND(RedGrass),
+    },
+	
+    [BATTLE_ENVIRONMENT_PLAIN_RED] =
+    {
+    #if B_NATURE_POWER_MOVES >= GEN_6
+        .naturePower = MOVE_TRI_ATTACK,
+    #elif B_NATURE_POWER_MOVES >= GEN_4
+        .naturePower = MOVE_EARTHQUAKE,
+    #else
+        .naturePower = MOVE_SWIFT,
+    #endif
+        .secretPowerEffect = (B_SECRET_POWER_EFFECT == GEN_4 || B_SECRET_POWER_EFFECT == GEN_5) ? MOVE_EFFECT_ACC_MINUS_1 : MOVE_EFFECT_PARALYSIS,
+        .camouflageType = (B_CAMOUFLAGE_TYPES == GEN_4 || B_CAMOUFLAGE_TYPES == GEN_5) ? TYPE_GROUND : TYPE_NORMAL,
+        .background =
+		{
+			.tileset = gBattleTerrainTiles_RedGrass,
+			.tilemap = gBattleTerrainTilemap_RedGrass,
+			.entryTileset = gBattleTerrainAnimTiles_RedGrass,
+			.entryTilemap = gBattleTerrainAnimTilemap_RedGrass,
+			.palette = gBattleTerrainPalette_PlainRed,
+		},
+    },
+	
+    [BATTLE_ENVIRONMENT_WISTERIA_GRASS] =
+    {
+    #if B_NATURE_POWER_MOVES >= GEN_6
+        .naturePower = MOVE_ENERGY_BALL,
+    #elif B_NATURE_POWER_MOVES >= GEN_4
+        .naturePower = MOVE_SEED_BOMB,
+    #else
+        .naturePower = MOVE_STUN_SPORE,
+    #endif
+        .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
+        .camouflageType = TYPE_GRASS,
+        .background = ENVIRONMENT_BACKGROUND(WisteriaGrass),
+    },
+	
+    [BATTLE_ENVIRONMENT_HAEWEN_GRASS] =
+    {
+    #if B_NATURE_POWER_MOVES >= GEN_6
+        .naturePower = MOVE_ENERGY_BALL,
+    #elif B_NATURE_POWER_MOVES >= GEN_4
+        .naturePower = MOVE_SEED_BOMB,
+    #else
+        .naturePower = MOVE_STUN_SPORE,
+    #endif
+        .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
+        .camouflageType = TYPE_GRASS,
+        .background = ENVIRONMENT_BACKGROUND(HaewenGrass),
+    },
+		
+    [BATTLE_ENVIRONMENT_BURGUNDY_GRASS] =
+    {
+    #if B_NATURE_POWER_MOVES >= GEN_6
+        .naturePower = MOVE_ENERGY_BALL,
+    #elif B_NATURE_POWER_MOVES >= GEN_4
+        .naturePower = MOVE_SEED_BOMB,
+    #else
+        .naturePower = MOVE_STUN_SPORE,
+    #endif
+        .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
+        .camouflageType = TYPE_GRASS,
+        .background = ENVIRONMENT_BACKGROUND(BurgundyGrass),
+    },
+		
+    [BATTLE_TERRAIN_SEWER] =
+    {
+        .naturePower = MOVE_SLUDGE_BOMB,
+        .secretPowerEffect = MOVE_EFFECT_TOXIC,
+        .camouflageType = TYPE_POISON,
+        .background = ENVIRONMENT_BACKGROUND(Sewer),
+    },
+	
     [BATTLE_ENVIRONMENT_GRASS] =
     {
         .name = _("Grass"),

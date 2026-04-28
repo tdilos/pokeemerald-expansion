@@ -7,11 +7,8 @@
 #include "menu.h"
 #include "gpu_regs.h"
 #include "task.h"
-<<<<<<< Updated upstream
 #include "constants/field_weather.h"
-=======
 #include "dns.h"
->>>>>>> Stashed changes
 #include "constants/rgb.h"
 
 enum
@@ -36,11 +33,8 @@ static void Task_BlendPalettesGradually(u8 taskId);
 ALIGNED(4) EWRAM_DATA u16 gPlttBufferUnfaded[PLTT_BUFFER_SIZE] = {0};
 ALIGNED(4) EWRAM_DATA u16 gPlttBufferFaded[PLTT_BUFFER_SIZE] = {0};
 EWRAM_DATA struct PaletteFadeControl gPaletteFade = {0};
-<<<<<<< Updated upstream
-=======
 //static EWRAM_DATA u32 sFiller = 0;
 static EWRAM_DATA u32 sPlttPreviousUpdateResult;
->>>>>>> Stashed changes
 static EWRAM_DATA u32 sPlttBufferTransferPending = 0;
 
 static const u8 sRoundedDownGrayscaleMap[] = {
@@ -91,14 +85,10 @@ void TransferPlttBuffer(void)
 
 u32 UpdatePaletteFade(void)
 {
-<<<<<<< Updated upstream
     u32 result;
-=======
-    u8 result;
     u8 dummy = 0;
 	
 	sPlttPreviousUpdateResult = PALETTE_FADE_STATUS_LOADING;
->>>>>>> Stashed changes
 
     if (sPlttBufferTransferPending)
         return PALETTE_FADE_STATUS_LOADING;
@@ -112,12 +102,8 @@ u32 UpdatePaletteFade(void)
     else
         result = UpdateHardwarePaletteFade();
 
-<<<<<<< Updated upstream
-    sPlttBufferTransferPending = gPaletteFade.multipurpose1;
-=======
     sPlttBufferTransferPending = gPaletteFade.multipurpose1 | dummy;
 	sPlttPreviousUpdateResult = result;
->>>>>>> Stashed changes
 
     return result;
 }

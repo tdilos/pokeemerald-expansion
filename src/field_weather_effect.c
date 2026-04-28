@@ -775,11 +775,7 @@ void Snow_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
-<<<<<<< Updated upstream
     gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES;
-=======
-    gWeatherPtr->targetSnowflakeSpriteCount = 32; //16;
->>>>>>> Stashed changes
     gWeatherPtr->snowflakeVisibleCounter = 0;
     Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
     gWeatherPtr->noShadows = FALSE;
@@ -950,11 +946,8 @@ static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
 
 static void UNUSED WaitSnowflakeSprite(struct Sprite *sprite)
 {
-<<<<<<< Updated upstream
-=======
     // Timer is never incremented
     //if (gWeatherPtr->snowflakeTimer > 18)
->>>>>>> Stashed changes
     if (++gWeatherPtr->snowflakeTimer > 18)
     {
         sprite->invisible = FALSE;
@@ -983,8 +976,6 @@ static void UpdateSnowflakeSprite(struct Sprite *sprite)
         sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
     else if (x > 242)
         sprite->x = -3 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
-<<<<<<< Updated upstream
-=======
 
     /*y = (sprite->y + sprite->centerToCornerVecY + gSpriteCoordOffsetY) & 0xFF;
     if (y > 163 && y < 171)
@@ -1011,7 +1002,6 @@ static void UpdateSnowflakeSprite(struct Sprite *sprite)
         sprite->invisible = TRUE;
         sprite->callback = WaitSnowflakeSprite;
     }*/
->>>>>>> Stashed changes
 }
 
 #undef tPosY

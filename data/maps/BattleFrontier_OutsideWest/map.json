@@ -48,12 +48,7 @@
       "flag": "0"
     },
     {
-<<<<<<< Updated upstream
-      "local_id": "LOCALID_FRONTIER_FERRY_ATTENDANT",
-      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
-=======
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
->>>>>>> Stashed changes
       "x": 19,
       "y": 68,
       "elevation": 0,
@@ -424,9 +419,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

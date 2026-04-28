@@ -91,6 +91,7 @@ static const u8 *GetIntroSpeechOfApproachingTrainer(void);
 static const u8 *GetTrainerCantBattleSpeech(void);
 
 EWRAM_DATA TrainerBattleParameter gTrainerBattleParameter = {0};
+
 EWRAM_DATA u16 gPartnerTrainerId = 0;
 EWRAM_DATA static u8 *sTrainerBattleEndScript = NULL;
 EWRAM_DATA static bool8 sShouldCheckTrainerBScript = FALSE;
@@ -836,6 +837,16 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         return BATTLE_TERRAIN_HAEWEN_GRASS;
 	if (MetatileBehavior_IsBurgundyGrass(tileBehavior))
         return BATTLE_TERRAIN_BURGUNDY_GRASS;
+    if (MetatileBehavior_IsRedGrass(tileBehavior))
+        return BATTLE_TERRAIN_RED_GRASS;
+    if (MetatileBehavior_IsSnowGrass(tileBehavior))
+        return BATTLE_TERRAIN_SNOW;
+	if (MetatileBehavior_IsWisteriaGrass(tileBehavior))
+        return BATTLE_TERRAIN_WISTERIA_GRASS;
+	if (MetatileBehavior_IsHaewenGrass(tileBehavior))
+        return BATTLE_TERRAIN_HAEWEN_GRASS;
+	if (MetatileBehavior_IsBurgundyGrass(tileBehavior))
+        return BATTLE_TERRAIN_BURGUNDY_GRASS;
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
@@ -1056,6 +1067,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
 
+    // Entity battle
+	if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_UNKNOWN)
+        return B_TRANSITION_BLACKHOLE;
+	
     switch (GetTrainerBattleType(trainerId))
     {
     case TRAINER_BATTLE_TYPE_SINGLES:
@@ -1478,7 +1493,13 @@ void ClearTrainerFlag(u16 trainerId)
 }
 
 void BattleSetup_StartTrainerBattle(void)
-{	
+{
+	// For Wisteria games
+    if (FlagGet(FLAG_SYS_WISTERIA_GAME_IN_PROGRESS) && !FlagGet(FLAG_CLEARED_WISTERIA_GAME_1))
+        gBattleTypeFlags |= BATTLE_TYPE_WISTERIA_GAME_1;
+    else if (FlagGet(FLAG_SYS_WISTERIA_GAME_IN_PROGRESS) && !FlagGet(FLAG_CLEARED_WISTERIA_GAME_2))
+        gBattleTypeFlags |= BATTLE_TYPE_WISTERIA_GAME_2;
+	
     if (gNoOfApproachingTrainers == 2)
     {
         if (FollowerNPCIsBattlePartner())

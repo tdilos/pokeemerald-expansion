@@ -483,7 +483,6 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite)
                     sprite->sBgColor--;
             }
 
-<<<<<<< Updated upstream
             backgroundColor = _RGB(sprite->sBgColor, sprite->sBgColor, sprite->sBgColor);
 
             // Flash the background green for 4 frames of movement.
@@ -492,16 +491,8 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite)
              || sprite->x == DISPLAY_WIDTH / 2 + (4 * SHINE_SPEED)
              || sprite->x == DISPLAY_WIDTH / 2 + (5 * SHINE_SPEED)
              || sprite->x == DISPLAY_WIDTH / 2 + (6 * SHINE_SPEED))
-                gPlttBufferFaded[0] = RGB(24, 31, 12);
-=======
-            backgroundColor = _RGB(sprite->data[1], sprite->data[1], sprite->data[1]);
-            if (sprite->x == DISPLAY_WIDTH / 2 + 12
-                || sprite->x == DISPLAY_WIDTH / 2 + 16
-                || sprite->x == DISPLAY_WIDTH / 2 + 20
-                || sprite->x == DISPLAY_WIDTH / 2 + 24)
                 //gPlttBufferFaded[0] = RGB(24, 31, 12);
 				gPlttBufferFaded[0] = RGB(24, 12, 31);
->>>>>>> Stashed changes
             else
                 gPlttBufferFaded[0] = backgroundColor;
         }

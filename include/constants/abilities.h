@@ -288,7 +288,6 @@ enum __attribute__((packed)) Ability
     ABILITY_AS_ONE_SHADOW_RIDER = 267,
     ABILITIES_COUNT_GEN8,
 
-<<<<<<< Updated upstream
     // Gen 9
     ABILITY_LINGERING_AROMA = ABILITIES_COUNT_GEN8,
     ABILITY_SEED_SOWER = 269,

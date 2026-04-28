@@ -15,6 +15,7 @@
 #define P_GEN_7_POKEMON                  TRUE // Generation 7 Pokémon (SM, USUM, LGPE)
 #define P_GEN_8_POKEMON                  TRUE // Generation 8 Pokémon (SwSh, BDSP, LA)
 #define P_GEN_9_POKEMON                  TRUE // Generation 9 Pokémon (SV)
+#define P_TOURMALINE_POKEMON               TRUE // Tourmaline Pokémon 
 
 // Setting this to TRUE will add the new evolutions to the Regional Dex.
 #define P_NEW_EVOS_IN_REGIONAL_DEX       TRUE
@@ -37,6 +38,7 @@
 #define P_GALARIAN_FORMS                 P_REGIONAL_FORMS
 #define P_HISUIAN_FORMS                  P_REGIONAL_FORMS
 #define P_PALDEAN_FORMS                  P_REGIONAL_FORMS
+#define P_ISSHOAN_FORMS                  P_REGIONAL_FORMS
 
 // Big groups of forms that aren't always desired when choosing families.
 #define P_PIKACHU_EXTRA_FORMS            TRUE
@@ -53,6 +55,7 @@
 //#define P_GEN_7_CROSS_EVOS             // Alolan evolutions handled by P_ALOLAN_FORMS.
 #define P_GEN_8_CROSS_EVOS               P_CROSS_GENERATION_EVOS // Regional evolutions handled by P_GALARIAN_FORMS and P_HISUIAN_FORMS.
 #define P_GEN_9_CROSS_EVOS               P_CROSS_GENERATION_EVOS // Clodsire handled by P_PALDEAN_FORMS.
+#define P_TOURMALINE_CROSS_EVOS          P_CROSS_GENERATION_EVOS
 
 // To disable specific families, replace P_GEN_x_POKEMON with FALSE.
 #define P_FAMILY_BULBASAUR               P_GEN_1_POKEMON
@@ -602,5 +605,19 @@
 #define P_FAMILY_IRON_CROWN              P_GEN_9_POKEMON
 #define P_FAMILY_TERAPAGOS               P_GEN_9_POKEMON
 #define P_FAMILY_PECHARUNT               P_GEN_9_POKEMON
+
+// Tourmaline
+#define P_FAMILY_SHIFUR              P_TOURMALINE_POKEMON
+#define P_FAMILY_MOIBELLE            P_TOURMALINE_POKEMON
+#define P_FAMILY_VOLBEAR             P_TOURMALINE_POKEMON
+#define P_FAMILY_KOTORA              P_TOURMALINE_POKEMON
+#define P_FAMILY_SYCLAR              P_TOURMALINE_POKEMON
+#define P_FAMILY_FAWNIFER            P_TOURMALINE_POKEMON
+#define P_FAMILY_MIASMITE            P_TOURMALINE_POKEMON
+#define P_FAMILY_MUMBAO              P_TOURMALINE_POKEMON
+#define P_FAMILY_VOLKRITTER          P_TOURMALINE_POKEMON
+#define P_FAMILY_OMENDENZ            P_TOURMALINE_POKEMON
+
+#define P_FAMILY_MIMEKTIPLEX         P_TOURMALINE_POKEMON
 
 #endif // GUARD_CONFIG_SPECIES_ENABLED_H

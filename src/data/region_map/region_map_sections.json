@@ -1,7 +1,7 @@
 {
   "ids": [
     {
-      "id":  "MAPSEC_UMBER_TOWN",
+      "id": "MAPSEC_UMBER_TOWN",
       "name": "UMBER TOWN",
       "x": 11,
       "y": 1,
@@ -17,7 +17,7 @@
       "height": 1
     },
     {
-      "id":  "MAPSEC_XANTHOS_CITY",
+      "id": "MAPSEC_XANTHOS_CITY",
       "name": "XANTHOS CITY",
       "x": 14,
       "y": 4,
@@ -33,7 +33,7 @@
       "height": 1
     },
     {
-      "id":  "MAPSEC_AMBER_CITY",
+      "id": "MAPSEC_AMBER_CITY",
       "name": "AMBER CITY",
       "x": 22,
       "y": 0,
@@ -178,7 +178,7 @@
     },
     {
       "id": "MAPSEC_VERDANTURF_TOWN",
-      "name": "Verdanturf Town",
+      "name": "VERDANTURF TOWN",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1845,7 +1845,7 @@
       "x": 22,
       "y": 3,
       "width": 1,
-      "height": 4
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_70",
@@ -1893,7 +1893,7 @@
       "x": 14,
       "y": 5,
       "width": 1,
-      "height": 2
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_76",
@@ -2037,7 +2037,7 @@
       "x": 27,
       "y": 11,
       "width": 1,
-      "height": 3
+      "height": 2
     },
     {
       "id": "MAPSEC_ROUTE_65",
@@ -2318,6 +2318,10 @@
       "y": 0,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_DEWFORD_MEADOW",
+      "name": "DEWFORD MEADOW"
     }
   ]
 }

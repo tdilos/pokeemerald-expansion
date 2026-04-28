@@ -1134,8 +1134,8 @@ const u32 gBattleAnimSpriteGfx_ItemBag[] = INCBIN_U32("graphics/battle_anims/spr
 
 const u16 gBattleAnimSpritePal_TriAttackTriangle[] = INCBIN_U16("graphics/battle_anims/sprites/tri_attack_triangle.gbapal");
 const u32 gBattleAnimSpriteGfx_TriAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/tri_attack_triangle.4bpp.smol");
-const u32 gBattleAnimSpritePal_PhrenoAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/phreno_attack_triangle.gbapal");
-const u32 gBattleAnimSpritePal_SomaAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/soma_attack_triangle.gbapal");
+const u16 gBattleAnimSpritePal_PhrenoAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/phreno_attack_triangle.gbapal");
+const u16 gBattleAnimSpritePal_SomaAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/soma_attack_triangle.gbapal");
 const u32 gBattleAnimSpriteGfx_PhrenoAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/phreno_attack_triangle.4bpp.smol");
 const u32 gBattleAnimSpriteGfx_SomaAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/soma_attack_triangle.4bpp.smol");
 
@@ -1392,7 +1392,8 @@ const u8 gContestNextTurnRandomGfx[] = INCBIN_U8("graphics/contest/nextturn_rand
 const u32 gBattleAnimSpriteGfx_GlowyRedOrb[] = INCBIN_U32("graphics/battle_anims/sprites/glowy_red_orb.4bpp.smol");
 const u16 gBattleAnimSpritePal_GlowyRedOrb[] = INCBIN_U16("graphics/battle_anims/sprites/glowy_red_orb.gbapal");
 //const u16 gBattleAnimSpritePal_GlowyGreenOrb[] = INCBIN_U16("graphics/battle_anims/sprites/glowy_green_orb.gbapal");
-const u32 gBattleAnimSpritePal_GlowyGreenOrb[] = INCBIN_U16("graphics/battle_anims/sprites/blight.gbapal");
+const u16 gBattleAnimSpritePal_GlowyGreenOrb[] = INCBIN_U16("graphics/battle_anims/sprites/blight.gbapal");
+
 const u16 gBattleAnimSpritePal_SleepPowder[] = INCBIN_U16("graphics/battle_anims/sprites/sleep_powder.gbapal");
 const u16 gBattleAnimSpritePal_StunSpore[] = INCBIN_U16("graphics/battle_anims/sprites/stun_spore.gbapal");
 

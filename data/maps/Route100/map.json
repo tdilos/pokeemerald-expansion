@@ -169,7 +169,5 @@
       "script": "Route100_EventScript_JaceTrigger1"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

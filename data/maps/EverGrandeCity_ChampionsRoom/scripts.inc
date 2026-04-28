@@ -1,11 +1,8 @@
-<<<<<<< Updated upstream
-=======
 @.set LOCALID_WALLACE, 1
 .set LOCALID_NORMAN, 1
 .set LOCALID_RIVAL, 2
 .set LOCALID_BIRCH, 3
 
->>>>>>> Stashed changes
 EverGrandeCity_ChampionsRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_ChampionsRoom_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EverGrandeCity_ChampionsRoom_OnWarp

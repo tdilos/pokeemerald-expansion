@@ -22,6 +22,24 @@ const u8 gText_ExpandedPlaceholder_Red[] = _("RED");
 const u8 gText_ExpandedPlaceholder_Green[] = _("GREEN");
 const u8 gText_EggNickname[POKEMON_NAME_LENGTH + 1] = _("EGG");
 const u8 gText_Pokemon[POKEMON_NAME_LENGTH + 1] = _("POKéMON");
+
+/*const u8 gText_ProfBirchMatchCallName[] = _("Prof. Birch");
+const u8 gText_MainMenuNewGame[] = _("NEW GAME");
+const u8 gText_MainMenuContinue[] = _("CONTINUE");
+const u8 gText_MainMenuOption[] = _("OPTION");
+const u8 gText_MainMenuMysteryGift[] = _("MYSTERY GIFT");
+const u8 gText_MainMenuMysteryGift2[] = _("MYSTERY GIFT");
+const u8 gText_MainMenuMysteryEvents[] = _("MYSTERY EVENTS");
+const u8 gText_WirelessNotConnected[] = _("The Wireless Adapter is not\nconnected.");
+const u8 gText_MysteryGiftCantUse[] = _("MYSTERY GIFT can't be used while\nthe Wireless Adapter is attached.");
+const u8 gText_MysteryEventsCantUse[] = _("MYSTERY EVENTS can't be used while\nthe Wireless Adapter is attached.");
+const u8 gText_UpdatingSaveExternalData[] = _("Updating save file using external\ndata. Please wait."); // Unused
+const u8 gText_SaveFileUpdated[] = _("The save file has been updated."); // Unused
+const u8 gText_SaveFileCorrupted[] = _("The save file is corrupted. The\nprevious save file will be loaded.");
+const u8 gText_SaveFileErased[] = _("The save file has been erased\ndue to corruption or damage.");
+const u8 gJPText_No1MSubCircuit[] = _("1Mサブきばんが ささっていません！");
+const u8 gText_BatteryRunDry[] = _("The internal battery has run dry.\nThe game can be played.\pHowever, clock-based events will\nno longer occur.");*/
+
 const u8 gText_Player[] = _("PLAYER"); // Unused
 const u8 gText_Pokedex[] = _("POKéDEX"); // Unused
 const u8 gText_Time[] = _("TIME");
@@ -43,6 +61,7 @@ ALIGNED(4) const u8 gText_PickCancel[] = _("{DPAD_UPDOWN}PICK {A_BUTTON}{B_BUTTO
 ALIGNED(4) const u8 gText_AButtonExit[] = _("{A_BUTTON}EXIT");
 const u8 gText_Boy[] = _("BOY");
 const u8 gText_Girl[] = _("GIRL");
+
 // Default names for boy
 const u8 gText_DefaultNameVert[] = _("VERT");
 const u8 gText_DefaultNameForrest[] = _("FORREST");
@@ -284,6 +303,7 @@ const u8 gText_ShopSell[] = _("SELL");
 const u8 gText_ShopQuit[] = _("QUIT");
 const u8 gText_ThatItemIsSoldOut[] = _("I'm sorry, but that item is sold out.{PAUSE_UNTIL_PRESS}");
 const u8 gText_SoldOut2[] = _("SOLD OUT");
+const u8 gText_SoldOut[] = _("SOLD OUT");
 const u8 gText_InBagVar1[] = _("IN BAG: {STR_VAR_1}");
 const u8 gText_QuitShopping[] = _("Quit shopping.");
 const u8 gText_Var1CertainlyHowMany[] = _("{STR_VAR_1}? Certainly.\nHow many would you like?");
@@ -527,6 +547,7 @@ const u8 gText_MailToBagMessageErased[] = _("The MAIL was returned to the BAG\nw
 const u8 gText_Dad[] = _("DAD");
 const u8 gText_Mom[] = _("MOM");
 
+
 const u8 gText_OneBottle[] = _("1 Bottle");
 const u8 gText_TwelveBottles[] = _("12 Bottles");
 const u8 gText_Armor[] = _("ARMOR");
@@ -540,6 +561,7 @@ const u8 gText_Cobalt[] = _("COBALT");
 const u8 gText_Turquoise[] = _("TURQUOISE");
 const u8 gText_Xanthos[] = _("XANTHOS");
 const u8 gText_Enter2[] = _("ENTER");
+
 
 const u8 gText_Info2[] = _("INFO");
 const u8 gText_CoolnessContest[] = _("COOLNESS CONTEST");
@@ -656,6 +678,8 @@ const u8 gText_RankingHall[] = _("RANKING HALL");
 const u8 gText_ExchangeService[] = _("EXCHANGE SERVICE");
 const u8 gText_LilycoveCity[] = _("LILYCOVE CITY");
 const u8 gText_SlateportCity[] = _("SLATEPORT CITY");
+const u8 gText_XanthosCity[] = _("XANTHOS CITY");
+
 const u8 gText_Exit[] = _("EXIT");
 const u8 gText_YourPartysFull[] = _("Your party's full!{PAUSE_UNTIL_PRESS}");
 const u8 gText_InParty[] = _("IN PARTY");
@@ -1436,18 +1460,7 @@ const u8 gText_Volcanobadge[] = _("VOLCANOBADGE");
 const u8 gText_Earthbadge[] = _("EARTHBADGE");
 const u8 gText_OakImportantToGetToKnowPokemonThroughly[] = _("OAK: It's important to get to know\nyour POKéMON thoroughly.\p");
 const u8 gText_OakThisIsListOfPokemon[] = _("This is a list of your POKéMON,\n{PLAYER}.\pOpen this to check the skills\nand moves of your POKéMON.\pYou also choose POKéMON here if\nyou want to use an item on one.{PAUSE_UNTIL_PRESS}");
-const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
-const u8 gText_AM[] = _("AM");
-const u8 gText_PM[] = _("PM");
-const u8 gText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: don't decap this, because it mimics the summary screen BG graphics which will not get decapped
-const u8 gText_Relearn_LevelUp[] = _("{START_BUTTON} RELEARN LEVEL");
-const u8 gText_Relearn_Egg[] = _("{START_BUTTON} RELEARN EGG");
-const u8 gText_Relearn_TM[] = _("{START_BUTTON} RELEARN TM");
-const u8 gText_Relearn_Tutor[] = _("{START_BUTTON} RELEARN TUTOR");
-const u8 gText_Rename[] = _("RENAME");
-const u8 gText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
-const u8 gText_CannotSendMonToBoxActive[] = _("Cannot send an active battler\nto the box.{PAUSE_UNTIL_PRESS}");
-const u8 gText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't,\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
+
 
 // Exp. All
 const u8 gText_ExpAllOn[] = _("Turned on the Exp. All.\pParty will now gain a portion\nof the Experience Points.{PAUSE_UNTIL_PRESS}");
@@ -1504,7 +1517,6 @@ const u8 gText_SideQuestName_40[] = _("Pure Power");
 const u8 gText_SideQuestName_41[] = _("Diamond in the Rough");
 const u8 gText_SideQuestName_42[] = _("Colors of the Rainbow");
 const u8 gText_SideQuestName_43[] = _("Cosmopolitan");
-//const u8 gText_SideQuestName_44[] = _("Unown Pokédex");
 const u8 gText_SideQuestName_44[] = _("Known Unowns");
 
 //descriptions
@@ -1515,7 +1527,6 @@ const u8 gText_SideQuestDesc_4[] = _("Complete the National Pokédex.");
 const u8 gText_SideQuestDesc_5[] = _("Walk at least 50,000 steps.");
 const u8 gText_SideQuestDesc_6[] = _("Show the maniac a shiny Pokémon.");
 const u8 gText_SideQuestDesc_7[] = _("Bring the chef 10 Big Mushrooms.");
-//const u8 gText_SideQuestDesc_8[] = _("Earn ¥999,999 and talk to the rich girl.");
 const u8 gText_SideQuestDesc_8[] = _("Show the paleontologist a super-ancient\nPokémon.");
 const u8 gText_SideQuestDesc_9[] = _("Return the stolen machine part\nto the dam worker.");
 const u8 gText_SideQuestDesc_10[] = _("Find the missing tourists near\nAmber City.");
@@ -1553,7 +1564,6 @@ const u8 gText_SideQuestDesc_40[] = _("Get an OHKO on the training dummy.");
 const u8 gText_SideQuestDesc_41[] = _("Bring the scientist a Carbink.");
 const u8 gText_SideQuestDesc_42[] = _("Defeat the gauntlet of ninja boys.");
 const u8 gText_SideQuestDesc_43[] = _("Trade with all GBA kids in Issho.");
-//const u8 gText_SideQuestDesc_44[] = _("Register all forms of Unown in\nthe Pokédex.");
 const u8 gText_SideQuestDesc_44[] = _("Solve the tablet puzzles to release\nall the Unown forms.");
 
 

@@ -76,4 +76,6 @@ bool32 CanTriggerSpinEvolution();
 
 extern bool8 gRunToggleBtnSet;
 
+extern bool8 gRunToggleBtnSet;
+
 #endif // GUARD_FIELD_PLAYER_AVATAR_H

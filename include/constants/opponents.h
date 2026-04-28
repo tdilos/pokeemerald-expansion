@@ -860,7 +860,7 @@
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 
-// New trainers
+// Tourmaline trainers
 #define TRAINER_JACE_UMBER_TOWN_CHESPIN     855
 #define TRAINER_JACE_UMBER_TOWN_TEPIG       856
 #define TRAINER_JACE_UMBER_TOWN_POPPLIO     857
@@ -1353,6 +1353,5 @@
 #define TRAINERS_COUNT                      TRAINERS_COUNT_EMERALD
 #define MAX_TRAINERS_COUNT                  MAX_TRAINERS_COUNT_EMERALD
 #endif
-
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

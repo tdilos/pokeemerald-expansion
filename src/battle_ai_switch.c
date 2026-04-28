@@ -1598,6 +1598,14 @@ static s32 GetSwitchinWeatherImpact(enum BattlerId battler)
                 if (weatherImpact == 0)
                     weatherImpact = 1;
             }
+            else if ((gBattleWeather & B_WEATHER_SMAZE)
+                && !IS_BATTLER_OF_TYPE(battler, TYPE_POISON)
+                && ability != ABILITY_SMOKE_SHROUD)
+            {
+                weatherImpact = maxHP / 16;
+                if (weatherImpact == 0)
+                    weatherImpact = 1;
+            }
         }
         if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
          && (ability == ABILITY_SOLAR_POWER || ability == ABILITY_DRY_SKIN))
@@ -1622,6 +1630,21 @@ static s32 GetSwitchinWeatherImpact(enum BattlerId battler)
                 if (weatherImpact == 0)
                     weatherImpact = -1;
             }
+            else if ((gBattleWeather & B_WEATHER_SMAZE)
+                && IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
+            {
+                weatherImpact = -(maxHP / 16);
+                if (weatherImpact == 0)
+                    weatherImpact = -1;
+            }
+            else if ((gBattleWeather & B_WEATHER_FULLMOON)
+                && IS_BATTLER_ANY_TYPE(battler, TYPE_FAIRY, TYPE_DARK))
+            {
+                weatherImpact = -(maxHP / 16);
+                if (weatherImpact == 0)
+                    weatherImpact = -1;
+            }
+			
         }
         if (((gBattleWeather & B_WEATHER_HAIL) || (gBattleWeather & B_WEATHER_SNOW)) && ability == ABILITY_ICE_BODY)
         {

@@ -2587,6 +2587,10 @@ void SetMoveEffect(enum BattlerId battlerAtk, enum BattlerId effectBattler, enum
     case MOVE_EFFECT_PARALYSIS:
     case MOVE_EFFECT_TOXIC:
     case MOVE_EFFECT_FROSTBITE:
+    case MOVE_EFFECT_INFECT:
+    case MOVE_EFFECT_DAZE:
+    case MOVE_EFFECT_EXHAUST:
+    case MOVE_EFFECT_FEAR:
         if (IsSafeguardProtected(gBattlerAttacker, gEffectBattler, GetBattlerAbility(gBattlerAttacker)) && !primary)
         {
             gBattlescriptCurrInstr = battleScript;
@@ -4494,7 +4498,7 @@ static void Cmd_getexp(void)
                         gBattleStruct->battlerExpReward = GetSoftLevelCapExpValue(gPlayerParty[*expMonId].level, gBattleStruct->expValue);
                     else
                         gBattleStruct->battlerExpReward = 0;
-					
+
                     if ((holdEffect == HOLD_EFFECT_EXP_SHARE || IsGen6ExpShareEnabled() || FlagGet(FLAG_SYS_EXP_ALL))
                         && (B_SPLIT_EXP < GEN_6 || gBattleStruct->battlerExpReward == 0)) // only give exp share bonus in later gens if the mon wasn't sent out
                     {
@@ -5357,7 +5361,7 @@ static void PlayAnimation(enum BattlerId battler, u8 animId, const u16 *argPtr, 
           || animId == B_ANIM_SANDSTORM_CONTINUES
           || animId == B_ANIM_HAIL_CONTINUES
           || animId == B_ANIM_SNOW_CONTINUES
-          || animId == B_ANIM_FOG_CONTINUES)
+          || animId == B_ANIM_FOG_CONTINUES
 		  || animId == B_ANIM_SMAZE_CONTINUES
 		  || animId == B_ANIM_FULLMOON_CONTINUES)
     {
@@ -5439,6 +5443,33 @@ static void Cmd_moveend(void)
     if (gBattleScripting.moveendState == MOVEEND_COUNT && result == MOVEEND_RESULT_CONTINUE)
         gBattlescriptCurrInstr = cmd->nextInstr;
 }
+
+	/*
+		case MOVEEND_EXHAUST_PP_DROP: // EXH pp drop animation and message
+            if (gBattleMons[gBattlerAttacker].status1 & STATUS1_EXHAUST
+                && IsBattlerAlive(gBattlerAttacker))
+            {
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_ExhaustPPDrop;
+                effect = TRUE;
+            }
+            gBattleScripting.moveendState++;
+            break;
+		case MOVEEND_INFECT_HP_DROP: // INF recoil animation and message
+			if (gBattleMons[gBattlerAttacker].status1 & STATUS1_INFECT
+                && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+				&& !IS_MOVE_STATUS(gCurrentMove) // Nondamaging moves shouldn't trigger the HP drop
+                && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+                && IsBattlerAlive(gBattlerAttacker)
+				&& gBattleScripting.savedDmg != 0) // Some checks may be redundant alongside this one
+            {
+				gBattleMoveDamage = max(1, gBattleScripting.savedDmg / 2);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_InfectHPDrop;
+                effect = TRUE;
+            }
+            gBattleScripting.moveendState++;
+            break;	*/
 
 static void Cmd_sethealblock(void)
 {
@@ -9440,14 +9471,11 @@ static void Cmd_tryspiteppreduce(void)
             // G-Max Depletion only deducts 2 PP.
             if (IsMaxMove(gCurrentMove) && MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_SPITE))
                 ppToDeduct = 2;
-
 		
 			if (gCurrentMove == MOVE_SHADOW_HAND)
 				ppToDeduct *= 2;
-			
 			if (gBattleMons[gBattlerTarget].status1 & STATUS1_EXHAUST)
 				ppToDeduct *= 2;
-			
 			/*if (gBattleMons[gBattlerAttacker].ability == ABILITY_PRESSURE)
 				ppToDeduct *= 2;*/
 
@@ -9903,6 +9931,13 @@ static void Cmd_rapidspinfree(void)
                 return;
             }
         }
+    }
+    else if (gSideStatuses[atkSide] & SIDE_STATUS_FAIRY_DUST)
+    {
+        gSideStatuses[atkSide] &= ~SIDE_STATUS_FAIRY_DUST;
+        gSideTimers[atkSide].fairyDustAmount = 0;
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_FairyDustFree;
     }
     else if (gSideStatuses[atkSide] & SIDE_STATUS_FAIRY_DUST)
     {
@@ -10587,7 +10622,7 @@ static void Cmd_setfairydust(void)
     CMD_ARGS(const u8 *failInstr);
 
     u8 targetSide = GetBattlerSide(gBattlerTarget);
-    if (IsHazardOnSide[targetSide] & HAZARDS_FAIRY_DUST)
+    if (IsHazardOnSide(targetSide, HAZARDS_FAIRY_DUST))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }

@@ -23,6 +23,27 @@ static void BattleIntroNoSlide(u8);
 
 static const u8 sBattleAnimBgCnts[] = {REG_OFFSET_BG0CNT, REG_OFFSET_BG1CNT, REG_OFFSET_BG2CNT, REG_OFFSET_BG3CNT};
 
+/*
+static const TaskFunc sBattleIntroSlideFuncs[] =
+{
+    [BATTLE_ENVIRONMENT_GRASS]          = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_RED_GRASS]      = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_WISTERIA_GRASS] = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_HAEWEN_GRASS]   = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_BURGUNDY_GRASS] = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_LONG_GRASS]     = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_SAND]           = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_UNDERWATER]     = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_WATER]          = BattleIntroSlide2,
+    [BATTLE_ENVIRONMENT_POND]           = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_MOUNTAIN]       = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_CAVE]           = BattleIntroSlide1,
+    [BATTLE_ENVIRONMENT_BUILDING]       = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_SEWER]          = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_PLAIN_RED]      = BattleIntroSlide3,
+    [BATTLE_ENVIRONMENT_PLAIN]          = BattleIntroSlide3,
+};*/
+
 void SetAnimBgAttribute(u8 bgId, u8 attributeId, u8 value)
 {
     if (bgId < 4)

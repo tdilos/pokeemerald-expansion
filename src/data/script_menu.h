@@ -52,6 +52,52 @@ static const struct MenuAction MultichoiceList_TurquoiseFerry[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_WeekdaySelect[] =
+{
+    {gText_Sunday},
+    {gText_Monday},
+    {gText_Tuesday},
+    {gText_Wednesday},
+    {gText_Thursday},
+    {gText_Friday},
+    {gText_Saturday},
+};
+
+static const struct MenuAction MultichoiceList_MtShiroFossil[] =
+{
+    {gText_Armor},
+    {gText_Jaw},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_MilkSeller[] =
+{
+    {gText_OneBottle},
+    {gText_TwelveBottles},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_XanthosFerry[] =
+{
+    {gText_Cobalt},
+    {gText_Turquoise},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_CobaltFerry[] =
+{
+    {gText_Turquoise},
+    {gText_Xanthos},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_TurquoiseFerry[] =
+{
+    {gText_Cobalt},
+    {gText_Xanthos},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_EnterInfo[] =
 {
     {COMPOUND_STRING("ENTER")},

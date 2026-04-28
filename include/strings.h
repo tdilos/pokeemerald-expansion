@@ -725,6 +725,7 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc[];
 
+// New Battle Frontier Items
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MagmarizerDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RazorClawDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ElectirizerDesc[];
@@ -2663,6 +2664,10 @@ extern const u8 gText_Cancel3[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
+// Exp. All
+extern const u8 gText_ExpAllOn[];
+extern const u8 gText_ExpAllOff[];
+
 // Move Relearner
 extern const u8 MoveRelearner_Text_LevelUpMoveLWR[];
 extern const u8 MoveRelearner_Text_EggMoveLWR[];
@@ -2689,9 +2694,5 @@ extern const u8 gText_Girl[];
 extern const u8 gText_CannotSendMonToBoxHM[];
 extern const u8 gText_CannotSendMonToBoxActive[];
 extern const u8 gText_CannotSendMonToBoxPartner[];
-
-// Exp. All
-extern const u8 gText_ExpAllOn[];
-extern const u8 gText_ExpAllOff[];
 
 #endif // GUARD_STRINGS_H

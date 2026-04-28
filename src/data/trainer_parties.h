@@ -14512,7 +14512,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Beauford[] = {
     }
 };
 
-static const struct TrainerMonCustomized sParty_Tarah1[] = {
+static const struct TrainerMonCustomized sParty_Tara1[] = {
     {
     .ability = ABILITY_SAND_STREAM,
     //.ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),

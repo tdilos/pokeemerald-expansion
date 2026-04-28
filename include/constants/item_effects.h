@@ -22,6 +22,14 @@
 
 #define ITEM2_STATUS_ALL        (ITEM2_INFECT | ITEM2_DAZE | ITEM2_EXHAUST | ITEM2_FEAR)*/
 
+// new field 2 masks
+/*#define ITEM2_INFECT            0x1
+#define ITEM2_DAZE              0x2
+#define ITEM2_EXHAUST           0x4
+#define ITEM2_FEAR              0x8
+
+#define ITEM2_STATUS_ALL        (ITEM2_INFECT | ITEM2_DAZE | ITEM2_EXHAUST | ITEM2_FEAR)*/
+
 // field 3 masks
 #define ITEM3_CONFUSION         0x1
 #define ITEM3_PARALYSIS         0x2

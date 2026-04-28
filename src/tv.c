@@ -207,13 +207,6 @@ static const struct {
 	//u8 mapGroup; // 0 for routes, 24 for dungeons
 } sPokeOutbreakSpeciesList[] = {
     {
-        .species = SPECIES_STARLY,
-        .moves = {MOVE_TACKLE, MOVE_GROWL},
-        .level = 3,
-<<<<<<< Updated upstream
-        .location = MAP_NUM(MAP_ROUTE102)
-    },
-    {
         .species = SPECIES_NUZLEAF,
         .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
         .level = 15,
@@ -236,87 +229,6 @@ static const struct {
         .moves = {MOVE_GROWL, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_ATTRACT},
         .level = 8,
         .location = MAP_NUM(MAP_ROUTE116),
-=======
-        .location = MAP_NUM(ROUTE81),
-		//.mapGroup = MAP_GROUP(ROUTE81),
-    },
-	{
-        .species = SPECIES_PATRAT,
-        .moves = {MOVE_TACKLE, MOVE_LEER},
-        .level = 3,
-        .location = MAP_NUM(ROUTE82),
-		//.mapGroup = MAP_GROUP(ROUTE82),
-    },
-    {
-        .species = SPECIES_GULPIN,
-        .moves = {MOVE_POUND, MOVE_YAWN},
-        .level = 5,
-        .location = MAP_NUM(ROUTE83),
-		//.mapGroup = MAP_GROUP(ROUTE83),
-    },
-	{
-        .species = SPECIES_BLITZLE,
-        .moves = {MOVE_QUICK_ATTACK, MOVE_TAIL_WHIP},
-        .level = 7,
-        .location = MAP_NUM(ROUTE84),
-		//.mapGroup = MAP_GROUP(ROUTE84),
-    },
-   /* {
-        .species = SPECIES_MUDBRAY,
-        .moves = {MOVE_MUD_SLAP, MOVE_ROCK_SMASH, MOVE_IRON_DEFENSE},
-        .level = 7,
-        .location = MAP_NUM(ROUTE84),
-		//.mapGroup = MAP_GROUP(ROUTE84),
-    },*/
-    {
-        .species = SPECIES_CUBONE,
-        .moves = {MOVE_MUD_SLAP, MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_FALSE_SWIPE},
-        .level = 9,
-        .location = MAP_NUM(ROUTE85),
-		//.mapGroup = MAP_GROUP(ROUTE85),
-    },
-    {
-        .species = SPECIES_MARACTUS,
-        .moves = {MOVE_SWEET_SCENT, MOVE_GROWTH, MOVE_VIBRATE, MOVE_PIN_MISSILE},
-        .level = 11,
-        .location = MAP_NUM(ROUTE86),
-		//.mapGroup = MAP_GROUP(ROUTE86),
-    },
-    {
-        .species = SPECIES_SANDILE,
-        .moves = {MOVE_RAGE, MOVE_SAND_ATTACK, MOVE_BITE, MOVE_TORMENT},
-        .level = 12,
-        .location = MAP_NUM(ROUTE87),
-		//.mapGroup = MAP_GROUP(ROUTE87),
-    },
-    {
-        .species = SPECIES_SOLOSIS,
-        .moves = {MOVE_CONFUSION, MOVE_RECOVER, MOVE_ENDEAVOR, MOVE_PSYBEAM},
-        .level = 12,
-        .location = MAP_NUM(ROUTE88),
-		//.mapGroup = MAP_GROUP(ROUTE88),
-    },
-	{
-        .species = SPECIES_EMOLGA,
-        .moves = {MOVE_NUZZLE, MOVE_TAIL_WHIP, MOVE_DOUBLE_TEAM},
-        .level = 7,
-        .location = MAP_NUM(ROUTE89),
-		//.mapGroup = MAP_GROUP(ROUTE89),
-    },
-    {
-		.species = SPECIES_DWEBBLE,
-        .moves = {MOVE_WITHDRAW, MOVE_SMACK_DOWN, MOVE_BUG_BITE, MOVE_FLAIL},
-        .level = 16,
-        .location = MAP_NUM(ROUTE79),
-		//.mapGroup = MAP_GROUP(ROUTE79),
-    },
-    {
-        .species = SPECIES_SHELMET,
-        .moves = {MOVE_BILE_BREATH, MOVE_CURSE, MOVE_BIDE, MOVE_ACID},
-        .level = 16,
-        .location = MAP_NUM(ROUTE78),
-		//.mapGroup = MAP_GROUP(ROUTE78),
->>>>>>> Stashed changes
     }
 };
 

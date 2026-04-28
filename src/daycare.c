@@ -92,16 +92,17 @@ static const struct {
   u16 babySpecies;
 } sIncenseBabyTable[] =
 {
-    // Regular offspring,   Item,              Incense Offspring
-    { SPECIES_WOBBUFFET,    ITEM_LAX_INCENSE,  SPECIES_WYNAUT },
-    { SPECIES_MARILL,       ITEM_SEA_INCENSE,  SPECIES_AZURILL },
-    { SPECIES_SNORLAX,      ITEM_FULL_INCENSE, SPECIES_MUNCHLAX },
-    { SPECIES_CHANSEY,      ITEM_LUCK_INCENSE, SPECIES_HAPPINY },
-    { SPECIES_MR_MIME,      ITEM_ODD_INCENSE,  SPECIES_MIME_JR },
-    { SPECIES_CHIMECHO,     ITEM_PURE_INCENSE, SPECIES_CHINGLING },
-    { SPECIES_SUDOWOODO,    ITEM_ROCK_INCENSE, SPECIES_BONSLY },
-    { SPECIES_ROSELIA,      ITEM_ROSE_INCENSE, SPECIES_BUDEW },
-    { SPECIES_MANTINE,      ITEM_WAVE_INCENSE, SPECIES_MANTYKE },
+    // Regular offspring,   Item,                Incense Offspring
+    { SPECIES_WOBBUFFET,    ITEM_LAX_INCENSE,    SPECIES_WYNAUT },
+    { SPECIES_MARILL,       ITEM_SEA_INCENSE,    SPECIES_AZURILL },
+    { SPECIES_SNORLAX,      ITEM_FULL_INCENSE,   SPECIES_MUNCHLAX },
+    { SPECIES_CHANSEY,      ITEM_LUCK_INCENSE,   SPECIES_HAPPINY },
+    { SPECIES_MR_MIME,      ITEM_ODD_INCENSE,    SPECIES_MIME_JR },
+    { SPECIES_CHIMECHO,     ITEM_PURE_INCENSE,   SPECIES_CHINGLING },
+    { SPECIES_SUDOWOODO,    ITEM_ROCK_INCENSE,   SPECIES_BONSLY },
+    { SPECIES_ROSELIA,      ITEM_ROSE_INCENSE,   SPECIES_BUDEW },
+    { SPECIES_MANTINE,      ITEM_WAVE_INCENSE,   SPECIES_MANTYKE },
+    { SPECIES_SKARMORY,     ITEM_SILVER_INCENSE, SPECIES_SKARBY },
 };
 
 static const u8 *const sCompatibilityMessages[] =
@@ -431,12 +432,9 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 
     TryFormChange(&pokemon, FORM_CHANGE_WITHDRAW);
 
-<<<<<<< Updated upstream
-    if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetCurrentLevelCap())
-=======
+    //if (GetMonData(&pokemon, MON_DATA_LEVEL) < GetCurrentLevelCap())
     //if (GetMonData(&pokemon, MON_DATA_LEVEL) != MAX_LEVEL)
 	if (GetMonData(&pokemon, MON_DATA_LEVEL) < cap)
->>>>>>> Stashed changes
     {
         experience = GetMonData(&pokemon, MON_DATA_EXP) + daycareMon->steps;
         u32 maxExp = GetExpAtLevelCap(&pokemon);
@@ -1024,28 +1022,6 @@ void RejectEggFromDayCare(void)
     RemoveEggFromDayCare(&gSaveBlock1Ptr->daycare);
 }
 
-<<<<<<< Updated upstream
-=======
-static const struct {
-  u16 currSpecies;
-  u16 item;
-  u16 babySpecies;
-} IncenseBabyTable[][3] =
-{
-    // Regular offspring,   Item,              Incense Offspring
-    { SPECIES_WOBBUFFET,    ITEM_LAX_INCENSE,    SPECIES_WYNAUT },
-    { SPECIES_MARILL,       ITEM_SEA_INCENSE,    SPECIES_AZURILL },
-    { SPECIES_SNORLAX,      ITEM_FULL_INCENSE,   SPECIES_MUNCHLAX },
-    { SPECIES_CHANSEY,      ITEM_LUCK_INCENSE,   SPECIES_HAPPINY },
-    { SPECIES_MR_MIME,      ITEM_ODD_INCENSE,    SPECIES_MIME_JR },
-    { SPECIES_CHIMECHO,     ITEM_PURE_INCENSE,   SPECIES_CHINGLING },
-    { SPECIES_SUDOWOODO,    ITEM_ROCK_INCENSE,   SPECIES_BONSLY },
-    { SPECIES_ROSELIA,      ITEM_ROSE_INCENSE,   SPECIES_BUDEW },
-    { SPECIES_MANTINE,      ITEM_WAVE_INCENSE,   SPECIES_MANTYKE },
-    { SPECIES_SKARMORY,     ITEM_SILVER_INCENSE, SPECIES_SKARBY },
-};
-
->>>>>>> Stashed changes
 static void AlterEggSpeciesWithIncenseItem(u16 *species, struct DayCare *daycare)
 {
     u32 i;

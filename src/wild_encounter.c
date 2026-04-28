@@ -36,6 +36,9 @@ extern const u8 EventScript_SprayWoreOff[];
 //extern const struct SwarmData gSwarmTable[];
 //extern const u16 gSwarmTableLength;
 
+//extern const struct SwarmData gSwarmTable[];
+//extern const u16 gSwarmTableLength;
+
 #define MAX_ENCOUNTER_RATE 2880
 
 #define NUM_FEEBAS_SPOTS 6
@@ -68,6 +71,10 @@ EWRAM_DATA static u32 sFeebasRngValue = 0;
 EWRAM_DATA bool8 gIsFishingEncounter = 0;
 EWRAM_DATA bool8 gIsSurfingEncounter = 0;
 EWRAM_DATA u8 gChainFishingDexNavStreak = 0;
+
+static bool8 UnlockedUnownOrAreNotInUnown(void);
+static u32 GenerateUnownPersonalityByLetter(u8 letter);
+u8 GetUnownLetterByPersonalityLoByte(u32 personality);
 
 static bool8 UnlockedUnownOrAreNotInUnown(void);
 static u32 GenerateUnownPersonalityByLetter(u8 letter);
@@ -687,10 +694,6 @@ static u8 PickWildMonNature(u32 species)
 
 void CreateWildMon(u16 species, u8 level)
 {
-    ZeroEnemyPartyMons();
-    u32 personality = GetMonPersonality(species, GetSynchronizedGender(WILDMON_ORIGIN, species), PickWildMonNature(species), RANDOM_UNOWN_LETTER);
-    CreateMonWithIVs(&gEnemyParty[0], species, level, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);
-    GiveMonInitialMoveset(&gEnemyParty[0]);
     bool32 checkCuteCharm = TRUE;
 	u32 personality;
 	u8 letter;
@@ -751,6 +754,102 @@ void CreateWildMon(u16 species, u8 level)
         personality = GenerateUnownPersonalityByLetter(sUnownLetterSlots[chamber][slot]);
         CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
     }*/
+}
+
+static bool8 UnlockedUnownOrAreNotInUnown(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ARTISAN_CAVE_PUZZLE_CHAMBER1))
+        return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER1)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_1))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER2)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_2))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER3)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_3))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER4)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_4))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER5)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_5))
+		return TRUE;
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER6)
+		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_6))
+        return TRUE;
+    return FALSE;
+}
+
+/*static void GenerateWildMon(u16 species, u8 level, u8 slot)
+{
+    u32 personality;
+    s8 chamber;
+    ZeroEnemyPartyMons();
+    if (species != SPECIES_UNOWN)
+    {
+        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, Random() % NUM_NATURES);
+    }
+    else
+    {
+        chamber = gSaveBlock1Ptr->location.mapNum - MAP_NUM(MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER);
+        personality = GenerateUnownPersonalityByLetter(sUnownLetterSlots[chamber][slot]);
+        CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
+    }
+}*/
+
+static u32 GenerateUnownPersonalityByLetter(u8 letter)
+{
+    u32 personality;
+    do
+    {
+        personality = (Random() << 16) | Random();
+    } while (GetUnownLetterByPersonalityLoByte(personality) != letter);
+    return personality;
+}
+
+u8 GetUnownLetterByPersonalityLoByte(u32 personality)
+{
+    return GET_UNOWN_LETTER(personality);
+}
+
+void TryUpdateSwarm(void)
+{
+	//#ifdef TIME_ENABLED //Otherwise causes lags
+	//u32 backupVar = VarGet(VAR_SWARM_DAILY_EVENT) | (VarGet(VAR_SWARM_DAILY_EVENT + 1) << 16);
+
+	//if (CheckAndSetDailyEvent(VAR_SWARM_DAILY_EVENT, TRUE))
+	//{
+		u16 index = Random() % gSwarmTableLength;
+		VarSet(VAR_SWARM_INDEX, index);
+
+		//u32 daysSince = GetDaysSinceTimeInValue(backupVar);
+		//UpdatePartyPokerusTime(daysSince);
+		//ClearDailyEventFlags();
+	//}
+	//#endif
+}
+
+#define SWARM_CHANCE 50 //Change this to the percentage that swarming Pokemon will appear if they can be found on the current route.
+
+static bool8 TryGenerateSwarmMon(u8 level)
+{
+	//if (gSwarmTableLength == 0)
+	//	return FALSE;
+
+	//u16 index = 0;
+	u16 index = VarGet(VAR_SWARM_INDEX);
+	u8 mapName = gSwarmTable[index].mapName;
+	u16 species = gSwarmTable[index].species;
+
+	if (mapName == GetCurrentRegionMapSectionId()
+	&&  Random() % 100 < SWARM_CHANCE)
+	{
+		CreateWildMon(species, level);
+		return TRUE;
+	}
+
+	return FALSE;
 }
 
 static bool8 UnlockedUnownOrAreNotInUnown(void)
@@ -1167,6 +1266,159 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
 }
 
 void HiddenGrottoWildEncounter(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId != HEADER_NONE)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].landMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE) == TRUE
+         && TryGenerateWildMon(wildPokemonInfo, WILD_AREA_LAND, 0) == TRUE)
+        {
+			//gEnemyParty[0].hiddenAbility = TRUE;
+			u8 value;
+			value = 2;
+			SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &value);
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void GetGrottoItem(void)
+{
+	u16 GrottoItems[] = 
+	{
+		ITEM_POKE_BALL,
+		ITEM_REPEL,
+		ITEM_POTION,
+		ITEM_ENERGY_ROOT,
+		ITEM_ETHER
+		//ITEM_NONE
+	};
+	u16 GrottoUncommonItems[] = 
+	{
+		ITEM_GREAT_BALL,
+		ITEM_SUPER_REPEL,
+		ITEM_SUPER_POTION,
+		ITEM_HP_UP,
+		ITEM_PP_UP
+		//ITEM_NONE
+	};
+	
+	u16 GrottoRareItems[] = 
+	{
+		ITEM_ULTRA_BALL,
+		ITEM_MAX_REPEL,
+		ITEM_HYPER_POTION,
+		ITEM_RARE_CANDY,
+		ITEM_PP_MAX
+		//ITEM_NONE
+	};
+	
+	u16 GrottoGreenTreeItems[] = 
+	{
+		ITEM_LEAF_STONE,
+		ITEM_ONI_MASK,
+		
+		ITEM_SUN_STONE,
+		
+		ITEM_SHINY_STONE,
+		ITEM_DAWN_STONE
+		//ITEM_NONE
+	};
+	
+	u16 GrottoRedTreeItems[] = 
+	{
+		ITEM_LEAF_STONE,
+		ITEM_ONI_MASK,
+		
+		ITEM_MOON_STONE,
+
+		ITEM_DUSK_STONE,
+		ITEM_DAWN_STONE
+		//ITEM_NONE
+	};
+	
+	u16 GrottoYellowCaveItems[] = 
+	{
+		ITEM_ZEPHYR_STONE,
+		ITEM_FIRE_STONE,
+		
+		ITEM_SUN_STONE,
+		
+		ITEM_SHINY_STONE,
+		ITEM_DAWN_STONE
+		//ITEM_NONE
+	};
+	
+	u16 GrottoBlueCaveItems[] = 
+	{
+		ITEM_ICE_STONE,
+		ITEM_WATER_STONE,
+		
+		ITEM_MOON_STONE,
+		
+		ITEM_DUSK_STONE,
+		ITEM_DAWN_STONE
+		//ITEM_NONE
+	};
+	
+	u8 itemId = Random() % (sizeof(GrottoItems)/sizeof(GrottoItems[0]));
+	u8 uncommonitemId = Random() % (sizeof(GrottoUncommonItems)/sizeof(GrottoUncommonItems[0]));
+	u8 rareitemId = Random() % (sizeof(GrottoRareItems)/sizeof(GrottoRareItems[0]));
+
+	u8 greentreeitemId = Random() % (sizeof(GrottoGreenTreeItems)/sizeof(GrottoGreenTreeItems[0]));
+	u8 redtreeitemId = Random() % (sizeof(GrottoRedTreeItems)/sizeof(GrottoRedTreeItems[0]));
+	u8 yellowcaveitemId = Random() % (sizeof(GrottoYellowCaveItems)/sizeof(GrottoYellowCaveItems[0]));
+	u8 bluecaveitemId = Random() % (sizeof(GrottoBlueCaveItems)/sizeof(GrottoBlueCaveItems[0]));
+	
+    if (GrottoItems[itemId] != ITEM_NONE && (Random() % 100) < 50) // 40% chance to get common item
+    {
+		gSpecialVar_Result = GrottoItems[itemId];
+    }
+	else if(GrottoItems[itemId] == ITEM_NONE && 
+			GrottoUncommonItems[uncommonitemId] != ITEM_NONE &&
+			(Random() % 100) < 50) // 20% chance to get uncommon item
+	{
+		gSpecialVar_Result = GrottoRareItems[uncommonitemId];
+    }
+	else if(GrottoItems[itemId] == ITEM_NONE && 
+			GrottoRareItems[rareitemId] != ITEM_NONE &&
+			(Random() % 100) < 50) // 10% chance to get rare item
+	{
+		gSpecialVar_Result = GrottoRareItems[rareitemId];
+    }
+	else // 10% chance to get a map specific rare item
+	{
+		if (GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_85 || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_70 || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_87) // yellow cave grottos
+			gSpecialVar_Result = GrottoYellowCaveItems[yellowcaveitemId];
+		if (GetCurrentRegionMapSectionId() == MAPSEC_QUARTZ_CAVE || GetCurrentRegionMapSectionId() == MAPSEC_MT_SHIRO || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_66 || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_97) // blue cave grottos
+			gSpecialVar_Result = GrottoBlueCaveItems[bluecaveitemId];
+		if (GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_92 || GetCurrentRegionMapSectionId() == MAPSEC_SCARLET_WOODS || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_91) // red tree grottos
+			gSpecialVar_Result = GrottoRedTreeItems[redtreeitemId];
+		else // green tree grottos
+			gSpecialVar_Result = GrottoGreenTreeItems[greentreeitemId];
+    }
+}
+
+
+
+
+void RockSmashWildEncounter(void)
 {
     u16 headerId = GetCurrentMapWildMonHeaderId();
 

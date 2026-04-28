@@ -694,7 +694,7 @@ static void LoadSaveblockMapHeader(void)
 	gMapHeader.region = sMapsecToRegion[gMapHeader.regionMapSectionId];
 }
 
-static const u8 sMapsecToRegion[] = {
+/*static const u8 sMapsecToRegion[] = {
      [MAPSEC_LITTLEROOT_TOWN]            = REGION_HOENN,
      [MAPSEC_OLDALE_TOWN]                = REGION_HOENN,
      [MAPSEC_DEWFORD_TOWN]               = REGION_HOENN,
@@ -837,7 +837,7 @@ static const u8 sMapsecToRegion[] = {
      [MAPSEC_NAVEL_ROCK]                 = REGION_HOENN,
      [MAPSEC_PERENNIAL_PILLAR]           = REGION_ISSHO,
      [MAPSEC_TRAINER_HILL]               = REGION_HOENN
-};
+};*/
 
 static void SetPlayerCoordsFromWarp(void)
 {

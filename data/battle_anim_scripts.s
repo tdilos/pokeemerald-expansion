@@ -2454,6 +2454,7 @@ gBattleAnimMove_FlashCannon::
 	clearmonbg ANIM_TARGET
 	end
 
+
 gBattleAnimMove_AetherBeam::
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
@@ -2493,7 +2494,8 @@ gBattleAnimMove_AetherBeam::
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	end
-	
+
+
 gBattleAnimMove_RockClimb::
 	delay 8
 	loopsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER, 38, 3
@@ -4803,6 +4805,7 @@ gBattleAnimMove_Metamorphose::
 	waitforvisualfinish
 	end
 	
+
 gBattleAnimMove_AfterYou::
 	loadspritegfx ANIM_TAG_ANGER @rage
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @green color
@@ -6531,7 +6534,6 @@ gBattleAnimMove_Prescience::
 	call UnsetPsychicBg
 	end
 	
-
 gBattleAnimMove_SonicPulse:: 
 	loadspritegfx ANIM_TAG_PURPLE_RING
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_PURPLE_RING, 0, 6, 6, RGB(0,31,0)
@@ -6604,7 +6606,6 @@ gBattleAnimMove_DopplerCharge::
 	end
 
 
-
 gBattleAnimMove_Cacophony::
 	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
 	loadspritegfx ANIM_TAG_THIN_RING
@@ -6636,7 +6637,7 @@ gBattleAnimMove_Cacophony::
 	clearmonbg ANIM_DEF_PARTNER
 	end
 
-	
+
 gBattleAnimMove_WhiteNoise::
 	@loadspritegfx ANIM_TAG_METAL_SOUND_WAVES 
 	loadspritegfx ANIM_TAG_THIN_RING
@@ -6664,7 +6665,7 @@ gBattleAnimMove_WhiteNoise::
 	clearmonbg ANIM_ATK_PARTNER
 	end
 	
-
+	
 gBattleAnimMove_ShieldStrike:: 
 	loadspritegfx ANIM_TAG_IMPACT
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
@@ -7800,7 +7801,7 @@ gBattleAnimMove_IllWill::
 	
 
 gBattleAnimMove_Psychosis::
-	goto Move_PANIC_ATTACK
+	goto gBattleAnimMove_PanicAttack
 
 
 gBattleAnimMove_Shriek::
@@ -8966,7 +8967,6 @@ gBattleAnimMove_ShadowHand::
 	restorebg
 	waitforvisualfinish
 	end
-
 
 
 gBattleAnimMove_DroneWave::
@@ -11278,6 +11278,26 @@ MoonblastSetUp:
 MoonblastUnleash:
 	setalpha 0, 16
 	simple_palette_blend selector=F_PAL_BG, delay=1, initial_blend_y=0, target_blend_y=16, color=RGB_BLACK
+	waitforvisualfinish
+	createsprite gMoonSpriteTemplate, ANIM_ATTACKER, 2, 120, 56
+	createvisualtask AnimTask_AlphaFadeIn, 3, 0, 16, 16, 0, 1
+	playsewithpan SE_M_MOONLIGHT, 0
+	delay 30
+	createsprite gMoonlightSparkleSpriteTemplate, ANIM_ATTACKER, 40, -12, 0
+	delay 30
+	createsprite gMoonlightSparkleSpriteTemplate, ANIM_ATTACKER, 40, -24, 0
+	delay 30
+	createsprite gMoonlightSparkleSpriteTemplate, ANIM_ATTACKER, 40, 21, 0
+	delay 30
+	createsprite gMoonlightSparkleSpriteTemplate, ANIM_ATTACKER, 40, 0, 0
+	delay 30
+	createsprite gMoonlightSparkleSpriteTemplate, ANIM_ATTACKER, 40, 10, 0
+	delay 20
+	createvisualtask AnimTask_MoonlightEndFade, 2
+	goto MoonblastEnd
+MoonblastUnleash:
+	setalpha 0, 16
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 16, RGB_BLACK
 	waitforvisualfinish
 	createsprite gMoonSpriteTemplate, ANIM_ATTACKER, 2, 120, 56
 	createvisualtask AnimTask_AlphaFadeIn, 3, 0, 16, 16, 0, 1
@@ -30997,7 +31017,7 @@ gBattleAnimMove_Lick::
 	end
 	
 
-Move_KALEIDO_TONGUE::
+gBattleAnimMove_KaleidoTongue::
 	loadspritegfx ANIM_TAG_LICK
 	loadspritegfx ANIM_TAG_FOCUS_ENERGY
 	loadspritegfx ANIM_TAG_WHIP_HIT @green color
@@ -31019,6 +31039,7 @@ Move_KALEIDO_TONGUE::
 	blendoff
 	clearmonbg ANIM_ATTACKER
 	end
+
 
 gBattleAnimMove_FocusEnergy::
 	loadspritegfx ANIM_TAG_FOCUS_ENERGY
@@ -31454,6 +31475,7 @@ gBattleAnimMove_MindBreak::
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG | F_PAL_ATK_SIDE | F_PAL_DEF_PARTNER, 3, 16, 0, RGB_BLACK
 	waitforvisualfinish
 	end
+
 
 gBattleAnimMove_SweetKiss::
 	loadspritegfx ANIM_TAG_RED_HEART
@@ -33985,7 +34007,7 @@ gBattleAnimStatus_Fear:
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 18, 2
 	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 2, 2, 0, 12, RGB(0, 0, 0)
 	end
-	
+
 gBattleAnimStatus_Freeze::
 	playsewithpan SE_M_ICY_WIND, 0
 	loadspritegfx ANIM_TAG_ICE_CUBE
@@ -40982,7 +41004,7 @@ gBattleAnimMove_GMaxFinale::
 gBattleAnimMove_MaxStarfall::
 	createvisualtask AnimTask_DynamaxGrowth, 0x5, 0x1, 0x1
 	waitforvisualfinish
-	goto gBattleAnimMove_Moonblast
+	goto MoonblastUnleash
 	end
 
 gBattleAnimMove_GMaxStonesurge::

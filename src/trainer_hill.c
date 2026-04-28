@@ -1119,13 +1119,8 @@ static u16 GetPrizeItemId(void)
     // The prizes for a time under 12 minutes are:
     // - ITEM_TM_SUNNY_DAY     (Normal)
     // - ITEM_ELIXIR           (Variety)
-<<<<<<< Updated upstream
-    // - ITEM_TM_GIGA_DRAIN    (Unique)
-    // - ITEM_TM_BRICK_BREAK   (Expert)
-=======
     // - ITEM_TM19_BLOCK       (Unique)
     // - ITEM_TM31_BRICK_BREAK (Expert)
->>>>>>> Stashed changes
     // As an additional note, if players were allowed to enter a Trainer Hill challenge before
     // entering the Hall of Fame, there would be 1 additional prize possibility (ITEM_MAX_ETHER)
     // as Normal / Unique modes would use sPrizeListSets[0][3] / sPrizeListSets[1][3] respectively.

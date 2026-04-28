@@ -106,13 +106,13 @@ enum Language
 #define GIFT_RIBBONS_COUNT 11
 #define SAVED_TRENDS_COUNT 5
 #define PYRAMID_BAG_ITEMS_COUNT 10
-#define ROAMER_COUNT 8 //1 // Number of maximum concurrent active roamers
+#define ROAMER_COUNT 8 // Number of maximum concurrent active roamers
 
 // Bag constants
 #define BAG_ITEMS_COUNT 120 //30
 #define BAG_KEYITEMS_COUNT 30
 #define BAG_POKEBALLS_COUNT 16
-#define BAG_TMHM_COUNT 120 //64
+#define BAG_TMHM_COUNT 110 //64
 #define BAG_BERRIES_COUNT 80 //46
 
 // Number of facilities for Ranking Hall.

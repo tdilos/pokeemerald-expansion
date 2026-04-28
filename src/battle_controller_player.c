@@ -394,6 +394,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
     {
         SwapHpBarsWithHpText();
     }
+	// Autorun
 	else if (JOY_NEW(R_BUTTON))
     {
         if(!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)
@@ -2142,7 +2143,7 @@ void PlayerHandleChooseMove(enum BattlerId battler)
         gBattlerControllerFuncs[battler] = PlayerChooseMoveInBattlePalace;
     }
 	// DAZ uses BattlePalace probabilities to select a move at random
-	else if ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_STATUS) == STATUS1_DAZE))
+	else if ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_STATUS) == STATUS1_DAZE))
 	{
         gBattleStruct->arenaMindPoints[battler] = 8;
         gBattlerControllerFuncs[battler] = PlayerChooseMoveInBattlePalace;

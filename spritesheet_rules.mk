@@ -500,6 +500,7 @@ $(OBJEVENTGFXDIR)/people/woman_5.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/youngster.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+
 $(OBJEVENTGFXDIR)/people/agatha.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
@@ -1060,6 +1061,7 @@ $(OBJEVENTGFXDIR)/people/gym_leaders/fr_norman.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/elite_four/fr_sidney.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 	
+
 	
 
 $(OBJEVENTGFXDIR)/pokemon_old/azumarill.4bpp: %.4bpp: %.png
@@ -1131,14 +1133,15 @@ $(OBJEVENTGFXDIR)/pokemon_old/wingull.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokemon_old/zigzagoon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 	
-$(OBJEVENTGFXDIR)/pokemon/fr_bellsprout.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/pokemon_old/fr_bellsprout.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 	
-$(OBJEVENTGFXDIR)/pokemon/fr_glameow.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/pokemon_old/fr_glameow.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 	
-$(OBJEVENTGFXDIR)/pokemon/fr_zigzagoon.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/pokemon_old/fr_zigzagoon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
+
 
 $(OBJEVENTGFXDIR)/pokemon_old/chansey.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
@@ -1266,6 +1269,19 @@ $(OBJEVENTGFXDIR)/pokemon_old/fr_chansey.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokemon_old/fr_drifloon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
+
+$(OBJEVENTGFXDIR)/pokemon_old/fr_porygon2.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
+	
+$(OBJEVENTGFXDIR)/pokemon_old/fr_mewtwo.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+	
+$(OBJEVENTGFXDIR)/pokemon_old/fr_genesect.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+	
+$(OBJEVENTGFXDIR)/pokemon_old/fr_genesect_shiny.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+	
 
 $(OBJEVENTGFXDIR)/berry_trees/aguav.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
@@ -1407,6 +1423,9 @@ $(OBJEVENTGFXDIR)/berry_trees/micle.4bpp: %.4bpp: %.png
 	
 	
 
+$(OBJEVENTGFXDIR)/misc/ball_poke.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+	
 $(OBJEVENTGFXDIR)/misc/apricorn_tree.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
@@ -5837,3 +5856,4 @@ $(SLIDINGPUZZLESDIR)/carracosta/tiles.4bpp: %.4bpp: %.png
 	
 $(SLIDINGPUZZLESDIR)/sigilyph/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+

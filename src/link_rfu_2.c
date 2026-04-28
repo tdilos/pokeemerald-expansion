@@ -77,15 +77,8 @@ struct RfuDebug
     u8 unused4[88];
 };
 
-<<<<<<< Updated upstream
 COMMON_DATA u32 gRfuAPIBuffer[RFU_API_BUFF_SIZE_RAM / 4] = {0};
 COMMON_DATA struct RfuManager gRfu = {0};
-=======
-//u32 gRfuAPIBuffer[RFU_API_BUFF_SIZE_RAM / 4];
-//struct RfuManager gRfu;
-EWRAM_DATA u32 gRfuAPIBuffer[RFU_API_BUFF_SIZE_RAM / 4] = {};
-EWRAM_DATA struct RfuManager gRfu = {};
->>>>>>> Stashed changes
 
 static u8 sHeldKeyCount;
 static u8 sResendBlock8[CMD_LENGTH * 2];

@@ -351,3 +351,12 @@ Route103_Text_RouteSign:
 	.string "ROUTE 103\n"
 	.string "{DOWN_ARROW} OLDALE TOWN$"
 
+
+Route103_EventScript_Man1::
+	msgbox Route103_Text_PleaseEnter, MSGBOX_NPC
+	end
+
+Route103_Text_PleaseEnter:
+	.string "CHAMPION of ISSHO!\n"
+	.string "Please enter!$"
+

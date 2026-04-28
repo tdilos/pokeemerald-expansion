@@ -145,6 +145,13 @@ static void HandleInputChooseAction(enum BattlerId battler)
         gActionSelectionCursor[gActiveBattler] = 3;
         ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
     }
+	else if (JOY_NEW(R_BUTTON)) //pressing R moves cursor to run
+    {
+        PlaySE(SE_SELECT);
+        ActionSelectionDestroyCursorAt(gActionSelectionCursor[gActiveBattler]);
+        gActionSelectionCursor[gActiveBattler] = 3;
+        ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
+    }
     else if (JOY_NEW(DPAD_LEFT))
     {
         if (gActionSelectionCursor[battler] & 1)

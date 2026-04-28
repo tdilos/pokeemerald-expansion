@@ -1174,19 +1174,20 @@ static const union AnimCmd sSpriteAnim_StatusFrostbite[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_StatusInfect[] = {
-    ANIMCMD_FRAME(28, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatusDaze[] = {
     ANIMCMD_FRAME(32, 0, FALSE, FALSE),
     ANIMCMD_END
 };
-static const union AnimCmd sSpriteAnim_StatusExhaust[] = {
+static const union AnimCmd sSpriteAnim_StatusDaze[] = {
     ANIMCMD_FRAME(36, 0, FALSE, FALSE),
     ANIMCMD_END
 };
-static const union AnimCmd sSpriteAnim_StatusFear[] = {
+static const union AnimCmd sSpriteAnim_StatusExhaust[] = {
     ANIMCMD_FRAME(40, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_StatusFear[] = {
+    ANIMCMD_FRAME(44, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 
@@ -1208,7 +1209,7 @@ static const struct CompressedSpriteSheet sStatusIconsSpriteSheet =
 {
     .data = gStatusGfx_Icons,
     //.size = 0x400,
-    .size = 0x580,
+    //.size = 0x580,
     .tag = TAG_MON_STATUS
 };
 static const struct SpritePalette sStatusIconsSpritePalette =
@@ -4594,7 +4595,7 @@ static void SetMoveTypeIcons(void)
     }
 }
 {
-    u8 i;
+    u32 i;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     struct Pokemon *mon = &sMonSummaryScreen->currentMon;
     u16 species = GetMonData(mon, MON_DATA_SPECIES);
@@ -4672,7 +4673,8 @@ static void SetNewMoveTypeIcon(void)
                 //SetTypeSpritePosAndPal(type & 0x3F, 85, 96, SPRITE_ARR_ID_TYPE + 4);
 				SetTypeSpritePosAndPal(type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
             } else {
-                SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+                //SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+				SetTypeSpritePosAndPal(type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
             }
 		}
         else
@@ -5150,3 +5152,4 @@ static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n)
     ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
 }
+

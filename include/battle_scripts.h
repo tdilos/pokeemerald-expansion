@@ -181,6 +181,7 @@ extern const u8 BattleScript_IntimidateActivates[];
 extern const u8 BattleScript_IntimidatePrevented[];
 extern const u8 BattleScript_IntimidateInReverse[];
 extern const u8 BattleScript_PsychOutActivates[];
+extern const u8 BattleScript_IlluminateActivates[];
 extern const u8 BattleScript_TookAttack[];
 extern const u8 BattleScript_SturdyPreventsOHKO[];
 extern const u8 BattleScript_DampStopsExplosion[];
@@ -282,6 +283,8 @@ extern const u8 BattleScript_WeakArmorActivates[];
 extern const u8 BattleScript_FellStingerRaisesStat[];
 extern const u8 BattleScript_RemoveTerrain[];
 extern const u8 BattleScript_PickupActivates[];
+extern const u8 BattleScript_ToxicFumesActivates[];
+extern const u8 BattleScript_EclipseActivates[];
 extern const u8 BattleScript_HarvestActivates[];
 extern const u8 BattleScript_ImposterActivates[];
 extern const u8 BattleScript_EqualizeActivates[];
@@ -536,6 +539,12 @@ extern const u8 BattleScript_BeforeSnoreMessage[];
 extern const u8 BattleScript_SkyDropTargetTooHeavy[];
 extern const u8 BattleScript_SkyDropFlyingType[];
 extern const u8 BattleScript_SkyDropNoTarget[];
+
+extern const u8 BattleScript_FairyDustActivates[];
+extern const u8 BattleScript_SmazeContinues[];
+extern const u8 BattleScript_SmazeEnd[];
+extern const u8 BattleScript_FullMoonContinues[];
+extern const u8 BattleScript_FullMoonEnd[];
 
 // zmoves
 extern const u8 BattleScript_ZMoveActivateDamaging[];

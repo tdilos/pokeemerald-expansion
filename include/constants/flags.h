@@ -575,11 +575,6 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-//#define FLAG_MAY_XANTHOS_CITY                0x1DE 
-//#define FLAG_MAY_COBALT_CITY                 0x1DF 
-//#define FLAG_MAY_MINDARO_CITY                0x1E0 
-//#define FLAG_MAY_ROUGE_CITY                  0x1E1 
-//#define FLAG_MAY_DUN_TOWN                    0x1E2 
 #define FLAG_RECEIVED_FOSSIL_MT_SHIRO        0x1DE
 #define FLAG_BATTLED_CELEBI                  0x1DF
 #define FLAG_BATTLED_JIRACHI                 0x1E0
@@ -592,27 +587,6 @@
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
 #define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag */
-
-
-/*#define FLAG_RECEIVED_BUG_GEM                0x1E1 
-#define FLAG_RECEIVED_GROUND_GEM             0x1E2 
-#define FLAG_RECEIVED_GRASS_GEM              0x1E3 
-#define FLAG_RECEIVED_ICE_GEM                0x1E4
-#define FLAG_RECEIVED_ECHO_GEM               0x1E5
-#define FLAG_RECEIVED_STEEL_GEM              0x1E6
-#define FLAG_RECEIVED_DRAGON_GEM             0x1E7
-#define FLAG_RECEIVED_POISON_GEM             0x1E8
-#define FLAG_RECEIVED_ROCK_GEM               0x1E9
-#define FLAG_RECEIVED_FIGHTING_GEM           0x1EA
-#define FLAG_RECEIVED_FAIRY_GEM              0x1EB
-#define FLAG_RECEIVED_FIRE_GEM               0x1EC
-#define FLAG_RECEIVED_NORMAL_GEM             0x1ED
-#define FLAG_RECEIVED_FLYING_GEM             0x1EE
-#define FLAG_RECEIVED_PSYCHIC_GEM            0x1EF
-#define FLAG_RECEIVED_WATER_GEM              0x1F0
-#define FLAG_RECEIVED_ELECTRIC_GEM           0x1F1
-#define FLAG_RECEIVED_GHOST_GEM              0x1F2
-#define FLAG_RECEIVED_DARK_GEM               0x1F3*/
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -902,25 +876,24 @@
 //#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
 //#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
 //#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_ITEM_MT_SHIRO_RARE_BONE       0x2AC 
-#define FLAG_ITEM_POWER_STATION_DAZE_HEAL  0x2AD
-#define FLAG_ITEM_POWER_STATION_MAGNET     0x2AE 
-#define FLAG_ITEM_POWER_STATION_THUNDER_STONE 0x2AF 
-#define FLAG_ITEM_SCARLET_WOODS_PITCH_ROCK 0x2B0 
-#define FLAG_ITEM_SCARLET_WOODS_TM89       0x2B1 
-#define FLAG_BOUGHT_SMEARGLE               0x2B2 
-#define FLAG_BOUGHT_AMULET_COIN            0x2B3 
-#define FLAG_TURQUOISE_CITY_OCCUPIED       0x2B4 
-#define FLAG_TURQUOISE_CITY_FREED          0x2B5 
-//#define FLAG_HIDE_UMBER_TOWN_JACE          0x2B6 //Unneeded?
-//#define FLAG_HIDE_ROUTE_80_JACE            0x2B7 //Unneeded?
+//#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
+//#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_ITEM_MT_SHIRO_RARE_BONE                 0x2AC 
+#define FLAG_ITEM_POWER_STATION_DAZE_HEAL            0x2AD
+#define FLAG_ITEM_POWER_STATION_MAGNET               0x2AE 
+#define FLAG_ITEM_POWER_STATION_THUNDER_STONE        0x2AF 
+#define FLAG_ITEM_SCARLET_WOODS_PITCH_ROCK           0x2B0 
+#define FLAG_ITEM_SCARLET_WOODS_TM89                 0x2B1 
+#define FLAG_BOUGHT_SMEARGLE                         0x2B2 
+#define FLAG_BOUGHT_AMULET_COIN                      0x2B3 
+#define FLAG_TURQUOISE_CITY_OCCUPIED                 0x2B4 
+#define FLAG_TURQUOISE_CITY_FREED                    0x2B5 
 #define FLAG_ITEM_KENDOMA_CORP_RARE_CANDY_2          0x2B6 
-#define FLAG_ITEM_UNDERGROUND_CITY_DUBIOUS_DISK            0x2B7 
-#define FLAG_GOT_LARVESTA_EGG              0x2B8
-#define FLAG_NO_ROOM_FOR_LARVESTA_EGG      0x2B9
-#define FLAG_GOT_EEVEE_ROUTE88             0x2BA
-//#define FLAG_UNUSED_0x2BB                  0x2BB // Unused Flag
-#define FLAG_MINDARO_GARDENS_RECEIVED_FULL_HEAL 0x2BB
+#define FLAG_ITEM_UNDERGROUND_CITY_DUBIOUS_DISK      0x2B7 
+#define FLAG_GOT_LARVESTA_EGG                        0x2B8
+#define FLAG_NO_ROOM_FOR_LARVESTA_EGG                0x2B9
+#define FLAG_GOT_EEVEE_ROUTE88                       0x2BA
+#define FLAG_MINDARO_GARDENS_RECEIVED_FULL_HEAL      0x2BB
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
@@ -1087,7 +1060,6 @@
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2           0x361
 #define FLAG_HIDE_PETALBURG_GYM_WALLY                               0x362
 //#define FLAG_UNKNOWN_0x363                                          0x363 // Set, however has no purpose.
-//#define FLAG_HIDE_ROUTE_79_RAYNER_MAY                               0x363
 #define FLAG_HIDE_RAYNER                                            0x363
 #define FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN                           0x364
 #define FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY          0x365
@@ -1137,7 +1109,6 @@
 #define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
 //#define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-//#define FLAG_CLEARED_KENDOMA_CORP                                   0x393 
 #define FLAG_CLEARED_XANTHOS_UNDERGROUND                            0x393
 #define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                             0x394
 #define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
@@ -1363,23 +1334,23 @@
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_ROUTE_83_RARE_CANDY                               0x46D
 //#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                       0x46D // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
+#define FLAG_ITEM_ROUTE_83_RARE_CANDY                               0x46D
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_ITEM_ROUTE_82_POKEBALL                                 0x470
 //#define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
+#define FLAG_ITEM_ROUTE_82_POKEBALL                                 0x470
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_ITEM_ROUTE_81_DAWN_STONE                               0x472
 //#define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
+#define FLAG_ITEM_ROUTE_81_DAWN_STONE                               0x472
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_ITEM_XANTHOS_CITY_TM54                                 0x479
 //#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
+#define FLAG_ITEM_XANTHOS_CITY_TM54                                 0x479
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
@@ -1879,13 +1850,13 @@
 #define FLAG_UNUSED_0x5EE                                   0x5EE
 #define FLAG_UNUSED_0x5EF                                   0x5EF
 
-#define FLAG_UNUSED_0x5F0                                   0x5F0
-#define FLAG_UNUSED_0x5F1                                   0x5F1
-#define FLAG_UNUSED_0x5F2                                   0x5F2
-#define FLAG_UNUSED_0x5F3                                   0x5F3
-#define FLAG_UNUSED_0x5F4                                   0x5F4
-#define FLAG_UNUSED_0x5F5                                   0x5F5
-#define FLAG_UNUSED_0x5F6                                   0x5F6
+#define FLAG_HIDE_TIER_1_WORLDS                             0x5F0
+#define FLAG_HIDE_TIER_2_WORLDS                             0x5F1
+#define FLAG_HIDE_TIER_3_WORLDS                             0x5F2
+#define FLAG_HIDE_TIER_4_WORLDS                             0x5F3
+#define FLAG_HIDE_TIER_5_WORLDS                             0x5F4
+#define FLAG_HIDE_BONUS_WORLD_1                             0x5F5
+#define FLAG_HIDE_BONUS_WORLD_2                             0x5F6
 #define FLAG_UNUSED_0x5F7                                   0x5F7
 #define FLAG_UNUSED_0x5F8                                   0x5F8
 #define FLAG_UNUSED_0x5F9                                   0x5F9

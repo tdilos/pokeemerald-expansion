@@ -11,7 +11,10 @@ enum WildPokemonArea {
     WILD_AREA_WATER,
     WILD_AREA_ROCKS,
     WILD_AREA_FISHING,
-    WILD_AREA_HIDDEN
+    WILD_AREA_HIDDEN,
+	WILD_AREA_CUT,
+	WILD_AREA_HEADBUTT,
+	WILD_AREA_THAW,
 };
 
 struct WildPokemon
@@ -78,5 +81,8 @@ u32 ChooseHiddenMonIndex(void);
 bool32 MapHasNoEncounterData(void);
 enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area);
 void TryUpdateSwarm(void);
+u32 ChooseWildMonIndex_Cut(void);
+u32 ChooseWildMonIndex_Headbutt(void);
+u32 ChooseWildMonIndex_Thaw(void);
 
 #endif // GUARD_WILD_ENCOUNTER_H

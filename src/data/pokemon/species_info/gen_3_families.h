@@ -13325,7 +13325,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 0,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_MAGIC_GUARD },
+        #else
         .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE },
+		#endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Deoxys"),
         .cryId = CRY_DEOXYS,
@@ -13405,7 +13409,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 0,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_MAGIC_GUARD },
+        #else
         .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE },
+		#endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Deoxys"),
         .cryId = CRY_DEOXYS,
@@ -13467,12 +13475,21 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_DEOXYS_DEFENSE] =
     {
+        #if P_TOURMALINE_MONS
+        .baseHP        = 80,
+        .baseAttack    = 60,
+        .baseDefense   = 160,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 160,
+        #else
         .baseHP        = 50,
         .baseAttack    = 70,
         .baseDefense   = 160,
         .baseSpeed     = 90,
         .baseSpAttack  = 70,
         .baseSpDefense = 160,
+		#endif
         .types = MON_TYPES(TYPE_PSYCHIC),
         .catchRate = 3,
         .expYield = DEOXYS_EXP_YIELD,
@@ -13483,7 +13500,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 0,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_MAGIC_GUARD },
+        #else
         .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE },
+		#endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Deoxys"),
         .cryId = CRY_DEOXYS,
@@ -13561,7 +13582,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 0,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_MAGIC_GUARD },
+        #else
         .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE },
+		#endif
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
         .speciesName = _("Deoxys"),

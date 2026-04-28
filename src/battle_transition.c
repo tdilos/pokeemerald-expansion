@@ -21,12 +21,8 @@
 #include "task.h"
 #include "trig.h"
 #include "util.h"
-<<<<<<< Updated upstream
 #include "battle_setup.h"
 #include "data.h"
-=======
-//#include "constants/battle_transitions.h"
->>>>>>> Stashed changes
 #include "constants/field_effects.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -115,9 +111,7 @@ static void Task_Slice(u8);
 static void Task_WhiteBarsFade(u8);
 static void Task_GridSquares(u8);
 static void Task_AngledWipes(u8);
-<<<<<<< Updated upstream
 static void Task_Mugshot(u8);
-=======
 static void Task_Lisia(u8);
 static void Task_Ian(u8);
 static void Task_Sidney2(u8);
@@ -129,7 +123,6 @@ static void Task_Phoebe(u8);
 static void Task_Glacia(u8);
 static void Task_Drake(u8);
 static void Task_Champion(u8);
->>>>>>> Stashed changes
 static void Task_Aqua(u8);
 static void Task_Magma(u8);
 static void Task_Regice(u8);
@@ -562,9 +555,7 @@ static const TransitionStateFunc sMugshot_Funcs[] =
     Mugshot_End
 };
 
-<<<<<<< Updated upstream
-=======
-static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
+/*static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
 {
     [MUGSHOT_SIDNEY]   = TRAINER_PIC_ELITE_FOUR_SIDNEY,
     [MUGSHOT_PHOEBE]   = TRAINER_PIC_ELITE_FOUR_PHOEBE,
@@ -602,9 +593,8 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_SIDNEY2] =  { 0,  0},
     [MUGSHOT_PETRA] =    { 0,  0},
     [MUGSHOT_NORMAN] =   { 0,  0},
-};
+};*/
 
->>>>>>> Stashed changes
 static const TransitionSpriteCallback sMugshotTrainerPicFuncs[] =
 {
     MugshotTrainerPic_Pause,
@@ -943,7 +933,12 @@ static const u16 sMugshotPal_Yellow[] = INCBIN_U16("graphics/battle_transitions/
 static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/battle_transitions/brendan_bg.gbapal");
 static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/battle_transitions/may_bg.gbapal");
 
-<<<<<<< Updated upstream
+static const u16 sMugshotPal_Lisia[] = INCBIN_U16("graphics/battle_transitions/lisia_bg.gbapal");
+static const u16 sMugshotPal_Ian[] = INCBIN_U16("graphics/battle_transitions/ian_bg.gbapal");
+static const u16 sMugshotPal_Sidney2[] = INCBIN_U16("graphics/battle_transitions/sidney2_bg.gbapal");
+static const u16 sMugshotPal_Petra[] = INCBIN_U16("graphics/battle_transitions/petra_bg.gbapal");
+static const u16 sMugshotPal_Norman[] = INCBIN_U16("graphics/battle_transitions/norman_bg.gbapal");
+
 static const u16 *const sOpponentMugshotsPals[MUGSHOT_COLOR_COUNT] =
 {
     [MUGSHOT_COLOR_PURPLE] = sMugshotPal_Purple,
@@ -951,14 +946,14 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOT_COLOR_COUNT] =
     [MUGSHOT_COLOR_PINK]   = sMugshotPal_Pink,
     [MUGSHOT_COLOR_BLUE]   = sMugshotPal_Blue,
     [MUGSHOT_COLOR_YELLOW] = sMugshotPal_Yellow
-=======
-static const u16 sMugshotPal_Lisia[] = INCBIN_U16("graphics/battle_transitions/lisia_bg.gbapal");
-static const u16 sMugshotPal_Ian[] = INCBIN_U16("graphics/battle_transitions/ian_bg.gbapal");
-static const u16 sMugshotPal_Sidney2[] = INCBIN_U16("graphics/battle_transitions/sidney2_bg.gbapal");
-static const u16 sMugshotPal_Petra[] = INCBIN_U16("graphics/battle_transitions/petra_bg.gbapal");
-static const u16 sMugshotPal_Norman[] = INCBIN_U16("graphics/battle_transitions/norman_bg.gbapal");
+    [MUGSHOT_LISIA] = sMugshotPal_Lisia,
+    [MUGSHOT_IAN] = sMugshotPal_Ian,
+    [MUGSHOT_SIDNEY2] = sMugshotPal_Sidney2,
+    [MUGSHOT_PETRA] = sMugshotPal_Petra,
+    [MUGSHOT_NORMAN] = sMugshotPal_Norman
+};
 
-static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
+/*static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
 {
     [MUGSHOT_SIDNEY] = sMugshotPal_Sidney,
     [MUGSHOT_PHOEBE] = sMugshotPal_Phoebe,
@@ -970,8 +965,7 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_SIDNEY2] = sMugshotPal_Sidney2,
     [MUGSHOT_PETRA] = sMugshotPal_Petra,
     [MUGSHOT_NORMAN] = sMugshotPal_Norman
->>>>>>> Stashed changes
-};
+};*/
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
 {
@@ -2337,14 +2331,12 @@ static void VBlankCB_Wave(void)
 #define sSlideDir    data[7]
 
 static void Task_Mugshot(u8 taskId)
-<<<<<<< Updated upstream
-=======
 {
     gTasks[taskId].tMugshotId = VarGet(VAR_MUGSHOT_ID);
     DoMugshotTransition(taskId);
 }
 
-static void Task_Lisia(u8 taskId)
+/*static void Task_Lisia(u8 taskId)
 {
     gTasks[taskId].tMugshotId = MUGSHOT_LISIA;
     DoMugshotTransition(taskId);
@@ -2402,10 +2394,9 @@ static void Task_Champion(u8 taskId)
 {
     gTasks[taskId].tMugshotId = MUGSHOT_CHAMPION;
     DoMugshotTransition(taskId);
-}
+}*/
 
 static void DoMugshotTransition(u8 taskId)
->>>>>>> Stashed changes
 {
     while (sMugshot_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }

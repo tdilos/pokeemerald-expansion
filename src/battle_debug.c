@@ -259,6 +259,31 @@ static const struct BitfieldInfo sStatus1Bitfield[] =
 	{/*Fear*/ 1, 16},
 };
 
+static const struct BitfieldInfo sStatus2Bitfield[] =
+{
+    {/*Confusion*/ 3, 0},
+    {/*Flinch*/ 1, 3},
+    {/*Uproar*/ 3, 4},
+    // Bit 7 is unused.
+    {/*Bide*/ 2, 8},
+    {/*Lock Confuse*/ 2, 10},
+    {/*Multiple Turns*/ 1, 12},
+    // Wrap bits are omitted. Done in various.
+    // In Love bits are omitted. Done in various.
+    {/*(Focus Energy*/ 1, 20},
+    {/*Transformed*/ 1, 21},
+    {/*Recharge*/ 1, 22},
+    {/*Rage*/ 1, 23},
+    {/*Substitute*/ 1, 24},
+    {/*Destiny bond*/ 1, 25},
+    {/*Can't escape*/ 1, 26},
+    {/*Nightmares*/ 1, 27},
+    {/*Cursed*/ 1, 28},
+    {/*Foresighted*/ 1, 29},
+    {/*Defense Curled*/ 1, 30},
+    {/*Tormented*/ 1, 31},
+};
+
 static const struct BitfieldInfo sStatus3Bitfield[] =
 {
     {/*Leech Seed Battler*/ 2, 0},
@@ -2181,10 +2206,10 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_CURE_PSN]         = COMPOUND_STRING("Cure Psn"),
     [HOLD_EFFECT_CURE_BRN]         = COMPOUND_STRING("Cure Brn"),
     [HOLD_EFFECT_CURE_FRZ]         = COMPOUND_STRING("Cure Frz"),
-    [HOLD_EFFECT_CURE_INF]         = COMPOUND_STRING("Cure Inf");
-    [HOLD_EFFECT_CURE_DAZ]         = COMPOUND_STRING("Cure Daz");
-    [HOLD_EFFECT_CURE_EXH]         = COMPOUND_STRING("Cure Exh");
-    [HOLD_EFFECT_CURE_FER]         = COMPOUND_STRING("Cure Fer");
+    [HOLD_EFFECT_CURE_INF]         = COMPOUND_STRING("Cure Inf"),
+    [HOLD_EFFECT_CURE_DAZ]         = COMPOUND_STRING("Cure Daz"),
+    [HOLD_EFFECT_CURE_EXH]         = COMPOUND_STRING("Cure Exh"),
+    [HOLD_EFFECT_CURE_FER]         = COMPOUND_STRING("Cure Fer"),
     [HOLD_EFFECT_RESTORE_PP]       = COMPOUND_STRING("Restore Pp"),
     [HOLD_EFFECT_CURE_CONFUSION]   = COMPOUND_STRING("Cure Confusion"),
     [HOLD_EFFECT_CURE_STATUS]      = COMPOUND_STRING("Cure Status"),

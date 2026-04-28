@@ -10,6 +10,7 @@ Text_CantBulldoze:
 @ Interact with cuttable tree
 EventScript_CutTree::
 	lockall
+	goto_if_unset FLAG_BADGE01_GET, EventScript_CantSmashRock
 	checkfieldmove FIELD_MOVE_CUT, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
 	setfieldeffectargument 0, VAR_RESULT
@@ -24,25 +25,10 @@ EventScript_CutTreeCommon:
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
-<<<<<<< Updated upstream
 EventScript_CutTreeDown:: @ fallthrough
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
-=======
-	goto EventScript_CutTreeDown
-	end
-
-@ Use cut from party menu
-EventScript_UseCut::
-	lockall
-	dofieldeffect FLDEFF_USE_CUT_ON_TREE
-	waitstate
-	goto EventScript_CutTreeDown
-	end
-
-EventScript_CutTreeDown::
 	addvar VAR_CUT_COUNT, 1
->>>>>>> Stashed changes
 	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -53,15 +39,15 @@ EventScript_CutTreeDown::
 	releaseall
 	end
 
-EventScript_EndCut:
-	releaseall
-	end
-
 EventScript_TryCutItem::
 	special TryGetCutItem
 	compare VAR_RESULT, FALSE
 	goto_if_eq EventScript_EndCut
 	giveitem VAR_RESULT
+	releaseall
+	end
+
+EventScript_EndCut:
 	releaseall
 	end
 
@@ -104,12 +90,8 @@ EventScript_UseRockSmash::
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
-<<<<<<< Updated upstream
-	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
-=======
 	goto_if_unset FLAG_BADGE02_GET, EventScript_CantSmashRock
-	checkpartymove MOVE_ROCK_SMASH
->>>>>>> Stashed changes
+	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -124,25 +106,10 @@ EventScript_RockSmashCommon:
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
-<<<<<<< Updated upstream
 EventScript_SmashRock:: @ fallthrough
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
-=======
-	goto EventScript_SmashRock
-	end
-
-@ Use rock smash from party menu
-EventScript_UseRockSmash::
-	lockall
-	dofieldeffect FLDEFF_USE_ROCK_SMASH
-	waitstate
-	goto EventScript_SmashRock
-	end
-
-EventScript_SmashRock::
 	addvar VAR_ROCK_SMASH_COUNT, 1
->>>>>>> Stashed changes
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -155,7 +122,18 @@ EventScript_SmashRock::
 	releaseall
 	end
 
-<<<<<<< Updated upstream
+EventScript_TryRockSmashItem::
+	special TryGetRockSmashItem
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_EndSmash
+	giveitem VAR_RESULT
+	releaseall
+	end
+
+EventScript_EndSmash::
+	releaseall
+	end
+	
 EventScript_FollowerFieldMove:
 	getdirectiontoface VAR_0x8005, OBJ_EVENT_ID_FOLLOWER, OBJ_EVENT_ID_PLAYER
 	specialvar VAR_0x8006, GetPlayerFacingDirection
@@ -226,19 +204,6 @@ EventScript_FollowerJumpWest:
 	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_JumpLeft
 	waitmovement 0
 	return
-=======
-EventScript_TryRockSmashItem::
-	special TryGetRockSmashItem
-	compare VAR_RESULT, FALSE
-	goto_if_eq EventScript_EndSmash
-	giveitem VAR_RESULT
-	releaseall
-	end
->>>>>>> Stashed changes
-
-EventScript_EndSmash::
-	releaseall
-	end
 
 Movement_WalkUp:
 	walk_up
@@ -294,11 +259,65 @@ Text_CantSmash:
 	.string "It's a rugged rock, but a POKéMON\n"
 	.string "may be able to smash it.$"
 
-@ Interact with meltable ice
+
+
+@ Interact with smashable rock
+EventScript_RockSmash::
+	lockall
+	goto_if_unset FLAG_BADGE02_GET, EventScript_CantSmashRock
+	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
+	setfieldeffectargument 0, VAR_RESULT
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
+	msgbox Text_WantToSmash, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
+	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	closemessage
+EventScript_RockSmashCommon:
+	@ check if follower should use the field move
+	isfollowerfieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
+	dofieldeffect FLDEFF_USE_ROCK_SMASH
+	waitstate
+EventScript_SmashRock:: @ fallthrough
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	addvar VAR_ROCK_SMASH_COUNT, 1
+	applymovement VAR_LAST_TALKED, Movement_SmashRock
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	@specialvar VAR_RESULT, TryUpdateRusturfTunnelState
+	@goto_if_eq VAR_RESULT, TRUE, EventScript_EndSmash
+	special RockSmashWildEncounter
+	@goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
+	goto_if_eq VAR_RESULT, FALSE, EventScript_TryRockSmashItem
+	waitstate
+	releaseall
+	end
+
+EventScript_TryRockSmashItem::
+	special TryGetRockSmashItem
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_EndSmash
+	giveitem VAR_RESULT
+	releaseall
+	end
+
+EventScript_EndSmash::
+	releaseall
+	end
+	
+@ Use thaw from the party menu
+EventScript_UseThaw::
+	lockall
+	goto EventScript_ThawCommon
+	
+@ Interact with thawable ice
 EventScript_Thaw::
 	lockall
 	goto_if_unset FLAG_BADGE04_GET, EventScript_CantThawIce
-	checkpartymove MOVE_THAW
+	checkfieldmove FIELD_MOVE_THAW, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantThawIce
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -307,20 +326,15 @@ EventScript_Thaw::
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelThaw
 	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
+EventScript_ThawCommon:
+	@ check if follower should use the field move
+	isfollowerfieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	dofieldeffect FLDEFF_USE_THAW
 	waitstate
-	goto EventScript_ThawIce
-	end
-
-@ Use thaw from party menu
-EventScript_UseThaw::
-	lockall
-	dofieldeffect FLDEFF_USE_THAW
-	waitstate
-	goto EventScript_ThawIce
-	end
-
-EventScript_ThawIce::
+EventScript_ThawIce:: @ fallthrough
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
 	addvar VAR_THAW_COUNT, 1
 	applymovement VAR_LAST_TALKED, Movement_ThawIce
 	waitmovement 0
@@ -374,10 +388,7 @@ Text_CantThaw:
 
 EventScript_StrengthBoulder::
 	lockall
-<<<<<<< Updated upstream
-=======
 	goto_if_unset FLAG_BADGE03_GET, EventScript_CantStrength
->>>>>>> Stashed changes
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
 	checkfieldmove FIELD_MOVE_STRENGTH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
@@ -505,12 +516,8 @@ Text_MagnetRiseActivated:
 
 EventScript_UseWaterfall::
 	lockall
-<<<<<<< Updated upstream
-	checkfieldmove FIELD_MOVE_WATERFALL
-=======
 	goto_if_unset FLAG_IS_CHAMPION, EventScript_CantWaterfall
-	checkpartymove MOVE_WATERFALL
->>>>>>> Stashed changes
+	checkfieldmove FIELD_MOVE_WATERFALL
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -545,12 +552,8 @@ Text_MonUsedWaterfall:
 
 EventScript_UseDive::
 	lockall
-<<<<<<< Updated upstream
-	checkfieldmove FIELD_MOVE_DIVE
-=======
 	goto_if_unset FLAG_BADGE08_GET, EventScript_CantDive
-	checkpartymove MOVE_DIVE
->>>>>>> Stashed changes
+	checkfieldmove FIELD_MOVE_DIVE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
 	copyvar 0x8004 VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -602,7 +605,6 @@ EventScript_NoSurface::
 	releaseall
 	end
 
-<<<<<<< Updated upstream
 EventScript_DigCommon:
 	isfollowerfieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
@@ -620,7 +622,6 @@ EventScript_UseDig::
 	lockall
 	goto EventScript_DigCommon
 
-
 EventScript_CutGrassCommon:
 	isfollowerfieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
@@ -631,7 +632,7 @@ EventScript_CutGrassCommon:
 EventScript_UseCutGrass::
 	lockall
 	goto EventScript_CutGrassCommon
-=======
+
 @ Interact with a tree a Pokémon can use headbutt on
 EventScript_Headbutt::
 	lockall
@@ -693,7 +694,6 @@ EventScript_UseDefog::
 	waitse
 	releaseall
 	end
->>>>>>> Stashed changes
 
 Text_CantDive:
 	.string "The sea is deep here. A POKéMON\n"

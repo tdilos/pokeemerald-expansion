@@ -3325,7 +3325,7 @@ static void BufferTradeSceneStrings(void)
 {
     u8 mpId;
     u8 name[POKEMON_NAME_BUFFER_SIZE];
-    const struct InGameTrade *ingameTrade;
+    //const struct InGameTrade *ingameTrade;
 
     if (sTradeAnim->isLinkTrade)
     {

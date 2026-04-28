@@ -19,7 +19,7 @@ HaewenTown_House2_Text_EthelPast:
 	.string "the mythic hunter.\p"
 	.string "But then something happened that\n"
 	.string "she'll never say a word about.\p"
-	.string "Eventually she came back hear to lead\n"
+	.string "Eventually she came back here to lead\n"
 	.string "our clan of dragon tamers.\p"
 	.string "And she's been focused on her\n"
 	.string "gym ever since.$"

@@ -5960,7 +5960,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+    #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_RADIATOR },
+    #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -6035,7 +6039,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+    #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_STORM_DRAIN },
+    #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
         .speciesName = _("Rotom"),
@@ -6111,7 +6119,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+    #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_CARBON_BODY },
+    #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -6185,7 +6197,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+    #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_SPEED_BOOST },
+    #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -6284,7 +6300,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+    #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_SHARP_BODY },
+    #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+    #endif
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Rotom"),
         .cryId = CRY_ROTOM,
@@ -6332,6 +6352,94 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             sAnimTable_Following,
             gOverworldPalette_RotomMow,
             gShinyOverworldPalette_RotomMow
+        )
+        .levelUpLearnset = sRotomLevelUpLearnset,
+        .teachableLearnset = sRotomTeachableLearnset,
+        .formSpeciesIdTable = sRotomFormSpeciesIdTable,
+        .formChangeTable = sRotomFormChangeTable,
+    },
+	
+    [SPECIES_ROTOM_PLAY] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 65,
+        .baseDefense   = 107,
+        .baseSpeed     = 86,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 107,
+    #if P_UPDATED_TYPES >= GEN_5
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_ECHO),
+    #else
+        .types = ROTOM_FAMILY_TYPES,
+    #endif
+        .catchRate = 45,
+        .expYield = ROTOM_APPLIANCE_EXP_YIELD,
+        .evYield_Speed = 1,
+        .evYield_SpAttack = 1,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+    #if P_TOURMALINE_MONS
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_EQUALIZE },
+    #else
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+    #endif
+        .bodyColor = BODY_COLOR_RED,
+        .noFlip = TRUE,
+        .speciesName = _("Rotom"),
+        .cryId = CRY_ROTOM,
+        .natDexNum = NATIONAL_DEX_ROTOM,
+        .categoryName = _("Plasma"),
+        .height = 3,
+        .weight = 3,
+        .description = COMPOUND_STRING(
+            "It enjoys coming up with sound-based\n"
+            "pranks. The model of boombox that\n"
+            "Rotom can inspirit has been discontinued,\n"
+            "so they are now traded at high prices."),
+        .pokemonScale = 530,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_RotomPlay,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = ANIM_FRAMES(
+			ANIMCMD_FRAME(0, 5),
+			ANIMCMD_FRAME(1, 5),
+			ANIMCMD_FRAME(0, 5),
+			ANIMCMD_FRAME(1, 5),
+			ANIMCMD_FRAME(0, 5),
+			ANIMCMD_FRAME(1, 5),
+			ANIMCMD_FRAME(0, 5),
+			ANIMCMD_FRAME(1, 5),
+			ANIMCMD_FRAME(0, 5),
+			ANIMCMD_FRAME(1, 5),
+			ANIMCMD_FRAME(0, 5),
+        ),
+        .frontAnimId = ANIM_V_STRETCH,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_RotomPlay,
+        .backPicSize = MON_COORDS_SIZE(64, 48),
+        .backPicYOffset = 10,
+        .backAnimId = BACK_ANIM_V_SHAKE_H_SLIDE,
+        .palette = gMonPalette_RotomPlay,
+        .shinyPalette = gMonShinyPalette_RotomPlay,
+        .iconSprite = gMonIcon_RotomPlay,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(0, 10, SHADOW_SIZE_M)
+        FOOTPRINT(Rotom)
+        OVERWORLD(
+            sPicTable_RotomWash,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_RotomWash,
+            gShinyOverworldPalette_RotomWash
         )
         .levelUpLearnset = sRotomLevelUpLearnset,
         .teachableLearnset = sRotomTeachableLearnset,
@@ -7912,6 +8020,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_ARCEUS_DRAGON]   = ARCEUS_SPECIES_INFO(TYPE_DRAGON,   Dragon,   0),
     [SPECIES_ARCEUS_DARK]     = ARCEUS_SPECIES_INFO(TYPE_DARK,     Dark,     0),
     [SPECIES_ARCEUS_FAIRY]    = ARCEUS_SPECIES_INFO(TYPE_FAIRY,    Fairy,    0),
+    [SPECIES_ARCEUS_ECHO]     = ARCEUS_SPECIES_INFO(TYPE_ECHO,     Echo,     1),
 #endif //P_FAMILY_ARCEUS
 
 #ifdef __INTELLISENSE__

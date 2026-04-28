@@ -30,11 +30,10 @@ keysplit tuba, 24
 	split 0, 42
 	split 1, 108
 
-<<<<<<< Updated upstream
 keysplit french_horn, 36
 	split 0, 66
 	split 1, 108
-=======
+
 .set KeySplitTable5, . - 36
 	.byte 0  @ 36
 	.byte 0  @ 37
@@ -6998,4 +6997,3 @@ keysplit french_horn, 36
 	.byte 6 @ 125
 	.byte 6 @ 126
 	.byte 6 @ 127
->>>>>>> Stashed changes

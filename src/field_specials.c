@@ -192,7 +192,6 @@ static const u8 sText_Glacia[] = _("GLACIA");
 
 extern const struct SwarmData gSwarmTable[];
 
-
 void Special_ShowDiploma(void)
 {
     SetMainCallback2(CB2_ShowDiploma);
@@ -997,6 +996,14 @@ void CableCarWarp(void)
         SetWarpDestination(MAP_GROUP(MAP_ROUTE112_CABLE_CAR_STATION), MAP_NUM(MAP_ROUTE112_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
     else
         SetWarpDestination(MAP_GROUP(MAP_MT_CHIMNEY_CABLE_CAR_STATION), MAP_NUM(MAP_MT_CHIMNEY_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
+}
+
+void CableCarIsshoWarp(void)
+{
+    if (gSpecialVar_0x8004 != 0)
+        SetWarpDestination(MAP_GROUP(ROUTE96_CABLE_CAR_STATION), MAP_NUM(ROUTE96_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
+    else
+        SetWarpDestination(MAP_GROUP(OFFWITE_TOWN_CABLE_CAR_STATION), MAP_NUM(OFFWITE_TOWN_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
 }
 
 void CableCarIsshoWarp(void)
@@ -2013,6 +2020,32 @@ u16 GetDeptStoreDefaultFloorChoice(void)
             sLilycoveDeptStore_DefaultFloorChoice = 3;
             break;
         case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F):
+            sLilycoveDeptStore_DefaultFloorChoice = 4;
+            break;
+        }
+    }
+    else if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MINDARO_CITY_DEPARTMENT_STORE_1F))
+    {
+        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
+        {
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_5F):
+            sLilycoveDeptStore_NeverRead = 0;
+            sLilycoveDeptStore_DefaultFloorChoice = 0;
+            break;
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_4F):
+            sLilycoveDeptStore_NeverRead = 0;
+            sLilycoveDeptStore_DefaultFloorChoice = 1;
+            break;
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_3F):
+            sLilycoveDeptStore_NeverRead = 0;
+            sLilycoveDeptStore_DefaultFloorChoice = 2;
+            break;
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_2F):
+            sLilycoveDeptStore_NeverRead = 0;
+            sLilycoveDeptStore_DefaultFloorChoice = 3;
+            break;
+        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_1F):
+            sLilycoveDeptStore_NeverRead = 0;
             sLilycoveDeptStore_DefaultFloorChoice = 4;
             break;
         }
@@ -5361,19 +5394,6 @@ u16 GetTeamWeight(void)
 	
 	return total;
 }
-
-/*u16 GetPokedexHeightWeight(u16 dexNum, u8 data)
-{
-    switch (data)
-    {
-    case 0:  // height
-        return gPokedexEntries[dexNum].height;
-    case 1:  // weight
-        return gPokedexEntries[dexNum].weight;
-    default:
-        return 1;
-    }
-}*/
 
 void CheckForTintedLensYanmega(void)
 {

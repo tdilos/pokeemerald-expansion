@@ -11,15 +11,10 @@ struct FieldInput
     bool8 heldDirection2:1;
     bool8 tookStep:1;
     bool8 pressedBButton:1;
-<<<<<<< Updated upstream
-    bool8 pressedRButton:1;
-    bool8 input_field_1_1:1;
-=======
     //bool8 input_field_1_0:1;
     //bool8 input_field_1_1:1;
 	bool8 pressedLButton:1;
     bool8 pressedRButton:1;
->>>>>>> Stashed changes
     bool8 input_field_1_2:1;
     bool8 input_field_1_3:1;
     bool8 input_field_1_4:1;
@@ -40,17 +35,15 @@ u8 TrySetDiveWarp(void);
 const u8 *GetInteractedLinkPlayerScript(struct MapPosition *position, u8 metatileBehavior, enum Direction direction);
 const u8 *GetCoordEventScriptAtMapPosition(struct MapPosition *position);
 void ClearPoisonStepCounter(void);
-<<<<<<< Updated upstream
 void CancelSignPostMessageBox(struct FieldInput *input);
 void HandleBoulderFallThroughHole(struct ObjectEvent *object);
 void HandleBoulderActivateVictoryRoadSwitch(u16 x, u16 y);
 
 #define NOT_SIGNPOST 0
 #define WALK_AWAY_SIGNPOST_FRAMES 6
-=======
+
 void HandleBoulderActivateSwitch(u16 x, u16 y);
 void HandleMakeBoulderBridge(u16 x, u16 y);
 void HandleMagnetizeMetal(u16 x, u16 y);
->>>>>>> Stashed changes
 
 #endif // GUARD_FIELDCONTROLAVATAR_H

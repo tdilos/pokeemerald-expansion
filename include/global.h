@@ -34,7 +34,7 @@
 //#define FREE_TRAINER_HILL             //frees up trainer hill data. 28 bytes.                          WARNING THIS HAS BEEN SHOWN TO BREAK MULTI BATTLES
 //#define FREE_MYSTERY_EVENT_BUFFERS    //frees up mystery event and ramScript. roughly 1880 bytes       Needed by FREE_BATTLE_TOWER_E_READER
 //#define FREE_MATCH_CALL                 //frees up match call data. 104 bytes
-#define FREE_UNION_ROOM_CHAT            //frees up field unk3C88. 210 bytes
+//#define FREE_UNION_ROOM_CHAT            //frees up field unk3C88. 210 bytes
 //#define FREE_ENIGMA_BERRY               //frees up enigma berry. 52 bytes
 //#define FREE_LINK_BATTLE_RECORDS        //frees link battle record data. 88 bytes
                                         // saveblock1 total: 1846 bytes
@@ -45,6 +45,7 @@
                                         // saveblock2 total: 1236 bytes
                                         
                                         //grand total: 3082
+
 
 
 
@@ -90,14 +91,14 @@
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) >= (b) ? (a) : (b))
 
-#define Q_4_12_SHIFT (Q_4_12_SHIFT_EXP)
-#define UQ_4_12_SHIFT (Q_4_12_SHIFT_EXP)
+//#define Q_4_12_SHIFT (Q_4_12_SHIFT_EXP)
+//#define UQ_4_12_SHIFT (Q_4_12_SHIFT_EXP)
 
-static inline u32 uq4_12_multiply(u32 a, u32 b)
-{
-    u32 product = (u32) a * b;
-    return (product + UQ_4_12_ROUND) >> UQ_4_12_SHIFT;
-}
+//static inline u32 uq4_12_multiply(u32 a, u32 b)
+//{
+//    u32 product = (u32) a * b;
+//    return (product + UQ_4_12_ROUND) >> UQ_4_12_SHIFT;
+//}
 
 #if MODERN
 #define abs(x) (((x) < 0) ? -(x) : (x))
@@ -183,6 +184,7 @@ static inline u32 uq4_12_multiply(u32 a, u32 b)
 #define FEATURE_FLAG_ASSERT(flag, id) STATIC_ASSERT(flag > TEMP_FLAGS_END || flag == 0, id)
 
 #define READ_OTID_FROM_SAVE T1_READ_32(gSaveBlock2Ptr->playerTrainerId)
+
 
 // Tourmaline difficulty settings
 #define DIFFICULTY_NORMAL        0
