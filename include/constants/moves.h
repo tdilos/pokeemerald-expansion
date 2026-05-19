@@ -910,7 +910,7 @@ enum __attribute__((packed)) Move
 // Tourmaline moves
     MOVE_ABRASE             = (MOVES_COUNT_GF + 0),
     MOVE_UV_BURST           = (MOVES_COUNT_GF + 1),
-    MOVE_ACID_RAIN          = (MOVES_COUNT_GF + 2),
+    MOVE_SMAZE              = (MOVES_COUNT_GF + 2),
     MOVE_FULL_MOON          = (MOVES_COUNT_GF + 3),
     MOVE_SHORT_CIRCUIT      = (MOVES_COUNT_GF + 4),
     MOVE_SPIT_FIRE          = (MOVES_COUNT_GF + 5),

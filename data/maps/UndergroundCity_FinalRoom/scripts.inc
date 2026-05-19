@@ -292,11 +292,11 @@ UndergroundCity_FinalRoom_EventScript_AzamiBattle::
 	playbgm MUS_ENCOUNTER_MAGMA, FALSE
 	msgbox UndergroundCity_FinalRoom_Text_AzamiPreBattle, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_TERRAIN, 512
+	@setvar VAR_TERRAIN, 512
 	trainerbattle_no_intro TRAINER_AZAMI_1, UndergroundCity_FinalRoom_Text_AzamiDefeated
 	delay 10
 	playbgm MUS_DUMMY, FALSE
-	setvar VAR_TERRAIN, 0
+	@setvar VAR_TERRAIN, 0
 
 	playse SE_M_EARTHQUAKE
 	special DoSealedChamberShakingEffect_Long
@@ -310,10 +310,10 @@ UndergroundCity_FinalRoom_EventScript_AzamiBattle::
 	msgbox UndergroundCity_FinalRoom_Text_AzamiBridgeClosing, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_AZAMI, Common_Movement_WalkFastRight
+	applymovement LOCALID_AZAMI, Common_Movement_WalkRightFaster
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_AZAMI, Common_Movement_WalkFastUp
+	applymovement LOCALID_AZAMI, Common_Movement_WalkUpFaster
 	waitmovement 0
 	delay 30
 	msgbox UndergroundCity_FinalRoom_Text_AzamiBridgeClosing2, MSGBOX_DEFAULT

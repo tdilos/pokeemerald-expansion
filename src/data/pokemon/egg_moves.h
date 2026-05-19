@@ -2,6 +2,7 @@
 
 static const u16 sNoneEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
+};
 
 /*
 const u16 gEggMoves[] = {

@@ -4592,15 +4592,24 @@ u16 GetHoennPokedexCount(u8 caseID)
     return count;
 }
 
-u16 GetIsshoPokedexCount(void)
+u16 GetIsshoPokedexCount(u8 caseID)
 {
-	u16 count = 0;
+    u16 count = 0;
     u16 i;
 
-    for (i = 0; i < HOENN_DEX_COUNT; i++)
+    for (i = 0; i < HOENN_DEX_COUNT - 1; i++)
     {
-        if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
-            count++;
+        switch (caseID)
+        {
+        case FLAG_GET_SEEN:
+            if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_SEEN))
+                count++;
+            break;
+        case FLAG_GET_CAUGHT:
+            if (GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
+                count++;
+            break;
+        }
     }
     return count;
 }

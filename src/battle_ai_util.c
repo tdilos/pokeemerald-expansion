@@ -41,7 +41,7 @@ enum Ability AI_GetMoldBreakerSanitizedAbility(enum BattlerId battlerAtk, enum A
 static bool32 AI_IsDoubleSpreadMove(enum BattlerId battlerAtk, enum Move move)
 {
     u32 numOfTargets = 0;
-    enum MoveTarget moveTargetType = AI_GetBattlerMoveTargetType(battlerAtk, move);
+    enum MoveTarget moveTargetType = GetBattlerMoveTargetType(battlerAtk, move);
 
     if (!IsSpreadMove(moveTargetType))
         return FALSE;

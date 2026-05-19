@@ -177,54 +177,45 @@ static bool32 HandleEndTurnWeatherDamage(enum BattlerId battler)
         }
         break;
 	case BATTLE_WEATHER_SMAZE:
-	        if (ability == ABILITY_SMOKE_SHROUD)
+	    if (ability == ABILITY_SMOKE_SHROUD)
         {
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
                 effect = TRUE;
         }
-        else if (currBattleWeather == BATTLE_WEATHER_SMAZE)
-        {
-            if (ability != ABILITY_SMOKE_SHROUD
-             && ability != ABILITY_OVERCOAT
-             //&& !IS_BATTLER_OF_TYPE(battler, TYPE_POISON)
+        else if (ability != ABILITY_OVERCOAT
              && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND
              && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERWATER
              && GetBattlerHoldEffect(battler) != HOLD_EFFECT_SAFETY_GOGGLES
              && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
-            {
-				if (!IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
-				{
-					SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
-					gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SMAZE;
-					BattleScriptExecute(BattleScript_DamagingWeather);
-					effect = TRUE;
-				}
-				else
-				{
-					SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / -16);
-					gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SMAZE;
-					BattleScriptExecute(BattleScript_DamagingWeather);
-					effect = TRUE;
-				}
-            }
+        {
+			if (!IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
+			{
+				SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+				gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SMAZE;
+				BattleScriptExecute(BattleScript_DamagingWeather);
+				effect = TRUE;
+			}
+			else
+			{
+				SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / -16);
+				gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SMAZE;
+				BattleScriptExecute(BattleScript_DamagingWeather);
+				effect = TRUE;
+			}
         }
         break;
 	case BATTLE_WEATHER_FULLMOON:
-        else if (currBattleWeather == BATTLE_WEATHER_FULLMOON)
+        if (ability != ABILITY_OVERCOAT
+		 && IS_BATTLER_ANY_TYPE(battler, TYPE_FAIRY, TYPE_DARK)
+         && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND
+         && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERWATER
+         && GetBattlerHoldEffect(battler) != HOLD_EFFECT_SAFETY_GOGGLES
+         && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
         {
-            if (ability != ABILITY_OVERCOAT
-			 && IS_BATTLER_ANY_TYPE(battler, TYPE_FAIRY, TYPE_DARK)
-             && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND
-             && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERWATER
-             && GetBattlerHoldEffect(battler) != HOLD_EFFECT_SAFETY_GOGGLES
-             && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
-            {
-				SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / -16);
-				gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FULLMOON;
-				BattleScriptExecute(BattleScript_DamagingWeather);
-				effect = TRUE;
-				}
-            }
+			SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / -16);
+			gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FULLMOON;
+			BattleScriptExecute(BattleScript_DamagingWeather);
+			effect = TRUE;
         }
         break;
     }
@@ -1325,6 +1316,7 @@ static bool32 HandleEndTurnThirdEventBlock(enum BattlerId battler)
         case ABILITY_MOODY:
         case ABILITY_PICKUP:
         case ABILITY_SPEED_BOOST:
+        case ABILITY_MUSCLE_MEMORY:
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
                 effect = TRUE;
             break;

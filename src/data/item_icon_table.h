@@ -1,6 +1,6 @@
 
-/*
-const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
+
+/*const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
 {
     [ITEM_NONE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     // Poké Balls
@@ -242,8 +242,6 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_LEAF_STONE] = {gItemIcon_LeafStone, gItemIconPalette_LeafStone},
     [ITEM_ICE_STONE] = {gItemIcon_IceStone, gItemIconPalette_IceStone},
     [ITEM_ZEPHYR_STONE] = {gItemIcon_ZephyrStone, gItemIconPalette_ZephyrStone},
-    //[ITEM_ZEPHYR_STONE] = {gItemIcon_StarSweet, gItemIconPalette_StarSweet},
-
     [ITEM_SUN_STONE] = {gItemIcon_SunStone, gItemIconPalette_SunStone},
     [ITEM_MOON_STONE] = {gItemIcon_MoonStone, gItemIconPalette_MoonStone},
     [ITEM_SHINY_STONE] = {gItemIcon_ShinyStone, gItemIconPalette_ShinyStone},
@@ -378,7 +376,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_ABOMASITE] = {gItemIcon_Abomasite, gItemIconPalette_Abomasite},
     [ITEM_GALLADITE] = {gItemIcon_Galladite, gItemIconPalette_Galladite},
     [ITEM_AUDINITE] = {gItemIcon_Audinite, gItemIconPalette_Audinite},
-    //[ITEM_DIANCITE] = {gItemIcon_Diancite, gItemIconPalette_Diancite},
+    [ITEM_DIANCITE] = {gItemIcon_Diancite, gItemIconPalette_Diancite},
     // Gems
     [ITEM_ECHO_GEM] = {gItemIcon_EchoGem, gItemIconPalette_EchoGem},
     [ITEM_NORMAL_GEM] = {gItemIcon_NormalGem, gItemIconPalette_NormalGem},
@@ -400,7 +398,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_STEEL_GEM] = {gItemIcon_SteelGem, gItemIconPalette_SteelGem},
     [ITEM_FAIRY_GEM] = {gItemIcon_FairyGem, gItemIconPalette_FairyGem},
     // Z-Crystals
-    /*[ITEM_NORMALIUM_Z] = {gItemIcon_NormaliumZ, gItemIconPalette_NormaliumZ},
+    [ITEM_NORMALIUM_Z] = {gItemIcon_NormaliumZ, gItemIconPalette_NormaliumZ},
     [ITEM_FIRIUM_Z] = {gItemIcon_FiriumZ, gItemIconPalette_FiriumZ},
     [ITEM_WATERIUM_Z] = {gItemIcon_WateriumZ, gItemIconPalette_WateriumZ},
     [ITEM_ELECTRIUM_Z] = {gItemIcon_ElectriumZ, gItemIconPalette_ElectriumZ},
@@ -433,8 +431,8 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_LUNALIUM_Z] = {gItemIcon_LunaliumZ, gItemIconPalette_LunaliumZ},
     [ITEM_MARSHADIUM_Z] = {gItemIcon_MarshadiumZ, gItemIconPalette_MarshadiumZ},
     [ITEM_ALORAICHIUM_Z] = {gItemIcon_AloraichiumZ, gItemIconPalette_AloraichiumZ},
-    //[ITEM_PIKASHUNIUM_Z] = {gItemIcon_PikashuniumZ, gItemIconPalette_PikashuniumZ},
-    //[ITEM_ULTRANECROZIUM_Z] = {gItemIcon_UltranecroziumZ, gItemIconPalette_UltranecroziumZ}, */
+    [ITEM_PIKASHUNIUM_Z] = {gItemIcon_PikashuniumZ, gItemIconPalette_PikashuniumZ},
+    [ITEM_ULTRANECROZIUM_Z] = {gItemIcon_UltranecroziumZ, gItemIconPalette_UltranecroziumZ},
     // Species-specific Held Items
     [ITEM_LIGHT_BALL] = {gItemIcon_LightBall, gItemIconPalette_LightBall},
     [ITEM_LEEK] = {gItemIcon_Leek, gItemIconPalette_Leek},
@@ -449,8 +447,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_LUSTROUS_ORB] = {gItemIcon_LustrousOrb, gItemIconPalette_LustrousOrb},
     [ITEM_GRISEOUS_ORB] = {gItemIcon_GriseousOrb, gItemIconPalette_GriseousOrb},
     // Incenses
-    [ITEM_SILVER_INCENSE] = {gItemIcon_SilverIncense, gItemIconPalette_SilverIncense},
-    //[ITEM_SILVER_INCENSE] = {gItemIcon_BerrySweet, gItemIconPalette_BerrySweet},
+    [ITEM_TIN_INCENSE] = {gItemIcon_TinIncense, gItemIconPalette_TinIncense},
     [ITEM_SEA_INCENSE] = {gItemIcon_SeaIncense, gItemIconPalette_SeaIncense},
     [ITEM_LAX_INCENSE] = {gItemIcon_LaxIncense, gItemIconPalette_LaxIncense},
     [ITEM_ODD_INCENSE] = {gItemIcon_OddIncense, gItemIconPalette_OddIncense},
@@ -494,8 +491,6 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_METAL_COAT] = {gItemIcon_MetalCoat, gItemIconPalette_MetalCoat},
 	[ITEM_PINK_BOW] = {gItemIcon_PinkBow, gItemIconPalette_PinkBow},
     [ITEM_AMPLIFIER] = {gItemIcon_Amplifier, gItemIconPalette_Amplifier},
-    //[ITEM_PINK_BOW] = {gItemIcon_AbsorbBulb, gItemIconPalette_AbsorbBulb},
-    //[ITEM_AMPLIFIER] = {gItemIcon_CellBattery, gItemIconPalette_CellBattery},
     // Choice Items
     [ITEM_CHOICE_BAND] = {gItemIcon_ChoiceBand, gItemIconPalette_ChoiceBand},
     [ITEM_CHOICE_SPECS] = {gItemIcon_ChoiceSpecs, gItemIconPalette_ChoiceSpecs},
@@ -581,14 +576,6 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_EGGANT_BERRY] = {gItemIcon_EggantBerry, gItemIconPalette_EggantBerry},
     [ITEM_TOUGA_BERRY] = {gItemIcon_TougaBerry, gItemIconPalette_TougaBerry},
 	[ITEM_PUMKIN_BERRY] = {gItemIcon_PumkinBerry, gItemIconPalette_PumkinBerry},
-	//[ITEM_GINEMA_BERRY] = {gItemIcon_PearlString, gItemIconPalette_PearlString}, 
-	//[ITEM_GINEMA_BERRY] = {gItemIcon_StrangeSouvenir, gItemIconPalette_StrangeSouvenir},
-    //[ITEM_DRASH_BERRY] = {gItemIcon_DrashBerry, gItemIconPalette_DrashBerry}, 
-	//[ITEM_DRASH_BERRY] = {gItemIcon_BigBambooShoot, gItemIconPalette_BigBambooShoot},
-    //[ITEM_EGGANT_BERRY] = {gItemIcon_GimmighoulCoin, gItemIconPalette_GimmighoulCoin},
-    //[ITEM_TOUGA_BERRY] = {gItemIcon_ScrollOfWaters, gItemIconPalette_ScrollOfWaters},
-	//[ITEM_PUMKIN_BERRY] = {gItemIcon_ThroatSpray, gItemIconPalette_ThroatSpray},
-    //[ITEM_PUMKIN_BERRY] = {gItemIcon_ScrollOfDarkness, gItemIconPalette_ScrollOfDarkness},
     [ITEM_CHERI_BERRY] = {gItemIcon_CheriBerry, gItemIconPalette_CheriBerry},
     [ITEM_CHESTO_BERRY] = {gItemIcon_ChestoBerry, gItemIconPalette_ChestoBerry},
     [ITEM_PECHA_BERRY] = {gItemIcon_PechaBerry, gItemIconPalette_PechaBerry},
@@ -797,8 +784,6 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_Z_POWER_RING] = {gItemIcon_ZPowerRing, gItemIconPalette_ZPowerRing},
     [ITEM_DYNAMAX_BAND] = {gItemIcon_DynamaxBand, gItemIconPalette_DynamaxBand},
     // Misc. Key Items
-    //[ITEM_UNOWN_REPORT] = {gItemIcon_Bicycle, gItemIconPalette_Bicycle},
-    //[ITEM_AZURE_FLUTE] = {gItemIcon_Bicycle, gItemIconPalette_Bicycle},
     [ITEM_UNOWN_REPORT] = {gItemIcon_UnownReport, gItemIconPalette_UnownReport},
     [ITEM_AZURE_FLUTE] = {gItemIcon_AzureFlute, gItemIconPalette_AzureFlute},
     [ITEM_APEX_TICKET] = {gItemIcon_MysticTicket, gItemIconPalette_MysticTicket},

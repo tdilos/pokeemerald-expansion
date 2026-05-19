@@ -1357,7 +1357,7 @@ bool8 FldEff_UseHeadbutt(void)
 
 // Called when Headbutt is used from the party menu
 // For interacting with a headbuttable tree in the field, see EventScript_Headbutt
-bool8 SetUpFieldMove_Headbutt(void)
+bool32 SetUpFieldMove_Headbutt(void)
 {
     GetXYCoordsOneStepInFrontOfPlayer(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
     if (MapGridGetMetatileBehaviorAt(gPlayerFacingPosition.x, gPlayerFacingPosition.y) == MB_HEADBUTT)
@@ -1399,7 +1399,7 @@ bool8 FldEff_UseThaw(void)
 
 // Called when Thaw is used from the party menu
 // For interacting with meltable ice in the field, see EventScript_Thaw
-bool8 SetUpFieldMove_Thaw(void)
+bool32 SetUpFieldMove_Thaw(void)
 {
 	if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_THAWABLE_ICE) == TRUE)
     {
@@ -1420,10 +1420,10 @@ static void FieldCallback_Thaw(void)
 }
 
 // Defog
-static void FieldMove_Defog(void)
+/*static void FieldMove_Defog(void)
 {
 	//PlaySE(SE_M_TWISTER);
-    FieldEffectActiveListRemove(FLDEFF_USE_DEFOG);
+    FieldEffectActiveListRemove(FLDEFF_DEFOG);
     ScriptContext_Enable();
 }
 
@@ -1438,7 +1438,7 @@ bool8 FldEff_UseDefog(void)
 }
 
 // Called when Defog is used from the party menu
-bool8 SetUpFieldMove_Defog(void)
+bool32 SetUpFieldMove_Defog(void)
 {
 	if (IsMapTypeOutdoors(gMapHeader.mapType))
     {
@@ -1456,7 +1456,7 @@ static void FieldCallback_Defog(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     ScriptContext_SetupScript(EventScript_UseDefog);
-}
+}*/
 
 // Bulldoze
 /*static void FieldMove_Bulldoze(void)
@@ -1467,7 +1467,7 @@ static void FieldCallback_Defog(void)
     ScriptContext_Enable();
 }
 
-bool8 FldEff_UseBulldoze(void)
+bool32 FldEff_UseBulldoze(void)
 {
     u8 taskId = CreateFieldMoveTask();
 

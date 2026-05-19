@@ -275,9 +275,9 @@ bool32 IsBattlerGrounded(enum BattlerId battler, enum Ability ability, enum Hold
 u32 GetMoveSlot(u16 *moves, enum Move move);
 u32 GetBattlerWeight(enum BattlerId battler);
 
-u32 CalcRolloutBasePower(u32 battlerAtk, u32 basePower, u32 rolloutTimer);
-u32 CalcResoundBasePower(u32 battlerAtk, u32 basePower, u32 rolloutTimer);
-u32 CalcFuryCutterBasePower(u32 basePower, u32 furyCutterCounter);
+//u32 CalcRolloutBasePower(enum BattlerId battlerAtk, u32 basePower);
+//u32 CalcResoundBasePower(enum BattlerId battlerAtk, u32 basePower);
+//u32 CalcFuryCutterBasePower(enum BattlerId battlerAtk, u32 basePower);
 
 s32 CalcCritChanceStage(struct BattleContext *ctx);
 s32 CalcCritChanceStageGen1(struct BattleContext *ctx);

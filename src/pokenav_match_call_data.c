@@ -253,6 +253,7 @@ static const struct MatchCallStructNPC sStevenMatchCallHeader =
 {
     .type = MC_TYPE_NPC,
     .mapSec = MAPSEC_NONE,
+    //.mapSec = 0,
     .flag = FLAG_REGISTERED_STEVEN_POKENAV,
     .desc = COMPOUND_STRING("HARD AS ROCK"),
     .name = COMPOUND_STRING("STEVEN"),
@@ -333,8 +334,10 @@ static const match_call_text_data_t sWallyTextScripts[] = {
 static const struct MatchCallLocationOverride sWallyLocationData[] = {
     { FLAG_HIDE_MAUVILLE_CITY_WALLY,          MAPSEC_VERDANTURF_TOWN },
     { FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT,    MAPSEC_NONE },
+    //{ FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT,    0 },
     { FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY,  MAPSEC_VICTORY_ROAD },
     { 0xFFFF,                                 MAPSEC_NONE }
+    //{ 0xFFFF,                                 0 }
 };
 
 static const struct MatchCallWally sWallyMatchCallHeader =
@@ -364,6 +367,7 @@ static const struct MatchCallStructNPC sScottMatchCallHeader =
 {
     .type = 0,
     .mapSec = MAPSEC_NONE,
+    //.mapSec = 0,
     .flag = FLAG_ENABLE_SCOTT_MATCH_CALL,
     .desc = COMPOUND_STRING("ELUSIVE EYES"),
     .name = COMPOUND_STRING("SCOTT"),
@@ -837,11 +841,13 @@ static mapsec_u8_t MatchCall_GetMapSec_Wally(match_call_t matchCall)
 static mapsec_u8_t MatchCall_GetMapSec_Rival(match_call_t matchCall)
 {
     return MAPSEC_NONE;
+	//return 0;
 }
 
 static mapsec_u8_t MatchCall_GetMapSec_Birch(match_call_t matchCall)
 {
     return MAPSEC_NONE;
+	//return 0;
 }
 
 bool32 MatchCall_IsRematchable(u32 idx)

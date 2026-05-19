@@ -1,4 +1,5 @@
 #include "constants/abilities.h"
+#include "constants/teaching_types.h"
 #include "species_info/shared_dex_text.h"
 #include "species_info/shared_front_pic_anims.h"
 
@@ -3484,7 +3485,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
-        .abilities = {ABILITY_SNOW_WARNING, ABILITY_PERMAFROST, ABILITY_NONE},
+        .abilities = {ABILITY_SNOW_WARNING, ABILITY_CARBON_BODY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_WHITE,
 
         .speciesName = _("Yetree"),
@@ -4095,7 +4096,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
-        .abilities = {ABILITY_COMPOUND_EYES, ABILITY_SNOW_CLOAK, ABILITY_PERMAFROST},
+        .abilities = {ABILITY_COMPOUND_EYES, ABILITY_SNOW_CLOAK, ABILITY_CARBON_BODY},
         .bodyColor = BODY_COLOR_GREEN,
 
         .speciesName = _("Syclar"),
@@ -4146,7 +4147,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
-        .abilities = {ABILITY_COMPOUND_EYES, ABILITY_SNOW_CLOAK, ABILITY_PERMAFROST},
+        .abilities = {ABILITY_COMPOUND_EYES, ABILITY_SNOW_CLOAK, ABILITY_CARBON_BODY},
         .bodyColor = BODY_COLOR_GREEN,
 
         .speciesName = _("Syclant"),
@@ -4743,4 +4744,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .teachableLearnset = sNoneTeachableLearnset,
     },
 #endif //P_TOURMALINE_MONS
+};
+
+const struct EggData gEggDatas[EGG_ID_COUNT] =
+{
+#include "egg_data.h"
 };

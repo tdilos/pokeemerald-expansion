@@ -94,54 +94,54 @@ MindaroGardens_Text_MontgomeryPostBattle:
 
 
 
-MindaroGardens_EventScript_OPCBattleSetup::
-	switch VAR_STARTER_MON
-	case 0, MindaroGardens_EventScript_SetOPCChespin
-	case 1, MindaroGardens_EventScript_SetOPCTepig
-	case 2, MindaroGardens_EventScript_SetOPCPopplio
-	return
+@MindaroGardens_EventScript_OPCBattleSetup::
+@	switch VAR_STARTER_MON
+@	case 0, MindaroGardens_EventScript_SetOPCChespin
+@	case 1, MindaroGardens_EventScript_SetOPCTepig
+@	case 2, MindaroGardens_EventScript_SetOPCPopplio
+@	return
 
-MindaroGardens_EventScript_SetOPCChespin::
-	checkplayergender
-	call_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertChespin
-	call_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletChespin
-	return
+@MindaroGardens_EventScript_SetOPCChespin::
+@	checkplayergender
+@	call_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertChespin
+@	call_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletChespin
+@	return
 
-MindaroGardens_EventScript_SetOPCTepig::
-	checkplayergender
-	call_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertTepig
-	call_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletTepig
-	return
+@MindaroGardens_EventScript_SetOPCTepig::
+@	checkplayergender
+@	call_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertTepig
+@	call_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletTepig
+@	return
 
-MindaroGardens_EventScript_SetOPCPopplio::
-	checkplayergender
-	call_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertPopplio
-	call_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletPopplio
-	return
+@MindaroGardens_EventScript_SetOPCPopplio::
+@	checkplayergender
+@	call_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertPopplio
+@	call_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletPopplio
+@	return
 
-MindaroGardens_EventScript_VioletChespin::
-	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VIOLET_MINDARO_GARDENS_CHESPIN, TRAINER_BACK_PIC_MAY
-	return
+@MindaroGardens_EventScript_VioletChespin::
+@	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VIOLET_MINDARO_GARDENS_CHESPIN, TRAINER_BACK_PIC_MAY
+@	return
 
-MindaroGardens_EventScript_VioletTepig::
-	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VIOLET_MINDARO_GARDENS_TEPIG, TRAINER_BACK_PIC_MAY
-	return
+@MindaroGardens_EventScript_VioletTepig::
+@	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VIOLET_MINDARO_GARDENS_TEPIG, TRAINER_BACK_PIC_MAY
+@	return
 
-MindaroGardens_EventScript_VioletPopplio::
-	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VIOLET_MINDARO_GARDENS_POPPLIO, TRAINER_BACK_PIC_MAY
-	return
+@MindaroGardens_EventScript_VioletPopplio::
+@	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VIOLET_MINDARO_GARDENS_POPPLIO, TRAINER_BACK_PIC_MAY
+@	return
 
-MindaroGardens_EventScript_VertChespin::
-	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VERN_MINDARO_GARDENS_CHESPIN, TRAINER_BACK_PIC_BRENDAN
-	return
+@MindaroGardens_EventScript_VertChespin::
+@	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VERN_MINDARO_GARDENS_CHESPIN, TRAINER_BACK_PIC_BRENDAN
+@	return
 
-MindaroGardens_EventScript_VertTepig::
-	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VERN_MINDARO_GARDENS_TEPIG, TRAINER_BACK_PIC_BRENDAN
-	return
+@MindaroGardens_EventScript_VertTepig::
+@	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VERN_MINDARO_GARDENS_TEPIG, TRAINER_BACK_PIC_BRENDAN
+@	return
 
-MindaroGardens_EventScript_VertPopplio::
-	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VERN_MINDARO_GARDENS_POPPLIO, TRAINER_BACK_PIC_BRENDAN
-	return
+@MindaroGardens_EventScript_VertPopplio::
+@	multi_do_fixed MULTI_BATTLE_2_VS_2, TRAINER_VERN_MINDARO_GARDENS_POPPLIO, TRAINER_BACK_PIC_BRENDAN
+@	return
 
 
 
@@ -165,13 +165,61 @@ MindaroGardens_EventScript_VsChelseaAmanda::
 	waitmovement 0
 	msgbox MindaroGardens_Text_AmandaIntro, MSGBOX_DEFAULT
 	special SavePlayerParty
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_CHELSEA, 0, NULL, MindaroGardens_Text_ChelseaDefeated
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_AMANDA, 0, NULL, MindaroGardens_Text_AmandaDefeated
-	call MindaroGardens_EventScript_OPCBattleSetup
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_CHELSEA, 0, NULL, MindaroGardens_Text_ChelseaDefeated
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_AMANDA, 0, NULL, MindaroGardens_Text_AmandaDefeated
+	@call MindaroGardens_EventScript_OPCBattleSetup
+	switch VAR_STARTER_MON
+	case 0, MindaroGardens_EventScript_SetOPCChespin1
+	case 1, MindaroGardens_EventScript_SetOPCTepig1
+	case 2, MindaroGardens_EventScript_SetOPCPopplio1
+MindaroGardens_EventScript_SetOPCChespin1::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertChespin1
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletChespin1
+MindaroGardens_EventScript_SetOPCTepig1::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertTepig1
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletTepig1
+MindaroGardens_EventScript_SetOPCPopplio1::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertPopplio1
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletPopplio1
+MindaroGardens_EventScript_VioletChespin1::
+	multi_2_vs_2 TRAINER_CHELSEA, MindaroGardens_Text_ChelseaDefeated, TRAINER_AMANDA, MindaroGardens_Text_AmandaDefeated, TRAINER_VIOLET_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletTepig1::
+	multi_2_vs_2 TRAINER_CHELSEA, MindaroGardens_Text_ChelseaDefeated, TRAINER_AMANDA, MindaroGardens_Text_AmandaDefeated, TRAINER_VIOLET_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletPopplio1::
+	multi_2_vs_2 TRAINER_CHELSEA, MindaroGardens_Text_ChelseaDefeated, TRAINER_AMANDA, MindaroGardens_Text_AmandaDefeated, TRAINER_VIOLET_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertChespin1::
+	multi_2_vs_2 TRAINER_CHELSEA, MindaroGardens_Text_ChelseaDefeated, TRAINER_AMANDA, MindaroGardens_Text_AmandaDefeated, TRAINER_VERT_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertTepig1::
+	multi_2_vs_2 TRAINER_CHELSEA, MindaroGardens_Text_ChelseaDefeated, TRAINER_AMANDA, MindaroGardens_Text_AmandaDefeated, TRAINER_VERT_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertPopplio1::
+	multi_2_vs_2 TRAINER_CHELSEA, MindaroGardens_Text_ChelseaDefeated, TRAINER_AMANDA, MindaroGardens_Text_AmandaDefeated, TRAINER_VERT_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+
+
+MindaroGardens_EventScript_TryEndDoubleBattle::
+	switch VAR_RESULT
+	case 1, MindaroGardens_EventScript_EndDoubleBattle
+	goto MindaroGardens_EventScript_WhiteOut
+
+MindaroGardens_EventScript_EndDoubleBattle::
 	special LoadPlayerParty
 	special HealPlayerParty
 	release
 	end
+
+MindaroGardens_EventScript_WhiteOut::
+	fadescreen FADE_TO_BLACK
+	special SetCB2WhiteOut
+	waitstate
+
 
 MindaroGardens_EventScript_VsAgnisJoel::
 	lock
@@ -191,14 +239,45 @@ MindaroGardens_EventScript_VsAgnisJoel::
 	waitmovement 0
 	msgbox MindaroGardens_Text_JoelIntro, MSGBOX_DEFAULT
 	special SavePlayerParty
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_AGNIS, 0, NULL, MindaroGardens_Text_AgnisDefeated
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_JOEL, 0, NULL, MindaroGardens_Text_JoelDefeated
-	call MindaroGardens_EventScript_OPCBattleSetup
-	@special HealPlayerParty
-	special LoadPlayerParty
-	special HealPlayerParty
-	release
-	end
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_AGNIS, 0, NULL, MindaroGardens_Text_AgnisDefeated
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_JOEL, 0, NULL, MindaroGardens_Text_JoelDefeated
+	@call MindaroGardens_EventScript_OPCBattleSetup
+	switch VAR_STARTER_MON
+	case 0, MindaroGardens_EventScript_SetOPCChespin2
+	case 1, MindaroGardens_EventScript_SetOPCTepig2
+	case 2, MindaroGardens_EventScript_SetOPCPopplio2
+MindaroGardens_EventScript_SetOPCChespin2::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertChespin2
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletChespin2
+MindaroGardens_EventScript_SetOPCTepig2::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertTepig2
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletTepig2
+MindaroGardens_EventScript_SetOPCPopplio2::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertPopplio2
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletPopplio2
+MindaroGardens_EventScript_VioletChespin2::
+	multi_2_vs_2 TRAINER_AGNIS, MindaroGardens_Text_AgnisDefeated, TRAINER_JOEL, MindaroGardens_Text_JoelDefeated, TRAINER_VIOLET_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletTepig2::
+	multi_2_vs_2 TRAINER_AGNIS, MindaroGardens_Text_AgnisDefeated, TRAINER_JOEL, MindaroGardens_Text_JoelDefeated, TRAINER_VIOLET_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletPopplio2::
+	multi_2_vs_2 TRAINER_AGNIS, MindaroGardens_Text_AgnisDefeated, TRAINER_JOEL, MindaroGardens_Text_JoelDefeated, TRAINER_VIOLET_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertChespin2::
+	multi_2_vs_2 TRAINER_AGNIS, MindaroGardens_Text_AgnisDefeated, TRAINER_JOEL, MindaroGardens_Text_JoelDefeated, TRAINER_VERT_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertTepig2::
+	multi_2_vs_2 TRAINER_AGNIS, MindaroGardens_Text_AgnisDefeated, TRAINER_JOEL, MindaroGardens_Text_JoelDefeated, TRAINER_VERT_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertPopplio2::
+	multi_2_vs_2 TRAINER_AGNIS, MindaroGardens_Text_AgnisDefeated, TRAINER_JOEL, MindaroGardens_Text_JoelDefeated, TRAINER_VERT_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+
+
 
 MindaroGardens_EventScript_VsPierreCecilia::
 	lock
@@ -218,14 +297,46 @@ MindaroGardens_EventScript_VsPierreCecilia::
 	waitmovement 0
 	msgbox MindaroGardens_Text_CeciliaIntro, MSGBOX_DEFAULT
 	special SavePlayerParty
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_PIERRE, 0, NULL, MindaroGardens_Text_PierreDefeated
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_CECILIA, 0, NULL, MindaroGardens_Text_CeciliaDefeated
-	call MindaroGardens_EventScript_OPCBattleSetup
-	@special HealPlayerParty
-	special LoadPlayerParty
-	special HealPlayerParty
-	release
-	end
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_PIERRE, 0, NULL, MindaroGardens_Text_PierreDefeated
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_CECILIA, 0, NULL, MindaroGardens_Text_CeciliaDefeated
+	@call MindaroGardens_EventScript_OPCBattleSetup
+	switch VAR_STARTER_MON
+	case 0, MindaroGardens_EventScript_SetOPCChespin3
+	case 1, MindaroGardens_EventScript_SetOPCTepig3
+	case 2, MindaroGardens_EventScript_SetOPCPopplio3
+MindaroGardens_EventScript_SetOPCChespin3::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertChespin3
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletChespin3
+MindaroGardens_EventScript_SetOPCTepig3::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertTepig3
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletTepig3
+MindaroGardens_EventScript_SetOPCPopplio3::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertPopplio3
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletPopplio3
+MindaroGardens_EventScript_VioletChespin3::
+	multi_2_vs_2 TRAINER_CECILIA, MindaroGardens_Text_CeciliaDefeated, TRAINER_PIERRE, MindaroGardens_Text_PierreDefeated, TRAINER_VIOLET_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletTepig3::
+	multi_2_vs_2 TRAINER_CECILIA, MindaroGardens_Text_CeciliaDefeated, TRAINER_PIERRE, MindaroGardens_Text_PierreDefeated, TRAINER_VIOLET_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletPopplio3::
+	multi_2_vs_2 TRAINER_CECILIA, MindaroGardens_Text_CeciliaDefeated, TRAINER_PIERRE, MindaroGardens_Text_PierreDefeated, TRAINER_VIOLET_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertChespin3::
+	multi_2_vs_2 TRAINER_CECILIA, MindaroGardens_Text_CeciliaDefeated, TRAINER_PIERRE, MindaroGardens_Text_PierreDefeated, TRAINER_VERT_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertTepig3::
+	multi_2_vs_2 TRAINER_CECILIA, MindaroGardens_Text_CeciliaDefeated, TRAINER_PIERRE, MindaroGardens_Text_PierreDefeated, TRAINER_VERT_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertPopplio3::
+	multi_2_vs_2 TRAINER_CECILIA, MindaroGardens_Text_CeciliaDefeated, TRAINER_PIERRE, MindaroGardens_Text_PierreDefeated, TRAINER_VERT_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+
+
+
 
 MindaroGardens_EventScript_VsCasseyWesley::
 	lock
@@ -245,14 +356,46 @@ MindaroGardens_EventScript_VsCasseyWesley::
 	waitmovement 0
 	msgbox MindaroGardens_Text_WesleyIntro, MSGBOX_DEFAULT
 	special SavePlayerParty
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_CASSEY, 0, NULL, MindaroGardens_Text_CasseyDefeated
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_WESLEY, 0, NULL, MindaroGardens_Text_WesleyDefeated
-	call MindaroGardens_EventScript_OPCBattleSetup
-	@special HealPlayerParty
-	special LoadPlayerParty
-	special HealPlayerParty
-	release
-	end
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_CASSEY, 0, NULL, MindaroGardens_Text_CasseyDefeated
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_WESLEY, 0, NULL, MindaroGardens_Text_WesleyDefeated
+	@call MindaroGardens_EventScript_OPCBattleSetup
+	switch VAR_STARTER_MON
+	case 0, MindaroGardens_EventScript_SetOPCChespin4
+	case 1, MindaroGardens_EventScript_SetOPCTepig4
+	case 2, MindaroGardens_EventScript_SetOPCPopplio4
+MindaroGardens_EventScript_SetOPCChespin4::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertChespin4
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletChespin4
+MindaroGardens_EventScript_SetOPCTepig4::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertTepig4
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletTepig4
+MindaroGardens_EventScript_SetOPCPopplio4::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertPopplio4
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletPopplio4
+MindaroGardens_EventScript_VioletChespin4::
+	multi_2_vs_2 TRAINER_CASSEY, MindaroGardens_Text_CasseyDefeated, TRAINER_WESLEY, MindaroGardens_Text_WesleyDefeated, TRAINER_VIOLET_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletTepig4::
+	multi_2_vs_2 TRAINER_CASSEY, MindaroGardens_Text_CasseyDefeated, TRAINER_WESLEY, MindaroGardens_Text_WesleyDefeated, TRAINER_VIOLET_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletPopplio4::
+	multi_2_vs_2 TRAINER_CASSEY, MindaroGardens_Text_CasseyDefeated, TRAINER_WESLEY, MindaroGardens_Text_WesleyDefeated, TRAINER_VIOLET_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertChespin4::
+	multi_2_vs_2 TRAINER_CASSEY, MindaroGardens_Text_CasseyDefeated, TRAINER_WESLEY, MindaroGardens_Text_WesleyDefeated, TRAINER_VERT_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertTepig4::
+	multi_2_vs_2 TRAINER_CASSEY, MindaroGardens_Text_CasseyDefeated, TRAINER_WESLEY, MindaroGardens_Text_WesleyDefeated, TRAINER_VERT_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertPopplio4::
+	multi_2_vs_2 TRAINER_CASSEY, MindaroGardens_Text_CasseyDefeated, TRAINER_WESLEY, MindaroGardens_Text_WesleyDefeated, TRAINER_VERT_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+
+
+
 
 MindaroGardens_EventScript_VsBeatriceJeromie::
 	lock
@@ -272,14 +415,43 @@ MindaroGardens_EventScript_VsBeatriceJeromie::
 	waitmovement 0
 	msgbox MindaroGardens_Text_JeromieIntro, MSGBOX_DEFAULT
 	special SavePlayerParty
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_BEATRICE, 0, NULL, MindaroGardens_Text_BeatriceDefeated
-	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_JEROMIE, 0, NULL, MindaroGardens_Text_JeromieDefeated
-	call MindaroGardens_EventScript_OPCBattleSetup
-	@special HealPlayerParty
-	special LoadPlayerParty
-	special HealPlayerParty
-	release
-	end
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_BEATRICE, 0, NULL, MindaroGardens_Text_BeatriceDefeated
+	@trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_JEROMIE, 0, NULL, MindaroGardens_Text_JeromieDefeated
+	@call MindaroGardens_EventScript_OPCBattleSetup
+	switch VAR_STARTER_MON
+	case 0, MindaroGardens_EventScript_SetOPCChespin5
+	case 1, MindaroGardens_EventScript_SetOPCTepig5
+	case 2, MindaroGardens_EventScript_SetOPCPopplio5
+MindaroGardens_EventScript_SetOPCChespin5::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertChespin5
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletChespin5
+MindaroGardens_EventScript_SetOPCTepig5::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertTepig5
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletTepig5
+MindaroGardens_EventScript_SetOPCPopplio5::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, MindaroGardens_EventScript_VertPopplio5
+	goto_if_eq VAR_RESULT, MALE, MindaroGardens_EventScript_VioletPopplio5
+MindaroGardens_EventScript_VioletChespin5::
+	multi_2_vs_2 TRAINER_BEATRICE, MindaroGardens_Text_BeatriceDefeated, TRAINER_JEROMIE, MindaroGardens_Text_JeromieDefeated, TRAINER_VIOLET_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletTepig5::
+	multi_2_vs_2 TRAINER_BEATRICE, MindaroGardens_Text_BeatriceDefeated, TRAINER_JEROMIE, MindaroGardens_Text_JeromieDefeated, TRAINER_VIOLET_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VioletPopplio5::
+	multi_2_vs_2 TRAINER_BEATRICE, MindaroGardens_Text_BeatriceDefeated, TRAINER_JEROMIE, MindaroGardens_Text_JeromieDefeated, TRAINER_VIOLET_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertChespin5::
+	multi_2_vs_2 TRAINER_BEATRICE, MindaroGardens_Text_BeatriceDefeated, TRAINER_JEROMIE, MindaroGardens_Text_JeromieDefeated, TRAINER_VERT_MINDARO_GARDENS_CHESPIN
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertTepig5::
+	multi_2_vs_2 TRAINER_BEATRICE, MindaroGardens_Text_BeatriceDefeated, TRAINER_JEROMIE, MindaroGardens_Text_JeromieDefeated, TRAINER_VERT_MINDARO_GARDENS_TEPIG
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
+MindaroGardens_EventScript_VertPopplio5::
+	multi_2_vs_2 TRAINER_BEATRICE, MindaroGardens_Text_BeatriceDefeated, TRAINER_JEROMIE, MindaroGardens_Text_JeromieDefeated, TRAINER_VERT_MINDARO_GARDENS_POPPLIO
+	goto MindaroGardens_EventScript_TryEndDoubleBattle
 
 
 

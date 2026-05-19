@@ -1,5 +1,5 @@
 .set LOCALID_ADDERLY, 3
-.set LOCALID_JACE, 2
+.set LOCALID_JACE_WISTERIA, 2
 
 WisteriaCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, WisteriaCity_OnTransition
@@ -49,9 +49,9 @@ WisteriaCity_EventScript_RevealJaceAndAdderly:
 
 WisteriaCity_EventScript_MoveJaceToLab:
 	clearflag FLAG_HIDE_JACE
-	setobjectxyperm LOCALID_JACE, 8, 14
-	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_JACE
+	setobjectxyperm LOCALID_JACE_WISTERIA, 8, 14
+	setobjectmovementtype LOCALID_JACE_WISTERIA, MOVEMENT_TYPE_FACE_UP
+	addobject LOCALID_JACE_WISTERIA
 	return
 
 WisteriaCity_EventScript_RemoveAdderly:
@@ -61,7 +61,7 @@ WisteriaCity_EventScript_RemoveAdderly:
 
 WisteriaCity_EventScript_RemoveJace:
 	setflag FLAG_HIDE_JACE
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_WISTERIA
 	return
 
 
@@ -148,29 +148,29 @@ WisteriaCity_EventScript_CutsceneTrigger::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 30
 	msgbox WisteriaCity_Text_JaceIntro, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
 	msgbox WisteriaCity_Text_JaceIntro2, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceRight
 	waitmovement 0
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 60
 	msgbox WisteriaCity_Text_JaceIntro3, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
@@ -178,30 +178,30 @@ WisteriaCity_EventScript_CutsceneTrigger::
 	msgbox WisteriaCity_Text_JaceIntro4, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
 	msgbox WisteriaCity_Text_JaceIntro5, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkRight
 	waitmovement 0
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_WISTERIA
 	call WisteriaCity_EventScript_MoveJaceToLab
 	setvar VAR_WISTERIA_CITY_STATE, 1
 	releaseall
@@ -276,7 +276,7 @@ WisteriaCity_Text_JaceIntro5:
 WisteriaCity_EventScript_Jace::
 	lock
 	@faceplayer
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox WisteriaCity_Text_LockedDoor, MSGBOX_DEFAULT
 	closemessage
@@ -289,7 +289,7 @@ WisteriaCity_EventScript_Jace::
 WisteriaCity_EventScript_NoKeyYet::
 	@applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	@waitmovement 0
-	@applymovement LOCALID_JACE, Common_Movement_FaceUp
+	@applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceUp
 	@waitmovement 0
 	release
 	end
@@ -300,24 +300,24 @@ WisteriaCity_Text_LockedDoor:
 	.string "If only we had the key...$"
 
 WisteriaCity_EventScript_JaceUnlocksDoor::
-	@applymovement LOCALID_JACE, Common_Movement_FaceDown
+	@applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceDown
 	@waitmovement 0
 	delay 20
 	faceplayer
 	playse SE_PIN
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 40
 	msgbox WisteriaCity_Text_YouGotTheKey, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
 	msgbox WisteriaCity_Text_Bingo, MSGBOX_DEFAULT
 	closemessage
 	opendoor 8, 13
 	waitdooranim
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_WISTERIA, Common_Movement_WalkUp
 	waitmovement 0
 	call WisteriaCity_EventScript_RemoveJace
 	closedoor 8, 13

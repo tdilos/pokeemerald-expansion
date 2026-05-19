@@ -3540,6 +3540,10 @@ static const struct SpriteFrameImage sPicTable_RotomFan[] = {
 static const struct SpriteFrameImage sPicTable_RotomMow[] = {
     overworld_ascending_frames(gObjectEventPic_RotomMow, 4, 4),
 };
+//PLACEHOLDER
+static const struct SpriteFrameImage sPicTable_RotomPlay[] = {
+    overworld_ascending_frames(gObjectEventPic_Rotom, 4, 4),
+};
 #endif //P_FAMILY_ROTOM
 
 #if P_FAMILY_UXIE
@@ -3684,6 +3688,10 @@ static const struct SpriteFrameImage sPicTable_ArceusDark[] = {
 };
 static const struct SpriteFrameImage sPicTable_ArceusFairy[] = {
     overworld_ascending_frames(gObjectEventPic_ArceusFairy, 8, 8),
+};
+//PLACEHOLDER
+static const struct SpriteFrameImage sPicTable_ArceusEcho[] = {
+    overworld_ascending_frames(gObjectEventPic_ArceusNormal, 8, 8),
 };
 #endif //P_FAMILY_ARCEUS
 

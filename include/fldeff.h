@@ -56,15 +56,19 @@ bool32 SetUpFieldMove_Defog(void);
 bool8 FldEff_Defog(void);
 
 // headbutt
-bool8 SetUpFieldMove_Headbutt(void);
+bool32 SetUpFieldMove_Headbutt(void);
 bool8 FldEff_UseHeadbutt(void);
 
 // thaw
-bool8 SetUpFieldMove_Thaw(void);
+bool32 SetUpFieldMove_Thaw(void);
 bool8 FldEff_UseThaw(void);
 
 // magnet rise
-bool8 SetUpFieldMove_MagnetRise(void);
+bool32 SetUpFieldMove_MagnetRise(void);
 bool8 FldEff_UseMagnetRise(void);
+
+// bulldoze
+//bool32 SetUpFieldMove_Bulldoze(void);
+//bool8 FldEff_UseBulldoze(void);
 
 #endif // GUARD_FLDEFF_H

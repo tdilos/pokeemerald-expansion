@@ -87,53 +87,6 @@ EventScript_UseRockSmash::
 	lockall
 	goto EventScript_RockSmashCommon
 
-@ Interact with smashable rock
-EventScript_RockSmash::
-	lockall
-	goto_if_unset FLAG_BADGE02_GET, EventScript_CantSmashRock
-	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
-	setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
-	msgbox Text_WantToSmash, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
-	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
-	closemessage
-EventScript_RockSmashCommon:
-	@ check if follower should use the field move
-	isfollowerfieldmoveuser VAR_0x8004
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
-	dofieldeffect FLDEFF_USE_ROCK_SMASH
-	waitstate
-EventScript_SmashRock:: @ fallthrough
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
-	addvar VAR_ROCK_SMASH_COUNT, 1
-	applymovement VAR_LAST_TALKED, Movement_SmashRock
-	waitmovement 0
-	removeobject VAR_LAST_TALKED
-	@specialvar VAR_RESULT, TryUpdateRusturfTunnelState
-	@goto_if_eq VAR_RESULT, TRUE, EventScript_EndSmash
-	special RockSmashWildEncounter
-	@goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
-	goto_if_eq VAR_RESULT, FALSE, EventScript_TryRockSmashItem
-	waitstate
-	releaseall
-	end
-
-EventScript_TryRockSmashItem::
-	special TryGetRockSmashItem
-	compare VAR_RESULT, FALSE
-	goto_if_eq EventScript_EndSmash
-	giveitem VAR_RESULT
-	releaseall
-	end
-
-EventScript_EndSmash::
-	releaseall
-	end
-	
 EventScript_FollowerFieldMove:
 	getdirectiontoface VAR_0x8005, OBJ_EVENT_ID_FOLLOWER, OBJ_EVENT_ID_PLAYER
 	specialvar VAR_0x8006, GetPlayerFacingDirection
@@ -451,7 +404,7 @@ EventScript_MagnetRiseMetal::
 	lockall
 	goto_if_unset FLAG_BADGE07_GET, EventScript_CantMagnetRise
 	goto_if_set FLAG_SYS_USE_MAGNET_RISE, EventScript_CheckActivatedMetal
-	checkpartymove MOVE_MAGNET_RISE
+	checkfieldmove FIELD_MOVE_MAGNET_RISE, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantMagnetRise
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToMagnetRise, MSGBOX_YESNO
@@ -636,9 +589,8 @@ EventScript_UseCutGrass::
 @ Interact with a tree a Pokémon can use headbutt on
 EventScript_Headbutt::
 	lockall
-	checkpartymove MOVE_HEADBUTT
-	compare VAR_RESULT, PARTY_SIZE
-	goto_if_eq EventScript_CantHeadbuttTree
+	checkfieldmove FIELD_MOVE_HEADBUTT, TRUE
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantHeadbuttTree
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick 0, VAR_RESULT
 	buffermovename 1, MOVE_HEADBUTT
@@ -684,16 +636,16 @@ EventScript_EndHeadbutt:
 	end
 
 @ Use defog from party menu
-EventScript_UseDefog::
-	lockall
-	dofieldeffect FLDEFF_USE_DEFOG
-	waitstate
-	playse SE_M_TWISTER
-	setweather WEATHER_NONE
-	doweather
-	waitse
-	releaseall
-	end
+@EventScript_UseDefog::
+@	lockall
+@	dofieldeffect FLDEFF_USE_DEFOG
+@	waitstate
+@	playse SE_M_TWISTER
+@	setweather WEATHER_NONE
+@	doweather
+@	waitse
+@	releaseall
+@	end
 
 Text_CantDive:
 	.string "The sea is deep here. A POKéMON\n"

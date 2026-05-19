@@ -20,7 +20,8 @@ CobaltCity_Harbor_EventScript_CheckTicket::
 	goto_if_eq VAR_RESULT, FALSE, CobaltCity_Harbor_EventScript_DontHaveTriPass
 	message CobaltCity_Harbor_Text_FlashedTriPass
 	waitmessage
-	multichoicedefault 21, 6, MULTI_COBALT_FERRY, 2, FALSE
+	@multichoicedefault 21, 6, MULTI_COBALT_FERRY, 2, FALSE
+	multichoice 21, 6, MULTI_COBALT_FERRY, FALSE
 	switch VAR_RESULT
 	case 0, CobaltCity_Harbor_EventScript_ChooseTurquoise
 	case 1, CobaltCity_Harbor_EventScript_ChooseXanthos
@@ -69,7 +70,7 @@ CobaltCity_Harbor_EventScript_BoardFerryWithSailor::
 	call_if_eq VAR_FACING, DIR_NORTH, CobaltCity_Harbor_EventScript_PlayerBoardFerryNorth
 	call_if_eq VAR_FACING, DIR_EAST, CobaltCity_Harbor_EventScript_PlayerBoardFerryEast
 	delay 30
-	hideobjectat OBJ_EVENT_ID_PLAYER, 0
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_COBALT_CITY_HARBOR
 	setvar VAR_0x8004, LOCALID_SS_TIDAL
 	playse SE_RG_SS_ANNE_HORN
 	delay 30

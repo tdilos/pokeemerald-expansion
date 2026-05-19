@@ -13,10 +13,10 @@ CobaltCity_DreamResort_4F_Text_WhoAreYou:
 CobaltCity_DreamResort_4F_EventScript_AquaGrunt::
 	lockall
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM46, CobaltCity_DreamResort_4F_EventScript_YouDidntSeeMe
+	goto_if_set FLAG_RECEIVED_TM_THIEF, CobaltCity_DreamResort_4F_EventScript_YouDidntSeeMe
 	msgbox CobaltCity_DreamResort_4F_Text_WrongIdea, MSGBOX_NPC
 	giveitem ITEM_TM46
-	setflag FLAG_RECEIVED_TM46
+	setflag FLAG_RECEIVED_TM_THIEF
 	msgbox CobaltCity_DreamResort_4F_Text_YouDidntSeeMe, MSGBOX_NPC
 	releaseall
 	end

@@ -21,9 +21,8 @@ struct MonIconSpriteTemplate
 static u8 CreateMonIconSprite(struct MonIconSpriteTemplate *, s16, s16, u8);
 static void FreeAndDestroyMonIconSprite_(struct Sprite *sprite);
 
-<<<<<<< Updated upstream
-=======
-const u8 *const gMonIconTable[] =
+	
+/*const u8 *const gMonIconTable[] =
 {
     [SPECIES_NONE] = gMonIcon_Bulbasaur,
     [SPECIES_BULBASAUR] = gMonIcon_Bulbasaur,
@@ -2317,6 +2316,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_SNEASLER] = 2,
     [SPECIES_OVERQWIL] = 2,
     [SPECIES_ENAMORUS] = 1,
+	// Tourmaline
 	[SPECIES_PLUX] = 2,
 	[SPECIES_ATROCEON] = 2,
 	[SPECIES_VOXEON] = 0,
@@ -2738,9 +2738,8 @@ const u8 gMonIconPaletteIndicesFemale[] =
 #if P_GEN_8_POKEMON == TRUE
     [SPECIES_BASCULEGION] = 0,
 #endif
-};
+};*/
 
->>>>>>> Stashed changes
 const struct SpritePalette gMonIconPaletteTable[] =
 {
     { gMonIconPalettes[0], POKE_ICON_BASE_PAL_TAG + 0 },

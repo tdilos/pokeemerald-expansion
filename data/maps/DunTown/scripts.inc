@@ -219,8 +219,8 @@ DunTown_EventScript_VioletBattleChespin::
 	end
 
 DunTown_EventScript_VertBattleChespin::
-	@trainerbattle_double TRAINER_VERN_DUN_TOWN_CHESPIN, DunTown_Text_OPCPreBattle, DunTown_Text_VertDefeated, DunTown_Text_NotEnoughPokemon
-	trainerbattle_no_intro TRAINER_VERN_DUN_TOWN_CHESPIN, DunTown_Text_VertDefeated
+	@trainerbattle_double TRAINER_VERT_DUN_TOWN_CHESPIN, DunTown_Text_OPCPreBattle, DunTown_Text_VertDefeated, DunTown_Text_NotEnoughPokemon
+	trainerbattle_no_intro TRAINER_VERT_DUN_TOWN_CHESPIN, DunTown_Text_VertDefeated
 	goto DunTown_EventScript_AfterOPCBattle
 	end
 
@@ -239,8 +239,8 @@ DunTown_EventScript_VioletBattleTepig::
 	end
 
 DunTown_EventScript_VertBattleTepig::
-	@trainerbattle_double TRAINER_VERN_DUN_TOWN_TEPIG, DunTown_Text_OPCPreBattle, DunTown_Text_VertDefeated, DunTown_Text_NotEnoughPokemon
-	trainerbattle_no_intro TRAINER_VERN_DUN_TOWN_TEPIG, DunTown_Text_VertDefeated
+	@trainerbattle_double TRAINER_VERT_DUN_TOWN_TEPIG, DunTown_Text_OPCPreBattle, DunTown_Text_VertDefeated, DunTown_Text_NotEnoughPokemon
+	trainerbattle_no_intro TRAINER_VERT_DUN_TOWN_TEPIG, DunTown_Text_VertDefeated
 	goto DunTown_EventScript_AfterOPCBattle
 	end
 
@@ -262,8 +262,8 @@ DunTown_EventScript_VioletBattlePopplio::
 	end
 
 DunTown_EventScript_VertBattlePopplio::
-	@trainerbattle_double TRAINER_VERN_DUN_TOWN_POPPLIO, DunTown_Text_OPCPreBattle, DunTown_Text_VertDefeated, DunTown_Text_NotEnoughPokemon
-	trainerbattle_no_intro TRAINER_VERN_DUN_TOWN_POPPLIO, DunTown_Text_VertDefeated
+	@trainerbattle_double TRAINER_VERT_DUN_TOWN_POPPLIO, DunTown_Text_OPCPreBattle, DunTown_Text_VertDefeated, DunTown_Text_NotEnoughPokemon
+	trainerbattle_no_intro TRAINER_VERT_DUN_TOWN_POPPLIO, DunTown_Text_VertDefeated
 	goto DunTown_EventScript_AfterOPCBattle
 	end
 

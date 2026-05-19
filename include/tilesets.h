@@ -61,4 +61,22 @@ extern const struct Tileset gTileset_SSAnne;
 extern const struct Tileset gTileset_SeaCottage;
 extern const struct Tileset gTileset_TrainerTower;
 
+extern const struct Tileset gTileset_Misc;
+extern const struct Tileset gTileset_Cave2;
+extern const struct Tileset gTileset_GenericBuilding2;
+extern const struct Tileset gTileset_GymsIssho;
+extern const struct Tileset gTileset_Turquoise;
+extern const struct Tileset gTileset_Maroon;
+extern const struct Tileset gTileset_Offwite;
+extern const struct Tileset gTileset_gTileset_KendomaCorp;
+extern const struct Tileset gTileset_Haewen;
+extern const struct Tileset gTileset_Facility2;
+extern const struct Tileset gTileset_Emporium;
+extern const struct Tileset gTileset_Wisteria;
+extern const struct Tileset gTileset_GymsIssho2;
+extern const struct Tileset gTileset_GenericBuilding3;
+extern const struct Tileset gTileset_UndergroundCity;
+extern const struct Tileset gTileset_PerennialPillar;
+extern const struct Tileset gTileset_StationCity;
+
 #endif //GUARD_tilesets_H

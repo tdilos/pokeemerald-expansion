@@ -1134,8 +1134,8 @@ const u32 gBattleAnimSpriteGfx_ItemBag[] = INCBIN_U32("graphics/battle_anims/spr
 
 const u16 gBattleAnimSpritePal_TriAttackTriangle[] = INCBIN_U16("graphics/battle_anims/sprites/tri_attack_triangle.gbapal");
 const u32 gBattleAnimSpriteGfx_TriAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/tri_attack_triangle.4bpp.smol");
-const u16 gBattleAnimSpritePal_PhrenoAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/phreno_attack_triangle.gbapal");
-const u16 gBattleAnimSpritePal_SomaAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/soma_attack_triangle.gbapal");
+const u16 gBattleAnimSpritePal_PhrenoAttackTriangle[] = INCBIN_U16("graphics/battle_anims/sprites/new/phreno_attack_triangle.gbapal");
+const u16 gBattleAnimSpritePal_SomaAttackTriangle[] = INCBIN_U16("graphics/battle_anims/sprites/new/soma_attack_triangle.gbapal");
 const u32 gBattleAnimSpriteGfx_PhrenoAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/phreno_attack_triangle.4bpp.smol");
 const u32 gBattleAnimSpriteGfx_SomaAttackTriangle[] = INCBIN_U32("graphics/battle_anims/sprites/new/soma_attack_triangle.4bpp.smol");
 

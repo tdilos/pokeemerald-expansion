@@ -82,6 +82,7 @@ UmberTown_EventScript_JaceBattle::
 	@waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, UmberTown_Movement_PlayerGetReady
 	waitmovement 0
+	setflag B_FLAG_NO_WHITEOUT
 	delay 50
 	switch VAR_STARTER_MON
 	case 0, UmberTown_EventScript_StartJaceBattleChespin
@@ -112,17 +113,20 @@ UmberTown_Movement_PlayerGetReady:
 	step_end
 
 UmberTown_EventScript_StartJaceBattleChespin::
-	trainerbattle_no_intro_no_whiteout TRAINER_JACE_UMBER_TOWN_CHESPIN, UmberTown_Text_JaceDefeated
+	@trainerbattle_no_intro_no_whiteout TRAINER_JACE_UMBER_TOWN_CHESPIN, UmberTown_Text_JaceDefeated
+	trainerbattle_no_intro TRAINER_JACE_UMBER_TOWN_CHESPIN, UmberTown_Text_JaceDefeated
 	goto UmberTown_EventScript_AfterJaceBattle
 	end
 
 UmberTown_EventScript_StartJaceBattleTepig::
-	trainerbattle_no_intro_no_whiteout TRAINER_JACE_UMBER_TOWN_TEPIG, UmberTown_Text_JaceDefeated
+	@trainerbattle_no_intro_no_whiteout TRAINER_JACE_UMBER_TOWN_TEPIG, UmberTown_Text_JaceDefeated
+	trainerbattle_no_intro TRAINER_JACE_UMBER_TOWN_TEPIG, UmberTown_Text_JaceDefeated
 	goto UmberTown_EventScript_AfterJaceBattle
 	end
 
 UmberTown_EventScript_StartJaceBattlePopplio::
-	trainerbattle_no_intro_no_whiteout TRAINER_JACE_UMBER_TOWN_POPPLIO, UmberTown_Text_JaceDefeated
+	@trainerbattle_no_intro_no_whiteout TRAINER_JACE_UMBER_TOWN_POPPLIO, UmberTown_Text_JaceDefeated
+	trainerbattle_no_intro TRAINER_JACE_UMBER_TOWN_POPPLIO, UmberTown_Text_JaceDefeated
 	goto UmberTown_EventScript_AfterJaceBattle
 	end
 
@@ -132,6 +136,7 @@ UmberTown_Text_JaceDefeated:
 
 
 UmberTown_EventScript_AfterJaceBattle::
+	clearflag B_FLAG_NO_WHITEOUT
 	special CheckIfTeamFainted
 	goto_if_eq VAR_RESULT, FALSE, UmberTown_EventScript_WonJaceBattle
 	goto_if_eq VAR_RESULT, TRUE, UmberTown_EventScript_LostJaceBattle
@@ -207,18 +212,6 @@ UmberTown_EventScript_MayExitsLab::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
-
-
-	@applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-	@waitmovement 0
-	@applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	@playse SE_PIN
-	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
-	@waitmovement 0
-	@delay 40
-
-
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
 	waitmovement 0
@@ -688,6 +681,10 @@ UmberTown_Movement_Dummy:
 UmberTown_EventScript_GiveStuff2::
 	lock
 	faceplayer
+	playmoncry SPECIES_GENESECT, CRY_MODE_NORMAL
+	msgbox UmberTown_Text_ZartoshtIntro, MSGBOX_DEFAULT
+	waitmoncry
+
 	playse SE_DING_DONG
 	waitse
 	setwildbattle SPECIES_NIHILEGO, 120

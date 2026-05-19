@@ -1638,7 +1638,7 @@ static void InterviewAfter_PkmnFanClubOpinions(void)
 
 static void TryStartRandomMassOutbreak(void)
 {
-    u8 i;
+    //u8 i;
     u16 outbreakIdx;
     TVShow *show;
 	

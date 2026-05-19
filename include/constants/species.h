@@ -1707,7 +1707,7 @@
 #define SPECIES_YETREE                                 (TOURMALINE_START + 14)
 #define SPECIES_NOAUDIA                                (TOURMALINE_START + 15)
 #define SPECIES_NEPHTOMB                               (TOURMALINE_START + 16)
-#define SPECIES_GOTHITEAU                              (TOURMALINE_START + 17)
+#define SPECIES_GOTHITURGE                             (TOURMALINE_START + 17)
 
 #define SPECIES_SHIFUR                                 (TOURMALINE_START + 18)
 #define SPECIES_BURSERKER                              (TOURMALINE_START + 19)

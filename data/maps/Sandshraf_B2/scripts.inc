@@ -1,5 +1,5 @@
-.set LOCALID_MANIAC, 7
-.set LOCALID_CHALLENGE_BIKER, 11
+@.set LOCALID_MANIAC, 7
+@.set LOCALID_CHALLENGE_BIKER2, 11
 
 Sandshraf_B2_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Sandshraf_B2_OnResume
@@ -171,7 +171,7 @@ Sandshraf_B2_EventScript_CyclingChallengeEnd::
 	lockall
 	specialvar VAR_RESULT, GetPlayerAvatarBike
 	goto_if_eq VAR_RESULT, 0, Sandshraf_B2_EventScript_EndChallenge
-	applymovement LOCALID_CHALLENGE_BIKER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_CHALLENGE_BIKER2, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	call Sandshraf_B2_EventScript_CyclingChallengeResults
 	releaseall

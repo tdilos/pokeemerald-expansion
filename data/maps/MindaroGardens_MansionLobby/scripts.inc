@@ -52,7 +52,7 @@ MindaroGardens_MansionLobby_Text_OffLimits:
 	.string "display rooms upstairs.$"
 
 MindaroGardens_MansionLobby_EventScript_Butler2::
-	goto_if_unset FLAG_RECEIVED_HM02, MindaroGardens_MansionLobby_EventScript_TryToGiveFly
+	goto_if_unset FLAG_RECEIVED_HM_FLY, MindaroGardens_MansionLobby_EventScript_TryToGiveFly
 	msgbox MindaroGardens_MansionLobby_Text_ExplainFly, MSGBOX_NPC
 	end
 
@@ -73,7 +73,7 @@ MindaroGardens_MansionLobby_EventScript_TryToGiveFly::
 	msgbox MindaroGardens_MansionLobby_Text_TryToGiveFly, MSGBOX_NPC
 	giveitem ITEM_HM02
 	goto_if_eq VAR_RESULT, 0, MindaroGardens_MansionLobby_EventScript_NoRoomForPrize2
-	setflag FLAG_RECEIVED_HM02
+	setflag FLAG_RECEIVED_HM_FLY
 	end
 	
 MindaroGardens_MansionLobby_Text_TryToGiveFly:
@@ -107,7 +107,7 @@ MindaroGardens_MansionLobby_EventScript_ReceivePrize::
 	goto_if_eq VAR_RESULT, 0, MindaroGardens_MansionLobby_EventScript_NoRoomForPrize
 	@waitfanfare
 	@closemessage
-	setflag FLAG_RECEIVED_HM02
+	setflag FLAG_RECEIVED_HM_FLY
 	applymovement LOCALID_BUTLER, Common_Movement_WalkLeft
 	waitmovement 0
 	applymovement LOCALID_BUTLER, Common_Movement_WalkLeft
@@ -175,7 +175,7 @@ MindaroGardens_MansionLobby_EventScript_ExitOPC2::
 	waitmovement 0	
 	delay 40
 	removeobject LOCALID_OPC
-	@setflag FLAG_RECEIVED_HM02
+	@setflag FLAG_RECEIVED_HM_FLY
 	setflag FLAG_REACHED_MINDARO_MANSION
 	playse SE_EXIT
 	waitse

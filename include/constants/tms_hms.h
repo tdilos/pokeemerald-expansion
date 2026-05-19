@@ -2,7 +2,7 @@
 #define GUARD_CONSTANTS_TMS_HMS_H
 
 #define FOREACH_TM(F) \
-    F(FOCUS_PUNCH) \
+    F(HONE_CLAWS) \
     F(DRAGON_CLAW) \
     F(WATER_PULSE) \
     F(CALM_MIND) \
@@ -20,15 +20,15 @@
     F(LIGHT_SCREEN) \
     F(PROTECT) \
     F(RAIN_DANCE) \
-    F(GIGA_DRAIN) \
+    F(ATTUNE) \
     F(SAFEGUARD) \
-    F(FRUSTRATION) \
+    F(BLIGHT) \
     F(SOLAR_BEAM) \
-    F(IRON_TAIL) \
+    F(MIMIC) \
     F(THUNDERBOLT) \
     F(THUNDER) \
     F(EARTHQUAKE) \
-    F(RETURN) \
+    F(AIR_SLASH) \
     F(DIG) \
     F(PSYCHIC) \
     F(SHADOW_BALL) \
@@ -44,24 +44,76 @@
     F(AERIAL_ACE) \
     F(TORMENT) \
     F(FACADE) \
-    F(SECRET_POWER) \
+    F(FLAME_CHARGE) \
     F(REST) \
     F(ATTRACT) \
     F(THIEF) \
     F(STEEL_WING) \
     F(SKILL_SWAP) \
-    F(SNATCH) \
-    F(OVERHEAT)
+    F(ECHOED_VOICE) \
+    F(OVERHEAT) \
+    F(SMAZE) \
+    F(FOCUS_BLAST) \
+    F(ENERGY_BALL) \
+    F(FALSE_SWIPE) \
+    F(SMACK_DOWN) \
+    F(ROTOTILL) \
+    F(ROUND) \
+    F(POWDERPUFF_PUNCH) \
+    F(POLLENSPRAY) \
+    F(FOCUS_PUNCH) \
+    F(WILL_O_WISP) \
+    F(ACROBATICS) \
+    F(PAYBACK) \
+    F(EXPLOSION) \
+    F(SHADOW_CLAW) \
+    F(FULL_MOON) \
+    F(ICE_SKATE) \
+    F(GIGA_IMPACT) \
+    F(ROCK_POLISH) \
+    F(FLASH) \
+    F(STONE_EDGE) \
+    F(CHARGE_BEAM) \
+    F(THUNDER_WAVE) \
+    F(SHIELD_STRIKE) \
+    F(SWORDS_DANCE) \
+    F(BODY_SLAM) \
+    F(PSYCH_UP) \
+    F(DUST_DEVIL) \
+    F(FROST_BREATH) \
+    F(ROCK_SLIDE) \
+    F(X_SCISSOR) \
+    F(DRAGON_TAIL) \
+    F(WORK_UP) \
+    F(POISON_JAB) \
+    F(AFTERSHOCK) \
+    F(GRASS_KNOT) \
+    F(SWAGGER) \
+    F(PLUCK) \
+    F(U_TURN) \
+    F(SUBSTITUTE) \
+    F(FLASH_CANNON) \
+    F(TRICK_ROOM) \
+    F(WILD_CHARGE) \
+    F(SCALD) \
+    F(SNARL) \
+    F(INFESTATION) \
+    F(BLOCK) \
+    F(WITHER) \
+    F(DAZZLING_GLEAM) \
+    F(METRONOME)
 
 #define FOREACH_HM(F) \
     F(CUT) \
     F(FLY) \
     F(SURF) \
     F(STRENGTH) \
-    F(FLASH) \
+    F(MAGNET_RISE) \
     F(ROCK_SMASH) \
-    F(WATERFALL) \
-    F(DIVE)
+	F(THAW) \
+	F(DIVE) \
+	F(BULLDOZE) \
+    F(WATERFALL)
 
 #define FOREACH_TMHM(F) \
     FOREACH_TM(F) \

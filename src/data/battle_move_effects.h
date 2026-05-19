@@ -2266,18 +2266,6 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 1,
         .encourageEncore = TRUE,
     },
-    [EFFECT_SMAZE] =
-    {
-        .battleScript = BattleScript_EffectSmaze,
-        .battleTvScore = 4,
-        .encourageEncore = TRUE,
-    },
-    [EFFECT_FULLMOON] =
-    {
-        .battleScript = BattleScript_EffectFullMoon,
-        .battleTvScore = 4,
-        .encourageEncore = TRUE,
-    },
     [EFFECT_AFTERSHOCK] =
     {
         .battleScript = BattleScript_EffectHit,
@@ -2323,7 +2311,8 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
     [EFFECT_MOONBLAST] =
-        .battleScript = BattleScript_EffectTwoTurnsAttack,
+	{
+        .battleScript = BattleScript_TwoTurnMoveCharging,
         .battleTvScore = 1,
         .twoTurnEffect = TRUE,
     },

@@ -71,7 +71,7 @@ enum __attribute__((packed)) Item
     ITEM_SACRED_ASH = 54,
     ITEM_SWEET_HEART = 55,
     //ITEM_MAX_HONEY = 56,
-	ITEM_HANAMIDANGO 56,
+	ITEM_HANAMIDANGO = 56,
 
     // Regional Specialties
     ITEM_PEWTER_CRUNCHIES = 57,
@@ -490,12 +490,8 @@ enum __attribute__((packed)) Item
     ITEM_LUNALIUM_Z = 387,
     ITEM_MARSHADIUM_Z = 388,
     ITEM_ALORAICHIUM_Z = 389,
-    //ITEM_PIKASHUNIUM_Z = 390,
-    //ITEM_ULTRANECROZIUM_Z = 391,
-
-	// Status Orbs
-	ITEM_FLAME_ORB = 390,
-	ITEM_TOXIC_ORB = 391,
+    ITEM_PIKASHUNIUM_Z = 390,
+    ITEM_ULTRANECROZIUM_Z = 391,
 
     // Species-specific Held Items
     ITEM_LIGHT_BALL = 392,
@@ -709,7 +705,7 @@ enum __attribute__((packed)) Item
     ITEM_COLBUR_BERRY = 563,
     ITEM_BABIRI_BERRY = 564,
     ITEM_ROSELI_BERRY = 565,
-	ITEM_GINEMIA_BERRY = 566,
+	ITEM_GINEMA_BERRY = 566,
     ITEM_LIECHI_BERRY = 567,
     ITEM_GANLON_BERRY = 568,
     ITEM_SALAC_BERRY = 569,
@@ -1068,6 +1064,11 @@ enum __attribute__((packed)) Item
     ITEM_TATSUGIRINITE = 872,
     ITEM_GLIMMORANITE = 873,
 
+	// Misc Ferthrenged
+	ITEM_FLAME_ORB = 874,
+	ITEM_TOXIC_ORB = 875,
+    ITEM_DIANCITE = 876,
+
 	ITEMS_COUNT_GF,
 	
 	ITEMS_TOURMALINE_START = ITEMS_COUNT_GF,
@@ -1084,7 +1085,7 @@ enum __attribute__((packed)) Item
 	ITEM_STIMULANT              = (ITEMS_TOURMALINE_START + 6),
 	ITEM_RELAXANT               = (ITEMS_TOURMALINE_START + 7),
 
-	// Misc new items
+	// Misc key items
 	ITEM_MACHINE_PART           = (ITEMS_TOURMALINE_START + 8),
 	ITEM_CLEARANCE_S_CARD       = (ITEMS_TOURMALINE_START + 9),
 	ITEM_CLEARANCE_A_CARD       = (ITEMS_TOURMALINE_START + 10),
@@ -1116,6 +1117,9 @@ enum __attribute__((packed)) Item
     ITEM_STAR_SWEET             = (ITEMS_TOURMALINE_START + 32),
     ITEM_RIBBON_SWEET           = (ITEMS_TOURMALINE_START + 33),
 
+	// Other new items
+    ITEM_ECHOIUM_Z              = (ITEMS_TOURMALINE_START + 34),
+	
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
 };
@@ -2085,7 +2089,7 @@ enum __attribute__((packed)) Item
 #define ITEM_HM07_THAW ITEM_HM07
 #define ITEM_HM08_DIVE ITEM_HM08
 #define ITEM_HM09_BULLDOZE ITEM_HM09
-#define ITEM_HM10_WATERFALL ITEM_HM10 */
+#define ITEM_HM10_WATERFALL ITEM_HM10 
 
 // Misc. New Items
 //#define ITEM_DUMMY1 692

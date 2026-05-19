@@ -383,7 +383,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 	[TRAINER_CLASS_LOGGER] = { _("LOGGER"), 6, BALL_NEST },
 	[TRAINER_CLASS_FAIRY_TALE_GIRL] = { _("FAIRY GIRL"), 6, BALL_FRIEND },
 	[TRAINER_CLASS_ROUGHNECK] = { _("ROUGHNECK"), 5, BALL_MOON },
-    [TRAINER_CLASS_GENESIS_ADMIN] = { _("GENESIS BOSS"), 20, BALL_MASTER },
+    [TRAINER_CLASS_GENESIS_BOSS] = { _("GENESIS BOSS"), 20, BALL_MASTER },
 	// v0.3
 	[TRAINER_CLASS_UNKNOWN] = { _("UNKNOWN"), 0, BALL_DREAM },
 	
@@ -1911,7 +1911,7 @@ u8 GetBattleFlow(bool8 forHealthbar)
 		|| gBattlescriptCurrInstr  == BattleScript_LearnMoveReturn
 		|| gBattlescriptCurrInstr == BattleScript_LearnedNewMove)*/
 	//if(HandleFaintedMonActions())
-	if(gBattleStruct->faintedActionsState != 0)
+	if(gBattleStruct->eventState.faintedAction != 0)
         return 1;
 	
 	// Fix for glitch causing the game to freeze when throwing a pokeballl on higher speeds
@@ -2250,8 +2250,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     //u8 karmaLevel = 0;
 	u16 karmaLevel;
 	u32 personalityValue;
-    u8 fixedIV;
-    s32 i, j;
+    s32 i;
     u8 monsCount;
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
@@ -4405,7 +4404,8 @@ u8 IsRunningFromBattleImpossible(enum BattlerId battler)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DONT_LEAVE_BIRCH;
         return BATTLE_RUN_FORBIDDEN;
     }
-    if (FlagGet(FLAG_TEMP_DISABLE_BAG) == TRUE) // Prevent running from Houndoom + Melmetal
+    //if (FlagGet(FLAG_TEMP_DISABLE_BAG) == TRUE) // Prevent running from Houndoom + Melmetal
+	if (VarGet(VAR_BAG_RESTRICTION) == 2) // Prevent running from Houndoom + Melmetal
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE;
         return BATTLE_RUN_FORBIDDEN;
@@ -5796,7 +5796,7 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_MAGMA_LEADER:
         case TRAINER_CLASS_TEAM_GENESIS:
-        case TRAINER_CLASS_GENESIS_ADMIN:
+        case TRAINER_CLASS_GENESIS_BOSS:
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
         case TRAINER_CLASS_LEADER:
@@ -6141,11 +6141,6 @@ static void ReturnFromBattleToOverworld(void)
 
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {
-		if (gBattleOutcome == B_OUTCOME_CAUGHT || ((gBattleOutcome & B_OUTCOME_WON) && !CanRoamerRespawn(gEncounteredRoamerIndex)))
-            StopRoamer(gEncounteredRoamerIndex);
-	    else if (gBattleOutcome & B_OUTCOME_WON) // and roamer can respawn
-            HandleRoamerRespawnTimer();
-			
         UpdateRoamerHPStatus(&gEnemyParty[0]);
         ZeroEnemyPartyMons();
 
@@ -6309,10 +6304,10 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
                 return TYPE_ICE;
             case WEATHER_SANDSTORM:
                 return TYPE_ROCK;
-            case WEATHER_SMAZE:
-                return TYPE_POISON;
-            case WEATHER_FULLMOON:
-                return TYPE_FAIRY;
+            //case WEATHER_FOG_DIAGONAL:
+            //    return TYPE_POISON;
+            //case WEATHER_SHADE:
+            //    return TYPE_FAIRY;
             }
             return moveType;
         }

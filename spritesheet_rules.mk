@@ -696,9 +696,6 @@ $(OBJEVENTGFXDIR)/people/red_vs_seeker_bike.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/rich_boy_frlg.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/rocker.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 4
-
 $(OBJEVENTGFXDIR)/people/rocket_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
@@ -1232,15 +1229,8 @@ $(OBJEVENTGFXDIR)/pokemon_old/voltorb.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokemon_old/wigglytuff.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
-
-
-$(OBJEVENTGFXDIR)/misc/ball_poke.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 4
 	
 	
-
-$(OBJEVENTGFXDIR)/pokemon_old/fr_spearow.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 2
 	
 $(OBJEVENTGFXDIR)/pokemon_old/fr_celebi.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
@@ -1262,9 +1252,6 @@ $(OBJEVENTGFXDIR)/pokemon_old/fr_victini.4bpp: %.4bpp: %.png
 	
 $(OBJEVENTGFXDIR)/pokemon_old/fr_diancie.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
-	
-$(OBJEVENTGFXDIR)/pokemon_old/fr_chansey.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 2
 	
 $(OBJEVENTGFXDIR)/pokemon_old/fr_drifloon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2

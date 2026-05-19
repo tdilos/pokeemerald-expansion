@@ -398,14 +398,15 @@ static void HandleInputChooseAction(enum BattlerId battler)
 	else if (JOY_NEW(R_BUTTON))
     {
         if(!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-			&& (FlagGet(FLAG_TEMP_DISABLE_BAG) == FALSE)) // prevent running from Houndoom + Melmetal
+			//&& (FlagGet(FLAG_TEMP_DISABLE_BAG) == FALSE)) // prevent running from Houndoom + Melmetal
+			&& (VarGet(VAR_BAG_RESTRICTION) == 2)) // prevent running from Houndoom + Melmetal
             {
                 PlaySE(SE_SELECT);
                 //ActionSelectionDestroyCursorAt(gActionSelectionCursor[gActiveBattler]);
                 //gActionSelectionCursor[gActiveBattler] = 3;
                 //ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
-				BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_RUN, 0);
-				PlayerBufferExecCompleted();
+				BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_RUN, 0);
+				PlayerBufferExecCompleted(battler);
             }
     }
     else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON))

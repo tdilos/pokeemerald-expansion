@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
@@ -191,7 +191,5 @@
       "script": "TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

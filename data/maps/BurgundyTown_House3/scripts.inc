@@ -1,3 +1,6 @@
+.set NUM_GEMS, 18
+.set GEMS_START, ITEM_ECHO_GEM
+
 BurgundyTown_House3_MapScripts::
 	.byte 0
 

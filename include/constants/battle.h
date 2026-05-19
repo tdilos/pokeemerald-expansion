@@ -31,6 +31,7 @@ enum BattlerPosition
     B_POSITION_OPPONENT_LEFT,
     B_POSITION_PLAYER_RIGHT,
     B_POSITION_OPPONENT_RIGHT,
+	//B_POSITION_ARCHON,
     MAX_POSITION_COUNT,
     B_POSITION_ABSENT = 0xFF,
 };
@@ -41,6 +42,7 @@ enum __attribute__((packed)) BattlerId
     B_BATTLER_1,
     B_BATTLER_2,
     B_BATTLER_3,
+    //B_BATTLER_ARCHON,
     MAX_BATTLERS_COUNT,
 };
 
@@ -90,7 +92,8 @@ enum BattleSide
 #define BATTLE_TYPE_EREADER_TRAINER    (1 << 11)
 #define BATTLE_TYPE_RAID               (1 << 12)
 #define BATTLE_TYPE_LEGENDARY          (1 << 13)
-#define BATTLE_TYPE_14                 (1 << 14)
+//#define BATTLE_TYPE_14                 (1 << 14)
+#define BATTLE_TYPE_ARCHON             (1 << 14)
 #define BATTLE_TYPE_TWO_OPPONENTS      (1 << 15)
 #define BATTLE_TYPE_DOME               (1 << 16)
 #define BATTLE_TYPE_PALACE             (1 << 17)
@@ -105,11 +108,11 @@ enum BattleSide
 #define BATTLE_TYPE_TRAINER_HILL       (1 << 26)
 #define BATTLE_TYPE_TRAINER_TOWER      BATTLE_TYPE_TRAINER_HILL
 #define BATTLE_TYPE_SECRET_BASE        (1 << 27)
-//#define BATTLE_TYPE_GHOST              (1 << 28)
+#define BATTLE_TYPE_GHOST              (1 << 28)
 //#define BATTLE_TYPE_POKEDUDE           (1 << 29)
-#define BATTLE_TYPE_WISTERIA_GAME_1    (1 << 28) 
-#define BATTLE_TYPE_WISTERIA_GAME_2    (1 << 29) 
-#define BATTLE_TYPE_30                 (1 << 30)
+#define BATTLE_TYPE_WISTERIA_GAME_1    (1 << 29) 
+#define BATTLE_TYPE_WISTERIA_GAME_2    (1 << 30) 
+//#define BATTLE_TYPE_30                 (1 << 30)
 #define BATTLE_TYPE_RECORDED_IS_MASTER (1 << 31)
 #define BATTLE_TYPE_FRONTIER                (BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_DOME | BATTLE_TYPE_PALACE | BATTLE_TYPE_ARENA | BATTLE_TYPE_FACTORY | BATTLE_TYPE_PIKE | BATTLE_TYPE_PYRAMID)
 #define BATTLE_TYPE_FRONTIER_NO_PYRAMID     (BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_DOME | BATTLE_TYPE_PALACE | BATTLE_TYPE_ARENA | BATTLE_TYPE_FACTORY | BATTLE_TYPE_PIKE)
@@ -196,6 +199,7 @@ enum VolatileFlags
     F(VOLATILE_UNUSED,                      padding,                       (u32, 1)) \
     F(VOLATILE_INFATUATION,                 infatuation,                   (enum BattlerId, MAX_BITS(MAX_BATTLERS_COUNT))) \
     F(VOLATILE_DEFENSE_CURL,                defenseCurl,                   (u32, 1)) \
+	F(VOLATILE_HIGH_NOTE,                   highNote,                      (u32, 1)) \
     F(VOLATILE_TRANSFORMED,                 transformed,                   (u32, 1)) \
     F(VOLATILE_RAGE,                        rage,                          (u32, 1)) \
     F(VOLATILE_SUBSTITUTE,                  substitute,                    (u32, 1), V_BATON_PASSABLE) \
@@ -461,7 +465,7 @@ enum BattleWeather
 #define B_WEATHER_FOG           (1 << BATTLE_WEATHER_FOG)
 #define B_WEATHER_STRONG_WINDS  (1 << BATTLE_WEATHER_STRONG_WINDS)
 #define B_WEATHER_SMAZE         (1 << BATTLE_WEATHER_SMAZE)
-#define B_WEATHER_FULLMOON      (1 << BATTLE_WEATHER_FULL_MOON)
+#define B_WEATHER_FULLMOON      (1 << BATTLE_WEATHER_FULLMOON)
 
 
 #define B_WEATHER_DAMAGING_ANY  (B_WEATHER_HAIL | B_WEATHER_SANDSTORM)
@@ -677,6 +681,11 @@ enum BattleEnvironments
     BATTLE_ENVIRONMENT_HAEWEN_GRASS,
     BATTLE_ENVIRONMENT_BURGUNDY_GRASS,
     BATTLE_ENVIRONMENT_SEWER,
+    BATTLE_ENVIRONMENT_LISIA,
+    BATTLE_ENVIRONMENT_IAN,
+    BATTLE_ENVIRONMENT_SIDNEY2,
+    BATTLE_ENVIRONMENT_PETRA,
+    BATTLE_ENVIRONMENT_NORMAN,
     BATTLE_ENVIRONMENT_COUNT,
 };
 

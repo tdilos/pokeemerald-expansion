@@ -1,4 +1,4 @@
-.set LOCALID_JACE, 6
+.set LOCALID_JACE_AMBER, 6
 
 AmberCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, AmberCity_OnTransition
@@ -6,7 +6,7 @@ AmberCity_MapScripts::
 
 AmberCity_OnTransition:
 	setflag FLAG_VISITED_AMBER_CITY
-	@removeobject LOCALID_JACE
+	@removeobject LOCALID_JACE_AMBER
 	call_if_ge VAR_JACE_STATE, 1, AmberCity_EventScript_HideJace
 	special GetWeekday
 	goto_if_eq VAR_RESULT, 4, AmberCity_EventScript_RevealWeekdaySibling
@@ -145,10 +145,10 @@ AmberCity_Text_LostInDesert:
 AmberCity_EventScript_Woman::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM05, AmberCity_EventScript_ExplainRoar
+	goto_if_set FLAG_RECEIVED_TM_ROAR, AmberCity_EventScript_ExplainRoar
 	msgbox AmberCity_Text_WildPokemonRunAmok, MSGBOX_DEFAULT
 	giveitem ITEM_TM05
-	setflag FLAG_RECEIVED_TM05
+	setflag FLAG_RECEIVED_TM_ROAR
 	waitfanfare
 	goto AmberCity_EventScript_ExplainRoar
 	end
@@ -199,20 +199,20 @@ AmberCity_Text_BikePrices:
 
 
 @AmberCity_EventScript_JaceTrigger::
-@	goto_if_unset FLAG_RECEIVED_HM06, AmberCity_EventScript_JaceEncounter
+@	goto_if_unset FLAG_RECEIVED_HM_ROCK_SMASH, AmberCity_EventScript_JaceEncounter
 @	end
 
 AmberCity_EventScript_JaceEncounter::
 	lockall
 	clearflag FLAG_HIDE_JACE
 	playse SE_SLIDING_DOOR
-	setobjectxyperm LOCALID_JACE, 5, 12
+	setobjectxyperm LOCALID_JACE_AMBER, 5, 12
 	addobject LOCALID_JACE
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, AmberCity_Movement_PlayerBackOff
-	applymovement LOCALID_JACE, Common_Movement_WalkDown
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_AMBER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_Delay48
@@ -248,44 +248,44 @@ AmberCity_EventScript_JacePostBattle::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox AmberCity_Text_JacePostBattle, MSGBOX_DEFAULT
 	giveitem ITEM_HM06
 	msgbox AmberCity_Text_ExplainRockSmash, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkLeft
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkDown
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkDown
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkDown
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkDown
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
-	applymovement LOCALID_JACE, Common_Movement_WalkDown
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkDown
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_AMBER, Common_Movement_WalkRight
 	waitmovement 0
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_AMBER
 	@setflag FLAG_RECEIVED_HM06
 	setvar VAR_JACE_STATE, 1
 	savebgm MUS_DUMMY

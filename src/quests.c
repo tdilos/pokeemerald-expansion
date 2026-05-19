@@ -178,7 +178,7 @@ static void ResetCursorToTop(s16 *data);
 static void QuestMenu_RemoveScrollIndicatorArrowPair(void);
 static void EnterSubquestModeAndCleanUp(u8 taskId, s16 *data, s32 input);
 static void ChangeModeAndCleanUp(u8 taskId);
-static void ToggleAlphaModeAndCleanUp(u8 taskId);
+//static void ToggleAlphaModeAndCleanUp(u8 taskId);
 static void ToggleFavoriteAndCleanUp(u8 taskId, u8 selectedQuestId);
 static bool8 CheckSelectedIsCancel(u8 selectedQuestId);
 static void ReturnFromSubquestAndCleanUp(u8 taskId);
@@ -202,9 +202,11 @@ static void Task_QuestMenuTurnOff2(u8 taskId);
 
 // Tiles, palettes and tilemaps for the Quest Menu
 static const u32 sQuestMenuTiles[] =
-        INCBIN_U32("graphics/quest_menu/menu.4bpp.lz");
-static const u32 sQuestMenuBgPals[] =
-        INCBIN_U32("graphics/quest_menu/menu.gbapal.lz");
+        //INCBIN_U32("graphics/quest_menu/menu.4bpp.lz");
+        INCBIN_U32("graphics/quest_menu/menu.4bpp.smol");
+static const u16 sQuestMenuBgPals[] =
+        //INCBIN_U32("graphics/quest_menu/menu.gbapal.lz");
+        INCBIN_U16("graphics/quest_menu/menu.gbapal");
 static const u32 sQuestMenuTilemap[] =
         INCBIN_U32("graphics/quest_menu/menu.bin.lz");
 
@@ -1305,12 +1307,14 @@ static bool8 LoadGraphics(void)
 		case 1:
 			if (FreeTempTileDataBuffersIfPossible() != TRUE)
 			{
-				LZDecompressWram(sQuestMenuTilemap, sBg1TilemapBuffer);
+				//LZDecompressWram(sQuestMenuTilemap, sBg1TilemapBuffer);
+				DecompressDataWithHeaderVram(sQuestMenuTilemap, sBg1TilemapBuffer);
 				sStateDataPtr->data[0]++;
 			}
 			break;
 		case 2:
-			LoadCompressedPalette(sQuestMenuBgPals, 0x00, 0x60);
+			//LoadCompressedPalette(sQuestMenuBgPals, 0x00, 0x60);
+			LoadPalette(sQuestMenuBgPals, 0x00, 0x60);
 			sStateDataPtr->data[0]++;
 			break;
 		case 3:
@@ -2338,7 +2342,8 @@ void DetermineSpriteType(s32 questId)
 static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 {
 	u8 *ptr = &sItemMenuIconSpriteIds[10];
-	u8 spriteId = 0xFF;
+	//u8 spriteId = 0xFF;
+	u8 spriteId = 0;
 
 	if (ptr[idx] == 0xFF)
 	{
@@ -2733,7 +2738,7 @@ void ChangeModeAndCleanUp(u8 taskId)
 		Task_QuestMenuCleanUp(taskId);
 	}
 }
-void ToggleAlphaModeAndCleanUp(u8 taskId)
+/*void ToggleAlphaModeAndCleanUp(u8 taskId)
 {
 	if (!IsSubquestMode())
 	{
@@ -2741,7 +2746,7 @@ void ToggleAlphaModeAndCleanUp(u8 taskId)
 		sStateDataPtr->filterMode = ManageMode(ALPHA);
 		Task_QuestMenuCleanUp(taskId);
 	}
-}
+}*/
 void ToggleFavoriteAndCleanUp(u8 taskId, u8 selectedQuestId)
 {
 	if (!IsSubquestMode()

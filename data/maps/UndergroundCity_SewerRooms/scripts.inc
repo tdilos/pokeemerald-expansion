@@ -78,7 +78,8 @@ UndergroundCity_SewerRooms_EventScript_RemoveItemBall:
 
 UndergroundCity_SewerRooms_EventScript_MelmetalBattle::
 	lockall
-	setflag FLAG_TEMP_DISABLE_BAG
+	@setflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 2
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	delay 60
@@ -132,7 +133,8 @@ UndergroundCity_SewerRooms_EventScript_MelmetalBattle::
 	call UndergroundCity_SewerRooms_EventScript_RemoveMelmetal3
 	playse SE_M_ACID_ARMOR
 	waitse
-	clearflag FLAG_TEMP_DISABLE_BAG
+	@clearflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 0
 	goto UndergroundCity_SewerRooms_EventScript_MewRescued
 	end
 

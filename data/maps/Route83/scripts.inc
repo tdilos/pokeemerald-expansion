@@ -1,6 +1,6 @@
-.set LOCALID_GRUNT, 4
+.set LOCALID_GRUNT_ROUTE83, 4
 .set LOCALID_WORKER, 5
-.set LOCALID_JACE, 6
+.set LOCALID_JACE_ROUTE83, 6
 
 Route83_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route83_OnTransition
@@ -122,9 +122,9 @@ Route83_EventScript_Robbery0::
 	@waitmovement 0
 	@setobjectxyperm LOCALID_GRUNT, 10, 0
 	@setobjectmovementtype LOCALID_GRUNT, MOVEMENT_TYPE_FACE_DOWN
-	addobject LOCALID_GRUNT
+	addobject LOCALID_GRUNT_ROUTE83
 	delay 16
-	applymovement LOCALID_GRUNT, Route83_Movement_GruntRunsAway
+	applymovement LOCALID_GRUNT_ROUTE83, Route83_Movement_GruntRunsAway
 	delay 60
 	playse SE_DOOR
 	@call Route83_EventScript_MoveWorkerToDoor
@@ -146,7 +146,7 @@ Route83_EventScript_Robbery0::
 	waitmovement 0
 	@applymovement LOCALID_WORKER, Common_Movement_FaceDown
 	@waitmovement 0
-	removeobject LOCALID_GRUNT
+	removeobject LOCALID_GRUNT_ROUTE83
 	goto Route83_EventScript_DuringRobbery
 	end
 
@@ -167,9 +167,9 @@ Route83_EventScript_Robbery1::
 	@waitmovement 0
 	@setobjectxyperm LOCALID_GRUNT, 10, 0
 	@setobjectmovementtype LOCALID_GRUNT, MOVEMENT_TYPE_FACE_DOWN
-	addobject LOCALID_GRUNT
+	addobject LOCALID_GRUNT_ROUTE83
 	delay 16
-	applymovement LOCALID_GRUNT, Route83_Movement_GruntRunsAway
+	applymovement LOCALID_GRUNT_ROUTE83, Route83_Movement_GruntRunsAway
 	delay 60
 	playse SE_DOOR
 	@call Route83_EventScript_MoveWorkerToDoor
@@ -309,13 +309,13 @@ Route83_EventScript_JaceTrigger1::
 	goto_if_unset FLAG_DEFEATED_AMBER_GYM, Route83_EventScript_SkipJaceTrigger
 	@goto_if_unset FLAG_BATTLED_JACE_ROUTE_83, Route83_EventScript_JaceEncounter
 	@goto_if_unset FLAG_RECEIVED_POKEBLOCK_CASE, Route83_EventScript_JaceEncounter
-	@addobject LOCALID_JACE
+	@addobject LOCALID_JACE_ROUTE83
 	playse SE_PIN
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_FaceRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_Delay48
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_Delay48
 	waitmovement 0
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
@@ -330,13 +330,13 @@ Route83_EventScript_JaceTrigger2::
 	goto_if_unset FLAG_DEFEATED_AMBER_GYM, Route83_EventScript_SkipJaceTrigger
 	@goto_if_unset FLAG_BATTLED_JACE_ROUTE_83, Route83_EventScript_JaceEncounter
 	@goto_if_unset FLAG_RECEIVED_POKEBLOCK_CASE, Route83_EventScript_JaceEncounter
-	@addobject LOCALID_JACE
+	@addobject LOCALID_JACE_ROUTE83
 	playse SE_PIN
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_FaceRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_Delay48
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_Delay48
 	waitmovement 0
 	delay 30
 	goto Route83_EventScript_JaceEncounter
@@ -347,13 +347,13 @@ Route83_EventScript_JaceTrigger3::
 	goto_if_unset FLAG_DEFEATED_AMBER_GYM, Route83_EventScript_SkipJaceTrigger
 	@goto_if_unset FLAG_BATTLED_JACE_ROUTE_83, Route83_EventScript_JaceEncounter
 	@goto_if_unset FLAG_RECEIVED_POKEBLOCK_CASE, Route83_EventScript_JaceEncounter
-	@addobject LOCALID_JACE
+	@addobject LOCALID_JACE_ROUTE83
 	playse SE_PIN
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_FaceRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_Delay48
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_Delay48
 	waitmovement 0
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
@@ -394,20 +394,20 @@ Route83_EventScript_StartJaceBattlePopplio::
 
 Route83_EventScript_JacePostBattle::
 	@playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox Route83_Text_JacePostBattle, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_ROUTE83, Common_Movement_FaceRight
 	waitmovement 0
 	delay 30
 	@msgbox Route83_Text_JacePostBattle2, MSGBOX_DEFAULT
 	@closemessage
-	@applymovement LOCALID_JACE, Common_Movement_WalkRight
+	@applymovement LOCALID_JACE_ROUTE83, Common_Movement_WalkRight
 	@waitmovement 0
 	@delay 40
 	@giveitem ITEM_POKEBLOCK_CASE
@@ -415,12 +415,12 @@ Route83_EventScript_JacePostBattle::
 
 	msgbox Route83_Text_JacePostBattle3, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Route83_Movement_JaceLeaves
+	applymovement LOCALID_JACE_ROUTE83, Route83_Movement_JaceLeaves
 	waitmovement 0
 	@setflag FLAG_BATTLED_JACE_ROUTE_83
 	@setflag FLAG_RECEIVED_POKEBLOCK_CASE
 	setflag FLAG_HIDE_JACE
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_ROUTE83
 	setvar VAR_JACE_STATE, 2
 	setflag FLAG_HIDE_JACE
 	savebgm MUS_DUMMY

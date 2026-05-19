@@ -98,8 +98,8 @@ CinerousTower_EventScript_MultiTest::
 	@goto_if_eq CinerousTower_EventScript_MultiTestEnd
 	@setwildbattle SPECIES_HOUNDEVIL, 26
 	setwildbattle SPECIES_HOUNDEVIL, 26, ITEM_KINGS_ROCK, SPECIES_HOUNDEVIL, 26, ITEM_KINGS_ROCK
-	@multi_wild TRAINER_WALLACE, TRAINER_BACK_PIC_MAY
-	multi_wild TRAINER_VIOLET_CINEROUS_TOWN_TEPIG, TRAINER_BACK_PIC_MAY
+	@multi_wild TRAINER_VIOLET_CINEROUS_TOWN_TEPIG, TRAINER_BACK_PIC_MAY
+	multi_wild TRAINER_VIOLET_CINEROUS_TOWN_TEPIG
 	@specialvar VAR_RESULT, B_OUTCOME_LOST
 	@goto_if_eq CinerousTower_EventScript_MultiTestLost
 	end
@@ -335,7 +335,8 @@ CinerousTower_Exterior_EventScript_FirstHoundoomEncounter1::
 	waitmoncry
 	@setwildbattle SPECIES_HOUNDOOM, 20, ITEM_NONE, SPECIES_HOUNDOOM, 20, ITEM_NONE
 	@dowildbattle
-	setflag FLAG_TEMP_DISABLE_BAG
+	@setflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 2
 	@choose_mons
 	special SavePlayerParty
 	setwildbattle SPECIES_HOUNDOOM, 20, ITEM_NONE, SPECIES_HOUNDOOM, 20, ITEM_NONE
@@ -344,7 +345,8 @@ CinerousTower_Exterior_EventScript_FirstHoundoomEncounter1::
 	@call_if_eq VAR_STARTER_MON, 2, CinerousTower_Exterior_EventScript_SetOPCPopplio
 	call CinerousTower_Exterior_EventScript_OPCBattleSetup
 	@special HealPlayerParty
-	clearflag FLAG_TEMP_DISABLE_BAG
+	@clearflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 0
 	special LoadPlayerParty
 	special HealPlayerParty
 	setobjectxyperm LOCALID_RIVAL, 32, 26
@@ -378,13 +380,15 @@ CinerousTower_Exterior_EventScript_FirstHoundoomEncounter2::
 	waitmoncry
 	@setwildbattle SPECIES_HOUNDOOM, 20, ITEM_NONE, SPECIES_HOUNDOOM, 20, ITEM_NONE
 	@dowildbattle
-	setflag FLAG_TEMP_DISABLE_BAG
+	@setflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 2
 	@choose_mons
 	special SavePlayerParty
 	setwildbattle SPECIES_HOUNDOOM, 20, ITEM_NONE, SPECIES_HOUNDOOM, 20, ITEM_NONE
 	call CinerousTower_Exterior_EventScript_OPCBattleSetup
 	@special HealPlayerParty
-	clearflag FLAG_TEMP_DISABLE_BAG
+	@clearflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 0
 	special LoadPlayerParty
 	special HealPlayerParty
 	setobjectxyperm LOCALID_RIVAL, 33, 26
@@ -453,12 +457,14 @@ CinerousTower_Exterior_EventScript_SecondHoundoomEncounter::
 	waitmoncry
 	@setwildbattle SPECIES_HOUNDOOM, 22, ITEM_NONE, SPECIES_HOUNDOOM, 22, ITEM_NONE
 	@dowildbattle
-	setflag FLAG_TEMP_DISABLE_BAG
+	@setflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 2
 	@choose_mons
 	special SavePlayerParty
 	setwildbattle SPECIES_HOUNDOOM, 22, ITEM_NONE, SPECIES_HOUNDOOM, 22, ITEM_NONE
 	call CinerousTower_Exterior_EventScript_OPCBattleSetup
-	clearflag FLAG_TEMP_DISABLE_BAG
+	@clearflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 0
 	special LoadPlayerParty
 	special HealPlayerParty
 	setobjectxyperm LOCALID_RIVAL, 34, 20
@@ -578,12 +584,14 @@ CinerousTower_Exterior_EventScript_HoundevilEncounter::
 	waitmoncry
 	@setwildbattle SPECIES_HOUNDEVIL, 26, ITEM_KINGS_ROCK, SPECIES_HOUNDEVIL, 26, ITEM_KINGS_ROCK
 	@dowildbattle
-	setflag FLAG_TEMP_DISABLE_BAG
+	@setflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 2
 	@choose_mons
 	special SavePlayerParty
 	setwildbattle SPECIES_HOUNDEVIL, 26, ITEM_KINGS_ROCK, SPECIES_HOUNDEVIL, 26, ITEM_KINGS_ROCK
 	call CinerousTower_Exterior_EventScript_OPCBattleSetup
-	clearflag FLAG_TEMP_DISABLE_BAG
+	@clearflag FLAG_TEMP_DISABLE_BAG
+	setvar VAR_BAG_RESTRICTION, 0
 	special LoadPlayerParty
 	special HealPlayerParty
 	playse SE_FLEE
@@ -1058,33 +1066,33 @@ CinerousTower_Exterior_EventScript_SetOPCPopplio::
 
 
 CinerousTower_Exterior_EventScript_VioletChespin::
-	@multi_wild TRAINER_VIOLET_CINEROUS_TOWN_CHESPIN, TRAINER_BACK_PIC_MAY
-	multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VIOLET_CINEROUS_TOWN_CHESPIN, TRAINER_BACK_PIC_MAY
+	multi_wild TRAINER_VIOLET_CINEROUS_TOWN_CHESPIN
+	@multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VIOLET_CINEROUS_TOWN_CHESPIN, TRAINER_BACK_PIC_MAY
 	return
 
 CinerousTower_Exterior_EventScript_VioletTepig::
-	@multi_wild TRAINER_VIOLET_CINEROUS_TOWN_TEPIG, TRAINER_BACK_PIC_MAY
-	multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VIOLET_CINEROUS_TOWN_TEPIG, TRAINER_BACK_PIC_MAY
+	multi_wild TRAINER_VIOLET_CINEROUS_TOWN_TEPIG
+	@multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VIOLET_CINEROUS_TOWN_TEPIG, TRAINER_BACK_PIC_MAY
 	return
 
 CinerousTower_Exterior_EventScript_VioletPopplio::
-	@multi_wild TRAINER_VIOLET_CINEROUS_TOWN_POPPLIO, TRAINER_BACK_PIC_MAY
-	multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VIOLET_CINEROUS_TOWN_POPPLIO, TRAINER_BACK_PIC_MAY
+	multi_wild TRAINER_VIOLET_CINEROUS_TOWN_POPPLIO
+	@multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VIOLET_CINEROUS_TOWN_POPPLIO, TRAINER_BACK_PIC_MAY
 	return
 
 CinerousTower_Exterior_EventScript_VertChespin::
-	@multi_wild TRAINER_VERN_CINEROUS_TOWN_CHESPIN, TRAINER_BACK_PIC_BRENDAN
-	multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VERN_CINEROUS_TOWN_CHESPIN, TRAINER_BACK_PIC_BRENDAN
+	multi_wild TRAINER_VERT_CINEROUS_TOWN_CHESPIN
+	@multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VERT_CINEROUS_TOWN_CHESPIN, TRAINER_BACK_PIC_BRENDAN
 	return
 
 CinerousTower_Exterior_EventScript_VertTepig::
-	@multi_wild TRAINER_VERN_CINEROUS_TOWN_TEPIG, TRAINER_BACK_PIC_BRENDAN
-	multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VERN_CINEROUS_TOWN_TEPIG, TRAINER_BACK_PIC_BRENDAN
+	multi_wild TRAINER_VERT_CINEROUS_TOWN_TEPIG
+	@multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VERT_CINEROUS_TOWN_TEPIG, TRAINER_BACK_PIC_BRENDAN
 	return
 
 CinerousTower_Exterior_EventScript_VertPopplio::
-	@multi_wild TRAINER_VERN_CINEROUS_TOWN_POPPLIO, TRAINER_BACK_PIC_BRENDAN
-	multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VERN_CINEROUS_TOWN_POPPLIO, TRAINER_BACK_PIC_BRENDAN
+	multi_wild TRAINER_VERT_CINEROUS_TOWN_POPPLIO
+	@multi_do_fixed MULTI_BATTLE_2_VS_WILD, TRAINER_VERT_CINEROUS_TOWN_POPPLIO, TRAINER_BACK_PIC_BRENDAN
 	@specialvar VAR_RESULT, B_OUTCOME_LOST
 	@goto_if_eq CinerousTower_EventScript_MultiTestLost
 	return

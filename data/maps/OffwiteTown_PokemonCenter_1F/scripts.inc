@@ -9,8 +9,8 @@ OffwiteTown_PokemonCenter_1F_MapScripts::
 
 OffwiteTown_PokemonCenter_OnTransition:
 	setrespawn HEAL_LOCATION_OFFWITE_TOWN
-	goto_if_set FLAG_RECEIVED_HM05, OffwiteTown_PokemonCenter_EventScript_HideMay
-	goto_if_unset FLAG_RECEIVED_HM04, OffwiteTown_PokemonCenter_EventScript_MayNotHereYet
+	goto_if_set FLAG_RECEIVED_HM_FLASH, OffwiteTown_PokemonCenter_EventScript_HideMay
+	goto_if_unset FLAG_RECEIVED_HM_STRENGTH, OffwiteTown_PokemonCenter_EventScript_MayNotHereYet
 	clearflag FLAG_HIDE_MAY
 OffwiteTown_PokemonCenter_EventScript_MayNotHereYet:
 	end
@@ -40,7 +40,7 @@ OffwiteTown_PokemonCenter_EventScript_MayPokedexCheck::
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MAY
 	setflag FLAG_HIDE_MAY
-	setflag FLAG_RECEIVED_HM05
+	setflag FLAG_RECEIVED_HM_FLASH
 	fadescreen FADE_FROM_BLACK
 	release
 	end

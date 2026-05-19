@@ -192,7 +192,7 @@ static bool8 MapLdr_Credits(void);
 static void CameraCB_CreditsPan(struct CameraObject *camera);
 static void Task_OvwldCredits_FadeOut(u8 taskId);
 static void Task_OvwldCredits_WaitFade(u8 taskId);
-static const u8 sMapsecToRegion[];
+//static const u8 sMapsecToRegion[];
 
 static void *sUnusedOverworldCallback;
 static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
@@ -683,15 +683,14 @@ static void LoadCurrentMapData(void)
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
     gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
-	gMapHeader.region = sMapsecToRegion[gMapHeader.regionMapSectionId];
+	//gMapHeader.region = sMapsecToRegion[gMapHeader.regionMapSectionId];
 }
 
 static void LoadSaveblockMapHeader(void)
 {
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gMapHeader.mapLayout = GetMapLayout(gSaveBlock1Ptr->mapLayoutId);
-    gMapHeader.mapLayout = GetMapLayout();
-	gMapHeader.region = sMapsecToRegion[gMapHeader.regionMapSectionId];
+	//gMapHeader.region = sMapsecToRegion[gMapHeader.regionMapSectionId];
 }
 
 /*static const u8 sMapsecToRegion[] = {

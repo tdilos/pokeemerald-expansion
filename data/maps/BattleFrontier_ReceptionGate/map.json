@@ -12,7 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_FRONTIER_RECEPTION_GREETER",
@@ -56,6 +56,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_FRONTIER_RECEPTION_SCOTT",
       "graphics_id": "OBJ_EVENT_GFX_RED",
       "x": 4,
       "y": 5,
@@ -98,10 +99,6 @@
       "dest_warp_id": "9"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

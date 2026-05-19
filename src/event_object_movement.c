@@ -549,7 +549,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     //{gObjectEventPal_QuintyPlump,           OBJ_EVENT_PAL_TAG_QUINTY_PLUMP},
     //{gObjectEventPal_QuintyPlumpReflection, OBJ_EVENT_PAL_TAG_QUINTY_PLUMP_REFLECTION},
 	{gObjectEventPal_Vert,                  OBJ_EVENT_PAL_TAG_VERT},
-    {gObjectEventPal_VernReflection,        OBJ_EVENT_PAL_TAG_VERT_REFLECTION},
+    {gObjectEventPal_VertReflection,        OBJ_EVENT_PAL_TAG_VERT_REFLECTION},
     {gObjectEventPal_Truck,                 OBJ_EVENT_PAL_TAG_TRUCK},
     {gObjectEventPal_Vigoroth,              OBJ_EVENT_PAL_TAG_VIGOROTH},
     {gObjectEventPal_EnemyZigzagoon,        OBJ_EVENT_PAL_TAG_ZIGZAGOON},
@@ -571,6 +571,16 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+	
+    {gObjectEventPal_NpcBlue,               OBJ_EVENT_PAL_TAG_NPC_BLUE},
+    {gObjectEventPal_NpcPink,               OBJ_EVENT_PAL_TAG_NPC_PINK},
+    {gObjectEventPal_NpcGreen,              OBJ_EVENT_PAL_TAG_NPC_GREEN},
+    {gObjectEventPal_NpcWhite,              OBJ_EVENT_PAL_TAG_NPC_WHITE},
+    {gObjectEventPal_NpcBlueReflection,     OBJ_EVENT_PAL_TAG_NPC_BLUE_REFLECTION},
+    {gObjectEventPal_NpcPinkReflection,     OBJ_EVENT_PAL_TAG_NPC_PINK_REFLECTION},
+    {gObjectEventPal_NpcGreenReflection,    OBJ_EVENT_PAL_TAG_NPC_GREEN_REFLECTION},
+    {gObjectEventPal_NpcWhiteReflection,    OBJ_EVENT_PAL_TAG_NPC_WHITE_REFLECTION},
+	
 #if IS_FRLG
     {gObjectEventPal_PlayerFrlg,            OBJ_EVENT_PAL_TAG_PLAYER_RED},
     {gObjectEventPal_PlayerReflectionFrlg,  OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION},
@@ -641,10 +651,10 @@ static const u16 sReflectionPaletteTags_Brendan[] = {
     OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
     OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
     OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,*/
-	OBJ_EVENT_PAL_TAG_VERN_REFLECTION,
-    OBJ_EVENT_PAL_TAG_VERN_REFLECTION,
-    OBJ_EVENT_PAL_TAG_VERN_REFLECTION,
-    OBJ_EVENT_PAL_TAG_VERN_REFLECTION,
+	OBJ_EVENT_PAL_TAG_VERT_REFLECTION,
+    OBJ_EVENT_PAL_TAG_VERT_REFLECTION,
+    OBJ_EVENT_PAL_TAG_VERT_REFLECTION,
+    OBJ_EVENT_PAL_TAG_VERT_REFLECTION,
 };
 
 static const u16 sReflectionPaletteTags_May[] = {
@@ -668,7 +678,7 @@ static const u16 sReflectionPaletteTags_PlayerUnderwater[] = {
 static const struct PairedPalettes sPlayerReflectionPaletteSets[] = {
     /*{OBJ_EVENT_PAL_TAG_BRENDAN,           sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_MAY,               sReflectionPaletteTags_May},*/
-	{OBJ_EVENT_PAL_TAG_VERN,           sReflectionPaletteTags_Brendan},
+	{OBJ_EVENT_PAL_TAG_VERT,           sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_VIOLET,               sReflectionPaletteTags_May},
     {OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER, sReflectionPaletteTags_PlayerUnderwater},
     {OBJ_EVENT_PAL_TAG_NONE,              NULL},
@@ -759,7 +769,7 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     //{OBJ_EVENT_PAL_TAG_BRENDAN,          sReflectionPaletteTags_Brendan},
     //{OBJ_EVENT_PAL_TAG_MAY,              sReflectionPaletteTags_May},
     //{OBJ_EVENT_PAL_TAG_QUINTY_PLUMP,     sReflectionPaletteTags_QuintyPlump},
-	{OBJ_EVENT_PAL_TAG_VERN,          sReflectionPaletteTags_Brendan},
+	{OBJ_EVENT_PAL_TAG_VERT,          sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_VIOLET,              sReflectionPaletteTags_May},
     {OBJ_EVENT_PAL_TAG_TRUCK,            sReflectionPaletteTags_Truck},
     {OBJ_EVENT_PAL_TAG_VIGOROTH,         sReflectionPaletteTags_VigorothMover},
@@ -778,8 +788,8 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
 static const u16 sObjectPaletteTags0[] = {
     //[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_BRENDAN,
     //[PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
-	[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_VERN,
-    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_VERN_REFLECTION,
+	[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_VERT,
+    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_VERT_REFLECTION,
     //[PALSLOT_NPC_1]             = OBJ_EVENT_PAL_TAG_NPC_1,
     //[PALSLOT_NPC_2]             = OBJ_EVENT_PAL_TAG_NPC_2,
     //[PALSLOT_NPC_3]             = OBJ_EVENT_PAL_TAG_NPC_3,
@@ -797,8 +807,8 @@ static const u16 sObjectPaletteTags0[] = {
 static const u16 sObjectPaletteTags1[] = {
     //[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_BRENDAN,
     //[PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
-	[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_VERN,
-    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_VERN_REFLECTION,
+	[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_VERT,
+    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_VERT_REFLECTION,
     //[PALSLOT_NPC_1]             = OBJ_EVENT_PAL_TAG_NPC_1,
     //[PALSLOT_NPC_2]             = OBJ_EVENT_PAL_TAG_NPC_2,
     //[PALSLOT_NPC_3]             = OBJ_EVENT_PAL_TAG_NPC_3,
@@ -816,8 +826,8 @@ static const u16 sObjectPaletteTags1[] = {
 static const u16 sObjectPaletteTags2[] = {
     //[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_BRENDAN,
     //[PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
-	[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_VERN,
-    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_VERN_REFLECTION,
+	[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_VERT,
+    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_VERT_REFLECTION,
     //[PALSLOT_NPC_1]             = OBJ_EVENT_PAL_TAG_NPC_1,
     //[PALSLOT_NPC_2]             = OBJ_EVENT_PAL_TAG_NPC_2,
     //[PALSLOT_NPC_3]             = OBJ_EVENT_PAL_TAG_NPC_3,
@@ -835,8 +845,8 @@ static const u16 sObjectPaletteTags2[] = {
 static const u16 sObjectPaletteTags3[] = {
     //[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_BRENDAN,
     //[PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION,
-	[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_VERN,
-    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_VERN_REFLECTION,
+	[PALSLOT_PLAYER]            = OBJ_EVENT_PAL_TAG_VERT,
+    [PALSLOT_PLAYER_REFLECTION] = OBJ_EVENT_PAL_TAG_VERT_REFLECTION,
     //[PALSLOT_NPC_1]             = OBJ_EVENT_PAL_TAG_NPC_1,
     //[PALSLOT_NPC_2]             = OBJ_EVENT_PAL_TAG_NPC_2,
     //[PALSLOT_NPC_3]             = OBJ_EVENT_PAL_TAG_NPC_3,
@@ -2731,18 +2741,18 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
         switch (gMapHeader.regionMapSectionId)
         {
         case MAPSEC_RUSTBORO_CITY:
-        case MAPSEC_PEWTER_CITY:
+        //case MAPSEC_PEWTER_CITY:
             multi = TYPE_ROCK;
             break;
         case MAPSEC_DEWFORD_TOWN:
             multi = TYPE_FIGHTING;
             break;
         case MAPSEC_MAUVILLE_CITY:
-        case MAPSEC_VERMILION_CITY:
+        //case MAPSEC_VERMILION_CITY:
             multi = TYPE_ELECTRIC;
             break;
         case MAPSEC_LAVARIDGE_TOWN:
-        case MAPSEC_CINNABAR_ISLAND:
+        //case MAPSEC_CINNABAR_ISLAND:
             multi = TYPE_FIRE;
             break;
         case MAPSEC_PETALBURG_CITY:
@@ -2752,21 +2762,39 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
             multi = TYPE_FLYING;
             break;
         case MAPSEC_MOSSDEEP_CITY:
-        case MAPSEC_SAFFRON_CITY:
+        //case MAPSEC_SAFFRON_CITY:
             multi = TYPE_PSYCHIC;
             break;
         case MAPSEC_SOOTOPOLIS_CITY:
-        case MAPSEC_CERULEAN_CITY:
+        //case MAPSEC_CERULEAN_CITY:
             multi = TYPE_WATER;
             break;
-        case MAPSEC_CELADON_CITY:
+        //case MAPSEC_CELADON_CITY:
+		case MAPSEC_COBALT_CITY:
             multi = TYPE_GRASS;
             break;
-        case MAPSEC_FUCHSIA_CITY:
+        //case MAPSEC_FUCHSIA_CITY:
+		case MAPSEC_WISTERIA_CITY:
             multi = TYPE_POISON;
             break;
-        case MAPSEC_VIRIDIAN_CITY:
+        //case MAPSEC_VIRIDIAN_CITY:
+        case MAPSEC_AMBER_CITY:
             multi = TYPE_GROUND;
+            break;
+        case MAPSEC_HAEWEN_TOWN:
+            multi = TYPE_DRAGON;
+            break;
+        case MAPSEC_RESEDA_TOWN:
+            multi = TYPE_BUG;
+            break;
+        case MAPSEC_MINDARO_CITY:
+            multi = TYPE_ICE;
+            break;
+        case MAPSEC_PITCHBLACK_CITY:
+            multi = TYPE_ECHO;
+            break;
+        case MAPSEC_MAROON_CITY:
+            multi = TYPE_STEEL;
             break;
         default:
             multi = NUMBER_OF_MON_TYPES;

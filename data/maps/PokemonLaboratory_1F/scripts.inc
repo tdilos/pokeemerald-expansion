@@ -1,4 +1,4 @@
-.set LOCALID_JACE, 4
+.set LOCALID_JACE_LAB0, 4
 
 PokemonLaboratory_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PokemonLaboratory_1F_OnTransition
@@ -22,12 +22,12 @@ PokemonLaboratory_1F_OnTransition:
 
 PokemonLaboratory_1F_EventScript_AddJace:
 	clearflag FLAG_HIDE_JACE
-	addobject LOCALID_JACE
+	addobject LOCALID_JACE_LAB0
 	return
 
 PokemonLaboratory_1F_EventScript_RemoveJace:
 	setflag FLAG_HIDE_JACE
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_LAB0
 	return
 
 
@@ -60,17 +60,17 @@ PokemonLaboratory_1F_EventScript_CutsceneTrigger::
 	waitmovement 0
 	delay 60
 	call PokemonLaboratory_1F_EventScript_RemoveJace
-	setobjectxyperm LOCALID_JACE, 10, 10
+	setobjectxyperm LOCALID_JACE_LAB0, 10, 10
 	clearflag FLAG_HIDE_JACE
-	addobject LOCALID_JACE
-	applymovement LOCALID_JACE, PokemonLaboratory_1F_Movement_JaceWalkToPlayer
+	addobject LOCALID_JACE_LAB0
+	applymovement LOCALID_JACE_LAB0, PokemonLaboratory_1F_Movement_JaceWalkToPlayer
 	waitmovement 0
 	delay 20
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox PokemonLaboratory_1F_Text_JaceGoodJob, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, PokemonLaboratory_1F_Movement_JaceWalkToStairs
+	applymovement LOCALID_JACE_LAB0, PokemonLaboratory_1F_Movement_JaceWalkToStairs
 	@waitmovement 0
 	delay 40
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp

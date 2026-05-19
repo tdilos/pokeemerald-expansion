@@ -112,17 +112,6 @@ static void Task_WhiteBarsFade(u8);
 static void Task_GridSquares(u8);
 static void Task_AngledWipes(u8);
 static void Task_Mugshot(u8);
-static void Task_Lisia(u8);
-static void Task_Ian(u8);
-static void Task_Sidney2(u8);
-static void Task_Petra(u8);
-static void Task_Norman(u8);
-static void Task_Mugshot(u8);
-static void Task_Sidney(u8);
-static void Task_Phoebe(u8);
-static void Task_Glacia(u8);
-static void Task_Drake(u8);
-static void Task_Champion(u8);
 static void Task_Aqua(u8);
 static void Task_Magma(u8);
 static void Task_Regice(u8);
@@ -395,12 +384,11 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ] = Task_FrontierCirclesCrossInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesAsymmetricSpiralInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesSymmetricSpiralInSeq,
-    [B_TRANSITION_MUGSHOT] = Task_Mugshot,
-    [B_TRANSITION_LISIA] = Task_Lisia,
-    [B_TRANSITION_IAN] = Task_Ian,
-    [B_TRANSITION_SIDNEY2] = Task_Sidney2,
-    [B_TRANSITION_PETRA] = Task_Petra,
-    [B_TRANSITION_NORMAN] = Task_Norman,
+    //[B_TRANSITION_LISIA] = Task_Lisia,
+    //[B_TRANSITION_IAN] = Task_Ian,
+    //[B_TRANSITION_SIDNEY2] = Task_Sidney2,
+    //[B_TRANSITION_PETRA] = Task_Petra,
+    //[B_TRANSITION_NORMAN] = Task_Norman,
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -945,12 +933,12 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOT_COLOR_COUNT] =
     [MUGSHOT_COLOR_GREEN]  = sMugshotPal_Green,
     [MUGSHOT_COLOR_PINK]   = sMugshotPal_Pink,
     [MUGSHOT_COLOR_BLUE]   = sMugshotPal_Blue,
-    [MUGSHOT_COLOR_YELLOW] = sMugshotPal_Yellow
-    [MUGSHOT_LISIA] = sMugshotPal_Lisia,
-    [MUGSHOT_IAN] = sMugshotPal_Ian,
-    [MUGSHOT_SIDNEY2] = sMugshotPal_Sidney2,
-    [MUGSHOT_PETRA] = sMugshotPal_Petra,
-    [MUGSHOT_NORMAN] = sMugshotPal_Norman
+    [MUGSHOT_COLOR_YELLOW] = sMugshotPal_Yellow,
+    [MUGSHOT_COLOR_LISIA]        = sMugshotPal_Lisia,
+    [MUGSHOT_COLOR_IAN]          = sMugshotPal_Ian,
+    [MUGSHOT_COLOR_SIDNEY2]      = sMugshotPal_Sidney2,
+    [MUGSHOT_COLOR_PETRA]        = sMugshotPal_Petra,
+    [MUGSHOT_COLOR_NORMAN]       = sMugshotPal_Norman
 };
 
 /*static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
@@ -2330,13 +2318,13 @@ static void VBlankCB_Wave(void)
 #define sDone        data[6]
 #define sSlideDir    data[7]
 
-static void Task_Mugshot(u8 taskId)
+/*static void Task_Mugshot(u8 taskId)
 {
     gTasks[taskId].tMugshotId = VarGet(VAR_MUGSHOT_ID);
     DoMugshotTransition(taskId);
 }
 
-/*static void Task_Lisia(u8 taskId)
+static void Task_Lisia(u8 taskId)
 {
     gTasks[taskId].tMugshotId = MUGSHOT_LISIA;
     DoMugshotTransition(taskId);
@@ -2396,7 +2384,7 @@ static void Task_Champion(u8 taskId)
     DoMugshotTransition(taskId);
 }*/
 
-static void DoMugshotTransition(u8 taskId)
+static void Task_Mugshot(u8 taskId)
 {
     while (sMugshot_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }

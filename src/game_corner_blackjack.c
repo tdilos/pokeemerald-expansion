@@ -207,7 +207,8 @@ struct BlackJack {
 };
 
 static EWRAM_DATA struct BlackJack *sBlackJack = NULL;
-static EWRAM_DATA u8 sTextWindowId = 1;
+//static EWRAM_DATA u8 sTextWindowId = 1;
+static EWRAM_DATA u8 sTextWindowId = 0;
 
 static void FadeToBJScreen(u8 taskId);
 static void InitBJScreen(void);
@@ -216,10 +217,10 @@ static void CreateCursorSprite(void);
 static void CreateOptions(void);
 static void AdjustCards(void);
 static void CreateFacedown(void);
-static void LoadHeartsSpriteSheet(void);
-static void LoadDiamondsSpriteSheet(void);
-static void LoadClubsSpriteSheet(void);
-static void LoadSpadesSpriteSheet(void);
+//static void LoadHeartsSpriteSheet(void);
+//static void LoadDiamondsSpriteSheet(void);
+//static void LoadClubsSpriteSheet(void);
+//static void LoadSpadesSpriteSheet(void);
 static void ShuffleCards(void);
 static void UpdateCards(void);
 static void SetCardSprite(u8 cardId, u8 cardNum, u8 cardIndex, u8 isPlayerCard);
@@ -314,13 +315,13 @@ static const u16 sCursorTiles_Pal[] = INCBIN_U16("graphics/blackjack/cursor.gbap
 static const u32 sPopup_Gfx[] = INCBIN_U32("graphics/blackjack/popup.4bpp.lz");
 
 static void ShowHelpBar(const u8 *str);
-static void ShowHit(const u8 *str);
+/*static void ShowHit(const u8 *str);
 static void ShowStand(const u8 *str);
 static void ShowDouble(const u8 *str);
 static void ShowInsurance(const u8 *str);
 static void ShowPlus(const u8 *str);
 static void ShowMinus(const u8 *str);
-static void ShowBet(const u8 *str);
+static void ShowBet(const u8 *str);*/
 static void SetCreditDigits(u16);
 static void SetPlayerDigits(u16);
 static void SetDealerDigits(u16);
@@ -1858,8 +1859,10 @@ static void CreateCreditSprites(void)
     for (i = 0; i < ARRAY_COUNT(sSpriteSheets_Interface) - 1; i++)  
     {
         struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheets_Interface[i].data, gDecompressionBuffer);
-        s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheets_Interface[i].data, gDecompressionBuffer);
+        //s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheets_Interface[i].data, NULL);
+		s.data = buffer;
         s.size = sSpriteSheets_Interface[i].size;
         s.tag = sSpriteSheets_Interface[i].tag;
         LoadSpriteSheet(&s);
@@ -1889,8 +1892,10 @@ static void CreatePlayerSprites(void)
     for (i = 0; i < ARRAY_COUNT(sSpriteSheets_PlayerInterface) - 1; i++)  
     {
         struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheets_PlayerInterface[i].data, gDecompressionBuffer);
-        s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheets_PlayerInterface[i].data, gDecompressionBuffer);
+        //s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheets_PlayerInterface[i].data, NULL);
+		s.data = buffer;
         s.size = sSpriteSheets_PlayerInterface[i].size;
         s.tag = sSpriteSheets_PlayerInterface[i].tag;
         LoadSpriteSheet(&s);
@@ -1909,8 +1914,10 @@ static void CreateDealerSprites(void)
     for (i = 0; i < ARRAY_COUNT(sSpriteSheets_DealerInterface)  - 1; i++)  
     {
         struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheets_DealerInterface[i].data, gDecompressionBuffer);
-        s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheets_DealerInterface[i].data, gDecompressionBuffer);
+        //s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheets_DealerInterface[i].data, NULL);
+		s.data = buffer;
         s.size = sSpriteSheets_DealerInterface[i].size;
         s.tag = sSpriteSheets_DealerInterface[i].tag;
         LoadSpriteSheet(&s);
@@ -2881,8 +2888,8 @@ static void AButton(void)
 	u8 playerCard1Points;
 	u8 playerCard2Points;
 	u8 dealerCard1Points;
-	u8 taskId1;
-	u8 taskId2;
+	//u8 taskId1;
+	//u8 taskId2;
 	
 	if (VarGet(VAR_OPTIONS_BJ) != 4)
 	{
@@ -3100,7 +3107,7 @@ static void AButton(void)
 
 static void MoveCursor(int direction)
 {
-    struct Sprite *cursorSprite = &gSprites[sBlackJack->cursorSpriteId];
+    //struct Sprite *cursorSprite = &gSprites[sBlackJack->cursorSpriteId];
     int curY;
     int destY;
 	curY = gSprites[sBlackJack->cursorSpriteId].y;
@@ -3177,7 +3184,7 @@ static void UpdateCards(void)
 
 static void SetCardSprite(u8 cardId, u8 cardNum, u8 cardIndex, u8 isPlayerCard)
 {
-    unsigned int tileNum = cardNum % 13;
+    //unsigned int tileNum = cardNum % 13;
     s16 x = cardPositions[cardIndex].x;
     s16 y = cardPositions[cardIndex].y;
     u8 subpriority = cardPositions[cardIndex].priority;
@@ -3243,8 +3250,10 @@ static void SetCardSprite(u8 cardId, u8 cardNum, u8 cardIndex, u8 isPlayerCard)
         default: return; // Invalid card number
     }
 
-    LZ77UnCompWram(sheet->data, gDecompressionBuffer);
-	spriteSheet.data = gDecompressionBuffer;
+    //LZ77UnCompWram(sheet->data, gDecompressionBuffer);
+	//spriteSheet.data = gDecompressionBuffer;
+	void *buffer = malloc_and_decompress(sheet->data, NULL);
+	spriteSheet.data = buffer;
 	spriteSheet.size = sheet->size;
 	spriteSheet.tag = sheet->tag;
     LoadSpriteSheet(&spriteSheet);
@@ -3262,7 +3271,7 @@ static void SetCardSprite(u8 cardId, u8 cardNum, u8 cardIndex, u8 isPlayerCard)
     }
 }
 
-static void LoadHeartsSpriteSheet(void)
+/*static void LoadHeartsSpriteSheet(void)
 {
     struct SpriteSheet s;
     LZ77UnCompWram(sSpriteSheet_Cards_Hearts_A.data, gDecompressionBuffer);
@@ -3270,13 +3279,15 @@ static void LoadHeartsSpriteSheet(void)
     s.size = sSpriteSheet_Cards_Hearts_A.size;
     s.tag = GFXTAG_CARDS_HEARTS_A;
     LoadSpriteSheet(&s);
-}
+}*/
 
 static void CreateFacedown(void)
 {
 	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Facedown.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Facedown.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Facedown.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Facedown.size;
 		s.tag = GFXTAG_FACEDOWN;
 		LoadSpriteSheet(&s);
@@ -3289,8 +3300,10 @@ static void CreateFacedown(void)
 static void CreateCursorSprite(void)
 {	
 	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Cursor.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Cursor.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Cursor.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Cursor.size;
 		s.tag = GFXTAG_CURSOR;
 		LoadSpriteSheet(&s);
@@ -3302,8 +3315,10 @@ static void CreateCursorSprite(void)
 static void CreatePopUpSprite(void)
 {
 	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Popup.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Popup.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Popup.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Popup.size;
 		s.tag = GFXTAG_POPUP;
 		LoadSpriteSheet(&s);
@@ -3315,8 +3330,10 @@ static void CreatePopUpSprite(void)
 static void CreateOptions(void)
 {
 		struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Option1.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Option1.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Option1.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Option1.size;
 		s.tag = GFXTAG_OPTION1;
 		LoadSpriteSheet(&s);
@@ -3324,8 +3341,10 @@ static void CreateOptions(void)
 	sBlackJack->option1SpriteId = CreateSprite(&sSpriteTemplate_Option1, 219, 58, 9);
     gSprites[sBlackJack->option1SpriteId].oam.priority = 2;
 	
-	    LZ77UnCompWram(sSpriteSheet_Option2.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+	    //LZ77UnCompWram(sSpriteSheet_Option2.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer2 = malloc_and_decompress(sSpriteSheet_Option2.data, NULL);
+		s.data = buffer2;
 		s.size = sSpriteSheet_Option2.size;
 		s.tag = GFXTAG_OPTION2;
 		LoadSpriteSheet(&s);
@@ -3333,8 +3352,10 @@ static void CreateOptions(void)
 	sBlackJack->option2SpriteId = CreateSprite(&sSpriteTemplate_Option2, 219, 74, 9);
     gSprites[sBlackJack->option2SpriteId].oam.priority = 2;
 	
-	    LZ77UnCompWram(sSpriteSheet_Option3.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+	    //LZ77UnCompWram(sSpriteSheet_Option3.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer3 = malloc_and_decompress(sSpriteSheet_Option3.data, NULL);
+		s.data = buffer3;
 		s.size = sSpriteSheet_Option3.size;
 		s.tag = GFXTAG_OPTION3;
 		LoadSpriteSheet(&s);

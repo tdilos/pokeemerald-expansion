@@ -649,8 +649,10 @@ static void CreateCreditSprites(void)
 	for (i = 0; i < ARRAY_COUNT(sSpriteSheets_Interface) - 1; i++)  
 		{
 			struct SpriteSheet s;
-			LZ77UnCompWram(sSpriteSheets_Interface[i].data, gDecompressionBuffer);
-			s.data = gDecompressionBuffer;
+			//LZ77UnCompWram(sSpriteSheets_Interface[i].data, gDecompressionBuffer);
+			//s.data = gDecompressionBuffer;
+			void *buffer = malloc_and_decompress(sSpriteSheets_Interface[i].data, NULL);
+			s.data = buffer;
 			s.size = sSpriteSheets_Interface[i].size;
 			s.tag = sSpriteSheets_Interface[i].tag;
 			LoadSpriteSheet(&s);
@@ -688,8 +690,10 @@ static void CreateCreditSprites(void)
 static void CreateCoins(void)
 {
 	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Coins.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Coins.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Coins.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Coins.size;
 		s.tag = GFX_COINS;
 		LoadSpriteSheet(&s);
@@ -755,7 +759,8 @@ void CB2_ShowVoltorbFlip(void)
     while (FreeTempTileDataBuffersIfPossible())
         ;
 	
-    LZDecompressWram(sVoltorbFlipTilemap, sVoltorbFlipTilemapPtr);
+    //LZDecompressWram(sVoltorbFlipTilemap, sVoltorbFlipTilemapPtr);
+	DecompressDataWithHeaderVram(sVoltorbFlipTilemap, sVoltorbFlipTilemapPtr);
     CopyBgTilemapBufferToVram(1);
     BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);

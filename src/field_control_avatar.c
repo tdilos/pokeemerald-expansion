@@ -241,6 +241,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     }
 
     if (input->tookStep && TryFindHiddenPokemon())
+		return TRUE;
 
     //if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
 	if (input->pressedSelectButton && UseRegisteredKeyItemOnField(0))
@@ -614,7 +615,7 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
     if (MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
         return EventScript_UseRockClimb;
 	if (MetatileBehavior_IsHeadbuttTree(metatileBehavior) == TRUE)
-        return EventScript_Headbutt;
+        return EventScript_UseHeadbutt;
 
     elevation = position->elevation;
     if (elevation == MapGridGetElevationAt(position->x, position->y))
@@ -1457,8 +1458,6 @@ void HandleMagnetizeMetal(u16 x, u16 y)
     int i;
     const struct CoordEvent * events = gMapHeader.events->coordEvents;
     int n = gMapHeader.events->coordEventCount;
-	int j;
-	int graphicsId;
 	
     if (MapGridGetMetatileBehaviorAt(x, y) == MB_STRENGTH_BUTTON)
     {

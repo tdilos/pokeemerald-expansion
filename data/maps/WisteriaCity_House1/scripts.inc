@@ -6,7 +6,7 @@ WisteriaCity_House1_MapScripts::
 WisteriaCity_House1_EventScript_DiveNPC::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_HM08, WisteriaCity_House1_EventScript_PostHM
+	goto_if_set FLAG_RECEIVED_HM_DIVE, WisteriaCity_House1_EventScript_PostHM
 	msgbox WisteriaCity_House1_Text_LikeToFish, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, WisteriaCity_House1_EventScript_GiveDive
 	msgbox WisteriaCity_House1_Text_Figures, MSGBOX_DEFAULT
@@ -20,7 +20,7 @@ WisteriaCity_House1_EventScript_GiveDive::
 	giveitem ITEM_HM08
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 	msgbox WisteriaCity_House1_Text_ExplainDive, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_HM08
+	setflag FLAG_RECEIVED_HM_DIVE
 	applymovement LOCALID_FISHERMAN, Common_Movement_FaceRight
 	waitmovement 0
 	release

@@ -28,11 +28,11 @@ Route88_BerryHouse_Text_LetFlowersFillTheWorld:
 Route88_BerryHouse_EventScript_Farmer::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_HM01, Route88_BerryHouse_EventScript_PostHM
+	goto_if_set FLAG_RECEIVED_HM_CUT, Route88_BerryHouse_EventScript_PostHM
 	msgbox Route88_BerryHouse_Text_IClearedThisLand, MSGBOX_DEFAULT
 	giveitem ITEM_HM01
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_HM01
+	setflag FLAG_RECEIVED_HM_CUT
 	msgbox Route88_BerryHouse_Text_ExplainCut, MSGBOX_DEFAULT
 	release
 	end

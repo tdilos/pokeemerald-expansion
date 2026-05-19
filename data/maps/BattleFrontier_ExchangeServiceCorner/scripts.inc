@@ -356,9 +356,9 @@ BattleFrontier_ExchangeServiceCorner_EventScript_PurchaseHoldItem::
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
-BattleFrontier_ExchangeServiceCorner_EventScript_Leftovers::
-	setitemandprice ITEM_LEFTOVERS, 48
-	goto BattleFrontier_ExchangeServiceCorner_EventScript_PurchaseHoldItem
+@BattleFrontier_ExchangeServiceCorner_EventScript_Leftovers::
+@	setitemandprice ITEM_LEFTOVERS, 48
+@	goto BattleFrontier_ExchangeServiceCorner_EventScript_PurchaseHoldItem
 
 BattleFrontier_ExchangeServiceCorner_EventScript_WhiteHerb::
 	setitemandprice ITEM_WHITE_HERB, 48
@@ -744,6 +744,10 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmEjectButton:
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmTerrainExtender:
 	.string "You've chosen the TERRAIN EXTENDER.\n"
+	.string "Is that correct?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmLeftovers:
+	.string "You've chosen the LEFTOVERS.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmFlameOrb:

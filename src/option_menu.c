@@ -71,8 +71,8 @@ static u8 Sound_ProcessInput(u8 selection);
 static void Sound_DrawChoices(u8 selection);
 static u8 FrameType_ProcessInput(u8 selection);
 static void FrameType_DrawChoices(u8 selection);
-static u8 ButtonMode_ProcessInput(u8 selection);
-static void ButtonMode_DrawChoices(u8 selection);
+//static u8 ButtonMode_ProcessInput(u8 selection);
+//static void ButtonMode_DrawChoices(u8 selection);
 static u8 BattleFlow_ProcessInput(u8 selection);
 static void BattleFlow_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
@@ -97,30 +97,28 @@ static const u8 gText_ButtonTypeNormal[]   = _("{COLOR GREEN}{SHADOW LIGHT_GREEN
 static const u8 gText_ButtonTypeLR[]       = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LR");
 static const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
 
+
+// Battle speed
+static const u8 gText_BattleFlow_1x[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}1x");
+static const u8 gText_BattleFlow_2x[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}2x");
+static const u8 gText_BattleFlow_3x[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}3x");
+static const u8 gText_BattleFlow_4x[]      = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}4x");
+
+
 static const u16 sOptionMenuText_Pal[] = INCBIN_U16("graphics/interface/option_menu_text.gbapal");
 // note: this is only used in the Japanese release
 static const u8 sEqualSignGfx[] = INCBIN_U8("graphics/interface/option_menu_equals_sign.4bpp");
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
-<<<<<<< Updated upstream
     [MENUITEM_TEXTSPEED]   = COMPOUND_STRING("TEXT SPEED"),
     [MENUITEM_BATTLESCENE] = COMPOUND_STRING("BATTLE SCENE"),
     [MENUITEM_BATTLESTYLE] = COMPOUND_STRING("BATTLE STYLE"),
     [MENUITEM_SOUND]       = COMPOUND_STRING("SOUND"),
-    [MENUITEM_BUTTONMODE]  = COMPOUND_STRING("BUTTON MODE"),
+    //[MENUITEM_BUTTONMODE]  = COMPOUND_STRING("BUTTON MODE"),
+    [MENUITEM_BATTLEFLOW]  = COMPOUND_STRING("BATTLE SPEED"),
     [MENUITEM_FRAMETYPE]   = COMPOUND_STRING("FRAME"),
     [MENUITEM_CANCEL]      = COMPOUND_STRING("CANCEL"),
-=======
-    [MENUITEM_TEXTSPEED]   = gText_TextSpeed,
-    [MENUITEM_BATTLESCENE] = gText_BattleScene,
-    [MENUITEM_BATTLESTYLE] = gText_BattleStyle,
-    [MENUITEM_BATTLEFLOW]  = gText_BattleFlow,
-    [MENUITEM_SOUND]       = gText_Sound,
-    //[MENUITEM_BUTTONMODE]  = gText_ButtonMode,
-    [MENUITEM_FRAMETYPE]   = gText_Frame,
-    [MENUITEM_CANCEL]      = gText_OptionMenuCancel,
->>>>>>> Stashed changes
 };
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
@@ -260,7 +258,6 @@ void CB2_InitOptionMenu(void)
         gMain.state++;
         break;
     case 10:
-    {
         u8 taskId = CreateTask(Task_OptionMenuFadeIn, 0);
 
         gTasks[taskId].tMenuSelection = 0;
@@ -270,6 +267,7 @@ void CB2_InitOptionMenu(void)
         gTasks[taskId].tBattleFlow = gSaveBlock2Ptr->optionsBattleFlow;
         gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
         //gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
+		gTasks[taskId].tBattleFlow = gSaveBlock2Ptr->optionsBattleFlow;
         gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
 
         TextSpeed_DrawChoices(gTasks[taskId].tTextSpeed);
@@ -278,13 +276,13 @@ void CB2_InitOptionMenu(void)
         BattleFlow_DrawChoices(gTasks[taskId].tBattleFlow);
         Sound_DrawChoices(gTasks[taskId].tSound);
         //ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
+		BattleFlow_DrawChoices(gTasks[taskId].tBattleFlow = gSaveBlock2Ptr->optionsBattleFlow);
         FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
         HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
 
         CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
         gMain.state++;
         break;
-    }
     case 11:
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         SetVBlankCallback(VBlankCB);
@@ -625,7 +623,7 @@ static void FrameType_DrawChoices(u8 selection)
     DrawOptionMenuChoice(text, 128, YPOS_FRAMETYPE, 1);
 }
 
-static u8 ButtonMode_ProcessInput(u8 selection)
+/*static u8 ButtonMode_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
     {
@@ -669,7 +667,7 @@ static void ButtonMode_DrawChoices(u8 selection)
     DrawOptionMenuChoice(gText_ButtonTypeLR, xLR, YPOS_BUTTONMODE, styles[1]);
 
     DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(FONT_NORMAL, gText_ButtonTypeLEqualsA, 198), YPOS_BUTTONMODE, styles[2]);
-}
+}*/
 
 static u8 BattleFlow_ProcessInput(u8 selection)
 {

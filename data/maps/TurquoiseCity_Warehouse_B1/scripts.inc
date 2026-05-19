@@ -1,14 +1,14 @@
-.set LOCALID_JACE, 6
+.set LOCALID_JACE_WAREHOUSE, 6
 .set LOCALID_LITTLEGIRL, 7
-.set LOCALID_BRENDAN, 5
+.set LOCALID_BRENDAN_WAREHOUSE, 5
 .set LOCALID_ZARTOSHT, 11
 .set LOCALID_GRUNT1, 3
 .set LOCALID_GRUNT2, 1
 .set LOCALID_GRUNT3, 4
 .set LOCALID_GRUNT4, 2
 .set LOCALID_GRUNT5, 12
-.set LOCALID_DEVON, 9
-.set LOCALID_MILO, 10
+.set LOCALID_DEVON_WAREHOUSE, 9
+.set LOCALID_MILO_WAREHOUSE, 10
 
 TurquoiseCity_Warehouse_B1_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, TurquoiseCity_Warehouse_B1_OnTransition
@@ -29,16 +29,16 @@ TurquoiseCity_Warehouse_B1_OnTransition:
 @	return
 
 TurquoiseCity_Warehouse_B1_EventScript_MoveJaceToBehindBeam::
-	setobjectxyperm LOCALID_JACE, 6, 13
-	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm LOCALID_JACE_WAREHOUSE, 6, 13
+	setobjectmovementtype LOCALID_JACE_WAREHOUSE, MOVEMENT_TYPE_FACE_LEFT
 	addobject LOCALID_JACE
 	return
 
 TurquoiseCity_Warehouse_B1_EventScript_MeetJaceAgain::
 	lockall
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	delay 60
@@ -53,17 +53,17 @@ TurquoiseCity_Warehouse_B1_EventScript_MeetJaceAgain::
 	applymovement LOCALID_LITTLEGIRL, Common_Movement_FaceDown
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceRight
 	waitmovement 0
 	delay 40
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceUp
 	waitmovement 0
 	delay 20
 	msgbox TurquoiseCity_Warehouse_B1_Text_LetsGoCheckItOut, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, TurquoiseCity_Warehouse_B1_Movement_JaceWalkDown
+	applymovement LOCALID_JACE_WAREHOUSE, TurquoiseCity_Warehouse_B1_Movement_JaceWalkDown
 	waitmovement 0
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_WAREHOUSE
 	call TurquoiseCity_Warehouse_B1_EventScript_MoveJaceToBehindBeam
 	clearflag FLAG_TURQUOISE_CITY_FREED
 	setvar VAR_TURQUOISE_CITY_STATE, 2
@@ -121,10 +121,10 @@ TurquoiseCity_Warehouse_B1_Text_OldMan:
 
 TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	lockall
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceRight
 	waitmovement 0
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceLeft
 	waitmovement 0
 	fadeoutbgm 0
 	special SpawnCameraObject
@@ -137,7 +137,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_WhatAJoke, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_MILO, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_MILO_WAREHOUSE, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_Urgh, MSGBOX_DEFAULT
 	closemessage
@@ -158,13 +158,13 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	delay 30
 	msgbox TurquoiseCity_Warehouse_B1_Text_ZartoshtInterrogates, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_DEVON, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_OhDear, MSGBOX_DEFAULT
 	closemessage
@@ -184,20 +184,20 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_WeldPokeball, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_MILO, Common_Movement_ExclamationMark
+	applymovement LOCALID_MILO_WAREHOUSE, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_AhWait, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_DEVON, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_DontDoThat, MSGBOX_DEFAULT
 	closemessage
 	delay 30
 	msgbox TurquoiseCity_Warehouse_B1_Text_StartTalking, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_MILO, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_MILO_WAREHOUSE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_MILO, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_MILO_WAREHOUSE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_MiloNo, MSGBOX_DEFAULT
 	closemessage
@@ -220,20 +220,20 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	applymovement LOCALID_ZARTOSHT, Common_Movement_ExclamationMark
 	waitmovement 0
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_JACE, TurquoiseCity_Warehouse_B1_Movement_JaceEntrance
+	applymovement LOCALID_JACE_WAREHOUSE, TurquoiseCity_Warehouse_B1_Movement_JaceEntrance
 	waitmovement 0
 	delay 40
 	msgbox TurquoiseCity_Warehouse_B1_Text_ZartoshtWhoAreYou, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_JaceIntro, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_FaceDown
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 20
 	msgbox TurquoiseCity_Warehouse_B1_Text_JaceBackMeUp, MSGBOX_DEFAULT
@@ -241,7 +241,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, TurquoiseCity_Warehouse_B1_Movement_PlayerEntrance
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
 	msgbox TurquoiseCity_Warehouse_B1_Text_ComingOutOfTheWoodwork, MSGBOX_DEFAULT
@@ -281,25 +281,25 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	waitmovement 0
 	applymovement LOCALID_GRUNT2, Common_Movement_FaceUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
 	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
 	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
 	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
 	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
 	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
 	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_DEVON, Common_Movement_WalkUp
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
 	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
 	applymovement LOCALID_GRUNT1, Common_Movement_FaceRight
@@ -313,9 +313,9 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_DumpInBay, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 20
 	msgbox TurquoiseCity_Warehouse_B1_Text_HowCanYouSayThat, MSGBOX_DEFAULT
@@ -327,14 +327,14 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_WhatAreYouGonnaDoAboutIt, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_IDontCareWhoYouAre, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
@@ -342,7 +342,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_ComeOnPlayer, MSGBOX_DEFAULT
 	closemessage
 	delay 40
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
@@ -374,7 +374,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	applymovement LOCALID_GRUNT3, Common_Movement_FaceLeft
 	applymovement LOCALID_GRUNT4, Common_Movement_FaceLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 60
@@ -392,7 +392,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
 	applymovement LOCALID_GRUNT1, TurquoiseCity_Warehouse_B1_Movement_KnockedBackLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_JaceHealPlayer, MSGBOX_DEFAULT
 	closemessage
@@ -421,7 +421,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	delay 30
 	msgbox TurquoiseCity_Warehouse_B1_Text_WeaponS, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_WalkUp
 	waitmovement 0
 	delay 60
 	msgbox TurquoiseCity_Warehouse_B1_Text_JaceGivePokemonBack, MSGBOX_DEFAULT
@@ -430,12 +430,12 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_YouLittleBrat, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_BRENDAN
-	addobject LOCALID_BRENDAN
+	addobject LOCALID_BRENDAN_WAREHOUSE
 	fadeoutbgm 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_StopRightThere, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
-	applymovement LOCALID_JACE, Common_Movement_FaceDown
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceDown
 	applymovement LOCALID_GRUNT1, Common_Movement_FaceDown
 	applymovement LOCALID_GRUNT5, Common_Movement_FaceDown
 	applymovement LOCALID_GRUNT3, Common_Movement_FaceDown
@@ -443,7 +443,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	waitmovement 0
 	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_ExclamationMark
 	applymovement LOCALID_GRUNT1, Common_Movement_ExclamationMark
 	applymovement LOCALID_GRUNT5, Common_Movement_ExclamationMark
 	applymovement LOCALID_GRUNT3, Common_Movement_ExclamationMark
@@ -455,7 +455,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	@special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, TurquoiseCity_Warehouse_B1_Movement_CameraPanDown
 	waitmovement 0
-	applymovement LOCALID_BRENDAN, TurquoiseCity_Warehouse_B1_Movement_BrendanEntrance
+	applymovement LOCALID_BRENDAN_WAREHOUSE, TurquoiseCity_Warehouse_B1_Movement_BrendanEntrance
 	waitmovement 0
 	delay 40
 	applymovement LOCALID_GRUNT1, Common_Movement_WalkInPlaceFasterDown
@@ -469,7 +469,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	closemessage
 	delay 60
 	fadedefaultbgm
-	applymovement LOCALID_BRENDAN, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_BRENDAN_WAREHOUSE, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_ItsAHat, MSGBOX_DEFAULT
 	closemessage

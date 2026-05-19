@@ -46,7 +46,7 @@ bool8 FldEff_UseStrength(void)
     return FALSE;
 }
 
-bool8 SetUpFieldMove_MagnetRise(void)
+bool32 SetUpFieldMove_MagnetRise(void)
 {
     if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_SCRAP_METAL) == TRUE)
     {

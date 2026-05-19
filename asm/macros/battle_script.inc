@@ -943,16 +943,6 @@
 	.macro setsafeguard
 	.byte B_SCR_OP_SETSAFEGUARD
 	.endm
-
-	.macro setacidrain ptr:req
-	various BS_ATTACKER, VARIOUS_SETACIDRAIN
-	.4byte \ptr
-	.endm
-
-	.macro setfullmoon ptr:req
-	various BS_ATTACKER, VARIOUS_SETFULLMOON
-	.4byte \ptr
-	.endm
 	
 	.macro jumpifnopursuitswitchdmg jumpInstr:req
 	.byte B_SCR_OP_JUMPIFNOPURSUITSWITCHDMG
@@ -1344,11 +1334,6 @@
 
 	.macro trypetrify failInstr:req
 	callnative BS_TryPetrify
-	.4byte \failInstr
-	.endm
-
-	.macro trypetrify failInstr:req
-	various BS_ATTACKER, VARIOUS_TRY_PETRIFY
 	.4byte \failInstr
 	.endm
 
@@ -2307,11 +2292,6 @@
 	.endm
 
 	.macro trychitinize failInstr:req
-	various BS_ATTACKER, VARIOUS_CHITINIZE
-	.4byte \failInstr
-	.endm
-
-	.macro trychitinize failInstr:req
-	various BS_ATTACKER, VARIOUS_CHITINIZE
+	callnative BS_TryChitinize
 	.4byte \failInstr
 	.endm

@@ -137,20 +137,13 @@ static void HandleInputChooseAction(enum BattlerId battler)
             break;
         }
         BtlController_Complete(battler);
-    }
+	}
 	else if (JOY_NEW(R_BUTTON)) //pressing R moves cursor to run
     {
         PlaySE(SE_SELECT);
-        ActionSelectionDestroyCursorAt(gActionSelectionCursor[gActiveBattler]);
-        gActionSelectionCursor[gActiveBattler] = 3;
-        ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
-    }
-	else if (JOY_NEW(R_BUTTON)) //pressing R moves cursor to run
-    {
-        PlaySE(SE_SELECT);
-        ActionSelectionDestroyCursorAt(gActionSelectionCursor[gActiveBattler]);
-        gActionSelectionCursor[gActiveBattler] = 3;
-        ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
+        ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
+        gActionSelectionCursor[battler] = 3;
+        ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
     }
     else if (JOY_NEW(DPAD_LEFT))
     {

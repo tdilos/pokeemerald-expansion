@@ -133,7 +133,10 @@ struct MoveInfo
     bool32 alwaysHitsOnSameType:1; // Always hits if user is of same type as move
     bool32 noAffectOnSameTypeTarget:1; // Fails if target is of same type as move
     bool32 accIncreaseByTenOnSameType:1; // Accuracy is increased by 10% if user is of same type as move
-    bool32 padding1:15;
+    //bool32 padding1:15;
+    bool32 alwaysHitsInSun:1;
+    bool32 accuracy50InRain:1;
+    bool32 padding1:13;
     // end of word
 
     // Ban flags
@@ -463,6 +466,16 @@ static inline bool32 MoveHas50AccuracyInSun(enum Move moveId)
     return gMovesInfo[SanitizeMoveId(moveId)].accuracy50InSun;
 }
 
+static inline bool32 MoveAlwaysHitsInSun(enum Move moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].alwaysHitsInSun;
+}
+
+static inline bool32 MoveHas50AccuracyInRain(enum Move moveId)
+{
+    return gMovesInfo[SanitizeMoveId(moveId)].accuracy50InRain;
+}
+
 static inline bool32 MoveAlwaysHitsInHailSnow(enum Move moveId)
 {
     return gMovesInfo[SanitizeMoveId(moveId)].alwaysHitsInHailSnow;
@@ -566,52 +579,7 @@ static inline bool32 IsValidApprenticeMove(enum Move moveId)
     return gMovesInfo[SanitizeMoveId(moveId)].validApprenticeMove;
 }
 
-static inline u32 GetMoveTwoTurnAttackStatus(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].argument.twoTurnAttack.status;
-}
-
-static inline u32 GetMoveTwoTurnAttackWeather(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].argument.twoTurnAttack.status;
-}
-
-static inline enum ProtectMethod GetMoveProtectMethod(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].argument.protectMethod;
-}
-
-static inline u32 GetMoveTerrainFlag(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].argument.moveProperty;
-}
-
-static inline u32 GetMoveEffectArg_Status(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].argument.status;
-}
-
-static inline u32 GetMoveEffectArg_MoveProperty(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].argument.moveProperty;
-}
-
-static inline u32 GetMoveEffectArg_HoldEffect(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].argument.holdEffect;
-}
-
-static inline u32 GetMoveArgType(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].argument.type;
-}
-
-static inline u32 GetMoveFixedHPDamage(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].argument.fixedDamage;
-}
-
-static inline u32 GetMoveAbsorbPercentage(u32 moveId)
+static inline u32 GetMoveTwoTurnAttackStringId(enum Move moveId)
 {
     moveId = SanitizeMoveId(moveId);
     enum BattleMoveEffects effect = gMovesInfo[moveId].effect;

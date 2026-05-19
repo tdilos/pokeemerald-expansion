@@ -228,7 +228,7 @@ extern const u8 gText_Friday[];
 extern const u8 gText_Saturday[];
 
 // option menu texts
-extern const u8 gText_TextSpeedSlow[];
+/*extern const u8 gText_TextSpeedSlow[];
 extern const u8 gText_TextSpeedMid[];
 extern const u8 gText_TextSpeedFast[];
 extern const u8 gText_BattleSceneOn[];
@@ -255,7 +255,7 @@ extern const u8 gText_BattleFlow[];
 extern const u8 gText_Sound[];
 extern const u8 gText_Frame[];
 extern const u8 gText_OptionMenuCancel[];
-extern const u8 gText_ButtonMode[];
+extern const u8 gText_ButtonMode[];*/
 
 extern const u8 gText_MaleSymbol[];
 extern const u8 gText_FemaleSymbol[];

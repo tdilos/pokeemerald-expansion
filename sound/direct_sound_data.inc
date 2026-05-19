@@ -8756,7 +8756,7 @@ Cry_Seldame::
 .if P_FAMILY_PINSIR == TRUE
 	.align 2
 Cry_Plux::
-	.incbin "sound/direct_sound_samples/cries/plux.bin"
+	.incbin "sound/direct_sound_samples/cries/pinsir_mega.bin"
 .endif @ P_FAMILY_PINSIR
 
 .if P_FAMILY_HOUNDOUR == TRUE
@@ -8789,7 +8789,7 @@ Cry_Mediyogi::
 	.incbin "sound/direct_sound_samples/cries/medicham_mega.bin"
 .endif @ P_FAMILY_MEDITITE
 
-.if P_FAMILY_ == TRUE
+.if P_FAMILY_TROPIUS == TRUE
 	.align 2
 Cry_Ptropa::
 	.incbin "sound/direct_sound_samples/cries/ptropa.bin"
@@ -8921,7 +8921,7 @@ Cry_Jumbao::
 	.incbin "sound/direct_sound_samples/cries/garganacl.bin"
 .endif @ P_FAMILY_MUMBAO
 
-.if P_FAMILY_MIASMAW == TRUE
+.if P_FAMILY_MIASMITE == TRUE
 	.align 2
 Cry_Miasmite::
 	.incbin "sound/direct_sound_samples/cries/wiglett.bin"
@@ -8929,7 +8929,7 @@ Cry_Miasmite::
 	.align 2
 Cry_Miasmaw::
 	.incbin "sound/direct_sound_samples/cries/slither_wing.bin"
-.endif @ P_FAMILY_MIASMAW
+.endif @ P_FAMILY_MIASMITE
 
 .if P_FAMILY_VOLKRITTER == TRUE
 	.align 2

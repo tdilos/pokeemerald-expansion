@@ -412,26 +412,49 @@ static void FindMapsWithMon(u16 species)
 			}
 		}
 	}
+	
+	currentRegionMapType = GetRegionMapType(gMapHeader.regionMapSectionId);
+    // Add regular species to the area map
+    for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED); i++)
+    {
+        u32 headerSectionId = Overworld_GetMapHeaderByGroupAndId(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum)->regionMapSectionId;
 
-	// Add regular species to the area map
-    for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED); i++)
-	{
-	    if (MapHasSpecies(&gWildMonHeaders[i], species))
-		{
-		    switch (gWildMonHeaders[i].mapGroup)
-			{
-		    case MAP_GROUP_TOWNS_AND_ROUTES:
-			    SetAreaHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
-			    break;
-		    case MAP_GROUP_DUNGEONS:
-		    case MAP_GROUP_SPECIAL_AREA:
+        if (GetRegionMapType(headerSectionId) != currentRegionMapType)
+            continue;
+
+        if (MapHasSpecies(&gWildMonHeaders[i].encounterTypes[gAreaTimeOfDay], headerSectionId, species))
+        {
+            switch (gWildMonHeaders[i].mapGroup)
+            {
+            case MAP_GROUP_TOWNS_AND_ROUTES:
+            case MAP_GROUP_TOWNS_AND_ROUTES_FRLG:
+                SetAreaHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
+                break;
+            case MAP_GROUP_DUNGEONS:
+            case MAP_GROUP_DUNGEONS_FRLG:
+            case MAP_GROUP_SPECIAL_AREA:
+            case MAP_GROUP_SPECIAL_AREA_FRLG:
 			case MAP_GROUP_ISSHO_DUNGEONS:
-			    SetSpecialMapHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
-			    break;
-			}
-		}
-	}
+                SetSpecialMapHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
+                break;
+            }
+        }
+    }
 
+    // Add roamers to the area map
+    for (i = 0; i < ROAMER_COUNT; i++)
+    {
+        roamer = &gSaveBlock1Ptr->roamer[i];
+        if (species == roamer->species && roamer->active)
+        {
+            // This is a roamer's species, show where this roamer is currently
+            struct OverworldArea *roamerLocation = &sPokedexAreaScreen->overworldAreasWithMons[sPokedexAreaScreen->numOverworldAreas];
+            GetRoamerLocation(i, &roamerLocation->mapGroup, &roamerLocation->mapNum);
+            roamerLocation->regionMapSectionId = Overworld_GetMapHeaderByGroupAndId(roamerLocation->mapGroup, roamerLocation->mapNum)->regionMapSectionId;
+            sPokedexAreaScreen->numOverworldAreas++;
+        }
+    }
+/*
 	// Add roamers to the area map
     for (i = 0; i < ROAMER_COUNT; i++)
 	{
@@ -440,7 +463,7 @@ static void FindMapsWithMon(u16 species)
 	    if (species == roamer->species)
 #else
 	    if (species == roamer->species && !roamer->isStalker)
-#endif
+#endif 
 		{
 			// This is a roamer's species, show where this roamer is currently
 		    if (roamer->active)
@@ -461,7 +484,7 @@ static void FindMapsWithMon(u16 species)
 				//don't break; Supports multiple roamers of the same species or species that already appear as normal encounters
 			}
 		}
-	}
+	}*/
 }
 
 static void SetAreaHasMon(u16 mapGroup, u16 mapNum)

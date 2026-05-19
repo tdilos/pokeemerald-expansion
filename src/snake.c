@@ -351,11 +351,11 @@ struct Snake {
 };	
 
 static EWRAM_DATA struct Snake *sSnake = NULL;
-static EWRAM_DATA u8 sTextWindowId = 0;
+//static EWRAM_DATA u8 sTextWindowId = 0;
 
 static void FadeToSnakeScreen(u8 taskId);
 static void InitSnakeScreen(void);
-static void DerbyVBlankCallback(void);
+//static void DerbyVBlankCallback(void);
 
 static const u8 sTestText[] = _("TEST");
 
@@ -930,7 +930,7 @@ static void SnakeMainCallback(void)
     UpdatePaletteFade();
 }
 
-static void HandleInput(void)
+/*static void HandleInput(void)
 {
 	if (sSnake->ToggleButtons == 1) 
 	{
@@ -943,7 +943,7 @@ static void HandleInput(void)
 
 		}
 	}
-}
+}*/
 
 static void ExitSnake(void)
 {
@@ -963,8 +963,10 @@ static void StartExitSnake(void)
 static void CreateOnix(void)
 {
 	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Onix.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix.size;
 		s.tag = GFX_ONIX;
 		LoadSpriteSheet(&s);
@@ -972,7 +974,7 @@ static void CreateOnix(void)
 	sSnake->OnixSpriteId = CreateSprite(&sSpriteTemplate_Onix, 120, 64, 0); // 5, 4
 }
 
-static void CreateBody(s16 x, s16 y)
+/*static void CreateBody(s16 x, s16 y)
 {
 	u8 Body;
 	struct SpriteSheet s;
@@ -981,8 +983,10 @@ static void CreateBody(s16 x, s16 y)
 	
 	if (Body == 0)
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body.size;
 		s.tag = GFX_BODY_1;
 		LoadSpriteSheet(&s);
@@ -991,8 +995,10 @@ static void CreateBody(s16 x, s16 y)
 	}
 	else if (Body == 1)
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body_2.size;
 		s.tag = GFX_BODY_2;
 		LoadSpriteSheet(&s);
@@ -1001,8 +1007,10 @@ static void CreateBody(s16 x, s16 y)
 	}
 	else if (Body == 2)
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body_3.size;
 		s.tag = GFX_BODY_3;
 		LoadSpriteSheet(&s);
@@ -1011,15 +1019,17 @@ static void CreateBody(s16 x, s16 y)
 	}
 	else
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body_4.size;
 		s.tag = GFX_BODY_4;
 		LoadSpriteSheet(&s);
 	
 		sSnake->BodySpriteIds[(sSnake->BodyCount - 3)] = CreateSprite(&sSpriteTemplate_Onix_Body_4, x, y, sSnake->BodyCount);
 	}
-}
+}*/
 
 static void CreateBody1(void)
 {
@@ -1032,8 +1042,10 @@ static void CreateBody1(void)
 	
 	if (Body == 0)
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body.size;
 		s.tag = GFX_BODY_1;
 		LoadSpriteSheet(&s);
@@ -1042,8 +1054,10 @@ static void CreateBody1(void)
 	}
 	else if (Body == 1)
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body_2.size;
 		s.tag = GFX_BODY_2;
 		LoadSpriteSheet(&s);
@@ -1052,8 +1066,10 @@ static void CreateBody1(void)
 	}
 	else if (Body == 2)
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body_3.size;
 		s.tag = GFX_BODY_3;
 		LoadSpriteSheet(&s);
@@ -1062,8 +1078,10 @@ static void CreateBody1(void)
 	}
 	else
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body_4.size;
 		s.tag = GFX_BODY_4;
 		LoadSpriteSheet(&s);
@@ -1083,8 +1101,10 @@ static void CreateBody2(void)
 	
 	if (Body == 0)
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body.size;
 		s.tag = GFX_BODY_1;
 		LoadSpriteSheet(&s);
@@ -1093,8 +1113,10 @@ static void CreateBody2(void)
 	}
 	else if (Body == 1)
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body_2.size;
 		s.tag = GFX_BODY_2;
 		LoadSpriteSheet(&s);
@@ -1103,8 +1125,10 @@ static void CreateBody2(void)
 	}
 	else if (Body == 2)
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body_3.size;
 		s.tag = GFX_BODY_3;
 		LoadSpriteSheet(&s);
@@ -1113,8 +1137,10 @@ static void CreateBody2(void)
 	}
 	else
 	{
-        LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Onix_Body_4.size;
 		s.tag = GFX_BODY_4;
 		LoadSpriteSheet(&s);
@@ -1540,6 +1566,10 @@ static void CreateBerry(void)
 		}
 	}
 	
+	// failsafe in case never initialized
+	xf = 0;
+	yf = 0;
+	
 	for (i = 0; i < MAX_TILES; i++) {
 				if ((SnakeTilesArray[i].x == sSnake->BerryX) && (SnakeTilesArray[i].y == sSnake->BerryY)) {
 					xf = SnakeTilesArray[i].xReal;
@@ -1552,8 +1582,10 @@ static void CreateBerry(void)
 	if (Berry == 0)
 	{
 		LoadSpritePalettes(sSpritePalettes);
-        LZ77UnCompWram(sSpriteSheet_Berry_1.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Berry_1.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Berry_1.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Berry_1.size;
 		s.tag = GFX_BERRY_1;
 		LoadSpriteSheet(&s);
@@ -1563,8 +1595,10 @@ static void CreateBerry(void)
 	else if	(Berry == 1)
 	{
 		LoadSpritePalettes(sSpritePalettes);
-        LZ77UnCompWram(sSpriteSheet_Berry_2.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Berry_2.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Berry_2.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Berry_2.size;
 		s.tag = GFX_BERRY_2;
 		LoadSpriteSheet(&s);
@@ -1574,8 +1608,10 @@ static void CreateBerry(void)
 	else
 	{
 		LoadSpritePalettes(sSpritePalettes);
-        LZ77UnCompWram(sSpriteSheet_Berry_3.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Berry_3.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Berry_3.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Berry_3.size;
 		s.tag = GFX_BERRY_3;
 		LoadSpriteSheet(&s);
@@ -1645,8 +1681,10 @@ static void CreateCreditSprites(void)
     for (i = 0; i < ARRAY_COUNT(sSpriteSheets_CreditsInterface) - 1; i++)  
     {
         struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheets_CreditsInterface[i].data, gDecompressionBuffer);
-        s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheets_CreditsInterface[i].data, gDecompressionBuffer);
+        //s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheets_CreditsInterface[i].data, NULL);
+		s.data = buffer;
         s.size = sSpriteSheets_CreditsInterface[i].size;
         s.tag = sSpriteSheets_CreditsInterface[i].tag;
         LoadSpriteSheet(&s);
@@ -1666,8 +1704,10 @@ static void CreateNumberSprites(void)
     for (i = 0; i < ARRAY_COUNT(sSpriteSheets_CreditsInterface) - 1; i++)  
     {
         struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheets_CreditsInterface[i].data, gDecompressionBuffer);
-        s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheets_CreditsInterface[i].data, gDecompressionBuffer);
+        //s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheets_CreditsInterface[i].data, NULL);
+		s.data = buffer;
         s.size = sSpriteSheets_CreditsInterface[i].size;
         s.tag = sSpriteSheets_CreditsInterface[i].tag;
         LoadSpriteSheet(&s);
@@ -1686,9 +1726,9 @@ static void CheckBerry(void)
 	u8 Count = sSnake->BodyCount - 3;
 	u8 index = Count; 
 	u8 Body;
-	s16 xf;
-	s16 yf;
-	int i;
+	//s16 xf;
+	//s16 yf;
+	//int i;
 	struct SpriteSheet s;
 	
 	if ((sSnake->OnixTileX == sSnake->BerryX) && (sSnake->OnixTileY == sSnake->BerryY))
@@ -1723,8 +1763,10 @@ static void CheckBerry(void)
 	
 					if (Body == 0)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body.size;
 						s.tag = GFX_BODY_1;
 						LoadSpriteSheet(&s);
@@ -1733,8 +1775,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 1)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_2.size;
 						s.tag = GFX_BODY_2;
 						LoadSpriteSheet(&s);
@@ -1743,8 +1787,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 2)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_3.size;
 						s.tag = GFX_BODY_3;
 						LoadSpriteSheet(&s);
@@ -1753,8 +1799,10 @@ static void CheckBerry(void)
 					}
 					else
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_4.size;
 						s.tag = GFX_BODY_4;
 						LoadSpriteSheet(&s);
@@ -1768,8 +1816,10 @@ static void CheckBerry(void)
 	
 					if (Body == 0)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body.size;
 						s.tag = GFX_BODY_1;
 						LoadSpriteSheet(&s);
@@ -1778,8 +1828,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 1)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_2.size;
 						s.tag = GFX_BODY_2;
 						LoadSpriteSheet(&s);
@@ -1788,8 +1840,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 2)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_3.size;
 						s.tag = GFX_BODY_3;
 						LoadSpriteSheet(&s);
@@ -1798,8 +1852,10 @@ static void CheckBerry(void)
 					}
 					else
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_4.size;
 						s.tag = GFX_BODY_4;
 						LoadSpriteSheet(&s);
@@ -1813,8 +1869,10 @@ static void CheckBerry(void)
 	
 					if (Body == 0)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body.size;
 						s.tag = GFX_BODY_1;
 						LoadSpriteSheet(&s);
@@ -1823,8 +1881,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 1)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_2.size;
 						s.tag = GFX_BODY_2;
 						LoadSpriteSheet(&s);
@@ -1833,8 +1893,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 2)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_3.size;
 						s.tag = GFX_BODY_3;
 						LoadSpriteSheet(&s);
@@ -1843,8 +1905,10 @@ static void CheckBerry(void)
 					}
 					else
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_4.size;
 						s.tag = GFX_BODY_4;
 						LoadSpriteSheet(&s);
@@ -1858,8 +1922,10 @@ static void CheckBerry(void)
 	
 					if (Body == 0)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body.size;
 						s.tag = GFX_BODY_1;
 						LoadSpriteSheet(&s);
@@ -1868,8 +1934,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 1)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_2.size;
 						s.tag = GFX_BODY_2;
 						LoadSpriteSheet(&s);
@@ -1878,8 +1946,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 2)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_3.size;
 						s.tag = GFX_BODY_3;
 						LoadSpriteSheet(&s);
@@ -1888,8 +1958,10 @@ static void CheckBerry(void)
 					}
 					else
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_4.size;
 						s.tag = GFX_BODY_4;
 						LoadSpriteSheet(&s);
@@ -1913,8 +1985,10 @@ static void CheckBerry(void)
 	
 					if (Body == 0)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body.size;
 						s.tag = GFX_BODY_1;
 						LoadSpriteSheet(&s);
@@ -1923,8 +1997,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 1)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_2.size;
 						s.tag = GFX_BODY_2;
 						LoadSpriteSheet(&s);
@@ -1933,8 +2009,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 2)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_3.size;
 						s.tag = GFX_BODY_3;
 						LoadSpriteSheet(&s);
@@ -1943,8 +2021,10 @@ static void CheckBerry(void)
 					}
 					else
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_4.size;
 						s.tag = GFX_BODY_4;
 						LoadSpriteSheet(&s);
@@ -1958,8 +2038,10 @@ static void CheckBerry(void)
 	
 					if (Body == 0)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body.size;
 						s.tag = GFX_BODY_1;
 						LoadSpriteSheet(&s);
@@ -1968,8 +2050,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 1)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_2.size;
 						s.tag = GFX_BODY_2;
 						LoadSpriteSheet(&s);
@@ -1978,8 +2062,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 2)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_3.size;
 						s.tag = GFX_BODY_3;
 						LoadSpriteSheet(&s);
@@ -1988,8 +2074,10 @@ static void CheckBerry(void)
 					}
 					else
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_4.size;
 						s.tag = GFX_BODY_4;
 						LoadSpriteSheet(&s);
@@ -2003,8 +2091,10 @@ static void CheckBerry(void)
 	
 					if (Body == 0)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body.size;
 						s.tag = GFX_BODY_1;
 						LoadSpriteSheet(&s);
@@ -2013,8 +2103,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 1)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_2.size;
 						s.tag = GFX_BODY_2;
 						LoadSpriteSheet(&s);
@@ -2023,8 +2115,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 2)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_3.size;
 						s.tag = GFX_BODY_3;
 						LoadSpriteSheet(&s);
@@ -2033,8 +2127,10 @@ static void CheckBerry(void)
 					}
 					else
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_4.size;
 						s.tag = GFX_BODY_4;
 						LoadSpriteSheet(&s);
@@ -2048,8 +2144,10 @@ static void CheckBerry(void)
 	
 					if (Body == 0)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body.size;
 						s.tag = GFX_BODY_1;
 						LoadSpriteSheet(&s);
@@ -2058,8 +2156,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 1)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_2.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_2.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_2.size;
 						s.tag = GFX_BODY_2;
 						LoadSpriteSheet(&s);
@@ -2068,8 +2168,10 @@ static void CheckBerry(void)
 					}
 					else if (Body == 2)
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_3.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_3.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_3.size;
 						s.tag = GFX_BODY_3;
 						LoadSpriteSheet(&s);
@@ -2078,8 +2180,10 @@ static void CheckBerry(void)
 					}
 					else
 					{
-						LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
-						s.data = gDecompressionBuffer;
+						//LZ77UnCompWram(sSpriteSheet_Onix_Body_4.data, gDecompressionBuffer);
+						//s.data = gDecompressionBuffer;
+						void *buffer = malloc_and_decompress(sSpriteSheet_Onix_Body_4.data, NULL);
+						s.data = buffer;
 						s.size = sSpriteSheet_Onix_Body_4.size;
 						s.tag = GFX_BODY_4;
 						LoadSpriteSheet(&s);
@@ -2105,8 +2209,10 @@ static void CreateStartMenu(void)
 	struct SpriteSheet s;
 	
 		LoadSpritePalettes(sSpritePalettes);
-        LZ77UnCompWram(sSpriteSheet_Start.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Start.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Start.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Start.size;
 		s.tag = GFX_START;
 		LoadSpriteSheet(&s);
@@ -2119,8 +2225,10 @@ static void CreateGameOver(void)
 	struct SpriteSheet s;
 	
 		LoadSpritePalettes(sSpritePalettes);
-        LZ77UnCompWram(sSpriteSheet_GameOver.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_GameOver.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_GameOver.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_GameOver.size;
 		s.tag = GFX_GAMEOVER;
 		LoadSpriteSheet(&s);
@@ -2133,8 +2241,10 @@ static void CreateMenu(void)
 	struct SpriteSheet s;
 	
 		LoadSpritePalettes(sSpritePalettes);
-        LZ77UnCompWram(sSpriteSheet_Menu.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheet_Menu.data, gDecompressionBuffer);
+		//s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheet_Menu.data, NULL);
+		s.data = buffer;
 		s.size = sSpriteSheet_Menu.size;
 		s.tag = GFX_MENU;
 		LoadSpriteSheet(&s);

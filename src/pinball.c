@@ -437,7 +437,7 @@ static bool32 CheckMeowthCollision(struct Ball *ball, struct Meowth *meowth, u32
 static bool32 CheckJewelCollision(struct Ball *ball, struct MeowthJewel *jewel, u8 *outCollisionNormal);
 static bool32 IsJewelSpaceOccupied(u16 xPos, u16 destYPos, struct MeowthJewel *jewels);
 static bool32 CheckMeowthJewelsCollision(struct Ball *ball, struct Meowth *meowth, u8 *outCollisionNormal);
-static int GetNumActiveJewels(struct Meowth *meowth);
+//static int GetNumActiveJewels(struct Meowth *meowth);
 static struct MeowthJewel *TryCreateNewJewel(struct Meowth *meowth, int ballXPos);
 static void UpdateJewels(struct MeowthJewel *jewels);
 static void UpdateMeowthSprite(struct Sprite *sprite);
@@ -523,8 +523,10 @@ static const u32 sBallPokeballGfx[] = INCBIN_U32("graphics/pinball/ball_pokeball
 static const u16 sBallPokeballPalette[] = INCBIN_U16("graphics/pinball/ball_pokeball.gbapal");
 static const u32 sFlipperGfx[] = INCBIN_U32("graphics/pinball/flipper.4bpp.lz");
 static const u16 sFlipperPalette[] = INCBIN_U16("graphics/pinball/flipper.gbapal");
-static const u8 sFlipperLeftMinigameCollisionMasks[][0x80] = INCBIN_U8("graphics/pinball/flipper_left_masks_minigame.1bpp");
-static const u8 sFlipperRightMinigameCollisionMasks[][0x80] = INCBIN_U8("graphics/pinball/flipper_right_masks_minigame.1bpp");
+//static const u8 sFlipperLeftMinigameCollisionMasks[][0x80] = INCBIN_U8("graphics/pinball/flipper_left_masks_minigame.1bpp");
+//static const u8 sFlipperRightMinigameCollisionMasks[][0x80] = INCBIN_U8("graphics/pinball/flipper_right_masks_minigame.1bpp");
+static const u8 sFlipperLeftMinigameCollisionMasks[] = INCBIN_U8("graphics/pinball/flipper_left_masks_minigame.1bpp");
+static const u8 sFlipperRightMinigameCollisionMasks[] = INCBIN_U8("graphics/pinball/flipper_right_masks_minigame.1bpp");
 static const u32 sTimerDigitsGfx[] = INCBIN_U32("graphics/pinball/timer_digits.4bpp.lz");
 static const u16 sTimerDigitsPalette[] = INCBIN_U16("graphics/pinball/timer_digits.gbapal");
 
@@ -2207,8 +2209,10 @@ static void CreatePlayerSprites(void)
     for (i = 0; i < ARRAY_COUNT(sSpriteSheets_PlayerInterface) - 1; i++)  
     {
         struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheets_PlayerInterface[i].data, gDecompressionBuffer);
-        s.data = gDecompressionBuffer;
+        //LZ77UnCompWram(sSpriteSheets_PlayerInterface[i].data, gDecompressionBuffer);
+        //s.data = gDecompressionBuffer;
+		void *buffer = malloc_and_decompress(sSpriteSheets_PlayerInterface[i].data, NULL);
+		s.data = buffer;
         s.size = sSpriteSheets_PlayerInterface[i].size;
         s.tag = sSpriteSheets_PlayerInterface[i].tag;
         LoadSpriteSheet(&s);
@@ -2890,7 +2894,7 @@ static void HandleBallPhysics(void)
 
     if ((ball->yPos >> 8) > 168)
     {
-        ball->yPos == 170 << 8;
+        //ball->yPos == 170 << 8;
         LoseBall();
     }
 }
@@ -3069,7 +3073,7 @@ static void HandleTilt(struct Ball *ball, struct Tilt *tilt, int xDelta, int yDe
 static bool32 HandleFlippers(struct Ball *ball, u16 *outYForce, u8 *outCollisionNormal, int *outCollisionAmplification)
 {
     bool32 collided;
-    struct Flipper *flipper;
+    //struct Flipper *flipper;
 
     UpdateFlipperState(&sPinballGame->rightFlipper);
     UpdateFlipperState(&sPinballGame->leftFlipper);
@@ -3332,6 +3336,7 @@ static u8 GetCollisionAttribute(u8 gameType, bool32 ballIsEntering, int index)
         collisionMap = sMeowthStageBgCollisionMap;
         break;
     case GAME_TYPE_DIGLETT:
+	default:
         entranceCollisionMap = sDiglettStageEntranceBgCollisionMap;
         collisionMap = sPinballGame->diglett.collisionMap;
         break;
@@ -3356,7 +3361,8 @@ static u8 GetCollisionMaskRow(u8 gameType, int collisionAttribute, int row)
     struct Flipper *flipper;
     int state;
     int offset;
-    const u8 *flipperStateMasks;
+    //const u8 *flipperStateMasks;
+    //u8 flipperStateMasks;
     u8 mask;
 
     if (collisionAttribute < 0xE0)
@@ -3368,6 +3374,7 @@ static u8 GetCollisionMaskRow(u8 gameType, int collisionAttribute, int row)
             masks = sMeowthStageBgCollisionMasks;
             break;
         case GAME_TYPE_DIGLETT:
+		default:
             masks = sDiglettStageBgCollisionMasks;
             break;
         case GAME_TYPE_SEEL:
@@ -3397,13 +3404,14 @@ static u8 GetCollisionMaskRow(u8 gameType, int collisionAttribute, int row)
     else
         offset = 2;
 
-    if (collisionAttribute < 0xF0)
-        flipperStateMasks = sFlipperLeftMinigameCollisionMasks[offset];
-    else
-        flipperStateMasks = sFlipperRightMinigameCollisionMasks[offset];
+    //if (collisionAttribute < 0xF0)
+    //    flipperStateMasks = sFlipperLeftMinigameCollisionMasks[offset];
+    //else
+    //    flipperStateMasks = sFlipperRightMinigameCollisionMasks[offset];
 
-    mask = flipperStateMasks[(collisionAttribute % 0x10) * 0x8 + row];
+    //mask = flipperStateMasks[(collisionAttribute % 0x10) * 0x8 + row];
 
+	mask = 0;
     // Reverse the bits because my tooling is backwards.
     return ReverseBits(mask);
 }
@@ -3561,17 +3569,17 @@ static void UpdateCamera(void)
     int stagePixelHeight = sPinballGame->stageTileHeight * 8;
     struct Ball *ball = &sPinballGame->ball;
 
-    // scrollX = (ball->xPos >> 8) - (DISPLAY_WIDTH / 2);
-    // if (scrollX < 0)
-    //     scrollX = 0;
-    // if (scrollX > stagePixelWidth - DISPLAY_WIDTH)
-    //     scrollX = stagePixelWidth - DISPLAY_WIDTH;
+    scrollX = (ball->xPos >> 8) - (DISPLAY_WIDTH / 2);
+    if (scrollX < 0)
+        scrollX = 0;
+    if (scrollX > stagePixelWidth - DISPLAY_WIDTH)
+        scrollX = stagePixelWidth - DISPLAY_WIDTH;
 
-    // scrollY = (ball->yPos >> 8) - (DISPLAY_HEIGHT / 2);
-    // if (scrollY < 0)
-    //     scrollY = 0;
-    // if (scrollY > stagePixelHeight - DISPLAY_HEIGHT)
-    //     scrollY = stagePixelHeight - DISPLAY_HEIGHT;
+    scrollY = (ball->yPos >> 8) - (DISPLAY_HEIGHT / 2);
+    if (scrollY < 0)
+        scrollY = 0;
+    if (scrollY > stagePixelHeight - DISPLAY_HEIGHT)
+        scrollY = stagePixelHeight - DISPLAY_HEIGHT;
 
     scrollX = -40; // Center the game in the middle of the screen
     scrollY = 0;
@@ -3896,7 +3904,7 @@ static bool32 CheckMeowthJewelsCollision(struct Ball *ball, struct Meowth *meowt
     return FALSE;
 }
 
-static int GetNumActiveJewels(struct Meowth *meowth)
+/*static int GetNumActiveJewels(struct Meowth *meowth)
 {
     int i, count;
     for (i = 0; i < MAX_MEOWTH_JEWELS; i++)
@@ -3905,11 +3913,11 @@ static int GetNumActiveJewels(struct Meowth *meowth)
             count++;
     }
     return count;
-}
+}*/
 
 static struct MeowthJewel *TryCreateNewJewel(struct Meowth *meowth, int ballXPos)
 {
-    int i, count;
+    int i;
     for (i = 0; i < MAX_MEOWTH_JEWELS; i++)
     {
         if (meowth->jewels[i].state == JEWEL_STATE_HIDDEN)
@@ -4924,6 +4932,10 @@ static void UpdateGhost(struct Gengar *gengar, struct GraveyardGhost *ghost, u8 
     {
         multiplier = 7;  // Haunter
     }
+	else
+	{
+		multiplier = 0;
+	}
 	
     switch (ghost->state)
     {

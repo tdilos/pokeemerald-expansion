@@ -632,7 +632,7 @@ void BattleSetup_StartLegendaryBattle(void)
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
     {
     default:
-		CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+		CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
 		break;
     case SPECIES_GROUDON:
     case SPECIES_GROUDON_PRIMAL:
@@ -651,11 +651,6 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_DEOXYS_DEFENSE:
     case SPECIES_DEOXYS_SPEED:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
-        break;
-    case SPECIES_LUGIA:
-    case SPECIES_HO_OH:
-    default:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_MEW:
     case SPECIES_CELEBI:
@@ -826,27 +821,27 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
     if (MetatileBehavior_IsSandGrass(tileBehavior))
-        return BATTLE_TERRAIN_SAND;
+        return BATTLE_ENVIRONMENT_SAND;
     if (MetatileBehavior_IsRedGrass(tileBehavior))
-        return BATTLE_TERRAIN_RED_GRASS;
+        return BATTLE_ENVIRONMENT_RED_GRASS;
     if (MetatileBehavior_IsSnowGrass(tileBehavior))
-        return BATTLE_TERRAIN_SNOW;
+        return BATTLE_ENVIRONMENT_SNOW;
 	if (MetatileBehavior_IsWisteriaGrass(tileBehavior))
-        return BATTLE_TERRAIN_WISTERIA_GRASS;
+        return BATTLE_ENVIRONMENT_WISTERIA_GRASS;
 	if (MetatileBehavior_IsHaewenGrass(tileBehavior))
-        return BATTLE_TERRAIN_HAEWEN_GRASS;
+        return BATTLE_ENVIRONMENT_HAEWEN_GRASS;
 	if (MetatileBehavior_IsBurgundyGrass(tileBehavior))
-        return BATTLE_TERRAIN_BURGUNDY_GRASS;
+        return BATTLE_ENVIRONMENT_BURGUNDY_GRASS;
     if (MetatileBehavior_IsRedGrass(tileBehavior))
-        return BATTLE_TERRAIN_RED_GRASS;
+        return BATTLE_ENVIRONMENT_RED_GRASS;
     if (MetatileBehavior_IsSnowGrass(tileBehavior))
-        return BATTLE_TERRAIN_SNOW;
+        return BATTLE_ENVIRONMENT_SNOW;
 	if (MetatileBehavior_IsWisteriaGrass(tileBehavior))
-        return BATTLE_TERRAIN_WISTERIA_GRASS;
+        return BATTLE_ENVIRONMENT_WISTERIA_GRASS;
 	if (MetatileBehavior_IsHaewenGrass(tileBehavior))
-        return BATTLE_TERRAIN_HAEWEN_GRASS;
+        return BATTLE_ENVIRONMENT_HAEWEN_GRASS;
 	if (MetatileBehavior_IsBurgundyGrass(tileBehavior))
-        return BATTLE_TERRAIN_BURGUNDY_GRASS;
+        return BATTLE_ENVIRONMENT_BURGUNDY_GRASS;
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
@@ -861,9 +856,9 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     case MAP_TYPE_ROUTE:
         break;
     case MAP_TYPE_UNDERGROUND:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERGROUND_CITY_SEWER)
-			|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERGROUND_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(UNDERGROUND_CITY)))
-            return BATTLE_TERRAIN_SEWER;
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_UNDERGROUND_CITY_SEWER)
+			|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_UNDERGROUND_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_UNDERGROUND_CITY)))
+            return BATTLE_ENVIRONMENT_SEWER;
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
             return BATTLE_ENVIRONMENT_BUILDING;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
@@ -871,8 +866,6 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         return BATTLE_ENVIRONMENT_CAVE;
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:
-		if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(UNDERGROUND_CITY_SEWER))
-            return BATTLE_ENVIRONMENT_SEWER;
         return BATTLE_ENVIRONMENT_BUILDING;
     case MAP_TYPE_UNDERWATER:
         return BATTLE_ENVIRONMENT_UNDERWATER;
@@ -904,28 +897,28 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         return BATTLE_ENVIRONMENT_SAND;
 	if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
 		return BATTLE_ENVIRONMENT_SAND;
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE70) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE70))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE70) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE70))
         return BATTLE_ENVIRONMENT_HAEWEN_GRASS;
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE67) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE67))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE66) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE66)))
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE67) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE67))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE66) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE66)))
         return BATTLE_ENVIRONMENT_WISTERIA_GRASS;
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE65) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE65))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BURGUNDY_TOWN) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BURGUNDY_TOWN)))
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE65) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE65))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BURGUNDY_TOWN) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BURGUNDY_TOWN)))
         return BATTLE_ENVIRONMENT_BURGUNDY_GRASS;
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE97) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE97))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE97) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE97))
         return BATTLE_ENVIRONMENT_SNOW;
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(PITCHBLAK_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(PITCHBLAK_CITY))
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_PITCHBLAK_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_PITCHBLAK_CITY))
         return BATTLE_ENVIRONMENT_BUILDING;
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE90) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE90))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE91) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE91))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE92) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE92))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE72) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE72))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE73) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE73))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SCARLET_WOODS_NORTH) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SCARLET_WOODS_NORTH))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SCARLET_WOODS_SOUTH) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SCARLET_WOODS_SOUTH))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE69) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE69))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE69) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE68))
-		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAROON_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAROON_CITY)))
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE90) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE90))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE91) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE91))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE92) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE92))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE72) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE72))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE73) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE73))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SCARLET_WOODS_NORTH) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SCARLET_WOODS_NORTH))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SCARLET_WOODS_SOUTH) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SCARLET_WOODS_SOUTH))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE69) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE69))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE69) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE68))
+		|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAROON_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAROON_CITY)))
         return BATTLE_ENVIRONMENT_PLAIN_RED;
 
     return BATTLE_ENVIRONMENT_PLAIN;
@@ -1028,15 +1021,15 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
 
-    if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_CHAMPION)
+    // Entity battle
+	if (trainerClass == TRAINER_CLASS_UNKNOWN)
+        return B_TRANSITION_BLACKHOLE;
+	
+    /*if (trainerClass == TRAINER_CLASS_CHAMPION)
         //return B_TRANSITION_CHAMPION;
         return B_TRANSITION_NORMAN;
 
-    // Entity battle
-	if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_UNKNOWN)
-        return B_TRANSITION_BLACKHOLE;
-
-    if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_ELITE_FOUR)
+    if (trainerClass == TRAINER_CLASS_ELITE_FOUR)
     {
         if (gTrainerBattleOpponent_A == TRAINER_SIDNEY)
             return B_TRANSITION_SIDNEY;
@@ -1055,7 +1048,7 @@ enum BattleTransition GetTrainerBattleTransition(void)
         if (gTrainerBattleOpponent_A == TRAINER_PETRA_0)
             return B_TRANSITION_PETRA;
         return B_TRANSITION_CHAMPION;
-    }
+    }*/
 
     if (trainerClass == TRAINER_CLASS_TEAM_MAGMA
         || trainerClass == TRAINER_CLASS_MAGMA_LEADER
@@ -1066,10 +1059,6 @@ enum BattleTransition GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_LEADER
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
-
-    // Entity battle
-	if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_UNKNOWN)
-        return B_TRANSITION_BLACKHOLE;
 	
     switch (GetTrainerBattleType(trainerId))
     {
@@ -1636,7 +1625,7 @@ static void HandleBattleVariantEndParty(void)
 
 static bool8 BattleHasNoWhiteout()
 {
-    if (gTrainerBattleMode == TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT || gTrainerBattleMode == TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT)
+    if (GetTrainerBattleMode() == TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT || GetTrainerBattleMode() == TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT)
         return TRUE;
     else
         return FALSE;

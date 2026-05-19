@@ -9,7 +9,7 @@ static const u16 sKantoSubregionMapsecs[KANTO_SUBREGION_COUNT][30] = {
     },
     [KANTO_SUBREGION_SEVII123] =
     {
-        MAPSEC_ONE_ISLAND,
+        /*MAPSEC_ONE_ISLAND,
         MAPSEC_TWO_ISLAND,
         MAPSEC_THREE_ISLAND,
         MAPSEC_KINDLE_ROAD,
@@ -20,12 +20,12 @@ static const u16 sKantoSubregionMapsecs[KANTO_SUBREGION_COUNT][30] = {
         MAPSEC_MT_EMBER,
         MAPSEC_BERRY_FOREST,
         MAPSEC_THREE_ISLE_PATH,
-        MAPSEC_EMBER_SPA,
+        MAPSEC_EMBER_SPA,*/
         MAPSEC_NONE
     },
     [KANTO_SUBREGION_SEVII45] =
     {
-        MAPSEC_FOUR_ISLAND,
+        /*MAPSEC_FOUR_ISLAND,
         MAPSEC_FIVE_ISLAND,
         MAPSEC_RESORT_GORGEOUS,
         MAPSEC_WATER_LABYRINTH,
@@ -34,12 +34,12 @@ static const u16 sKantoSubregionMapsecs[KANTO_SUBREGION_COUNT][30] = {
         MAPSEC_NAVEL_ROCK_FRLG,
         MAPSEC_ICEFALL_CAVE,
         MAPSEC_ROCKET_WAREHOUSE,
-        MAPSEC_LOST_CAVE,
+        MAPSEC_LOST_CAVE,*/
         MAPSEC_NONE
     },
     [KANTO_SUBREGION_SEVII67] =
     {
-        MAPSEC_SEVEN_ISLAND,
+        /*MAPSEC_SEVEN_ISLAND,
         MAPSEC_SIX_ISLAND,
         MAPSEC_OUTCAST_ISLAND,
         MAPSEC_GREEN_PATH,
@@ -65,7 +65,7 @@ static const u16 sKantoSubregionMapsecs[KANTO_SUBREGION_COUNT][30] = {
         MAPSEC_DILFORD_CHAMBER,
         MAPSEC_SCUFIB_CHAMBER,
         MAPSEC_RIXY_CHAMBER,
-        MAPSEC_VIAPOIS_CHAMBER,
+        MAPSEC_VIAPOIS_CHAMBER,*/
         MAPSEC_NONE
     }
 };

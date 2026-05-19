@@ -1,5 +1,5 @@
-.set LOCALID_JACE, 5
-.set LOCALID_ROBIN, 6
+.set LOCALID_JACE_ROUTE100, 5
+.set LOCALID_ROBIN_ROUTE100, 6
 .set LOCALID_DRAKE, 3
 .set LOCALID_BOAT, 4
 
@@ -88,15 +88,15 @@ Route100_Text_NotEnoughMoney:
 
 
 Route100_EventScript_MoveJaceAndRobinToBeach:
-	@removeobject LOCALID_JACE
-	@removeobject LOCALID_ROBIN
+	@removeobject LOCALID_JACE_ROUTE100
+	@removeobject LOCALID_ROBIN_ROUTE100
 	clearflag FLAG_HIDE_JACE
-	setobjectxyperm LOCALID_JACE, 75, 32
-	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm LOCALID_ROBIN, 75, 33
-	setobjectmovementtype LOCALID_ROBIN, MOVEMENT_TYPE_FACE_LEFT
-	addobject LOCALID_JACE
-	addobject LOCALID_ROBIN
+	setobjectxyperm LOCALID_JACE_ROUTE100, 75, 32
+	setobjectmovementtype LOCALID_JACE_ROUTE100, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm LOCALID_ROBIN_ROUTE100, 75, 33
+	setobjectmovementtype LOCALID_ROBIN_ROUTE100, MOVEMENT_TYPE_FACE_LEFT
+	addobject LOCALID_JACE_ROUTE100
+	addobject LOCALID_ROBIN_ROUTE100
 	return
 
 Route100_EventScript_DrakeGoodbye::
@@ -162,9 +162,9 @@ Route100_EventScript_JaceTrigger1::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_JACE, Route100_Movement_JaceEnter
+	applymovement LOCALID_JACE_ROUTE100, Route100_Movement_JaceEnter
 	waitmovement 0
-	applymovement LOCALID_ROBIN, Route100_Movement_RobinEnter
+	applymovement LOCALID_ROBIN_ROUTE100, Route100_Movement_RobinEnter
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Route100_Movement_WalkToJace1
 	waitmovement 0
@@ -182,9 +182,9 @@ Route100_EventScript_JaceTrigger2::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_JACE, Route100_Movement_JaceEnter
+	applymovement LOCALID_JACE_ROUTE100, Route100_Movement_JaceEnter
 	waitmovement 0
-	applymovement LOCALID_ROBIN, Route100_Movement_RobinEnter
+	applymovement LOCALID_ROBIN_ROUTE100, Route100_Movement_RobinEnter
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Route100_Movement_WalkToJace2
 	waitmovement 0
@@ -193,7 +193,7 @@ Route100_EventScript_JaceTrigger2::
 
 Route100_EventScript_JaceEncounter::
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_ROUTE100, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox Route100_Text_JacePreBattle, MSGBOX_DEFAULT
 	closemessage
@@ -221,27 +221,27 @@ Route100_EventScript_StartJaceBattlePopplio::
 
 Route100_EventScript_JacePostBattle::
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_ROUTE100, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	delay 30
 	msgbox Route100_Text_JacePostBattle, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROBIN, Common_Movement_WalkUp
+	applymovement LOCALID_ROBIN_ROUTE100, Common_Movement_WalkUp
 	waitmovement 0
-	@applymovement LOCALID_ROBIN, Common_Movement_WalkLeft
+	@applymovement LOCALID_ROBIN_ROUTE100, Common_Movement_WalkLeft
 	@waitmovement 0
-	applymovement LOCALID_ROBIN, Common_Movement_WalkLeft
+	applymovement LOCALID_ROBIN_ROUTE100, Common_Movement_WalkLeft
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_ROUTE100, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox Route100_Text_JacePostBattle2, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROBIN, Route100_Movement_RobinExit
-	applymovement LOCALID_JACE, Route100_Movement_JaceExit
+	applymovement LOCALID_ROBIN_ROUTE100, Route100_Movement_RobinExit
+	applymovement LOCALID_JACE_ROUTE100, Route100_Movement_JaceExit
 	waitmovement 0
-	removeobject LOCALID_JACE
-	removeobject LOCALID_ROBIN
+	removeobject LOCALID_JACE_ROUTE100
+	removeobject LOCALID_ROBIN_ROUTE100
 	setflag FLAG_HIDE_JACE
 	setvar VAR_JACE_STATE, 7
 	releaseall

@@ -4,13 +4,13 @@ OffwiteTown_House3_MapScripts::
 OffwiteTown_House3_EventScript_OldMan::
 	lock
 	faceplayer
-	@goto_if_set FLAG_RECEIVED_HM07, OffwiteTown_House3_EventScript_PostHM
+	goto_if_set FLAG_RECEIVED_HM_WATERFALL, OffwiteTown_House3_EventScript_PostHM
 	msgbox OffwiteTown_House3_Text_EarnedRespect, MSGBOX_DEFAULT
-	@checkitemspace ITEM_HM07
-	@call_if_eq VAR_RESULT, FALSE, OffwiteTown_House3_EventScript_NoRoomForHM
+	checkitemspace ITEM_HM07
+	call_if_eq VAR_RESULT, FALSE, OffwiteTown_House3_EventScript_NoRoomForHM
 	giveitem ITEM_HM07
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_HM07
+	setflag FLAG_RECEIVED_HM_WATERFALL
 	msgbox OffwiteTown_House3_Text_ExplainThaw, MSGBOX_DEFAULT
 	release
 	end

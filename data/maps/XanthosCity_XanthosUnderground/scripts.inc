@@ -1,7 +1,7 @@
 .set LOCALID_GUARD, 1
-.set LOCALID_JUSTIN, 11
-.set LOCALID_JACE, 12
-.set LOCALID_ROBIN, 13
+.set LOCALID_JUSTIN_XANTHOS, 11
+.set LOCALID_JACE_XANTHOS, 12
+.set LOCALID_ROBIN_XANTHOS, 13
 .set LOCALID_RANGER1, 14
 .set LOCALID_RANGER2, 15
 .set LOCALID_RANGER3, 16
@@ -37,9 +37,9 @@ XanthosCity_XanthosUnderground_OnTransition:
 
 XanthosCity_XanthosUnderground_EventScript_HideJaceAndRangers:
 	setflag FLAG_HIDE_JACE
-	removeobject LOCALID_JUSTIN
-	removeobject LOCALID_JACE
-	removeobject LOCALID_ROBIN
+	removeobject LOCALID_JUSTIN_XANTHOS
+	removeobject LOCALID_JACE_XANTHOS
+	removeobject LOCALID_ROBIN_XANTHOS
 	removeobject LOCALID_RANGER1
 	removeobject LOCALID_RANGER2
 	removeobject LOCALID_RANGER3
@@ -57,13 +57,13 @@ XanthosCity_XanthosUnderground_EventScript_MoveGuard:
 	
 XanthosCity_XanthosUnderground_EventScript_PreRaidSetup:
 	clearflag FLAG_HIDE_JACE
-	setobjectxyperm LOCALID_JUSTIN, 17, 16
-	setobjectmovementtype LOCALID_JUSTIN, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_JUSTIN
-	setobjectxyperm LOCALID_JACE, 18, 17
-	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_UP
-	setobjectxyperm LOCALID_ROBIN, 18, 16
-	setobjectmovementtype LOCALID_ROBIN, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_JUSTIN_XANTHOS, 17, 16
+	setobjectmovementtype LOCALID_JUSTIN_XANTHOS, MOVEMENT_TYPE_FACE_UP
+	addobject LOCALID_JUSTIN_XANTHOS
+	setobjectxyperm LOCALID_JACE_XANTHOS, 18, 17
+	setobjectmovementtype LOCALID_JACE_XANTHOS, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_ROBIN_XANTHOS, 18, 16
+	setobjectmovementtype LOCALID_ROBIN_XANTHOS, MOVEMENT_TYPE_FACE_UP
 	setobjectxyperm LOCALID_RANGER1, 18, 18
 	setobjectmovementtype LOCALID_RANGER, MOVEMENT_TYPE_FACE_UP
 	setobjectxyperm LOCALID_RANGER2, 17, 17
@@ -76,8 +76,8 @@ XanthosCity_XanthosUnderground_EventScript_PreRaidSetup:
 	setobjectmovementtype LOCALID_RANGER, MOVEMENT_TYPE_FACE_UP
 	setobjectxyperm LOCALID_RANGER6, 16, 18
 	setobjectmovementtype LOCALID_RANGER, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_JACE
-	addobject LOCALID_ROBIN
+	addobject LOCALID_JACE_XANTHOS
+	addobject LOCALID_ROBIN_XANTHOS
 	addobject LOCALID_RANGER1
 	addobject LOCALID_RANGER2
 	addobject LOCALID_RANGER3
@@ -101,13 +101,13 @@ XanthosCity_XanthosUnderground_EventScript_PreRaid::
 	applymovement LOCALID_GUARD, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_JUSTIN, XanthosCity_XanthosUnderground_Movement_JustinWalkToElevator
+	applymovement LOCALID_JUSTIN_XANTHOS, XanthosCity_XanthosUnderground_Movement_JustinWalkToElevator
 	delay 30
 	applymovement LOCALID_RANGER4, XanthosCity_XanthosUnderground_Movement_Ranger4WalkToElevator
 	delay 30
-	applymovement LOCALID_ROBIN, XanthosCity_XanthosUnderground_Movement_RobinWalkToElevator
+	applymovement LOCALID_ROBIN_XANTHOS, XanthosCity_XanthosUnderground_Movement_RobinWalkToElevator
 	delay 30
-	applymovement LOCALID_JACE, XanthosCity_XanthosUnderground_Movement_JaceWalkToElevator
+	applymovement LOCALID_JACE_XANTHOS, XanthosCity_XanthosUnderground_Movement_JaceWalkToElevator
 	delay 30
 	applymovement LOCALID_RANGER2, XanthosCity_XanthosUnderground_Movement_Ranger2WalkToElevator
 	delay 30

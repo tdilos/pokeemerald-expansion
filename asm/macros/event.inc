@@ -811,12 +811,12 @@
 	@ Starts a single trainer battle. Takes a trainer, intro text, loss text, and an event script which continues after the battle,regardless of the result.
 	@ When used with an event script, you can also pass in an optional flag to disable music
 	.macro trainerbattle_no_whiteout_continue_script trainer:req, intro_text:req, lose_text:req, event_script:req
-	trainerbattle TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT, \trainer, 0, \intro_text, \lose_text, \event_script
+	trainerbattle TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT, LOCALID_NONE, \trainer, NULL, \lose_text, \event_script, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 	.endm
 
 	@ Starts a trainer battle, skipping intro text. Takes a trainer and loss text. Does not warp the player to last heal location if they lose. 
 	.macro trainerbattle_no_intro_no_whiteout trainer:req, lose_text:req
-	trainerbattle TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, \trainer, 0, \lose_text
+	trainerbattle TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, LOCALID_NONE, \trainer, NULL, \lose_text, NULL, LOCALID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 	.endm
 
 	@ Starts a trainer battle with victory text if the player loses. If flags is nonzero, the player will be healed after battle (and its assumed to be the tutorial battle)
@@ -1948,13 +1948,13 @@
 @ Quest stuff
 
     .macro questmenu case:req, questId:req
-    .byte 0xe3
+    .byte SCR_OP_QUESTMENU
     .byte \case
     .byte \questId
     .endm
 
     .macro subquestmenu case:req, parentId:req, childId:req
-    .byte 0xe4
+    .byte SCR_OP_SUBQUESTMENU
     .byte \case
     .2byte \parentId
     .2byte \childId
@@ -1962,7 +1962,7 @@
 
     @ Check the quest state and return a number associated with quest state
     .macro returnqueststate questId:req
-    .byte 0xe5
+    .byte SCR_OP_RETURNQUESTSTATE
     .byte \questId
     .endm
     
@@ -2103,7 +2103,7 @@
 	@ If a value greater than PARTY_SIZE is given for partyIndex it will use the last Pokémon in the party instead.
 	@ Note that this means in vanilla a value equal to PARTY_SIZE for partyIndex will go out of bounds.
 	.macro setmonability partyIndex:req, abilityNum:req
-	.byte 0xe6
+	.byte SCR_OP_SETMONABILITY
 	.byte \partyIndex
 	.byte \abilityNum
 	.endm

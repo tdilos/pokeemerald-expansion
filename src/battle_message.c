@@ -371,6 +371,7 @@ static const u8 sText_WildFled[] = _("{PLAY_SE SE_FLEE}{B_LINK_OPPONENT1_NAME} f
 static const u8 sText_TwoWildFled[] = _("{PLAY_SE SE_FLEE}{B_LINK_OPPONENT1_NAME} and {B_LINK_OPPONENT2_NAME} fled!"); //not in gen 5+, replaced with match was forfeited text
 static const u8 sText_PlayerDefeatedLinkTrainerTrainer1[] = _("You defeated {B_TRAINER1_NAME_WITH_CLASS}!\p");
 static const u8 sText_OpponentMon1Appeared[] = _("{B_OPPONENT_MON1_NAME} appeared!\p");
+
 /*static const u8 sText_WildPkmnAppeared[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!\p");
 static const u8 sText_LegendaryPkmnAppeared[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!\p");
 static const u8 sText_WildPkmnAppearedPause[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!{PAUSE 127}");
@@ -389,15 +390,19 @@ static const u8 sText_LinkTrainerSentOutTwoPkmn[] = _("{B_LINK_OPPONENT1_NAME} s
 static const u8 sText_TwoLinkTrainersSentOutPkmn[] = _("{B_LINK_OPPONENT1_NAME} sent out {B_LINK_OPPONENT_MON1_NAME}! {B_LINK_OPPONENT2_NAME} sent out {B_LINK_OPPONENT_MON2_NAME}!");
 static const u8 sText_LinkTrainerSentOutPkmn2[] = _("{B_LINK_OPPONENT1_NAME} sent out {B_BUFF1}!");
 static const u8 sText_LinkTrainerMultiSentOutPkmn[] = _("{B_LINK_SCR_TRAINER_NAME} sent out {B_BUFF1}!");*/
+
 static const u8 sText_WildPkmnAppeared[] = _("Wild {B_OPPONENT_MON1_NAME} appeared!\p");
 static const u8 sText_LegendaryPkmnAppeared[] = _("Wild {B_OPPONENT_MON1_NAME} appeared!\p");
 static const u8 sText_WildPkmnAppearedPause[] = _("Wild {B_OPPONENT_MON1_NAME} appeared!{PAUSE 127}");
 static const u8 sText_ChallengedByWisteriaRuffian[] = _("You are challenged by WISTERIA RUFFIAN!");
 static const u8 sText_TwoWildPkmnAppeared[] = _("Wild {B_OPPONENT_MON1_NAME} and\n{B_OPPONENT_MON2_NAME} appeared!\p");
+static const u8 sText_GhostAppearedCantId[] = _("The GHOST appeared!\pDarn!\nThe GHOST can't be ID'd!\p");
+static const u8 sText_TheGhostAppeared[] = _("The GHOST appeared!\p");
 static const u8 sText_Trainer1WantsToBattle[] = _("{B_TRAINER1_CLASS} {B_TRAINER1_NAME}\nwould like to battle!\p");
 static const u8 sText_LinkTrainerWantsToBattle[] = _("{B_LINK_OPPONENT1_NAME}\nwants to battle!");
 static const u8 sText_TwoLinkTrainersWantToBattle[] = _("{B_LINK_OPPONENT1_NAME} and {B_LINK_OPPONENT2_NAME}\nwant to battle!");
 static const u8 sText_Trainer1SentOutPkmn[] = _("{B_TRAINER1_CLASS} {B_TRAINER1_NAME} sent\nout {B_OPPONENT_MON1_NAME}!");
+static const u8 sText_LinkTrainer2SentOutPkmn2[] = _("{B_LINK_OPPONENT2_NAME} sent out {B_OPPONENT_MON2_NAME}!");
 static const u8 sText_Trainer1SentOutTwoPkmn[] = _("{B_TRAINER1_CLASS} {B_TRAINER1_NAME} sent\nout {B_OPPONENT_MON1_NAME} and {B_OPPONENT_MON2_NAME}!");
 static const u8 sText_Trainer1SentOutPkmn2[] = _("{B_TRAINER1_CLASS} {B_TRAINER1_NAME} sent\nout {B_BUFF1}!");
 static const u8 sText_LinkTrainerSentOutPkmn[] = _("{B_LINK_OPPONENT1_NAME} sent out\n{B_OPPONENT_MON1_NAME}!");
@@ -786,10 +791,15 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_SCR_ITDOESNTAFFECT]                   = COMPOUND_STRING("It doesn't affect {B_SCR_NAME_WITH_PREFIX2}…"),
     [STRINGID_BATTLERFAINTED]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} fainted!\p"),
     [STRINGID_PLAYERGOTMONEY]                       = COMPOUND_STRING("You got ¥{B_BUFF1} for winning!\p"),
-    [STRINGID_PLAYERWHITEOUT]                       = COMPOUND_STRING("You have no more Pokémon that can fight!\p"),
+    //[STRINGID_PLAYERWHITEOUT]                       = COMPOUND_STRING("You have no more Pokémon that can fight!\p"),
+    [STRINGID_PLAYERWHITEOUT]                       = COMPOUND_STRING("{B_PLAYER_NAME} is out of\nusable POKéMON!\p"),
     [STRINGID_PLAYERWHITEOUT2_WILD]                 = COMPOUND_STRING("You panicked and dropped ¥{B_BUFF1}…"),
-    [STRINGID_PLAYERWHITEOUT2_TRAINER]              = COMPOUND_STRING("You gave ¥{B_BUFF1} to the winner…"),
-    [STRINGID_PLAYERWHITEOUT3]                      = COMPOUND_STRING("You were overwhelmed by your defeat!"),
+    //[STRINGID_PLAYERWHITEOUT2_TRAINER]              = COMPOUND_STRING("You gave ¥{B_BUFF1} to the winner…"),
+	[STRINGID_PLAYERWHITEOUT2_TRAINER]              = COMPOUND_STRING("{B_PLAYER_NAME} paid ¥{B_BUFF1} as the prize\nmoney…{PAUSE_UNTIL_PRESS}"),
+    //[STRINGID_PLAYERWHITEOUT3]                      = COMPOUND_STRING("You were overwhelmed by your defeat!"),
+	[STRINGID_PLAYERWHITEOUT3]                      = COMPOUND_STRING("{B_PLAYER_NAME} whited out!{PAUSE_UNTIL_PRESS}"),
+	[STRINGID_PLAYERWHITEOUT4]                      = COMPOUND_STRING("{B_PLAYER_NAME} lost the battle!{PAUSE_UNTIL_PRESS}"),
+	
     [STRINGID_PREVENTSESCAPE]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} prevents escape with {B_SCR_ABILITY}!\p"),
     [STRINGID_HITXTIMES]                            = COMPOUND_STRING("The Pokémon was hit {B_BUFF1} time(s)!"), //SV has dynamic plural here
     [STRINGID_PKMNFELLASLEEP]                       = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} fell asleep!"),
@@ -1467,52 +1477,53 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_MOONLIGHTFADED]                        = COMPOUND_STRING("The moonlight faded."),
 
     [STRINGID_PKMNWASINFECTED]                       = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} is infected!\nIt will take damage if it battles!"),
-    [STRINGID_PKMNINFECTEDBY]                        = COMPOUND_STRING("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\ninfected {B_EFF_NAME_WITH_PREFIX}!\lIt will take damage if it battles!");
-    [STRINGID_PKMNWASDAZED]                          = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} is dazed!\nIt won't listen to commands!");
-    [STRINGID_PKMNDAZEDBY]                           = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} was dazed by\n{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_BUFF1}!");
-    [STRINGID_PKMNGOTOVERDAZE]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} got over its daze!");
-    [STRINGID_PKMNWASEXHAUSTED]                      = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} was exhausted!");
-    [STRINGID_PKMNEXHAUSTEDBY]                       = COMPOUND_STRING("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nexhausted {B_EFF_NAME_WITH_PREFIX}!");
-    [STRINGID_PKMNBECAMEAFRAID]                      = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} became afraid!");
-    [STRINGID_PKMNAFRAIDOF]                          = COMPOUND_STRING("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nmade {B_EFF_NAME_WITH_PREFIX} afraid!");
+    [STRINGID_PKMNINFECTEDBY]                        = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\ninfected {B_EFF_NAME_WITH_PREFIX}!\lIt will take damage if it battles!"),
+    [STRINGID_PKMNWASDAZED]                          = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} is dazed!\nIt won't listen to commands!"),
+    [STRINGID_PKMNDAZEDBY]                           = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} was dazed by\n{B_SCR_NAME_WITH_PREFIX}'s {B_BUFF1}!"),
+    [STRINGID_PKMNGOTOVERDAZE]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} got over its daze!"),
+    [STRINGID_PKMNWASEXHAUSTED]                      = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} was exhausted!"),
+    [STRINGID_PKMNEXHAUSTEDBY]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\nexhausted {B_EFF_NAME_WITH_PREFIX}!"),
+    [STRINGID_PKMNBECAMEAFRAID]                      = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} became afraid!"),
+    [STRINGID_PKMNAFRAIDOF]                          = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\nmade {B_EFF_NAME_WITH_PREFIX} afraid!"),
 	
-    [STRINGID_PKMNINFECTPREVENTSHEAL]                = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s infection\nprevents healing!");
-    [STRINGID_PKMNISDAZED]                           = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is dazed!");
-    [STRINGID_PKMNEXHAUSTPP]                         = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} lost PP from exhaustion!");
-    [STRINGID_PKMNISAFRAID]                          = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is too afraid!\nIt won't move!");
+    [STRINGID_PKMNINFECTPREVENTSHEAL]                = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s infection\nprevents healing!"),
+    [STRINGID_PKMNISDAZED]                           = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is dazed!"),
+    [STRINGID_PKMNEXHAUSTPP]                         = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} lost PP from exhaustion!"),
+    [STRINGID_PKMNISAFRAID]                          = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is too afraid!\nIt won't move!"),
 	
-    //[STRINGID_PKMNPREVENTSINFECTIONWITH,
-    //[STRINGID_PKMNPREVENTSDAZEWITH,
-    //[STRINGID_PKMNPREVENTSEXHAUSTIONWITH,
-    //[STRINGID_PKMNPREVENTSFEARWITH,
-	
-    [STRINGID_PKMNALREADYINFECTED]                   = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is already\ninfected.");
-    [STRINGID_PKMNALREADYDAZED]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is already\ndazed.");
-    [STRINGID_PKMNALREADYEXHAUSTED]                  = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is already\nexhausted.");
-    [STRINGID_PKMNALREADYAFRAID]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is already\nafraid.");
+    [STRINGID_PKMNALREADYINFECTED]                   = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is already\ninfected."),
+    [STRINGID_PKMNALREADYDAZED]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is already\ndazed."),
+    [STRINGID_PKMNALREADYEXHAUSTED]                  = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is already\nexhausted."),
+    [STRINGID_PKMNALREADYAFRAID]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is already\nafraid."),
 	
     [STRINGID_PKMNSITEMDISINFECTED]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_LAST_ITEM} disinfected it!"),
     [STRINGID_PKMNSITEMCUREDDAZE]                    = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_LAST_ITEM} cured its daze!"),
     [STRINGID_PKMNSITEMINVIGORATED]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_LAST_ITEM} reinvigorated it!"),
     [STRINGID_PKMNSITEMCUREDFEAR]                    = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_LAST_ITEM} cured its fear!"),
 	
-    [STRINGID_TOXICFUMESSMAZE]                       = COMPOUND_STRING("A thick smaze covers the field!");
-    [STRINGID_ECLIPSEFULLMOON]                       = COMPOUND_STRING("The moonlight intensified!");
+	[STRINGID_PKMNPREVENTSINFECTIONWITH]             = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\nprevents infection!"),
+	[STRINGID_PKMNPREVENTSDAZEWITH]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\nprevents daze!"),
+	[STRINGID_PKMNPREVENTSEXHAUSTIONWITH]            = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\nprevents exhaustion!"),
+	[STRINGID_PKMNPREVENTSFEARWITH]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_DEF_ABILITY}\nprevents fear!"),
 	
-    [STRINGID_PKMNSPIRITROSE]                        = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s fighting\nspirit rose!");
-    [STRINGID_PKMNINFECTDAMAGE]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} lost HP from its infection!");
-    [STRINGID_PKMNCUTSSPATTACKWITH]                  = COMPOUND_STRING("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\ncuts {B_DEF_NAME_WITH_PREFIX}'s sp. atk!");
-    [STRINGID_RADIATIONDMG]                          = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} took radiation\ndamage!");
+    [STRINGID_TOXICFUMESSMAZE]                       = COMPOUND_STRING("A thick smaze covers the field!"),
+    [STRINGID_ECLIPSEFULLMOON]                       = COMPOUND_STRING("The moonlight intensified!"),
+	
+    [STRINGID_PKMNSPIRITROSE]                        = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s fighting\nspirit rose!"),
+    [STRINGID_PKMNINFECTDAMAGE]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} lost HP from its infection!"),
+    [STRINGID_PKMNCUTSSPATTACKWITH]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\ncuts {B_DEF_NAME_WITH_PREFIX2}'s Sp. Atk!"),
+	[STRINGID_PKMNCUTSACCURACYWITH]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\ncuts {B_DEF_NAME_WITH_PREFIX2}'s Accuracy!"),
+    [STRINGID_RADIATIONDMG]                          = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} took radiation\ndamage!"),
     //[STRINGID_PLAYERWHITEOUT3]                       = COMPOUND_STRING(
-    [STRINGID_PKMNBREATHEDINSMAZE]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} breathed in\nthe SMAZE!");
-    [STRINGID_PKMNGLOWEDMOONLIGHT]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} glowed in\nthe moonlight!");
-    [STRINGID_MYSTERIOUSDUSTFLOATS]                  = COMPOUND_STRING("Mysterious dust floats in the air\naround {B_DEF_TEAM2} team!");
+    [STRINGID_PKMNBREATHEDINSMAZE]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} breathed in\nthe SMAZE!"),
+    [STRINGID_PKMNGLOWEDMOONLIGHT]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} glowed in\nthe moonlight!"),
+    [STRINGID_MYSTERIOUSDUSTFLOATS]                  = COMPOUND_STRING("Mysterious dust floats in the air\naround {B_DEF_TEAM2} team!"),
     //[STRINGID_FAIRYDUSTDMG]                          = COMPOUND_STRING(
-    [STRINGID_PKMNBLEWAWAYFAIRYDUST]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} blew away\nFairy Dust!");
-    [STRINGID_FAIRYDUSTDISAPPEAREDFROMTEAM]          = COMPOUND_STRING("The mysterious dust disappeared\nfrom around {B_ATK_TEAM2} team!");
-    [STRINGID_PKMNRAISEDACC]                         = COMPOUND_STRING("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nraised its ACCURACY!");
-    [STRINGID_PKMNTOOKMOONLIGHT]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} took\nin moonlight!");
-    [STRINGID_STEALTHROCKSABSORBED]                  = COMPOUND_STRING("The pointed stones disappeared\nfrom around the opposing team's feet!");
+    [STRINGID_PKMNBLEWAWAYFAIRYDUST]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} blew away\nFairy Dust!"),
+    [STRINGID_FAIRYDUSTDISAPPEAREDFROMTEAM]          = COMPOUND_STRING("The mysterious dust disappeared\nfrom around {B_ATK_TEAM2} team!"),
+    [STRINGID_PKMNRAISEDACC]                         = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\nraised its ACCURACY!"),
+    [STRINGID_PKMNTOOKMOONLIGHT]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} took\nin moonlight!"),
+    [STRINGID_STEALTHROCKSABSORBED]                  = COMPOUND_STRING("The pointed stones disappeared\nfrom around the opposing team's feet!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -2017,7 +2028,7 @@ const u16 CureStatusBerryEffectStringID[] =
     [B_MSG_CURED_FROSTBITE]   = STRINGID_PKMNSITEMHEALEDFROSTBITE,
     [B_MSG_CURED_SLEEP]       = STRINGID_PKMNSITEMWOKEIT,
     [B_MSG_CURED_PROBLEM]     = STRINGID_PKMNSITEMCUREDPROBLEM,
-    [B_MSG_NORMALIZED_STATUS] = STRINGID_PKMNSITEMNORMALIZEDSTATUS
+    [B_MSG_NORMALIZED_STATUS] = STRINGID_PKMNSITEMNORMALIZEDSTATUS,
 	[B_MSG_CURED_INFECT]      = STRINGID_PKMNSITEMDISINFECTED,
 	[B_MSG_CURED_DAZE]        = STRINGID_PKMNSITEMCUREDDAZE,
 	[B_MSG_CURED_EXHAUST]     = STRINGID_PKMNSITEMINVIGORATED,
@@ -3746,11 +3757,11 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
         GetFrontierTrainerName(text, trainerId);
         toCpy = text;
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
+    /*else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
     {
         GetTrainerTowerOpponentName(text);
         toCpy = text;
-    }
+    }*/
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
     {
         GetTrainerHillTrainerName(text, trainerId);
@@ -3860,8 +3871,8 @@ static const u8 *BattleStringGetOpponentClassByTrainerId(u16 trainerId)
         toCpy = gTrainerClasses[GetFrontierBrainTrainerClass()].name;
     else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
         toCpy = gTrainerClasses[GetFrontierOpponentClass(trainerId)].name;
-    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
-        toCpy = gTrainerClasses[GetTrainerTowerOpponentClass()].name;
+    //else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
+    //    toCpy = gTrainerClasses[GetTrainerTowerOpponentClass()].name;
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
         toCpy = gTrainerClasses[GetTrainerHillOpponentClass(trainerId)].name;
     else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
@@ -4140,11 +4151,11 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                     CopyFrontierTrainerText(FRONTIER_PLAYER_WON_TEXT, TRAINER_BATTLE_PARAM.opponentA);
                     toCpy = gStringVar4;
                 }
-                else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
+                /*else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
                 {
                     GetTrainerTowerOpponentLoseText(gStringVar4, 0);
                     toCpy = gStringVar4;
-                }
+                }*/
                 else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
                 {
                     CopyTrainerHillTrainerText(TRAINER_HILL_TEXT_PLAYER_WON, TRAINER_BATTLE_PARAM.opponentA);
@@ -4161,11 +4172,11 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                     CopyFrontierTrainerText(FRONTIER_PLAYER_LOST_TEXT, TRAINER_BATTLE_PARAM.opponentA);
                     toCpy = gStringVar4;
                 }
-                else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
+                /*else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
                 {
                     GetTrainerTowerOpponentWinText(gStringVar4, 0);
                     toCpy = gStringVar4;
-                }
+                }*/
                 else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
                 {
                     CopyTrainerHillTrainerText(TRAINER_HILL_TEXT_PLAYER_LOST, TRAINER_BATTLE_PARAM.opponentA);
@@ -4269,11 +4280,11 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                     CopyFrontierTrainerText(FRONTIER_PLAYER_WON_TEXT, TRAINER_BATTLE_PARAM.opponentB);
                     toCpy = gStringVar4;
                 }
-                else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
+                /*else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
                 {
                     GetTrainerTowerOpponentLoseText(gStringVar4, 1);
                     toCpy = gStringVar4;
-                }
+                }*/
                 else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
                 {
                     CopyTrainerHillTrainerText(TRAINER_HILL_TEXT_PLAYER_WON, TRAINER_BATTLE_PARAM.opponentB);
@@ -4290,11 +4301,11 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                     CopyFrontierTrainerText(FRONTIER_PLAYER_LOST_TEXT, TRAINER_BATTLE_PARAM.opponentB);
                     toCpy = gStringVar4;
                 }
-                else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
+                /*else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
                 {
                     GetTrainerTowerOpponentWinText(gStringVar4, 1);
                     toCpy = gStringVar4;
-                }
+                }*/
                 else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
                 {
                     CopyTrainerHillTrainerText(TRAINER_HILL_TEXT_PLAYER_LOST, TRAINER_BATTLE_PARAM.opponentB);
@@ -4695,7 +4706,7 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId)
     else
         gTextFlags.useAlternateDownArrow = TRUE;
 
-    if ((gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)) || gTestRunnerEnabled || ((gBattleTypeFlags & BATTLE_TYPE_POKEDUDE) && windowId != B_WIN_OAK_OLD_MAN))
+    if ((gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)) || gTestRunnerEnabled ) //|| ((gBattleTypeFlags & BATTLE_TYPE_POKEDUDE) && windowId != B_WIN_OAK_OLD_MAN))
         gTextFlags.autoScroll = TRUE;
     else
         gTextFlags.autoScroll = FALSE;
@@ -4732,8 +4743,8 @@ void SetPpNumbersPaletteInMoveSelection(enum BattlerId battler)
     const u16 *palPtr = gPPTextPalette;
     u8 var;
 
-	var = GetCurrentPpToMaxPpState(chooseMoveStruct->currentPp[gMoveSelectionCursor[gActiveBattler]],
-            chooseMoveStruct->maxPp[gMoveSelectionCursor[gActiveBattler]]);
+	var = GetCurrentPpToMaxPpState(chooseMoveStruct->currentPp[gMoveSelectionCursor[battler]],
+            chooseMoveStruct->maxPp[gMoveSelectionCursor[battler]]);
 						 
     if (!gBattleStruct->zmove.viewing)
         var = GetCurrentPpToMaxPpState(chooseMoveStruct->currentPp[gMoveSelectionCursor[battler]],

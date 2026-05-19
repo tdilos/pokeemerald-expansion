@@ -2473,7 +2473,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 	
-	[ABILITY_STERILE] = =
+	[ABILITY_STERILE] =
     {
         .name = _("Sterile"),
         .description = COMPOUND_STRING("Prevents infect."),
@@ -2481,7 +2481,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 	
-	[ABILITY_FLUID] = =
+	[ABILITY_FLUID] =
     {
         .name = _("Fluid"),
         .description = COMPOUND_STRING("Prevents daze."),
@@ -2715,9 +2715,9 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 	
-    [ABILITY_BATTERY_POWER] =
+    [ABILITY_BATTERY_POWERED] =
     {
-        .name = _("Battery Power"),
+        .name = _("Battery Powered"),
         .description = COMPOUND_STRING("Electric increases Attack."),
         .aiRating = 7,
         .breakable = TRUE,

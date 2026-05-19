@@ -1,6 +1,6 @@
 .equ SMEARGLE_PRICE, 9999
-.set LOCALID_JACE, 12
-.set LOCALID_BRENDAN, 16
+.set LOCALID_JACE_TURQUOISE, 12
+.set LOCALID_BRENDAN_TURQUOISE, 16
 .set LOCALID_MILO, 17
 
 TurquoiseCity_MapScripts::
@@ -52,9 +52,9 @@ TurquoiseCity_EventScript_HideJace:
 
 TurquoiseCity_EventScript_MoveJaceToWarehouse:
 	clearflag FLAG_HIDE_JACE
-	setobjectxyperm LOCALID_JACE, 8, 22
-	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_JACE
+	setobjectxyperm LOCALID_JACE_TURQUOISE, 8, 22
+	setobjectmovementtype LOCALID_JACE_TURQUOISE, MOVEMENT_TYPE_FACE_UP
+	addobject LOCALID_JACE_TURQUOISE
 	return
 
 
@@ -269,23 +269,23 @@ TurquoiseCity_Text_ShippingLane:
 
 TurquoiseCity_EventScript_JaceEncounter::
 	lockall
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_FaceUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_JACE, TurquoiseCity_Movement_JaceMeetsPlayer
+	applymovement LOCALID_JACE_TURQUOISE, TurquoiseCity_Movement_JaceMeetsPlayer
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	@playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	msgbox TurquoiseCity_Text_MeetJace, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_FaceDown
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 120
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox TurquoiseCity_Text_SomethingsNotRight, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, TurquoiseCity_EventScript_HeardOf
@@ -306,10 +306,10 @@ TurquoiseCity_EventScript_NotHeardOf::
 TurquoiseCity_EventScript_JacesStory::
 	msgbox TurquoiseCity_Text_TrubbishBag, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 120
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox TurquoiseCity_Text_SawWarehouse, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, TurquoiseCity_EventScript_TeamUp
@@ -320,10 +320,10 @@ TurquoiseCity_EventScript_JacesStory::
 TurquoiseCity_EventScript_TeamUp::
 	msgbox TurquoiseCity_Text_TeamUp, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, TurquoiseCity_Movement_JaceLeaves
+	applymovement LOCALID_JACE_TURQUOISE, TurquoiseCity_Movement_JaceLeaves
 	waitmovement 0
 	setvar VAR_TURQUOISE_CITY_STATE, 1
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_TURQUOISE
 	setflag FLAG_HIDE_JACE
 	@savebgm MUS_DUMMY
 	@fadedefaultbgm
@@ -333,10 +333,10 @@ TurquoiseCity_EventScript_TeamUp::
 TurquoiseCity_EventScript_DontTeamUp::
 	msgbox TurquoiseCity_Text_DontTeamUp, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, TurquoiseCity_Movement_JaceLeaves
+	applymovement LOCALID_JACE_TURQUOISE, TurquoiseCity_Movement_JaceLeaves
 	waitmovement 0
 	setvar VAR_TURQUOISE_CITY_STATE, 1
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_TURQUOISE
 	setflag FLAG_HIDE_JACE
 	@savebgm MUS_DUMMY
 	@fadedefaultbgm
@@ -494,12 +494,12 @@ TurquoiseCity_EventScript_PostRescue::
 	msgbox TurquoiseCity_Text_CountOnMe, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_BRENDAN, Common_Movement_FaceDown
+	applymovement LOCALID_BRENDAN_TURQUOISE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
 	msgbox TurquoiseCity_Text_WhoDoWeHaveHere, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox TurquoiseCity_Text_JaceIntroduction, MSGBOX_DEFAULT
 	closemessage
@@ -512,28 +512,28 @@ TurquoiseCity_EventScript_PostRescue::
 	delay 60
 	msgbox TurquoiseCity_Text_YouHaveMyThanks, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_BRENDAN, Common_Movement_WalkRight
+	applymovement LOCALID_BRENDAN_TURQUOISE, Common_Movement_WalkRight
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
-	applymovement LOCALID_BRENDAN, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_FaceRight
+	applymovement LOCALID_BRENDAN_TURQUOISE, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_BRENDAN, Common_Movement_WalkRight
+	applymovement LOCALID_BRENDAN_TURQUOISE, Common_Movement_WalkRight
 	waitmovement 0
 	delay 20
-	applymovement LOCALID_BRENDAN, Common_Movement_FaceLeft
+	applymovement LOCALID_BRENDAN_TURQUOISE, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox TurquoiseCity_Text_GoingAfterTeamGenesis, MSGBOX_DEFAULT
 	closemessage
 
 	@Brendan turns and uses Fly
-	applymovement LOCALID_BRENDAN, Common_Movement_FaceDown
+	applymovement LOCALID_BRENDAN_TURQUOISE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 50
 	setfieldeffectargument 0, 1
 	dofieldeffect FLDEFF_NPCFLY_OUT
 	delay 15
-	removeobject LOCALID_BRENDAN
+	removeobject LOCALID_BRENDAN_TURQUOISE
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	delay 60
 	goto TurquoiseCity_EventScript_MiloGivesDirections
@@ -613,14 +613,14 @@ TurquoiseCity_Text_GoingAfterTeamGenesis:
 
 TurquoiseCity_EventScript_MiloGivesDirections::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_FaceUp
 	applymovement LOCALID_MILO, Common_Movement_FaceDown
 	waitmovement 0
 	delay 20
 	msgbox TurquoiseCity_Text_MiloGivesDirections, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MILO, Common_Movement_WalkRight
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_FaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	applymovement LOCALID_MILO, Common_Movement_WalkRight
@@ -676,14 +676,14 @@ TurquoiseCity_Movement_MiloLeaves:
 	step_end
 
 TurquoiseCity_EventScript_JaceExit::
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_TURQUOISE, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox TurquoiseCity_Text_JaceGoodbye, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
-	applymovement LOCALID_JACE, TurquoiseCity_Movement_JaceLeaves
+	applymovement LOCALID_JACE_TURQUOISE, TurquoiseCity_Movement_JaceLeaves
 	waitmovement 0
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_TURQUOISE
 	setflag FLAG_HIDE_JACE
 	setflag FLAG_HIDE_BRENDAN
 	setvar VAR_TURQUOISE_CITY_STATE, 4
@@ -757,7 +757,7 @@ TurquoiseCity_EventScript_BuySmearglePC::
 	goto_if_eq VAR_RESULT, NO, TurquoiseCity_EventScript_TransferSmeargleCloseMoneyBox
 	fadescreen FADE_TO_BLACK
 	hidemoneybox
-	special ChangeBoxPokemonNickname
+	special ChangePokemonNickname
 	waitstate
 	lock
 	faceplayer

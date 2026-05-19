@@ -417,7 +417,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_Maroon_Door_Maroon,                           &gTileset_Maroon, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Maroon, sDoorAnimPalettes_Maroon},
     {METATILE_Offwite_Door,                                 &gTileset_Offwite, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Offwite, sDoorAnimPalettes_Offwite},
     {METATILE_Maroon_Door_Pitchblak,                        &gTileset_Maroon, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Pitchblak, sDoorAnimPalettes_Pitchblak},
-    {METATILE_KendomaCorp_Door_Elevator,                    &gTileset_gTileset_KendomCorp, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_KendomaElevator, sDoorAnimPalettes_KendomaElevator},
+    {METATILE_KendomaCorp_Door_Elevator,                    &gTileset_gTileset_KendomaCorp, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_KendomaElevator, sDoorAnimPalettes_KendomaElevator},
     {METATILE_Facility2_Door_Elevator,                      &gTileset_Facility2, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_UndergroundElevator, sDoorAnimPalettes_UndergroundElevator},
 	{METATILE_Haewen_Door,                                  &gTileset_Haewen, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Haewen, sDoorAnimPalettes_Haewen},
 	{METATILE_Wisteria_Door,                                &gTileset_Wisteria, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Wisteria, sDoorAnimPalettes_Wisteria},

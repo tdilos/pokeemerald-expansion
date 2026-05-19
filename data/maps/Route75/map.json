@@ -96,13 +96,7 @@
       "flag": "FLAG_ITEM_ROUTE_75_CALCIUM"
     }
   ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
 }

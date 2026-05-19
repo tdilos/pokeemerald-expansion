@@ -1,5 +1,5 @@
-.set LOCALID_TICKETMAN, 2
-.set LOCALID_SS_TIDAL, 1
+.set LOCALID_TICKETMAN_TURQUOISE, 2
+.set LOCALID_SS_TIDAL_TURQUOISE, 1
 
 TurquoiseCity_Harbor_MapScripts::
 	.byte 0
@@ -20,6 +20,7 @@ TurquoiseCity_Harbor_EventScript_CheckTicket::
 	message TurquoiseCity_Harbor_Text_FlashedTriPass
 	waitmessage
 	multichoicedefault 21, 6, MULTI_TURQUOISE_FERRY, 2, FALSE
+	multichoice 21, 6, MULTI_TURQUOISE_FERRY, FALSE
 	switch VAR_RESULT
 	case 0, TurquoiseCity_Harbor_EventScript_ChooseCobalt
 	case 1, TurquoiseCity_Harbor_EventScript_ChooseXanthos
@@ -61,15 +62,15 @@ TurquoiseCity_Harbor_EventScript_DontHaveTriPass::
 	end
 
 TurquoiseCity_Harbor_EventScript_BoardFerryWithSailor::
-	applymovement LOCALID_TICKETMAN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_TICKETMAN_TURQUOISE, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 30
-	removeobject LOCALID_TICKETMAN
+	removeobject LOCALID_TICKETMAN_TURQUOISE
 	call_if_eq VAR_FACING, DIR_NORTH, TurquoiseCity_Harbor_EventScript_PlayerBoardFerryNorth
 	call_if_eq VAR_FACING, DIR_EAST, TurquoiseCity_Harbor_EventScript_PlayerBoardFerryEast
 	delay 30
-	hideobjectat OBJ_EVENT_ID_PLAYER, 0
-	setvar VAR_0x8004, LOCALID_SS_TIDAL
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_TURQUOISE_CITY_HARBOR
+	setvar VAR_0x8004, LOCALID_SS_TIDAL_TURQUOISE
 	playse SE_RG_SS_ANNE_HORN
 	delay 30
 	call Common_EventScript_FerryDepart

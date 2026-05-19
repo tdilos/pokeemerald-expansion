@@ -70,6 +70,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
 	
     [BATTLE_ENVIRONMENT_RED_GRASS] =
     {
+        .name = _("Red Grass"),
     #if B_NATURE_POWER_MOVES >= GEN_6
         .naturePower = MOVE_ENERGY_BALL,
     #elif B_NATURE_POWER_MOVES >= GEN_4
@@ -79,32 +80,16 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     #endif
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(18, 10, 6),
+        .entry = ENVIRONMENT_ENTRY(RedGrass),
         .background = ENVIRONMENT_BACKGROUND(RedGrass),
-    },
-	
-    [BATTLE_ENVIRONMENT_PLAIN_RED] =
-    {
-    #if B_NATURE_POWER_MOVES >= GEN_6
-        .naturePower = MOVE_TRI_ATTACK,
-    #elif B_NATURE_POWER_MOVES >= GEN_4
-        .naturePower = MOVE_EARTHQUAKE,
-    #else
-        .naturePower = MOVE_SWIFT,
-    #endif
-        .secretPowerEffect = (B_SECRET_POWER_EFFECT == GEN_4 || B_SECRET_POWER_EFFECT == GEN_5) ? MOVE_EFFECT_ACC_MINUS_1 : MOVE_EFFECT_PARALYSIS,
-        .camouflageType = (B_CAMOUFLAGE_TYPES == GEN_4 || B_CAMOUFLAGE_TYPES == GEN_5) ? TYPE_GROUND : TYPE_NORMAL,
-        .background =
-		{
-			.tileset = gBattleTerrainTiles_RedGrass,
-			.tilemap = gBattleTerrainTilemap_RedGrass,
-			.entryTileset = gBattleTerrainAnimTiles_RedGrass,
-			.entryTilemap = gBattleTerrainAnimTilemap_RedGrass,
-			.palette = gBattleTerrainPalette_PlainRed,
-		},
+        .palette = gBattleEnvironmentPalette_RedGrass,
+        .battleIntroSlide = BattleIntroSlide1,
     },
 	
     [BATTLE_ENVIRONMENT_WISTERIA_GRASS] =
     {
+        .name = _("Wisteria Grass"),
     #if B_NATURE_POWER_MOVES >= GEN_6
         .naturePower = MOVE_ENERGY_BALL,
     #elif B_NATURE_POWER_MOVES >= GEN_4
@@ -114,11 +99,16 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     #endif
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(8, 18, 12),
+        .entry = ENVIRONMENT_ENTRY(WisteriaGrass),
         .background = ENVIRONMENT_BACKGROUND(WisteriaGrass),
+        .palette = gBattleEnvironmentPalette_WisteriaGrass,
+        .battleIntroSlide = BattleIntroSlide1,
     },
 	
     [BATTLE_ENVIRONMENT_HAEWEN_GRASS] =
     {
+        .name = _("Haewen Grass"),
     #if B_NATURE_POWER_MOVES >= GEN_6
         .naturePower = MOVE_ENERGY_BALL,
     #elif B_NATURE_POWER_MOVES >= GEN_4
@@ -128,11 +118,16 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     #endif
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
         .camouflageType = TYPE_GRASS,
+        .camouflageBlend = RGB(14, 6, 20),
+        .entry = ENVIRONMENT_ENTRY(HaewenGrass),
         .background = ENVIRONMENT_BACKGROUND(HaewenGrass),
+        .palette = gBattleEnvironmentPalette_HaewenGrass,
+        .battleIntroSlide = BattleIntroSlide1,
     },
 		
     [BATTLE_ENVIRONMENT_BURGUNDY_GRASS] =
     {
+        .name = _("Burgundy Grass"),
     #if B_NATURE_POWER_MOVES >= GEN_6
         .naturePower = MOVE_ENERGY_BALL,
     #elif B_NATURE_POWER_MOVES >= GEN_4
@@ -141,16 +136,25 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_STUN_SPORE,
     #endif
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
-        .camouflageType = TYPE_GRASS,
+        .camouflageType = TYPE_FAIRY,
+        .camouflageBlend = RGB(24, 10, 20),
+        .entry = ENVIRONMENT_ENTRY(BurgundyGrass),
         .background = ENVIRONMENT_BACKGROUND(BurgundyGrass),
+        .palette = gBattleEnvironmentPalette_BurgundyGrass,
+        .battleIntroSlide = BattleIntroSlide1,
     },
 		
-    [BATTLE_TERRAIN_SEWER] =
+    [BATTLE_ENVIRONMENT_SEWER] =
     {
+        .name = _("Sewer"),
         .naturePower = MOVE_SLUDGE_BOMB,
         .secretPowerEffect = MOVE_EFFECT_TOXIC,
         .camouflageType = TYPE_POISON,
+        .camouflageBlend = RGB(8, 10, 12),
+        .entry = ENVIRONMENT_ENTRY(Sewer),
         .background = ENVIRONMENT_BACKGROUND(Sewer),
+        .palette = gBattleEnvironmentPalette_Sewer,
+        .battleIntroSlide = BattleIntroSlide1,
     },
 	
     [BATTLE_ENVIRONMENT_GRASS] =
@@ -316,6 +320,20 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .palette = gBattleEnvironmentPalette_Plain,
         .battleIntroSlide = PLAIN_BATTLE_INTRO_SLIDE,
     },
+	
+    [BATTLE_ENVIRONMENT_PLAIN_RED] =
+    {
+        .name = _("Plain Red"),
+        .naturePower = PLAIN_NATURE_POWER,
+        .secretPowerAnimation = PLAIN_SECRET_POWER_ANIMATION,
+        .secretPowerEffect = PLAIN_SECRET_POWER_EFFECT,
+        .camouflageType = PLAIN_CAMOUFLAGE_TYPE,
+        .camouflageBlend = PLAIN_CAMOUFLAGE_BLEND,
+        .entry = ENVIRONMENT_ENTRY(Building),
+        .background = ENVIRONMENT_BACKGROUND(RedGrass),
+        .palette = gBattleEnvironmentPalette_PlainRed,
+        .battleIntroSlide = PLAIN_BATTLE_INTRO_SLIDE,
+    },
 
     [BATTLE_ENVIRONMENT_FRONTIER] =
     {
@@ -444,6 +462,74 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(Building),
         .background = ENVIRONMENT_BACKGROUND(Stadium),
         .palette = gBattleEnvironmentPalette_StadiumWallace,
+        .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
+    },
+	
+	
+    [BATTLE_ENVIRONMENT_LISIA] =
+    {
+        .name = _("Lisia"),
+        .secretPowerAnimation = BUILDING_SECRET_POWER_ANIMATION,
+        .secretPowerEffect = BUILDING_SECRET_POWER_EFFECT,
+        .camouflageType = BUILDING_CAMOUFLAGE_TYPE,
+        .camouflageBlend = BUILDING_CAMOUFLAGE_BLEND,
+        .entry = ENVIRONMENT_ENTRY(Building),
+        .background = ENVIRONMENT_BACKGROUND(Stadium),
+        .palette = gBattleEnvironmentPalette_StadiumLisia,
+        .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
+    },
+	
+	
+    [BATTLE_ENVIRONMENT_IAN] =
+    {
+        .name = _("Ian"),
+        .secretPowerAnimation = BUILDING_SECRET_POWER_ANIMATION,
+        .secretPowerEffect = BUILDING_SECRET_POWER_EFFECT,
+        .camouflageType = BUILDING_CAMOUFLAGE_TYPE,
+        .camouflageBlend = BUILDING_CAMOUFLAGE_BLEND,
+        .entry = ENVIRONMENT_ENTRY(Building),
+        .background = ENVIRONMENT_BACKGROUND(Stadium),
+        .palette = gBattleEnvironmentPalette_StadiumIan,
+        .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
+    },
+	
+	
+    [BATTLE_ENVIRONMENT_SIDNEY2] =
+    {
+        .name = _("Sidney"),
+        .secretPowerAnimation = BUILDING_SECRET_POWER_ANIMATION,
+        .secretPowerEffect = BUILDING_SECRET_POWER_EFFECT,
+        .camouflageType = BUILDING_CAMOUFLAGE_TYPE,
+        .camouflageBlend = BUILDING_CAMOUFLAGE_BLEND,
+        .entry = ENVIRONMENT_ENTRY(Building),
+        .background = ENVIRONMENT_BACKGROUND(Stadium),
+        .palette = gBattleEnvironmentPalette_StadiumSidney2,
+        .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
+    },
+	
+    [BATTLE_ENVIRONMENT_PETRA] =
+    {
+        .name = _("Petra"),
+        .secretPowerAnimation = BUILDING_SECRET_POWER_ANIMATION,
+        .secretPowerEffect = BUILDING_SECRET_POWER_EFFECT,
+        .camouflageType = BUILDING_CAMOUFLAGE_TYPE,
+        .camouflageBlend = BUILDING_CAMOUFLAGE_BLEND,
+        .entry = ENVIRONMENT_ENTRY(Building),
+        .background = ENVIRONMENT_BACKGROUND(Stadium),
+        .palette = gBattleEnvironmentPalette_StadiumPetra,
+        .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
+    },
+	
+    [BATTLE_ENVIRONMENT_NORMAN] =
+    {
+        .name = _("Norman"),
+        .secretPowerAnimation = BUILDING_SECRET_POWER_ANIMATION,
+        .secretPowerEffect = BUILDING_SECRET_POWER_EFFECT,
+        .camouflageType = BUILDING_CAMOUFLAGE_TYPE,
+        .camouflageBlend = BUILDING_CAMOUFLAGE_BLEND,
+        .entry = ENVIRONMENT_ENTRY(Building),
+        .background = ENVIRONMENT_BACKGROUND(Stadium),
+        .palette = gBattleEnvironmentPalette_StadiumNorman,
         .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
     },
 

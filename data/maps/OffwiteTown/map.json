@@ -3,7 +3,7 @@
   "name": "OffwiteTown",
   "layout": "LAYOUT_OFFWITE_TOWN",
   "music": "MUS_FALLARBOR",
-  "region_map_section": "MAPSEC_IVORY_TOWN",
+  "region_map_section": "MAPSEC_OFFWITE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SNOW",
   "map_type": "MAP_TYPE_TOWN",
@@ -117,9 +117,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

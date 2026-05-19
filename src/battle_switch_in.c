@@ -375,6 +375,14 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
             }
         }
         break;
+    case HAZARDS_FAIRY_DUST:
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD)
+        {
+			gBattleMons[battler].ability = ABILITY_LEVITATE;
+            BattleScriptCall(BattleScript_FairyDustOnSwitchIn);
+            effect = TRUE;
+        }
+        break;
     case HAZARDS_STEELSURGE:
         if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD)
         {

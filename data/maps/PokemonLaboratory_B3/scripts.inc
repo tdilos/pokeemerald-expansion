@@ -1,7 +1,7 @@
 .set LOCALID_BLACKBALL1, 1
 .set LOCALID_BLACKBALL2, 2
-.set LOCALID_JACE, 3
-.set LOCALID_RAYNER, 4
+.set LOCALID_JACE_LAB3, 3
+.set LOCALID_RAYNER_LAB3, 4
 
 PokemonLaboratory_B3_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PokemonLaboratory_B3_OnTransition
@@ -16,12 +16,12 @@ PokemonLaboratory_B3_OnTransition:
 	end
 
 PokemonLaboratory_B3_EventScript_HideJace:
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_LAB3
 	setflag FLAG_HIDE_JACE
 	return
 
 PokemonLaboratory_B3_EventScript_HideRayner:
-	removeobject LOCALID_RAYNER
+	removeobject LOCALID_RAYNER_LAB3
 	setflag FLAG_HIDE_RAYNER
 	return
 
@@ -40,19 +40,19 @@ PokemonLaboratory_B3_EventScript_HideBlackBalls:
 	return
 
 PokemonLaboratory_B3_EventScript_AddJace:
-	removeobject LOCALID_JACE
-	setobjectxyperm LOCALID_JACE, 10, 19
-	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_UP
+	removeobject LOCALID_JACE_LAB3
+	setobjectxyperm LOCALID_JACE_LAB3, 10, 19
+	setobjectmovementtype LOCALID_JACE_LAB3, MOVEMENT_TYPE_FACE_UP
 	clearflag FLAG_HIDE_JACE
-	addobject LOCALID_JACE
+	addobject LOCALID_JACE_LAB3
 	return
 
 PokemonLaboratory_B3_EventScript_AddRayner:
-	removeobject LOCALID_RAYNER
-	setobjectxyperm LOCALID_RAYNER, 9, 19
-	setobjectmovementtype LOCALID_RAYNER, MOVEMENT_TYPE_FACE_UP
+	removeobject LOCALID_RAYNER_LAB3
+	setobjectxyperm LOCALID_RAYNER_LAB3, 9, 19
+	setobjectmovementtype LOCALID_RAYNER_LAB3, MOVEMENT_TYPE_FACE_UP
 	clearflag FLAG_HIDE_RAYNER
-	addobject LOCALID_RAYNER
+	addobject LOCALID_RAYNER_LAB3
 	return
 
 PokemonLaboratory_B3_OnFrame:
@@ -130,28 +130,28 @@ PokemonLaboratory_B3_EventScript_DefeatedEntity::
 	closemessage
 	delay 60
 	call PokemonLaboratory_B3_EventScript_AddJace
-	applymovement LOCALID_JACE, PokemonLaboratory_B3_Movement_JaceEntersEntityRoom
+	applymovement LOCALID_JACE_LAB3, PokemonLaboratory_B3_Movement_JaceEntersEntityRoom
 	waitmovement 0
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceHey, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_LAB3, Common_Movement_FaceRight
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_LAB3, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceGreatWork, MSGBOX_DEFAULT
 	closemessage
 	call PokemonLaboratory_B3_EventScript_AddRayner
-	applymovement LOCALID_RAYNER, PokemonLaboratory_B3_Movement_RaynerEntersEntityRoom
+	applymovement LOCALID_RAYNER_LAB3, PokemonLaboratory_B3_Movement_RaynerEntersEntityRoom
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_RAYNER, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_RaynerTakesLostTech, MSGBOX_DEFAULT
 	closemessage
@@ -159,25 +159,25 @@ PokemonLaboratory_B3_EventScript_DefeatedEntity::
 	removeobject LOCALID_BLACKBALL1
 	delay 40
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_FaceLeft
 	waitmovement 0
-	applymovement LOCALID_RAYNER, Common_Movement_FaceDown
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_RaynerTakesLostTech2, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceWhatAreYouSaying, MSGBOX_DEFAULT
 	closemessage
 	delay 40
-	applymovement LOCALID_RAYNER, Common_Movement_FaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceRight
 	waitmovement 0
 	delay 20
 	msgbox PokemonLaboratory_B3_Text_RaynerPlayedYou, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceYoureWithTeamGenesis, MSGBOX_DEFAULT
 	closemessage
@@ -185,7 +185,7 @@ PokemonLaboratory_B3_EventScript_DefeatedEntity::
 	msgbox PokemonLaboratory_B3_Text_RaynerYup, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_RAYNER, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_RaynerTauntsPlayer, MSGBOX_YESNO
 	closemessage
@@ -227,7 +227,7 @@ PokemonLaboratory_B3_EventScript_LostRaynerBattle::
 	msgbox PokemonLaboratory_B3_Text_RaynerBestTools, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_RAYNER, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_RaynerOtherWorlds, MSGBOX_DEFAULT
 	closemessage
@@ -235,20 +235,20 @@ PokemonLaboratory_B3_EventScript_LostRaynerBattle::
 	end
 
 PokemonLaboratory_B3_EventScript_JaceArguesWithRayner::
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceScrewYou, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_RAYNER, Common_Movement_FaceDown
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_RAYNER, Common_Movement_WalkDown
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkDown
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_RAYNER, Common_Movement_FaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceRight
 	waitmovement 0
 	delay 60
 	msgbox PokemonLaboratory_B3_Text_RaynerNotLikeThat, MSGBOX_DEFAULT
@@ -269,19 +269,19 @@ PokemonLaboratory_B3_EventScript_JaceArguesWithRayner::
 	msgbox PokemonLaboratory_B3_Text_JaceWhat, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_RAYNER, Common_Movement_FaceLeft
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 30
 	msgbox PokemonLaboratory_B3_Text_RaynerExplainsVirus, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_RAYNER, Common_Movement_FaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceRight
 	waitmovement 0
 	delay 30
 	msgbox PokemonLaboratory_B3_Text_RaynerDoYouRemember, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_RAYNER, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_RaynerIncomplete, MSGBOX_DEFAULT
 	closemessage
@@ -289,7 +289,7 @@ PokemonLaboratory_B3_EventScript_JaceArguesWithRayner::
 	msgbox PokemonLaboratory_B3_Text_RaynerIncomplete2, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	@applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	@applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceLeft
 	@waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceQuestions, MSGBOX_DEFAULT
 	closemessage
@@ -297,18 +297,18 @@ PokemonLaboratory_B3_EventScript_JaceArguesWithRayner::
 	msgbox PokemonLaboratory_B3_Text_RaynerTooManyQuestions, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_LAB3, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceXanthosCity, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_RAYNER, Common_Movement_FaceLeft
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_RaynerOops, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceWhatHappensToPeople, MSGBOX_DEFAULT
 	closemessage
@@ -316,16 +316,16 @@ PokemonLaboratory_B3_EventScript_JaceArguesWithRayner::
 	msgbox PokemonLaboratory_B3_Text_RaynerWhoCares, MSGBOX_DEFAULT
 	closemessage
 	delay 10
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceSoHeartless, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_RAYNER, Common_Movement_FaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceRight
 	waitmovement 0
 	delay 60
 	msgbox PokemonLaboratory_B3_Text_RaynerPhilosophy, MSGBOX_DEFAULT
@@ -334,7 +334,7 @@ PokemonLaboratory_B3_EventScript_JaceArguesWithRayner::
 	msgbox PokemonLaboratory_B3_Text_JacePhilosophy, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_RAYNER, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_RaynerPhilosophy2, MSGBOX_DEFAULT
 	closemessage
@@ -342,18 +342,18 @@ PokemonLaboratory_B3_EventScript_JaceArguesWithRayner::
 	msgbox PokemonLaboratory_B3_Text_JacePhilosophy2, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_RAYNER, Common_Movement_FaceDown
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
 	msgbox PokemonLaboratory_B3_Text_RaynerWhatever, MSGBOX_DEFAULT
 	closemessage
-	@applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterLeft
+	@applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceFasterLeft
 	@waitmovement 0
 	delay 30
 	msgbox PokemonLaboratory_B3_Text_JaceReally, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_RAYNER, Common_Movement_FaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceRight
 	waitmovement 0
 	delay 60
 	msgbox PokemonLaboratory_B3_Text_RaynerDoSomething, MSGBOX_DEFAULT
@@ -362,7 +362,7 @@ PokemonLaboratory_B3_EventScript_JaceArguesWithRayner::
 	msgbox PokemonLaboratory_B3_Text_JaceWontFight, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_RAYNER, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_RaynerChickenOut, MSGBOX_DEFAULT
 	closemessage
@@ -373,68 +373,68 @@ PokemonLaboratory_B3_EventScript_JaceArguesWithRayner::
 	msgbox PokemonLaboratory_B3_Text_RaynerWhat, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceWayISeeIt, MSGBOX_DEFAULT
 	closemessage
 	delay 120
 	msgbox PokemonLaboratory_B3_Text_RaynerNotNaive, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceGoodPeople, MSGBOX_DEFAULT
 	closemessage
 	delay 120
-	applymovement LOCALID_RAYNER, Common_Movement_WalkDown
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkDown
 	waitmovement 0
 	delay 20
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
-	applymovement LOCALID_JACE, Common_Movement_FaceDown
+	applymovement LOCALID_JACE_LAB3, Common_Movement_FaceDown
 	waitmovement 0
 	delay 40
 	msgbox PokemonLaboratory_B3_Text_RaynerDeclines, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PokemonLaboratory_B3_Text_JaceRiskPeople, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_RAYNER, Common_Movement_FaceUp
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
 	msgbox PokemonLaboratory_B3_Text_RaynerThatsHowItWorks, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RAYNER, Common_Movement_WalkDown
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RAYNER, Common_Movement_WalkDown
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RAYNER, Common_Movement_WalkDown
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RAYNER, Common_Movement_WalkDown
+	applymovement LOCALID_RAYNER_LAB3, Common_Movement_WalkDown
 	waitmovement 0
 	call PokemonLaboratory_B3_EventScript_HideRayner
 	playse SE_EXIT
 	waitse
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_LAB3, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
 	msgbox PokemonLaboratory_B3_Text_JaceToPlayer, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkLeftSlow
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkLeftSlow
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUpSlow
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkUpSlow
 	waitmovement 0
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_LAB3, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	delay 20
 	msgbox PokemonLaboratory_B3_Text_JaceToPlayer2, MSGBOX_DEFAULT

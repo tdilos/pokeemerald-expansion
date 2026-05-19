@@ -1,12 +1,13 @@
 .equ REQUIRED_SEEN_MONS, 40
 .set LOCALID_MAY, 8
+.set LOCALID_LASS, 6
 
 CobaltyCity_DreamResort_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CobaltyCity_DreamResort_OnTransition
 	.byte 0
 
 CobaltyCity_DreamResort_OnTransition:
-	goto_if_set FLAG_RECEIVED_HM04, CobaltyCity_DreamResort_EventScript_HideMay
+	goto_if_set FLAG_RECEIVED_HM_STRENGTH, CobaltyCity_DreamResort_EventScript_HideMay
 	goto_if_unset FLAG_RECEIVED_TM70, CobaltyCity_DreamResort_EventScript_MayNotHereYet
 	clearflag FLAG_HIDE_MAY
 CobaltyCity_DreamResort_EventScript_MayNotHereYet:
@@ -38,7 +39,7 @@ CobaltyCity_DreamResort_EventScript_MayPokedexCheck::
 	@setflag FLAG_MAY_COBALT_CITY
 	removeobject LOCALID_MAY
 	setflag FLAG_HIDE_MAY
-	setflag FLAG_RECEIVED_HM04
+	setflag FLAG_RECEIVED_HM_STRENGTH
 	fadescreen FADE_FROM_BLACK
 	release
 	end

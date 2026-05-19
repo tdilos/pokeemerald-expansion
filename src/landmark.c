@@ -348,7 +348,9 @@ static const struct LandmarkList sLandmarkLists[] =
     {MAPSEC_ROUTE_134, 1, Landmarks_OceanCurrent},
     {MAPSEC_ROUTE_134, 2, Landmarks_Route134_2},
     {MAPSEC_MT_CHIMNEY, 2, Landmarks_MtChimney_2},
-    {MAPSEC_NONE, 0, NULL},
+    // MAPSECs can't exceed 255, see include/gametypes.h
+	// consider removing FRLG map sections
+	{MAPSEC_NONE, 0, NULL},
 };
 
 static const struct Landmark *const *GetLandmarks(mapsec_u8_t mapSection, u8 id);

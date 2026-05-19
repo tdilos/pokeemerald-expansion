@@ -56,30 +56,6 @@ static void AddTreeBonus(struct BerryTree *tree, u8 bonus);
 #define GROWTH_DURATION(g3, g4, g5, xy, oras, g7) OW_BERRY_GROWTH_RATE == GEN_3 ? g3 : OW_BERRY_GROWTH_RATE == GEN_4 ? g4 : OW_BERRY_GROWTH_RATE == GEN_5 ? g5 : OW_BERRY_GROWTH_RATE == GEN_6_XY ? xy : OW_BERRY_GROWTH_RATE == GEN_6_ORAS ? oras : g7
 #define YIELD_RATE(g3, g4, xy, oras) OW_BERRY_YIELD_RATE == GEN_3 ? g3 : OW_BERRY_YIELD_RATE == GEN_4 ? g4 : OW_BERRY_YIELD_RATE == GEN_6_XY ? xy : oras
 
-// New berries
-static const u8 sBerryDescriptionPart1_Drash[] = _("When it ripens, this sweet Berry");
-static const u8 sBerryDescriptionPart2_Drash[] = _("falls and sticks to the ground.");
-static const u8 sBerryDescriptionPart1_Eggant[] = _("Very dry tasting, especially the");
-static const u8 sBerryDescriptionPart2_Eggant[] = _("parts not exposed to the sun.");
-static const u8 sBerryDescriptionPart1_Touga[] = _("Awfully spicy. No one has ever");
-static const u8 sBerryDescriptionPart2_Touga[] = _("eaten it whole.");
-static const u8 sBerryDescriptionPart1_Pumkin[] = _("This Berry is amazingly sour. It's");
-static const u8 sBerryDescriptionPart2_Pumkin[] = _("heavy due to its immense filling.");
-static const u8 sBerryDescriptionPart1_Ginema[] = _("A perfectly round berry under the");
-static const u8 sBerryDescriptionPart2_Ginema[] = _("thin skin. Very dry and sour.");
-
-// New berries
-static const u8 sBerryDescriptionPart1_Drash[] = _("When it ripens, this sweet Berry");
-static const u8 sBerryDescriptionPart2_Drash[] = _("falls and sticks to the ground.");
-static const u8 sBerryDescriptionPart1_Eggant[] = _("Very dry tasting, especially the");
-static const u8 sBerryDescriptionPart2_Eggant[] = _("parts not exposed to the sun.");
-static const u8 sBerryDescriptionPart1_Touga[] = _("Awfully spicy. No one has ever");
-static const u8 sBerryDescriptionPart2_Touga[] = _("eaten it whole.");
-static const u8 sBerryDescriptionPart1_Pumkin[] = _("This Berry is amazingly sour. It's");
-static const u8 sBerryDescriptionPart2_Pumkin[] = _("heavy due to its immense filling.");
-static const u8 sBerryDescriptionPart1_Ginema[] = _("A perfectly round berry under the");
-static const u8 sBerryDescriptionPart2_Ginema[] = _("thin skin. Very dry and sour.");
-
 const struct Berry gBerries[] =
 {
     [ITEM_CHERI_BERRY - FIRST_BERRY_INDEX] =
@@ -202,11 +178,11 @@ const struct Berry gBerries[] =
         .name = _("DRASH"),
         .firmness = BERRY_FIRMNESS_VERY_HARD,
         .size = 134,
-        .maxYield = 3,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Drash,
-        .description2 = sBerryDescriptionPart2_Drash,
-        .stageDuration = 3,
+        .maxYield = YIELD_RATE(3, 5, 15, 20),
+        .minYield = YIELD_RATE(2, 2, 4, 4),
+		.description1 = COMPOUND_STRING("When it ripens, this sweet Berry"),
+		.description2 = COMPOUND_STRING("falls and sticks to the ground."),
+        .growthDuration = GROWTH_DURATION(12, 12, 18, 24, 16, 24),
         .spicy = 0,
         .dry = 0,
         .sweet = 40,
@@ -220,11 +196,11 @@ const struct Berry gBerries[] =
         .name = _("EGGANT"),
         .firmness = BERRY_FIRMNESS_SOFT,
         .size = 41,
-        .maxYield = 3,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Eggant,
-        .description2 = sBerryDescriptionPart2_Eggant,
-        .stageDuration = 3,
+        .maxYield = YIELD_RATE(3, 5, 15, 20),
+        .minYield = YIELD_RATE(2, 2, 4, 4),
+		.description1 = COMPOUND_STRING("Very dry tasting, especially the"),
+		.description2 = COMPOUND_STRING("parts not exposed to the sun."),
+        .growthDuration = GROWTH_DURATION(12, 12, 18, 24, 16, 24),
         .spicy = 0,
         .dry = 40,
         .sweet = 0,
@@ -238,11 +214,11 @@ const struct Berry gBerries[] =
         .name = _("TOUGA"),
         .firmness = BERRY_FIRMNESS_SUPER_HARD,
         .size = 153,
-        .maxYield = 3,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Touga,
-        .description2 = sBerryDescriptionPart2_Touga,
-        .stageDuration = 3,
+        .maxYield = YIELD_RATE(3, 5, 15, 20),
+        .minYield = YIELD_RATE(2, 2, 4, 4),
+		.description1 = COMPOUND_STRING("Awfully spicy. No one has ever"),
+		.description2 = COMPOUND_STRING("eaten it whole."),
+        .growthDuration = GROWTH_DURATION(12, 12, 18, 24, 16, 24),
         .spicy = 40,
         .dry = 0,
         .sweet = 0,
@@ -256,83 +232,11 @@ const struct Berry gBerries[] =
         .name = _("PUMKIN"),
         .firmness = BERRY_FIRMNESS_SUPER_HARD,
         .size = 48,
-        .maxYield = 3,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Pumkin,
-        .description2 = sBerryDescriptionPart2_Pumkin,
-        .stageDuration = 3,
-        .spicy = 0,
-        .dry = 0,
-        .sweet = 0,
-        .bitter = 0,
-        .sour = 40,
-        .smoothness = 65,
-    },
-	
-	[ITEM_DRASH_BERRY - FIRST_BERRY_INDEX] =
-    {
-        .name = _("DRASH"),
-        .firmness = BERRY_FIRMNESS_VERY_HARD,
-        .size = 134,
-        .maxYield = 3,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Drash,
-        .description2 = sBerryDescriptionPart2_Drash,
-        .stageDuration = 3,
-        .spicy = 0,
-        .dry = 0,
-        .sweet = 40,
-        .bitter = 0,
-        .sour = 0,
-        .smoothness = 65,
-    },
-	
-	[ITEM_EGGANT_BERRY - FIRST_BERRY_INDEX] =
-    {
-        .name = _("EGGANT"),
-        .firmness = BERRY_FIRMNESS_SOFT,
-        .size = 41,
-        .maxYield = 3,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Eggant,
-        .description2 = sBerryDescriptionPart2_Eggant,
-        .stageDuration = 3,
-        .spicy = 0,
-        .dry = 40,
-        .sweet = 0,
-        .bitter = 0,
-        .sour = 0,
-        .smoothness = 65,
-    },
-	
-	[ITEM_TOUGA_BERRY - FIRST_BERRY_INDEX] =
-    {
-        .name = _("TOUGA"),
-        .firmness = BERRY_FIRMNESS_SUPER_HARD,
-        .size = 153,
-        .maxYield = 3,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Touga,
-        .description2 = sBerryDescriptionPart2_Touga,
-        .stageDuration = 3,
-        .spicy = 40,
-        .dry = 0,
-        .sweet = 0,
-        .bitter = 0,
-        .sour = 0,
-        .smoothness = 65,
-    },
-	
-	[ITEM_PUMKIN_BERRY - FIRST_BERRY_INDEX] =
-    {
-        .name = _("PUMKIN"),
-        .firmness = BERRY_FIRMNESS_SUPER_HARD,
-        .size = 48,
-        .maxYield = 3,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Pumkin,
-        .description2 = sBerryDescriptionPart2_Pumkin,
-        .stageDuration = 3,
+        .maxYield = YIELD_RATE(3, 5, 15, 20),
+        .minYield = YIELD_RATE(2, 2, 4, 4),
+		.description1 = COMPOUND_STRING("This Berry is amazingly sour. It's"),
+		.description2 = COMPOUND_STRING("heavy due to its immense filling."),
+        .growthDuration = GROWTH_DURATION(12, 12, 18, 24, 16, 24),
         .spicy = 0,
         .dry = 0,
         .sweet = 0,
@@ -1444,35 +1348,18 @@ const struct Berry gBerries[] =
         .weedsBonus = 1,
         .pestsBonus = 4,
     },
-	
+
 	[ITEM_GINEMA_BERRY - FIRST_BERRY_INDEX] =
     {
         .name = _("GINEMA"),
         .firmness = BERRY_FIRMNESS_VERY_HARD,
+		.color = BERRY_COLOR_YELLOW,
         .size = 35,
-        .maxYield = 5,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Ginema,
-        .description2 = sBerryDescriptionPart2_Ginema,
-        .stageDuration = 18,
-        .spicy = 0,
-        .dry = 30,
-        .sweet = 0,
-        .bitter = 0,
-        .sour = 30,
-        .smoothness = 70,
-    },
-	
-	[ITEM_GINEMA_BERRY - FIRST_BERRY_INDEX] =
-    {
-        .name = _("GINEMA"),
-        .firmness = BERRY_FIRMNESS_VERY_HARD,
-        .size = 35,
-        .maxYield = 5,
-        .minYield = 2,
-        .description1 = sBerryDescriptionPart1_Ginema,
-        .description2 = sBerryDescriptionPart2_Ginema,
-        .stageDuration = 18,
+        .maxYield = YIELD_RATE(5, 5, 20, 10),
+        .minYield = YIELD_RATE(2, 1, 3, 2),
+        .description1 = COMPOUND_STRING("A perfectly round berry under the"),
+        .description2 = COMPOUND_STRING("thin skin. Very dry and sour."),
+        .growthDuration = GROWTH_DURATION(84, 72, 108, 48, 32, 48),
         .spicy = 0,
         .dry = 30,
         .sweet = 0,

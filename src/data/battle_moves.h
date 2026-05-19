@@ -1,4 +1,4 @@
-const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
+/*const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 {
     [MOVE_NONE] =
     {
@@ -14265,51 +14265,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = Z_EFFECT_NONE,
     },
 	
-	/*[MOVE_BILE_WIND] =
-    {
-        .effect = EFFECT_INFECT_HIT,
-        .power = 85,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_WIND_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-	
-	[MOVE_TOXIC_WIND] =
-    {
-        .effect = EFFECT_POISON_HIT,
-        .power = 85,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_WIND_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-	
-	[MOVE_WITHER_WIND] =
-    {
-        .effect = EFFECT_EXHAUST_HIT,
-        .power = 85,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_WIND_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },*/
-	
 	[MOVE_BILE_WIND] =
     {
         .effect = EFFECT_INFECT_HIT,
@@ -14663,21 +14618,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
     },
-	
-	/*[MOVE_TEMPEST] =
-    {
-        .effect = EFFECT_PLACEHOLDER, //EFFECT_TEMPEST,
-        .power = 65,
-        .type = TYPE_FLYING,
-        .accuracy = 95,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },*/
 	
 	[MOVE_TEMPEST] =
     {
@@ -15536,4 +15476,4 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = 0
     },
-};
+};*/

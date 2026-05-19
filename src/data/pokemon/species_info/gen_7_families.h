@@ -538,8 +538,9 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .teachableLearnset = sPopplioTeachableLearnset,
         .eggMoveLearnset = sPopplioEggMoveLearnset,
         //.evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_BRIONNE}),
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_BRIONNE, CONDITIONS({IF_NOT_REGION, REGION_ISSHO})},
-                                {EVO_LEVEL, 17, SPECIES_BRIONNE_ISSHO, CONDITIONS({IF_REGION, REGION_ISSHO})},
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_BRIONNE, CONDITIONS({IF_NOT_REGION, REGION_ISSHO})}
+                                ,{EVO_LEVEL, 17, SPECIES_BRIONNE_ISSHOAN, CONDITIONS({IF_REGION, REGION_ISSHO})}
+								),
     },
 
     [SPECIES_BRIONNE] =
@@ -603,8 +604,6 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         )
         .levelUpLearnset = sBrionneLevelUpLearnset,
         .teachableLearnset = sBrionneTeachableLearnset,
-        .formSpeciesIdTable = sBrionneFormSpeciesIdTable,
-        .formChangeTable = sBrionneFormChangeTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_PRIMARINA}),
     },
 
@@ -669,8 +668,6 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         )
         .levelUpLearnset = sPrimarinaLevelUpLearnset,
         .teachableLearnset = sPrimarinaTeachableLearnset,
-        .formSpeciesIdTable = sPrimarinaFormSpeciesIdTable,
-        .formChangeTable = sPrimarinaFormChangeTable,
     },
 #endif //P_FAMILY_POPPLIO
 

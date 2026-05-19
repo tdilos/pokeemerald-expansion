@@ -1,5 +1,5 @@
 // gen 4+ data from urpg's contest movedex
-const struct ContestMove gContestMoves[MOVES_COUNT] =
+/*const struct ContestMove gContestMoves[MOVES_COUNT] =
 {
     [MOVE_NONE] = {0},
 
@@ -6748,7 +6748,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
     [MOVE_PSYBLADE] = {0}, // TODO
 
     [MOVE_HYDRO_STEAM] = {0}, // TODO
-};
+};*/
 
 const struct ContestEffect gContestEffects[] =
 {

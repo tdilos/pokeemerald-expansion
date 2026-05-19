@@ -357,8 +357,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sTepigTeachableLearnset,
         .eggMoveLearnset = sTepigEggMoveLearnset,
         //.evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE}),
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE, CONDITIONS({IF_NOT_REGION, REGION_ISSHO})},
-                                {EVO_LEVEL, 17, SPECIES_PIGNITE_ISSHO, CONDITIONS({IF_REGION, REGION_ISSHO})},
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE, CONDITIONS({IF_NOT_REGION, REGION_ISSHO})}
+                                ,{EVO_LEVEL, 17, SPECIES_PIGNITE_ISSHOAN, CONDITIONS({IF_REGION, REGION_ISSHO})}),
     },
 
     [SPECIES_PIGNITE] =
@@ -426,8 +426,6 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sPigniteLevelUpLearnset,
         .teachableLearnset = sPigniteTeachableLearnset,
-        .formSpeciesIdTable = sPigniteFormSpeciesIdTable,
-        .formChangeTable = sPigniteFormChangeTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_EMBOAR}),
     },
 
@@ -2621,8 +2619,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sWoobatLevelUpLearnset,
         .teachableLearnset = sWoobatTeachableLearnset,
         .eggMoveLearnset = sWoobatEggMoveLearnset,
-        .formSpeciesIdTable = sWoobatFormSpeciesIdTable,
-        .formChangeTable = sWoobatFormChangeTable,
+        //.formSpeciesIdTable = sWoobatFormSpeciesIdTable,
+        //.formChangeTable = sWoobatFormChangeTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_SWOOBAT, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
     },
 
@@ -2695,8 +2693,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sSwoobatLevelUpLearnset,
         .teachableLearnset = sSwoobatTeachableLearnset,
-        .formSpeciesIdTable = sSwoobatFormSpeciesIdTable,
-        .formChangeTable = sSwoobatFormChangeTable,
+        //.formSpeciesIdTable = sSwoobatFormSpeciesIdTable,
+        //.formChangeTable = sSwoobatFormChangeTable,
     },
 #endif //P_FAMILY_WOOBAT
 
@@ -6024,7 +6022,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sYamaskTeachableLearnset,
         .eggMoveLearnset = sYamaskEggMoveLearnset,
         .formSpeciesIdTable = sYamaskFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_COFAGRIGUS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_COFAGRIGUS}
+								,{EVO_ITEM, ITEM_DAWN_STONE, SPECIES_NEPHTOMB, CONDITIONS({IF_GENDER, MON_FEMALE})}
+								),
     },
 
     [SPECIES_COFAGRIGUS] =
@@ -7293,7 +7293,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sGothoritaLevelUpLearnset,
         .teachableLearnset = sGothoritaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_GOTHITELLE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_GOTHITELLE}
+								,{EVO_ITEM, ITEM_DAWN_STONE, SPECIES_GOTHITURGE, CONDITIONS({IF_GENDER, MON_MALE})}
+								),
     },
 
     [SPECIES_GOTHITELLE] =

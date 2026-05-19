@@ -111,6 +111,8 @@ static enum Collision CheckForObjectEventStaticCollision(struct ObjectEvent *, s
 static bool8 CanStopSurfing(s16, s16, enum Direction);
 static bool8 ShouldJumpLedge(s16, s16, enum Direction);
 static bool8 TryPushBoulder(s16, s16, enum Direction);
+static bool8 TryPushMetal(s16, s16, enum Direction);
+static void TryPullMetal(enum Direction);
 static void CheckAcroBikeCollision(s16, s16, u8, enum Collision *);
 
 static void DoPlayerAvatarTransition(void);
@@ -1047,7 +1049,7 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
     }
 }
 
-static void TryPullMetal(u8 direction)
+static void TryPullMetal(enum Direction direction)
 {
     s16 x, y;
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
@@ -1194,7 +1196,7 @@ static bool8 TryPushBoulder(s16 x, s16 y, enum Direction direction)
     return FALSE;
 }
 
-static bool8 TryPushMetal(s16 x, s16 y, u8 direction)
+static bool8 TryPushMetal(s16 x, s16 y, enum Direction direction)
 {
     if (FlagGet(FLAG_SYS_USE_MAGNET_RISE))
     {

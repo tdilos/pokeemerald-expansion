@@ -31,7 +31,7 @@ UmberTown_MaleMCHouse_OnFrame:
 
 
 UmberTown_MaleMCHouse_OnTransition:
-	setrespawn HEAL_LOCATION_UMBER_TOWN
+	setrespawn HEAL_LOCATION_UMBER_TOWN_MALE_MCHOUSE_2F
 	end
 
 UmberTown_MaleMCHouse_EventScript_DisableBagUse:

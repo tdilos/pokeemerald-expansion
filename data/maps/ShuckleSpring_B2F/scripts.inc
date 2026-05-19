@@ -1,6 +1,6 @@
-.equ LOCALID_ROOT_FOSSIL,  1
-.equ LOCALID_HELIX_FOSSIL, 2
-.equ LOCALID_MANUEL,       3
+.equ LOCALID_ROOT_FOSSIL2,  1
+.equ LOCALID_HELIX_FOSSIL2, 2
+.equ LOCALID_MANUEL,        3
 
 ShuckleSpring_B2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShuckleSpring_B2F_OnTransition
@@ -99,7 +99,7 @@ ShuckleSpring_B2F_EventScript_RootFossil::
 	lock
 	msgbox ShuckleSpring_B2F_Text_YouWantRootFossil, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, ShuckleSpring_B2F_EventScript_DontTakeFossil
-	removeobject LOCALID_ROOT_FOSSIL
+	removeobject LOCALID_ROOT_FOSSIL2
 	giveitem ITEM_ROOT_FOSSIL
 	@giveitem_msg MtMoon_B2F_Text_ObtainedDomeFossil, ITEM_ROOT_FOSSIL, 1, MUS_OBTAIN_KEY_ITEM
 	closemessage
@@ -113,7 +113,7 @@ ShuckleSpring_B2F_EventScript_RootFossil::
 	msgbox ShuckleSpring_B2F_Text_ThenThisFossilIsMine, MSGBOX_DEFAULT
 	closemessage
 	@waitfanfare
-	removeobject LOCALID_HELIX_FOSSIL
+	removeobject LOCALID_HELIX_FOSSIL2
 	delay 30
 	fadescreen FADE_TO_BLACK
 	@setflag FLAG_GOT_SHUCKLE_SPRING_FOSSIL
@@ -133,7 +133,7 @@ ShuckleSpring_B2F_EventScript_HelixFossil::
 	lock
 	msgbox ShuckleSpring_B2F_Text_YouWantHelixFossil, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, ShuckleSpring_B2F_EventScript_DontTakeFossil
-	removeobject LOCALID_HELIX_FOSSIL
+	removeobject LOCALID_HELIX_FOSSIL2
 	giveitem ITEM_HELIX_FOSSIL
 	@giveitem_msg MtMoon_B2F_Text_ObtainedHelixFossil, ITEM_HELIX_FOSSIL, 1, MUS_OBTAIN_KEY_ITEM
 	closemessage
@@ -147,7 +147,7 @@ ShuckleSpring_B2F_EventScript_HelixFossil::
 	msgbox ShuckleSpring_B2F_Text_ThenThisFossilIsMine, MSGBOX_DEFAULT
 	closemessage
 	@waitfanfare
-	removeobject LOCALID_ROOT_FOSSIL
+	removeobject LOCALID_ROOT_FOSSIL2
 	delay 30
 	fadescreen FADE_TO_BLACK
 	@setflag FLAG_GOT_SHUCKLE_SPRING_FOSSIL

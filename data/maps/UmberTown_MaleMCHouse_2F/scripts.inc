@@ -23,7 +23,7 @@ UmberTown_MaleMCHouse_2F_MapScripts::
 
 
 UmberTown_MaleMCHouse_2F_OnTransition:
-	setrespawn HEAL_LOCATION_UMBER_TOWN
+	setrespawn HEAL_LOCATION_UMBER_TOWN_MALE_MCHOUSE_2F
 	@call_if_unset 
 	@call_if_eq VAR_LITTLEROOT_INTRO_STATE, 0, UmberTown_MaleMCHouse_2F_EventScript_SetIntroFlags
 	end

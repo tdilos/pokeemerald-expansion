@@ -276,6 +276,7 @@ extern const u8 BattleScript_ToxicSpikesBadlyPoisoned[];
 extern const u8 BattleScript_ToxicSpikesAbsorbed[];
 extern const u8 BattleScript_StealthRocksAbsorbed[];
 extern const u8 BattleScript_StickyWebOnSwitchIn[];
+extern const u8 BattleScript_FairyDustOnSwitchIn[];
 extern const u8 BattleScript_SolarPowerActivates[];
 extern const u8 BattleScript_CursedBodyActivates[];
 extern const u8 BattleScript_MummyActivates[];
@@ -513,6 +514,10 @@ extern const u8 BattleScript_CantMakeAsleep[];
 extern const u8 BattleScript_AlreadyPoisoned[];
 extern const u8 BattleScript_AlreadyParalyzed[];
 extern const u8 BattleScript_AlreadyBurned[];
+extern const u8 BattleScript_AlreadyInfected[];
+extern const u8 BattleScript_AlreadyDazed[];
+extern const u8 BattleScript_AlreadyExhausted[];
+extern const u8 BattleScript_AlreadyAfraid[];
 extern const u8 BattleScript_PrintAbilityMadeIneffective[];
 extern const u8 BattleScript_ItDoesntAffectFoe[];
 extern const u8 BattleScript_FirstTurnSwitchInEvents[];
@@ -747,7 +752,7 @@ extern const u8 BattleScript_EffectGrassyTerrain[];
 extern const u8 BattleScript_EffectElectricTerrain[];
 extern const u8 BattleScript_EffectPsychicTerrain[];
 extern const u8 BattleScript_EffectAttackAccUp[];
-extern const u8 BattleScript_EffectAttackSpAttackUp[];
+//extern const u8 BattleScript_EffectAttackSpecialAttackUp[];
 extern const u8 BattleScript_EffectQuiverDance[];
 extern const u8 BattleScript_EffectCoil[];
 extern const u8 BattleScript_EffectElectrify[];
@@ -755,6 +760,7 @@ extern const u8 BattleScript_EffectReflectType[];
 extern const u8 BattleScript_EffectSoak[];
 extern const u8 BattleScript_EffectGrowth[];
 extern const u8 BattleScript_EffectShellSmash[];
+extern const u8 BattleScript_EffectMetamorphose[];
 extern const u8 BattleScript_EffectShiftGear[];
 extern const u8 BattleScript_EffectDefenseUp3[];
 extern const u8 BattleScript_EffectNobleRoar[];
@@ -829,5 +835,18 @@ extern const u8 BattleScript_GhostBallDodge[];
 extern const u8 BattleScript_GhostGetOutGetOut[];
 extern const u8 BattleScript_TooScaredToMove[];
 extern const u8 BattleScript_SilphScopeUnveiled[];
+extern const u8 BattleScript_EffectAttackSpAttackUp[];
+
+// tourmaline
+//extern const u8 BattleScript_EffectSmaze[];
+//extern const u8 BattleScript_EffectFullMoon[];
+extern const u8 BattleScript_EffectPetrify[];
+extern const u8 BattleScript_EffectFairyDust[];
+extern const u8 BattleScript_EffectSpecialDefenseUp3[];
+extern const u8 BattleScript_EffectSpecialAttackAccUp[];
+extern const u8 BattleScript_EffectHighNote[];
+extern const u8 BattleScript_EffectOverclock[];
+extern const u8 BattleScript_EffectChitinize[];
+
 
 #endif // GUARD_BATTLE_SCRIPTS_H

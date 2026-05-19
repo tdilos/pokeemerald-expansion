@@ -1,5 +1,5 @@
-.set LOCALID_JACE, 24
-.set LOCALID_ROBIN, 25
+.set LOCALID_JACE_PITCHBLAK, 24
+.set LOCALID_ROBIN_PITCHBLAK, 25
 
 PitchblakCity_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PitchblakCity_OnFrame
@@ -23,8 +23,8 @@ PitchblakCity_EventScript_AfterNedaBattle::
 
 PitchblakCity_EventScript_HideJaceAndRobin::
 	setflag FLAG_HIDE_JACE
-	removeobject LOCALID_JACE
-	removeobject LOCALID_ROBIN
+	removeobject LOCALID_JACE_PITCHBLAK
+	removeobject LOCALID_ROBIN_PITCHBLAK
 	return
 
 PitchblakCity_EventScript_MeetJaceAndRobin::
@@ -33,7 +33,7 @@ PitchblakCity_EventScript_MeetJaceAndRobin::
 	delay 120
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PitchblakCity_Text_YoureAwakeNow, MSGBOX_DEFAULT
 	closemessage
@@ -43,47 +43,47 @@ PitchblakCity_EventScript_MeetJaceAndRobin::
 	msgbox PitchblakCity_Text_TeamGenesisAgain, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_ROBIN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PitchblakCity_Text_YouHeardAVoice, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PitchblakCity_Text_BeatsMe, MSGBOX_DEFAULT
 	closemessage
 	delay 60
 	msgbox PitchblakCity_Text_CouldBeAClue, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROBIN, Common_Movement_FaceRight
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_FaceRight
 	waitmovement 0
 	delay 40
-	applymovement LOCALID_ROBIN, Common_Movement_FaceDown
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_FaceDown
 	waitmovement 0
 	delay 20
 	msgbox PitchblakCity_Text_WellAnyway, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkInPlaceDown
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PitchblakCity_Text_WhatAboutMe, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_ROBIN, Common_Movement_FaceLeft
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
 	msgbox PitchblakCity_Text_IKnowYouDid, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	delay 10
 	msgbox PitchblakCity_Text_LetMeFinish, MSGBOX_DEFAULT
 	closemessage
 	delay 40
-	applymovement LOCALID_ROBIN, Common_Movement_FaceDown
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_FaceDown
 	waitmovement 0
 	delay 20
 	msgbox PitchblakCity_Text_TellMeLater, MSGBOX_DEFAULT
@@ -94,20 +94,20 @@ PitchblakCity_EventScript_MeetJaceAndRobin::
 	delay 60
 	msgbox PitchblakCity_Text_RobinWeirdTree, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox PitchblakCity_Text_JaceWeirdTree2, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_ROBIN, Common_Movement_FaceLeft
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
 	msgbox PitchblakCity_Text_RobinWeirdTree2, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_ROBIN, Common_Movement_WalkDown
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_ROBIN, Common_Movement_FaceLeft
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_FaceLeft
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
@@ -115,14 +115,14 @@ PitchblakCity_EventScript_MeetJaceAndRobin::
 	waitfanfare
 	msgbox PitchblakCity_Text_ExplainRoadSalt, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROBIN, Common_Movement_WalkRight
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_ROBIN, Common_Movement_FaceLeft
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 20
 	msgbox PitchblakCity_Text_RobinBye, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROBIN, Common_Movement_FaceDown
+	applymovement LOCALID_ROBIN_PITCHBLAK, Common_Movement_FaceDown
 	waitmovement 0
 	delay 50
 	setfieldeffectargument 0, 1
@@ -131,7 +131,7 @@ PitchblakCity_EventScript_MeetJaceAndRobin::
 	removeobject LOCALID_ROBIN
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_FaceDown
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_FaceDown
 	waitmovement 0
 	delay 10
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
@@ -139,21 +139,21 @@ PitchblakCity_EventScript_MeetJaceAndRobin::
 	delay 50
 	msgbox PitchblakCity_Text_JaceBye, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_PITCHBLAK, Common_Movement_WalkUp
 	waitmovement 0
 	setvar VAR_PITCHBLAK_CITY_STATE, 3
 	setflag FLAG_HIDE_JACE
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_PITCHBLAK
 	releaseall
 	end
 

@@ -263,6 +263,16 @@ extern const u32 gBattleEnvironmentAnimTilemap_Building[];
 extern const u16 gBattleEnvironmentPalette_Building[];
 extern const u16 gBattleEnvironmentPalette_Plain[];
 extern const u16 gBattleEnvironmentPalette_Frontier[];
+extern const u16 gBattleEnvironmentPalette_PlainRed[];
+extern const u16 gBattleEnvironmentPalette_WisteriaGrass[];
+extern const u16 gBattleEnvironmentPalette_HaewenGrass[];
+extern const u16 gBattleEnvironmentPalette_BurgundyGrass[];
+extern const u16 gBattleEnvironmentPalette_Sewer[];
+extern const u16 gBattleEnvironmentPalette_StadiumLisia[];
+extern const u16 gBattleEnvironmentPalette_StadiumIan[];
+extern const u16 gBattleEnvironmentPalette_StadiumSidney2[];
+extern const u16 gBattleEnvironmentPalette_StadiumPetra[];
+extern const u16 gBattleEnvironmentPalette_StadiumNorman[];
 extern const u32 gBattleEnvironmentTiles_Stadium[];
 extern const u32 gBattleEnvironmentTilemap_Stadium[];
 extern const u32 gBattleEnvironmentTiles_Rayquaza[];
@@ -283,11 +293,6 @@ extern const u16 gBattleEnvironmentPalette_StadiumDrake[];
 extern const u16 gBattleEnvironmentPalette_StadiumWallace[];
 
 // Tourmaline battle environments
-extern const u32 gBattleEnvironmentTiles_TallGrass[];
-extern const u32 gBattleEnvironmentTilemap_TallGrass[];
-extern const u32 gBattleEnvironmentAnimTiles_TallGrass[];
-extern const u32 gBattleEnvironmentAnimTilemap_TallGrass[];
-extern const u16 gBattleEnvironmentPalette_TallGrass[];
 extern const u32 gBattleEnvironmentTiles_RedGrass[];
 extern const u32 gBattleEnvironmentTilemap_RedGrass[];
 extern const u32 gBattleEnvironmentAnimTiles_RedGrass[];
@@ -486,7 +491,7 @@ extern const u16 gItemIconPalette_BurnHeal[];
 extern const u16 gItemIconPalette_IceHeal[];
 extern const u16 gItemIconPalette_Awakening[];
 extern const u16 gItemIconPalette_Antibiotics[];
-extern const u16 gItemIconPalette_Daze_Heal[];
+extern const u16 gItemIconPalette_DazeHeal[];
 extern const u16 gItemIconPalette_Stimulant[];
 extern const u16 gItemIconPalette_Relaxant[];
 extern const u32 gItemIcon_FullHeal[];
@@ -1294,9 +1299,9 @@ extern const u32 gItemIcon_ToxicOrb[];
 extern const u16 gItemIconPalette_ToxicOrb[];
 // Weather Rocks
 extern const u32 gItemIcon_SlimyRock[];
-extern const u32 gItemIconPalette_SlimyRock[];
+extern const u16 gItemIconPalette_SlimyRock[];
 extern const u32 gItemIcon_PitchRock[];
-extern const u32 gItemIconPalette_PitchRock[];
+extern const u16 gItemIconPalette_PitchRock[];
 extern const u32 gItemIcon_DampRock[];
 extern const u16 gItemIconPalette_DampRock[];
 extern const u32 gItemIcon_HeatRock[];
@@ -1635,9 +1640,9 @@ extern const u32 gItemIcon_DynamaxBand[];
 extern const u16 gItemIconPalette_DynamaxBand[];
 // Misc. Key Items
 extern const u32 gItemIcon_UnownReport[];
-extern const u32 gItemIconPalette_UnownReport[];
+extern const u16 gItemIconPalette_UnownReport[];
 extern const u32 gItemIcon_AzureFlute[];
-extern const u32 gItemIconPalette_AzureFlute[];
+extern const u16 gItemIconPalette_AzureFlute[];
 extern const u32 gItemIcon_Bicycle[];
 extern const u16 gItemIconPalette_Bicycle[];
 extern const u32 gItemIcon_MachBike[];
@@ -1798,26 +1803,16 @@ extern const u16 gItemIconPalette_FairyTeraShard[];
 extern const u32 gItemIcon_StellarTeraShard[];
 extern const u16 gItemIconPalette_StellarTeraShard[];
 
-// NEW MISC ITEMS
-extern const u32 gItemIcon_CovenantOrb[];
-extern const u32 gItemIconPalette_CovenantOrb[];
-extern const u32 gItemIcon_OniMask[];
-extern const u32 gItemIconPalette_OniMask[];
-extern const u32 gItemIcon_ZephyrStone[];
-extern const u32 gItemIconPalette_ZephyrStone[];
-extern const u32 gItemIcon_Hanamidango[];
-extern const u32 gItemIconPalette_Hanamidango[];
-
 
 // NEW MISC ITEMS
 extern const u32 gItemIcon_CovenantOrb[];
-extern const u32 gItemIconPalette_CovenantOrb[];
+extern const u16 gItemIconPalette_CovenantOrb[];
 extern const u32 gItemIcon_OniMask[];
-extern const u32 gItemIconPalette_OniMask[];
+extern const u16 gItemIconPalette_OniMask[];
 extern const u32 gItemIcon_ZephyrStone[];
-extern const u32 gItemIconPalette_ZephyrStone[];
+extern const u16 gItemIconPalette_ZephyrStone[];
 extern const u32 gItemIcon_Hanamidango[];
-extern const u32 gItemIconPalette_Hanamidango[];
+extern const u16 gItemIconPalette_Hanamidango[];
 
 
 extern const u32 gItemIcon_AdamantCrystal[];

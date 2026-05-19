@@ -4,7 +4,6 @@
 
 struct LilycoveContestLadyValues
 {
-<<<<<<< Updated upstream
     u16 monGfxId;
     u16 monSpecies;
     const u8 *monName;
@@ -44,8 +43,8 @@ static const struct LilycoveContestLadyValues sContestLadyValues[] =
         .contestName = gText_CoolnessContest,
     },
     [CONTEST_CATEGORY_BEAUTY] = {
-        .monGfxId = OBJ_EVENT_GFX_SKITTY,
-        .monSpecies = SPECIES_SKITTY,
+        .monGfxId = OBJ_EVENT_GFX_GLAMEOW, //OBJ_EVENT_GFX_SKITTY,
+        .monSpecies = SPECIES_GLAMEOW, //SPECIES_SKITTY,
         .monName = COMPOUND_STRING("VINNY"),
         .categoryName = COMPOUND_STRING("beauty"),
         .contestName = gText_BeautyContest,
@@ -71,13 +70,6 @@ static const struct LilycoveContestLadyValues sContestLadyValues[] =
         .categoryName = COMPOUND_STRING("toughness"),
         .contestName = gText_ToughnessContest,
     },
-=======
-    [CONTEST_CATEGORY_COOL]   = OBJ_EVENT_GFX_ZIGZAGOON_1,
-    [CONTEST_CATEGORY_BEAUTY] = OBJ_EVENT_GFX_GLAMEOW, //OBJ_EVENT_GFX_SKITTY,
-    [CONTEST_CATEGORY_CUTE]   = OBJ_EVENT_GFX_POOCHYENA,
-    [CONTEST_CATEGORY_SMART]  = OBJ_EVENT_GFX_KECLEON,
-    [CONTEST_CATEGORY_TOUGH]  = OBJ_EVENT_GFX_PIKACHU
->>>>>>> Stashed changes
 };
 
 // Quiz Lady data
@@ -431,11 +423,9 @@ static const struct LilycoveFavorLady sFavorLady[] =
     {.request = COMPOUND_STRING("sticky"),   .acceptedItems = sFavorLadyAcceptedItems_Sticky,   .prize = ITEM_RARE_CANDY},
     {.request = COMPOUND_STRING("pointy"),   .acceptedItems = sFavorLadyAcceptedItems_Pointy,   .prize = ITEM_PP_MAX},
 };
-<<<<<<< Updated upstream
-=======
 
 
-static const u8 *const sContestLadyMonNames[] =
+/*static const u8 *const sContestLadyMonNames[] =
 {
     [CONTEST_CATEGORY_COOL]   = gText_ContestLady_Handsome,
     [CONTEST_CATEGORY_BEAUTY] = gText_ContestLady_Vinny,
@@ -469,5 +459,4 @@ static const u16 sContestLadyMonSpecies[] =
     [CONTEST_CATEGORY_CUTE]   = SPECIES_POOCHYENA,
     [CONTEST_CATEGORY_SMART]  = SPECIES_KECLEON,
     [CONTEST_CATEGORY_TOUGH]  = SPECIES_PIKACHU
-};
->>>>>>> Stashed changes
+};*/

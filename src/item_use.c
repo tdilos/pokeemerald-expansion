@@ -105,12 +105,6 @@ void ItemUseOutOfBattle_TownMap(u8 taskId);
 static void Task_UseTownMapFromField(u8 taskId);
 
 
-static void CB2_BagShowRegionMap(void);
-void BagShowRegionMap(void);
-void ItemUseOutOfBattle_TownMap(u8 taskId);
-static void Task_UseTownMapFromField(u8 taskId);
-
-
 // EWRAM variables
 EWRAM_DATA static TaskFunc sItemUseOnFieldCB = NULL;
 
@@ -783,10 +777,6 @@ void BagShowRegionMap(void)
 {
     SetMainCallback2(CB2_BagShowRegionMap);
 }
-
-
-
-
 
 void ItemUseOutOfBattle_TownMap(u8 taskId)
 {
@@ -1721,28 +1711,6 @@ void ItemUseOutOfBattle_PokeFlute(u8 taskId)
             DisplayItemMessage(taskId, FONT_NORMAL, sText_PlayedPokeFluteCatchy, CloseItemMessage);
         else
             DisplayItemMessageOnField(taskId, sText_PlayedPokeFluteCatchy, Task_CloseCantUseKeyItemMessage);
-    }
-}
-
-static void ItemUseOnFieldCB_TownMap(u8 taskId)
-{
-    LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_RegionMap);
-    DestroyTask(taskId);
-}
-
-void ItemUseOutOfBattle_TownMap(u8 taskId)
-{
-    if (!gTasks[taskId].tUsingRegisteredKeyItem)
-    {
-        sItemUseOnFieldCB = ItemUseOnFieldCB_TownMap;
-        gFieldCallback = FieldCB_UseItemOnField;
-        gBagMenu->newScreenCallback = CB2_ReturnToField;
-        Task_FadeAndCloseBagMenu(taskId);
-    }
-    else
-    {
-        gTasks[taskId].func = ItemUseOnFieldCB_TownMap;
     }
 }
 

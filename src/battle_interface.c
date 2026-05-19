@@ -173,20 +173,20 @@ enum
     HEALTHBOX_GFX_99,
     HEALTHBOX_GFX_100,
     HEALTHBOX_GFX_STATUS_FRB_BATTLER2, //status3 "FRB"
-    HEALTHBOX_GFX_120,
-    HEALTHBOX_GFX_121,
+    HEALTHBOX_GFX_146,
+    HEALTHBOX_GFX_147,
 	HEALTHBOX_GFX_STATUS_INF_BATTLER2, //status3 "INF"
-    HEALTHBOX_GFX_132,
-    HEALTHBOX_GFX_133,
+    HEALTHBOX_GFX_149,
+    HEALTHBOX_GFX_150,
 	HEALTHBOX_GFX_STATUS_DAZ_BATTLER2, //status3 "DAZ"
-    HEALTHBOX_GFX_134,
-    HEALTHBOX_GFX_135,
+    HEALTHBOX_GFX_152,
+    HEALTHBOX_GFX_153,
 	HEALTHBOX_GFX_STATUS_EXH_BATTLER2, //status3 "EXH"
-    HEALTHBOX_GFX_136,
-    HEALTHBOX_GFX_137,
+    HEALTHBOX_GFX_155,
+    HEALTHBOX_GFX_156,
 	HEALTHBOX_GFX_STATUS_FER_BATTLER2, //status3 "FER"
-    HEALTHBOX_GFX_138,
-    HEALTHBOX_GFX_139,
+    HEALTHBOX_GFX_158,
+    HEALTHBOX_GFX_159,
     HEALTHBOX_GFX_STATUS_PSN_BATTLER3, //status4 "PSN"
     HEALTHBOX_GFX_102,
     HEALTHBOX_GFX_103,
@@ -203,20 +203,20 @@ enum
     HEALTHBOX_GFX_114,
     HEALTHBOX_GFX_115,
     HEALTHBOX_GFX_STATUS_FRB_BATTLER3, //status4 "FRB"
-    HEALTHBOX_GFX_141,
-    HEALTHBOX_GFX_142,
+    HEALTHBOX_GFX_161,
+    HEALTHBOX_GFX_162,
 	HEALTHBOX_GFX_STATUS_INF_BATTLER3, //status4 "INF"
-    HEALTHBOX_GFX_144,
-    HEALTHBOX_GFX_145,
+    HEALTHBOX_GFX_164,
+    HEALTHBOX_GFX_165,
 	HEALTHBOX_GFX_STATUS_DAZ_BATTLER3, //status4 "DAZ"
-    HEALTHBOX_GFX_147,
-    HEALTHBOX_GFX_148,
+    HEALTHBOX_GFX_167,
+    HEALTHBOX_GFX_168,
 	HEALTHBOX_GFX_STATUS_EXH_BATTLER3, //status4 "EXH"
-    HEALTHBOX_GFX_150,
-    HEALTHBOX_GFX_151,
+    HEALTHBOX_GFX_170,
+    HEALTHBOX_GFX_171,
 	HEALTHBOX_GFX_STATUS_FER_BATTLER3, //status4 "FER"
-    HEALTHBOX_GFX_153,
-    HEALTHBOX_GFX_154,
+    HEALTHBOX_GFX_173,
+    HEALTHBOX_GFX_174,
     HEALTHBOX_GFX_FRAME_END,
     HEALTHBOX_GFX_FRAME_END_BAR,
 };
@@ -610,7 +610,7 @@ static const u16 sStatusIconColors[] =
 	[PAL_STATUS_INF] = RGB(17, 19, 3),
 	[PAL_STATUS_DAZ] = RGB(4, 13, 13),
 	[PAL_STATUS_EXH] = RGB(22, 4, 4),
-	[PAL_STATUS_FER] = RGB(14, 14, 14),
+	[PAL_STATUS_FER] = RGB(12, 12, 12),
 };
 
 static const struct WindowTemplate sHealthboxWindowTemplate = {
@@ -897,6 +897,14 @@ static const s16 sBattlerHealthboxCoords[BATTLE_COORDS_COUNT][MAX_BATTLERS_COUNT
         [B_POSITION_OPPONENT_LEFT]  = { 44,  19 },
         [B_POSITION_OPPONENT_RIGHT] = { 32,  44 },
     },
+    /*[BATTLE_COORDS_ARCHON] =
+    {
+        [B_POSITION_PLAYER_LEFT]    = { 159, 76 },
+        [B_POSITION_PLAYER_RIGHT]   = { 171, 101 },
+        [B_POSITION_ARCHON]         = { 32,  4 },
+        [B_POSITION_OPPONENT_LEFT]  = { 44,  29 },
+        [B_POSITION_OPPONENT_RIGHT] = { 32,  54 },
+    },*/
 };
 
 void GetBattlerHealthboxCoords(enum BattlerId battler, s16 *x, s16 *y)
@@ -1871,22 +1879,22 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
     }
 	else if (status & STATUS1_INFECT)
     {
-        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_INF_BATTLER0, battlerId));
+        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_INF_BATTLER0, battler));
         statusPalId = PAL_STATUS_INF;
     }
 	else if (status & STATUS1_DAZE)
     {
-        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_DAZ_BATTLER0, battlerId));
+        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_DAZ_BATTLER0, battler));
         statusPalId = PAL_STATUS_DAZ;
     }
 	else if (status & STATUS1_EXHAUST)
     {
-        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_EXH_BATTLER0, battlerId));
+        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_EXH_BATTLER0, battler));
         statusPalId = PAL_STATUS_EXH;
     }
 	else if (status & STATUS1_FEAR)
     {
-        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_FER_BATTLER0, battlerId));
+        statusGfxPtr = GetHealthboxElementGfxPtr(GetStatusIconForBattlerId(HEALTHBOX_GFX_STATUS_FER_BATTLER0, battler));
         statusPalId = PAL_STATUS_FER;
     }
     else
@@ -1987,41 +1995,41 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, enum BattlerId battler)
             ret = HEALTHBOX_GFX_STATUS_BRN_BATTLER3;
         break;
 	case HEALTHBOX_GFX_STATUS_INF_BATTLER0:
-        if (battlerId == 0)
+        if (battler == 0)
             ret = HEALTHBOX_GFX_STATUS_INF_BATTLER0;
-        else if (battlerId == 1)
+        else if (battler == 1)
             ret = HEALTHBOX_GFX_STATUS_INF_BATTLER1;
-        else if (battlerId == 2)
+        else if (battler == 2)
             ret = HEALTHBOX_GFX_STATUS_INF_BATTLER2;
         else
             ret = HEALTHBOX_GFX_STATUS_INF_BATTLER3;
         break;
 	case HEALTHBOX_GFX_STATUS_DAZ_BATTLER0:
-        if (battlerId == 0)
+        if (battler == 0)
             ret = HEALTHBOX_GFX_STATUS_DAZ_BATTLER0;
-        else if (battlerId == 1)
+        else if (battler == 1)
             ret = HEALTHBOX_GFX_STATUS_DAZ_BATTLER1;
-        else if (battlerId == 2)
+        else if (battler == 2)
             ret = HEALTHBOX_GFX_STATUS_DAZ_BATTLER2;
         else
             ret = HEALTHBOX_GFX_STATUS_DAZ_BATTLER3;
         break;
 	case HEALTHBOX_GFX_STATUS_EXH_BATTLER0:
-        if (battlerId == 0)
+        if (battler == 0)
             ret = HEALTHBOX_GFX_STATUS_EXH_BATTLER0;
-        else if (battlerId == 1)
+        else if (battler == 1)
             ret = HEALTHBOX_GFX_STATUS_EXH_BATTLER1;
-        else if (battlerId == 2)
+        else if (battler == 2)
             ret = HEALTHBOX_GFX_STATUS_EXH_BATTLER2;
         else
             ret = HEALTHBOX_GFX_STATUS_EXH_BATTLER3;
         break;
 	case HEALTHBOX_GFX_STATUS_FER_BATTLER0:
-        if (battlerId == 0)
+        if (battler == 0)
             ret = HEALTHBOX_GFX_STATUS_FER_BATTLER0;
-        else if (battlerId == 1)
+        else if (battler == 1)
             ret = HEALTHBOX_GFX_STATUS_FER_BATTLER1;
-        else if (battlerId == 2)
+        else if (battler == 2)
             ret = HEALTHBOX_GFX_STATUS_FER_BATTLER2;
         else
             ret = HEALTHBOX_GFX_STATUS_FER_BATTLER3;
@@ -2947,7 +2955,8 @@ bool32 CanThrowLastUsedBall(void)
         return FALSE;
     if (!CheckBagHasItem(gBallToDisplay, 1))
         return FALSE;
-	if (FlagGet(FLAG_TEMP_DISABLE_BAG) == TRUE) // for Houndoom + Melmetal fights
+	//if (FlagGet(FLAG_TEMP_DISABLE_BAG) == TRUE) // for Houndoom + Melmetal fights
+	if (VarGet(VAR_BAG_RESTRICTION) == 2) // for Houndoom + Melmetal fights
 		return FALSE;
 
     return TRUE;

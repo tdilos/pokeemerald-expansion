@@ -1,13 +1,13 @@
 .set LOCALID_GLAMEOW, 5
 .set LOCALID_GROWLITHE, 7
-.set LOCALID_JACE, 8
+.set LOCALID_JACE_RANGERHQ, 8
 .set LOCALID_JUSTIN, 2
 .set LOCALID_ROBIN, 10
-.set LOCALID_RANGER1, 1
-.set LOCALID_RANGER2, 3
-.set LOCALID_RANGER3, 4
-.set LOCALID_RANGER4, 6
-.set LOCALID_BLACKBALL, 9
+.set LOCALID_RANGER1_RANGERHQ, 1
+.set LOCALID_RANGER2_RANGERHQ, 3
+.set LOCALID_RANGER3_RANGERHQ, 4
+.set LOCALID_RANGER4_RANGERHQ, 6
+.set LOCALID_BLACKBALL_RANGERHQ, 9
 
 MaroonCity_RangerHQ_3F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MaroonCity_RangerHQ_3F_OnTransition
@@ -42,17 +42,17 @@ MaroonCity_RangerHQ_3F_OnTransition:
 	end
 
 MaroonCity_RangerHQ_3F_EventScript_JaceMeetsJustin:
-	@removeobject LOCALID_JACE
+	@removeobject LOCALID_JACE_RANGERHQ
 	clearflag FLAG_HIDE_JACE
 	@setobjectxyperm LOCALID_JACE, 22, 6
 	@setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_JACE
+	addobject LOCALID_JACE_RANGERHQ
 	return
 
 
 MaroonCity_RangerHQ_3F_EventScript_HideJace:
 	setflag FLAG_HIDE_JACE
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_RANGERHQ
 	removeobject LOCALID_ROBIN
 	return
 
@@ -63,25 +63,25 @@ MaroonCity_RangerHQ_3F_EventScript_HideJustin:
 
 MaroonCity_RangerHQ_3F_EventScript_HideBlackBall:
 	setflag FLAG_HIDE_BLACK_BALL_2
-	removeobject LOCALID_BLACKBALL
+	removeobject LOCALID_BLACKBALL_RANGERHQ
 	return
 
 MaroonCity_RangerHQ_3F_EventScript_HideMisc:
 	setflag FLAG_HIDE_MISC_RANGER_HQ
-	removeobject LOCALID_RANGER1
-	removeobject LOCALID_RANGER2
-	removeobject LOCALID_RANGER3
-	removeobject LOCALID_RANGER4
+	removeobject LOCALID_RANGER1_RANGERHQ
+	removeobject LOCALID_RANGER2_RANGERHQ
+	removeobject LOCALID_RANGER3_RANGERHQ
+	removeobject LOCALID_RANGER4_RANGERHQ
 	removeobject LOCALID_GLAMEOW
 	removeobject LOCALID_GROWLITHE
 	return
 
 MaroonCity_RangerHQ_3F_EventScript_RevealMisc:
 	clearflag FLAG_HIDE_MISC_RANGER_HQ
-	addobject LOCALID_RANGER1
-	addobject LOCALID_RANGER2
-	addobject LOCALID_RANGER3
-	addobject LOCALID_RANGER4
+	addobject LOCALID_RANGER1_RANGERHQ
+	addobject LOCALID_RANGER2_RANGERHQ
+	addobject LOCALID_RANGER3_RANGERHQ
+	addobject LOCALID_RANGER4_RANGERHQ
 	addobject LOCALID_GLAMEOW
 	addobject LOCALID_GROWLITHE
 	return
@@ -89,13 +89,13 @@ MaroonCity_RangerHQ_3F_EventScript_RevealMisc:
 MaroonCity_RangerHQ_3F_EventScript_SetUpBlackBallMeeting:
 	playbgm MUS_DP_VICTORY_ROAD, TRUE
 	clearflag FLAG_HIDE_BLACK_BALL_2
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_RANGERHQ
 	clearflag FLAG_HIDE_JACE
-	setobjectxyperm LOCALID_JACE, 8, 7
-	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm LOCALID_JACE_RANGERHQ, 8, 7
+	setobjectmovementtype LOCALID_JACE_RANGERHQ, MOVEMENT_TYPE_FACE_DOWN
 	setobjectxyperm LOCALID_ROBIN, 8, 10
 	setobjectmovementtype LOCALID_ROBIN, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_JACE
+	addobject LOCALID_JACE_RANGERHQ
 	addobject LOCALID_ROBIN
 	removeobject LOCALID_JUSTIN
 	clearflag FLAG_HIDE_JUSTIN_RANGER_HQ
@@ -103,18 +103,18 @@ MaroonCity_RangerHQ_3F_EventScript_SetUpBlackBallMeeting:
 	setobjectmovementtype LOCALID_JUSTIN, MOVEMENT_TYPE_FACE_UP
 	addobject LOCALID_JUSTIN
 	clearflag FLAG_HIDE_MISC_RANGER_HQ
-	setobjectxyperm LOCALID_RANGER1, 10, 8
-	setobjectxyperm LOCALID_RANGER2, 10, 9
-	setobjectxyperm LOCALID_RANGER3, 5, 8
-	setobjectxyperm LOCALID_RANGER4, 5, 9
-	setobjectmovementtype LOCALID_RANGER1, MOVEMENT_TYPE_FACE_LEFT
-	setobjectmovementtype LOCALID_RANGER2, MOVEMENT_TYPE_FACE_LEFT
-	setobjectmovementtype LOCALID_RANGER3, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectmovementtype LOCALID_RANGER4, MOVEMENT_TYPE_FACE_RIGHT
-	addobject LOCALID_RANGER1
-	addobject LOCALID_RANGER2
-	addobject LOCALID_RANGER3
-	addobject LOCALID_RANGER4
+	setobjectxyperm LOCALID_RANGER1_RANGERHQ, 10, 8
+	setobjectxyperm LOCALID_RANGER2_RANGERHQ, 10, 9
+	setobjectxyperm LOCALID_RANGER3_RANGERHQ, 5, 8
+	setobjectxyperm LOCALID_RANGER4_RANGERHQ, 5, 9
+	setobjectmovementtype LOCALID_RANGER1_RANGERHQ, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype LOCALID_RANGER2_RANGERHQ, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype LOCALID_RANGER3_RANGERHQ, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_RANGER4_RANGERHQ, MOVEMENT_TYPE_FACE_RIGHT
+	addobject LOCALID_RANGER1_RANGERHQ
+	addobject LOCALID_RANGER2_RANGERHQ
+	addobject LOCALID_RANGER3_RANGERHQ
+	addobject LOCALID_RANGER4_RANGERHQ
 	return
 
 	
@@ -203,7 +203,7 @@ MaroonCity_RangerHQ_3F_Text_GenesisPokemon2:
 MaroonCity_RangerHQ_3F_EventScript_Camper2::
 	lock
 	faceplayer
-	goto_if_unset FLAG_RECEIVED_HM03, MaroonCity_RangerHQ_3F_EventScript_TryGiveSurf
+	goto_if_unset FLAG_RECEIVED_HM_SURF, MaroonCity_RangerHQ_3F_EventScript_TryGiveSurf
 	msgbox MaroonCity_RangerHQ_3F_Text_Deskwork, MSGBOX_DEFAULT
 	release
 	end
@@ -215,7 +215,7 @@ MaroonCity_RangerHQ_3F_Text_Deskwork:
 MaroonCity_RangerHQ_3F_EventScript_Picnicker2::
 	lock
 	faceplayer
-	goto_if_unset FLAG_RECEIVED_HM03, MaroonCity_RangerHQ_3F_EventScript_TryGiveSurf
+	goto_if_unset FLAG_RECEIVED_HM_SURF, MaroonCity_RangerHQ_3F_EventScript_TryGiveSurf
 	msgbox MaroonCity_RangerHQ_3F_Text_JustinsFamily, MSGBOX_DEFAULT
 	release
 	end
@@ -229,7 +229,7 @@ MaroonCity_RangerHQ_3F_EventScript_TryGiveSurf::
 	msgbox MaroonCity_RangerHQ_3F_Text_TryGiveSurf, MSGBOX_DEFAULT
 	giveitem ITEM_HM03
 	goto_if_eq VAR_RESULT, 0, MaroonCity_RangerHQ_3F_EventScript_CantGiveSurf
-	setflag FLAG_RECEIVED_HM03
+	setflag FLAG_RECEIVED_HM_SURF
 	release
 	end
 
@@ -254,7 +254,7 @@ MaroonCity_RangerHQ_3F_Text_CantGiveSurf:
 MaroonCity_RangerHQ_3F_EventScript_JustinIntro1::
 	lockall
 	setvar VAR_RANGER_HQ_STATE, 1
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox MaroonCity_RangerHQ_3F_Text_JaceNoticesPlayer, MSGBOX_DEFAULT
 	closemessage
@@ -270,7 +270,7 @@ MaroonCity_RangerHQ_3F_EventScript_JustinIntro1::
 MaroonCity_RangerHQ_3F_EventScript_JustinIntro2::
 	lockall
 	setvar VAR_RANGER_HQ_STATE, 1
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox MaroonCity_RangerHQ_3F_Text_JaceNoticesPlayer, MSGBOX_DEFAULT
 	closemessage
@@ -283,7 +283,7 @@ MaroonCity_RangerHQ_3F_EventScript_JustinIntro2::
 
 MaroonCity_RangerHQ_3F_EventScript_MeetingJustin::
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox MaroonCity_RangerHQ_3F_Text_JaceIntroducesPlayer, MSGBOX_DEFAULT
 	closemessage
@@ -293,7 +293,7 @@ MaroonCity_RangerHQ_3F_EventScript_MeetingJustin::
 	msgbox MaroonCity_RangerHQ_3F_Text_JustinIntro, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox MaroonCity_RangerHQ_3F_Text_JaceTellUsYourStory, MSGBOX_DEFAULT
 	closemessage
@@ -316,7 +316,7 @@ MaroonCity_RangerHQ_3F_EventScript_MeetingJustin::
 	applymovement LOCALID_JUSTIN, Common_Movement_WalkRight
 	waitmovement 0
 	applymovement LOCALID_ROBIN, Common_Movement_FaceRight
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_FaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	delay 120
@@ -334,7 +334,7 @@ MaroonCity_RangerHQ_3F_EventScript_MeetingJustin::
 	msgbox MaroonCity_RangerHQ_3F_Text_JustinHowConvenient, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox MaroonCity_RangerHQ_3F_Text_JaceNope, MSGBOX_DEFAULT
 	closemessage
@@ -347,7 +347,7 @@ MaroonCity_RangerHQ_3F_EventScript_MeetingJustin::
 	msgbox MaroonCity_RangerHQ_3F_Text_JustinDeputizesJaceAndPlayer, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox MaroonCity_RangerHQ_3F_Text_JaceOoh, MSGBOX_DEFAULT
 	closemessage
@@ -356,12 +356,12 @@ MaroonCity_RangerHQ_3F_EventScript_MeetingJustin::
 	closemessage
 	giveitem ITEM_HM03
 	goto_if_eq VAR_RESULT, 0, MaroonCity_RangerHQ_3F_EventScript_NoRoomForSurf
-	setflag FLAG_RECEIVED_HM03
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterRight
+	setflag FLAG_RECEIVED_HM_SURF
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox MaroonCity_RangerHQ_3F_Text_JaceCool, MSGBOX_DEFAULT
 	closemessage
@@ -379,11 +379,11 @@ MaroonCity_RangerHQ_3F_EventScript_MeetingJustin::
 MaroonCity_RangerHQ_3F_EventScript_NoRoomForSurf::
 	msgbox MaroonCity_RangerHQ_3F_Text_NoRoomForSurf, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox MaroonCity_RangerHQ_3F_Text_JaceCool, MSGBOX_DEFAULT
 	closemessage
@@ -525,7 +525,7 @@ MaroonCity_RangerHQ_3F_EventScript_BlackBallMeeting::
 	msgbox MaroonCity_RangerHQ_3F_Text_JustinBlackBall, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACE_RANGERHQ, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox MaroonCity_RangerHQ_3F_Text_JaceYeah, MSGBOX_DEFAULT
 	closemessage

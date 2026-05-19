@@ -1934,7 +1934,8 @@
 //#define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
 
 #define FLAG_SYS_INSIDE_MIRAGE_PALACE               (SYSTEM_FLAGS + 0x25)
-#define FLAG_TEMP_DISABLE_BAG                       (SYSTEM_FLAGS + 0x26) // Used for various event scripts
+//#define FLAG_TEMP_DISABLE_BAG                       (SYSTEM_FLAGS + 0x26) // Used for various event scripts
+#define FLAG_TEMP_NO_WHITEOUT                       (SYSTEM_FLAGS + 0x26)
 #define FLAG_SYS_USE_MAGNET_RISE                    (SYSTEM_FLAGS + 0x27)
 
 #define FLAG_SYS_USE_FLASH                          (SYSTEM_FLAGS + 0x28)
@@ -1946,7 +1947,7 @@
 #define FLAG_SYS_CRUISE_MODE                        (SYSTEM_FLAGS + 0x2D)
 
 //#define FLAG_UNUSED_0x88E                           (SYSTEM_FLAGS + 0x2E) // Unused Flag
-#define FLAG_DISABLE_BAG_IN_BATTLE                  (SYSTEM_FLAGS + 0x2E)
+#define FLAG_DISABLE_BAG_IN_BATTLE                  (SYSTEM_FLAGS + 0x2E)   // For HARDCORE and INSANE difficulties
 //#define FLAG_UNUSED_0x88F                           (SYSTEM_FLAGS + 0x2F) // Unused Flag
 #define FLAG_INVERSE_BATTLE                         (SYSTEM_FLAGS + 0x2F)
 

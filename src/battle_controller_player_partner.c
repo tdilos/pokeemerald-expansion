@@ -279,9 +279,9 @@ static void PlayerPartnerHandleChooseMove(enum BattlerId battler)
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
 
 	// DAZ effect
-	if ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_STATUS) == STATUS1_DAZE))
+	if ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_STATUS) == STATUS1_DAZE))
 	{
-        BtlController_EmitTwoReturnValues(BUFFER_B, 10, ChooseMoveAndTargetInBattlePalace());
+        BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, 10, ChooseMoveAndTargetInBattlePalace(battler));
     }
 	else
 	{

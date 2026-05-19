@@ -8,8 +8,8 @@ DunTown_Motel_1F_MapScripts::
 
 DunTown_Motel_1F_OnTransition:
 	setrespawn HEAL_LOCATION_OFFWITE_TOWN
-	goto_if_set FLAG_RECEIVED_TM10, DunTown_Motel_1F_EventScript_HideMay
-	goto_if_unset FLAG_RECEIVED_HM05, DunTown_Motel_1F_EventScript_MayNotHereYet
+	goto_if_set FLAG_RECEIVED_TM_HIDDEN_POWER, DunTown_Motel_1F_EventScript_HideMay
+	goto_if_unset FLAG_RECEIVED_HM_FLASH, DunTown_Motel_1F_EventScript_MayNotHereYet
 	clearflag FLAG_HIDE_MAY
 DunTown_Motel_1F_EventScript_MayNotHereYet:
 	end
@@ -56,7 +56,7 @@ DunTown_Motel_1F_EventScript_MayPokedexCheck::
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MAY
 	setflag FLAG_HIDE_MAY
-	setflag FLAG_RECEIVED_TM10
+	setflag FLAG_RECEIVED_TM_HIDDEN_POWER
 	fadescreen FADE_FROM_BLACK
 	release
 	end

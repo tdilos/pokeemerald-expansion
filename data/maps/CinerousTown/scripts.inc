@@ -228,7 +228,7 @@ CinerousTown_EventScript_VioletBattleChespin::
 	end
 
 CinerousTown_EventScript_VertBattleChespin::
-	trainerbattle_no_intro_no_whiteout TRAINER_VERN_CINEROUS_TOWN_CHESPIN, CinerousTown_Text_VertDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_VERT_CINEROUS_TOWN_CHESPIN, CinerousTown_Text_VertDefeated
 	goto CinerousTown_EventScript_AfterOPCBattle
 	end
 
@@ -246,7 +246,7 @@ CinerousTown_EventScript_VioletBattleTepig::
 	end
 
 CinerousTown_EventScript_VertBattleTepig::
-	trainerbattle_no_intro_no_whiteout TRAINER_VERN_CINEROUS_TOWN_TEPIG, CinerousTown_Text_VertDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_VERT_CINEROUS_TOWN_TEPIG, CinerousTown_Text_VertDefeated
 	goto CinerousTown_EventScript_AfterOPCBattle
 	end
 
@@ -267,7 +267,7 @@ CinerousTown_EventScript_VioletBattlePopplio::
 	end
 
 CinerousTown_EventScript_VertBattlePopplio::
-	trainerbattle_no_intro_no_whiteout TRAINER_VERN_CINEROUS_TOWN_POPPLIO, CinerousTown_Text_VertDefeated
+	trainerbattle_no_intro_no_whiteout TRAINER_VERT_CINEROUS_TOWN_POPPLIO, CinerousTown_Text_VertDefeated
 	goto CinerousTown_EventScript_AfterOPCBattle
 	end
 

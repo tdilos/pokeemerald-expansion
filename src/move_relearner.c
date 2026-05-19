@@ -32,6 +32,7 @@
 #include "constants/songs.h"
 #include "data/pokemon/egg_moves.h"
 #include "data/tutor_moves.h"
+//need to import teachable learnsets somehow
 
 /*
  * Move relearner state machine

@@ -1,4 +1,4 @@
-.set LOCALID_MOVE_RELEARNER, 1
+.set LOCALID_MOVE_RELEARNER2, 1
 
 PitchblakCity_Flat1_1F_MapScripts::
 	.byte 0
@@ -34,7 +34,7 @@ PitchblakCity_Flat1_1F_Text_AgainstGeneTherapy:
 
 PitchblakCity_Flat1_1F_EventScript_MoveRelearner::
 	lockall
-	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
+	applymovement LOCALID_MOVE_RELEARNER2, Common_Movement_FacePlayer
 	waitmovement 0
 	goto_if_set FLAG_TEMP_1, PitchblakCity_Flat1_1F_EventScript_AskTeachMove
 	msgbox PitchblakCity_Flat1_1F_Text_ImTheMoveTutor, MSGBOX_DEFAULT

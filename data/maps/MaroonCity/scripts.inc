@@ -1,6 +1,6 @@
-.set LOCALID_JACE, 12
-.set LOCALID_NORMAN, 13
-.set LOCALID_RANGER, 1
+.set LOCALID_JACE_MAROON, 12
+.set LOCALID_NORMAN_MAROON, 13
+.set LOCALID_RANGER_MAROON, 1
 
 MaroonCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MaroonCity_OnTransition
@@ -21,40 +21,40 @@ MaroonCity_OnTransition:
 	end
 
 MaroonCity_EventScript_MoveJaceToRangerHQ:
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_MAROON
 	clearflag FLAG_HIDE_JACE
-	setobjectxyperm LOCALID_JACE, 22, 6
-	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_JACE
+	setobjectxyperm LOCALID_JACE_MAROON, 22, 6
+	setobjectmovementtype LOCALID_JACE_MAROON, MOVEMENT_TYPE_FACE_UP
+	addobject LOCALID_JACE_MAROON
 	return
 
 MaroonCity_EventScript_MoveNormanToRangerHQ:
-	removeobject LOCALID_NORMAN
-	setobjectxyperm LOCALID_NORMAN, 22, 6
-	setobjectmovementtype LOCALID_NORMAN, MOVEMENT_TYPE_FACE_DOWN
-	addobject LOCALID_NORMAN
+	removeobject LOCALID_NORMAN_MAROON
+	setobjectxyperm LOCALID_NORMAN_MAROON, 22, 6
+	setobjectmovementtype LOCALID_NORMAN_MAROON, MOVEMENT_TYPE_FACE_DOWN
+	addobject LOCALID_NORMAN_MAROON
 	return
 
 MaroonCity_EventScript_MoveJaceToRangerHQ2:
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_MAROON
 	clearflag FLAG_HIDE_JACE
-	setobjectxyperm LOCALID_JACE, 22, 7
-	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_DOWN
-	addobject LOCALID_JACE
+	setobjectxyperm LOCALID_JACE_MAROON, 22, 7
+	setobjectmovementtype LOCALID_JACE_MAROON, MOVEMENT_TYPE_FACE_DOWN
+	addobject LOCALID_JACE_MAROON
 	return
 
 MaroonCity_EventScript_RemoveNorman:
-	removeobject LOCALID_NORMAN
-	@setobjectxyperm LOCALID_NORMAN, 1, 32
-	@setobjectmovementtype LOCALID_NORMAN, MOVEMENT_TYPE_FACE_DOWN
-	@addobject LOCALID_NORMAN
+	removeobject LOCALID_NORMAN_MAROON
+	@setobjectxyperm LOCALID_NORMAN_MAROON, 1, 32
+	@setobjectmovementtype LOCALID_NORMAN_MAROON, MOVEMENT_TYPE_FACE_DOWN
+	@addobject LOCALID_NORMAN_MAROON
 	return
 
 MaroonCity_EventScript_RemoveJace:
-	removeobject LOCALID_JACE
-	@setobjectxyperm LOCALID_JACE, 0, 32
-	@setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_DOWN
-	@addobject LOCALID_JACE
+	removeobject LOCALID_JACE_MAROON
+	@setobjectxyperm LOCALID_JACE_MAROON, 0, 32
+	@setobjectmovementtype LOCALID_JACE_MAROON, MOVEMENT_TYPE_FACE_DOWN
+	@addobject LOCALID_JACE_MAROON
 	return
 
 
@@ -333,30 +333,30 @@ MaroonCity_EventScript_Jace::
 	playbgm MUS_ENCOUNTER_BRENDAN, FALSE
 	msgbox MaroonCity_Text_JaceEncounter, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_FaceDown
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceDown
 	waitmovement 0
 	delay 20
 	msgbox MaroonCity_Text_JaceEncounter2, MSGBOX_DEFAULT
 	closemessage
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
-	applymovement LOCALID_JACE, Common_Movement_WalkDown
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkDown
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
-	applymovement LOCALID_JACE, Common_Movement_WalkDown
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkDown
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkRight
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceEncounter3, MSGBOX_DEFAULT
 	closemessage
@@ -388,34 +388,34 @@ MaroonCity_EventScript_JacePostBattle::
 	@call MaroonCity_EventScript_MoveNormanToRangerHQ
 	@fadedefaultbgm
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkLeft
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkLeft
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkLeft
 	waitmovement 0
 	delay 30
 	msgbox MaroonCity_Text_JacePostBattle, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceRight
 	waitmovement 0
 	delay 30
 	msgbox MaroonCity_Text_JacePostBattle2, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_NORMAN_MAROON, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox MaroonCity_Text_NormanIntro, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_MAROON, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitse
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceHeyYou, MSGBOX_DEFAULT
 	closemessage
@@ -424,7 +424,7 @@ MaroonCity_EventScript_JacePostBattle::
 	closemessage
 	delay 10
 	playse SE_PIN
-	applymovement LOCALID_JACE, Common_Movement_ExclamationMark
+	applymovement LOCALID_JACE_MAROON, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceYouKnowBrendan, MSGBOX_DEFAULT
 	closemessage
@@ -432,7 +432,7 @@ MaroonCity_EventScript_JacePostBattle::
 	msgbox MaroonCity_Text_NormanIntro3, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceIntro, MSGBOX_DEFAULT
 	closemessage
@@ -446,7 +446,7 @@ MaroonCity_EventScript_JacePostBattle::
 	msgbox MaroonCity_Text_NormanIntro4, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_NORMAN_MAROON, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox MaroonCity_Text_NormanIntro5, MSGBOX_DEFAULT
 	closemessage
@@ -454,16 +454,16 @@ MaroonCity_EventScript_JacePostBattle::
 	msgbox MaroonCity_Text_JaceButILost, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_NORMAN_MAROON, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox MaroonCity_Text_NormanIntro6, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceBecomeChampion, MSGBOX_DEFAULT
 	closemessage
@@ -471,7 +471,7 @@ MaroonCity_EventScript_JacePostBattle::
 	msgbox MaroonCity_Text_NormanIntro7, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceChampion, MSGBOX_DEFAULT
 	closemessage
@@ -479,7 +479,7 @@ MaroonCity_EventScript_JacePostBattle::
 	msgbox MaroonCity_Text_NormanIntro8, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_NORMAN_MAROON, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	delay 30
 	msgbox MaroonCity_Text_NormanIntro9, MSGBOX_DEFAULT
@@ -491,7 +491,7 @@ MaroonCity_EventScript_JacePostBattle::
 	msgbox MaroonCity_Text_NormanIntro10, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceDoTheRightThing, MSGBOX_DEFAULT
 	closemessage
@@ -499,11 +499,11 @@ MaroonCity_EventScript_JacePostBattle::
 	msgbox MaroonCity_Text_NormanIntro11, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceWeCanGoIn, MSGBOX_DEFAULT
 	closemessage
@@ -511,45 +511,45 @@ MaroonCity_EventScript_JacePostBattle::
 	msgbox MaroonCity_Text_NormanIntro12, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_NORMAN, Common_Movement_WalkDown
+	applymovement LOCALID_NORMAN_MAROON, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_FaceRight
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_NORMAN, Common_Movement_WalkRight
+	applymovement LOCALID_NORMAN_MAROON, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_NORMAN, Common_Movement_WalkRight
+	applymovement LOCALID_NORMAN_MAROON, Common_Movement_WalkRight
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_NORMAN, Common_Movement_FaceLeft
+	applymovement LOCALID_NORMAN_MAROON, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 30
 	msgbox MaroonCity_Text_NormanFarewell, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_NORMAN, Common_Movement_FaceDown
+	applymovement LOCALID_NORMAN_MAROON, Common_Movement_FaceDown
 	waitmovement 0
 	delay 50
 	setfieldeffectargument 0, 1
 	dofieldeffect FLDEFF_NPCFLY_OUT
 	delay 15
-	removeobject LOCALID_NORMAN
+	removeobject LOCALID_NORMAN_MAROON
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	delay 60
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 60
 	msgbox MaroonCity_Text_JaceSoThatsBrendansDad, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceLetsGoInside, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkUp
 	waitmovement 0
 	playse SE_DOOR
 	call MaroonCity_EventScript_RemoveJace
@@ -826,14 +826,14 @@ MaroonCity_Text_JaceLetsGoInside:
 
 MaroonCity_RangerHQ_3F_EventScript_JaceBeforeDeparture::
 	lockall
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceDown
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JACE_MAROON, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox MaroonCity_Text_JaceFarewell, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_FaceUp
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceUp
 	waitmovement 0
 	delay 10
 	msgbox MaroonCity_Text_JaceFarewell2, MSGBOX_DEFAULT
@@ -842,13 +842,13 @@ MaroonCity_RangerHQ_3F_EventScript_JaceBeforeDeparture::
 	msgbox MaroonCity_Text_JaceFarewell3, MSGBOX_DEFAULT
 	closemessage
 @Jace turns and uses Fly
-	applymovement LOCALID_JACE, Common_Movement_FaceDown
+	applymovement LOCALID_JACE_MAROON, Common_Movement_FaceDown
 	waitmovement 0
 	delay 50
 	setfieldeffectargument 0, 1
 	dofieldeffect FLDEFF_NPCFLY_OUT
 	delay 15
-	removeobject LOCALID_JACE
+	removeobject LOCALID_JACE_MAROON
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	delay 60
 	setvar VAR_JACE_STATE, 5

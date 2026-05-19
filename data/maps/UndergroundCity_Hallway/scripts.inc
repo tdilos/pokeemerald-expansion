@@ -1,9 +1,9 @@
-.set LOCALID_NEDA, 2
-.set LOCALID_ZARTOSHT, 1
-.set LOCALID_JACE, 3
-.set LOCALID_ROBIN, 4
-.set LOCALID_RANGER1, 6
-.set LOCALID_RANGER2, 5
+.set LOCALID_NEDA_HIDEOUT, 2
+.set LOCALID_ZARTOSHT_HIDEOUT, 1
+.set LOCALID_JACE_HIDEOUT, 3
+.set LOCALID_ROBIN_HIDEOUT, 4
+.set LOCALID_RANGER1_HIDEOUT, 6
+.set LOCALID_RANGER2_HIDEOUT, 5
 
 UndergroundCity_Hallway_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, UndergroundCity_Hallway_OnTransition
@@ -33,81 +33,81 @@ UndergroundCity_Hallway_OnTransition:
 UndergroundCity_Hallway_EventScript_MoveEveryoneToBattlePos:
 	@removeobject LOCALID_JACE
 	@clearflag FLAG_HIDE_JACE
-	setobjectxyperm LOCALID_JACE, 4, 13
+	setobjectxyperm LOCALID_JACE_HIDEOUT, 4, 13
 	setobjectmovementtype LOCALID_JACE, MOVEMENT_TYPE_FACE_LEFT
-	addobject LOCALID_JACE
+	addobject LOCALID_JACE_HIDEOUT
 	setobjectxyperm LOCALID_ROBIN, 3, 14
 	setobjectmovementtype LOCALID_ROBIN, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_ROBIN
-	setobjectxyperm LOCALID_RANGER1, 6, 13
-	setobjectmovementtype LOCALID_RANGER1, MOVEMENT_TYPE_FACE_RIGHT
-	addobject LOCALID_RANGER1
-	setobjectxyperm LOCALID_RANGER2, 7, 14
-	setobjectmovementtype LOCALID_RANGER2, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_RANGER2
-	setobjectxyperm LOCALID_ZARTOSHT, 3, 13
-	setobjectmovementtype LOCALID_ZARTOSHT, MOVEMENT_TYPE_FACE_RIGHT
-	addobject LOCALID_ZARTOSHT
-	setobjectxyperm LOCALID_NEDA, 7, 13
-	setobjectmovementtype LOCALID_NEDA, MOVEMENT_TYPE_FACE_LEFT
-	addobject LOCALID_NEDA
+	addobject LOCALID_ROBIN_HIDEOUT
+	setobjectxyperm LOCALID_RANGER1_HIDEOUT, 6, 13
+	setobjectmovementtype LOCALID_RANGER1_HIDEOUT, MOVEMENT_TYPE_FACE_RIGHT
+	addobject LOCALID_RANGER1_HIDEOUT
+	setobjectxyperm LOCALID_RANGER2_HIDEOUT, 7, 14
+	setobjectmovementtype LOCALID_RANGER2_HIDEOUT, MOVEMENT_TYPE_FACE_UP
+	addobject LOCALID_RANGER2_HIDEOUT
+	setobjectxyperm LOCALID_ZARTOSHT_HIDEOUT, 3, 13
+	setobjectmovementtype LOCALID_ZARTOSHT_HIDEOUT, MOVEMENT_TYPE_FACE_RIGHT
+	addobject LOCALID_ZARTOSHT_HIDEOUT
+	setobjectxyperm LOCALID_NEDA_HIDEOUT, 7, 13
+	setobjectmovementtype LOCALID_NEDA_HIDEOUT, MOVEMENT_TYPE_FACE_LEFT
+	addobject LOCALID_NEDA_HIDEOUT
 	return
 
 UndergroundCity_Hallway_EventScript_RangersEnter:
-	setobjectxyperm LOCALID_JACE, 4, 21
-	addobject LOCALID_JACE
-	setobjectxyperm LOCALID_ROBIN, 4, 22
-	addobject LOCALID_ROBIN
-	setobjectxyperm LOCALID_RANGER1, 6, 21
-	addobject LOCALID_RANGER1
-	setobjectxyperm LOCALID_RANGER2, 6, 22
-	addobject LOCALID_RANGER2
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
-	applymovement LOCALID_ROBIN, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER1, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER2, Common_Movement_WalkUp
+	setobjectxyperm LOCALID_JACE_HIDEOUT, 4, 21
+	addobject LOCALID_JACE_HIDEOUT
+	setobjectxyperm LOCALID_ROBIN_HIDEOUT, 4, 22
+	addobject LOCALID_ROBIN_HIDEOUT
+	setobjectxyperm LOCALID_RANGER1_HIDEOUT, 6, 21
+	addobject LOCALID_RANGER1_HIDEOUT
+	setobjectxyperm LOCALID_RANGER2_HIDEOUT, 6, 22
+	addobject LOCALID_RANGER2_HIDEOUT
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_ROBIN_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER1_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER2_HIDEOUT, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
-	applymovement LOCALID_ROBIN, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER1, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER2, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_ROBIN_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER1_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER2_HIDEOUT, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
-	applymovement LOCALID_ROBIN, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER1, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER2, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_ROBIN_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER1_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER2_HIDEOUT, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
-	applymovement LOCALID_ROBIN, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER1, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER2, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_ROBIN_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER1_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER2_HIDEOUT, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
-	applymovement LOCALID_ROBIN, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER1, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER2, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_ROBIN_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER1_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER2_HIDEOUT, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
-	applymovement LOCALID_ROBIN, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER1, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER2, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_ROBIN_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER1_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER2_HIDEOUT, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
-	applymovement LOCALID_ROBIN, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER1, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER2, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_ROBIN_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER1_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER2_HIDEOUT, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_ZARTOSHT, UndergroundCity_Hallway_Movement_BackUpLeft
-	applymovement LOCALID_NEDA, UndergroundCity_Hallway_Movement_BackUpRight
-	applymovement LOCALID_JACE, Common_Movement_WalkUp
-	applymovement LOCALID_ROBIN, Common_Movement_WalkLeft
-	applymovement LOCALID_RANGER1, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER2, Common_Movement_WalkRight
+	applymovement LOCALID_ZARTOSHT_HIDEOUT, UndergroundCity_Hallway_Movement_BackUpLeft
+	applymovement LOCALID_NEDA_HIDEOUT, UndergroundCity_Hallway_Movement_BackUpRight
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_ROBIN_HIDEOUT, Common_Movement_WalkLeft
+	applymovement LOCALID_RANGER1_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER2_HIDEOUT, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
-	applymovement LOCALID_ROBIN, Common_Movement_WalkUp
-	applymovement LOCALID_RANGER1, Common_Movement_FaceRight
-	applymovement LOCALID_RANGER2, Common_Movement_WalkUp
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_FaceLeft
+	applymovement LOCALID_ROBIN_HIDEOUT, Common_Movement_WalkUp
+	applymovement LOCALID_RANGER1_HIDEOUT, Common_Movement_FaceRight
+	applymovement LOCALID_RANGER2_HIDEOUT, Common_Movement_WalkUp
 	waitmovement 0
 	return
 
@@ -136,12 +136,12 @@ UndergroundCity_Hallway_EventScript_GenesisBossEncounter::
 	waitmovement 0
 	fadeoutbgm 0
 	delay 48
-	applymovement LOCALID_NEDA, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_NEDA_HIDEOUT, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	playbgm MUS_ENCOUNTER_MAGMA, FALSE
 	msgbox UndergroundCity_Hallway_Text_NedaIntro, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ZARTOSHT, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_ZARTOSHT_HIDEOUT, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox UndergroundCity_Hallway_Text_ZartoshtIntro, MSGBOX_DEFAULT
 	closemessage
@@ -149,20 +149,20 @@ UndergroundCity_Hallway_EventScript_GenesisBossEncounter::
 	playbgm MUS_DUMMY, FALSE
 	msgbox UndergroundCity_Hallway_Text_JaceIntro, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ZARTOSHT, Common_Movement_ExclamationMark
-	applymovement LOCALID_NEDA, Common_Movement_ExclamationMark
+	applymovement LOCALID_ZARTOSHT_HIDEOUT, Common_Movement_ExclamationMark
+	applymovement LOCALID_NEDA_HIDEOUT, Common_Movement_ExclamationMark
 	waitmovement 0
 	playse SE_PIN
 	delay 60
 	playbgm MUS_RG_TITLE, FALSE
 	call UndergroundCity_Hallway_EventScript_RangersEnter
 	delay 20
-	applymovement LOCALID_JACE, Common_Movement_FaceDown
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_FaceDown
 	waitmovement 0
 	delay 20
 	msgbox UndergroundCity_Hallway_Text_JaceMidBattle, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JACE, Common_Movement_FaceLeft
+	applymovement LOCALID_JACE_HIDEOUT, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 60
 	setvar VAR_RANGER_HQ_STATE, 7

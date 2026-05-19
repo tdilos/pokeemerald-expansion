@@ -1,4 +1,4 @@
-.set LOCALID_DAYCARE_MAN, 3
+.set LOCALID_DAYCARE_MAN2, 3
 
 Route93_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route93_OnTransition
@@ -10,7 +10,7 @@ Route93_OnTransition:
 
 Route93_EventScript_TryMoveDayCareMan::
 	goto_if_unset FLAG_PENDING_DAYCARE_EGG, Route93_EventScript_StopMoveDayCareMan
-	setobjectxyperm LOCALID_DAYCARE_MAN, 60, 5
+	setobjectxyperm LOCALID_DAYCARE_MAN2, 60, 5
 Route93_EventScript_StopMoveDayCareMan::
 	return
 

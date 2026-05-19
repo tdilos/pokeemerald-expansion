@@ -23,14 +23,14 @@
 #include "daycare.h"
 #include "wonder_trade.h"
 
-extern struct Evolution gEvolutionTable[][EVOS_PER_MON];
+//extern struct Evolution gEvolutionTable[][EVOS_PER_MON];
 
 // This file's functions.
 static u16 PickRandomSpecies(void);
 static u8 GetWonderTradeOT(u8 *name);
 //static u16 GetWonderTradeEvolutionTargetSpecies(struct Pokemon *mon);
-static u32 GetEvolutionSpecies(u16 speciesId);
-static bool32 IsSpeciesFamilyMegaEvolutionCompatible(u16 species, u16 heldStone);
+//static u32 GetEvolutionSpecies(u16 speciesId);
+//static bool32 IsSpeciesFamilyMegaEvolutionCompatible(u16 species, u16 heldStone);
 static u16 GetValidHeldItemForSpecies(u16 speciesId);
 
 struct WonderTrade {
@@ -885,20 +885,20 @@ static u8 GetWonderTradeOT(u8 *name)
     if (randGender == MALE) // male OT selected
     {
         randGender = 0;
-        for (i = 0; i < 8; ++i)
+        for (i = 0; i < PLAYER_NAME_LENGTH + 1; i++)
         {
             name[i] = maleWTNames[selectedName][i];
         }
-        name[8] = EOS;
+        //name[8] = EOS;
     }
     else                    // female OT selected
     {
         randGender = 0xFF;
-        for (i = 0; i < 8; ++i)
+        for (i = 0; i < PLAYER_NAME_LENGTH + 1; i++)
         {
             name[i] = femaleWTNames[selectedName][i];
         }
-        name[8] = EOS;
+        //name[8] = EOS;
     }
     return randGender;
 }
@@ -907,13 +907,13 @@ void CreateWonderTradePokemon(void)
 {
     u16 wonderTradeSpecies = PickRandomSpecies();
     u8 playerMonLevel = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LEVEL);
-    u8 chanceToEvolve = Random() % 99;
+    //u8 chanceToEvolve = Random() % 99;
     u16 newHeldItem = ITEM_NONE;
-    u16 playerMonHeldItem = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HELD_ITEM);
-    u32 i;
-#ifdef RHH_EXPANSION
-    u8 abilityNum;
-#endif
+    //u16 playerMonHeldItem = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HELD_ITEM);
+    //u32 i;
+//#ifdef RHH_EXPANSION
+//    u8 abilityNum;
+//#endif
     u8 monName[POKEMON_NAME_LENGTH + 1];
     u8 otName[PLAYER_NAME_LENGTH + 1];
     u8 genderOT = GetWonderTradeOT(otName);
@@ -939,27 +939,29 @@ void CreateWonderTradePokemon(void)
     struct WonderTrade *wonderTrade = &sWonderTrades[0];
 
     // Creates the base of a Pokémon in the first slot of a nonexistent enemy's party.
-    CreateMon(&gEnemyParty[0], wonderTradeSpecies, playerMonLevel, USE_RANDOM_IVS, FALSE, 0, OT_ID_PRESET, ((Random() << 16) | Random()));
+    //CreateMon(&gEnemyParty[0], wonderTradeSpecies, playerMonLevel, USE_RANDOM_IVS, FALSE, 0, OT_ID_PRESET, ((Random() << 16) | Random()));
+	//CreateMon(&gEnemyParty[0], wonderTradeSpecies, playerMonLevel, Random32(), OTID_STRUCT_PRESET(&wonderTrade->otId));
+	CreateMon(&gEnemyParty[0], wonderTradeSpecies, playerMonLevel, Random32(), OTID_STRUCT_RANDOM_NO_SHINY);
 
     // 10% chance of having the generated Wonder Traded 'mon carry an item.
     if ((Random() % 99) < 10)
         newHeldItem = GetValidHeldItemForSpecies(wonderTradeSpecies);
 
-    if (playerMonHeldItem == ITEM_NONE)
-    {
-        for (i = 0; i < EVOS_PER_MON; i++)
-        {
-            if (gEvolutionTable[wonderTradeSpecies][i].method == EVO_TRADE_ITEM && Random() % 100 < 50)
-            {
+    //if (playerMonHeldItem == ITEM_NONE)
+    //{
+        //for (i = 0; i < EVOS_PER_MON; i++)
+        //{
+            //if (gEvolutionTable[wonderTradeSpecies][i].method == EVO_TRADE && Random() % 100 < 50)
+            //{
                 // 30% chance for the in coming Pokémon to hold the item they need to evolve if they need one
-                if (Random() % 100 <= 29)
-                {
-                    newHeldItem = gEvolutionTable[wonderTradeSpecies][i].param;
-                    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &newHeldItem);
-                }
-            }
-        }
-    }
+                //if (Random() % 100 <= 29)
+                //{
+                //    newHeldItem = gEvolutionTable[wonderTradeSpecies][i].param;
+                //    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &newHeldItem);
+                //}
+            //}
+        //}
+    //}
 
     /*if (chanceToEvolve > 69) // 30% to evolve into the highest stage.
     {
@@ -998,7 +1000,7 @@ void CreateWonderTradePokemon(void)
 /*#ifdef RHH_EXPANSION
     StringCopy(monName, GetSpeciesName(wonderTradeSpecies));
 #else*/
-    GetSpeciesName(monName, wonderTradeSpecies);
+    GetSpeciesName(wonderTradeSpecies);
 //#endif
     SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, monName);
     SetMonData(&gEnemyParty[0], MON_DATA_OT_NAME, otName);
@@ -1594,9 +1596,9 @@ static u16 GetValidHeldItemForSpecies(u16 species)
     ROLL:
         item = Random() % ITEMS_COUNT;
 
-    itemHoldEffect = ItemId_GetHoldEffect(item);
-    itemPocket = ItemId_GetPocket(item);
-    itemImportance = ItemId_GetImportance(item);
+    itemHoldEffect = GetItemHoldEffect(item);
+    itemPocket = GetItemPocket(item);
+    itemImportance = GetItemImportance(item);
 
     if (item == ITEM_NONE || item == ITEM_ENIGMA_BERRY)
         goto ROLL;
@@ -1619,8 +1621,8 @@ static u16 GetValidHeldItemForSpecies(u16 species)
         goto ROLL;
     else if ((itemHoldEffect == HOLD_EFFECT_MEMORY || itemHoldEffect == HOLD_EFFECT_DRIVE
            || itemHoldEffect == HOLD_EFFECT_PLATE || itemHoldEffect == HOLD_EFFECT_GEMS)
-           && (gSpeciesInfo[species].types[0] != ItemId_GetHoldEffectParam(item)
-            || gSpeciesInfo[species].types[1] != ItemId_GetHoldEffectParam(item)))
+           && (gSpeciesInfo[species].types[0] != GetItemHoldEffectParam(item)
+            || gSpeciesInfo[species].types[1] != GetItemHoldEffectParam(item)))
         goto ROLL;
     // Re-roll the item generated if it's a Mega Stone not compatible with the Pokémon that's being received.
     else if (itemHoldEffect == HOLD_EFFECT_MEGA_STONE) // && !IsSpeciesFamilyMegaEvolutionCompatible(species, item))

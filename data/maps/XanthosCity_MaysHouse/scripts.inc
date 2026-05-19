@@ -10,7 +10,7 @@ XanthosCity_MaysHouse_MapScripts::
 XanthosCity_MaysHouse_OnTransition:
 	goto_if_eq VAR_XANTHOS_CITY_STATE, 0, XanthosCity_MaysHouse_EventScript_HideMay
 	goto_if_unset FLAG_RECEIVED_TM70, XanthosCity_MaysHouse_EventScript_RevealMay
-	goto_if_set FLAG_RECEIVED_TM10, XanthosCity_MaysHouse_EventScript_RevealMay
+	goto_if_set FLAG_RECEIVED_TM_HIDDEN_POWER, XanthosCity_MaysHouse_EventScript_RevealMay
 	goto XanthosCity_MaysHouse_EventScript_HideMay
 	end
 

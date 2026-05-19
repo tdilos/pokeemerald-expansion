@@ -89,11 +89,8 @@ const u16 gItemIconPalette_BeastBall[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_CherishBall[] = INCBIN_U32("graphics/items/icons/cherish_ball.4bpp.smol");
 const u16 gItemIconPalette_CherishBall[] = INCBIN_U16("graphics/items/icon_palettes/cherish_ball.gbapal");
 
-const u32 gItemIcon_GSBall[] = INCBIN_U32("graphics/items/icons/gs_ball.4bpp.lz");
-const u32 gItemIconPalette_GSBall[] = INCBIN_U32("graphics/items/icon_palettes/gs_ball.gbapal.lz");
-
-const u32 gItemIcon_GSBall[] = INCBIN_U32("graphics/items/icons/gs_ball.4bpp.lz");
-const u32 gItemIconPalette_GSBall[] = INCBIN_U32("graphics/items/icon_palettes/gs_ball.gbapal.lz");
+const u32 gItemIcon_GSBall[] = INCBIN_U32("graphics/items/icons/gs_ball.4bpp.smol");
+const u16 gItemIconPalette_GSBall[] = INCBIN_U16("graphics/items/icon_palettes/gs_ball.gbapal");
 
 // Medicine
 
@@ -209,9 +206,6 @@ const u16 gItemIconPalette_ShalourSable[] = INCBIN_U16("graphics/items/icon_pale
 
 const u32 gItemIcon_BigMalasada[] = INCBIN_U32("graphics/items/icons/big_malasada.4bpp.smol");
 const u16 gItemIconPalette_BigMalasada[] = INCBIN_U16("graphics/items/icon_palettes/big_malasada.gbapal");
-
-const u32 gItemIcon_Hanamidango[] = INCBIN_U32("graphics/items/icons/hanamidango.4bpp.smol");
-const u16 gItemIconPalette_Hanamidango[] = INCBIN_U16("graphics/items/icon_palettes/hanamidango.gbapal");
 
 // Vitamins
 
@@ -640,9 +634,6 @@ const u16 gItemIconPalette_RibbonSweet[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_Everstone[] = INCBIN_U32("graphics/items/icons/everstone.4bpp.smol");
 const u16 gItemIconPalette_Everstone[] = INCBIN_U16("graphics/items/icon_palettes/everstone.gbapal");
 
-const u32 gItemIcon_ZephyrStone[] = INCBIN_U32("graphics/items/icons/zephyr_stone.4bpp.smol");
-const u16 gItemIconPalette_ZephyrStone[] = INCBIN_U16("graphics/items/icon_palettes/zephyr_stone.gbapal");
-
 const u32 gItemIcon_BlackAugurite[] = INCBIN_U32("graphics/items/icons/black_augurite.4bpp.smol");
 const u16 gItemIconPalette_BlackAugurite[] = INCBIN_U16("graphics/items/icon_palettes/black_augurite.gbapal");
 
@@ -692,12 +683,8 @@ const u16 gItemIconPalette_DracoPlate[] = INCBIN_U16("graphics/items/icon_palett
 const u16 gItemIconPalette_DreadPlate[] = INCBIN_U16("graphics/items/icon_palettes/dread_plate.gbapal");
 const u16 gItemIconPalette_IronPlate[] = INCBIN_U16("graphics/items/icon_palettes/iron_plate.gbapal");
 const u16 gItemIconPalette_PixiePlate[] = INCBIN_U16("graphics/items/icon_palettes/pixie_plate.gbapal");
+const u16 gItemIconPalette_SoundPlate[] = INCBIN_U16("graphics/items/icon_palettes/sound_plate.gbapal");
 
-const u32 gItemIcon_SoundPlate[] = INCBIN_U32("graphics/items/icons/sound_plate.4bpp.lz");
-const u32 gItemIconPalette_SoundPlate[] = INCBIN_U32("graphics/items/icon_palettes/sound_plate.gbapal.lz");
-
-const u32 gItemIcon_SoundPlate[] = INCBIN_U32("graphics/items/icons/sound_plate.4bpp.lz");
-const u32 gItemIconPalette_SoundPlate[] = INCBIN_U32("graphics/items/icon_palettes/sound_plate.gbapal.lz");
 
 // Drives
 
@@ -1127,6 +1114,9 @@ const u16 gItemIconPalette_SteeliumZ[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_FairiumZ[] = INCBIN_U32("graphics/items/icons/fairium_z.4bpp.smol");
 const u16 gItemIconPalette_FairiumZ[] = INCBIN_U16("graphics/items/icon_palettes/fairium_z.gbapal");
 
+const u32 gItemIcon_EchoiumZ[] = INCBIN_U32("graphics/items/icons/echoium_z.4bpp.smol");
+const u16 gItemIconPalette_EchoiumZ[] = INCBIN_U16("graphics/items/icon_palettes/echoium_z.gbapal");
+
 const u32 gItemIcon_PikaniumZ[] = INCBIN_U32("graphics/items/icons/pikanium_z.4bpp.smol");
 const u16 gItemIconPalette_PikaniumZ[] = INCBIN_U16("graphics/items/icon_palettes/pikanium_z.gbapal");
 
@@ -1172,11 +1162,11 @@ const u16 gItemIconPalette_MarshadiumZ[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_AloraichiumZ[] = INCBIN_U32("graphics/items/icons/aloraichium_z.4bpp.smol");
 const u16 gItemIconPalette_AloraichiumZ[] = INCBIN_U16("graphics/items/icon_palettes/aloraichium_z.gbapal");
 
-//const u32 gItemIcon_PikashuniumZ[] = INCBIN_U32("graphics/items/icons/pikashunium_z.4bpp.smol");
-//const u16 gItemIconPalette_PikashuniumZ[] = INCBIN_U16("graphics/items/icon_palettes/pikashunium_z.gbapal");
+const u32 gItemIcon_PikashuniumZ[] = INCBIN_U32("graphics/items/icons/pikashunium_z.4bpp.smol");
+const u16 gItemIconPalette_PikashuniumZ[] = INCBIN_U16("graphics/items/icon_palettes/pikashunium_z.gbapal");
 
-//const u32 gItemIcon_UltranecroziumZ[] = INCBIN_U32("graphics/items/icons/ultranecrozium_z.4bpp.smol");
-//const u16 gItemIconPalette_UltranecroziumZ[] = INCBIN_U16("graphics/items/icon_palettes/ultranecrozium_z.gbapal");
+const u32 gItemIcon_UltranecroziumZ[] = INCBIN_U32("graphics/items/icons/ultranecrozium_z.4bpp.smol");
+const u16 gItemIconPalette_UltranecroziumZ[] = INCBIN_U16("graphics/items/icon_palettes/ultranecrozium_z.gbapal");
 
 // Species-specific Held Items
 
@@ -1394,12 +1384,6 @@ const u16 gItemIconPalette_AbsorbBulb[] = INCBIN_U16("graphics/items/icon_palett
 
 const u32 gItemIcon_CellBattery[] = INCBIN_U32("graphics/items/icons/cell_battery.4bpp.smol");
 const u16 gItemIconPalette_CellBattery[] = INCBIN_U16("graphics/items/icon_palettes/cell_battery.gbapal");
-
-const u32 gItemIcon_PinkBow[] = INCBIN_U32("graphics/items/icons/pink_bow.4bpp.smol");
-const u16 gItemIconPalette_PinkBow[] = INCBIN_U16("graphics/items/icon_palettes/pink_bow.gbapal");
-
-const u32 gItemIcon_Amplifier[] = INCBIN_U32("graphics/items/icons/amplifier.4bpp.smol");
-const u16 gItemIconPalette_Amplifier[] = INCBIN_U16("graphics/items/icon_palettes/amplifier.gbapal");
 
 const u32 gItemIcon_LuminousMoss[] = INCBIN_U32("graphics/items/icons/luminous_moss.4bpp.smol");
 const u16 gItemIconPalette_LuminousMoss[] = INCBIN_U16("graphics/items/icon_palettes/luminous_moss.gbapal");
@@ -1832,9 +1816,7 @@ const u16 gItemIconPalette_SteelTMHM[] = INCBIN_U16("graphics/items/icon_palette
 
 const u16 gItemIconPalette_FairyTMHM[] = INCBIN_U16("graphics/items/icon_palettes/fairy_tm_hm.gbapal");
 
-const u32 gItemIconPalette_EchoTMHM[] = INCBIN_U32("graphics/items/icon_palettes/echo_tm_hm.gbapal.lz");
-
-const u32 gItemIconPalette_EchoTMHM[] = INCBIN_U32("graphics/items/icon_palettes/echo_tm_hm.gbapal.lz");
+const u16 gItemIconPalette_EchoTMHM[] = INCBIN_U16("graphics/items/icon_palettes/echo_tm_hm.gbapal");
 
 // Charms
 

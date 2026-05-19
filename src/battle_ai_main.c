@@ -1837,8 +1837,8 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             ADJUST_SCORE(-8);
         else if (aiData->hpPercents[battlerAtk] <= 25)
             ADJUST_SCORE(-10);
-        else if (HasMoveWithFlag(battlerDef, MoveIgnoresSubstitute))
-            ADJUST_SCORE(-8);
+        //else if (HasMoveWithFlag(battlerDef, MoveIgnoresSubstitute))
+        //    ADJUST_SCORE(-8);
         break;
     case EFFECT_SHED_TAIL:
         if (CountUsablePartyMons(battlerAtk) == 0)
@@ -1847,8 +1847,8 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             ADJUST_SCORE(-8);
         else if (aiData->hpPercents[battlerAtk] <= 50)
             ADJUST_SCORE(-10);
-        else if (HasMoveWithFlag(battlerDef, MoveIgnoresSubstitute))
-            ADJUST_SCORE(-8);
+        //else if (HasMoveWithFlag(battlerDef, MoveIgnoresSubstitute))
+        //    ADJUST_SCORE(-8);
         break;
     case EFFECT_LEECH_SEED:
         if (gBattleMons[battlerDef].volatiles.leechSeed
@@ -2562,8 +2562,8 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             ADJUST_SCORE(-10);    // no teammates to assist from
         break;
     case EFFECT_MAGIC_COAT:
-        if (!HasMoveWithFlag(battlerDef, MoveCanBeBouncedBack))
-            ADJUST_SCORE(-10);
+        //if (!HasMoveWithFlag(battlerDef, MoveCanBeBouncedBack))
+        //    ADJUST_SCORE(-10);
         break;
     case EFFECT_YAWN:
         if (gBattleMons[battlerDef].volatiles.yawn)
@@ -2584,9 +2584,9 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
         break;
     case EFFECT_SNATCH:
-        if (!HasMoveWithFlag(battlerDef, MoveCanBeSnatched)
-         || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
-            ADJUST_SCORE(-10);
+        //if (!HasMoveWithFlag(battlerDef, MoveCanBeSnatched)
+        // || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
+        //    ADJUST_SCORE(-10);
         break;
     case EFFECT_POWER_TRICK:
         if (IsTargetingPartner(battlerAtk, battlerDef))
@@ -4698,8 +4698,8 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
     case EFFECT_LASER_FOCUS:
         if (aiData->abilities[battlerAtk] == ABILITY_SUPER_LUCK
          || aiData->abilities[battlerAtk] == ABILITY_SNIPER
-         || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_SCOPE_LENS
-         || HasMoveWithFlag(battlerAtk, GetMoveCriticalHitStage))
+         || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_SCOPE_LENS)
+         //|| HasMoveWithFlag(battlerAtk, GetMoveCriticalHitStage))
             ADJUST_SCORE(GOOD_EFFECT);
         break;
     case EFFECT_CONFUSE:

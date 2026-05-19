@@ -73,8 +73,9 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sChespinTeachableLearnset,
         .eggMoveLearnset = sChespinEggMoveLearnset,
         //.evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_QUILLADIN}),
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_QUILLADIN, CONDITIONS({IF_NOT_REGION, REGION_ISSHO})},
-                                {EVO_LEVEL, 16, SPECIES_QUILLADIN_ISSHO, CONDITIONS({IF_REGION, REGION_ISSHO})},
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_QUILLADIN, CONDITIONS({IF_NOT_REGION, REGION_ISSHO})}
+                                ,{EVO_LEVEL, 16, SPECIES_QUILLADIN_ISSHOAN, CONDITIONS({IF_REGION, REGION_ISSHO})}
+								),
     },
 
     [SPECIES_QUILLADIN] =
@@ -144,8 +145,6 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sQuilladinLevelUpLearnset,
         .teachableLearnset = sQuilladinTeachableLearnset,
-        .formSpeciesIdTable = sQuilladinFormSpeciesIdTable,
-        .formChangeTable = sQuilladinFormChangeTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_CHESNAUGHT}),
     },
 

@@ -248,8 +248,8 @@ static enum FieldEffectOutcome BenefitsFromSun(enum BattlerId battler)
      || HasMoveWithEffect(battler, EFFECT_HYDRO_STEAM))
         return FIELD_EFFECT_POSITIVE;
 
-    if (HasMoveWithFlag(battler, MoveHas50AccuracyInSun) || HasDamagingMoveOfType(battler, TYPE_WATER) || gAiLogicData->abilities[battler] == ABILITY_DRY_SKIN)
-        return FIELD_EFFECT_NEGATIVE;
+    //if (HasMoveWithFlag(battler, MoveHas50AccuracyInSun) || HasDamagingMoveOfType(battler, TYPE_WATER) || gAiLogicData->abilities[battler] == ABILITY_DRY_SKIN)
+    //    return FIELD_EFFECT_NEGATIVE;
 
     return FIELD_EFFECT_NEUTRAL;
 }
@@ -281,7 +281,7 @@ static enum FieldEffectOutcome BenefitsFromHailOrSnow(enum BattlerId battler, u3
     if (DoesAbilityBenefitFromWeather(gAiLogicData->abilities[battler], weather)
      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
      || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL)
-     || HasMoveWithFlag(battler, MoveAlwaysHitsInHailSnow)
+    // || HasMoveWithFlag(battler, MoveAlwaysHitsInHailSnow)
      || HasBattlerSideMoveWithEffect(battler, EFFECT_AURORA_VEIL))
         return FIELD_EFFECT_POSITIVE;
 
@@ -291,8 +291,8 @@ static enum FieldEffectOutcome BenefitsFromHailOrSnow(enum BattlerId battler, u3
     if (HasLightSensitiveMove(battler))
         return FIELD_EFFECT_NEGATIVE;
 
-    if (HasMoveWithFlag(LEFT_FOE(battler), MoveAlwaysHitsInHailSnow))
-        return FIELD_EFFECT_NEGATIVE;
+    //if (HasMoveWithFlag(LEFT_FOE(battler), MoveAlwaysHitsInHailSnow))
+    //    return FIELD_EFFECT_NEGATIVE;
 
     return FIELD_EFFECT_NEUTRAL;
 }
@@ -304,7 +304,7 @@ static enum FieldEffectOutcome BenefitsFromRain(enum BattlerId battler)
         return FIELD_EFFECT_NEUTRAL;
 
     if (DoesAbilityBenefitFromWeather(gAiLogicData->abilities[battler], B_WEATHER_RAIN)
-      || HasMoveWithFlag(battler, MoveAlwaysHitsInRain)
+      //|| HasMoveWithFlag(battler, MoveAlwaysHitsInRain)
       || HasDamagingMoveOfType(battler, TYPE_WATER)
       || HasMoveWithEffect(battler, EFFECT_WEATHER_BALL)
       || HasMove(battler, MOVE_ELECTRO_SHOT))
@@ -313,8 +313,8 @@ static enum FieldEffectOutcome BenefitsFromRain(enum BattlerId battler)
     if (HasLightSensitiveMove(battler) || HasDamagingMoveOfType(battler, TYPE_FIRE))
         return FIELD_EFFECT_NEGATIVE;
 
-    if (HasMoveWithFlag(LEFT_FOE(battler), MoveAlwaysHitsInRain))
-        return FIELD_EFFECT_NEGATIVE;
+    //if (HasMoveWithFlag(LEFT_FOE(battler), MoveAlwaysHitsInRain))
+    //    return FIELD_EFFECT_NEGATIVE;
 
     return FIELD_EFFECT_NEUTRAL;
 }
@@ -458,8 +458,8 @@ static enum FieldEffectOutcome BenefitsFromGravity(enum BattlerId battler)
     if (AI_IsAbilityOnSide(battler, ABILITY_HUSTLE))
         return FIELD_EFFECT_POSITIVE;
 
-    if (HasMoveWithFlag(battler, IsMoveGravityBanned))
-        return FIELD_EFFECT_NEGATIVE;
+    //if (HasMoveWithFlag(battler, IsMoveGravityBanned))
+    //    return FIELD_EFFECT_NEGATIVE;
 
     if (IsBattlerAlive(LEFT_FOE(battler)))
     {
@@ -548,8 +548,8 @@ s32 CalcWeatherScore(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
                 score += WEAK_EFFECT;
             if (HasDamagingMoveOfType(battlerDef, TYPE_WATER) || HasDamagingMoveOfType(BATTLE_PARTNER(battlerDef), TYPE_WATER))
                 score += WEAK_EFFECT;
-            if (HasMoveWithFlag(battlerDef, MoveHas50AccuracyInSun) || HasMoveWithFlag(BATTLE_PARTNER(battlerDef), MoveHas50AccuracyInSun))
-                score += WEAK_EFFECT;
+            //if (HasMoveWithFlag(battlerDef, MoveHas50AccuracyInSun) || HasMoveWithFlag(BATTLE_PARTNER(battlerDef), MoveHas50AccuracyInSun))
+            //    score += WEAK_EFFECT;
         }
         break;
     case BATTLE_WEATHER_SANDSTORM:

@@ -36,10 +36,10 @@ TurquoiseCity_PokemonCenter_Text_FishingCities:
 
 TurquoiseCity_PokemonCenter_EventScript_FatMan::
 	lockall
-	goto_if_set FLAG_RECEIVED_TM44, TurquoiseCity_PokemonCenter_EventScript_FatManPostTM
+	goto_if_set FLAG_RECEIVED_TM_REST, TurquoiseCity_PokemonCenter_EventScript_FatManPostTM
 	msgbox TurquoiseCity_PokemonCenter_Text_GiveRestTM, MSGBOX_NPC
 	giveitem ITEM_TM44
-	setflag FLAG_RECEIVED_TM44
+	setflag FLAG_RECEIVED_TM_REST
 	releaseall
 	end
 

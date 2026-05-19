@@ -1,5 +1,5 @@
 .set LOCALID_AZAMI, 1
-.set LOCALID_JUSTIN, 2
+.set LOCALID_JUSTIN_UNDERGROUND, 2
 
 UndergroundCity_Entrance_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, UndergroundCity_Entrance_OnFrame
@@ -59,7 +59,7 @@ UndergroundCity_Entrance_EventScript_AzamiIntro::
 	delay 50
 	msgbox UndergroundCity_Entrance_Text_AzamiIntro, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox UndergroundCity_Entrance_Text_JustinLookingForTeamGenesis, MSGBOX_DEFAULT
 	closemessage
@@ -67,16 +67,16 @@ UndergroundCity_Entrance_EventScript_AzamiIntro::
 	msgbox UndergroundCity_Entrance_Text_AzamiTeamGenesis, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_JUSTIN, Common_Movement_ExclamationMark
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox UndergroundCity_Entrance_Text_JustinYoureTeamGenesis, MSGBOX_DEFAULT
 	closemessage
 	delay 60
 	msgbox UndergroundCity_Entrance_Text_AzamiHeureticSociety, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceDown
 	waitmovement 0
-	applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox UndergroundCity_Entrance_Text_JustinYoureCriminals, MSGBOX_DEFAULT
 	closemessage
@@ -107,7 +107,7 @@ UndergroundCity_Entrance_EventScript_AzamiIntro::
 	delay 60
 	msgbox UndergroundCity_Entrance_Text_AzamiPacing2, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox UndergroundCity_Entrance_Text_JustinDontPlayDumb, MSGBOX_DEFAULT
 	closemessage
@@ -138,7 +138,7 @@ UndergroundCity_Entrance_EventScript_AzamiIntro::
 	delay 60
 	msgbox UndergroundCity_Entrance_Text_AzamiPacing5, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox UndergroundCity_Entrance_Text_JustinYouHaveNoRight, MSGBOX_DEFAULT
 	closemessage
@@ -148,11 +148,11 @@ UndergroundCity_Entrance_EventScript_AzamiIntro::
 	delay 60
 	msgbox UndergroundCity_Entrance_Text_AzamiDontKnowYourPlace, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
-	applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
-	@applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceFasterDown
+	@applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceFasterDown
 	@waitmovement 0
 	msgbox UndergroundCity_Entrance_Text_JustinYouExpectMe, MSGBOX_DEFAULT
 	closemessage
@@ -167,7 +167,7 @@ UndergroundCity_Entrance_EventScript_AzamiIntro::
 	playse SE_M_TELEPORT
 	delay 60
 	playse SE_PIN
-	applymovement LOCALID_JUSTIN, Common_Movement_ExclamationMark
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 30
 	msgbox UndergroundCity_Entrance_Text_JustinHologram, MSGBOX_DEFAULT
@@ -181,9 +181,9 @@ UndergroundCity_Entrance_EventScript_AzamiIntro::
 	applymovement OBJ_EVENT_ID_CAMERA, UndergroundCity_Entrance_Movement_CameraPanUp
 	waitmovement 0
 	special RemoveCameraObject
-	applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	applymovement LOCALID_JUSTIN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_JUSTIN_UNDERGROUND, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox UndergroundCity_Entrance_Text_JustinOutsideNow, MSGBOX_DEFAULT
 	closemessage

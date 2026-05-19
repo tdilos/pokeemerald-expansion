@@ -1,5 +1,5 @@
-.set LOCALID_TICKETMAN, 1
-.set LOCALID_SS_TIDAL, 3
+.set LOCALID_TICKETMAN_XANTHOS, 1
+.set LOCALID_SS_TIDAL_XANTHOS, 3
 
 XanthosCity_Harbor_MapScripts::
 	.byte 0
@@ -21,7 +21,8 @@ XanthosCity_Harbor_EventScript_CheckTicket::
 	goto_if_eq VAR_RESULT, FALSE, XanthosCity_Harbor_EventScript_DontHaveTriPass
 	message XanthosCity_Harbor_Text_FlashedTriPass
 	waitmessage
-	multichoicedefault 21, 6, MULTI_XANTHOS_FERRY, 2, FALSE
+	@multichoicedefault 21, 6, MULTI_XANTHOS_FERRY, 2, FALSE
+	multichoice 21, 6, MULTI_XANTHOS_FERRY, FALSE
 	switch VAR_RESULT
 	case 0, XanthosCity_Harbor_EventScript_ChooseCobalt
 	case 1, XanthosCity_Harbor_EventScript_ChooseTurquoise
@@ -32,9 +33,9 @@ XanthosCity_Harbor_EventScript_CheckTicket::
 XanthosCity_Harbor_EventScript_ChooseCobalt::
 	msgbox XanthosCity_Harbor_Text_AllAboard, MSGBOX_DEFAULT
 	closemessage
-	@applymovement LOCALID_TICKETMAN, Common_Movement_WalkLeft
+	@applymovement LOCALID_TICKETMAN_XANTHOS, Common_Movement_WalkLeft
 	@waitmovement 0
-	@applymovement LOCALID_TICKETMAN, Common_Movement_FaceRight
+	@applymovement LOCALID_TICKETMAN_XANTHOS, Common_Movement_FaceRight
 	@waitmovement 0
 	@applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	@waitmovement 0
@@ -52,9 +53,9 @@ XanthosCity_Harbor_EventScript_ChooseCobalt::
 XanthosCity_Harbor_EventScript_ChooseTurquoise::
 	msgbox XanthosCity_Harbor_Text_AllAboard, MSGBOX_DEFAULT
 	closemessage
-	@applymovement LOCALID_TICKETMAN, Common_Movement_WalkLeft
+	@applymovement LOCALID_TICKETMAN_XANTHOS, Common_Movement_WalkLeft
 	@waitmovement 0
-	@applymovement LOCALID_TICKETMAN, Common_Movement_FaceRight
+	@applymovement LOCALID_TICKETMAN_XANTHOS, Common_Movement_FaceRight
 	@waitmovement 0
 	@applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	@waitmovement 0
@@ -120,15 +121,15 @@ XanthosCity_Harbor_Text_AllAboard:
 
 
 XanthosCity_Harbor_EventScript_BoardFerryWithSailor::
-	applymovement LOCALID_TICKETMAN, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_TICKETMAN_XANTHOS, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 30
-	removeobject LOCALID_TICKETMAN
+	removeobject LOCALID_TICKETMAN_XANTHOS
 	call_if_eq VAR_FACING, DIR_NORTH, XanthosCity_Harbor_EventScript_PlayerBoardFerryNorth
 	call_if_eq VAR_FACING, DIR_EAST, XanthosCity_Harbor_EventScript_PlayerBoardFerryEast
 	delay 30
-	hideobjectat OBJ_EVENT_ID_PLAYER, 0
-	setvar VAR_0x8004, LOCALID_SS_TIDAL
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_XANTHOS_CITY_HARBOR
+	setvar VAR_0x8004, LOCALID_SS_TIDAL_XANTHOS
 	playse SE_RG_SS_ANNE_HORN
 	delay 30
 	@waitse

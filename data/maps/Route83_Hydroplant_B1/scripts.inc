@@ -1,4 +1,4 @@
-.set LOCALID_FOSSIL_SCIENTIST, 1
+.set LOCALID_FOSSIL_SCIENTIST2, 1
 
 Route83_Hydroplant_B1_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route83_Hydroplant_B1_OnTransition
@@ -14,16 +14,16 @@ Route83_Hydroplant_EventScript_SetFossilReady::
 
 Route83_Hydroplant_EventScript_MeetScientist::
 	lock
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_FaceDown
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_FaceDown
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_Delay48
 	waitmovement 0
 	msgbox Route83_Hydroplant_Text_DontTellTheOthers, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_FaceRight
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_FaceRight
 	waitmovement 0
 	setvar VAR_XANTHOS_CITY_STATE, 5
 	release
@@ -50,7 +50,7 @@ Route83_Hydroplant_EventScript_FossilReviver::
 	checkitem ITEM_XENORESIN
 	goto_if_eq VAR_RESULT, TRUE, Route83_Hydroplant_EventScript_NoticeXenoresin
 
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_FaceRight
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_FaceRight
 	waitmovement 0
 	release
 	end
@@ -59,9 +59,9 @@ Route83_Hydroplant_EventScript_FossilReviver::
 Route83_Hydroplant_EventScript_NoticeRootFossil::
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_Delay48
 	waitmovement 0
 	msgbox Route83_Hydroplant_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route83_Hydroplant_EventScript_DeclineGiveFossil
@@ -82,9 +82,9 @@ Route83_Hydroplant_EventScript_GiveRootFossil::
 Route83_Hydroplant_EventScript_NoticeHelixFossil::
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_Delay48
 	waitmovement 0
 	msgbox Route83_Hydroplant_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route83_Hydroplant_EventScript_DeclineGiveFossil
@@ -107,9 +107,9 @@ Route83_Hydroplant_EventScript_GiveHelixFossil::
 Route83_Hydroplant_EventScript_NoticeShieldFossil::
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_Delay48
 	waitmovement 0
 	msgbox Route83_Hydroplant_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route83_Hydroplant_EventScript_DeclineGiveFossil
@@ -128,9 +128,9 @@ Route83_Hydroplant_EventScript_GiveShieldFossil::
 Route83_Hydroplant_EventScript_NoticeJawFossil::
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_Delay48
 	waitmovement 0
 	msgbox Route83_Hydroplant_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route83_Hydroplant_EventScript_DeclineGiveFossil
@@ -149,9 +149,9 @@ Route83_Hydroplant_EventScript_GiveJawFossil::
 Route83_Hydroplant_EventScript_NoticeOldAmber::
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_Delay48
 	waitmovement 0
 	msgbox Route83_Hydroplant_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route83_Hydroplant_EventScript_DeclineGiveFossil
@@ -170,9 +170,9 @@ Route83_Hydroplant_EventScript_GiveOldAmber::
 Route83_Hydroplant_EventScript_NoticeXenoresin::
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_ExclamationMark
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
+	applymovement LOCALID_FOSSIL_SCIENTIST2, Common_Movement_Delay48
 	waitmovement 0
 	msgbox Route83_Hydroplant_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route83_Hydroplant_EventScript_DeclineGiveFossil

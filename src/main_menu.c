@@ -501,9 +501,9 @@ static const struct MenuAction sMenuActions_Gender[] = {
 };
 
 static const struct MenuAction sMenuActions_Difficulty[] = {
-    {gText_Normal, NULL},
-    {gText_Hardcore, NULL},
-    {gText_Insane, NULL}
+    {gText_Normal, {NULL}},
+    {gText_Hardcore, {NULL}},
+    {gText_Insane, {NULL}}
 };
 
 static const u8 *const sMalePresetNames[] = {

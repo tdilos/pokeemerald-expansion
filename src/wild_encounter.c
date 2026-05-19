@@ -73,11 +73,7 @@ EWRAM_DATA bool8 gIsSurfingEncounter = 0;
 EWRAM_DATA u8 gChainFishingDexNavStreak = 0;
 
 static bool8 UnlockedUnownOrAreNotInUnown(void);
-static u32 GenerateUnownPersonalityByLetter(u8 letter);
-u8 GetUnownLetterByPersonalityLoByte(u32 personality);
-
-static bool8 UnlockedUnownOrAreNotInUnown(void);
-static u32 GenerateUnownPersonalityByLetter(u8 letter);
+//static u32 GenerateUnownPersonalityByLetter(u8 letter);
 u8 GetUnownLetterByPersonalityLoByte(u32 personality);
 
 #include "data/wild_encounters.h"
@@ -466,6 +462,87 @@ u32 ChooseWildMonIndex_Rocks(void)
     return wildMonIndex;
 }
 
+// CUT_WILD_COUNT
+u32 ChooseWildMonIndex_Cut(void)
+{
+    u32 wildMonIndex = 0;
+    bool8 swap = FALSE;
+    u8 rand = Random() % ENCOUNTER_CHANCE_CUT_MONS_TOTAL;
+
+    if (rand < ENCOUNTER_CHANCE_CUT_MONS_SLOT_0)
+        wildMonIndex = 0;
+    else if (rand >= ENCOUNTER_CHANCE_CUT_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_CUT_MONS_SLOT_1)
+        wildMonIndex = 1;
+    else if (rand >= ENCOUNTER_CHANCE_CUT_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_CUT_MONS_SLOT_2)
+        wildMonIndex = 2;
+    else if (rand >= ENCOUNTER_CHANCE_CUT_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_CUT_MONS_SLOT_3)
+        wildMonIndex = 3;
+    else
+        wildMonIndex = 4;
+
+    if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
+        swap = TRUE;
+
+    if (swap)
+        wildMonIndex = 4 - wildMonIndex;
+
+    return wildMonIndex;
+}
+
+// HEADBUTT_WILD_COUNT
+u32 ChooseWildMonIndex_Headbutt(void)
+{
+    u32 wildMonIndex = 0;
+    bool8 swap = FALSE;
+    u8 rand = Random() % ENCOUNTER_CHANCE_HEADBUTT_MONS_TOTAL;
+
+    if (rand < ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_0)
+        wildMonIndex = 0;
+    else if (rand >= ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_1)
+        wildMonIndex = 1;
+    else if (rand >= ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_2)
+        wildMonIndex = 2;
+    else if (rand >= ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_HEADBUTT_MONS_SLOT_3)
+        wildMonIndex = 3;
+    else
+        wildMonIndex = 4;
+
+    if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
+        swap = TRUE;
+
+    if (swap)
+        wildMonIndex = 4 - wildMonIndex;
+
+    return wildMonIndex;
+}
+
+// THAW_WILD_COUNT
+u32 ChooseWildMonIndex_Thaw(void)
+{
+    u32 wildMonIndex = 0;
+    bool8 swap = FALSE;
+    u8 rand = Random() % ENCOUNTER_CHANCE_THAW_MONS_TOTAL;
+
+    if (rand < ENCOUNTER_CHANCE_THAW_MONS_SLOT_0)
+        wildMonIndex = 0;
+    else if (rand >= ENCOUNTER_CHANCE_THAW_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_THAW_MONS_SLOT_1)
+        wildMonIndex = 1;
+    else if (rand >= ENCOUNTER_CHANCE_THAW_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_THAW_MONS_SLOT_2)
+        wildMonIndex = 2;
+    else if (rand >= ENCOUNTER_CHANCE_THAW_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_THAW_MONS_SLOT_3)
+        wildMonIndex = 3;
+    else
+        wildMonIndex = 4;
+
+    if (LURE_STEP_COUNT != 0 && (Random() % 10 < 2))
+        swap = TRUE;
+
+    if (swap)
+        wildMonIndex = 4 - wildMonIndex;
+
+    return wildMonIndex;
+}
+
 // FISH_WILD_COUNT
 static u32 ChooseWildMonIndex_Fishing(u8 rod)
 {
@@ -597,24 +674,24 @@ u16 GetCurrentMapWildMonHeaderId(void)
             }
 			
 			// current locations with DNS tables
-			if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE82) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE82))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE83) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE83))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(RESEDA_WOODS) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(RESEDA_WOODS))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE84) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE84))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE89) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE89))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE86) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE86))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE87) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE87))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(CINEROUS_TOWER_EXTERIOR) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(CINEROUS_TOWER_EXTERIOR))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE79) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE79))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE78) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE78))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE97) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE97))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE95) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE95))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE94) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE94))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE93) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE93))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE92) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE92))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE91) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE91))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE90) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE90))
-				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE69) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE69)))
+			if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE82) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE82))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE83) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE83))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_RESEDA_WOODS) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_RESEDA_WOODS))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE84) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE84))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE89) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE89))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE86) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE86))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE87) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE87))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_CINEROUS_TOWER_EXTERIOR) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_CINEROUS_TOWER_EXTERIOR))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE79) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE79))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE78) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE78))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE97) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE97))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE95) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE95))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE94) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE94))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE93) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE93))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE92) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE92))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE91) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE91))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE90) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE90))
+				|| (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE69) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE69)))
             {
                 u8 hour = gLocalTime.hours;
 				if (hour < 4 || hour >= 20) // night
@@ -659,6 +736,15 @@ enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area
     case WILD_AREA_HIDDEN:
         wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
         break;
+    case WILD_AREA_CUT:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].cutMonsInfo;
+        break;
+    case WILD_AREA_HEADBUTT:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].headbuttMonsInfo;
+        break;
+    case WILD_AREA_THAW:
+        wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].thawMonsInfo;
+        break;
     }
 
     if (wildMonInfo == NULL && !OW_TIME_OF_DAY_DISABLE_FALLBACK)
@@ -693,6 +779,13 @@ static u8 PickWildMonNature(u32 species)
 }
 
 void CreateWildMon(u16 species, u8 level)
+{
+    ZeroEnemyPartyMons();
+    u32 personality = GetMonPersonality(species, GetSynchronizedGender(WILDMON_ORIGIN, species), PickWildMonNature(species), RANDOM_UNOWN_LETTER);
+    CreateMonWithIVs(&gEnemyParty[0], species, level, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);
+    GiveMonInitialMoveset(&gEnemyParty[0]);
+}
+/*void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm = TRUE;
 	u32 personality;
@@ -743,39 +836,39 @@ void CreateWildMon(u16 species, u8 level)
 	}
 	else
 		CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
-    /*if (species != SPECIES_UNOWN)
-    {
-        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
-    }
-    else
-    {
-		slot = Random() % LAND_WILD_COUNT;
-        chamber = gSaveBlock1Ptr->location.mapNum - MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER1);
-        personality = GenerateUnownPersonalityByLetter(sUnownLetterSlots[chamber][slot]);
-        CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
-    }*/
-}
+    //if (species != SPECIES_UNOWN)
+    //{
+    //    CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
+    //}
+    //else
+    //{
+	//	slot = Random() % LAND_WILD_COUNT;
+    //  chamber = gSaveBlock1Ptr->location.mapNum - MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER1);
+    //  personality = GenerateUnownPersonalityByLetter(sUnownLetterSlots[chamber][slot]);
+    //  CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
+    //}
+}*/
 
 static bool8 UnlockedUnownOrAreNotInUnown(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ARTISAN_CAVE_PUZZLE_CHAMBER1))
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ARTISAN_CAVE_PUZZLE_CHAMBER1))
         return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER1)
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ARTISAN_CAVE_PUZZLE_CHAMBER1)
 		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_1))
 		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER2)
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ARTISAN_CAVE_PUZZLE_CHAMBER2)
 		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_2))
 		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER3)
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ARTISAN_CAVE_PUZZLE_CHAMBER3)
 		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_3))
 		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER4)
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ARTISAN_CAVE_PUZZLE_CHAMBER4)
 		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_4))
 		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER5)
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ARTISAN_CAVE_PUZZLE_CHAMBER5)
 		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_5))
 		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER6)
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ARTISAN_CAVE_PUZZLE_CHAMBER6)
 		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_6))
         return TRUE;
     return FALSE;
@@ -798,7 +891,7 @@ static bool8 UnlockedUnownOrAreNotInUnown(void)
     }
 }*/
 
-static u32 GenerateUnownPersonalityByLetter(u8 letter)
+/*static u32 GenerateUnownPersonalityByLetter(u8 letter)
 {
     u32 personality;
     do
@@ -806,7 +899,7 @@ static u32 GenerateUnownPersonalityByLetter(u8 letter)
         personality = (Random() << 16) | Random();
     } while (GetUnownLetterByPersonalityLoByte(personality) != letter);
     return personality;
-}
+}*/
 
 u8 GetUnownLetterByPersonalityLoByte(u32 personality)
 {
@@ -852,101 +945,6 @@ static bool8 TryGenerateSwarmMon(u8 level)
 	return FALSE;
 }
 
-static bool8 UnlockedUnownOrAreNotInUnown(void)
-{
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ARTISAN_CAVE_PUZZLE_CHAMBER1))
-        return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER1)
-		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_1))
-		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER2)
-		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_2))
-		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER3)
-		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_3))
-		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER4)
-		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_4))
-		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER5)
-		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_5))
-		return TRUE;
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(ARTISAN_CAVE_PUZZLE_CHAMBER6)
-		&& FlagGet(FLAG_SOLVED_UNOWN_PUZZLE_6))
-        return TRUE;
-    return FALSE;
-}
-
-/*static void GenerateWildMon(u16 species, u8 level, u8 slot)
-{
-    u32 personality;
-    s8 chamber;
-    ZeroEnemyPartyMons();
-    if (species != SPECIES_UNOWN)
-    {
-        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, Random() % NUM_NATURES);
-    }
-    else
-    {
-        chamber = gSaveBlock1Ptr->location.mapNum - MAP_NUM(MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER);
-        personality = GenerateUnownPersonalityByLetter(sUnownLetterSlots[chamber][slot]);
-        CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
-    }
-}*/
-
-static u32 GenerateUnownPersonalityByLetter(u8 letter)
-{
-    u32 personality;
-    do
-    {
-        personality = (Random() << 16) | Random();
-    } while (GetUnownLetterByPersonalityLoByte(personality) != letter);
-    return personality;
-}
-
-u8 GetUnownLetterByPersonalityLoByte(u32 personality)
-{
-    return GET_UNOWN_LETTER(personality);
-}
-
-void TryUpdateSwarm(void)
-{
-	//#ifdef TIME_ENABLED //Otherwise causes lags
-	//u32 backupVar = VarGet(VAR_SWARM_DAILY_EVENT) | (VarGet(VAR_SWARM_DAILY_EVENT + 1) << 16);
-
-	//if (CheckAndSetDailyEvent(VAR_SWARM_DAILY_EVENT, TRUE))
-	//{
-		u16 index = Random() % gSwarmTableLength;
-		VarSet(VAR_SWARM_INDEX, index);
-
-		//u32 daysSince = GetDaysSinceTimeInValue(backupVar);
-		//UpdatePartyPokerusTime(daysSince);
-		//ClearDailyEventFlags();
-	//}
-	//#endif
-}
-
-#define SWARM_CHANCE 50 //Change this to the percentage that swarming Pokemon will appear if they can be found on the current route.
-
-static bool8 TryGenerateSwarmMon(u8 level)
-{
-	//if (gSwarmTableLength == 0)
-	//	return FALSE;
-
-	//u16 index = 0;
-	u16 index = VarGet(VAR_SWARM_INDEX);
-	u8 mapName = gSwarmTable[index].mapName;
-	u16 species = gSwarmTable[index].species;
-
-	if (mapName == GetCurrentRegionMapSectionId()
-	&&  Random() % 100 < SWARM_CHANCE)
-	{
-		CreateWildMon(species, level);
-		return TRUE;
-	}
-
-	return FALSE;
-}
 
 #ifdef BUGFIX
 #define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr, count)
@@ -995,6 +993,15 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum 
         break;
     case WILD_AREA_ROCKS:
         wildMonIndex = ChooseWildMonIndex_Rocks();
+        break;
+    case WILD_AREA_CUT:
+        wildMonIndex = ChooseWildMonIndex_Cut();
+        break;
+    case WILD_AREA_HEADBUTT:
+        wildMonIndex = ChooseWildMonIndex_Headbutt();
+        break;
+    case WILD_AREA_THAW:
+        wildMonIndex = ChooseWildMonIndex_Thaw();
         break;
     default:
     case WILD_AREA_FISHING:
@@ -1268,10 +1275,11 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
 void HiddenGrottoWildEncounter(void)
 {
     u16 headerId = GetCurrentMapWildMonHeaderId();
+    enum TimeOfDay timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
 
     if (headerId != HEADER_NONE)
     {
-        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].landMonsInfo;
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
 
         if (wildPokemonInfo == NULL)
         {
@@ -1416,9 +1424,7 @@ void GetGrottoItem(void)
 }
 
 
-
-
-void RockSmashWildEncounter(void)
+/*void RockSmashWildEncounter(void)
 {
     u16 headerId = GetCurrentMapWildMonHeaderId();
 
@@ -1449,128 +1455,7 @@ void RockSmashWildEncounter(void)
     {
         gSpecialVar_Result = FALSE;
     }
-}
-
-void GetGrottoItem(void)
-{
-	u16 GrottoItems[] = 
-	{
-		ITEM_POKE_BALL,
-		ITEM_REPEL,
-		ITEM_POTION,
-		ITEM_ENERGY_ROOT,
-		ITEM_ETHER
-		//ITEM_NONE
-	};
-	u16 GrottoUncommonItems[] = 
-	{
-		ITEM_GREAT_BALL,
-		ITEM_SUPER_REPEL,
-		ITEM_SUPER_POTION,
-		ITEM_HP_UP,
-		ITEM_PP_UP
-		//ITEM_NONE
-	};
-	
-	u16 GrottoRareItems[] = 
-	{
-		ITEM_ULTRA_BALL,
-		ITEM_MAX_REPEL,
-		ITEM_HYPER_POTION,
-		ITEM_RARE_CANDY,
-		ITEM_PP_MAX
-		//ITEM_NONE
-	};
-	
-	u16 GrottoGreenTreeItems[] = 
-	{
-		ITEM_LEAF_STONE,
-		ITEM_ONI_MASK,
-		
-		ITEM_SUN_STONE,
-		
-		ITEM_SHINY_STONE,
-		ITEM_DAWN_STONE
-		//ITEM_NONE
-	};
-	
-	u16 GrottoRedTreeItems[] = 
-	{
-		ITEM_LEAF_STONE,
-		ITEM_ONI_MASK,
-		
-		ITEM_MOON_STONE,
-
-		ITEM_DUSK_STONE,
-		ITEM_DAWN_STONE
-		//ITEM_NONE
-	};
-	
-	u16 GrottoYellowCaveItems[] = 
-	{
-		ITEM_ZEPHYR_STONE,
-		ITEM_FIRE_STONE,
-		
-		ITEM_SUN_STONE,
-		
-		ITEM_SHINY_STONE,
-		ITEM_DAWN_STONE
-		//ITEM_NONE
-	};
-	
-	u16 GrottoBlueCaveItems[] = 
-	{
-		ITEM_ICE_STONE,
-		ITEM_WATER_STONE,
-		
-		ITEM_MOON_STONE,
-		
-		ITEM_DUSK_STONE,
-		ITEM_DAWN_STONE
-		//ITEM_NONE
-	};
-	
-	u8 itemId = Random() % (sizeof(GrottoItems)/sizeof(GrottoItems[0]));
-	u8 uncommonitemId = Random() % (sizeof(GrottoUncommonItems)/sizeof(GrottoUncommonItems[0]));
-	u8 rareitemId = Random() % (sizeof(GrottoRareItems)/sizeof(GrottoRareItems[0]));
-
-	u8 greentreeitemId = Random() % (sizeof(GrottoGreenTreeItems)/sizeof(GrottoGreenTreeItems[0]));
-	u8 redtreeitemId = Random() % (sizeof(GrottoRedTreeItems)/sizeof(GrottoRedTreeItems[0]));
-	u8 yellowcaveitemId = Random() % (sizeof(GrottoYellowCaveItems)/sizeof(GrottoYellowCaveItems[0]));
-	u8 bluecaveitemId = Random() % (sizeof(GrottoBlueCaveItems)/sizeof(GrottoBlueCaveItems[0]));
-	
-    if (GrottoItems[itemId] != ITEM_NONE && (Random() % 100) < 50) // 40% chance to get common item
-    {
-		gSpecialVar_Result = GrottoItems[itemId];
-    }
-	else if(GrottoItems[itemId] == ITEM_NONE && 
-			GrottoUncommonItems[uncommonitemId] != ITEM_NONE &&
-			(Random() % 100) < 50) // 20% chance to get uncommon item
-	{
-		gSpecialVar_Result = GrottoRareItems[uncommonitemId];
-    }
-	else if(GrottoItems[itemId] == ITEM_NONE && 
-			GrottoRareItems[rareitemId] != ITEM_NONE &&
-			(Random() % 100) < 50) // 10% chance to get rare item
-	{
-		gSpecialVar_Result = GrottoRareItems[rareitemId];
-    }
-	else // 10% chance to get a map specific rare item
-	{
-		if (GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_85 || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_70 || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_87) // yellow cave grottos
-			gSpecialVar_Result = GrottoYellowCaveItems[yellowcaveitemId];
-		if (GetCurrentRegionMapSectionId() == MAPSEC_QUARTZ_CAVE || GetCurrentRegionMapSectionId() == MAPSEC_MT_SHIRO || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_66 || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_97) // blue cave grottos
-			gSpecialVar_Result = GrottoBlueCaveItems[bluecaveitemId];
-		if (GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_92 || GetCurrentRegionMapSectionId() == MAPSEC_SCARLET_WOODS || GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_91) // red tree grottos
-			gSpecialVar_Result = GrottoRedTreeItems[redtreeitemId];
-		else // green tree grottos
-			gSpecialVar_Result = GrottoGreenTreeItems[greentreeitemId];
-    }
-}
-
-
-
-
+}*/
 void RockSmashWildEncounter(void)
 {
     u32 headerId = GetCurrentMapWildMonHeaderId();
@@ -1593,6 +1478,214 @@ void RockSmashWildEncounter(void)
             {
                 struct Pokemon mon1 = gEnemyParty[0];
                 TryGenerateWildMon(wildPokemonInfo, WILD_AREA_ROCKS, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
+                gEnemyParty[1] = mon1;
+                BattleSetup_StartDoubleWildBattle();
+                gSpecialVar_Result = TRUE;
+            }
+            else {
+                BattleSetup_StartWildBattle();
+                gSpecialVar_Result = TRUE;
+            }
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void CutWildEncounter(void)
+/*{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId != HEADER_NONE)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].cutMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE) == TRUE
+         //&& TryGenerateWildMon(wildPokemonInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+        {
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}*/
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    enum TimeOfDay timeOfDay;
+
+    if (headerId != HEADER_NONE)
+    {
+        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_CUT);
+
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].cutMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE) == TRUE
+         && TryGenerateWildMon(wildPokemonInfo, WILD_AREA_CUT, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+        {
+            if (TryDoDoubleWildBattle())
+            {
+                struct Pokemon mon1 = gEnemyParty[0];
+                TryGenerateWildMon(wildPokemonInfo, WILD_AREA_CUT, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
+                gEnemyParty[1] = mon1;
+                BattleSetup_StartDoubleWildBattle();
+                gSpecialVar_Result = TRUE;
+            }
+            else {
+                BattleSetup_StartWildBattle();
+                gSpecialVar_Result = TRUE;
+            }
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void HeadbuttWildEncounter(void)
+/*{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId != 0xFFFF)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].headbuttMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, 1) == TRUE
+         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+        {
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}*/
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    enum TimeOfDay timeOfDay;
+
+    if (headerId != HEADER_NONE)
+    {
+        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_HEADBUTT);
+
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].headbuttMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE) == TRUE
+         && TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HEADBUTT, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+        {
+            if (TryDoDoubleWildBattle())
+            {
+                struct Pokemon mon1 = gEnemyParty[0];
+                TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HEADBUTT, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
+                gEnemyParty[1] = mon1;
+                BattleSetup_StartDoubleWildBattle();
+                gSpecialVar_Result = TRUE;
+            }
+            else {
+                BattleSetup_StartWildBattle();
+                gSpecialVar_Result = TRUE;
+            }
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void ThawWildEncounter(void)
+/*{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+
+    if (headerId != 0xFFFF)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].thawMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, 1) == TRUE
+         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+        {
+            BattleSetup_StartWildBattle();
+            gSpecialVar_Result = TRUE;
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+        }
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}*/
+{
+    u32 headerId = GetCurrentMapWildMonHeaderId();
+    enum TimeOfDay timeOfDay;
+
+    if (headerId != HEADER_NONE)
+    {
+        timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_THAW);
+
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].thawMonsInfo;
+
+        if (wildPokemonInfo == NULL)
+        {
+            gSpecialVar_Result = FALSE;
+        }
+        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE) == TRUE
+         && TryGenerateWildMon(wildPokemonInfo, WILD_AREA_THAW, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+        {
+            if (TryDoDoubleWildBattle())
+            {
+                struct Pokemon mon1 = gEnemyParty[0];
+                TryGenerateWildMon(wildPokemonInfo, WILD_AREA_THAW, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
                 gEnemyParty[1] = mon1;
                 BattleSetup_StartDoubleWildBattle();
                 gSpecialVar_Result = TRUE;
@@ -2050,6 +2143,15 @@ static u8 GetMaxLevelOfSpeciesInWildTable(const struct WildPokemon *wildMon, u16
     case WILD_AREA_ROCKS:
         numMon = ROCK_WILD_COUNT;
         break;
+    case WILD_AREA_CUT:
+        numMon = CUT_WILD_COUNT;
+        break;
+    case WILD_AREA_HEADBUTT:
+        numMon = HEADBUTT_WILD_COUNT;
+        break;
+    case WILD_AREA_THAW:
+        numMon = THAW_WILD_COUNT;
+        break;
     default:
     case WILD_AREA_FISHING:
     case WILD_AREA_HIDDEN:
@@ -2097,94 +2199,6 @@ static void ApplyCleanseTagEncounterRateMod(u32 *encRate)
 {
     if (GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM) == ITEM_CLEANSE_TAG)
         *encRate = *encRate * 2 / 3;
-}
-
-void CutWildEncounter(void)
-{
-    u16 headerId = GetCurrentMapWildMonHeaderId();
-
-    if (headerId != HEADER_NONE)
-    {
-        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].cutMonsInfo;
-
-        if (wildPokemonInfo == NULL)
-        {
-            gSpecialVar_Result = FALSE;
-        }
-        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, TRUE) == TRUE
-         //&& TryGenerateWildMon(wildPokemonInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
-         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
-        {
-            BattleSetup_StartWildBattle();
-            gSpecialVar_Result = TRUE;
-        }
-        else
-        {
-            gSpecialVar_Result = FALSE;
-        }
-    }
-    else
-    {
-        gSpecialVar_Result = FALSE;
-    }
-}
-
-void HeadbuttWildEncounter(void)
-{
-    u16 headerId = GetCurrentMapWildMonHeaderId();
-
-    if (headerId != 0xFFFF)
-    {
-        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].headbuttMonsInfo;
-
-        if (wildPokemonInfo == NULL)
-        {
-            gSpecialVar_Result = FALSE;
-        }
-        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, 1) == TRUE
-         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
-        {
-            BattleSetup_StartWildBattle();
-            gSpecialVar_Result = TRUE;
-        }
-        else
-        {
-            gSpecialVar_Result = FALSE;
-        }
-    }
-    else
-    {
-        gSpecialVar_Result = FALSE;
-    }
-}
-
-void ThawWildEncounter(void)
-{
-    u16 headerId = GetCurrentMapWildMonHeaderId();
-
-    if (headerId != 0xFFFF)
-    {
-        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].thawMonsInfo;
-
-        if (wildPokemonInfo == NULL)
-        {
-            gSpecialVar_Result = FALSE;
-        }
-        else if (WildEncounterCheck(wildPokemonInfo->encounterRate, 1) == TRUE
-         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
-        {
-            BattleSetup_StartWildBattle();
-            gSpecialVar_Result = TRUE;
-        }
-        else
-        {
-            gSpecialVar_Result = FALSE;
-        }
-    }
-    else
-    {
-        gSpecialVar_Result = FALSE;
-    }
 }
 
 bool8 TryDoDoubleWildBattle(void)

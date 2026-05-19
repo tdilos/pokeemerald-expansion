@@ -1001,17 +1001,9 @@ void CableCarWarp(void)
 void CableCarIsshoWarp(void)
 {
     if (gSpecialVar_0x8004 != 0)
-        SetWarpDestination(MAP_GROUP(ROUTE96_CABLE_CAR_STATION), MAP_NUM(ROUTE96_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
+        SetWarpDestination(MAP_GROUP(MAP_ROUTE96_CABLE_CAR_STATION), MAP_NUM(MAP_ROUTE96_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
     else
-        SetWarpDestination(MAP_GROUP(OFFWITE_TOWN_CABLE_CAR_STATION), MAP_NUM(OFFWITE_TOWN_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
-}
-
-void CableCarIsshoWarp(void)
-{
-    if (gSpecialVar_0x8004 != 0)
-        SetWarpDestination(MAP_GROUP(ROUTE96_CABLE_CAR_STATION), MAP_NUM(ROUTE96_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
-    else
-        SetWarpDestination(MAP_GROUP(OFFWITE_TOWN_CABLE_CAR_STATION), MAP_NUM(OFFWITE_TOWN_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
+        SetWarpDestination(MAP_GROUP(MAP_OFFWITE_TOWN_CABLE_CAR_STATION), MAP_NUM(MAP_OFFWITE_TOWN_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
 }
 
 void SetHiddenItemFlag(void)
@@ -1901,26 +1893,26 @@ void SetDeptStoreFloor(void)
 {
     enum DeptStoreFloorNumber deptStoreFloor;
 	
-	if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(LILYCOVE_CITY_DEPARTMENT_STORE_1F))
+	if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F))
     {
 		switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
 		{
-		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_1F):
+		case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
 			break;
-		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_2F):
+		case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_2F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_2F;
 			break;
-		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_3F):
+		case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_3F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_3F;
 			break;
-		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_4F):
+		case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_4F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_4F;
 			break;
-		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_5F):
+		case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
 			break;
-		case MAP_NUM(LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP):
+		case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_ROOFTOP;
 			break;
 		default:
@@ -1929,23 +1921,23 @@ void SetDeptStoreFloor(void)
 		}
 	}
 	// Mindaro Dept Store
-	else if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MINDARO_CITY_DEPARTMENT_STORE_1F))
+	else if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_MINDARO_CITY_DEPARTMENT_STORE_1F))
     {	
 		switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
 		{
-		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_1F):
+		case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_1F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
 			break;
-		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_2F):
+		case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_2F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_2F;
 			break;
-		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_3F):
+		case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_3F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_3F;
 			break;
-		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_4F):
+		case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_4F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_4F;
 			break;
-		case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_5F):
+		case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_5F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
 			break;
 		default:
@@ -1958,37 +1950,37 @@ void SetDeptStoreFloor(void)
     {	
 		switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
 		{
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_1F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_1F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_2F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_2F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_2F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_3F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_3F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_3F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_4F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_4F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_4F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_5F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_5F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_6F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_6F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_6F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_7F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_7F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_7F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_8F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_8F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_8F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_9F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_9F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_9F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_10F):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_10F):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_10F;
 			break;
-		case MAP_NUM(PITCHBLAK_CITY_KENDOMA_CORP_SECRET_BASEMENT):
+		case MAP_NUM(MAP_PITCHBLAK_CITY_KENDOMA_CORP_SECRET_BASEMENT):
 			deptStoreFloor = DEPT_STORE_FLOORNUM_B1F;
 			break;
 		default:
@@ -2024,54 +2016,44 @@ u16 GetDeptStoreDefaultFloorChoice(void)
             break;
         }
     }
-    else if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MINDARO_CITY_DEPARTMENT_STORE_1F))
+    else if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_MINDARO_CITY_DEPARTMENT_STORE_1F))
     {
         switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
         {
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_5F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_5F):
             sLilycoveDeptStore_DefaultFloorChoice = 0;
             break;
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_4F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_4F):
             sLilycoveDeptStore_DefaultFloorChoice = 1;
             break;
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_3F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_3F):
             sLilycoveDeptStore_DefaultFloorChoice = 2;
             break;
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_2F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_2F):
             sLilycoveDeptStore_DefaultFloorChoice = 3;
             break;
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_1F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_1F):
             sLilycoveDeptStore_DefaultFloorChoice = 4;
             break;
         }
     }
-    else if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MINDARO_CITY_DEPARTMENT_STORE_1F))
+    else if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_MINDARO_CITY_DEPARTMENT_STORE_1F))
     {
         switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
         {
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_5F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_5F):
             sLilycoveDeptStore_DefaultFloorChoice = 0;
             break;
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_4F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_4F):
             sLilycoveDeptStore_DefaultFloorChoice = 1;
             break;
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_3F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_3F):
             sLilycoveDeptStore_DefaultFloorChoice = 2;
             break;
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_2F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_2F):
             sLilycoveDeptStore_DefaultFloorChoice = 3;
             break;
-        case MAP_NUM(MINDARO_CITY_DEPARTMENT_STORE_1F):
-            sLilycoveDeptStore_NeverRead = 0;
+        case MAP_NUM(MAP_MINDARO_CITY_DEPARTMENT_STORE_1F):
             sLilycoveDeptStore_DefaultFloorChoice = 4;
             break;
         }
@@ -2815,6 +2797,19 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },*/
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
+        COMPOUND_STRING("MAMARIZER{CLEAR_TO 0x5E}32BP"),
+        COMPOUND_STRING("RAZOR CLAW{CLEAR_TO 0x5E}32BP"),
+        COMPOUND_STRING("QUICK CLAW{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("KING'S ROCK{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("FOCUS SASH{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("AIR BALLOON{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("CHOICE SCARF{CLEAR_TO 0x5E}64BP"),
+        COMPOUND_STRING("CHOICE SPECS{CLEAR_TO 0x5E}64BP"),
+        COMPOUND_STRING("CHOICE BAND{CLEAR_TO 0x5E}64BP"),
+        gText_Exit
+    },
+    /*[SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
+    {
         gText_Magmarizer32BP,
         gText_RazorClaw32BP,
         gText_QuickClaw48BP,
@@ -2825,8 +2820,34 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_ChoiceSpecs64BP,
         gText_ChoiceBand64BP,
         gText_Exit
-    },
+    },*/
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_1] =
+    {
+        COMPOUND_STRING("ELECTIRIZER{CLEAR_TO 0x5E}32BP"),
+        COMPOUND_STRING("RAZOR FANG{CLEAR_TO 0x5E}32BP"),
+        COMPOUND_STRING("LIGHT CLAY{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("FLAME ORB{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("TOXIC ORB{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("TERRAIN EXTENDER{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("LEFTOVERS{CLEAR_TO 0x5E}64BP"),
+        COMPOUND_STRING("RED CARD{CLEAR_TO 0x5E}64BP"),
+        COMPOUND_STRING("EJECT BUTTON{CLEAR_TO 0x5E}64BP"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_2] =
+    {
+        COMPOUND_STRING("RARE CANDY{CLEAR_TO 0x5E}1BP"),
+        COMPOUND_STRING("PROTECTOR{CLEAR_TO 0x5E}32BP"),
+        COMPOUND_STRING("BINDING BAND{CLEAR_TO 0x5E}32BP"),
+        COMPOUND_STRING("ABSORB BULB{CLEAR_TO 0x5E}32BP"),
+        COMPOUND_STRING("CELL BATTERY{CLEAR_TO 0x5E}32BP"),
+        COMPOUND_STRING("RING TARGET{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("BRIGHTPOWDER{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("SAFETY GOGGLES{CLEAR_TO 0x5E}48BP"),
+        COMPOUND_STRING("LIFE ORB{CLEAR_TO 0x5E}64BP"),
+        gText_Exit
+    },
+    /*[SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_1] =
     {
         gText_Electirizer32BP,
         gText_RazorFang32BP,
@@ -2851,7 +2872,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 		gText_SafetyGoggles48BP,
 		gText_LifeOrb64BP,
         gText_Exit
-    },
+    },*/
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
     {
         COMPOUND_STRING("ENERGYPOWDER{CLEAR_TO 114}{FONT_SMALL}50"),
@@ -5124,7 +5145,6 @@ bool8 HasLearnedAllMovesFromCapeBrinkTutor(void)
 void CheckIfTeamFainted(void)
 {
     u8 i;
-    u16 species;
     struct Pokemon *pokemon;
     for (i = 0; i < CalculatePlayerPartyCount(); i++)
     {
@@ -5152,7 +5172,7 @@ void BufferSwarmText(void)
 
 	GetMapName(gStringVar1, mapName, 0);
 	//StringCopy(sScriptStringVars[1], gSpeciesNames[species]);
-	StringCopy(gStringVar2, gSpeciesNames[species]);
+	StringCopy(gStringVar2, GetSpeciesName(species));
 
 	//return species;
 }
@@ -5387,7 +5407,7 @@ u16 GetTeamWeight(void)
     {
 		if (GetMonData(&gPlayerParty[i],  MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG))
 		{
-			weight = GetPokedexHeightWeight( SpeciesToNationalPokedexNum(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES)), 1 );
+			weight = GetSpeciesWeight( SpeciesToNationalPokedexNum(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES)) );
 			total += weight * 0.2205; //convert to pounds
 		}
 	}

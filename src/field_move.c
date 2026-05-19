@@ -282,7 +282,8 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     },
     [FIELD_MOVE_BULLDOZE] =
     {
-        .fieldMoveFunc = SetUpFieldMove_Bulldoze,
+        //.fieldMoveFunc = SetUpFieldMove_Bulldoze,
+        .fieldMoveFunc = SetUpFieldMove_RockClimb,   // placeholder
         .isUnlockedFunc = IsFieldMoveUnlocked_Bulldoze,
         .moveID = MOVE_BULLDOZE,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
