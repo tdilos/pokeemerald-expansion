@@ -1,12 +1,12 @@
 EventScript_Chansey::
 	lockall
 	faceplayer
-	playmoncry SPECIES_CHANSEY, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_CHANSEY, CRY_MODE_NORMAL
 	waitmoncry
 	fadescreen FADE_TO_BLACK
 	special HealPlayerParty
 	playse SE_USE_ITEM
-	@waitse
+	waitse
 	fadescreen FADE_FROM_BLACK
 	releaseall
 	end

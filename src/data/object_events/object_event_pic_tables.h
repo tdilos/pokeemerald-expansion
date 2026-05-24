@@ -124,47 +124,47 @@ static const struct SpriteFrameImage sPicTable_NinjaBoy[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_Twin[] = {
-    overworld_ascending_frames(gObjectEventPic_Twin, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_FRTwin, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Boy1[] = {
-    overworld_ascending_frames(gObjectEventPic_Boy1, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_FRBoy1, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Girl1[] = {
-    overworld_ascending_frames(gObjectEventPic_Girl1, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_FRGirl1, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Boy2[] = {
-    overworld_ascending_frames(gObjectEventPic_Boy2, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_FRBoy2, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Girl2[] = {
-    overworld_ascending_frames(gObjectEventPic_Girl2, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_FRGirl2, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_LittleBoy[] = {
-    overworld_ascending_frames(gObjectEventPic_LittleBoy, 2, 2),
+    overworld_ascending_frames(gObjectEventPic_FRLittleBoy, 2, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_LittleGirl[] = {
-    overworld_ascending_frames(gObjectEventPic_LittleGirl, 2, 2),
+    overworld_ascending_frames(gObjectEventPic_FRLittleGirl, 2, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_Boy3[] = {
-    overworld_ascending_frames(gObjectEventPic_Boy3, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_FRBoy3, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Girl3[] = {
-    overworld_ascending_frames(gObjectEventPic_Girl3, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_FRGirl3, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_RichBoy[] = {
-    overworld_ascending_frames(gObjectEventPic_RichBoy, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_FRRichBoy, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Woman1[] = {
-    overworld_ascending_frames(gObjectEventPic_Woman1, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_FRWoman1, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_FatMan[] = {
@@ -658,6 +658,22 @@ static const struct SpriteFrameImage sPicTable_Rayner[] = {
     overworld_frame(gObjectEventPic_Rayner, 2, 4, 6),
     overworld_frame(gObjectEventPic_Rayner, 2, 4, 7),
     overworld_frame(gObjectEventPic_Rayner, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_Yellow[] = {
+    overworld_ascending_frames(gObjectEventPic_Yellow, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Looker[] = {
+    overworld_ascending_frames(gObjectEventPic_Looker, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Benga[] = {
+    overworld_ascending_frames(gObjectEventPic_Benga, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Zinnia[] = {
+    overworld_ascending_frames(gObjectEventPic_Zinnia, 2, 4),
 };
 
 /*static const struct SpriteFrameImage sPicTable_UnusedNatuDoll[] = {
@@ -3947,16 +3963,16 @@ static const struct SpriteFrameImage sPicTable_Porygon2[] = {
     overworld_frame(gObjectEventPic_Porygon2Old, 2, 2, 2),
 };
 
-static const struct SpriteFrameImage sPicTable_Mewtwo[] = {
-    overworld_frame(gObjectEventPic_MewtwoOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_MewtwoOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_MewtwoOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_MewtwoOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_MewtwoOld, 4, 4, 1),
-    overworld_frame(gObjectEventPic_MewtwoOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_MewtwoOld, 4, 4, 1),
-    overworld_frame(gObjectEventPic_MewtwoOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_MewtwoOld, 4, 4, 1),
+static const struct SpriteFrameImage sPicTable_Mewtwo2[] = {
+    overworld_frame(gObjectEventPic_Mewtwo2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Mewtwo2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Mewtwo2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Mewtwo2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Mewtwo2, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Mewtwo2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Mewtwo2, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Mewtwo2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Mewtwo2, 4, 4, 1),
 };
 
 static const struct SpriteFrameImage sPicTable_Genesect[] = {

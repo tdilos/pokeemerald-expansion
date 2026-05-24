@@ -551,7 +551,7 @@ static void Cmd_setroom(void);
 static void Cmd_tryswapabilities(void);
 static void Cmd_tryimprison(void);
 static void Cmd_setstealthrock(void);
-static void Cmd_setfairydust(void);
+//static void Cmd_setfairydust(void);
 static void Cmd_trysetvolatile(void);
 static void Cmd_trysetmagiccoat(void);
 static void Cmd_trysetsnatch(void);
@@ -782,7 +782,7 @@ void (*const gBattleScriptingCommandsTable[])(void) =
     [B_SCR_OP_TRYSWAPABILITIES]                      = Cmd_tryswapabilities,
     [B_SCR_OP_TRYIMPRISON]                           = Cmd_tryimprison,
     [B_SCR_OP_SETSTEALTHROCK]                        = Cmd_setstealthrock,
-    [B_SCR_OP_SETFAIRYDUST]                          = Cmd_setfairydust,
+    //[B_SCR_OP_SETFAIRYDUST]                          = Cmd_setfairydust,
     [B_SCR_OP_TRYSETVOLATILE]                        = Cmd_trysetvolatile,
     [B_SCR_OP_TRYSETMAGICCOAT]                       = Cmd_trysetmagiccoat,
     [B_SCR_OP_TRYSETSNATCH]                          = Cmd_trysetsnatch,
@@ -10643,7 +10643,7 @@ static void Cmd_setstealthrock(void)
     }
 }
 
-static void Cmd_setfairydust(void)
+/*static void Cmd_setfairydust(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
@@ -10657,7 +10657,7 @@ static void Cmd_setfairydust(void)
         PushHazardTypeToQueue(targetSide, HAZARDS_FAIRY_DUST);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
-}
+}*/
 
 static void Cmd_trysetvolatile(void)
 {
@@ -14209,6 +14209,22 @@ void BS_TryChitinize(void)
     else
     {
         gBattlescriptCurrInstr = cmd->failInstr;
+    }
+}
+
+void BS_SetFairyDust(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+
+    u8 targetSide = GetBattlerSide(gBattlerTarget);
+    if (IsHazardOnSide(targetSide, HAZARDS_FAIRY_DUST))
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+    }
+    else
+    {
+        PushHazardTypeToQueue(targetSide, HAZARDS_FAIRY_DUST);
+        gBattlescriptCurrInstr = cmd->nextInstr;
     }
 }
 

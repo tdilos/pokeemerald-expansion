@@ -1666,7 +1666,12 @@
   ],
   "gMapGroup_XStarfield": [],
   "gMapGroup_XFunfair": [],
-  "gMapGroup_XPelago": [],
+  "gMapGroup_XPelago": [
+    "OmaomaIsle_Exterior",
+    "KiyahaIsle_Exterior",
+    "KeokeoIsle_Exterior",
+    "PanoIsle_Exterior"
+  ],
   "gMapGroup_XHolt": [],
   "gMapGroup_XGreenhouse": [],
   "gMapGroup_XSlough": [],

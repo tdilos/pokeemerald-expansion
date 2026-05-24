@@ -1208,7 +1208,7 @@ static const struct CompressedSpriteSheet sStatusIconsSpriteSheet =
 {
     .data = gStatusGfx_Icons,
     //.size = 0x400,
-    //.size = 0x580,
+    .size = 0x580,
     .tag = TAG_MON_STATUS
 };
 static const struct SpritePalette sStatusIconsSpritePalette =

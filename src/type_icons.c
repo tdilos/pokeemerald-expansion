@@ -153,6 +153,11 @@ const union AnimCmd sSpriteAnim_TypeIcon_Fairy[] =
     ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_FAIRY), 0),
     ANIMCMD_END
 };
+const union AnimCmd sSpriteAnim_TypeIcon_Echo[] =
+{
+    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_ECHO), 0),
+    ANIMCMD_END
+};
 
 const union AnimCmd *const sSpriteAnimTable_TypeIcons[] =
 {
@@ -176,6 +181,7 @@ const union AnimCmd *const sSpriteAnimTable_TypeIcons[] =
     [TYPE_DRAGON] =     sSpriteAnim_TypeIcon_Dragon,
     [TYPE_DARK] =       sSpriteAnim_TypeIcon_Dark,
     [TYPE_FAIRY] =      sSpriteAnim_TypeIcon_Fairy,
+    [TYPE_ECHO] =       sSpriteAnim_TypeIcon_Echo,
     [TYPE_STELLAR] =    sSpriteAnim_TypeIcon_Mystery,
 };
 

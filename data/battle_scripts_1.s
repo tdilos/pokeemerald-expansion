@@ -4473,7 +4473,7 @@ BattleScript_LocalBattleLost::
 	jumpifbattletype BATTLE_TYPE_EREADER_TRAINER, BattleScript_LocalBattleLostEnd
 	jumpifhalfword CMP_EQUAL, gTrainerBattleParameter + 2, TRAINER_SECRET_BASE, BattleScript_LocalBattleLostEnd
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, 0, BattleScript_RivalBattleLost
-	jumpifnowhiteout BattleScript_LocalBattleLostEnd_
+	jumpifnowhiteout BattleScript_LocalBattleLostEnd_NoWhiteOut
 	jumpifbattletype BATTLE_TYPE_INGAME_PARTNER, BattleScript_LocalBattleLostPrintWhiteOut
 BattleScript_LocalBattleLostPrintWhiteOut::
 	getmoneyreward
@@ -4500,6 +4500,15 @@ BattleScript_LocalBattleLostEnd::
 BattleScript_LocalBattleLostEnd::
 	end2
 .endif
+BattleScript_LocalBattleLostEnd_NoWhiteOut::
+	getmoneyreward
+	printstring STRINGID_PLAYERWHITEOUT2_TRAINER
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_PLAYERWHITEOUT4 
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+
 
 BattleScript_CheckDomeDrew::
 	jumpifbyte CMP_EQUAL, gBattleOutcome, B_OUTCOME_DREW, BattleScript_LocalBattleLostEnd_

@@ -369,6 +369,12 @@ const u32 gObjectEventPic_Petra[] = INCBIN_U32("graphics/object_events/pics/peop
 const u32 gObjectEventPic_Justin[] = INCBIN_U32("graphics/object_events/pics/people/justin.4bpp");
 const u32 gObjectEventPic_Azami[] = INCBIN_U32("graphics/object_events/pics/people/azami.4bpp");
 
+const u32 gObjectEventPic_Yellow[] = INCBIN_U32("graphics/object_events/pics/people/yellow.4bpp");
+const u32 gObjectEventPic_Looker[] = INCBIN_U32("graphics/object_events/pics/people/looker.4bpp");
+const u32 gObjectEventPic_Benga[] = INCBIN_U32("graphics/object_events/pics/people/benga.4bpp");
+const u32 gObjectEventPic_Zinnia[] = INCBIN_U32("graphics/object_events/pics/people/zinnia.4bpp");
+
+
 //const u32 gObjectEventPic_TreeckoDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/treecko_doll.4bpp");
 //const u32 gObjectEventPic_TorchicDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/torchic_doll.4bpp");
 //const u32 gObjectEventPic_MudkipDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/mudkip_doll.4bpp");
@@ -590,7 +596,7 @@ const u32 gObjectEventPic_WormholeLarge[] = INCBIN_U32("graphics/object_events/p
 const u32 gObjectEventPic_WormholeSmall[] = INCBIN_U32("graphics/object_events/pics/misc/wormhole_small.4bpp");
 
 const u32 gObjectEventPic_Porygon2Old[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/fr_porygon2.4bpp");
-const u32 gObjectEventPic_MewtwoOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/fr_mewtwo.4bpp");
+const u32 gObjectEventPic_Mewtwo2[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/fr_mewtwo.4bpp");
 const u32 gObjectEventPic_GenesectOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/fr_genesect.4bpp");
 const u32 gObjectEventPic_GenesectShiny[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/fr_genesect_shiny.4bpp");
 

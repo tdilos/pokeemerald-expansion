@@ -1051,11 +1051,6 @@
 	.4byte \failInstr
 	.endm
 
-	.macro setfairydust failInstr:req
-	.byte B_SCR_OP_SETFAIRYDUST
-	.4byte \failInstr
-	.endm
-
 	.macro setgastroacid failInstr:req
 	.byte B_SCR_OP_SETGASTROACID
 	.4byte \failInstr
@@ -2293,5 +2288,10 @@
 
 	.macro trychitinize failInstr:req
 	callnative BS_TryChitinize
+	.4byte \failInstr
+	.endm
+
+	.macro setfairydust failInstr:req
+	callnative BS_SetFairyDust
 	.4byte \failInstr
 	.endm

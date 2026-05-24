@@ -11940,6 +11940,46 @@
       "secondary_tileset": "gTileset_Emporium",
       "border_filepath": "data/layouts/StationCity_Building1_B1/border.bin",
       "blockdata_filepath": "data/layouts/StationCity_Building1_B1/map.bin"
+    },
+    {
+      "id": "LAYOUT_OMAOMA_ISLE_EXTERIOR",
+      "name": "OmaomaIsle_Exterior_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/OmaomaIsle_Exterior/border.bin",
+      "blockdata_filepath": "data/layouts/OmaomaIsle_Exterior/map.bin"
+    },
+    {
+      "id": "LAYOUT_PANO_ISLE_EXTERIOR",
+      "name": "PanoIsle_Exterior_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/PanoIsle_Exterior/border.bin",
+      "blockdata_filepath": "data/layouts/PanoIsle_Exterior/map.bin"
+    },
+    {
+      "id": "LAYOUT_KEOKEO_ISLE_EXTERIOR",
+      "name": "KeokeoIsle_Exterior_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/KeokeoIsle_Exterior/border.bin",
+      "blockdata_filepath": "data/layouts/KeokeoIsle_Exterior/map.bin"
+    },
+    {
+      "id": "LAYOUT_KIYAHA_ISLE_EXTERIOR",
+      "name": "KiyahaIsle_Exterior_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/KiyahaIsle_Exterior/border.bin",
+      "blockdata_filepath": "data/layouts/KiyahaIsle_Exterior/map.bin"
     }
   ]
 }

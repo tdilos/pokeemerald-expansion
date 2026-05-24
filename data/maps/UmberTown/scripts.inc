@@ -685,10 +685,17 @@ UmberTown_EventScript_GiveStuff2::
 	msgbox UmberTown_Text_ZartoshtIntro, MSGBOX_DEFAULT
 	waitmoncry
 
-	playse SE_DING_DONG
-	waitse
-	setwildbattle SPECIES_NIHILEGO, 120
-	dowildbattle
+	setflag FLAG_IS_CHAMPION
+	givemon SPECIES_JIRACHI, 100
+
+	@playse SE_DING_DONG
+	@waitse
+	@setwildbattle SPECIES_NIHILEGO, 120
+	@dowildbattle
+	
+	seteventmon SPECIES_NIHILEGO, 219
+	special BattleSetup_StartLegendaryBattle
+	waitstate
 	release
 	end
 
@@ -705,60 +712,18 @@ UmberTown_EventScript_GiveStuffDemo::
 
 	@call UmberTown_EventScript_GiveTMs
 
-	@setflag FLAG_SYS_TOWER_SILVER
-	@setflag FLAG_SYS_DOME_SILVER
-	@setflag FLAG_SYS_PALACE_SILVER
-	@setflag FLAG_SYS_ARENA_SILVER
-	@setflag FLAG_SYS_FACTORY_SILVER
-	@setflag FLAG_SYS_PIKE_SILVER
-	@setflag FLAG_SYS_PYRAMID_SILVER
-
-	@giveitem ITEM_MASTER_BALL, 10
-	@giveitem ITEM_AZURE_FLUTE
-	@setflag FLAG_RECEIVED_AZURE_FLUTE
-
-	@giveitem ITEM_APEX_TICKET
-	@setflag FLAG_ENABLE_SHIP_PERENNIAL_PILLAR
-	@giveitem ITEM_RAINBOW_PASS
-	@setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
-	@giveitem ITEM_OLD_SEA_MAP
-	@setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
-	@giveitem ITEM_EON_TICKET
-	@setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
-
-	setvar VAR_0x8004, 777
-	special GiveFrontierBattlePoints
+	@setvar VAR_0x8004, 777
+	@special GiveFrontierBattlePoints
 
 	@applymovement 8, UmberTown_Movement_Dummy
 	@waitmovement 0
 
-	playmoncry SPECIES_TORNADUS, CRY_MODE_NORMAL
-	setvar VAR_0x8004, SPECIES_TORNADUS
-	special SetSeenMon
-	showmonpic SPECIES_TORNADUS, 10, 3
-	waitbuttonpress
-	hidemonpic
-
-	playmoncry SPECIES_THUNDURUS, CRY_MODE_NORMAL
-	setvar VAR_0x8004, SPECIES_THUNDURUS
-	special SetSeenMon
-	showmonpic SPECIES_THUNDURUS, 10, 3
-	waitbuttonpress
-	hidemonpic
-
-	playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
-	setvar VAR_0x8004, SPECIES_LANDORUS
-	special SetSeenMon
-	showmonpic SPECIES_LANDORUS, 10, 3
-	waitbuttonpress
-	hidemonpic
-
-	playmoncry SPECIES_ENAMORUS, CRY_MODE_NORMAL
-	setvar VAR_0x8004, SPECIES_ENAMORUS
-	special SetSeenMon
-	showmonpic SPECIES_ENAMORUS, 10, 3
-	waitbuttonpress
-	hidemonpic
+	@playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
+	@setvar VAR_0x8004, SPECIES_LANDORUS
+	@special SetSeenMon
+	@showmonpic SPECIES_LANDORUS, 10, 3
+	@waitbuttonpress
+	@hidemonpic
 
 	@cleartrainerflag TRAINER_ARTHUR_1
 	@goto ResedaTown_Gym_EventScript_Arthur
@@ -768,10 +733,10 @@ UmberTown_EventScript_GiveStuffDemo::
 	@setvar VAR_CINEROUS_TOWER_STATE, 0
 
 	@msgbox UmberTown_Text_TakeThis, MSGBOX_DEFAULT
-	givemon SPECIES_WOBBUFFET, 80, ITEM_LEFTOVERS
+	givemon SPECIES_CHANDELURE, 16, ITEM_LEFTOVERS
 	@givemon SPECIES_GRAVELER, 28, ITEM_ORAN_BERRY
 	@givemon SPECIES_MUMBAO, 30, ITEM_ORAN_BERRY
-	@setmonmove 5, 0, MOVE_BLOCK
+	setmonmove 1, 0, MOVE_BLAST_BURN
 	@setmonmove 5, 1, MOVE_SOLAR_BEAM
 	@setmonmove 5, 2, MOVE_MOONLIGHT
 	@setmonmove 5, 3, MOVE_FULL_MOON
@@ -792,7 +757,7 @@ UmberTown_EventScript_GiveStuffDemo::
 	@trainerbattle_no_intro TRAINER_NEDA_1, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_RAYNER_QUARTZ_CAVE, UmberTown_Text_ZartoshtDefeated
 
-	@trainerbattle_no_intro TRAINER_ARTHUR_1, UmberTown_Text_ZartoshtDefeated
+	trainerbattle_no_intro TRAINER_ARTHUR_1, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_TARAH_1, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_MYRTLE_1, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_EIRA_1, UmberTown_Text_ZartoshtDefeated

@@ -1563,6 +1563,10 @@ enum
     // gMapGroup_XFunfair
 
     // gMapGroup_XPelago
+    MAP_OMAOMA_ISLE_EXTERIOR = (0 | (103 << 8)),
+    MAP_KIYAHA_ISLE_EXTERIOR = (1 | (103 << 8)),
+    MAP_KEOKEO_ISLE_EXTERIOR = (2 | (103 << 8)),
+    MAP_PANO_ISLE_EXTERIOR   = (3 | (103 << 8)),
 
     // gMapGroup_XHolt
 

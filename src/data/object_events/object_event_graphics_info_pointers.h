@@ -471,6 +471,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mewtwo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Genesect;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GenesectShiny;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Yellow;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Looker;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Benga;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zinnia;
+
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
 	[OBJ_EVENT_GFX_VOLCARONA] =                &gObjectEventGraphicsInfo_Volcarona,
 	[OBJ_EVENT_GFX_SOUL_SHARD] =               &gObjectEventGraphicsInfo_SoulShard,
@@ -921,6 +926,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MEWTWO]                   = &gObjectEventGraphicsInfo_Mewtwo,
     [OBJ_EVENT_GFX_GENESECT]                 = &gObjectEventGraphicsInfo_Genesect,
     [OBJ_EVENT_GFX_GENESECT_SHINY]           = &gObjectEventGraphicsInfo_GenesectShiny,
+    [OBJ_EVENT_GFX_YELLOW]                   = &gObjectEventGraphicsInfo_Yellow,
+    [OBJ_EVENT_GFX_LOOKER]                   = &gObjectEventGraphicsInfo_Looker,
+    [OBJ_EVENT_GFX_BENGA]                    = &gObjectEventGraphicsInfo_Benga,
+    [OBJ_EVENT_GFX_ZINNIA]                   = &gObjectEventGraphicsInfo_Zinnia,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

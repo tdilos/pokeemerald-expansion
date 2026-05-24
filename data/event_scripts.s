@@ -2577,3 +2577,11 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/StationCity_Building1_1F/scripts.inc"
 
 	.include "data/maps/StationCity_Building1_B1/scripts.inc"
+
+	.include "data/maps/OmaomaIsle_Exterior/scripts.inc"
+
+	.include "data/maps/KeokeoIsle_Exterior/scripts.inc"
+
+	.include "data/maps/KiyahaIsle_Exterior/scripts.inc"
+
+	.include "data/maps/PanoIsle_Exterior/scripts.inc"

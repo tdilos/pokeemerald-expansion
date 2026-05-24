@@ -228,7 +228,7 @@ enum BattleScriptOpcode
     B_SCR_OP_JUMPIFCAPTIVATEAFFECTED,
     B_SCR_OP_SETNONVOLATILESTATUS,
     B_SCR_OP_TRYOVERWRITEABILITY,
-    B_SCR_OP_SETFAIRYDUST,
+    //B_SCR_OP_SETFAIRYDUST,
 
     // Expansion users, please don't use any of the unused commands.
     // They are reserved for expansion usage.

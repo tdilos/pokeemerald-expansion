@@ -4329,6 +4329,10 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon *boxMon) //Credit: AsparagusEdua
     u8 addedMoves = 0;
     const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
 
+	// Level 0 stands for levels over 100, equivalent to level 100 for learnset purposes
+	if (level == 0)
+		level = 100;
+
     for (i = 0; learnset[i].move != LEVEL_UP_MOVE_END; i++)
     {
         s32 j;

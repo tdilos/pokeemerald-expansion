@@ -634,6 +634,20 @@ void BattleSetup_StartLegendaryBattle(void)
     default:
 		CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
 		break;
+    case SPECIES_NIHILEGO:
+    case SPECIES_BUZZWOLE:
+    case SPECIES_PHEROMOSA:
+    case SPECIES_XURKITREE:
+    case SPECIES_CELESTEELA:
+    case SPECIES_KARTANA:
+    case SPECIES_GUZZLORD:
+    case SPECIES_POIPOLE:
+    case SPECIES_NAGANADEL:
+    case SPECIES_STAKATAKA:
+    case SPECIES_BLACEPHALON:
+    case SPECIES_MIMEKTIPLEX:
+        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_RG_VS_DEOXYS);
+        break;
     case SPECIES_GROUDON:
     case SPECIES_GROUDON_PRIMAL:
         CreateBattleStartTask(B_TRANSITION_GROUDON, MUS_VS_KYOGRE_GROUDON);
