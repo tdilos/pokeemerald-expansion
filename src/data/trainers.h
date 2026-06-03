@@ -72186,10 +72186,10 @@
         },
     },
 #line 27255
-    [DIFFICULTY_NORMAL][TRAINER_SELWYN] =
+    [DIFFICULTY_NORMAL][TRAINER_SERGIO] =
     {
 #line 27256
-        .trainerName = _("SELWYN"),
+        .trainerName = _("SERGIO"),
 #line 27257
         .trainerClass = TRAINER_CLASS_EXPERT,
 #line 27258

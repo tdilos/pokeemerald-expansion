@@ -61,9 +61,9 @@ IsshoVictoryRoad_EventScript_Harriet::
 	msgbox IsshoVictoryRoad_Text_HarrietPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-IsshoVictoryRoad_EventScript_Selwyn::
-	trainerbattle_single TRAINER_SELWYN, IsshoVictoryRoad_Text_SelwynIntro, IsshoVictoryRoad_Text_SelwynDefeated
-	msgbox IsshoVictoryRoad_Text_SelwynPostBattle, MSGBOX_AUTOCLOSE
+IsshoVictoryRoad_EventScript_Sergio::
+	trainerbattle_single TRAINER_SERGIO, IsshoVictoryRoad_Text_SergioIntro, IsshoVictoryRoad_Text_SergioDefeated
+	msgbox IsshoVictoryRoad_Text_SergioPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 IsshoVictoryRoad_EventScript_Willow::

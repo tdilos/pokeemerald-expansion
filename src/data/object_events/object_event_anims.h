@@ -7,6 +7,15 @@ static const union AnimCmd sAnim_StayStill[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_ZygardeCell[] =
+{
+    ANIMCMD_FRAME(0, 16),
+    ANIMCMD_FRAME(1, 16),
+    ANIMCMD_FRAME(2, 16),
+    ANIMCMD_FRAME(3, 16),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_QuintyPlumpFaceSouth[] =
 {
     ANIMCMD_FRAME(0, 16),
@@ -1195,6 +1204,10 @@ static const union AnimCmd sAnim_HoOhStayStill[] =
 
 static const union AnimCmd *const sAnimTable_Inanimate[] = {
     [ANIM_STAY_STILL] = sAnim_StayStill,
+};
+
+static const union AnimCmd *const sAnimTable_ZygardeCell[] = {
+    [ANIM_STAY_STILL] = sAnim_ZygardeCell,
 };
 
 static const union AnimCmd *const sAnimTable_QuintyPlump[] = {

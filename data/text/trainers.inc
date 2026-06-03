@@ -7839,15 +7839,15 @@ IsshoVictoryRoad_Text_HarrietPostBattle:
 	.string "Look for the hidden entrance\n"
 	.string "to the last island.$"
 
-IsshoVictoryRoad_Text_SelwynIntro:
+IsshoVictoryRoad_Text_SergioIntro:
 	.string "Have you come to learn\n"
 	.string "my secret technique?$"
 
-IsshoVictoryRoad_Text_SelwynDefeated:
+IsshoVictoryRoad_Text_SergioDefeated:
 	.string "Ohoho, quite a talent you have\n"
 	.string "for battling, young trainer.$"
 
-IsshoVictoryRoad_Text_SelwynPostBattle:
+IsshoVictoryRoad_Text_SergioPostBattle:
 	.string "The secret technique is called\n"
 	.string "self-mastery.\p"
 	.string "Oftentimes, you'll find that you are\n"

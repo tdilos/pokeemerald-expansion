@@ -2585,3 +2585,55 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/KiyahaIsle_Exterior/scripts.inc"
 
 	.include "data/maps/PanoIsle_Exterior/scripts.inc"
+
+	.include "data/maps/OmaomaIsle_Interior/scripts.inc"
+
+	.include "data/maps/KiyahaIsle_Interior/scripts.inc"
+
+	.include "data/maps/KeokeoIsle_Interior/scripts.inc"
+
+	.include "data/maps/PanoIsle_Interior/scripts.inc"
+
+	.include "data/maps/KeokeoIsle_Cave_1F/scripts.inc"
+
+	.include "data/maps/KeokeoIsle_Cave_2F/scripts.inc"
+
+	.include "data/maps/KeokeoIsle_Cave_3F/scripts.inc"
+
+	.include "data/maps/OmaomaIsle_Underwater/scripts.inc"
+
+	.include "data/maps/KeokeoIsle_Underwater/scripts.inc"
+
+	.include "data/maps/PanoIsle_Underwater/scripts.inc"
+
+	.include "data/maps/KiyahaIsle_Underwater/scripts.inc"
+
+	.include "data/maps/Panthalassa/scripts.inc"
+
+	.include "data/maps/KiyahaIsle_Interior_House1/scripts.inc"
+
+	.include "data/maps/Spring_ShireTowne/scripts.inc"
+
+	.include "data/maps/Spring_AvalonCastle_Entrance/scripts.inc"
+
+	.include "data/maps/Spring_ForestDale/scripts.inc"
+
+	.include "data/maps/Spring_ForbiddenForest_NW/scripts.inc"
+
+	.include "data/maps/StationCity_Building1_B1_Hallway/scripts.inc"
+
+	.include "data/maps/KiyahaIsle_Interior_House4/scripts.inc"
+
+	.include "data/maps/KiyahaIsle_Interior_House3/scripts.inc"
+
+	.include "data/maps/KiyahaIsle_Interior_House2/scripts.inc"
+
+	.include "data/maps/Panthalassa_NihilegoLair/scripts.inc"
+
+	.include "data/maps/KiyahaIsle_Shrine/scripts.inc"
+
+	.include "data/maps/PanoIsle_Shrine/scripts.inc"
+
+	.include "data/maps/KeokeoIsle_Shrine/scripts.inc"
+
+	.include "data/maps/OmaomaIsle_Shrine/scripts.inc"

@@ -369,10 +369,22 @@ const u32 gObjectEventPic_Petra[] = INCBIN_U32("graphics/object_events/pics/peop
 const u32 gObjectEventPic_Justin[] = INCBIN_U32("graphics/object_events/pics/people/justin.4bpp");
 const u32 gObjectEventPic_Azami[] = INCBIN_U32("graphics/object_events/pics/people/azami.4bpp");
 
+const u32 gObjectEventPic_RaynerGood[] = INCBIN_U32("graphics/object_events/pics/people/rayner_good.4bpp");
 const u32 gObjectEventPic_Yellow[] = INCBIN_U32("graphics/object_events/pics/people/yellow.4bpp");
 const u32 gObjectEventPic_Looker[] = INCBIN_U32("graphics/object_events/pics/people/looker.4bpp");
+const u32 gObjectEventPic_Emma[] = INCBIN_U32("graphics/object_events/pics/people/emma.4bpp");
 const u32 gObjectEventPic_Benga[] = INCBIN_U32("graphics/object_events/pics/people/benga.4bpp");
 const u32 gObjectEventPic_Zinnia[] = INCBIN_U32("graphics/object_events/pics/people/zinnia.4bpp");
+const u32 gObjectEventPic_Cole[] = INCBIN_U32("graphics/object_events/pics/people/cole.4bpp");
+
+const u32 gObjectEventPic_Hacker[] = INCBIN_U32("graphics/object_events/pics/people/hacker.4bpp");
+const u32 gObjectEventPic_Witch[] = INCBIN_U32("graphics/object_events/pics/people/witch.4bpp");
+const u32 gObjectEventPic_RedEvil[] = INCBIN_U32("graphics/object_events/pics/people/red_manga.4bpp");
+const u32 gObjectEventPic_Oakley[] = INCBIN_U32("graphics/object_events/pics/people/oakley.4bpp");
+const u32 gObjectEventPic_Riley[] = INCBIN_U32("graphics/object_events/pics/people/riley.4bpp");
+
+const u32 gObjectEventPic_KnightArmor[] = INCBIN_U32("graphics/object_events/pics/people/knight_armor.4bpp");
+
 
 
 //const u32 gObjectEventPic_TreeckoDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/treecko_doll.4bpp");
@@ -426,11 +438,10 @@ const u32 gObjectEventPic_BreakableRock[] = INCBIN_U32("graphics/object_events/p
 //const u32 gObjectEventPic_PushableBoulder[] = INCBIN_U32("graphics/object_events/pics/misc/pushable_boulder.4bpp");
 const u32 gObjectEventPic_PushableBoulder[] = INCBIN_U32("graphics/object_events/pics/misc/fr_strength_boulder.4bpp");
 const u32 gObjectEventPic_ScrapMetal[] = INCBIN_U32("graphics/object_events/pics/misc/fr_scrap_metal.4bpp");
-//const u32 gObjectEventPic_ThawableIce[] = INCBIN_U32("graphics/object_events/pics/misc/thawable_ice.4bpp");
 const u32 gObjectEventPic_ThawableIce[] = INCBIN_U32("graphics/object_events/pics/misc/fr_thaw_ice.4bpp");
 const u32 gObjectEventPic_BulldozableSand[] = INCBIN_U32("graphics/object_events/pics/misc/bulldozable_sand.4bpp");
-//const u32 gObjectEventPic_SpinarakPlatform[] = INCBIN_U32("graphics/object_events/pics/misc/spinarak_platform.4bpp");
 const u32 gObjectEventPic_SoulShard[] = INCBIN_U32("graphics/object_events/pics/misc/soul_shard.4bpp");
+const u32 gObjectEventPic_ZygardeCell[] = INCBIN_U32("graphics/object_events/pics/misc/zygarde_cell.4bpp");
 const u32 gObjectEventPic_MrBrineysBoat[] = INCBIN_U32("graphics/object_events/pics/misc/mr_brineys_boat.4bpp");
 const u32 gObjectEventPic_Fossil[] = INCBIN_U32("graphics/object_events/pics/misc/fossil.4bpp");
 const u32 gObjectEventPic_SubmarineShadow[] = INCBIN_U32("graphics/object_events/pics/misc/submarine_shadow.4bpp");

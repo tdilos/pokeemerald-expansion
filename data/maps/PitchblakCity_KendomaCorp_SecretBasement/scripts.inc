@@ -136,7 +136,7 @@ PitchblakCity_KendomaCorp_Text_Log8:
 	.string "PROJECT NAME: RAYNER SERIES\l"
 	.string "WEEK 601\p"
 	.string "A pattern of unscrupulous behaviors\n"
-	.string "observed in RS-006 and RS-007.\p"
+	.string "observed in RS-005 and RS-006.\p"
 	.string "Defiance and aggression directed\n"
 	.string "at other subjects and staff members.\p"
 	.string "To be placed in indefinite cryosleep\n"
@@ -150,7 +150,7 @@ PitchblakCity_KendomaCorp_Text_Log9:
 	.string "breakin. Investigation still underway.\p"
 	.string "RS-006 reported missing.\n"
 	.string "Current whereabouts unknown.\p"
-	.string "RS-005 and RS-007 found to be damaged\n"
+	.string "RS-005 found to be damaged\n"
 	.string "beyond viability and terminated.$"
 
 PitchblakCity_KendomaCorp_Text_Log10:

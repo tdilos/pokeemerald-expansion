@@ -1481,7 +1481,7 @@
     },
     {
       "id": "MAPSEC_PERENNIAL_PILLAR",
-      "name": "PERENNIAL_PILLAR",
+      "name": "PERENNIAL PILLAR",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1504,28 +1504,66 @@
       "name": "STATION HULL"
     },
     {
+      "id": "MAPSEC_MENTAL_MONASTERY",
+      "name": "??????"
+    },
+    {
+      "id": "MAPSEC_DERELICT_SHIP",
+      "name": "DERELICT SHIP"
+    },
+    {
       "id": "MAPSEC_PANTHALASSA",
       "name": "PANTHALASSA"
     },
     {
-      "id": "MAPSEC_UNDERWATER_PANTHALASSA",
-      "name": "UNDERWATER"
-    },
-    {
       "id": "MAPSEC_OMAOMA_ISLAND",
-      "name": "EY OMAOMA"
+      "name": "OMAOMA ISLE"
     },
     {
       "id": "MAPSEC_KIYAHA_ISLAND",
-      "name": "EY KIYAHA"
+      "name": "KIYAHA ISLE"
     },
     {
       "id": "MAPSEC_KEOKEO_ISLAND",
-      "name": "EY KEOKEO"
+      "name": "KEOKEO ISLE"
     },
     {
       "id": "MAPSEC_PANO_ISLAND",
-      "name": "EY PANO"
+      "name": "PANO ISLE"
+    },
+    {
+      "id": "MAPSEC_FORBIDDEN_FOREST",
+      "name": "FORBIDDEN FOREST"
+    },
+    {
+      "id": "MAPSEC_FOREST_DALE",
+      "name": "FOREST DALE"
+    },
+    {
+      "id": "MAPSEC_SHIRE_TOWNE",
+      "name": "SHIRE TOWNE"
+    },
+    {
+      "id": "MAPSEC_AVALON_CASTLE",
+      "name": "AVALON CASTLE"
+    },
+    {
+      "id": "MAPSEC_VERTICAL_FARM"
+    },
+    {
+      "id": "MAPSEC_GREAT_SWAMP"
+    },
+    {
+      "id": "MAPSEC_SWAMP_FACILITY"
+    },
+    {
+      "id": "MAPSEC_MARTIAN_COLONY"
+    },
+    {
+      "id": "MAPSEC_MARTIAN_DESERT"
+    },
+    {
+      "id": "MAPSEC_CRYSTAL_MINE"
     }
   ]
 }

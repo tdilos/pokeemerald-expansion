@@ -86,6 +86,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Myrtle;
 //extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedPikachuDoll;
 //extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedPorygon2Doll;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CuttableTree;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ZygardeCell;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MartEmployee;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RooftopSaleWoman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Teala;
@@ -94,7 +95,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PushableBou
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScrapMetal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ThawableIce;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BulldozableSand;
-//extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SpinarakPlatform;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cowgirl;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrBrineysBoat;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayNormal;
@@ -471,10 +471,21 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mewtwo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Genesect;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GenesectShiny;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RaynerGood;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Yellow;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Looker;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Emma;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Benga;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zinnia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cole;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hacker;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Witch;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedEvil;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oakley;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Riley;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KnightArmor;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
 	[OBJ_EVENT_GFX_VOLCARONA] =                &gObjectEventGraphicsInfo_Volcarona,
@@ -570,6 +581,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TARA] =                     &gObjectEventGraphicsInfo_Tara,
     [OBJ_EVENT_GFX_MYRTLE] =                   &gObjectEventGraphicsInfo_Myrtle,
     [OBJ_EVENT_GFX_CUTTABLE_TREE] =            &gObjectEventGraphicsInfo_CuttableTree,
+    [OBJ_EVENT_GFX_ZYGARDE_CELL] =             &gObjectEventGraphicsInfo_ZygardeCell,
     [OBJ_EVENT_GFX_MART_EMPLOYEE] =            &gObjectEventGraphicsInfo_MartEmployee,
     [OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN] =       &gObjectEventGraphicsInfo_RooftopSaleWoman,
     [OBJ_EVENT_GFX_TEALA] =                    &gObjectEventGraphicsInfo_Teala,
@@ -926,10 +938,19 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MEWTWO]                   = &gObjectEventGraphicsInfo_Mewtwo,
     [OBJ_EVENT_GFX_GENESECT]                 = &gObjectEventGraphicsInfo_Genesect,
     [OBJ_EVENT_GFX_GENESECT_SHINY]           = &gObjectEventGraphicsInfo_GenesectShiny,
+    [OBJ_EVENT_GFX_RAYNER_GOOD]              = &gObjectEventGraphicsInfo_RaynerGood,
     [OBJ_EVENT_GFX_YELLOW]                   = &gObjectEventGraphicsInfo_Yellow,
     [OBJ_EVENT_GFX_LOOKER]                   = &gObjectEventGraphicsInfo_Looker,
+    [OBJ_EVENT_GFX_EMMA]                     = &gObjectEventGraphicsInfo_Emma,
     [OBJ_EVENT_GFX_BENGA]                    = &gObjectEventGraphicsInfo_Benga,
     [OBJ_EVENT_GFX_ZINNIA]                   = &gObjectEventGraphicsInfo_Zinnia,
+    [OBJ_EVENT_GFX_COLE]                     = &gObjectEventGraphicsInfo_Cole,
+    [OBJ_EVENT_GFX_HACKER]                   = &gObjectEventGraphicsInfo_Hacker,
+    [OBJ_EVENT_GFX_WITCH]                    = &gObjectEventGraphicsInfo_Witch,
+    [OBJ_EVENT_GFX_RED_EVIL]                 = &gObjectEventGraphicsInfo_RedEvil,
+    [OBJ_EVENT_GFX_OAKLEY]                   = &gObjectEventGraphicsInfo_Oakley,
+    [OBJ_EVENT_GFX_RILEY]                    = &gObjectEventGraphicsInfo_Riley,
+    [OBJ_EVENT_GFX_KNIGHT_ARMOR]             = &gObjectEventGraphicsInfo_KnightArmor,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

@@ -27824,6 +27824,7 @@ extern const u8 gMonFootprint_Mimektiplex[];
 	
 	
 	
+#if P_ISSHOAN_FORMS
     const u32 gMonFrontPic_QuilladinIssho[] = INCBIN_U32("graphics/pokemon/quilladin/isshoan/anim_front.4bpp.smol");
     const u16 gMonPalette_QuilladinIssho[] = INCBIN_U16("graphics/pokemon/quilladin/isshoan/normal.gbapal");
     const u32 gMonBackPic_QuilladinIssho[] = INCBIN_U32("graphics/pokemon/quilladin/isshoan/back.4bpp.smol");
@@ -28033,7 +28034,7 @@ extern const u8 gMonFootprint_Mimektiplex[];
     const u32 gMonBackPic_DragapultIssho[] = INCBIN_U32("graphics/pokemon/dragapult/isshoan/back.4bpp.smol");
     const u16 gMonShinyPalette_DragapultIssho[] = INCBIN_U16("graphics/pokemon/dragapult/isshoan/shiny.gbapal");
     const u8 gMonIcon_DragapultIssho[] = INCBIN_U8("graphics/pokemon/dragapult/isshoan/icon.4bpp");
-	
+#endif //P_ISSHOAN_FORMS	
 	
 	
     const u32 gMonFrontPic_Mimektiplex[] = INCBIN_U32("graphics/pokemon/mimektiplex/front.4bpp.smol");

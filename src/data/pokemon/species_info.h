@@ -953,6 +953,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_ROUGH_SKIN, ABILITY_STEADFAST, ABILITY_STATIC},
         .bodyColor = BODY_COLOR_GRAY,
 
+        .speciesName = _("Dubwool"),
+        .cryId = CRY_DUBWOOL,
+        .natDexNum = NATIONAL_DEX_DUBWOOL,
         .categoryName = _("Sheep"),
         .height = 13,
         .weight = 430,

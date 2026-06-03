@@ -346,7 +346,43 @@
 //#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 #define VAR_EGG_HATCH_COUNT                              0x40FF
 
-#define VARS_END                                         0x40FF
+// New vars for Tourmaline
+#define VAR_UNUSED_0x4100                                0x4100
+#define VAR_UNUSED_0x4101                                0x4101
+#define VAR_UNUSED_0x4102                                0x4102
+#define VAR_UNUSED_0x4103                                0x4103
+#define VAR_UNUSED_0x4104                                0x4104
+#define VAR_UNUSED_0x4105                                0x4105
+#define VAR_UNUSED_0x4106                                0x4106
+#define VAR_UNUSED_0x4107                                0x4107
+#define VAR_UNUSED_0x4108                                0x4108
+#define VAR_UNUSED_0x4109                                0x4109
+#define VAR_UNUSED_0x410A                                0x410A
+#define VAR_UNUSED_0x410B                                0x410B
+#define VAR_UNUSED_0x410C                                0x410C
+#define VAR_UNUSED_0x410D                                0x410D
+#define VAR_UNUSED_0x410E                                0x410E
+#define VAR_UNUSED_0x410F                                0x410F
+
+#define VAR_UNUSED_0x4110                                0x4110
+#define VAR_UNUSED_0x4111                                0x4111
+#define VAR_UNUSED_0x4112                                0x4112
+#define VAR_UNUSED_0x4113                                0x4113
+#define VAR_UNUSED_0x4114                                0x4114
+#define VAR_UNUSED_0x4115                                0x4115
+#define VAR_UNUSED_0x4116                                0x4116
+#define VAR_UNUSED_0x4117                                0x4117
+#define VAR_UNUSED_0x4118                                0x4118
+#define VAR_UNUSED_0x4119                                0x4119
+#define VAR_UNUSED_0x411A                                0x411A
+#define VAR_UNUSED_0x411B                                0x411B
+#define VAR_UNUSED_0x411C                                0x411C
+#define VAR_UNUSED_0x411D                                0x411D
+#define VAR_UNUSED_0x411E                                0x411E
+#define VAR_UNUSED_0x411F                                0x411F
+
+
+#define VARS_END                                         0x411F //0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
 
 #define SPECIAL_VARS_START            0x8000

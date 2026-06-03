@@ -1553,22 +1553,48 @@ enum
     MAP_ROUTE68_HOUSE1 = (0 | (99 << 8)),
 
     // gMapGroup_XCosmopolis
-    MAP_STATION_CITY              = (0 | (100 << 8)),
-    MAP_STATION_RING              = (1 | (100 << 8)),
-    MAP_STATION_CITY_BUILDING1_1F = (2 | (100 << 8)),
-    MAP_STATION_CITY_BUILDING1_B1 = (3 | (100 << 8)),
+    MAP_STATION_CITY                      = (0 | (100 << 8)),
+    MAP_STATION_RING                      = (1 | (100 << 8)),
+    MAP_STATION_CITY_BUILDING1_1F         = (2 | (100 << 8)),
+    MAP_STATION_CITY_BUILDING1_B1         = (3 | (100 << 8)),
+    MAP_STATION_CITY_BUILDING1_B1_HALLWAY = (4 | (100 << 8)),
 
     // gMapGroup_XStarfield
 
     // gMapGroup_XFunfair
 
     // gMapGroup_XPelago
-    MAP_OMAOMA_ISLE_EXTERIOR = (0 | (103 << 8)),
-    MAP_KIYAHA_ISLE_EXTERIOR = (1 | (103 << 8)),
-    MAP_KEOKEO_ISLE_EXTERIOR = (2 | (103 << 8)),
-    MAP_PANO_ISLE_EXTERIOR   = (3 | (103 << 8)),
+    MAP_OMAOMA_ISLE_EXTERIOR        = (0 | (103 << 8)),
+    MAP_KIYAHA_ISLE_EXTERIOR        = (1 | (103 << 8)),
+    MAP_KEOKEO_ISLE_EXTERIOR        = (2 | (103 << 8)),
+    MAP_PANO_ISLE_EXTERIOR          = (3 | (103 << 8)),
+    MAP_OMAOMA_ISLE_INTERIOR        = (4 | (103 << 8)),
+    MAP_KIYAHA_ISLE_INTERIOR        = (5 | (103 << 8)),
+    MAP_KEOKEO_ISLE_INTERIOR        = (6 | (103 << 8)),
+    MAP_PANO_ISLE_INTERIOR          = (7 | (103 << 8)),
+    MAP_KEOKEO_ISLE_CAVE_1F         = (8 | (103 << 8)),
+    MAP_KEOKEO_ISLE_CAVE_2F         = (9 | (103 << 8)),
+    MAP_KEOKEO_ISLE_CAVE_3F         = (10 | (103 << 8)),
+    MAP_OMAOMA_ISLE_UNDERWATER      = (11 | (103 << 8)),
+    MAP_KIYAHA_ISLE_UNDERWATER      = (12 | (103 << 8)),
+    MAP_KEOKEO_ISLE_UNDERWATER      = (13 | (103 << 8)),
+    MAP_PANO_ISLE_UNDERWATER        = (14 | (103 << 8)),
+    MAP_PANTHALASSA                 = (15 | (103 << 8)),
+    MAP_KIYAHA_ISLE_INTERIOR_HOUSE1 = (16 | (103 << 8)),
+    MAP_KIYAHA_ISLE_INTERIOR_HOUSE2 = (17 | (103 << 8)),
+    MAP_KIYAHA_ISLE_INTERIOR_HOUSE3 = (18 | (103 << 8)),
+    MAP_KIYAHA_ISLE_INTERIOR_HOUSE4 = (19 | (103 << 8)),
+    MAP_PANTHALASSA_NIHILEGO_LAIR   = (20 | (103 << 8)),
+    MAP_OMAOMA_ISLE_SHRINE          = (21 | (103 << 8)),
+    MAP_KIYAHA_ISLE_SHRINE          = (22 | (103 << 8)),
+    MAP_KEOKEO_ISLE_SHRINE          = (23 | (103 << 8)),
+    MAP_PANO_ISLE_SHRINE            = (24 | (103 << 8)),
 
     // gMapGroup_XHolt
+    MAP_SPRING_AVALON_CASTLE_ENTRANCE = (0 | (104 << 8)),
+    MAP_SPRING_SHIRE_TOWNE            = (1 | (104 << 8)),
+    MAP_SPRING_FOREST_DALE            = (2 | (104 << 8)),
+    MAP_SPRING_FORBIDDEN_FOREST_NW    = (3 | (104 << 8)),
 
     // gMapGroup_XGreenhouse
 

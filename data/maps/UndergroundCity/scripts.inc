@@ -36,7 +36,7 @@ UndergroundCity_EventScript_Burglar::
 	switch VAR_RESULT
 	case 0, UndergroundCity_EventScript_BuyCardA
 	case 1, UndergroundCity_EventScript_BuyCardB
-	case 1, UndergroundCity_EventScript_BuyCardC
+	case 2, UndergroundCity_EventScript_BuyCardC
 	case 3, UndergroundCity_EventScript_CancelBuy
 	case MULTI_B_PRESSED, UndergroundCity_EventScript_CancelBuy
 	end

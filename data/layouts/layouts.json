@@ -11944,10 +11944,10 @@
     {
       "id": "LAYOUT_OMAOMA_ISLE_EXTERIOR",
       "name": "OmaomaIsle_Exterior_Layout",
-      "width": 20,
+      "width": 30,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
+      "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/OmaomaIsle_Exterior/border.bin",
       "blockdata_filepath": "data/layouts/OmaomaIsle_Exterior/map.bin"
     },
@@ -11957,7 +11957,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
+      "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/PanoIsle_Exterior/border.bin",
       "blockdata_filepath": "data/layouts/PanoIsle_Exterior/map.bin"
     },
@@ -11974,12 +11974,242 @@
     {
       "id": "LAYOUT_KIYAHA_ISLE_EXTERIOR",
       "name": "KiyahaIsle_Exterior_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XPelago",
+      "border_filepath": "data/layouts/KiyahaIsle_Exterior/border.bin",
+      "blockdata_filepath": "data/layouts/KiyahaIsle_Exterior/map.bin"
+    },
+    {
+      "id": "LAYOUT_OMAOMA_ISLE_INTERIOR",
+      "name": "OmaomaIsle_Interior_Layout",
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
-      "border_filepath": "data/layouts/KiyahaIsle_Exterior/border.bin",
-      "blockdata_filepath": "data/layouts/KiyahaIsle_Exterior/map.bin"
+      "secondary_tileset": "gTileset_XPelago",
+      "border_filepath": "data/layouts/OmaomaIsle_Interior/border.bin",
+      "blockdata_filepath": "data/layouts/OmaomaIsle_Interior/map.bin"
+    },
+    {
+      "id": "LAYOUT_KIYAHA_ISLE_INTERIOR",
+      "name": "KiyahaIsle_Interior_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XPelago",
+      "border_filepath": "data/layouts/KiyahaIsle_Interior/border.bin",
+      "blockdata_filepath": "data/layouts/KiyahaIsle_Interior/map.bin"
+    },
+    {
+      "id": "LAYOUT_KEOKEO_ISLE_INTERIOR",
+      "name": "KeokeoIsle_Interior_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XPelago",
+      "border_filepath": "data/layouts/KeokeoIsle_Interior/border.bin",
+      "blockdata_filepath": "data/layouts/KeokeoIsle_Interior/map.bin"
+    },
+    {
+      "id": "LAYOUT_PANO_ISLE_INTERIOR",
+      "name": "PanoIsle_Interior_Layout",
+      "width": 30,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XPelago",
+      "border_filepath": "data/layouts/PanoIsle_Interior/border.bin",
+      "blockdata_filepath": "data/layouts/PanoIsle_Interior/map.bin"
+    },
+    {
+      "id": "LAYOUT_KEOKEO_ISLE_CAVE_1F",
+      "name": "KeokeoIsle_Cave_1F_Layout",
+      "width": 50,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/KeokeoIsle_Cave_1F/border.bin",
+      "blockdata_filepath": "data/layouts/KeokeoIsle_Cave_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_KEOKEO_ISLE_CAVE_2F",
+      "name": "KeokeoIsle_Cave_2F_Layout",
+      "width": 50,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/KeokeoIsle_Cave_2F/border.bin",
+      "blockdata_filepath": "data/layouts/KeokeoIsle_Cave_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_KEOKEO_ISLE_CAVE_3F",
+      "name": "KeokeoIsle_Cave_3F_Layout",
+      "width": 50,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/KeokeoIsle_Cave_3F/border.bin",
+      "blockdata_filepath": "data/layouts/KeokeoIsle_Cave_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_OMAOMA_ISLE_UNDERWATER",
+      "name": "OmaomaIsle_Underwater_Layout",
+      "width": 30,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/OmaomaIsle_Underwater/border.bin",
+      "blockdata_filepath": "data/layouts/OmaomaIsle_Underwater/map.bin"
+    },
+    {
+      "id": "LAYOUT_PANO_ISLE_UNDERWATER",
+      "name": "PanoIsle_Underwater_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/PanoIsle_Underwater/border.bin",
+      "blockdata_filepath": "data/layouts/PanoIsle_Underwater/map.bin"
+    },
+    {
+      "id": "LAYOUT_KIYAHA_ISLE_UNDERWATER",
+      "name": "KiyahaIsle_Underwater_Layout",
+      "width": 24,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/KiyahaIsle_Underwater/border.bin",
+      "blockdata_filepath": "data/layouts/KiyahaIsle_Underwater/map.bin"
+    },
+    {
+      "id": "LAYOUT_KEOKEO_ISLE_UNDERWATER",
+      "name": "KeokeoIsle_Underwater_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/KeokeoIsle_Underwater/border.bin",
+      "blockdata_filepath": "data/layouts/KeokeoIsle_Underwater/map.bin"
+    },
+    {
+      "id": "LAYOUT_PANTHALASSA",
+      "name": "Panthalassa_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Panthalassa/border.bin",
+      "blockdata_filepath": "data/layouts/Panthalassa/map.bin"
+    },
+    {
+      "id": "LAYOUT_KIYAHA_ISLE_INTERIOR_HOUSE1",
+      "name": "KiyahaIsle_Interior_House1_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/KiyahaIsle_Interior_House1/border.bin",
+      "blockdata_filepath": "data/layouts/KiyahaIsle_Interior_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_SHIRE_TOWNE",
+      "name": "Spring_ShireTowne_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Spring_ShireTowne/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_ShireTowne/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_AVALON_CASTLE_ENTRANCE",
+      "name": "Spring_AvalonCastle_Entrance_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Spring_AvalonCastle_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_AvalonCastle_Entrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_FOREST_DALE",
+      "name": "Spring_ForestDale_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Spring_ForestDale/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_ForestDale/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_FORBIDDEN_FOREST_NW",
+      "name": "Spring_ForbiddenForest_NW_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Spring_ForbiddenForest_NW/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_ForbiddenForest_NW/map.bin"
+    },
+    {
+      "id": "LAYOUT_STATION_CITY_BUILDING1_B1_HALLWAY",
+      "name": "StationCity_Building1_B1_Hallway_Layout",
+      "width": 5,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Emporium",
+      "border_filepath": "data/layouts/StationCity_Building1_B1_Hallway/border.bin",
+      "blockdata_filepath": "data/layouts/StationCity_Building1_B1_Hallway/map.bin"
+    },
+    {
+      "id": "LAYOUT_PANTHALASSA_NIHILEGO_LAIR",
+      "name": "Panthalassa_NihilegoLair_Layout",
+      "width": 11,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Panthalassa_NihilegoLair/border.bin",
+      "blockdata_filepath": "data/layouts/Panthalassa_NihilegoLair/map.bin"
+    },
+    {
+      "id": "LAYOUT_PANO_ISLE_SHRINE",
+      "name": "PanoIsle_Shrine_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XPelago",
+      "border_filepath": "data/layouts/PanoIsle_Shrine/border.bin",
+      "blockdata_filepath": "data/layouts/PanoIsle_Shrine/map.bin"
+    },
+    {
+      "id": "LAYOUT_KIYAHA_ISLE_SHRINE",
+      "name": "KiyahaIsle_Shrine_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XPelago",
+      "border_filepath": "data/layouts/KiyahaIsle_Shrine/border.bin",
+      "blockdata_filepath": "data/layouts/KiyahaIsle_Shrine/map.bin"
+    },
+    {
+      "id": "LAYOUT_KEOKEO_ISLE_SHRINE",
+      "name": "KeokeoIsle_Shrine_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XPelago",
+      "border_filepath": "data/layouts/KeokeoIsle_Shrine/border.bin",
+      "blockdata_filepath": "data/layouts/KeokeoIsle_Shrine/map.bin"
+    },
+    {
+      "id": "LAYOUT_OMAOMA_ISLE_SHRINE",
+      "name": "OmaomaIsle_Shrine_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XPelago",
+      "border_filepath": "data/layouts/OmaomaIsle_Shrine/border.bin",
+      "blockdata_filepath": "data/layouts/OmaomaIsle_Shrine/map.bin"
     }
   ]
 }

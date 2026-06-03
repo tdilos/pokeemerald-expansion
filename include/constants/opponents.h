@@ -1262,7 +1262,7 @@
 #define TRAINER_QUILLEN    1220
 #define TRAINER_ARCHER    1221
 #define TRAINER_HARRIET    1222
-#define TRAINER_SELWYN    1223
+#define TRAINER_SERGIO    1223
 #define TRAINER_WILLOW    1224
 
 #define TRAINER_LISIA_0     1225
@@ -1348,8 +1348,8 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1291 //965//855
-#define MAX_TRAINERS_COUNT_EMERALD 1312 //965//864
+#define TRAINERS_COUNT_EMERALD     1291 //1291 //965//855
+#define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG

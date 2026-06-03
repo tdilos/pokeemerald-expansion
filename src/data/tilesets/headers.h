@@ -1718,3 +1718,14 @@ const struct Tileset gTileset_StationCity =
     .metatileAttributes = gMetatileAttributes_StationCity,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_XPelago =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_XPelago,
+    .palettes = gTilesetPalettes_XPelago,
+    .metatiles = gMetatiles_XPelago,
+    .metatileAttributes = gMetatileAttributes_XPelago,
+    .callback = NULL,
+};
