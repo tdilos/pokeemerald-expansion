@@ -8947,6 +8947,26 @@ Cry_Omendenz::
 	.incbin "sound/direct_sound_samples/cries/omendenz.bin"
 .endif @ P_FAMILY_OMENDENZ
 
+	.align 2
+Cry_Manipulon::
+	.incbin "sound/direct_sound_samples/cries/manipulon.bin"
+
+	.align 2
+Cry_Somnivore::
+	.incbin "sound/direct_sound_samples/cries/somnivore.bin"
+
+	.align 2
+Cry_Terophage::
+	.incbin "sound/direct_sound_samples/cries/terophage.bin"
+
+	.align 2
+Cry_Reizurge::
+	.incbin "sound/direct_sound_samples/cries/reizurge.bin"
+
+	.align 2
+Cry_Thurslush::
+	.incbin "sound/direct_sound_samples/cries/thurslush.bin"
+
 .if P_FAMILY_MIMEKTIPLEX == TRUE
 	.align 2
 Cry_Mimektiplex::

@@ -11967,7 +11967,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
+      "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/KeokeoIsle_Exterior/border.bin",
       "blockdata_filepath": "data/layouts/KeokeoIsle_Exterior/map.bin"
     },
@@ -11984,8 +11984,8 @@
     {
       "id": "LAYOUT_OMAOMA_ISLE_INTERIOR",
       "name": "OmaomaIsle_Interior_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 50,
+      "height": 36,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/OmaomaIsle_Interior/border.bin",

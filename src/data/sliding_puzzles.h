@@ -1,7 +1,7 @@
-static const u32 sKabutoPuzzle_Gfx[]     = INCBIN_U32("graphics/sliding_puzzle/puzzles/kabuto/tiles.4bpp.lz");
-static const u32 sOmanytePuzzle_Gfx[]    = INCBIN_U32("graphics/sliding_puzzle/puzzles/omanyte/tiles.4bpp.lz");
-static const u32 sAerodactylPuzzle_Gfx[] = INCBIN_U32("graphics/sliding_puzzle/puzzles/aerodactyl/tiles.4bpp.lz");
-static const u32 sHoOhPuzzle_Gfx[]       = INCBIN_U32("graphics/sliding_puzzle/puzzles/ho_oh/tiles.4bpp.lz");
+//static const u32 sKabutoPuzzle_Gfx[]     = INCBIN_U32("graphics/sliding_puzzle/puzzles/kabuto/tiles.4bpp.lz");
+//static const u32 sOmanytePuzzle_Gfx[]    = INCBIN_U32("graphics/sliding_puzzle/puzzles/omanyte/tiles.4bpp.lz");
+//static const u32 sAerodactylPuzzle_Gfx[] = INCBIN_U32("graphics/sliding_puzzle/puzzles/aerodactyl/tiles.4bpp.lz");
+//static const u32 sHoOhPuzzle_Gfx[]       = INCBIN_U32("graphics/sliding_puzzle/puzzles/ho_oh/tiles.4bpp.lz");
 static const u32 sAnorithPuzzle_Gfx[]    = INCBIN_U32("graphics/sliding_puzzle/puzzles/anorith/tiles.4bpp.lz");
 static const u32 sLileepPuzzle_Gfx[]     = INCBIN_U32("graphics/sliding_puzzle/puzzles/lileep/tiles.4bpp.lz");
 static const u32 sRelicanthPuzzle_Gfx[]  = INCBIN_U32("graphics/sliding_puzzle/puzzles/relicanth/tiles.4bpp.lz");
@@ -11,10 +11,10 @@ static const u32 sSigilyphPuzzle_Gfx[]   = INCBIN_U32("graphics/sliding_puzzle/p
 
 static const struct CompressedSpriteSheet sSpriteSheet_Tiles[SLIDING_PUZZLE_COUNT] =
 {
-    [SLIDING_PUZZLE_KABUTO]     = {sKabutoPuzzle_Gfx,     0x400 * 16, GFXTAG_TILES},
-    [SLIDING_PUZZLE_OMANYTE]    = {sOmanytePuzzle_Gfx,    0x400 * 16, GFXTAG_TILES},
-    [SLIDING_PUZZLE_AERODACTYL] = {sAerodactylPuzzle_Gfx, 0x400 * 16, GFXTAG_TILES},
-    [SLIDING_PUZZLE_HO_OH]      = {sHoOhPuzzle_Gfx,       0x400 * 16, GFXTAG_TILES},
+    [SLIDING_PUZZLE_KABUTO]     = {}, //{sKabutoPuzzle_Gfx,     0x400 * 16, GFXTAG_TILES},
+    [SLIDING_PUZZLE_OMANYTE]    = {}, //{sOmanytePuzzle_Gfx,    0x400 * 16, GFXTAG_TILES},
+    [SLIDING_PUZZLE_AERODACTYL] = {}, //{sAerodactylPuzzle_Gfx, 0x400 * 16, GFXTAG_TILES},
+    [SLIDING_PUZZLE_HO_OH]      = {}, //{sHoOhPuzzle_Gfx,       0x400 * 16, GFXTAG_TILES},
     [SLIDING_PUZZLE_ANORITH]    = {sAnorithPuzzle_Gfx,    0x400 * 16, GFXTAG_TILES},
     [SLIDING_PUZZLE_LILEEP]     = {sLileepPuzzle_Gfx,     0x400 * 16, GFXTAG_TILES},
     [SLIDING_PUZZLE_RELICANTH]  = {sRelicanthPuzzle_Gfx,  0x400 * 16, GFXTAG_TILES},

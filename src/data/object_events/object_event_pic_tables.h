@@ -709,8 +709,31 @@ static const struct SpriteFrameImage sPicTable_Riley[] = {
 };
 
 
+
 static const struct SpriteFrameImage sPicTable_KnightArmor[] = {
     overworld_ascending_frames(gObjectEventPic_KnightArmor, 2, 4),
+};
+
+
+
+static const struct SpriteFrameImage sPicTable_LassAlola[] = {
+    overworld_ascending_frames(gObjectEventPic_LassAlola, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_LittleGirlAlola[] = {
+    overworld_ascending_frames(gObjectEventPic_LittleGirlAlola, 2, 2),
+};
+	
+static const struct SpriteFrameImage sPicTable_OldManAlola[] = {
+    overworld_ascending_frames(gObjectEventPic_OldManAlola, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_WomanAlola[] = {
+    overworld_ascending_frames(gObjectEventPic_WomanAlola, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_YoungsterAlola[] = {
+    overworld_ascending_frames(gObjectEventPic_YoungsterAlola, 2, 4),
 };
 
 /*static const struct SpriteFrameImage sPicTable_UnusedNatuDoll[] = {

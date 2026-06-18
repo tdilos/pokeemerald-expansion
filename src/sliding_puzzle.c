@@ -33,11 +33,11 @@ static void CreateCursorSprite(void);
 static void CreateTileSprites(void);
 static void MoveCursor(s8, s8);
 static void MoveCursorSprite(s8, s8, u8);
-static bool32 CursorIsNextToBlank(void);
+//static bool32 CursorIsNextToBlank(void);
 static bool32 CursorIsOnTile(void);
 static bool32 CursorIsOnImmovableTile(void);
 static void SelectTile(void);
-static void SwapTile(void);
+//static void SwapTile(void);
 static void PlaceTile(void);
 static void RotateTile(u8);
 static void CheckForSolution(void);
@@ -799,10 +799,10 @@ static void MoveCursorSprite(s8 deltaX, s8 deltaY, u8 spriteId)
     sprite->sTimer = 0;
 }
 
-#define MIN(a, b) ((a) < (b) ? (a) : (b))
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
+//#define MIN(a, b) ((a) < (b) ? (a) : (b))
+//#define MAX(a, b) ((a) > (b) ? (a) : (b))
 
-static bool32 CursorIsNextToBlank(void)
+/*static bool32 CursorIsNextToBlank(void)
 {
     struct Sprite *cursor = &gSprites[sSlidingPuzzle->cursorSpriteId];
 	s8 row0 = MAX(cursor->sRow - 1, FIRST_SLIDING_PUZZLE_ROW);
@@ -820,7 +820,7 @@ static bool32 CursorIsNextToBlank(void)
         return TRUE;
 
     return FALSE;
-}
+}*/
 
 static bool32 CursorIsOnTile(void)
 {
@@ -842,7 +842,7 @@ static bool32 CursorIsOnImmovableTile(void)
     return FALSE;
 }
 
-static void SwapTile(void)
+/*static void SwapTile(void)
 {
     struct Sprite *cursor = &gSprites[sSlidingPuzzle->cursorSpriteId];
     u8 tile = sSlidingPuzzle->tiles[cursor->sRow][cursor->sCol];
@@ -864,7 +864,7 @@ static void SwapTile(void)
     cursor->sAnimating = FALSE;
     PlaySE(SE_SELECT);
     CheckForSolution();
-}
+}*/
 
 static void SelectTile(void)
 {
@@ -924,7 +924,7 @@ static void RotateTile(u8 rotDir)
 
 static void CheckForSolution(void)
 {
-    u8 row, col, tile;
+    u8 row, col;
     for (row = 0; row < NUM_SLIDING_PUZZLE_ROWS; row++)
     {
         for (col = 0; col < NUM_SLIDING_PUZZLE_COLS; col++)

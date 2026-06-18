@@ -382,7 +382,37 @@ const u16 gTrainerPalette_Azami[] = INCBIN_U16("graphics/trainers/front_pics/aza
 const u32 gTrainerFrontPic_GhostlyEntity[] = INCBIN_U32("graphics/trainers/front_pics/ghostly_entity.4bpp.smol");
 const u16 gTrainerPalette_GhostlyEntity[] = INCBIN_U16("graphics/trainers/front_pics/ghostly_entity.gbapal");
 
+// POSTGAME
+const u32 gTrainerFrontPic_Cole[] = INCBIN_U32("graphics/trainers/front_pics/cole.4bpp.smol");
+const u16 gTrainerPalette_Cole[] = INCBIN_U16("graphics/trainers/front_pics/cole.gbapal");
 
+const u32 gTrainerFrontPic_Zinnia[] = INCBIN_U32("graphics/trainers/front_pics/zinnia.4bpp.smol");
+const u16 gTrainerPalette_Zinnia[] = INCBIN_U16("graphics/trainers/front_pics/zinnia.gbapal");
+
+
+const u32 gTrainerFrontPic_Oakley[] = INCBIN_U32("graphics/trainers/front_pics/oakley.4bpp.smol");
+const u16 gTrainerPalette_Oakley[] = INCBIN_U16("graphics/trainers/front_pics/oakley.gbapal");
+
+const u32 gTrainerFrontPic_RedManga[] = INCBIN_U32("graphics/trainers/front_pics/red_manga.4bpp.smol");
+const u16 gTrainerPalette_RedManga[] = INCBIN_U16("graphics/trainers/front_pics/red_manga.gbapal");
+
+const u32 gTrainerFrontPic_Riley[] = INCBIN_U32("graphics/trainers/front_pics/riley.4bpp.smol");
+const u16 gTrainerPalette_Riley[] = INCBIN_U16("graphics/trainers/front_pics/riley.gbapal");
+
+
+const u32 gTrainerFrontPic_LassAlola[] = INCBIN_U32("graphics/trainers/front_pics/lass_alola.4bpp.smol");
+const u16 gTrainerPalette_LassAlola[] = INCBIN_U16("graphics/trainers/front_pics/lass_alola.gbapal");
+
+const u32 gTrainerFrontPic_YoungsterAlola[] = INCBIN_U32("graphics/trainers/front_pics/youngster_alola.4bpp.smol");
+const u16 gTrainerPalette_YoungsterAlola[] = INCBIN_U16("graphics/trainers/front_pics/youngster_alola.gbapal");
+
+
+const u32 gTrainerFrontPic_HollowKnight[] = INCBIN_U32("graphics/trainers/front_pics/hollow_knight.4bpp.smol");
+const u16 gTrainerPalette_HollowKnight[] = INCBIN_U16("graphics/trainers/front_pics/hollow_knight.gbapal");
+
+
+
+// FRLG
 const u32 gTrainerFrontPic_Red[] = INCBIN_U32("graphics/trainers/front_pics/red.4bpp.smol");
 const u16 gTrainerPalette_Red[] = INCBIN_U16("graphics/trainers/front_pics/red.gbapal");
 
@@ -807,6 +837,16 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FRONT_ELITE_FOUR_PETRA, gTrainerFrontPic_EliteFourPetra, gTrainerPalette_EliteFourPetra),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_AZAMI, gTrainerFrontPic_Azami, gTrainerPalette_Azami),
 	TRAINER_SPRITE(TRAINER_PIC_FRONT_GHOSTLY_ENTITY, gTrainerFrontPic_GhostlyEntity, gTrainerPalette_GhostlyEntity),
+	
+	// Postgame
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_COLE, gTrainerFrontPic_Cole, gTrainerPalette_Cole),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_ZINNIA, gTrainerFrontPic_Zinnia, gTrainerPalette_Zinnia),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_OAKLEY, gTrainerFrontPic_Oakley, gTrainerPalette_Oakley),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_RED_MANGA, gTrainerFrontPic_RedManga, gTrainerPalette_RedManga),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_RILEY, gTrainerFrontPic_Riley, gTrainerPalette_Riley),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_LASS_ALOLA, gTrainerFrontPic_LassAlola, gTrainerPalette_LassAlola),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_YOUNGSTER_ALOLA, gTrainerFrontPic_YoungsterAlola, gTrainerPalette_YoungsterAlola),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_HOLLOW_KNIGHT, gTrainerFrontPic_HollowKnight, gTrainerPalette_HollowKnight),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

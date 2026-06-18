@@ -3360,7 +3360,7 @@ static u8 GetCollisionMaskRow(u8 gameType, int collisionAttribute, int row)
 {
     struct Flipper *flipper;
     int state;
-    int offset;
+    //int offset;
     //const u8 *flipperStateMasks;
     //u8 flipperStateMasks;
     u8 mask;
@@ -3397,12 +3397,12 @@ static u8 GetCollisionMaskRow(u8 gameType, int collisionAttribute, int row)
         flipper = &sPinballGame->rightFlipper;
 
     state = flipper->state >> 8;
-    if (state < 7)
+    /*if (state < 7)
         offset = 0;
     else if (state < 14)
         offset = 1;
     else
-        offset = 2;
+        offset = 2;*/
 
     //if (collisionAttribute < 0xF0)
     //    flipperStateMasks = sFlipperLeftMinigameCollisionMasks[offset];

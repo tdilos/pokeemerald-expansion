@@ -82,7 +82,7 @@ static void FieldMove_Thaw(void);
 static void FieldCallback_Thaw(void);
 
 //static void FieldMove_Defog(void);
-static void FieldCallback_Defog(void);
+//static void FieldCallback_Defog(void);
 
 static const struct OamData sOam_SecretPower =
 {

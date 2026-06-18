@@ -492,12 +492,17 @@
 #define OBJ_EVENT_GFX_RAYNER_GOOD                406
 #define OBJ_EVENT_GFX_KNIGHT_ARMOR               407
 #define OBJ_EVENT_GFX_ZYGARDE_CELL               408
+#define OBJ_EVENT_GFX_LASS_ALOLA                 409
+#define OBJ_EVENT_GFX_LITTLE_GIRL_ALOLA          410
+#define OBJ_EVENT_GFX_OLD_MAN_ALOLA              411
+#define OBJ_EVENT_GFX_WOMAN_ALOLA                412
+#define OBJ_EVENT_GFX_YOUNGSTER_ALOLA            413
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
 
-#define NUM_OBJ_EVENT_GFX                        409 //388
+#define NUM_OBJ_EVENT_GFX                        414 //388
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

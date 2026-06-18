@@ -515,6 +515,14 @@ static const union AnimCmd *const sAnims_GhostlyEntity[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_LassAlola[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_YoungsterAlola[] ={
+    sAnim_GeneralFrame0,
+};
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -609,7 +617,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_FACTORY_HEAD_NOLAND] = sAnims_FactoryHeadNoland,
     [TRAINER_PIC_PIKE_QUEEN_LUCY] = sAnims_PikeQueenLucy,
     [TRAINER_PIC_PYRAMID_KING_BRANDON] = sAnims_PyramidKingBrandon,
-	[TRAINER_PIC_SAWYER] = sAnims_Jace,
+	[TRAINER_PIC_JACE] = sAnims_Jace,
     [TRAINER_PIC_RAYNER] = sAnims_Rayner,
 	[TRAINER_PIC_GENESIS_GRUNT_F] = sAnims_GenesisGruntF,
     [TRAINER_PIC_GENESIS_GRUNT_M] = sAnims_GenesisGruntM,
@@ -648,4 +656,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 	[TRAINER_PIC_AZAMI] = sAnims_Azami,
 	[TRAINER_PIC_RAYNER_NO_GLASSES] = sAnims_RaynerNoGlasses,
 	[TRAINER_PIC_GHOSTLY_ENTITY] = sAnims_GhostlyEntity,
+	// v2.0
+	[TRAINER_PIC_LASS_ALOLA] = sAnims_LassAlola,
+	[TRAINER_PIC_YOUNGSTER_ALOLA] = sAnims_YoungsterAlola,
 };

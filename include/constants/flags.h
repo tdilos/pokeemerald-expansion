@@ -2461,7 +2461,13 @@
 #define FLAG_DAILY_HIDDEN_GROTTO_ROUTE_87           (DAILY_FLAGS_START + 0x21) 
 #define FLAG_DAILY_HIDDEN_GROTTO_ROUTE_78           (DAILY_FLAGS_START + 0x22) 
 #define FLAG_DAILY_HIDDEN_GROTTO_ROUTE_91           (DAILY_FLAGS_START + 0x23) 
-#define FLAG_DAILY_HIDDEN_GROTTO_ROUTE_97           (DAILY_FLAGS_START + 0x24) 
+#define FLAG_DAILY_HIDDEN_GROTTO_ROUTE_97           (DAILY_FLAGS_START + 0x24)
+// Postgame daily flags 
+#define FLAG_DAILY_KIYAHA_ISLE_SAND_CASTLE_1        (DAILY_FLAGS_START + 0x25)
+#define FLAG_DAILY_KIYAHA_ISLE_SAND_CASTLE_2        (DAILY_FLAGS_START + 0x26)
+#define FLAG_DAILY_KIYAHA_ISLE_SAND_CASTLE_3        (DAILY_FLAGS_START + 0x27)
+#define FLAG_DAILY_KIYAHA_ISLE_SAND_CASTLE_4        (DAILY_FLAGS_START + 0x28)
+#define FLAG_DAILY_KIYAHA_ISLE_SAND_CASTLE_5        (DAILY_FLAGS_START + 0x29)
 
 /*#define FLAG_UNUSED_0x935                           (DAILY_FLAGS_START + 0x15) // Unused Flag
 #define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
@@ -2478,12 +2484,12 @@
 #define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag
 #define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag
 #define FLAG_UNUSED_0x943                           (DAILY_FLAGS_START + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x944                           (DAILY_FLAGS_START + 0x24) // Unused Flag */
+#define FLAG_UNUSED_0x944                           (DAILY_FLAGS_START + 0x24) // Unused Flag 
 #define FLAG_UNUSED_0x945                           (DAILY_FLAGS_START + 0x25) // Unused Flag
 #define FLAG_UNUSED_0x946                           (DAILY_FLAGS_START + 0x26) // Unused Flag
 #define FLAG_UNUSED_0x947                           (DAILY_FLAGS_START + 0x27) // Unused Flag
 #define FLAG_UNUSED_0x948                           (DAILY_FLAGS_START + 0x28) // Unused Flag
-#define FLAG_UNUSED_0x949                           (DAILY_FLAGS_START + 0x29) // Unused Flag
+#define FLAG_UNUSED_0x949                           (DAILY_FLAGS_START + 0x29) // Unused Flag */
 #define FLAG_UNUSED_0x94A                           (DAILY_FLAGS_START + 0x2A) // Unused Flag
 #define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag
 #define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag

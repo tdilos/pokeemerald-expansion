@@ -14,7 +14,22 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_PANO_ISLE_INTERIOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_PANO_ISLE_INTERIOR",
+      "dest_warp_id": "1"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

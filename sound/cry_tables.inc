@@ -2643,6 +2643,11 @@ gCryTable::
 .if P_FAMILY_OMENDENZ
 	cry Cry_Omendenz
 .endif @ P_FAMILY_OMENDENZ
+	cry Cry_Manipulon
+	cry Cry_Somnivore
+	cry Cry_Terophage
+	cry Cry_Reizurge
+	cry Cry_Thurslush
 .if P_FAMILY_MIMEKTIPLEX
 	cry Cry_Mimektiplex
 .endif @ P_FAMILY_MIMEKTIPLEX
@@ -5293,6 +5298,11 @@ gCryTable_Reverse::
 .if P_FAMILY_OMENDENZ
 	cry_reverse Cry_Omendenz
 .endif @ P_FAMILY_OMENDENZ
+	cry_reverse Cry_Manipulon
+	cry_reverse Cry_Somnivore
+	cry_reverse Cry_Terophage
+	cry_reverse Cry_Reizurge
+	cry_reverse Cry_Thurslush
 .if P_FAMILY_MIMEKTIPLEX
 	cry_reverse Cry_Mimektiplex
 .endif @ P_FAMILY_MIMEKTIPLEX

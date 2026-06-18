@@ -959,6 +959,13 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_VOLKRITTER] = _("Volkritter"),
     [SPECIES_VOLKRAKEN] = _("Volkraken"),
 
+	[SPECIES_MANIPULON] = _("Manipulon"),
+	[SPECIES_SOMNIVORE] = _("Somnivore"),
+	[SPECIES_TEROPHAGE] = _("Terophage"),
+	[SPECIES_REIZURGE] = _("Reizurge"),
+	[SPECIES_THURSLUSH] = _("Thursleet"),
+	[SPECIES_MIMEKTIPLEX] = _("Mimektiplex"),
+	
     // Megas
     [SPECIES_VENUSAUR_MEGA] = _("Venusaur"),
     [SPECIES_CHARIZARD_MEGA_X] = _("Charizard"),

@@ -1344,11 +1344,30 @@
 #define TRAINER_PEYTON     1289
 #define TRAINER_BIFF       1290
 
+// Postgame opponents
+#define TRAINER_NALU        1291
+#define TRAINER_HIAPO       1292
+#define TRAINER_KEANU       1293
+#define TRAINER_MAKOA       1294
+#define TRAINER_PALI        1295
+
+#define TRAINER_NANEA       1296
+#define TRAINER_LEIHUA      1297
+#define TRAINER_MOMI        1298
+#define TRAINER_LANI        1299
+#define TRAINER_MAILE       1300
+
+#define TRAINER_GRUNT_OMAOMA_ISLE_1       1301
+#define TRAINER_GRUNT_OMAOMA_ISLE_2       1302
+#define TRAINER_GRUNT_KEOKEO_ISLE_1       1303
+#define TRAINER_GRUNT_KEOKEO_ISLE_2       1304
+
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1291 //1291 //965//855
+#define TRAINERS_COUNT_EMERALD     1305 //1291 //965//855
 #define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG

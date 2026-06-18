@@ -89,7 +89,12 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_FACTORY_HEAD_NOLAND] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_PIKE_QUEEN_LUCY] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_PYRAMID_KING_BRANDON] = {.size = 8, .y_offset = 1},
-	[TRAINER_PIC_SAWYER] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_RED] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_LEAF] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_RS_BRENDAN] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_RS_MAY] = {.size = 8, .y_offset = 1},
+// TOURMALINE
+	[TRAINER_PIC_JACE] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_RAYNER] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_RAYNER_NO_GLASSES] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_GENESIS_GRUNT_F] = {.size = 8, .y_offset = 1},
@@ -100,10 +105,6 @@ const struct MonCoords gTrainerFrontPicCoords[] =
 	[TRAINER_PIC_ROCKER] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_BURGLAR] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_PAINTER] = {.size = 8, .y_offset = 1},
-    [TRAINER_PIC_RED] = {.size = 8, .y_offset = 1},
-    [TRAINER_PIC_LEAF] = {.size = 8, .y_offset = 1},
-    [TRAINER_PIC_RS_BRENDAN] = {.size = 8, .y_offset = 1},
-    [TRAINER_PIC_RS_MAY] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_JUGGLER] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_TAMER] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_SCIENTIST] = {.size = 8, .y_offset = 1},
@@ -129,6 +130,15 @@ const struct MonCoords gTrainerFrontPicCoords[] =
 	[TRAINER_PIC_ELITE_FOUR_PETRA] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_AZAMI] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_GHOSTLY_ENTITY] = {.size = 8, .y_offset = 1},
+// POSTGAME	
+	[TRAINER_PIC_COLE] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_ZINNIA] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_OAKLEY] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_RED_MANGA] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_RILEY] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_LASS_ALOLA] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_YOUNGSTER_ALOLA] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_HOLLOW_KNIGHT] = {.size = 8, .y_offset = 1},
 };
 
 #define TRAINER_SPRITE(trainerPic, sprite, size) [TRAINER_PIC_##trainerPic] = {sprite, size, TRAINER_PIC_##trainerPic}
@@ -245,6 +255,12 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 	//TRAINER_SPRITE(TAMER, gTrainerFrontPic_PikeQueenLucy, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(PYRAMID_KING_BRANDON, gTrainerFrontPic_PyramidKingBrandon, TRAINER_PIC_SIZE),
 	
+    TRAINER_SPRITE(RED, gTrainerFrontPic_Red, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(LEAF, gTrainerFrontPic_Leaf, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(RS_MAY, gTrainerFrontPic_RubySapphireMay, TRAINER_PIC_SIZE),
+	
+// TOURMALINE
 	TRAINER_SPRITE(PAINTER, gTrainerFrontPic_Painter, TRAINER_PIC_SIZE),
 	TRAINER_SPRITE(ROCKER, gTrainerFrontPic_Rocker, TRAINER_PIC_SIZE),
 	TRAINER_SPRITE(BURGLAR, gTrainerFrontPic_Burglar, TRAINER_PIC_SIZE),
@@ -260,6 +276,7 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 	TRAINER_SPRITE(ROUGHNECK, gTrainerFrontPic_Roughneck, TRAINER_PIC_SIZE),
 	TRAINER_SPRITE(FAIRY_TALE_GIRL, gTrainerFrontPic_FairyTaleGirl, TRAINER_PIC_SIZE),
 	TRAINER_SPRITE(LOGGER, gTrainerFrontPic_Logger, TRAINER_PIC_SIZE),
+    //TRAINER_SPRITE(BELLE_AND_PA, gTrainerFrontPic_BelleAndPa, TRAINER_PIC_SIZE),
 	
 	TRAINER_SPRITE(SAWYER, gTrainerFrontPic_Jace, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(RAYNER, gTrainerFrontPic_Rayner, TRAINER_PIC_SIZE),
@@ -286,12 +303,15 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(ELITE_FOUR_IAN, gTrainerFrontPic_EliteFourIan, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(ELITE_FOUR_PETRA, gTrainerFrontPic_EliteFourPetra, TRAINER_PIC_SIZE),
 	
-    TRAINER_SPRITE(RED, gTrainerFrontPic_Red, TRAINER_PIC_SIZE),
-    TRAINER_SPRITE(LEAF, gTrainerFrontPic_Leaf, TRAINER_PIC_SIZE),
-    TRAINER_SPRITE(RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, TRAINER_PIC_SIZE),
-    TRAINER_SPRITE(RS_MAY, gTrainerFrontPic_RubySapphireMay, TRAINER_PIC_SIZE),
-	
-    //TRAINER_SPRITE(BELLE_AND_PA, gTrainerFrontPic_BelleAndPa, TRAINER_PIC_SIZE),
+// POSTGAME
+    TRAINER_SPRITE(COLE, gTrainerFrontPic_Cole, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(ZINNIA, gTrainerFrontPic_Zinnia, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(OAKLEY, gTrainerFrontPic_Oakley, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(RED_MANGA, gTrainerFrontPic_RedManga, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(RILEY, gTrainerFrontPic_Riley, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(LASS_ALOLA, gTrainerFrontPic_LassAlola, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(YOUNGSTER_ALOLA, gTrainerFrontPic_YoungsterAlola, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(HOLLOW_KNIGHT, gTrainerFrontPic_HollowKnight, TRAINER_PIC_SIZE),
 };
 
 #define TRAINER_PAL(trainerPic, pal) [TRAINER_PIC_##trainerPic] = {pal, TRAINER_PIC_##trainerPic}
@@ -408,6 +428,12 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     //TRAINER_PAL(TAMER, gTrainerPalette_PikeQueenLucy),
     TRAINER_PAL(PYRAMID_KING_BRANDON, gTrainerPalette_PyramidKingBrandon),
 	
+    TRAINER_PAL(RED, gTrainerPalette_Red),
+    TRAINER_PAL(LEAF, gTrainerPalette_Leaf),
+    TRAINER_PAL(RS_BRENDAN, gTrainerPalette_RubySapphireBrendan),
+    TRAINER_PAL(RS_MAY, gTrainerPalette_RubySapphireMay),
+	
+// TOURMALINE
 	TRAINER_PAL(PAINTER, gTrainerPalette_Painter),
 	TRAINER_PAL(BURGLAR, gTrainerPalette_Burglar),
 	TRAINER_PAL(ROCKER, gTrainerPalette_Rocker),
@@ -449,10 +475,13 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(ELITE_FOUR_IAN, gTrainerPalette_EliteFourIan),
     TRAINER_PAL(ELITE_FOUR_PETRA, gTrainerPalette_EliteFourPetra),
 	
-    TRAINER_PAL(RED, gTrainerPalette_Red),
-    TRAINER_PAL(LEAF, gTrainerPalette_Leaf),
-    TRAINER_PAL(RS_BRENDAN, gTrainerPalette_RubySapphireBrendan),
-    TRAINER_PAL(RS_MAY, gTrainerPalette_RubySapphireMay),
-	
-    //TRAINER_PAL(BELLE_AND_PA, gTrainerPalette_BelleAndPa),
+// POSTGAME
+    TRAINER_PAL(COLE, gTrainerPalette_Cole),
+    TRAINER_PAL(ZINNIA, gTrainerPalette_Zinnia),
+    TRAINER_PAL(OAKLEY, gTrainerPalette_Oakley),
+    TRAINER_PAL(RED_MANGA, gTrainerPalette_RedManga),
+    TRAINER_PAL(RILEY, gTrainerPalette_Riley),
+	TRAINER_PAL(LASS_ALOLA, gTrainerPalette_LassAlola),
+	TRAINER_PAL(YOUNGSTER_ALOLA, gTrainerPalette_YoungsterAlola),
+    TRAINER_PAL(HOLLOW_KNIGHT, gTrainerPalette_HollowKnight),
 };
