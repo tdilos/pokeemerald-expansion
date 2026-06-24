@@ -1096,7 +1096,8 @@ $(OBJEVENTGFXDIR)/people/oakley.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/riley.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/knight_armor.4bpp: %.4bpp: %.png
+
+$(OBJEVENTGFXDIR)/people/gardener.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 	
 	
@@ -1113,6 +1114,16 @@ $(OBJEVENTGFXDIR)/people/woman_alola.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 	
 $(OBJEVENTGFXDIR)/people/youngster_alola.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+	
+	
+$(OBJEVENTGFXDIR)/people/lass_galar.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+	
+$(OBJEVENTGFXDIR)/people/youngster_galar.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/knight_armor.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 	
 

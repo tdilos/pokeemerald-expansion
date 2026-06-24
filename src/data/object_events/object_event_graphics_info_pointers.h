@@ -485,13 +485,17 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedEvil;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oakley;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Riley;
 
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KnightArmor;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gardener;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassAlola;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleGirlAlola;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldManAlola;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WomanAlola;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterAlola;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassGalar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterGalar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KnightArmor;
 
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
@@ -957,12 +961,15 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RED_EVIL]                 = &gObjectEventGraphicsInfo_RedEvil,
     [OBJ_EVENT_GFX_OAKLEY]                   = &gObjectEventGraphicsInfo_Oakley,
     [OBJ_EVENT_GFX_RILEY]                    = &gObjectEventGraphicsInfo_Riley,
-    [OBJ_EVENT_GFX_KNIGHT_ARMOR]             = &gObjectEventGraphicsInfo_KnightArmor,
+    [OBJ_EVENT_GFX_GARDENER]                 = &gObjectEventGraphicsInfo_Gardener,
     [OBJ_EVENT_GFX_LASS_ALOLA]               = &gObjectEventGraphicsInfo_LassAlola,
     [OBJ_EVENT_GFX_LITTLE_GIRL_ALOLA]        = &gObjectEventGraphicsInfo_LittleGirlAlola,
     [OBJ_EVENT_GFX_OLD_MAN_ALOLA]            = &gObjectEventGraphicsInfo_OldManAlola,
     [OBJ_EVENT_GFX_WOMAN_ALOLA]              = &gObjectEventGraphicsInfo_WomanAlola,
     [OBJ_EVENT_GFX_YOUNGSTER_ALOLA]          = &gObjectEventGraphicsInfo_YoungsterAlola,
+    [OBJ_EVENT_GFX_LASS_GALAR]               = &gObjectEventGraphicsInfo_LassGalar,
+    [OBJ_EVENT_GFX_YOUNGSTER_GALAR]          = &gObjectEventGraphicsInfo_YoungsterGalar,
+    [OBJ_EVENT_GFX_KNIGHT_ARMOR]             = &gObjectEventGraphicsInfo_KnightArmor,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

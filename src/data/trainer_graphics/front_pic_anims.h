@@ -515,11 +515,56 @@ static const union AnimCmd *const sAnims_GhostlyEntity[] ={
     sAnim_GeneralFrame0,
 };
 
+// Postgame
+static const union AnimCmd *const sAnims_Benga[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Cole[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Emma[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Looker[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Yellow[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Zinnia[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Oakley[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_RedManga[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Riley[] ={
+    sAnim_GeneralFrame0,
+};
+
 static const union AnimCmd *const sAnims_LassAlola[] ={
     sAnim_GeneralFrame0,
 };
 
 static const union AnimCmd *const sAnims_YoungsterAlola[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_HollowKnight[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Gardener[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -657,6 +702,17 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 	[TRAINER_PIC_RAYNER_NO_GLASSES] = sAnims_RaynerNoGlasses,
 	[TRAINER_PIC_GHOSTLY_ENTITY] = sAnims_GhostlyEntity,
 	// v2.0
+	[TRAINER_PIC_BENGA] = sAnims_Benga,
+	[TRAINER_PIC_COLE] = sAnims_Cole,
+	[TRAINER_PIC_EMMA] = sAnims_Emma,
+	[TRAINER_PIC_LOOKER] = sAnims_Looker,
+	[TRAINER_PIC_YELLOW] = sAnims_Yellow,
+	[TRAINER_PIC_ZINNIA] = sAnims_Zinnia,
+	[TRAINER_PIC_OAKLEY] = sAnims_Oakley,
+	[TRAINER_PIC_RED_MANGA] = sAnims_RedManga,
+	[TRAINER_PIC_RILEY] = sAnims_Riley,
 	[TRAINER_PIC_LASS_ALOLA] = sAnims_LassAlola,
 	[TRAINER_PIC_YOUNGSTER_ALOLA] = sAnims_YoungsterAlola,
+	[TRAINER_PIC_HOLLOW_KNIGHT] = sAnims_HollowKnight,
+	[TRAINER_PIC_GARDENER] = sAnims_Gardener,
 };

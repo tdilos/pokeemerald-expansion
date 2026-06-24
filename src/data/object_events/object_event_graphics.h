@@ -383,7 +383,7 @@ const u32 gObjectEventPic_RedEvil[] = INCBIN_U32("graphics/object_events/pics/pe
 const u32 gObjectEventPic_Oakley[] = INCBIN_U32("graphics/object_events/pics/people/oakley.4bpp");
 const u32 gObjectEventPic_Riley[] = INCBIN_U32("graphics/object_events/pics/people/riley.4bpp");
 
-const u32 gObjectEventPic_KnightArmor[] = INCBIN_U32("graphics/object_events/pics/people/knight_armor.4bpp");
+const u32 gObjectEventPic_Gardener[] = INCBIN_U32("graphics/object_events/pics/people/gardener.4bpp");
 
 const u32 gObjectEventPic_LassAlola[] = INCBIN_U32("graphics/object_events/pics/people/lass_alola.4bpp");
 const u32 gObjectEventPic_LittleGirlAlola[] = INCBIN_U32("graphics/object_events/pics/people/little_girl_alola.4bpp");
@@ -391,6 +391,9 @@ const u32 gObjectEventPic_OldManAlola[] = INCBIN_U32("graphics/object_events/pic
 const u32 gObjectEventPic_WomanAlola[] = INCBIN_U32("graphics/object_events/pics/people/woman_alola.4bpp");
 const u32 gObjectEventPic_YoungsterAlola[] = INCBIN_U32("graphics/object_events/pics/people/youngster_alola.4bpp");
 
+const u32 gObjectEventPic_LassGalar[] = INCBIN_U32("graphics/object_events/pics/people/lass_galar.4bpp");
+const u32 gObjectEventPic_YoungsterGalar[] = INCBIN_U32("graphics/object_events/pics/people/youngster_galar.4bpp");
+const u32 gObjectEventPic_KnightArmor[] = INCBIN_U32("graphics/object_events/pics/people/knight_armor.4bpp");
 
 //const u32 gObjectEventPic_TreeckoDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/treecko_doll.4bpp");
 //const u32 gObjectEventPic_TorchicDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/torchic_doll.4bpp");

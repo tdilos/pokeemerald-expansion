@@ -383,8 +383,20 @@ const u32 gTrainerFrontPic_GhostlyEntity[] = INCBIN_U32("graphics/trainers/front
 const u16 gTrainerPalette_GhostlyEntity[] = INCBIN_U16("graphics/trainers/front_pics/ghostly_entity.gbapal");
 
 // POSTGAME
+const u32 gTrainerFrontPic_Benga[] = INCBIN_U32("graphics/trainers/front_pics/benga.4bpp.smol");
+const u16 gTrainerPalette_Benga[] = INCBIN_U16("graphics/trainers/front_pics/benga.gbapal");
+
 const u32 gTrainerFrontPic_Cole[] = INCBIN_U32("graphics/trainers/front_pics/cole.4bpp.smol");
 const u16 gTrainerPalette_Cole[] = INCBIN_U16("graphics/trainers/front_pics/cole.gbapal");
+
+const u32 gTrainerFrontPic_Emma[] = INCBIN_U32("graphics/trainers/front_pics/emma.4bpp.smol");
+const u16 gTrainerPalette_Emma[] = INCBIN_U16("graphics/trainers/front_pics/emma.gbapal");
+
+const u32 gTrainerFrontPic_Looker[] = INCBIN_U32("graphics/trainers/front_pics/looker.4bpp.smol");
+const u16 gTrainerPalette_Looker[] = INCBIN_U16("graphics/trainers/front_pics/looker.gbapal");
+
+const u32 gTrainerFrontPic_Yellow[] = INCBIN_U32("graphics/trainers/front_pics/yellow.4bpp.smol");
+const u16 gTrainerPalette_Yellow[] = INCBIN_U16("graphics/trainers/front_pics/yellow.gbapal");
 
 const u32 gTrainerFrontPic_Zinnia[] = INCBIN_U32("graphics/trainers/front_pics/zinnia.4bpp.smol");
 const u16 gTrainerPalette_Zinnia[] = INCBIN_U16("graphics/trainers/front_pics/zinnia.gbapal");
@@ -410,6 +422,9 @@ const u16 gTrainerPalette_YoungsterAlola[] = INCBIN_U16("graphics/trainers/front
 const u32 gTrainerFrontPic_HollowKnight[] = INCBIN_U32("graphics/trainers/front_pics/hollow_knight.4bpp.smol");
 const u16 gTrainerPalette_HollowKnight[] = INCBIN_U16("graphics/trainers/front_pics/hollow_knight.gbapal");
 
+
+const u32 gTrainerFrontPic_Gardener[] = INCBIN_U32("graphics/trainers/front_pics/gardener.4bpp.smol");
+const u16 gTrainerPalette_Gardener[] = INCBIN_U16("graphics/trainers/front_pics/gardener.gbapal");
 
 
 // FRLG

@@ -12004,8 +12004,8 @@
     {
       "id": "LAYOUT_KEOKEO_ISLE_INTERIOR",
       "name": "KeokeoIsle_Interior_Layout",
-      "width": 30,
-      "height": 30,
+      "width": 32,
+      "height": 36,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/KeokeoIsle_Interior/border.bin",
@@ -12014,8 +12014,8 @@
     {
       "id": "LAYOUT_PANO_ISLE_INTERIOR",
       "name": "PanoIsle_Interior_Layout",
-      "width": 30,
-      "height": 35,
+      "width": 40,
+      "height": 44,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/PanoIsle_Interior/border.bin",
@@ -12034,7 +12034,7 @@
     {
       "id": "LAYOUT_KEOKEO_ISLE_CAVE_2F",
       "name": "KeokeoIsle_Cave_2F_Layout",
-      "width": 50,
+      "width": 40,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_NavelRock",
@@ -12044,8 +12044,8 @@
     {
       "id": "LAYOUT_KEOKEO_ISLE_CAVE_3F",
       "name": "KeokeoIsle_Cave_3F_Layout",
-      "width": 50,
-      "height": 30,
+      "width": 30,
+      "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_NavelRock",
       "border_filepath": "data/layouts/KeokeoIsle_Cave_3F/border.bin",
@@ -12094,8 +12094,8 @@
     {
       "id": "LAYOUT_PANTHALASSA",
       "name": "Panthalassa_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 52,
+      "height": 48,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Underwater",
       "border_filepath": "data/layouts/Panthalassa/border.bin",
@@ -12184,7 +12184,7 @@
     {
       "id": "LAYOUT_KIYAHA_ISLE_SHRINE",
       "name": "KiyahaIsle_Shrine_Layout",
-      "width": 20,
+      "width": 10,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
@@ -12204,7 +12204,7 @@
     {
       "id": "LAYOUT_OMAOMA_ISLE_SHRINE",
       "name": "OmaomaIsle_Shrine_Layout",
-      "width": 20,
+      "width": 10,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",

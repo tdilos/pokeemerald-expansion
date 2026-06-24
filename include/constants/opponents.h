@@ -1357,17 +1357,19 @@
 #define TRAINER_LANI        1299
 #define TRAINER_MAILE       1300
 
-#define TRAINER_GRUNT_OMAOMA_ISLE_1       1301
-#define TRAINER_GRUNT_OMAOMA_ISLE_2       1302
-#define TRAINER_GRUNT_KEOKEO_ISLE_1       1303
-#define TRAINER_GRUNT_KEOKEO_ISLE_2       1304
+#define TRAINER_GRUNT_PANO_ISLE_1       1301
+#define TRAINER_GRUNT_PANO_ISLE_2       1302
+#define TRAINER_GRUNT_PANO_ISLE_3       1303
+#define TRAINER_GRUNT_PANO_ISLE_4       1304
+#define TRAINER_GRUNT_PANO_ISLE_5       1305
+#define TRAINER_GRUNT_PANO_ISLE_6       1306
 
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1305 //1291 //965//855
+#define TRAINERS_COUNT_EMERALD     1307 //1291 //965//855
 #define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG

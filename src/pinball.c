@@ -377,10 +377,10 @@ static void InitTimerSprites(void);
 static bool32 GameTypeUsesTimer(u8 gameType);
 static void GetTimerScreenCoords(u8 gameType, int *outX, int *outY);
 static void InitGameType(u8 gameType);
-static void InitMeowth(void);
+//static void InitMeowth(void);
 static void InitDiglett(void);
-static void InitSeel(void);
-static void InitGengar(void);
+//static void InitSeel(void);
+//static void InitGengar(void);
 static void PinballVBlankCallback(void);
 static void PinballMainCallback(void);
 static void PinballMain(u8 taskId);
@@ -388,20 +388,20 @@ static void StartNewBall(void);
 static void LoseBall(void);
 static bool32 PlayAnotherBall(void);
 static void LostBall(u8 gameType);
-static void LostBallMeowth(struct Meowth *meowth);
-static void LostBallSeel(struct Seel *seel);
-static void LostBallGengar(struct Gengar *gengar);
-static void DrawMeowthScoreJewels(struct Meowth *meowth);
-static void DrawSeelScoreJewels(struct Seel *seel);
+//static void LostBallMeowth(struct Meowth *meowth);
+//static void LostBallSeel(struct Seel *seel);
+//static void LostBallGengar(struct Gengar *gengar);
+//static void DrawMeowthScoreJewels(struct Meowth *meowth);
+//static void DrawSeelScoreJewels(struct Seel *seel);
 static void OpenEntrance(u8 gameType);
-static void OpenEntranceMeowth(void);
+//static void OpenEntranceMeowth(void);
 static void OpenEntranceDiglett(void);
-static void OpenEntranceSeel(void);
-static void OpenEntranceGengar(void);
-static void CloseEntranceMeowth(void);
+//static void OpenEntranceSeel(void);
+//static void OpenEntranceGengar(void);
+//static void CloseEntranceMeowth(void);
 static void CloseEntranceDiglett(void);
-static void CloseEntranceSeel(void);
-static void CloseEntranceGengar(void);
+//static void CloseEntranceSeel(void);
+//static void CloseEntranceGengar(void);
 static void HandleBallPhysics(void);
 static void ApplyGravity(struct Ball *ball);
 static void LimitVelocity(struct Ball *ball);
@@ -416,7 +416,7 @@ static u8 GetCollisionAttribute(u8 gameType, bool32 ballIsEntering, int index);
 static u8 GetCollisionMaskRow(u8 gameType, int collisionAttribute, int row);
 static void HandleStaticCollisionForGameType(u8 gameType, int x, int y, u8 collisionAttribute, u16 *outYForce);
 static void HandleStaticCollisionDiglett(struct Diglett *diglett, int x, int y, u8 collisionAttribute);
-static void HandleStaticCollisionGengar(struct Gengar *gengar, u8 collisionAttribute, u16 *outYForce);
+//static void HandleStaticCollisionGengar(struct Gengar *gengar, u8 collisionAttribute, u16 *outYForce);
 static void ApplyTiltForces(struct Ball *ball, u8 collisionNormal);
 static void RotateVector(s16 *x, s16 *y, u8 angle);
 static u8 ReverseBits(u8 value);
@@ -431,43 +431,43 @@ static void UpdateBallSprite(struct Sprite *sprite);
 static void UpdateFlipperSprite(struct Sprite *sprite);
 static void UpdateTimerDigitSprite(struct Sprite *sprite);
 static bool32 UpdateGameType(u8 gameType);
-static bool32 UpdateMeowth(struct Meowth *meowth);
+//static bool32 UpdateMeowth(struct Meowth *meowth);
 static bool32 CheckObjectsCollision(u8 gameType, struct Ball *ball, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification);
-static bool32 CheckMeowthCollision(struct Ball *ball, struct Meowth *meowth, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification);
-static bool32 CheckJewelCollision(struct Ball *ball, struct MeowthJewel *jewel, u8 *outCollisionNormal);
-static bool32 IsJewelSpaceOccupied(u16 xPos, u16 destYPos, struct MeowthJewel *jewels);
-static bool32 CheckMeowthJewelsCollision(struct Ball *ball, struct Meowth *meowth, u8 *outCollisionNormal);
+//static bool32 CheckMeowthCollision(struct Ball *ball, struct Meowth *meowth, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification);
+//static bool32 CheckJewelCollision(struct Ball *ball, struct MeowthJewel *jewel, u8 *outCollisionNormal);
+//static bool32 IsJewelSpaceOccupied(u16 xPos, u16 destYPos, struct MeowthJewel *jewels);
+//static bool32 CheckMeowthJewelsCollision(struct Ball *ball, struct Meowth *meowth, u8 *outCollisionNormal);
 //static int GetNumActiveJewels(struct Meowth *meowth);
-static struct MeowthJewel *TryCreateNewJewel(struct Meowth *meowth, int ballXPos);
-static void UpdateJewels(struct MeowthJewel *jewels);
-static void UpdateMeowthSprite(struct Sprite *sprite);
-static void UpdateMeowthJewelSprite(struct Sprite *sprite);
-static void UpdateMeowthJewelMultiplierSprite(struct Sprite *sprite);
-static void ResetMeowthJewels(struct Meowth *meowth);
-static void UpdateMeowthJewelSparkleSprite(struct Sprite *sprite);
+//static struct MeowthJewel *TryCreateNewJewel(struct Meowth *meowth, int ballXPos);
+//static void UpdateJewels(struct MeowthJewel *jewels);
+//static void UpdateMeowthSprite(struct Sprite *sprite);
+//static void UpdateMeowthJewelSprite(struct Sprite *sprite);
+//static void UpdateMeowthJewelMultiplierSprite(struct Sprite *sprite);
+//static void ResetMeowthJewels(struct Meowth *meowth);
+//static void UpdateMeowthJewelSparkleSprite(struct Sprite *sprite);
 static bool32 UpdateDiglett(struct Diglett *diglett);
 static void UpdateDiglettTiles(u16 *tilemap, int index, struct Diglett *diglett);
 static void UpdateDiglettCollision(u8 *collisionMap, int index, bool32 solidCollision);
 static void UpdateDugtrioSprite(struct Sprite *sprite);
-static bool32 CheckSeelCollision(struct Ball *ball, struct Seel *seel, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification);
-static bool32 UpdateSeel(struct Seel *seel);
-static void ResetSeels(struct Seel *seel);
-static void ChooseNextEmergingSeel(int curSeelIndex, struct Seel *seel);
-static u32 GetSeelVisibleTicks(int curStreak);
-static void UpdateSeelSprite(struct Sprite *sprite);
-static void UpdateSeelSparkleSprite(struct Sprite *sprite);
-static void UpdateSeelMultiplierSprite(struct Sprite *sprite);
-static bool32 CheckGhostsCollision(struct Ball *ball, u32 ticks, struct GraveyardGhost *ghosts, int numGhosts, const u8 *angles, int width, int height, u8 *outCollisionNormal, int *outCollisionAmplification);
-static bool32 CheckGengarCollision(struct Ball *ball, struct Gengar *gengar, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification);
-static bool32 UpdateGengar(struct Gengar *gengar);
-static void UpdateGengarGhost(struct Gengar *gengar);
-static void UpdateGhost(struct Gengar *gengar, struct GraveyardGhost *ghost, u8 *numGhostHits, u8 nextState, int numGhosts);
-static void InitGhost(struct GraveyardGhost *ghost, const u8 *initialData, const struct SpriteTemplate *spriteTemplate, int ghostIndex);
-static void UpdateGastlySprite(struct Sprite *sprite);
-static void UpdateHaunterSprite(struct Sprite *sprite);
-static void UpdateGhostSprite(struct Sprite *sprite, struct GraveyardGhost *ghost);
-static void UpdateGengarSprite(struct Sprite *sprite);
-static void CrumbleGravestones(struct Gengar *gengar);
+//static bool32 CheckSeelCollision(struct Ball *ball, struct Seel *seel, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification);
+//static bool32 UpdateSeel(struct Seel *seel);
+//static void ResetSeels(struct Seel *seel);
+//static void ChooseNextEmergingSeel(int curSeelIndex, struct Seel *seel);
+//static u32 GetSeelVisibleTicks(int curStreak);
+//static void UpdateSeelSprite(struct Sprite *sprite);
+//static void UpdateSeelSparkleSprite(struct Sprite *sprite);
+//static void UpdateSeelMultiplierSprite(struct Sprite *sprite);
+//static bool32 CheckGhostsCollision(struct Ball *ball, u32 ticks, struct GraveyardGhost *ghosts, int numGhosts, const u8 *angles, int width, int height, u8 *outCollisionNormal, int *outCollisionAmplification);
+//static bool32 CheckGengarCollision(struct Ball *ball, struct Gengar *gengar, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification);
+//static bool32 UpdateGengar(struct Gengar *gengar);
+//static void UpdateGengarGhost(struct Gengar *gengar);
+//static void UpdateGhost(struct Gengar *gengar, struct GraveyardGhost *ghost, u8 *numGhostHits, u8 nextState, int numGhosts);
+//static void InitGhost(struct GraveyardGhost *ghost, const u8 *initialData, const struct SpriteTemplate *spriteTemplate, int ghostIndex);
+//static void UpdateGastlySprite(struct Sprite *sprite);
+//static void UpdateHaunterSprite(struct Sprite *sprite);
+//static void UpdateGhostSprite(struct Sprite *sprite, struct GraveyardGhost *ghost);
+//static void UpdateGengarSprite(struct Sprite *sprite);
+//static void CrumbleGravestones(struct Gengar *gengar);
 
 static EWRAM_DATA struct PinballGame *sPinballGame = NULL;
 static EWRAM_DATA struct Credits *sScore = NULL;
@@ -533,7 +533,7 @@ static const u16 sTimerDigitsPalette[] = INCBIN_U16("graphics/pinball/timer_digi
 static const u8 sFlipperCollisionRadii[] = INCBIN_U8("data/pinball/flipper_radii.bin");
 static const u8 sFlipperCollisionNormalAngles[] = INCBIN_U8("data/pinball/flipper_normal_angles.bin");
 
-static const u32 sMeowthStageBgGfx[] = INCBIN_U32("graphics/pinball/bg_tiles_meowth.4bpp");
+/*static const u32 sMeowthStageBgGfx[] = INCBIN_U32("graphics/pinball/bg_tiles_meowth.4bpp");
 static const u16 sMeowthStageBgPalette[] = INCBIN_U16("graphics/pinball/bg_tiles_meowth.gbapal");
 static const u16 sMeowthStageBgTilemap[] = INCBIN_U16("graphics/pinball/bg_tilemap_meowth.bin");
 static const u8 sMeowthStageBgCollisionMasks[] = INCBIN_U8("graphics/pinball/bg_collision_masks_meowth.1bpp");
@@ -547,7 +547,7 @@ static const u32 sMeowthJewelMultipliersGfx[] = INCBIN_U32("graphics/pinball/meo
 static const u32 sMeowthJewelSparkleGfx[] = INCBIN_U32("graphics/pinball/meowth_sparkle.4bpp.lz");
 static const u16 sMeowthJewelMultipliersPalette[] = INCBIN_U16("graphics/pinball/meowth_jewel_multipliers.gbapal");
 static const u8 sMeowthCollisionNormalAngles[] = INCBIN_U8("data/pinball/meowth_normal_angles.bin");
-static const u8 sMeowthJewelCollisionNormalAngles[] = INCBIN_U8("data/pinball/meowth_jewel_normal_angles.bin");
+static const u8 sMeowthJewelCollisionNormalAngles[] = INCBIN_U8("data/pinball/meowth_jewel_normal_angles.bin");*/
 
 static const u32 sDiglettStageBgGfx[] = INCBIN_U32("graphics/pinball/bg_tiles_diglett.4bpp");
 static const u16 sDiglettStageBgPalette[] = INCBIN_U16("graphics/pinball/bg_tiles_diglett.gbapal");
@@ -558,7 +558,7 @@ static const u8 sDiglettStageEntranceBgCollisionMap[] = INCBIN_U8("graphics/pinb
 static const u32 sDugtrioAnimationGfx[] = INCBIN_U32("graphics/pinball/dugtrio_animation.4bpp.lz");
 static const u16 sDugtrioAnimationPalette[] = INCBIN_U16("graphics/pinball/dugtrio_animation.gbapal");
 
-static const u32 sSeelStageBgGfx[] = INCBIN_U32("graphics/pinball/bg_tiles_seel.4bpp");
+/*static const u32 sSeelStageBgGfx[] = INCBIN_U32("graphics/pinball/bg_tiles_seel.4bpp");
 static const u16 sSeelStageBgPalette[] = INCBIN_U16("graphics/pinball/bg_tiles_seel.gbapal");
 static const u16 sSeelStageBgTilemap[] = INCBIN_U16("graphics/pinball/bg_tilemap_seel.bin");
 static const u8 sSeelStageBgCollisionMasks[] = INCBIN_U8("graphics/pinball/bg_collision_masks_seel.1bpp");
@@ -586,7 +586,7 @@ static const u16 sHaunterAnimationPalette[] = INCBIN_U16("graphics/pinball/haunt
 static const u8 sHaunterCollisionNormalAngles[] = INCBIN_U8("data/pinball/haunter_normal_angles.bin");
 static const u32 sGengarAnimationGfx[] = INCBIN_U32("graphics/pinball/gengar_animation.4bpp.lz");
 static const u16 sGengarAnimationPalette[] = INCBIN_U16("graphics/pinball/gengar_animation.gbapal");
-static const u8 sGengarCollisionNormalAngles[] = INCBIN_U8("data/pinball/gengar_normal_angles.bin");
+static const u8 sGengarCollisionNormalAngles[] = INCBIN_U8("data/pinball/gengar_normal_angles.bin");*/
 
 static const u32 gPlayer_Gfx[] = INCBIN_U32("graphics/pinball/input_numbers.4bpp.lz");
 static const u16 sPlayer_Pal[] = INCBIN_U16("graphics/pinball/input_numbers.gbapal");
@@ -645,7 +645,7 @@ static const struct CompressedSpriteSheet sTimerDigitsSpriteSheet = {
     .tag = TAG_TIMER_DIGIT,
 };
 
-static const struct CompressedSpriteSheet sMeowthAnimationSpriteSheet = {
+/*static const struct CompressedSpriteSheet sMeowthAnimationSpriteSheet = {
     .data = sMeowthAnimationGfx,
     .size = 0xA00,
     .tag = TAG_MEOWTH,
@@ -667,7 +667,7 @@ static const struct CompressedSpriteSheet sMeowthSparkleSpriteSheet = {
     .data = sMeowthJewelSparkleGfx,
     .size = 0x40,
     .tag = TAG_TILES_MEOWTH_JEWEL_SPARKLE,
-};
+};*/
 
 static const struct CompressedSpriteSheet sDugtrioAnimationSpriteSheet = {
     .data = sDugtrioAnimationGfx,
@@ -675,7 +675,7 @@ static const struct CompressedSpriteSheet sDugtrioAnimationSpriteSheet = {
     .tag = TAG_DUGTRIO,
 };
 
-static const struct CompressedSpriteSheet sSeelAnimationSpriteSheet = {
+/*static const struct CompressedSpriteSheet sSeelAnimationSpriteSheet = {
     .data = sSeelAnimationGfx,
     .size = 0x1E00,
     .tag = TAG_SEEL,
@@ -709,21 +709,21 @@ static const struct CompressedSpriteSheet sGengarAnimationSpriteSheet = {
     .data = sGengarAnimationGfx,
     .size = 0x4000,
     .tag = TAG_GENGAR,
-};
+};*/
 
 static const struct SpritePalette sPinballSpritePalette = { sBallPokeballPalette, TAG_BALL_POKEBALL };
 static const struct SpritePalette sFlipperSpritePalette = { sFlipperPalette, TAG_FLIPPER };
 static const struct SpritePalette sTimerDigitsSpritePalette = { sTimerDigitsPalette, TAG_TIMER_DIGIT };
-static const struct SpritePalette sMeowthAnimationSpritePalette = { sMeowthAnimationPalette, TAG_MEOWTH };
+/*static const struct SpritePalette sMeowthAnimationSpritePalette = { sMeowthAnimationPalette, TAG_MEOWTH };
 static const struct SpritePalette sMeowthJewelSpritePalette = { sMeowthJewelPalette, TAG_MEOWTH_JEWEL };
-static const struct SpritePalette sMeowthJewelMultipliersSpritePalette = { sMeowthJewelMultipliersPalette, TAG_MEOWTH_JEWEL_MUTLIPLIER };
+static const struct SpritePalette sMeowthJewelMultipliersSpritePalette = { sMeowthJewelMultipliersPalette, TAG_MEOWTH_JEWEL_MUTLIPLIER };*/
 static const struct SpritePalette sDugtrioAnimationSpritePalette = { sDugtrioAnimationPalette, TAG_DUGTRIO };
-static const struct SpritePalette sSeelAnimationSpritePalette = { sSeelAnimationPalette, TAG_SEEL };
+/*static const struct SpritePalette sSeelAnimationSpritePalette = { sSeelAnimationPalette, TAG_SEEL };
 static const struct SpritePalette sSeelSparkleSpritePalette = { sSeelSparklePalette, TAG_SEEL_SPARKLE };
 static const struct SpritePalette sSeelMultipliersSpritePalette = { sSeelMultipliersPalette, TAG_SEEL_MULTIPLIER };
 static const struct SpritePalette sGastlyAnimationSpritePalette = { sGastlyAnimationPalette, TAG_GASTLY };
 static const struct SpritePalette sHaunterAnimationSpritePalette = { sHaunterAnimationPalette, TAG_HAUNTER };
-static const struct SpritePalette sGengarAnimationSpritePalette = { sGengarAnimationPalette, TAG_GENGAR };
+static const struct SpritePalette sGengarAnimationSpritePalette = { sGengarAnimationPalette, TAG_GENGAR };*/
 
 static const struct OamData sBallOamData = {
     .y = 0,
@@ -886,7 +886,7 @@ static const struct SpriteTemplate sTimerDigitSpriteTemplate = {
     .callback = UpdateTimerDigitSprite,
 };
 
-static const struct OamData sMeowthOamData = {
+/*static const struct OamData sMeowthOamData = {
     .y = 0,
     .affineMode = ST_OAM_AFFINE_OFF,
     .objMode = ST_OAM_OBJ_NORMAL,
@@ -1098,7 +1098,7 @@ static const struct SpriteTemplate sMeowthJewelSparkleSpriteTemplate = {
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateMeowthJewelSparkleSprite,
-};
+};*/
 
 static const u8 sDiglettStateTiles[][4] = {
     [DIGLETT_STATE_INIT] = {0x4C, 0x4D, 0x4E, 0x4F},
@@ -1231,7 +1231,7 @@ static const struct SpriteTemplate sDugtrioSpriteTemplate = {
     .callback = UpdateDugtrioSprite,
 };
 
-static const struct OamData sSeelOamData = {
+/*static const struct OamData sSeelOamData = {
     .y = 0,
     .affineMode = ST_OAM_AFFINE_OFF,
     .objMode = ST_OAM_OBJ_NORMAL,
@@ -2043,7 +2043,7 @@ static const u8 sInitialGastlyData[NUM_GASTLY][5] = {
 static const u8 sInitialHaunterData[NUM_HAUNTER][5] = {
     {94, 30, GHOST_DIR_RIGHT, 94, 134},
     {30, 66, GHOST_DIR_RIGHT, 30, 70},
-};
+};*/
 
 static const s8 sCollisionTestPointOffsets[][2] = {
     {  4,  0 },
@@ -2327,9 +2327,9 @@ static void LoadBgGfx(u8 gameType)
     switch (gameType)
     {
     case GAME_TYPE_MEOWTH:
-        LoadBgTiles(PINBALL_BG_BASE, sMeowthStageBgGfx, sizeof(sMeowthStageBgGfx), 0);
-        CopyToBgTilemapBuffer(PINBALL_BG_BASE, sMeowthStageBgTilemap, sizeof(sMeowthStageBgTilemap), 0);
-        LoadPalette(sMeowthStageBgPalette, 0, sizeof(sMeowthStageBgPalette));
+        //LoadBgTiles(PINBALL_BG_BASE, sMeowthStageBgGfx, sizeof(sMeowthStageBgGfx), 0);
+        //CopyToBgTilemapBuffer(PINBALL_BG_BASE, sMeowthStageBgTilemap, sizeof(sMeowthStageBgTilemap), 0);
+        //LoadPalette(sMeowthStageBgPalette, 0, sizeof(sMeowthStageBgPalette));
         break;
     case GAME_TYPE_DIGLETT:
         LoadBgTiles(PINBALL_BG_BASE, sDiglettStageBgGfx, sizeof(sDiglettStageBgGfx), 0);
@@ -2337,14 +2337,14 @@ static void LoadBgGfx(u8 gameType)
         LoadPalette(sDiglettStageBgPalette, 0, sizeof(sDiglettStageBgPalette));
         break;
     case GAME_TYPE_SEEL:
-        LoadBgTiles(PINBALL_BG_BASE, sSeelStageBgGfx, sizeof(sSeelStageBgGfx), 0);
-        CopyToBgTilemapBuffer(PINBALL_BG_BASE, sSeelStageBgTilemap, sizeof(sSeelStageBgTilemap), 0);
-        LoadPalette(sSeelStageBgPalette, 0, sizeof(sSeelStageBgPalette));
+        //LoadBgTiles(PINBALL_BG_BASE, sSeelStageBgGfx, sizeof(sSeelStageBgGfx), 0);
+        //CopyToBgTilemapBuffer(PINBALL_BG_BASE, sSeelStageBgTilemap, sizeof(sSeelStageBgTilemap), 0);
+        //LoadPalette(sSeelStageBgPalette, 0, sizeof(sSeelStageBgPalette));
         break;
     case GAME_TYPE_GENGAR:
-        LoadBgTiles(PINBALL_BG_BASE, sGengarStageBgGfx, sizeof(sGengarStageBgGfx), 0);
-        CopyToBgTilemapBuffer(PINBALL_BG_BASE, sGengarStageBgTilemap, sizeof(sGengarStageBgTilemap), 0);
-        LoadPalette(sGengarStageBgPalette, 0, sizeof(sGengarStageBgPalette));
+        //LoadBgTiles(PINBALL_BG_BASE, sGengarStageBgGfx, sizeof(sGengarStageBgGfx), 0);
+        //CopyToBgTilemapBuffer(PINBALL_BG_BASE, sGengarStageBgTilemap, sizeof(sGengarStageBgTilemap), 0);
+        //LoadPalette(sGengarStageBgPalette, 0, sizeof(sGengarStageBgPalette));
         break;
     }
 
@@ -2358,31 +2358,31 @@ static void LoadSpriteGfx(u8 gameType)
     switch (gameType)
     {
     case GAME_TYPE_MEOWTH:
-        LoadCompressedSpriteSheet(&sMeowthAnimationSpriteSheet);
-        LoadSpritePalette(&sMeowthAnimationSpritePalette);
-        LoadCompressedSpriteSheet(&sMeowthJewelSpriteSheet);
-        LoadSpritePalette(&sMeowthJewelSpritePalette);
-        LoadCompressedSpriteSheet(&sMeowthJewelMultipliersSpriteSheet);
-        LoadCompressedSpriteSheet(&sMeowthSparkleSpriteSheet);
-        LoadSpritePalette(&sMeowthJewelMultipliersSpritePalette);
+        //LoadCompressedSpriteSheet(&sMeowthAnimationSpriteSheet);
+        //LoadSpritePalette(&sMeowthAnimationSpritePalette);
+        //LoadCompressedSpriteSheet(&sMeowthJewelSpriteSheet);
+        //LoadSpritePalette(&sMeowthJewelSpritePalette);
+        //LoadCompressedSpriteSheet(&sMeowthJewelMultipliersSpriteSheet);
+        //LoadCompressedSpriteSheet(&sMeowthSparkleSpriteSheet);
+        //LoadSpritePalette(&sMeowthJewelMultipliersSpritePalette);
         break;
     case GAME_TYPE_DIGLETT:
         LoadCompressedSpriteSheet(&sDugtrioAnimationSpriteSheet);
         LoadSpritePalette(&sDugtrioAnimationSpritePalette);
         break;
     case GAME_TYPE_SEEL:
-        LoadCompressedSpriteSheet(&sSeelAnimationSpriteSheet);
-        LoadSpritePalette(&sSeelAnimationSpritePalette);
-        LoadCompressedSpriteSheet(&sSeelSparkleSpriteSheet);
-        LoadSpritePalette(&sSeelSparkleSpritePalette);
-        LoadCompressedSpriteSheet(&sSeelMultipliersSpriteSheet);
-        LoadSpritePalette(&sSeelMultipliersSpritePalette);
+        //LoadCompressedSpriteSheet(&sSeelAnimationSpriteSheet);
+        //LoadSpritePalette(&sSeelAnimationSpritePalette);
+        //LoadCompressedSpriteSheet(&sSeelSparkleSpriteSheet);
+        //LoadSpritePalette(&sSeelSparkleSpritePalette);
+        //LoadCompressedSpriteSheet(&sSeelMultipliersSpriteSheet);
+        //LoadSpritePalette(&sSeelMultipliersSpritePalette);
         break;
     case GAME_TYPE_GENGAR:
-        LoadCompressedSpriteSheet(&sGastlyAnimationSpriteSheet);
-        LoadSpritePalette(&sGastlyAnimationSpritePalette);
-        LoadCompressedSpriteSheet(&sHaunterAnimationSpriteSheet);
-        LoadSpritePalette(&sHaunterAnimationSpritePalette);
+        //LoadCompressedSpriteSheet(&sGastlyAnimationSpriteSheet);
+        //LoadSpritePalette(&sGastlyAnimationSpritePalette);
+        //LoadCompressedSpriteSheet(&sHaunterAnimationSpriteSheet);
+        //LoadSpritePalette(&sHaunterAnimationSpritePalette);
         break;
     }
 }
@@ -2492,21 +2492,21 @@ static void InitGameType(u8 gameType)
     switch (gameType)
     {
     case GAME_TYPE_MEOWTH:
-        InitMeowth();
+        //InitMeowth();
         break;
     case GAME_TYPE_DIGLETT:
         InitDiglett();
         break;
     case GAME_TYPE_SEEL:
-        InitSeel();
+        //InitSeel();
         break;
     case GAME_TYPE_GENGAR:
-        InitGengar();
+        //InitGengar();
         break;
     }
 }
 
-static void InitMeowth(void)
+/*static void InitMeowth(void)
 {
     struct Meowth *meowth = &sPinballGame->meowth;
 
@@ -2521,7 +2521,7 @@ static void InitMeowth(void)
     meowth->sparkleSpriteId = CreateSprite(&sMeowthJewelSparkleSpriteTemplate, 0, 0, 6);
     StartSpriteAnim(&gSprites[meowth->spriteId], 0);
     StartSpriteAnim(&gSprites[meowth->sparkleSpriteId], 0);
-}
+}*/
 
 static void InitDiglett(void)
 {
@@ -2536,7 +2536,7 @@ static void InitDiglett(void)
     StartSpriteAnim(&gSprites[diglett->dugtrioSpriteId], 0);
 }
 
-static void InitSeel(void)
+/*static void InitSeel(void)
 {
     int i;
     struct Seel *seel = &sPinballGame->seel;
@@ -2574,7 +2574,7 @@ static void InitGengar(void)
     for (i = 0; i < NUM_GASTLY; i++) {
 	InitGhost(&gengar->gastlyGhosts[i], sInitialGastlyData[i], &sGastlySpriteTemplate, i); }
 	//SetWeather(WEATHER_FOG_HORIZONTAL);
-}
+}*/
 
 static void PinballVBlankCallback(void)
 {
@@ -2657,21 +2657,21 @@ static void OpenEntrance(u8 gameType)
     switch (gameType)
     {
     case GAME_TYPE_MEOWTH:
-        OpenEntranceMeowth();
+        //OpenEntranceMeowth();
         break;
     case GAME_TYPE_DIGLETT:
         OpenEntranceDiglett();
         break;
     case GAME_TYPE_SEEL:
-        OpenEntranceSeel();
+        //OpenEntranceSeel();
         break;
     case GAME_TYPE_GENGAR:
-        OpenEntranceGengar();
+        //OpenEntranceGengar();
         break;
     }
 }
 
-static void OpenEntranceMeowth(void)
+/*static void OpenEntranceMeowth(void)
 {
     u16 *tilemap = GetBgTilemapBuffer(PINBALL_BG_BASE);
     tilemap[0x113] = 0x415;
@@ -2683,7 +2683,7 @@ static void OpenEntranceMeowth(void)
     tilemap[0x154] = 0x011;
     tilemap[0x172] = 0x409;
     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
-}
+}*/
 
 static void OpenEntranceDiglett(void)
 {
@@ -2699,7 +2699,7 @@ static void OpenEntranceDiglett(void)
     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
 }
 
-static void OpenEntranceSeel(void)
+/*static void OpenEntranceSeel(void)
 {
     u16 *tilemap = GetBgTilemapBuffer(PINBALL_BG_BASE);
     tilemap[0x113] = 0x41E;
@@ -2723,7 +2723,7 @@ static void OpenEntranceGengar(void)
     tilemap[0x153] = 0x3;
     tilemap[0x172] = 0x4;
     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
-}
+}*/
 
 static void CloseEntrance(u8 gameType)
 {
@@ -2731,21 +2731,21 @@ static void CloseEntrance(u8 gameType)
     switch (gameType)
     {
     case GAME_TYPE_MEOWTH:
-        CloseEntranceMeowth();
+        //CloseEntranceMeowth();
         break;
     case GAME_TYPE_DIGLETT:
         CloseEntranceDiglett();
         break;
     case GAME_TYPE_SEEL:
-        CloseEntranceSeel();
+        //CloseEntranceSeel();
         break;
     case GAME_TYPE_GENGAR:
-        CloseEntranceGengar();
+        //CloseEntranceGengar();
         break;
     }
 }
 
-static void CloseEntranceMeowth(void)
+/*static void CloseEntranceMeowth(void)
 {
     u16 *tilemap = GetBgTilemapBuffer(PINBALL_BG_BASE);
     tilemap[0x113] = 0x403;
@@ -2757,7 +2757,7 @@ static void CloseEntranceMeowth(void)
     tilemap[0x154] = 0x002;
     tilemap[0x172] = 0x40C;
     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
-}
+}*/
 
 static void CloseEntranceDiglett(void)
 {
@@ -2773,7 +2773,7 @@ static void CloseEntranceDiglett(void)
     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
 }
 
-static void CloseEntranceSeel(void)
+/*static void CloseEntranceSeel(void)
 {
     u16 *tilemap = GetBgTilemapBuffer(PINBALL_BG_BASE);
     tilemap[0x113] = 0x41C;
@@ -2798,9 +2798,9 @@ static void CloseEntranceGengar(void)
     tilemap[0x153] = 0x37;
     tilemap[0x172] = 0x2F;
     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
-}
+}*/
 
-static void DrawMeowthScoreJewels(struct Meowth *meowth)
+/*static void DrawMeowthScoreJewels(struct Meowth *meowth)
 {
     int i;
     u16 *tilemap = GetBgTilemapBuffer(PINBALL_BG_BASE);
@@ -2842,7 +2842,7 @@ static void DrawSeelScoreJewels(struct Seel *seel)
 	VarSet(VAR_FLIP_WINNINGS, (seel->score * 4));
 	SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
-}
+}*/
 
 static void HandleBallPhysics(void)
 {
@@ -2938,24 +2938,24 @@ static void LostBall(u8 gameType)
     switch (gameType)
     {
     case GAME_TYPE_MEOWTH:
-        LostBallMeowth(&sPinballGame->meowth);
+        //LostBallMeowth(&sPinballGame->meowth);
 		PlaySE(SE_FAINT);
         break;
     case GAME_TYPE_DIGLETT:
 		PlaySE(SE_FAINT);
         break;
     case GAME_TYPE_SEEL:
-        LostBallSeel(&sPinballGame->seel);
+        //LostBallSeel(&sPinballGame->seel);
 		PlaySE(SE_FAINT);
         break;
     case GAME_TYPE_GENGAR:
-        LostBallGengar(&sPinballGame->gengar);
+        //LostBallGengar(&sPinballGame->gengar);
 		PlaySE(SE_FAINT);
         break;
     }
 }
 
-#define JEWEL_SPARKLE_DURATION 180
+/*#define JEWEL_SPARKLE_DURATION 180
 
 static void LostBallMeowth(struct Meowth *meowth)
 {
@@ -3003,7 +3003,7 @@ static void LostBallSeel(struct Seel *seel)
 
 static void LostBallGengar(struct Gengar *gengar)
 {
-}
+}*/
 
 #define GRAVITY 0x0B
 
@@ -3331,23 +3331,23 @@ static u8 GetCollisionAttribute(u8 gameType, bool32 ballIsEntering, int index)
 
     switch (gameType)
     {
-    case GAME_TYPE_MEOWTH:
-        entranceCollisionMap = sMeowthStageEntranceBgCollisionMap;
-        collisionMap = sMeowthStageBgCollisionMap;
-        break;
+    //case GAME_TYPE_MEOWTH:
+        //entranceCollisionMap = sMeowthStageEntranceBgCollisionMap;
+        //collisionMap = sMeowthStageBgCollisionMap;
+    //    break;
     case GAME_TYPE_DIGLETT:
 	default:
         entranceCollisionMap = sDiglettStageEntranceBgCollisionMap;
         collisionMap = sPinballGame->diglett.collisionMap;
         break;
-    case GAME_TYPE_SEEL:
-        entranceCollisionMap = sSeelStageEntranceBgCollisionMap;
-        collisionMap = sSeelStageBgCollisionMap;
-        break;
-    case GAME_TYPE_GENGAR:
-        entranceCollisionMap = sGengarStageEntranceBgCollisionMap;
-        collisionMap = sPinballGame->gengar.collisionMap;
-        break;
+    //case GAME_TYPE_SEEL:
+        //entranceCollisionMap = sSeelStageEntranceBgCollisionMap;
+        //collisionMap = sSeelStageBgCollisionMap;
+    //    break;
+    //case GAME_TYPE_GENGAR:
+        //entranceCollisionMap = sGengarStageEntranceBgCollisionMap;
+        //collisionMap = sPinballGame->gengar.collisionMap;
+    //    break;
     }
 
     if (ballIsEntering)
@@ -3371,17 +3371,17 @@ static u8 GetCollisionMaskRow(u8 gameType, int collisionAttribute, int row)
         switch (gameType)
         {
         case GAME_TYPE_MEOWTH:
-            masks = sMeowthStageBgCollisionMasks;
+            //masks = sMeowthStageBgCollisionMasks;
             break;
         case GAME_TYPE_DIGLETT:
 		default:
             masks = sDiglettStageBgCollisionMasks;
             break;
         case GAME_TYPE_SEEL:
-            masks = sSeelStageBgCollisionMasks;
+            //masks = sSeelStageBgCollisionMasks;
             break;
         case GAME_TYPE_GENGAR:
-            masks = sGengarStageBgCollisionMasks;
+            //masks = sGengarStageBgCollisionMasks;
             break;
         }
 
@@ -3458,7 +3458,7 @@ static void HandleStaticCollisionForGameType(u8 gameType, int x, int y, u8 colli
     case GAME_TYPE_SEEL:
         break;
     case GAME_TYPE_GENGAR:
-        HandleStaticCollisionGengar(&sPinballGame->gengar, collisionAttribute, outYForce);
+        //HandleStaticCollisionGengar(&sPinballGame->gengar, collisionAttribute, outYForce);
         break;
     case GAME_TYPE_DIGLETT:
         HandleStaticCollisionDiglett(&sPinballGame->diglett, x, y, collisionAttribute);
@@ -3529,7 +3529,7 @@ static void HandleStaticCollisionDiglett(struct Diglett *diglett, int x, int y, 
     }
 }
 
-static void HandleStaticCollisionGengar(struct Gengar *gengar, u8 collisionAttribute, u16 *outYForce)
+/*static void HandleStaticCollisionGengar(struct Gengar *gengar, u8 collisionAttribute, u16 *outYForce)
 {
     int i;
     for (i = 0; i < ARRAY_COUNT(sGengarGravestoneCollisionAttributes); i++)
@@ -3542,7 +3542,7 @@ static void HandleStaticCollisionGengar(struct Gengar *gengar, u8 collisionAttri
             return;
         }
     }
-}
+}*/
 
 static void ApplyCollisionForces(struct Ball *ball, u16 flipperYForce, int collisionAmplification)
 {
@@ -3718,14 +3718,14 @@ static bool32 UpdateGameType(u8 gameType)
 {
     switch (gameType)
     {
-    case GAME_TYPE_MEOWTH:
-        return UpdateMeowth(&sPinballGame->meowth);
+    //case GAME_TYPE_MEOWTH:
+    //    return UpdateMeowth(&sPinballGame->meowth);
     case GAME_TYPE_DIGLETT:
         return UpdateDiglett(&sPinballGame->diglett);
-    case GAME_TYPE_SEEL:
-        return UpdateSeel(&sPinballGame->seel);
-    case GAME_TYPE_GENGAR:
-        return UpdateGengar(&sPinballGame->gengar);
+    //case GAME_TYPE_SEEL:
+    //   return UpdateSeel(&sPinballGame->seel);
+    //case GAME_TYPE_GENGAR:
+    //    return UpdateGengar(&sPinballGame->gengar);
     default:
         return FALSE;
     }
@@ -3734,7 +3734,7 @@ static bool32 UpdateGameType(u8 gameType)
 #define MEOWTH_HORIZONTAL_SPEED 1
 #define MEOWTH_VERTICAL_SPEED 1
 
-static bool32 UpdateMeowth(struct Meowth *meowth)
+/*static bool32 UpdateMeowth(struct Meowth *meowth)
 {
     if (meowth->state == MEOWTH_STATE_WALK)
     {
@@ -3778,7 +3778,7 @@ static bool32 UpdateMeowth(struct Meowth *meowth)
 
     UpdateJewels(meowth->jewels);
     return meowth->completed;
-}
+}*/
 
 static bool32 CheckObjectsCollision(u8 gameType, struct Ball *ball, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification)
 {
@@ -3787,15 +3787,15 @@ static bool32 CheckObjectsCollision(u8 gameType, struct Ball *ball, u32 ticks, u
     switch (gameType)
     {
     case GAME_TYPE_MEOWTH:
-        isColliding = CheckMeowthCollision(ball, &sPinballGame->meowth, ticks, outCollisionNormal, outCollisionAmplification);
-        if (!isColliding)
-            isColliding = CheckMeowthJewelsCollision(ball, &sPinballGame->meowth, outCollisionNormal);
+        //isColliding = CheckMeowthCollision(ball, &sPinballGame->meowth, ticks, outCollisionNormal, outCollisionAmplification);
+        //if (!isColliding)
+        //    isColliding = CheckMeowthJewelsCollision(ball, &sPinballGame->meowth, outCollisionNormal);
         break;
     case GAME_TYPE_SEEL:
-        isColliding = CheckSeelCollision(ball, &sPinballGame->seel, ticks, outCollisionNormal, outCollisionAmplification);
+        //isColliding = CheckSeelCollision(ball, &sPinballGame->seel, ticks, outCollisionNormal, outCollisionAmplification);
         break;
     case GAME_TYPE_GENGAR:
-        switch (sPinballGame->gengar.graveyardState)
+        /*switch (sPinballGame->gengar.graveyardState)
         {
         case GRAVEYARD_STATE_GASTLY:
             isColliding = CheckGhostsCollision(
@@ -3824,14 +3824,14 @@ static bool32 CheckObjectsCollision(u8 gameType, struct Ball *ball, u32 ticks, u
         case GRAVEYARD_STATE_GENGAR:
             isColliding = CheckGengarCollision(ball, &sPinballGame->gengar, ticks, outCollisionNormal, outCollisionAmplification);
             break;
-        }
+        }*/
         break;
     }
 
     return isColliding;
 }
 
-static bool32 CheckMeowthCollision(struct Ball *ball, struct Meowth *meowth, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification)
+/*static bool32 CheckMeowthCollision(struct Ball *ball, struct Meowth *meowth, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification)
 {
     int x, y;
     u8 collisionNormal;
@@ -3902,7 +3902,7 @@ static bool32 CheckMeowthJewelsCollision(struct Ball *ball, struct Meowth *meowt
     }
 
     return FALSE;
-}
+}*/
 
 /*static int GetNumActiveJewels(struct Meowth *meowth)
 {
@@ -3915,7 +3915,7 @@ static bool32 CheckMeowthJewelsCollision(struct Ball *ball, struct Meowth *meowt
     return count;
 }*/
 
-static struct MeowthJewel *TryCreateNewJewel(struct Meowth *meowth, int ballXPos)
+/*static struct MeowthJewel *TryCreateNewJewel(struct Meowth *meowth, int ballXPos)
 {
     int i;
     for (i = 0; i < MAX_MEOWTH_JEWELS; i++)
@@ -4163,7 +4163,7 @@ static void UpdateMeowthJewelSparkleSprite(struct Sprite *sprite)
         sprite->y = 4 - sPinballGame->cameraScrollY;
         sprite->invisible = FALSE;
     }
-}
+}*/
 
 static bool32 UpdateDiglett(struct Diglett *diglett)
 {
@@ -4373,7 +4373,7 @@ static void UpdateDugtrioSprite(struct Sprite *sprite)
     }
 }
 
-static bool32 CheckSeelCollision(struct Ball *ball, struct Seel *seel, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification)
+/*static bool32 CheckSeelCollision(struct Ball *ball, struct Seel *seel, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification)
 {
     int x, y;
     u8 collisionNormal;
@@ -4699,9 +4699,9 @@ static void UpdateSeelMultiplierSprite(struct Sprite *sprite)
             sprite->invisible = TRUE;
         break;
     }
-}
+}*/
 
-static bool32 CheckGhostsCollision(struct Ball *ball, u32 ticks, struct GraveyardGhost *ghosts, int numGhosts, const u8 *angles, int width, int height, u8 *outCollisionNormal, int *outCollisionAmplification)
+/*static bool32 CheckGhostsCollision(struct Ball *ball, u32 ticks, struct GraveyardGhost *ghosts, int numGhosts, const u8 *angles, int width, int height, u8 *outCollisionNormal, int *outCollisionAmplification)
 {
     int i;
     int x, y;
@@ -5188,4 +5188,4 @@ static void CrumbleGravestones(struct Gengar *gengar)
         gengar->collisionMap[index + 0x20] = 0x0;
         gengar->collisionMap[index + 0x21] = 0x0;
     }
-}
+}*/

@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS_ALOLA",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_ALOLA",
       "x": 22,
       "y": 57,
       "elevation": 0,
@@ -91,6 +91,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_ALOLA",
+      "x": 8,
+      "y": 61,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "KiyahaIsle_EventScript_Nalu",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -109,8 +122,8 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 9,
-      "y": 58,
+      "x": 24,
+      "y": 54,
       "elevation": 0,
       "dest_map": "MAP_KIYAHA_ISLE_INTERIOR_HOUSE2",
       "dest_warp_id": "0"
@@ -130,11 +143,25 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 24,
-      "y": 54,
+      "x": 9,
+      "y": 58,
       "elevation": 0,
       "dest_map": "MAP_KIYAHA_ISLE_INTERIOR_HOUSE4",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_KIYAHA_ISLE_SHRINE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_KIYAHA_ISLE_SHRINE",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

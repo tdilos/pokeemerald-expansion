@@ -928,7 +928,7 @@ TurquoiseCity_GameCorner_CancelVF::
 
 
 
-TurquoiseCity_GameCorner_EventScript_PinballMeowth::
+TurquoiseCity_GameCorner_EventScript_PinballDiglett::
 	lockall
 	checkitem ITEM_COIN_CASE
 	goto_if_eq VAR_RESULT, FALSE, TurquoiseCity_GameCorner_EventScript_NoCoinCase
@@ -936,7 +936,7 @@ TurquoiseCity_GameCorner_EventScript_PinballMeowth::
 	@goto_if_lt VAR_TEMP_2, 25, Pinball_Not_Enough
 	goto_if_lt VAR_TEMP_2, 5, Pinball_Not_Enough
 	showcoinsbox 1, 1
-	msgbox TurquoiseCity_GameCorner_Text_Pinball_Meowth, MSGBOX_YESNO
+	msgbox TurquoiseCity_GameCorner_Text_Pinball_Diglett, MSGBOX_YESNO
 	closemessage
 	goto_if_eq VAR_RESULT, NO, TurquoiseCity_GameCorner_CancelVF	
 	@removecoins 25
@@ -946,7 +946,7 @@ TurquoiseCity_GameCorner_EventScript_PinballMeowth::
 	delay 40
 	hidecoinsbox 0, 5
 	playbgm MUS_RG_POKE_CENTER, FALSE
-	callnative PlayMeowthPinballGame
+	callnative PlayDiglettPinballGame
     waitstate
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -965,7 +965,7 @@ TurquoiseCity_GameCorner_EventScript_PinballMeowth::
 	releaseall
 	end
 
-TurquoiseCity_GameCorner_Text_Pinball_Meowth:
+TurquoiseCity_GameCorner_Text_Pinball_Diglett:
 	.string "It's a PINBALL MACHINE!\n"
 	.string "It costs 5 COINS to play.$"
 
