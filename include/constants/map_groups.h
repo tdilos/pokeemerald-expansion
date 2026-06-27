@@ -1597,6 +1597,7 @@ enum
     MAP_SPRING_FORBIDDEN_FOREST_NW    = (3 | (104 << 8)),
 
     // gMapGroup_XGreenhouse
+    MAP_LUSH_UNDERSPIRE_B1 = (0 | (105 << 8)),
 
     // gMapGroup_XSlough
 

@@ -2637,3 +2637,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/KeokeoIsle_Shrine/scripts.inc"
 
 	.include "data/maps/OmaomaIsle_Shrine/scripts.inc"
+
+	.include "data/maps/LushUnderspire_B1/scripts.inc"

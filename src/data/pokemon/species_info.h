@@ -4696,7 +4696,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     },
 	
 	// Tourmaline 2.0 mons
-    [SPECIES_MANIPULON] =
+    [SPECIES_MANIPULOBE] =
     {
         .baseHP        = 71,
         .baseAttack    = 109,
@@ -4715,7 +4715,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_BEAST_BOOST, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BLACK,
-        .speciesName = _("Manipulon"),
+        .speciesName = _("Manipulobe"),
         .cryId = CRY_MANIPULON,
         .natDexNum = NATIONAL_DEX_MANIPULON,
         .categoryName = _("Manipulate"),
@@ -4723,9 +4723,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .weight = 600,
         .description = COMPOUND_STRING(
             "A newly discovered Ultra Beast.\n"
-            "Its limbs are very flexible and\n"
+            "Its many flexible appendages are\n"
 			"capable of mimicking almost any\n"
-            "almost any hand-like shape."),
+            "hand-like shape."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 256,

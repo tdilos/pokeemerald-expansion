@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "StationCity_Building1_B1_EventScript_UltraWormhole",
+      "script": "StationCity_Building1_B1_Hallway_EventScript_UltraWormhole",
       "flag": "0"
     }
   ],

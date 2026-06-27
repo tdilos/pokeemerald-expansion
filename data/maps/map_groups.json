@@ -1700,7 +1700,9 @@
     "Spring_ForestDale",
     "Spring_ForbiddenForest_NW"
   ],
-  "gMapGroup_XGreenhouse": [],
+  "gMapGroup_XGreenhouse": [
+    "LushUnderspire_B1"
+  ],
   "gMapGroup_XSlough": [],
   "gMapGroup_XWaste": [],
   "gMapGroup_XLabyrinth": [],

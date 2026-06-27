@@ -16,6 +16,30 @@ KiyahaIsle_Interior_Text_LittleGirl1:
 	.string "see where it went?$"
 
 
+KiyahaIsle_Interior_EventScript_OldMan::
+	lock
+	faceplayer
+	msgbox KiyahaIsle_Interior_Text_OldMan, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+KiyahaIsle_Interior_Text_OldMan:
+	@.string "You defeated the wicked sea god\n"
+	@.string "and brought the guardians back.\p"
+	.string "Legends tell of strong trainers\n"
+	.string "in the past who earned the respect\l"
+	.string "of the guardians and fought alongside\l"
+	.string "them in the past.\p"
+	.string "What I would give for a trainer\n"
+	.string "like that in times like these...$"
+	
+
+
+
+
+
+
 
 @ Each sand castle flag has a random chance to reset each day
 

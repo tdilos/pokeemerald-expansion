@@ -709,6 +709,15 @@ static const struct SpriteFrameImage sPicTable_Riley[] = {
 };
 
 
+static const struct SpriteFrameImage sPicTable_BikerM[] = {
+    overworld_ascending_frames(gObjectEventPic_BikerM, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_BikerF[] = {
+    overworld_ascending_frames(gObjectEventPic_BikerF, 2, 4),
+};
+
+
 static const struct SpriteFrameImage sPicTable_Gardener[] = {
     overworld_ascending_frames(gObjectEventPic_Gardener, 2, 4),
 };

@@ -1781,7 +1781,7 @@
 #define SPECIES_SILVALLY_ECHO                          (TOURMALINE_START + 79)
 
 // Ultra Beasts
-#define SPECIES_MANIPULON                              (TOURMALINE_START + 80)
+#define SPECIES_MANIPULOBE                             (TOURMALINE_START + 80)
 #define SPECIES_SOMNIVORE                              (TOURMALINE_START + 81)
 #define SPECIES_TEROPHAGE                              (TOURMALINE_START + 82)
 #define SPECIES_REIZURGE                               (TOURMALINE_START + 83)

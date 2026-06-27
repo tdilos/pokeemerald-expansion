@@ -500,12 +500,15 @@
 #define OBJ_EVENT_GFX_LASS_GALAR                 414
 #define OBJ_EVENT_GFX_YOUNGSTER_GALAR            415
 #define OBJ_EVENT_GFX_KNIGHT_ARMOR               416
+#define OBJ_EVENT_GFX_BIKER_M                    417
+#define OBJ_EVENT_GFX_BIKER_F                    418
+#define OBJ_EVENT_GFX_BANDIT                     419
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
 
-#define NUM_OBJ_EVENT_GFX                        417 //388
+#define NUM_OBJ_EVENT_GFX                        420 //388
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

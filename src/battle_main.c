@@ -386,6 +386,23 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_GENESIS_BOSS] = { _("GENESIS BOSS"), 20, BALL_MASTER },
 	// v0.3
 	[TRAINER_CLASS_UNKNOWN] = { _("UNKNOWN"), 0, BALL_DREAM },
+	// v2.0
+    [TRAINER_CLASS_BIKER] =                 { _("BIKER"), 5 }, // Used for X-Cosmopolis racers
+    [TRAINER_CLASS_YOUNGSTER_ALOLA] =       { _("YOUNGSTER"), 4 },
+    [TRAINER_CLASS_LASS_ALOLA] =            { _("LASS"), 4 },
+    [TRAINER_CLASS_YOUNGSTER_GALAR] =       { _("SQUIRE"), 4 },
+    [TRAINER_CLASS_LASS_GALAR] =            { _("MAID"), 4 },
+    [TRAINER_CLASS_BANDIT] =                { _("BANDIT"), 16 },
+	[TRAINER_CLASS_ROYAL_GUARD] =           { _("KINGSMAN"), 8, BALL_GREAT },
+	[TRAINER_CLASS_HOLLOW_KNIGHT] =         { _("HOLLOW"), 0, BALL_BLACK },
+	[TRAINER_CLASS_GARDENER] =              { _("GARDENER"), 4, BALL_NEST },
+	
+    [TRAINER_CLASS_SPECIAL_AGENT] =         { _("SPEC. AGENT"), 10, BALL_ULTRA }, // Used for Looker and Emma
+    [TRAINER_CLASS_CHAMPION_2] =            { _("CHAMPION"), 20, BALL_BEAST }, // Used for Ultra Space companions
+    [TRAINER_CLASS_PKMN_TRAINER_3] =        { _("{PKMN} TRAINER"), 10, BALL_BEAST }, // Used only for Tiw
+	[TRAINER_CLASS_SYNDERLING] =            { _("SYNDERLING"), 0, BALL_BLACK },
+	[TRAINER_CLASS_SCIENTIST_2] =           { _("SCIENTIST"), 10, BALL_PREMIER }, // Used for Hacker prior to X-Synestia
+	[TRAINER_CLASS_ARCHON] =                { _("ARCHON"), 0, BALL_BLACK },
 	
 	
 	

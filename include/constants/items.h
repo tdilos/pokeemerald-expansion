@@ -1119,6 +1119,8 @@ enum __attribute__((packed)) Item
 
 	// Other new items
     ITEM_ECHOIUM_Z              = (ITEMS_TOURMALINE_START + 34),
+    ITEM_ECHO_MEMORY            = (ITEMS_TOURMALINE_START + 35),
+    ITEM_BLACK_BALL             = (ITEMS_TOURMALINE_START + 36),
 	
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

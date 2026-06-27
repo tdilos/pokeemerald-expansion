@@ -485,6 +485,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedEvil;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oakley;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Riley;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BikerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BikerF;
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gardener;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassAlola;
@@ -961,6 +964,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RED_EVIL]                 = &gObjectEventGraphicsInfo_RedEvil,
     [OBJ_EVENT_GFX_OAKLEY]                   = &gObjectEventGraphicsInfo_Oakley,
     [OBJ_EVENT_GFX_RILEY]                    = &gObjectEventGraphicsInfo_Riley,
+    [OBJ_EVENT_GFX_BIKER_M]                  = &gObjectEventGraphicsInfo_BikerM,
+    [OBJ_EVENT_GFX_BIKER_F]                  = &gObjectEventGraphicsInfo_BikerF,
     [OBJ_EVENT_GFX_GARDENER]                 = &gObjectEventGraphicsInfo_Gardener,
     [OBJ_EVENT_GFX_LASS_ALOLA]               = &gObjectEventGraphicsInfo_LassAlola,
     [OBJ_EVENT_GFX_LITTLE_GIRL_ALOLA]        = &gObjectEventGraphicsInfo_LittleGirlAlola,

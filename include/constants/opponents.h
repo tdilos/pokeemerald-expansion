@@ -1364,12 +1364,45 @@
 #define TRAINER_GRUNT_PANO_ISLE_5       1305
 #define TRAINER_GRUNT_PANO_ISLE_6       1306
 
+#define TRAINER_GEP          1307
+#define TRAINER_TOMKIN       1308
+#define TRAINER_HITCH        1309
+
+#define TRAINER_TILLIE       1310
+#define TRAINER_NELLY        1311
+#define TRAINER_HANNE        1312
+
+#define TRAINER_DROGO        1313
+#define TRAINER_BARNABY      1314
+#define TRAINER_HAMON        1315
+#define TRAINER_DIGGORY      1316
+
+#define TRAINER_GALAHAD      1317
+#define TRAINER_VALERAND     1318
+#define TRAINER_HARDWIN      1319
+#define TRAINER_TANCRED      1320
+
+#define TRAINER_HOLLOW_KNIGHT_1      1321
+#define TRAINER_HOLLOW_KNIGHT_2      1322
+#define TRAINER_HOLLOW_KNIGHT_3      1323
+#define TRAINER_HOLLOW_KNIGHT_4      1324
+#define TRAINER_HOLLOW_KNIGHT_5      1325
+#define TRAINER_HOLLOW_KNIGHT_6      1326
+
+#define TRAINER_ORIN        1327
+#define TRAINER_THALOCH     1328
+#define TRAINER_MURDRUM     1329
+#define TRAINER_MAELOR      1330
+#define TRAINER_KERROW      1331
+#define TRAINER_CEREDIG     1332
+#define TRAINER_SLOAN       1333
+#define TRAINER_GARRICK     1334
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1307 //1291 //965//855
+#define TRAINERS_COUNT_EMERALD     1335 //1291 //965//855
 #define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG

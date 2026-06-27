@@ -540,15 +540,43 @@ static const union AnimCmd *const sAnims_Zinnia[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_ArchieSynderling[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_MaxieSynderling[] ={
+    sAnim_GeneralFrame0,
+};
+
 static const union AnimCmd *const sAnims_Oakley[] ={
     sAnim_GeneralFrame0,
 };
 
-static const union AnimCmd *const sAnims_RedManga[] ={
+static const union AnimCmd *const sAnims_RedSynderling[] ={
     sAnim_GeneralFrame0,
 };
 
 static const union AnimCmd *const sAnims_Riley[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_VioletSynderling[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_VertSynderling[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_RaynerSynderling[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_BikerM[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_BikerF[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -557,6 +585,14 @@ static const union AnimCmd *const sAnims_LassAlola[] ={
 };
 
 static const union AnimCmd *const sAnims_YoungsterAlola[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_LassGalar[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_YoungsterGalar[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -708,11 +744,20 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 	[TRAINER_PIC_LOOKER] = sAnims_Looker,
 	[TRAINER_PIC_YELLOW] = sAnims_Yellow,
 	[TRAINER_PIC_ZINNIA] = sAnims_Zinnia,
+	[TRAINER_PIC_ARCHIE_SYNDERLING] = sAnims_ArchieSynderling,
+	[TRAINER_PIC_MAXIE_SYNDERLING] = sAnims_MaxieSynderling,
 	[TRAINER_PIC_OAKLEY] = sAnims_Oakley,
-	[TRAINER_PIC_RED_MANGA] = sAnims_RedManga,
+	[TRAINER_PIC_RED_SYNDERLING] = sAnims_RedSynderling,
 	[TRAINER_PIC_RILEY] = sAnims_Riley,
+	[TRAINER_PIC_VERT_SYNDERLING] = sAnims_VertSynderling,
+	[TRAINER_PIC_VIOLET_SYNDERLING] = sAnims_VioletSynderling,
+	[TRAINER_PIC_RAYNER_SYNDERLING] = sAnims_RaynerSynderling,
+	[TRAINER_PIC_BIKER_M] = sAnims_BikerM,
+	[TRAINER_PIC_BIKER_F] = sAnims_BikerF,
 	[TRAINER_PIC_LASS_ALOLA] = sAnims_LassAlola,
 	[TRAINER_PIC_YOUNGSTER_ALOLA] = sAnims_YoungsterAlola,
+	[TRAINER_PIC_LASS_GALAR] = sAnims_LassGalar,
+	[TRAINER_PIC_YOUNGSTER_GALAR] = sAnims_YoungsterGalar,
 	[TRAINER_PIC_HOLLOW_KNIGHT] = sAnims_HollowKnight,
 	[TRAINER_PIC_GARDENER] = sAnims_Gardener,
 };
