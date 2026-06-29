@@ -464,3 +464,6 @@ const u16 gMetatileAttributes_StationCity[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_XPelago[] = INCBIN_U16("data/tilesets/secondary/xpelago/metatiles.bin");
 const u16 gMetatileAttributes_XPelago[] = INCBIN_U16("data/tilesets/secondary/xpelago/metatile_attributes.bin");
+
+const u16 gMetatiles_XGreenhouse[] = INCBIN_U16("data/tilesets/secondary/xgreenhouse/metatiles.bin");
+const u16 gMetatileAttributes_XGreenhouse[] = INCBIN_U16("data/tilesets/secondary/xgreenhouse/metatile_attributes.bin");

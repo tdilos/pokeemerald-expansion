@@ -12214,12 +12214,42 @@
     {
       "id": "LAYOUT_LUSH_UNDERSPIRE_B1",
       "name": "LushUnderspire_B1_Layout",
-      "width": 40,
-      "height": 30,
+      "width": 55,
+      "height": 38,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_XGreenhouse",
       "border_filepath": "data/layouts/LushUnderspire_B1/border.bin",
       "blockdata_filepath": "data/layouts/LushUnderspire_B1/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_B3",
+      "name": "LushUnderspire_B3_Layout",
+      "width": 55,
+      "height": 38,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_B3/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_B3/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_B2",
+      "name": "LushUnderspire_B2_Layout",
+      "width": 55,
+      "height": 38,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_B2/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_B2/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_B4",
+      "name": "LushUnderspire_B4_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_B4/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_B4/map.bin"
     }
   ]
 }

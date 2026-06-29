@@ -1701,7 +1701,10 @@
     "Spring_ForbiddenForest_NW"
   ],
   "gMapGroup_XGreenhouse": [
-    "LushUnderspire_B1"
+    "LushUnderspire_B1",
+    "LushUnderspire_B2",
+    "LushUnderspire_B3",
+    "LushUnderspire_B4"
   ],
   "gMapGroup_XSlough": [],
   "gMapGroup_XWaste": [],

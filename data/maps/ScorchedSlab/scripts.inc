@@ -6,3 +6,4 @@ ScorchedSlab_OnTransition:
 	setflag FLAG_LANDMARK_SCORCHED_SLAB
 	end
 
+

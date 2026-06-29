@@ -409,6 +409,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_ZINC",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_121_ZINC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WORMHOLE_SMALL",
+      "x": 18,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Wormhole_EventScript_Keldeo",
+      "flag": "FLAG_HIDE_WORMHOLE_KELDEO"
     }
   ],
   "warp_events": [
@@ -476,7 +489,7 @@
     },
     {
       "type": "secret_base",
-      "x": 18,
+      "x": 16,
       "y": 13,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_RED_CAVE3_2"

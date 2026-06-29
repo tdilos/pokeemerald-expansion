@@ -1221,7 +1221,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TMBall = {
     .oam = &gObjectEventBaseOam_16x16,
     .subspriteTables = sOamTables_16x16,
     .anims = sAnimTable_Inanimate,
-    .images = sPicTable_PokeBall,
+    .images = sPicTable_TMBall,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

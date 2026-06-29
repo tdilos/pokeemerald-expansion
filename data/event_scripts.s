@@ -1757,6 +1757,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/kendoma_doors.inc"
 	.include "data/scripts/mirage_palace.inc"
 	.include "data/scripts/underground_city_doors.inc"
+	.include "data/scripts/wormhole.inc"
 
 	.include "data/maps/UmberTown/scripts.inc"
 
@@ -2639,3 +2640,9 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/OmaomaIsle_Shrine/scripts.inc"
 
 	.include "data/maps/LushUnderspire_B1/scripts.inc"
+
+	.include "data/maps/LushUnderspire_B4/scripts.inc"
+
+	.include "data/maps/LushUnderspire_B3/scripts.inc"
+
+	.include "data/maps/LushUnderspire_B2/scripts.inc"

@@ -524,6 +524,10 @@ static const struct SpriteFrameImage sPicTable_BlackBall[] = {
     obj_frame_tiles(gObjectEventPic_BlackBall),
 };
 
+static const struct SpriteFrameImage sPicTable_TMBall[] = {
+    obj_frame_tiles(gObjectEventPic_TMBall),
+};
+
 static const struct SpriteFrameImage sPicTable_ReporterM[] = {
     overworld_ascending_frames(gObjectEventPic_ReporterM, 2, 4),
 };

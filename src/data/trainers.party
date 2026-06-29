@@ -28204,3 +28204,752 @@ EVs: 252 HP / 216 Def / 40 SpD
 
 
 
+=== TRAINER_NALU ===
+Name: NALU
+Class: Youngster Alola
+Pic: Youngster Alola
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Smart Trainer
+
+
+Yungoos
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_HIAPO ===
+Name: HIAPO
+Class: Youngster Alola
+Pic: Youngster Alola
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Yungoos
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_KEANU ===
+Name: KEANU
+Class: Youngster Alola
+Pic: Youngster Alola
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Yungoos
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_MAKOA ===
+Name: MAKOA
+Class: Youngster Alola
+Pic: Youngster Alola
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Yungoos
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_PALI ===
+Name: PALI
+Class: Youngster Alola
+Pic: Youngster Alola
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Yungoos
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_NANEA ===
+Name: NANEA
+Class: Lass Alola
+Pic: Lass Alola
+Gender: Female
+Music: Female
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Yungoos
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_LEIHUA ===
+Name: LEIHUA
+Class: Lass Alola
+Pic: Lass Alola
+Gender: Female
+Music: Female
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Yungoos
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_LANI ===
+Name: LANI
+Class: Lass Alola
+Pic: Lass Alola
+Gender: Female
+Music: Female
+Battle Type: Singles
+AI: Smart Trainer
+
+SPECIES_PINCURCHIN @ ITEM_ELECTRIC_SEED
+Level: 19
+Ability: ABILITY_ELECTRIC_SURGE
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 252 HP / 252 Def
+- MOVE_THUNDER_SHOCK
+- MOVE_WATER_GUN
+- MOVE_PECK
+
+
+
+=== TRAINER_MOMI ===
+Name: MOMI
+Class: Lass Alola
+Pic: Lass Alola
+Gender: Female
+Music: Female
+Battle Type: Singles
+AI: Smart Trainer
+
+SPECIES_RAICHU_ALOLA @ ITEM_LEFTOVERS
+Level: 21
+Ability: ABILITY_SURGE_SURFER
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 252 SpA / 252 Spe
+- MOVE_NASTY_PLOT
+- MOVE_THUNDERBOLT
+- MOVE_PSYCHIC
+- MOVE_THUNDER_WAVE
+
+
+
+=== TRAINER_MAILE ===
+Name: MAILE
+Class: Lass Alola
+Pic: Lass Alola
+Gender: Female
+Music: Female
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_TRUMBEAK
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+SPECIES_ORANGURU
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+SPECIES_TSAREENA
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_GRUNT_PANO_ISLE_1 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Poochyena
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_GRUNT_PANO_ISLE_2 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Poochyena
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_GRUNT_PANO_ISLE_3 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Poochyena
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_GRUNT_PANO_ISLE_4 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Poochyena
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_GRUNT_PANO_ISLE_5 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Poochyena
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_GRUNT_PANO_ISLE_6 ===
+Name: GRUNT
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_TOXAPEX
+Level: 25
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_GEP ===
+Name: GEP
+Class: Youngster Galar
+Pic: Youngster Galar
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Rookidee
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_TOMKIN ===
+Name: TOMKIN
+Class: Youngster Galar
+Pic: Youngster Galar
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Rookidee
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_HITCH ===
+Name: HITCH
+Class: Youngster Galar
+Pic: Youngster Galar
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Rookidee
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_TILLIE ===
+Name: TILLIE
+Class: Lass Galar
+Pic: Lass Galar
+Gender: Female
+Music: Female
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Skwovet
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_NELLY ===
+Name: NELLY
+Class: Lass Galar
+Pic: Lass Galar
+Gender: Female
+Music: Female
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Skwovet
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_HANNE ===
+Name: HANNE
+Class: Lass Galar
+Pic: Lass Galar
+Gender: Female
+Music: Female
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Skwovet
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_DROGO ===
+Name: DROGO
+Class: Bandit
+Pic: Bandit
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Check Bad Move
+
+
+SPECIES_ZIGZAGOON_GALAR
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_BARNABY ===
+Name: BARNABY
+Class: Bandit
+Pic: Bandit
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Check Bad Move
+
+
+SPECIES_ZIGZAGOON_GALAR
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_HAMON ===
+Name: HAMON
+Class: Bandit
+Pic: Bandit
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Check Bad Move
+
+
+SPECIES_ZIGZAGOON_GALAR
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+=== TRAINER_DIGGORY ===
+Name: DIGGORY
+Class: Bandit
+Pic: Bandit
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Check Bad Move
+
+
+SPECIES_ZIGZAGOON_GALAR
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_GALAHAD ===
+Name: GALAHAD
+Class: Royal Guard
+Pic: Royal Guard
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_VALERAND ===
+Name: VALERAND
+Class: Royal Guard
+Pic: Royal Guard
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_HARDWIN ===
+Name: HARDWIN
+Class: Royal Guard
+Pic: Royal Guard
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_TANCRED ===
+Name: TANCRED
+Class: Royal Guard
+Pic: Royal Guard
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_HOLLOW_KNIGHT_1 ===
+Name: KNIGHT
+Class: Hollow Knight
+Pic: Hollow Knight
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_HOLLOW_KNIGHT_2 ===
+Name: KNIGHT
+Class: Hollow Knight
+Pic: Hollow Knight
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_HOLLOW_KNIGHT_3 ===
+Name: KNIGHT
+Class: Hollow Knight
+Pic: Hollow Knight
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_HOLLOW_KNIGHT_4 ===
+Name: KNIGHT
+Class: Hollow Knight
+Pic: Hollow Knight
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_HOLLOW_KNIGHT_5 ===
+Name: KNIGHT
+Class: Hollow Knight
+Pic: Hollow Knight
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_HOLLOW_KNIGHT_6 ===
+Name: KNIGHT
+Class: Hollow Knight
+Pic: Hollow Knight
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_ORIN ===
+Name: ORIN
+Class: Gardener
+Pic: Gardener
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Tangela
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- MOVE_VINE_WHIP
+- MOVE_ROTOTILL
+
+
+
+=== TRAINER_THALOCH ===
+Name: THALOCH
+Class: Gardener
+Pic: Gardener
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Tangela
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- MOVE_VINE_WHIP
+- MOVE_ROTOTILL
+
+
+
+=== TRAINER_MURDRUM ===
+Name: MURDRUM
+Class: Gardener
+Pic: Gardener
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Tangela
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- MOVE_VINE_WHIP
+- MOVE_ROTOTILL
+
+
+
+=== TRAINER_MAELOR ===
+Name: MAELOR
+Class: Gardener
+Pic: Gardener
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Tangela
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- MOVE_VINE_WHIP
+- MOVE_ROTOTILL
+
+
+
+=== TRAINER_KERROW ===
+Name: KERROW
+Class: Gardener
+Pic: Gardener
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Tangela
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- MOVE_VINE_WHIP
+- MOVE_ROTOTILL
+
+
+
+=== TRAINER_CEREDIG ===
+Name: CEREDIG
+Class: Gardener
+Pic: Gardener
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Tangela
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- MOVE_VINE_WHIP
+- MOVE_ROTOTILL
+
+
+
+=== TRAINER_SLOAN ===
+Name: SLOAN
+Class: Gardener
+Pic: Gardener
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Tangela
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- MOVE_VINE_WHIP
+- MOVE_ROTOTILL
+
+
+
+=== TRAINER_GARRICK ===
+Name: GARRICK
+Class: Gardener
+Pic: Gardener
+Gender: Male
+Music: Male
+Battle Type: Singles
+AI: Check Bad Move
+
+
+Tangela
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- MOVE_VINE_WHIP
+- MOVE_ROTOTILL
+
+
+
+

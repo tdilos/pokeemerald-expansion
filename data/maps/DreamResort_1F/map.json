@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SOUL_SHARD",
@@ -91,6 +91,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "DreamResort_EventScript_SpiritombBattle",
       "flag": "FLAG_BATTLED_SPIRITOMB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WORMHOLE_SMALL",
+      "x": 5,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Wormhole_EventScript_Darkrai",
+      "flag": "FLAG_HIDE_WORMHOLE_DARKRAI"
     }
   ],
   "warp_events": [

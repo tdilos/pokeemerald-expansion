@@ -1598,6 +1598,9 @@ enum
 
     // gMapGroup_XGreenhouse
     MAP_LUSH_UNDERSPIRE_B1 = (0 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B2 = (1 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B3 = (2 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B4 = (3 | (105 << 8)),
 
     // gMapGroup_XSlough
 

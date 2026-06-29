@@ -340,7 +340,5 @@
       "script": "Route90_EventScript_GenesisEncounter3"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }
