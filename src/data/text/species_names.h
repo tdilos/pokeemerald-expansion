@@ -959,7 +959,7 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_VOLKRITTER] = _("Volkritter"),
     [SPECIES_VOLKRAKEN] = _("Volkraken"),
 
-	[SPECIES_MANIPULON] = _("Manipulon"),
+	[SPECIES_MANIPULOBE] = _("Manipulobe"),
 	[SPECIES_SOMNIVORE] = _("Somnivore"),
 	[SPECIES_TEROPHAGE] = _("Terophage"),
 	[SPECIES_REIZURGE] = _("Reizurge"),

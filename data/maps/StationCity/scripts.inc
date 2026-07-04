@@ -21,8 +21,18 @@ StationCity_EventScript_Boy::
 	end
 
 StationCity_Text_SeeMyHouse:
-	.string "Hehehe. If you look up, you can\n"
-	.string "see my apartment from here.$"
+	.string "Heh. If you look up, you can\n"
+	.string "see my room from here.$"
 
 
+StationCity_EventScript_Boy2::
+	lock
+	faceplayer
+	msgbox StationCity_Text_WeirdPlace, MSGBOX_DEFAULT
+	release
+	end
+
+StationCity_Text_WeirdPlace:
+	.string "This place is too weird, man!\n"
+	.string "Everything goes in circles!$"
 

@@ -11904,7 +11904,7 @@
     {
       "id": "LAYOUT_STATION_RING",
       "name": "StationRing_Layout",
-      "width": 80,
+      "width": 110,
       "height": 36,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_StationCity",
@@ -12234,7 +12234,7 @@
     {
       "id": "LAYOUT_LUSH_UNDERSPIRE_B2",
       "name": "LushUnderspire_B2_Layout",
-      "width": 55,
+      "width": 68,
       "height": 38,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XGreenhouse",
