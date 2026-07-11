@@ -1377,32 +1377,35 @@
 #define TRAINER_HAMON        1315
 #define TRAINER_DIGGORY      1316
 
-#define TRAINER_GALAHAD      1317
+#define TRAINER_FOWLER       1317
 #define TRAINER_VALERAND     1318
-#define TRAINER_HARDWIN      1319
+#define TRAINER_RUBER        1319
 #define TRAINER_TANCRED      1320
 
-#define TRAINER_HOLLOW_KNIGHT_1      1321
-#define TRAINER_HOLLOW_KNIGHT_2      1322
-#define TRAINER_HOLLOW_KNIGHT_3      1323
-#define TRAINER_HOLLOW_KNIGHT_4      1324
-#define TRAINER_HOLLOW_KNIGHT_5      1325
-#define TRAINER_HOLLOW_KNIGHT_6      1326
+#define TRAINER_NESTER        1321
+#define TRAINER_AINSLEY       1322
 
-#define TRAINER_ORIN        1327
-#define TRAINER_THALOCH     1328
-#define TRAINER_MURDRUM     1329
-#define TRAINER_MAELOR      1330
-#define TRAINER_KERROW      1331
-#define TRAINER_CEREDIG     1332
-#define TRAINER_SLOAN       1333
-#define TRAINER_GARRICK     1334
+#define TRAINER_HOLLOW_KNIGHT_1      1323
+#define TRAINER_HOLLOW_KNIGHT_2      1324
+#define TRAINER_HOLLOW_KNIGHT_3      1325
+#define TRAINER_HOLLOW_KNIGHT_4      1326
+#define TRAINER_HOLLOW_KNIGHT_5      1327
+#define TRAINER_HOLLOW_KNIGHT_6      1328
+
+#define TRAINER_ORIN        1329
+#define TRAINER_THALOCH     1330
+#define TRAINER_MURDRUM     1331
+#define TRAINER_MAELOR      1332
+#define TRAINER_KERROW      1333
+#define TRAINER_CEREDIG     1334
+#define TRAINER_SLOAN       1335
+#define TRAINER_GARRICK     1336
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1335 //1291 //965//855
+#define TRAINERS_COUNT_EMERALD     1337 //1291 //965//855
 #define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG

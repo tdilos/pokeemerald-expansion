@@ -28638,71 +28638,99 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
 
-=== TRAINER_GALAHAD ===
-Name: GALAHAD
-Class: Royal Guard
-Pic: Royal Guard
+=== TRAINER_FOWLER ===
+Name: FOWLER
+Class: Kingsman
+Pic: Kingsman
 Gender: Male
 Music: Male
 Battle Type: Singles
 AI: Smart Trainer
 
 
+SPECIES_TALONFLAME
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
 SPECIES_DOUBLADE
 Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
+SPECIES_CORVIKNIGHT
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
 
 === TRAINER_VALERAND ===
 Name: VALERAND
-Class: Royal Guard
-Pic: Royal Guard
+Class: Kingsman
+Pic: Kingsman
 Gender: Male
 Music: Male
 Battle Type: Singles
 AI: Smart Trainer
 
 
+SPECIES_TAUROS_PALDEA_COMBAT
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
 SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+SPECIES_SIRFETCHD
 Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
 
-
-=== TRAINER_HARDWIN ===
-Name: HARDWIN
-Class: Royal Guard
-Pic: Royal Guard
+=== TRAINER_RUBER ===
+Name: RUBER
+Class: Kingsman
+Pic: Kingsman
 Gender: Male
 Music: Male
 Battle Type: Singles
 AI: Smart Trainer
 
 
+SPECIES_PAWNIARD
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
 SPECIES_DOUBLADE
 Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-
+SPECIES_DARUMAKA
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- MOVE_FIRE_PUNCH
 
 
 === TRAINER_TANCRED ===
 Name: TANCRED
-Class: Royal Guard
-Pic: Royal Guard
+Class: Kingsman
+Pic: Kingsman
 Gender: Male
 Music: Male
 Battle Type: Singles
 AI: Smart Trainer
 
 
+SPECIES_LYCANROC
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
 SPECIES_DOUBLADE
 Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
+SPECIES_GALLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
 

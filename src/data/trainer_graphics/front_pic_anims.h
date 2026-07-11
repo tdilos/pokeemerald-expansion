@@ -548,7 +548,19 @@ static const union AnimCmd *const sAnims_MaxieSynderling[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_Hacker[] ={
+    sAnim_GeneralFrame0,
+};
+
 static const union AnimCmd *const sAnims_Oakley[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Cyborg[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Witch[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -596,11 +608,27 @@ static const union AnimCmd *const sAnims_YoungsterGalar[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_Jester[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Bandit[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Kingsman[] ={
+    sAnim_GeneralFrame0,
+};
+
 static const union AnimCmd *const sAnims_HollowKnight[] ={
     sAnim_GeneralFrame0,
 };
 
 static const union AnimCmd *const sAnims_Gardener[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Miner[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -746,7 +774,10 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 	[TRAINER_PIC_ZINNIA] = sAnims_Zinnia,
 	[TRAINER_PIC_ARCHIE_SYNDERLING] = sAnims_ArchieSynderling,
 	[TRAINER_PIC_MAXIE_SYNDERLING] = sAnims_MaxieSynderling,
+	[TRAINER_PIC_HACKER] = sAnims_Hacker,
 	[TRAINER_PIC_OAKLEY] = sAnims_Oakley,
+	[TRAINER_PIC_CYBORG] = sAnims_Cyborg,
+	[TRAINER_PIC_WITCH] = sAnims_Witch,
 	[TRAINER_PIC_RED_SYNDERLING] = sAnims_RedSynderling,
 	[TRAINER_PIC_RILEY] = sAnims_Riley,
 	[TRAINER_PIC_VERT_SYNDERLING] = sAnims_VertSynderling,
@@ -758,6 +789,10 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 	[TRAINER_PIC_YOUNGSTER_ALOLA] = sAnims_YoungsterAlola,
 	[TRAINER_PIC_LASS_GALAR] = sAnims_LassGalar,
 	[TRAINER_PIC_YOUNGSTER_GALAR] = sAnims_YoungsterGalar,
+	[TRAINER_PIC_JESTER] = sAnims_Jester,
+	[TRAINER_PIC_BANDIT] = sAnims_Bandit,
+	[TRAINER_PIC_KINGSMAN] = sAnims_Kingsman,
 	[TRAINER_PIC_HOLLOW_KNIGHT] = sAnims_HollowKnight,
 	[TRAINER_PIC_GARDENER] = sAnims_Gardener,
+	[TRAINER_PIC_MINER] = sAnims_Miner,
 };

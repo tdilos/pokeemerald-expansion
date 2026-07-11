@@ -722,10 +722,6 @@ static const struct SpriteFrameImage sPicTable_BikerF[] = {
 };
 
 
-static const struct SpriteFrameImage sPicTable_Gardener[] = {
-    overworld_ascending_frames(gObjectEventPic_Gardener, 2, 4),
-};
-
 
 static const struct SpriteFrameImage sPicTable_LassAlola[] = {
     overworld_ascending_frames(gObjectEventPic_LassAlola, 2, 4),
@@ -748,6 +744,7 @@ static const struct SpriteFrameImage sPicTable_YoungsterAlola[] = {
 };
 
 
+
 static const struct SpriteFrameImage sPicTable_LassGalar[] = {
     overworld_ascending_frames(gObjectEventPic_LassGalar, 2, 4),
 };
@@ -759,6 +756,19 @@ static const struct SpriteFrameImage sPicTable_YoungsterGalar[] = {
 static const struct SpriteFrameImage sPicTable_KnightArmor[] = {
     overworld_ascending_frames(gObjectEventPic_KnightArmor, 2, 4),
 };
+
+
+
+static const struct SpriteFrameImage sPicTable_Gardener[] = {
+    overworld_ascending_frames(gObjectEventPic_Gardener, 2, 4),
+};
+
+
+
+static const struct SpriteFrameImage sPicTable_Miner[] = {
+    overworld_ascending_frames(gObjectEventPic_Miner, 2, 4),
+};
+
 
 
 /*static const struct SpriteFrameImage sPicTable_UnusedNatuDoll[] = {

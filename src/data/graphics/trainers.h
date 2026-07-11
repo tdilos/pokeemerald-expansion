@@ -403,6 +403,7 @@ const u32 gTrainerFrontPic_Zinnia[] = INCBIN_U32("graphics/trainers/front_pics/z
 const u16 gTrainerPalette_Zinnia[] = INCBIN_U16("graphics/trainers/front_pics/zinnia.gbapal");
 
 
+
 const u32 gTrainerFrontPic_ArchieSynderling[] = INCBIN_U32("graphics/trainers/front_pics/archie_synderling.4bpp.smol");
 
 const u32 gTrainerFrontPic_MaxieSynderling[] = INCBIN_U32("graphics/trainers/front_pics/maxie_synderling.4bpp.smol");
@@ -412,6 +413,12 @@ const u16 gTrainerPalette_Hacker[] = INCBIN_U16("graphics/trainers/front_pics/ha
 
 const u32 gTrainerFrontPic_Oakley[] = INCBIN_U32("graphics/trainers/front_pics/oakley_synderling.4bpp.smol");
 const u16 gTrainerPalette_Oakley[] = INCBIN_U16("graphics/trainers/front_pics/oakley_synderling.gbapal");
+
+const u32 gTrainerFrontPic_Cyborg[] = INCBIN_U32("graphics/trainers/front_pics/cyborg.4bpp.smol");
+const u16 gTrainerPalette_Cyborg[] = INCBIN_U16("graphics/trainers/front_pics/cyborg.gbapal");
+
+const u32 gTrainerFrontPic_Witch[] = INCBIN_U32("graphics/trainers/front_pics/witch.4bpp.smol");
+const u16 gTrainerPalette_Witch[] = INCBIN_U16("graphics/trainers/front_pics/witch.gbapal");
 
 const u32 gTrainerFrontPic_RedSynderling[] = INCBIN_U32("graphics/trainers/front_pics/red_synderling.4bpp.smol");
 const u16 gTrainerPalette_RedSynderling[] = INCBIN_U16("graphics/trainers/front_pics/red_synderling.gbapal");
@@ -424,6 +431,7 @@ const u32 gTrainerFrontPic_VertSynderling[] = INCBIN_U32("graphics/trainers/fron
 const u32 gTrainerFrontPic_VioletSynderling[] = INCBIN_U32("graphics/trainers/front_pics/violet_synderling.4bpp.smol");
 
 const u32 gTrainerFrontPic_RaynerSynderling[] = INCBIN_U32("graphics/trainers/front_pics/rayner_synderling.4bpp.smol");
+
 
 
 const u32 gTrainerFrontPic_BikerM[] = INCBIN_U32("graphics/trainers/front_pics/biker_m.4bpp.smol");
@@ -446,12 +454,25 @@ const u16 gTrainerPalette_LassGalar[] = INCBIN_U16("graphics/trainers/front_pics
 const u32 gTrainerFrontPic_YoungsterGalar[] = INCBIN_U32("graphics/trainers/front_pics/youngster_galar.4bpp.smol");
 const u16 gTrainerPalette_YoungsterGalar[] = INCBIN_U16("graphics/trainers/front_pics/youngster_galar.gbapal");
 
+const u32 gTrainerFrontPic_Jester[] = INCBIN_U32("graphics/trainers/front_pics/jester.4bpp.smol");
+const u16 gTrainerPalette_Jester[] = INCBIN_U16("graphics/trainers/front_pics/jester.gbapal");
+
+const u32 gTrainerFrontPic_Bandit[] = INCBIN_U32("graphics/trainers/front_pics/bandit.4bpp.smol");
+const u16 gTrainerPalette_Bandit[] = INCBIN_U16("graphics/trainers/front_pics/bandit.gbapal");
+
+const u32 gTrainerFrontPic_Kingsman[] = INCBIN_U32("graphics/trainers/front_pics/kingsman.4bpp.smol");
+const u16 gTrainerPalette_Kingsman[] = INCBIN_U16("graphics/trainers/front_pics/kingsman.gbapal");
+
 const u32 gTrainerFrontPic_HollowKnight[] = INCBIN_U32("graphics/trainers/front_pics/hollow_knight.4bpp.smol");
 const u16 gTrainerPalette_HollowKnight[] = INCBIN_U16("graphics/trainers/front_pics/hollow_knight.gbapal");
 
 
 const u32 gTrainerFrontPic_Gardener[] = INCBIN_U32("graphics/trainers/front_pics/gardener.4bpp.smol");
 const u16 gTrainerPalette_Gardener[] = INCBIN_U16("graphics/trainers/front_pics/gardener.gbapal");
+
+
+const u32 gTrainerFrontPic_Miner[] = INCBIN_U32("graphics/trainers/front_pics/miner.4bpp.smol");
+const u16 gTrainerPalette_Miner[] = INCBIN_U16("graphics/trainers/front_pics/miner.gbapal");
 
 
 // FRLG
@@ -889,7 +910,10 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FRONT_ZINNIA, gTrainerFrontPic_Zinnia, gTrainerPalette_Zinnia),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_ARCHIE_SYNDERLING, gTrainerFrontPic_ArchieSynderling, gTrainerPalette_AquaLeaderArchie),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_MAXIE_SYNDERLING, gTrainerFrontPic_MaxieSynderling, gTrainerPalette_MagmaLeaderMaxie),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_HACKER, gTrainerFrontPic_Hacker, gTrainerPalette_Hacker),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_OAKLEY, gTrainerFrontPic_Oakley, gTrainerPalette_Oakley),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_CYBORG, gTrainerFrontPic_Cyborg, gTrainerPalette_Cyborg),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_WITCH, gTrainerFrontPic_Witch, gTrainerPalette_Witch),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_RED_SYNDERLING, gTrainerFrontPic_RedSynderling, gTrainerPalette_RedSynderling),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_RILEY, gTrainerFrontPic_Riley, gTrainerPalette_Riley),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_VERT_SYNDERLING, gTrainerFrontPic_VertSynderling, gTrainerPalette_Brendan),
@@ -902,8 +926,12 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FRONT_YOUNGSTER_ALOLA, gTrainerFrontPic_YoungsterAlola, gTrainerPalette_YoungsterAlola),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_LASS_GALAR, gTrainerFrontPic_LassGalar, gTrainerPalette_LassGalar),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_YOUNGSTER_GALAR, gTrainerFrontPic_YoungsterGalar, gTrainerPalette_YoungsterGalar),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_JESTER, gTrainerFrontPic_Jester, gTrainerPalette_Jester),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_BANDIT, gTrainerFrontPic_Bandit, gTrainerPalette_Bandit),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_KINGSMAN, gTrainerFrontPic_Kingsman, gTrainerPalette_Kingsman),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_HOLLOW_KNIGHT, gTrainerFrontPic_HollowKnight, gTrainerPalette_HollowKnight),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_GARDENER, gTrainerFrontPic_Gardener, gTrainerPalette_Gardener),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_MINER, gTrainerFrontPic_Miner, gTrainerPalette_Miner),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

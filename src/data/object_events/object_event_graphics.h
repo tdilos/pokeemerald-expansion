@@ -399,6 +399,8 @@ const u32 gObjectEventPic_KnightArmor[] = INCBIN_U32("graphics/object_events/pic
 
 const u32 gObjectEventPic_Gardener[] = INCBIN_U32("graphics/object_events/pics/people/gardener.4bpp");
 
+const u32 gObjectEventPic_Miner[] = INCBIN_U32("graphics/object_events/pics/people/miner.4bpp");
+
 //const u32 gObjectEventPic_TreeckoDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/treecko_doll.4bpp");
 //const u32 gObjectEventPic_TorchicDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/torchic_doll.4bpp");
 //const u32 gObjectEventPic_MudkipDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/mudkip_doll.4bpp");

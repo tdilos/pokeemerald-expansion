@@ -488,8 +488,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Riley;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BikerM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BikerF;
 
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gardener;
-
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassAlola;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleGirlAlola;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldManAlola;
@@ -500,6 +498,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassGalar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterGalar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KnightArmor;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gardener;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Miner;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
 	[OBJ_EVENT_GFX_VOLCARONA] =                &gObjectEventGraphicsInfo_Volcarona,
@@ -966,7 +967,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RILEY]                    = &gObjectEventGraphicsInfo_Riley,
     [OBJ_EVENT_GFX_BIKER_M]                  = &gObjectEventGraphicsInfo_BikerM,
     [OBJ_EVENT_GFX_BIKER_F]                  = &gObjectEventGraphicsInfo_BikerF,
-    [OBJ_EVENT_GFX_GARDENER]                 = &gObjectEventGraphicsInfo_Gardener,
     [OBJ_EVENT_GFX_LASS_ALOLA]               = &gObjectEventGraphicsInfo_LassAlola,
     [OBJ_EVENT_GFX_LITTLE_GIRL_ALOLA]        = &gObjectEventGraphicsInfo_LittleGirlAlola,
     [OBJ_EVENT_GFX_OLD_MAN_ALOLA]            = &gObjectEventGraphicsInfo_OldManAlola,
@@ -975,6 +975,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LASS_GALAR]               = &gObjectEventGraphicsInfo_LassGalar,
     [OBJ_EVENT_GFX_YOUNGSTER_GALAR]          = &gObjectEventGraphicsInfo_YoungsterGalar,
     [OBJ_EVENT_GFX_KNIGHT_ARMOR]             = &gObjectEventGraphicsInfo_KnightArmor,
+    [OBJ_EVENT_GFX_GARDENER]                 = &gObjectEventGraphicsInfo_Gardener,
+    [OBJ_EVENT_GFX_MINER]                    = &gObjectEventGraphicsInfo_Miner,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
