@@ -685,8 +685,6 @@ gSpecials::
 	def_special CheckForLuvdiscPair
 	def_special CheckForRotom
 	def_special SetSpecies
-	def_special StartWisteriaGame1
-	def_special StartWisteriaGame2
 	def_special CheckBerryBlenderMaxRecord
 	def_special CheckForSuperAncientPokemon
 	def_special SetSeenMon
@@ -704,4 +702,6 @@ gSpecials::
 	def_special DoSlidingPuzzle
 	def_special DecreaseDifficulty
 	def_special CheckArceusRequirements
+	def_special StartArchonBattle
+
 

@@ -467,3 +467,6 @@ const u16 gMetatileAttributes_XPelago[] = INCBIN_U16("data/tilesets/secondary/xp
 
 const u16 gMetatiles_XGreenhouse[] = INCBIN_U16("data/tilesets/secondary/xgreenhouse/metatiles.bin");
 const u16 gMetatileAttributes_XGreenhouse[] = INCBIN_U16("data/tilesets/secondary/xgreenhouse/metatile_attributes.bin");
+
+const u16 gMetatiles_XHolt[] = INCBIN_U16("data/tilesets/secondary/xholt/metatiles.bin");
+const u16 gMetatileAttributes_XHolt[] = INCBIN_U16("data/tilesets/secondary/xholt/metatile_attributes.bin");

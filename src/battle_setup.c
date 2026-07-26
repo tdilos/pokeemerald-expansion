@@ -568,6 +568,37 @@ void StartWisteriaGame2(void)
     CreateBattleStartTask(B_TRANSITION_SLICE, 0);
 }
 
+// Archon boss fights
+void StartArchonBattle(void)
+{
+	/*u16 level = 50; // or get level of player's lead mon?
+	u16 ability = 0; //ABILITY_THICK_FAT;
+	u16 move1 = MOVE_FOCUS_PUNCH;
+	u16 move2 = MOVE_PAYBACK;
+	u16 move0 = MOVE_NONE;
+	u16 item = ITEM_ASSAULT_VEST;
+	u16 evs = 252;
+	u32 ivs = TRAINER_PARTY_IVS(31, 0, 31, 0, 0, 31);
+	
+	
+    CreateMaleMon(&gEnemyParty[0], SPECIES_HARIYAMA, level);
+    SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &ability);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &move1);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE2, &move2);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE3, &move0);
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE4, &move0);
+    //SetMonData(mon, MON_DATA_MOVE2, MOVE_MIND_READER);
+    //SetMonData(mon, MON_DATA_MOVE3, MOVE_BULK_UP);
+    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &item);
+    SetMonData(&gEnemyParty[0], MON_DATA_HP_EV, &evs);
+    SetMonData(&gEnemyParty[0], MON_DATA_DEF_EV, &evs);
+    CalculateMonStats(&gEnemyParty[0]);*/
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    gBattleTypeFlags = BATTLE_TYPE_ARCHON;
+    CreateBattleStartTask(B_TRANSITION_SLICE, 0);
+    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+}
+
 void BattleSetup_StartScriptedWildBattle(void)
 {
     LockPlayerFieldControls();

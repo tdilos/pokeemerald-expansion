@@ -21,8 +21,9 @@ StationCity_EventScript_Boy::
 	end
 
 StationCity_Text_SeeMyHouse:
-	.string "Heh. If you look up, you can\n"
-	.string "see my room from here.$"
+	.string "Hah! You can see our roof from here!$"
+	@.string "Heh. If you look up, you can\n"
+	@.string "see my room from here.$"
 
 
 StationCity_EventScript_Boy2::
@@ -33,6 +34,6 @@ StationCity_EventScript_Boy2::
 	end
 
 StationCity_Text_WeirdPlace:
-	.string "This place is too weird, man!\n"
-	.string "Everything goes in circles!$"
+	.string "This place is too weird, man.\n"
+	.string "Everything goes in circles...$"
 

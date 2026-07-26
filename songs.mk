@@ -654,6 +654,9 @@ $(MID_SUBDIR)/mus_dp_inside_pokemon_league.s: %.s: %.mid
 $(MID_SUBDIR)/mus_dp_oreburgh_day.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V090	
 
+$(MID_SUBDIR)/mus_dp_valor_lakefront_day.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V096 -X
+	
 $(MID_SUBDIR)/mus_dp_veilstone_night.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V118
 	
@@ -699,6 +702,9 @@ $(MID_SUBDIR)/mus_hg_lighthouse.s: %.s: %.mid
 $(MID_SUBDIR)/mus_hg_pkmn_league.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V082	
 	
+$(MID_SUBDIR)/mus_hg_viridian_forest.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G229 -V087
+	
 $(MID_SUBDIR)/mus_hg_vs_champion.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V113	
 
@@ -708,6 +714,56 @@ $(MID_SUBDIR)/mus_pl_b_factory.s: %.s: %.mid
 $(MID_SUBDIR)/mus_pl_vs_giratina.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V105
 
+
+$(MID_SUBDIR)/mus_bw_dreamyard.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V093
+	
+$(MID_SUBDIR)/mus_bw_icirrus.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V064
+
+$(MID_SUBDIR)/mus_bw_lostlorn_forest.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V062
+	
+$(MID_SUBDIR)/mus_bw_opelucid_black.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G275 -V058
+
+$(MID_SUBDIR)/mus_bw_opelucid_white.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V080 -X
+	
+$(MID_SUBDIR)/mus_bw_relic_castle.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V074
+	
+$(MID_SUBDIR)/mus_bw_route2_spring.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V082
+	
+$(MID_SUBDIR)/mus_bw_route6_autumn.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V076
+	
+$(MID_SUBDIR)/mus_bw_route12_spring.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V071
+	
+$(MID_SUBDIR)/mus_bw_undella_summer.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V094
+	
+$(MID_SUBDIR)/mus_bw_underwater.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V084
+	
+$(MID_SUBDIR)/mus_bw_vs_n_final.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V105
+
+$(MID_SUBDIR)/mus_b2_hidden_grotto.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V127
+	
+$(MID_SUBDIR)/mus_b2_lentimas.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V078
+	
+$(MID_SUBDIR)/mus_b2_reversal_mountain_black.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V095
+	
+$(MID_SUBDIR)/mus_b2_road_to_reversal_mountain.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V103
+	
+	
 $(MID_SUBDIR)/ph_choice_blend.s: %.s: %.mid
 	$(MID) $< $@ -E -G130 -P4
 

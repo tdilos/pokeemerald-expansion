@@ -84,15 +84,28 @@ OmaomaIsle_Text_LaniPostBattle:
 
 OmaomaIsle_EventScript_Leihua::
 	trainerbattle_single TRAINER_LEIHUA, OmaomaIsle_Text_LeihuaIntro, OmaomaIsle_Text_LeihuaDefeated
-	msgbox OmaomaIsle_Text_LeihuaPostBattle, MSGBOX_AUTOCLOSE
+	msgbox OmaomaIsle_Text_LeihuaPostBattle2, MSGBOX_AUTOCLOSE
 	end
 
 OmaomaIsle_Text_LeihuaIntro:
-	.string "$"
+	.string "Watch out! I'll use my magic\n"
+	.string "talisman on you!$"
 
 OmaomaIsle_Text_LeihuaDefeated:
-	.string "$"
+	.string "Some talisman this is!$"
 
 OmaomaIsle_Text_LeihuaPostBattle:
-	.string "$"
+	.string "Alright! Since you won, you get to be\n"
+	.string "the new wielder of the talisman!\p"
+	.string "Just don't tell anyone that you beat me.\n"
+	.string "I have a reputation to uphold...$"
+
+OmaomaIsle_Text_LeihuaPostBattle2:
+	@.string "That OMAOMA TALISMAN was $"
+	.string "That talisman was supposedly left here\n"
+	.string "by the guardians before they disappeared.\p"
+	.string "They're said to be magical. But I could\n"
+	.string "ever get it to do was dumb rock things.\p"
+	.string "Maybe it will work its magic\n"
+	.string "for you somehow.$"
 

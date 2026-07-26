@@ -2,7 +2,7 @@
   "id": "MAP_PANO_ISLE_UNDERWATER",
   "name": "PanoIsle_Underwater",
   "layout": "LAYOUT_PANO_ISLE_UNDERWATER",
-  "music": "MUS_DUMMY",
+  "music": "MUS_BW_UNDERWATER",
   "region_map_section": "MAPSEC_PANTHALASSA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

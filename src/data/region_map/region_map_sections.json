@@ -1532,8 +1532,8 @@
       "name": "PANO ISLE"
     },
     {
-      "id": "MAPSEC_FORBIDDEN_FOREST",
-      "name": "FORBIDDEN FOREST"
+      "id": "MAPSEC_FOURFOLD_FOREST",
+      "name": "FOURFOLD FOREST"
     },
     {
       "id": "MAPSEC_FOREST_DALE",
@@ -1555,16 +1555,51 @@
       "id": "MAPSEC_GREAT_SWAMP"
     },
     {
+      "id": "MAPSEC_SAVANNAH"
+    },
+    {
       "id": "MAPSEC_SWAMP_FACILITY"
     },
     {
-      "id": "MAPSEC_MARTIAN_COLONY"
+      "id": "MAPSEC_POLAR_SINK",
+      "name": "POLAR SINK"
     },
     {
-      "id": "MAPSEC_MARTIAN_DESERT"
+      "id": "MAPSEC_DESERT_SLOPE",
+      "name": "DESERT SLOPE"
+    },
+    {
+      "id": "MAPSEC_UNDERGROUND_LAKE",
+      "name": "UNDERGROUND"
+    },
+    {
+      "id": "MAPSEC_SHATTERLANDS",
+      "name": "SHATTERLANDS"
     },
     {
       "id": "MAPSEC_CRYSTAL_MINE"
+    },
+    {
+      "id": "MAPSEC_X_CALDERA"
+    },
+    {
+      "id": "MAPSEC_X_JUNGLE"
+    },
+    {
+      "id": "MAPSEC_CLOUD_CITY",
+      "name": "CLOUD CITY"
+    },
+    {
+      "id": "MAPSEC_X_TUNDRA"
+    },
+    {
+      "id": "MAPSEC_X_MERE"
+    },
+    {
+      "id": "MAPSEC_X_RUIN"
+    },
+    {
+      "id": "MAPSEC_X_SYNESTIA"
     }
   ]
 }

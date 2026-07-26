@@ -3409,3 +3409,22 @@ const u16 gTilesetPalettes_XGreenhouse[][16] =
 };
 
 const u32 gTilesetTiles_XGreenhouse[] = INCBIN_U32("data/tilesets/secondary/xgreenhouse/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_XHolt[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/xholt/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_XHolt[] = INCBIN_U32("data/tilesets/secondary/xholt/tiles.4bpp.lz");

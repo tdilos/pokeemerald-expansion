@@ -2,7 +2,7 @@
   "id": "MAP_KEOKEO_ISLE_INTERIOR",
   "name": "KeokeoIsle_Interior",
   "layout": "LAYOUT_KEOKEO_ISLE_INTERIOR",
-  "music": "MUS_DUMMY",
+  "music": "MUS_HG_VIRIDIAN_FOREST",
   "region_map_section": "MAPSEC_KEOKEO_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_FOG_HORIZONTAL",
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ZYGARDE_CELL",
       "x": 6,
       "y": 24,
       "elevation": 0,
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_ZYGARDE_CELL_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",

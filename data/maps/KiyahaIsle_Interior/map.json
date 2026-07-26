@@ -2,7 +2,7 @@
   "id": "MAP_KIYAHA_ISLE_INTERIOR",
   "name": "KiyahaIsle_Interior",
   "layout": "LAYOUT_KIYAHA_ISLE_INTERIOR",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DP_VALOR_LAKEFRONT",
   "region_map_section": "MAPSEC_KIYAHA_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

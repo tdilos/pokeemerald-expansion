@@ -1740,3 +1740,14 @@ const struct Tileset gTileset_XGreenhouse =
     .metatileAttributes = gMetatileAttributes_XGreenhouse,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_XHolt =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_XHolt,
+    .palettes = gTilesetPalettes_XHolt,
+    .metatiles = gMetatiles_XHolt,
+    .metatileAttributes = gMetatileAttributes_XHolt,
+    .callback = NULL,
+};

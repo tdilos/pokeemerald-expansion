@@ -2,7 +2,7 @@
   "id": "MAP_KEOKEO_ISLE_SHRINE",
   "name": "KeokeoIsle_Shrine",
   "layout": "LAYOUT_KEOKEO_ISLE_SHRINE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_B2_HIDDEN_GROTTO",
   "region_map_section": "MAPSEC_KEOKEO_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_FOG_HORIZONTAL",

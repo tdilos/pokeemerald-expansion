@@ -2,7 +2,7 @@
   "id": "MAP_PANTHALASSA",
   "name": "Panthalassa",
   "layout": "LAYOUT_PANTHALASSA",
-  "music": "MUS_DUMMY",
+  "music": "MUS_BW_UNDERWATER",
   "region_map_section": "MAPSEC_PANTHALASSA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -14,7 +14,22 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 25,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_PANTHALASSA_NIHILEGO_LAIR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_PANTHALASSA_NIHILEGO_LAIR",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

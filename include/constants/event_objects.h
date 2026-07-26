@@ -487,29 +487,30 @@
 #define OBJ_EVENT_GFX_EMMA                       401
 #define OBJ_EVENT_GFX_HACKER                     402
 #define OBJ_EVENT_GFX_WITCH                      403
-#define OBJ_EVENT_GFX_OAKLEY                     404
-#define OBJ_EVENT_GFX_RED_EVIL                   405
-#define OBJ_EVENT_GFX_RAYNER_GOOD                406
-#define OBJ_EVENT_GFX_GARDENER                   407
-#define OBJ_EVENT_GFX_ZYGARDE_CELL               408
-#define OBJ_EVENT_GFX_LASS_ALOLA                 409
-#define OBJ_EVENT_GFX_LITTLE_GIRL_ALOLA          410
-#define OBJ_EVENT_GFX_OLD_MAN_ALOLA              411
-#define OBJ_EVENT_GFX_WOMAN_ALOLA                412
-#define OBJ_EVENT_GFX_YOUNGSTER_ALOLA            413
-#define OBJ_EVENT_GFX_LASS_GALAR                 414
-#define OBJ_EVENT_GFX_YOUNGSTER_GALAR            415
-#define OBJ_EVENT_GFX_KNIGHT_ARMOR               416
-#define OBJ_EVENT_GFX_BIKER_M                    417
-#define OBJ_EVENT_GFX_BIKER_F                    418
-#define OBJ_EVENT_GFX_BANDIT                     419
-#define OBJ_EVENT_GFX_MINER                      420
+#define OBJ_EVENT_GFX_CYBORG                     404
+#define OBJ_EVENT_GFX_OAKLEY                     405
+#define OBJ_EVENT_GFX_RED_EVIL                   406
+#define OBJ_EVENT_GFX_RAYNER_GOOD                407
+#define OBJ_EVENT_GFX_GARDENER                   408
+#define OBJ_EVENT_GFX_ZYGARDE_CELL               409
+#define OBJ_EVENT_GFX_LASS_ALOLA                 410
+#define OBJ_EVENT_GFX_LITTLE_GIRL_ALOLA          411
+#define OBJ_EVENT_GFX_OLD_MAN_ALOLA              412
+#define OBJ_EVENT_GFX_WOMAN_ALOLA                413
+#define OBJ_EVENT_GFX_YOUNGSTER_ALOLA            414
+#define OBJ_EVENT_GFX_LASS_GALAR                 415
+#define OBJ_EVENT_GFX_YOUNGSTER_GALAR            416
+#define OBJ_EVENT_GFX_KNIGHT_ARMOR               417
+#define OBJ_EVENT_GFX_BIKER_M                    418
+#define OBJ_EVENT_GFX_BIKER_F                    419
+#define OBJ_EVENT_GFX_BANDIT                     420
+#define OBJ_EVENT_GFX_MINER                      421
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
 
-#define NUM_OBJ_EVENT_GFX                        421 //388
+#define NUM_OBJ_EVENT_GFX                        422 //388
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

@@ -2619,7 +2619,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Spring_ForestDale/scripts.inc"
 
-	.include "data/maps/Spring_ForbiddenForest_NW/scripts.inc"
+	.include "data/maps/Spring_FourfoldForest_NW/scripts.inc"
 
 	.include "data/maps/StationCity_Building1_B1_Hallway/scripts.inc"
 
@@ -2646,3 +2646,11 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/LushUnderspire_B3/scripts.inc"
 
 	.include "data/maps/LushUnderspire_B2/scripts.inc"
+
+	.include "data/maps/Spring_FourfoldForest_NE/scripts.inc"
+
+	.include "data/maps/Spring_FourfoldForest_SE/scripts.inc"
+
+	.include "data/maps/Spring_FourfoldForest_SW/scripts.inc"
+
+	.include "data/maps/Spring_ThievesDen/scripts.inc"

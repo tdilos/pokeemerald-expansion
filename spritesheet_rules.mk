@@ -1087,7 +1087,10 @@ $(OBJEVENTGFXDIR)/people/hacker.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/witch.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 	
-$(OBJEVENTGFXDIR)/people/red_manga.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/cyborg.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+	
+$(OBJEVENTGFXDIR)/people/red_synderling.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 	
 $(OBJEVENTGFXDIR)/people/oakley.4bpp: %.4bpp: %.png

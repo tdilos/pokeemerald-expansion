@@ -481,6 +481,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cole;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hacker;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Witch;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cyborg;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedEvil;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oakley;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Riley;
@@ -962,6 +963,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_COLE]                     = &gObjectEventGraphicsInfo_Cole,
     [OBJ_EVENT_GFX_HACKER]                   = &gObjectEventGraphicsInfo_Hacker,
     [OBJ_EVENT_GFX_WITCH]                    = &gObjectEventGraphicsInfo_Witch,
+    [OBJ_EVENT_GFX_CYBORG]                   = &gObjectEventGraphicsInfo_Cyborg,
     [OBJ_EVENT_GFX_RED_EVIL]                 = &gObjectEventGraphicsInfo_RedEvil,
     [OBJ_EVENT_GFX_OAKLEY]                   = &gObjectEventGraphicsInfo_Oakley,
     [OBJ_EVENT_GFX_RILEY]                    = &gObjectEventGraphicsInfo_Riley,

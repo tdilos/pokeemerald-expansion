@@ -2,7 +2,7 @@
   "id": "MAP_KEOKEO_ISLE_EXTERIOR",
   "name": "KeokeoIsle_Exterior",
   "layout": "LAYOUT_KEOKEO_ISLE_EXTERIOR",
-  "music": "MUS_DUMMY",
+  "music": "MUS_BW_UNDELLA_SUMMER",
   "region_map_section": "MAPSEC_PANTHALASSA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

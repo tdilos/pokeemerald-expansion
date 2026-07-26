@@ -1594,7 +1594,11 @@ enum
     MAP_SPRING_AVALON_CASTLE_ENTRANCE = (0 | (104 << 8)),
     MAP_SPRING_SHIRE_TOWNE            = (1 | (104 << 8)),
     MAP_SPRING_FOREST_DALE            = (2 | (104 << 8)),
-    MAP_SPRING_FORBIDDEN_FOREST_NW    = (3 | (104 << 8)),
+    MAP_SPRING_FOURFOLD_FOREST_NW     = (3 | (104 << 8)),
+    MAP_SPRING_FOURFOLD_FOREST_NE     = (4 | (104 << 8)),
+    MAP_SPRING_FOURFOLD_FOREST_SE     = (5 | (104 << 8)),
+    MAP_SPRING_FOURFOLD_FOREST_SW     = (6 | (104 << 8)),
+    MAP_SPRING_THIEVES_DEN            = (7 | (104 << 8)),
 
     // gMapGroup_XGreenhouse
     MAP_LUSH_UNDERSPIRE_B1 = (0 | (105 << 8)),

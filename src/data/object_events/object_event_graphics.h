@@ -380,6 +380,7 @@ const u32 gObjectEventPic_Cole[] = INCBIN_U32("graphics/object_events/pics/peopl
 
 const u32 gObjectEventPic_Hacker[] = INCBIN_U32("graphics/object_events/pics/people/hacker.4bpp");
 const u32 gObjectEventPic_Witch[] = INCBIN_U32("graphics/object_events/pics/people/witch.4bpp");
+const u32 gObjectEventPic_Cyborg[] = INCBIN_U32("graphics/object_events/pics/people/cyborg.4bpp");
 const u32 gObjectEventPic_RedEvil[] = INCBIN_U32("graphics/object_events/pics/people/red_synderling.4bpp");
 const u32 gObjectEventPic_Oakley[] = INCBIN_U32("graphics/object_events/pics/people/oakley.4bpp");
 const u32 gObjectEventPic_Riley[] = INCBIN_U32("graphics/object_events/pics/people/riley.4bpp");

@@ -573,6 +573,7 @@ gSongTable::
 	song mus_dp_inside_pokemon_league, MUSIC_PLAYER_BGM, 0
 	song mus_dp_mt_coronet, MUSIC_PLAYER_BGM, 0
 	song mus_dp_oreburgh_day, MUSIC_PLAYER_BGM, 0
+	song mus_dp_valor_lakefront_day, MUSIC_PLAYER_BGM, 0
 	song mus_dp_veilstone_night, MUSIC_PLAYER_BGM, 0
 	song mus_dp_victory_road, MUSIC_PLAYER_BGM, 0
 	song mus_dp_vs_arceus, MUSIC_PLAYER_BGM, 0
@@ -587,9 +588,26 @@ gSongTable::
 	song mus_hg_ice_path, MUSIC_PLAYER_BGM, 0
 	song mus_hg_lighthouse, MUSIC_PLAYER_BGM, 0
 	song mus_hg_pkmn_league, MUSIC_PLAYER_BGM, 0
+	song mus_hg_viridian_forest, MUSIC_PLAYER_BGM, 0
 	song mus_hg_vs_champion, MUSIC_PLAYER_BGM, 0
 	song mus_pl_b_factory, MUSIC_PLAYER_BGM, 0
 	song mus_pl_vs_giratina, MUSIC_PLAYER_BGM, 0
+	song mus_bw_dreamyard, MUSIC_PLAYER_BGM, 0
+	song mus_bw_icirrus, MUSIC_PLAYER_BGM, 0
+	song mus_bw_lostlorn_forest, MUSIC_PLAYER_BGM, 0
+	song mus_bw_opelucid_black, MUSIC_PLAYER_BGM, 0
+	song mus_bw_opelucid_white, MUSIC_PLAYER_BGM, 0
+	song mus_bw_relic_castle, MUSIC_PLAYER_BGM, 0
+	song mus_bw_route2_spring, MUSIC_PLAYER_BGM, 0
+	song mus_bw_route6_autumn, MUSIC_PLAYER_BGM, 0
+	song mus_bw_route12_spring, MUSIC_PLAYER_BGM, 0
+	song mus_bw_undella_summer, MUSIC_PLAYER_BGM, 0
+	song mus_bw_underwater, MUSIC_PLAYER_BGM, 0
+	song mus_bw_vs_n_final, MUSIC_PLAYER_BGM, 0
+	song mus_b2_hidden_grotto, MUSIC_PLAYER_BGM, 0
+	song mus_b2_lentimas, MUSIC_PLAYER_BGM, 0
+	song mus_b2_reversal_mountain_black, MUSIC_PLAYER_BGM, 0
+	song mus_b2_road_to_reversal_mountain, MUSIC_PLAYER_BGM, 0
 	song ph_trap_blend, MUSIC_PLAYER_SE2, 2
 	song ph_trap_held, MUSIC_PLAYER_SE2, 2
 	song ph_trap_solo, MUSIC_PLAYER_SE2, 2

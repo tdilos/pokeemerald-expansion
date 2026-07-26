@@ -12114,10 +12114,10 @@
     {
       "id": "LAYOUT_SPRING_SHIRE_TOWNE",
       "name": "Spring_ShireTowne_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 46,
+      "height": 24,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_ShireTowne/border.bin",
       "blockdata_filepath": "data/layouts/Spring_ShireTowne/map.bin"
     },
@@ -12127,7 +12127,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_AvalonCastle_Entrance/border.bin",
       "blockdata_filepath": "data/layouts/Spring_AvalonCastle_Entrance/map.bin"
     },
@@ -12135,21 +12135,21 @@
       "id": "LAYOUT_SPRING_FOREST_DALE",
       "name": "Spring_ForestDale_Layout",
       "width": 20,
-      "height": 20,
+      "height": 30,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_ForestDale/border.bin",
       "blockdata_filepath": "data/layouts/Spring_ForestDale/map.bin"
     },
     {
-      "id": "LAYOUT_SPRING_FORBIDDEN_FOREST_NW",
-      "name": "Spring_ForbiddenForest_NW_Layout",
+      "id": "LAYOUT_SPRING_FOURFOLD_FOREST_NW",
+      "name": "Spring_FourfoldForest_NW_Layout",
       "width": 34,
       "height": 32,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/Spring_ForbiddenForest_NW/border.bin",
-      "blockdata_filepath": "data/layouts/Spring_ForbiddenForest_NW/map.bin"
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Spring_FourfoldForest_NW/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_FourfoldForest_NW/map.bin"
     },
     {
       "id": "LAYOUT_STATION_CITY_BUILDING1_B1_HALLWAY",
@@ -12250,6 +12250,46 @@
       "secondary_tileset": "gTileset_XGreenhouse",
       "border_filepath": "data/layouts/LushUnderspire_B4/border.bin",
       "blockdata_filepath": "data/layouts/LushUnderspire_B4/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_FOURFOLD_FOREST_NE",
+      "name": "Spring_FourfoldForest_NE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Spring_FourfoldForest_NE/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_FourfoldForest_NE/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_FOURFOLD_FOREST_SE",
+      "name": "Spring_FourfoldForest_SE_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Spring_FourfoldForest_SE/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_FourfoldForest_SE/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_FOURFOLD_FOREST_SW",
+      "name": "Spring_FourfoldForest_SW_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Spring_FourfoldForest_SW/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_FourfoldForest_SW/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_THIEVES_DEN",
+      "name": "Spring_ThievesDen_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Spring_ThievesDen/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_ThievesDen/map.bin"
     }
   ]
 }

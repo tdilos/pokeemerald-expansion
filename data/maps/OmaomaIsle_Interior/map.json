@@ -2,7 +2,7 @@
   "id": "MAP_OMAOMA_ISLE_INTERIOR",
   "name": "OmaomaIsle_Interior",
   "layout": "LAYOUT_OMAOMA_ISLE_INTERIOR",
-  "music": "MUS_DUMMY",
+  "music": "MUS_HG_VIRIDIAN_FOREST",
   "region_map_section": "MAPSEC_OMAOMA_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

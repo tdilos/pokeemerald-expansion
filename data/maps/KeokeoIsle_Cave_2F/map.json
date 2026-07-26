@@ -2,7 +2,7 @@
   "id": "MAP_KEOKEO_ISLE_CAVE_2F",
   "name": "KeokeoIsle_Cave_2F",
   "layout": "LAYOUT_KEOKEO_ISLE_CAVE_2F",
-  "music": "MUS_RG_VIRIDIAN_FOREST",
+  "music": "MUS_HG_VIRIDIAN_FOREST",
   "region_map_section": "MAPSEC_KEOKEO_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

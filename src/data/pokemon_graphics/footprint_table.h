@@ -950,7 +950,7 @@ const u8 *const gMonFootprintTable[] =
 	[SPECIES_VOLKRAKEN] = gMonFootprint_Volkraken,
 	[SPECIES_OMENDENZ] = gMonFootprint_Omendenz,
 	
-	[SPECIES_MANIPULON] = gMonFootprint_Manipulon,
+	[SPECIES_MANIPULOBE] = gMonFootprint_Manipulobe,
 	[SPECIES_SOMNIVORE] = gMonFootprint_Somnivore,
 	[SPECIES_TEROPHAGE] = gMonFootprint_Terophage,
 	[SPECIES_REIZURGE] = gMonFootprint_Reizurge,

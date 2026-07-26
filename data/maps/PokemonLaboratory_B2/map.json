@@ -10,9 +10,9 @@
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -220,7 +220,5 @@
       "script": "PokemonLaboratory_B2_EventScript_RaynerEncounter7"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

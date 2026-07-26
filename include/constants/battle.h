@@ -33,6 +33,7 @@ enum BattlerPosition
     B_POSITION_OPPONENT_RIGHT,
 	//B_POSITION_ARCHON,
     MAX_POSITION_COUNT,
+	B_POSITION_ARCHON = MAX_POSITION_COUNT, // handled specially
     B_POSITION_ABSENT = 0xFF,
 };
 
@@ -44,6 +45,7 @@ enum __attribute__((packed)) BattlerId
     B_BATTLER_3,
     //B_BATTLER_ARCHON,
     MAX_BATTLERS_COUNT,
+   B_BATTLER_ARCHON = MAX_BATTLERS_COUNT, // handled specially
 };
 
 enum __attribute__((packed)) BattleTrainer

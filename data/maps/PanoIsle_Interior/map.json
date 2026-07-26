@@ -2,7 +2,7 @@
   "id": "MAP_PANO_ISLE_INTERIOR",
   "name": "PanoIsle_Interior",
   "layout": "LAYOUT_PANO_ISLE_INTERIOR",
-  "music": "MUS_DUMMY",
+  "music": "MUS_MT_CHIMNEY",
   "region_map_section": "MAPSEC_PANO_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_VOLCANIC_ASH",

@@ -1698,7 +1698,11 @@
     "Spring_AvalonCastle_Entrance",
     "Spring_ShireTowne",
     "Spring_ForestDale",
-    "Spring_ForbiddenForest_NW"
+    "Spring_FourfoldForest_NW",
+    "Spring_FourfoldForest_NE",
+    "Spring_FourfoldForest_SE",
+    "Spring_FourfoldForest_SW",
+    "Spring_ThievesDen"
   ],
   "gMapGroup_XGreenhouse": [
     "LushUnderspire_B1",
@@ -1715,5 +1719,6 @@
   "gMapGroup_XTundra": [],
   "gMapGroup_XMere": [],
   "gMapGroup_XRuin": [],
-  "gMapGroup_XSynestia": []
+  "gMapGroup_XSynestia": [],
+  "gMapGroup_XMindscape": []
 }
