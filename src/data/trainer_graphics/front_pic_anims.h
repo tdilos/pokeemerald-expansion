@@ -632,6 +632,14 @@ static const union AnimCmd *const sAnims_Miner[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_LeaderVillo[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_LeaderMadeleine[] ={
+    sAnim_GeneralFrame0,
+};
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -795,4 +803,6 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 	[TRAINER_PIC_HOLLOW_KNIGHT] = sAnims_HollowKnight,
 	[TRAINER_PIC_GARDENER] = sAnims_Gardener,
 	[TRAINER_PIC_MINER] = sAnims_Miner,
+	[TRAINER_PIC_LEADER_VILLO] = sAnims_LeaderVillo,
+	[TRAINER_PIC_LEADER_VILLO] = sAnims_LeaderMadeleine,
 };

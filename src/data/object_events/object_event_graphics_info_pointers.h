@@ -497,11 +497,14 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterAl
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassGalar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterGalar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bandit;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KnightArmor;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gardener;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Miner;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Villo;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
 	[OBJ_EVENT_GFX_VOLCARONA] =                &gObjectEventGraphicsInfo_Volcarona,
@@ -976,9 +979,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_YOUNGSTER_ALOLA]          = &gObjectEventGraphicsInfo_YoungsterAlola,
     [OBJ_EVENT_GFX_LASS_GALAR]               = &gObjectEventGraphicsInfo_LassGalar,
     [OBJ_EVENT_GFX_YOUNGSTER_GALAR]          = &gObjectEventGraphicsInfo_YoungsterGalar,
+    [OBJ_EVENT_GFX_BANDIT]                   = &gObjectEventGraphicsInfo_Bandit,
     [OBJ_EVENT_GFX_KNIGHT_ARMOR]             = &gObjectEventGraphicsInfo_KnightArmor,
     [OBJ_EVENT_GFX_GARDENER]                 = &gObjectEventGraphicsInfo_Gardener,
     [OBJ_EVENT_GFX_MINER]                    = &gObjectEventGraphicsInfo_Miner,
+    [OBJ_EVENT_GFX_VILLO]                    = &gObjectEventGraphicsInfo_Villo,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

@@ -323,7 +323,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 37,
+      "x": 39,
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F",
@@ -470,7 +470,7 @@
       "y": 24,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LilycoveCity_EventScript_MotelSign"
+      "script": "LilycoveCity_EventScript_GymSign"
     },
     {
       "type": "sign",

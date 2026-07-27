@@ -11944,8 +11944,8 @@
     {
       "id": "LAYOUT_OMAOMA_ISLE_EXTERIOR",
       "name": "OmaomaIsle_Exterior_Layout",
-      "width": 30,
-      "height": 20,
+      "width": 50,
+      "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/OmaomaIsle_Exterior/border.bin",
@@ -11954,8 +11954,8 @@
     {
       "id": "LAYOUT_PANO_ISLE_EXTERIOR",
       "name": "PanoIsle_Exterior_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/PanoIsle_Exterior/border.bin",
@@ -11964,8 +11964,8 @@
     {
       "id": "LAYOUT_KEOKEO_ISLE_EXTERIOR",
       "name": "KeokeoIsle_Exterior_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 30,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/KeokeoIsle_Exterior/border.bin",
@@ -12290,6 +12290,16 @@
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_ThievesDen/border.bin",
       "blockdata_filepath": "data/layouts/Spring_ThievesDen/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_CITY_NEW_GYM",
+      "name": "MauvilleCity_NewGym_Layout",
+      "width": 12,
+      "height": 35,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MauvilleGym",
+      "border_filepath": "data/layouts/MauvilleCity_NewGym/border.bin",
+      "blockdata_filepath": "data/layouts/MauvilleCity_NewGym/map.bin"
     }
   ]
 }

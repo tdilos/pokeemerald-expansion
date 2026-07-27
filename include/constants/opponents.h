@@ -1401,11 +1401,14 @@
 #define TRAINER_SLOAN       1335
 #define TRAINER_GARRICK     1336
 
+#define TRAINER_VILLO_1          1337
+#define TRAINER_MADELEINE_1      1338
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1337 //1291 //965//855
+#define TRAINERS_COUNT_EMERALD     1339 //1291 //965//855
 #define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG

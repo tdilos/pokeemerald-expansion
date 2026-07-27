@@ -32882,7 +32882,7 @@
               {
                 "min_level": 5,
                 "max_level": 20,
-                "species": "SPECIES_SKRELP"
+                "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 12,
@@ -32891,13 +32891,13 @@
               },
               {
                 "min_level": 5,
-                "max_level": 20,
-                "species": "SPECIES_MAREANIE"
+                "max_level": 15,
+                "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 5,
-                "max_level": 20,
-                "species": "SPECIES_MAREANIE"
+                "max_level": 15,
+                "species": "SPECIES_BINACLE"
               }
             ]
           }
@@ -32950,7 +32950,7 @@
               {
                 "min_level": 5,
                 "max_level": 20,
-                "species": "SPECIES_SKRELP"
+                "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 12,
@@ -32959,13 +32959,13 @@
               },
               {
                 "min_level": 5,
-                "max_level": 20,
-                "species": "SPECIES_MAREANIE"
+                "max_level": 15,
+                "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 5,
-                "max_level": 20,
-                "species": "SPECIES_MAREANIE"
+                "max_level": 15,
+                "species": "SPECIES_BINACLE"
               }
             ]
           }
@@ -32984,7 +32984,7 @@
               {
                 "min_level": 5,
                 "max_level": 20,
-                "species": "SPECIES_SKRELP"
+                "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 12,
@@ -32993,13 +32993,13 @@
               },
               {
                 "min_level": 5,
-                "max_level": 20,
-                "species": "SPECIES_MAREANIE"
+                "max_level": 15,
+                "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 5,
-                "max_level": 20,
-                "species": "SPECIES_MAREANIE"
+                "max_level": 15,
+                "species": "SPECIES_BINACLE"
               }
             ]
           }
@@ -33018,7 +33018,7 @@
               {
                 "min_level": 5,
                 "max_level": 20,
-                "species": "SPECIES_SKRELP"
+                "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 12,
@@ -33027,13 +33027,13 @@
               },
               {
                 "min_level": 5,
-                "max_level": 20,
-                "species": "SPECIES_MAREANIE"
+                "max_level": 15,
+                "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 5,
-                "max_level": 20,
-                "species": "SPECIES_MAREANIE"
+                "max_level": 15,
+                "species": "SPECIES_BINACLE"
               }
             ]
           }

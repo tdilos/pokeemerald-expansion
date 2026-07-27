@@ -757,6 +757,10 @@ static const struct SpriteFrameImage sPicTable_YoungsterGalar[] = {
     overworld_ascending_frames(gObjectEventPic_YoungsterGalar, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_Bandit[] = {
+    overworld_ascending_frames(gObjectEventPic_Bandit, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_KnightArmor[] = {
     overworld_ascending_frames(gObjectEventPic_KnightArmor, 2, 4),
 };
@@ -771,6 +775,12 @@ static const struct SpriteFrameImage sPicTable_Gardener[] = {
 
 static const struct SpriteFrameImage sPicTable_Miner[] = {
     overworld_ascending_frames(gObjectEventPic_Miner, 2, 4),
+};
+
+
+
+static const struct SpriteFrameImage sPicTable_Villo[] = {
+    overworld_ascending_frames(gObjectEventPic_Villo, 2, 4),
 };
 
 

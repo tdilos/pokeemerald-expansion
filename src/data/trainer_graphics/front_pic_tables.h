@@ -158,6 +158,8 @@ const struct MonCoords gTrainerFrontPicCoords[] =
 	[TRAINER_PIC_HOLLOW_KNIGHT] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_GARDENER] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_MINER] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_LEADER_VILLO] = {.size = 8, .y_offset = 0},
+	[TRAINER_PIC_LEADER_MADELEINE] = {.size = 8, .y_offset = 0},
 };
 
 #define TRAINER_SPRITE(trainerPic, sprite, size) [TRAINER_PIC_##trainerPic] = {sprite, size, TRAINER_PIC_##trainerPic}
@@ -352,6 +354,8 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(HOLLOW_KNIGHT, gTrainerFrontPic_HollowKnight, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(GARDENER, gTrainerFrontPic_Gardener, TRAINER_PIC_SIZE),
     TRAINER_SPRITE(MINER, gTrainerFrontPic_Miner, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(LEADER_VILLO, gTrainerFrontPic_LeaderVillo, TRAINER_PIC_SIZE),
+    TRAINER_SPRITE(LEADER_MADELEINE, gTrainerFrontPic_LeaderMadeleine, TRAINER_PIC_SIZE),
 };
 
 #define TRAINER_PAL(trainerPic, pal) [TRAINER_PIC_##trainerPic] = {pal, TRAINER_PIC_##trainerPic}
@@ -546,4 +550,6 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(HOLLOW_KNIGHT, gTrainerPalette_HollowKnight),
     TRAINER_PAL(GARDENER, gTrainerPalette_Gardener),
     TRAINER_PAL(MINER, gTrainerPalette_Miner),
+    TRAINER_PAL(LEADER_VILLO, gTrainerPalette_LeaderVillo),
+    TRAINER_PAL(LEADER_MADELEINE, gTrainerPalette_LeaderMadeleine),
 };

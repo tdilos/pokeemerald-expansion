@@ -7,6 +7,107 @@ StationCity_Building1_B1_MapScripts::
 
 
 
+StationCity_Building1_B1_EventScript_Betterman::
+	lock
+	faceplayer
+	msgbox StationCity_Building1_B1_Text_ICanExplain, MSGBOX_DEFAULT
+	special ScriptMenu_CreateLilycoveSSTidalMultichoice
+	waitstate
+	special GetLilycoveSSTidalSelection
+	switch VAR_RESULT
+	case 0, StationCity_Building1_B1_EventScript_WhereAreWe
+	case 1, StationCity_Building1_B1_EventScript_WhatIsOvermind
+	case 2, StationCity_Building1_B1_EventScript_WhatAreArchons
+	case 3, StationCity_Building1_B1_EventScript_WhatAreWormholes
+	case 4, StationCity_Building1_B1_EventScript_Exit
+	case MULTI_B_PRESSED, StationCity_Building1_B1_EventScript_Exit
+	release
+	end
+
+StationCity_Building1_B1_Text_ICanExplain:
+	.string "BETTERMAN: If you need an explanation,\n"
+	.string "I'm certainly capable of giving it.$"
+
+StationCity_Building1_B1_EventScript_WhereAreWe::
+	msgbox StationCity_Building1_B1_Text_WhereAreWe, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+StationCity_Building1_B1_EventScript_WhatIsOvermind::
+	msgbox StationCity_Building1_B1_Text_WhatIsOvermind, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+StationCity_Building1_B1_EventScript_WhatAreArchons::
+	msgbox StationCity_Building1_B1_Text_WhatAreArchons, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+StationCity_Building1_B1_EventScript_WhatAreWormholes::
+	msgbox StationCity_Building1_B1_Text_WhatAreWormholes, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+StationCity_Building1_B1_Text_WhereAreWe:
+	.string "Oh, this place? Believe it or not,\n"
+	.string "it's a space station!\p"
+	.string "We're not sure who built it nor the why\n"
+	.string "nor the how.\p"
+	.string "Apparently it was abandoned when the\n"
+	.string "International Police first found it.\p"
+	.string "We've since converted it into our main\n"
+	.string "base of operations.\p"
+	.string "From here, we can more easily observe\n"
+	.string "the enemy's crucible of worlds.$"
+	@.string "From here, we can more easily\n"
+	@.string "observe distant worlds.$"
+
+StationCity_Building1_B1_Text_WhatIsOvermind:
+	.string "We're not sure. The files we've retrieved\n"
+	.string "from TEAM GENESIS call it a POKéMON.\p"
+	.string "But we have no data for it. And no one\n"
+	.string "has ever seen it directly.\p"
+	.string "What we do know is that it's somehow\n"
+	.string "capable of manipulatingentire worlds.\p"
+	.string "It is the enemy's greatest weapon.\n"
+	.string "One we must inevitably face.$"
+
+StationCity_Building1_B1_Text_WhatAreArchons:
+	.string "Conduits for OVERMIND'S power.\n"
+	.string "They embody its hold on each world.$"
+
+StationCity_Building1_B1_Text_WhatAreWormholes:
+	.string "Well, uh...\p"
+	.string "Imagine you attach a handle to a\n"
+	.string "ball and...\p"
+	.string "Oh, nevermind.\p"
+	.string "Just know that stepping inside one will\n"
+	.string "take you to a distant place.\p"
+	.string "The smaller ones seem to connect only\n"
+	.string "to regions of our own world.\p"
+	.string "But the largest will take you to\n"
+	.string "extraterrestrial worlds!\p"
+	.string "From here, we've been monitoring wormhole\n"
+	.string "activity in the HOENN and ISSHO regions.\p"
+	.string "Feel free to ask SELWYN for more\n"
+	.string "about that.$"
+
+StationCity_Building1_B1_EventScript_Exit::
+	closemessage
+	release
+	end
+
+
+
+
+
+
+
+
 
 StationCity_Building1_B1_Text_NewWormholes:
 	.string "We've detected three new Ultra Wormholes\n"

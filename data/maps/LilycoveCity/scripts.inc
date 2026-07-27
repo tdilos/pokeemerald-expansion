@@ -30,6 +30,21 @@ LilycoveCity_EventScript_SetWailmerMetatiles::
 	setmetatile 78, 17, METATILE_Lilycove_Wailmer3, TRUE
 	return
 
+
+
+
+
+LilycoveCity_EventScript_GymSign::
+	msgbox LilycoveCity_Text_GymSign, MSGBOX_SIGN
+	end
+
+LilycoveCity_Text_GymSign:
+	.string "LILYCOVE CITY POKéMON GYM\n"
+	.string "LEADER: MADELEINE\l"
+	.string "“placeholder”$"
+
+
+
 LilycoveCity_EventScript_BerryGentleman::
 	lock
 	faceplayer
