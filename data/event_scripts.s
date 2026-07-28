@@ -2656,3 +2656,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Spring_ThievesDen/scripts.inc"
 
 	.include "data/maps/MauvilleCity_NewGym/scripts.inc"
+
+	.include "data/maps/LilycoveCity_NewGym/scripts.inc"

@@ -12300,6 +12300,16 @@
       "secondary_tileset": "gTileset_MauvilleGym",
       "border_filepath": "data/layouts/MauvilleCity_NewGym/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_NewGym/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_NEW_GYM",
+      "name": "LilycoveCity_NewGym_Layout",
+      "width": 11,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_FortreeGym",
+      "border_filepath": "data/layouts/LilycoveCity_NewGym/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_NewGym/map.bin"
     }
   ]
 }

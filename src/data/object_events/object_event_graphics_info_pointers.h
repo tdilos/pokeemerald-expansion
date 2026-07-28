@@ -495,16 +495,28 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OldManAlola
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WomanAlola;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterAlola;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BaldingManGalar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GirlGalar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassGalar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleBoyGalar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ManGalar;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WomanGalar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterGalar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bandit;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jester;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kingsman;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Prince;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vizier;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KnightArmor;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gardener;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist3;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Miner;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Villo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Madeleine;
+
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
 	[OBJ_EVENT_GFX_VOLCARONA] =                &gObjectEventGraphicsInfo_Volcarona,
@@ -984,6 +996,17 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GARDENER]                 = &gObjectEventGraphicsInfo_Gardener,
     [OBJ_EVENT_GFX_MINER]                    = &gObjectEventGraphicsInfo_Miner,
     [OBJ_EVENT_GFX_VILLO]                    = &gObjectEventGraphicsInfo_Villo,
+    [OBJ_EVENT_GFX_MADELEINE]                = &gObjectEventGraphicsInfo_Madeleine,
+    [OBJ_EVENT_GFX_SCIENTIST_3]              = &gObjectEventGraphicsInfo_Scientist3,
+    [OBJ_EVENT_GFX_BALDING_MAN_GALAR]        = &gObjectEventGraphicsInfo_BaldingManGalar,
+    [OBJ_EVENT_GFX_GIRL_GALAR]               = &gObjectEventGraphicsInfo_GirlGalar,
+    [OBJ_EVENT_GFX_LITTLE_BOY_GALAR]         = &gObjectEventGraphicsInfo_LittleBoyGalar,
+    [OBJ_EVENT_GFX_MAN_GALAR]                = &gObjectEventGraphicsInfo_ManGalar,
+    [OBJ_EVENT_GFX_WOMAN_GALAR]              = &gObjectEventGraphicsInfo_WomanGalar,
+    [OBJ_EVENT_GFX_JESTER]                   = &gObjectEventGraphicsInfo_Jester,
+    [OBJ_EVENT_GFX_KINGSMAN]                 = &gObjectEventGraphicsInfo_Kingsman,
+    [OBJ_EVENT_GFX_PRINCE]                   = &gObjectEventGraphicsInfo_Prince,
+    [OBJ_EVENT_GFX_VIZIER]                   = &gObjectEventGraphicsInfo_Vizier,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
