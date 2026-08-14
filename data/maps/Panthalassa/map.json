@@ -28,6 +28,13 @@
       "elevation": 0,
       "dest_map": "MAP_PANTHALASSA_NIHILEGO_LAIR",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_KIYAHA_ISLE_UNDERWATER",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

@@ -150,7 +150,7 @@ PitchblakCity_KendomaCorp_Text_Log9:
 	.string "breakin. Investigation still underway.\p"
 	.string "RS-006 reported missing.\n"
 	.string "Current whereabouts unknown.\p"
-	.string "RS-005 found to be damaged\n"
+	.string "RS-003 and RS-005 found to be damaged\n"
 	.string "beyond viability and terminated.$"
 
 PitchblakCity_KendomaCorp_Text_Log10:

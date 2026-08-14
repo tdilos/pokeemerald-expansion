@@ -280,6 +280,7 @@ enum
     MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F       = (20 | (13 << 8)),
     MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP  = (21 | (13 << 8)),
     MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR = (22 | (13 << 8)),
+    MAP_LILYCOVE_CITY_NEW_GYM                   = (23 | (13 << 8)),
 
     // gMapGroup_IndoorMossdeep
     MAP_MOSSDEEP_CITY_GYM               = (0 | (14 << 8)),
@@ -1592,14 +1593,22 @@ enum
     MAP_PANO_ISLE_SHRINE            = (24 | (103 << 8)),
 
     // gMapGroup_XHolt
-    MAP_SPRING_AVALON_CASTLE_ENTRANCE = (0 | (104 << 8)),
-    MAP_SPRING_SHIRE_TOWNE            = (1 | (104 << 8)),
-    MAP_SPRING_FOREST_DALE            = (2 | (104 << 8)),
-    MAP_SPRING_FOURFOLD_FOREST_NW     = (3 | (104 << 8)),
-    MAP_SPRING_FOURFOLD_FOREST_NE     = (4 | (104 << 8)),
-    MAP_SPRING_FOURFOLD_FOREST_SE     = (5 | (104 << 8)),
-    MAP_SPRING_FOURFOLD_FOREST_SW     = (6 | (104 << 8)),
-    MAP_SPRING_THIEVES_DEN            = (7 | (104 << 8)),
+    MAP_SPRING_AVALON_CASTLE_ENTRANCE   = (0 | (104 << 8)),
+    MAP_SPRING_SHIRE_TOWNE              = (1 | (104 << 8)),
+    MAP_SPRING_FOREST_DALE              = (2 | (104 << 8)),
+    MAP_SPRING_FOURFOLD_FOREST_NW       = (3 | (104 << 8)),
+    MAP_SPRING_FOURFOLD_FOREST_NE       = (4 | (104 << 8)),
+    MAP_SPRING_FOURFOLD_FOREST_SE       = (5 | (104 << 8)),
+    MAP_SPRING_FOURFOLD_FOREST_SW       = (6 | (104 << 8)),
+    MAP_SPRING_THIEVES_DEN              = (7 | (104 << 8)),
+    MAP_SPRING_SHIRE_TOWNE_CHURCH       = (8 | (104 << 8)),
+    MAP_SPRING_SHIRE_TOWNE_BUILDING1_1F = (9 | (104 << 8)),
+    MAP_SPRING_SHIRE_TOWNE_BUILDING1_2F = (10 | (104 << 8)),
+    MAP_SPRING_SHIRE_TOWNE_BUILDING2    = (11 | (104 << 8)),
+    MAP_SPRING_SHIRE_TOWNE_BUILDING3    = (12 | (104 << 8)),
+    MAP_SPRING_SHIRE_TOWNE_BUILDING4    = (13 | (104 << 8)),
+    MAP_SPRING_AVALON_CASTLE_MAIN_HALL  = (14 | (104 << 8)),
+    MAP_SPRING_AVALON_CASTLE_DUNGEON    = (15 | (104 << 8)),
 
     // gMapGroup_XGreenhouse
     MAP_LUSH_UNDERSPIRE_B1 = (0 | (105 << 8)),

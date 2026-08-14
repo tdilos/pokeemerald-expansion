@@ -302,7 +302,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassFrlg;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman1Frlg;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BattleGirl;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man;
-//extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rocker;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FatManFrlg;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman2Frlg;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BeautyFrlg;
@@ -336,7 +335,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HikerFrlg;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fisher;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Channeler;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chef;
-//extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GentlemanFrlg;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SailorFrlg;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Captain;
@@ -504,6 +502,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WomanGalar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterGalar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bandit;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jester;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Priest;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kingsman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Prince;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vizier;
@@ -517,6 +516,15 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Miner;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Villo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Madeleine;
 
+
+
+
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LechonkOld;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CalyrexOld;
+
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NihilegoOld;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StakatakaOld;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
 	[OBJ_EVENT_GFX_VOLCARONA] =                &gObjectEventGraphicsInfo_Volcarona,
@@ -840,7 +848,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_WOMAN_1_FRLG]             = &gObjectEventGraphicsInfo_Woman1Frlg,
     [OBJ_EVENT_GFX_BATTLE_GIRL]              = &gObjectEventGraphicsInfo_BattleGirl,
     [OBJ_EVENT_GFX_MAN]                      = &gObjectEventGraphicsInfo_Man,
-    //[OBJ_EVENT_GFX_ROCKER]                   = &gObjectEventGraphicsInfo_Rocker,
     [OBJ_EVENT_GFX_FAT_MAN_FRLG]             = &gObjectEventGraphicsInfo_FatManFrlg,
     [OBJ_EVENT_GFX_WOMAN_2_FRLG]             = &gObjectEventGraphicsInfo_Woman2Frlg,
     [OBJ_EVENT_GFX_BEAUTY_FRLG]              = &gObjectEventGraphicsInfo_BeautyFrlg,
@@ -874,7 +881,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_FISHER]                   = &gObjectEventGraphicsInfo_Fisher,
     [OBJ_EVENT_GFX_CHANNELER]                = &gObjectEventGraphicsInfo_Channeler,
     [OBJ_EVENT_GFX_CHEF]                     = &gObjectEventGraphicsInfo_Chef,
-    //[OBJ_EVENT_GFX_POLICEMAN]                = &gObjectEventGraphicsInfo_Policeman,
     [OBJ_EVENT_GFX_GENTLEMAN_FRLG]           = &gObjectEventGraphicsInfo_GentlemanFrlg,
     [OBJ_EVENT_GFX_SAILOR_FRLG]              = &gObjectEventGraphicsInfo_SailorFrlg,
     [OBJ_EVENT_GFX_CAPTAIN]                  = &gObjectEventGraphicsInfo_Captain,
@@ -1007,6 +1013,13 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KINGSMAN]                 = &gObjectEventGraphicsInfo_Kingsman,
     [OBJ_EVENT_GFX_PRINCE]                   = &gObjectEventGraphicsInfo_Prince,
     [OBJ_EVENT_GFX_VIZIER]                   = &gObjectEventGraphicsInfo_Vizier,
+    [OBJ_EVENT_GFX_PRIEST]                   = &gObjectEventGraphicsInfo_Priest,
+	
+    [OBJ_EVENT_GFX_LECHONK]                  = &gObjectEventGraphicsInfo_LechonkOld,
+    [OBJ_EVENT_GFX_CALYREX]                  = &gObjectEventGraphicsInfo_CalyrexOld,
+	
+    [OBJ_EVENT_GFX_NIHILEGO]                 = &gObjectEventGraphicsInfo_NihilegoOld,
+    [OBJ_EVENT_GFX_STAKATAKA]                = &gObjectEventGraphicsInfo_StakatakaOld,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

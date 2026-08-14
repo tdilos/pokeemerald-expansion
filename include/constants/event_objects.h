@@ -517,12 +517,18 @@
 #define OBJ_EVENT_GFX_KINGSMAN                   431
 #define OBJ_EVENT_GFX_PRINCE                     432
 #define OBJ_EVENT_GFX_VIZIER                     433
+#define OBJ_EVENT_GFX_PRIEST                     434
+
+#define OBJ_EVENT_GFX_LECHONK                    435
+#define OBJ_EVENT_GFX_CALYREX                    436
+#define OBJ_EVENT_GFX_NIHILEGO                   437
+#define OBJ_EVENT_GFX_STAKATAKA                  438
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
 
-#define NUM_OBJ_EVENT_GFX                        434 //388
+#define NUM_OBJ_EVENT_GFX                        439 //388
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.
@@ -640,7 +646,8 @@
 #define OBJ_EVENT_PAL_TAG_KYOGRE_REFLECTION       0x1117
 #define OBJ_EVENT_PAL_TAG_GROUDON                 0x1118
 #define OBJ_EVENT_PAL_TAG_GROUDON_REFLECTION      0x1119
-#define OBJ_EVENT_PAL_TAG_UNUSED                  0x111A
+//#define OBJ_EVENT_PAL_TAG_UNUSED                  0x111A
+#define OBJ_EVENT_PAL_TAG_CALYREX                 0x111A
 #define OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW        0x111B
 #define OBJ_EVENT_PAL_TAG_POOCHYENA               0x111C
 #define OBJ_EVENT_PAL_TAG_RED_LEAF                0x111D
@@ -670,6 +677,9 @@
 #define OBJ_EVENT_PAL_TAG_VERT_REFLECTION         0x1135
 #define OBJ_EVENT_PAL_TAG_VIOLET                  0x1136
 #define OBJ_EVENT_PAL_TAG_VIOLET_REFLECTION       0x1137
+
+#define OBJ_EVENT_PAL_TAG_NIHILEGO                0x1138
+#define OBJ_EVENT_PAL_TAG_STAKATAKA               0x1139
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

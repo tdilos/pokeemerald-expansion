@@ -1704,7 +1704,15 @@
     "Spring_FourfoldForest_NE",
     "Spring_FourfoldForest_SE",
     "Spring_FourfoldForest_SW",
-    "Spring_ThievesDen"
+    "Spring_ThievesDen",
+    "Spring_ShireTowne_Church",
+    "Spring_ShireTowne_Building1_1F",
+    "Spring_ShireTowne_Building1_2F",
+    "Spring_ShireTowne_Building2",
+    "Spring_ShireTowne_Building3",
+    "Spring_ShireTowne_Building4",
+    "Spring_AvalonCastle_MainHall",
+    "Spring_AvalonCastle_Dungeon"
   ],
   "gMapGroup_XGreenhouse": [
     "LushUnderspire_B1",

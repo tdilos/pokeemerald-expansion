@@ -470,3 +470,6 @@ const u16 gMetatileAttributes_XGreenhouse[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_XHolt[] = INCBIN_U16("data/tilesets/secondary/xholt/metatiles.bin");
 const u16 gMetatileAttributes_XHolt[] = INCBIN_U16("data/tilesets/secondary/xholt/metatile_attributes.bin");
+
+const u16 gMetatiles_MedievalInterior[] = INCBIN_U16("data/tilesets/secondary/medieval_interior/metatiles.bin");
+const u16 gMetatileAttributes_MedievalInterior[] = INCBIN_U16("data/tilesets/secondary/medieval_interior/metatile_attributes.bin");

@@ -3304,7 +3304,7 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_Relics,
     },
 
-    /*[ITEM_STRANGE_SOUVENIR] =
+    [ITEM_STRANGE_SOUVENIR] =
     {
         .name = ITEM_NAME("Strange Souvenir"),
         .price = (I_PRICE >= GEN_7) ? 3000 : 10,
@@ -3319,8 +3319,72 @@ const struct ItemInfo gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_StrangeSouvenir,
         .iconPalette = gItemIconPalette_StrangeSouvenir,
-    },*/
+    },
+	
+    [ITEM_TALISMAN_TEAL] =
+    {
+        .name = ITEM_NAME("Ebb Totem"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A strange talisman\n"
+            "imbued with the power\n"
+            "of a certain Pokémon."),
+		.importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_StrangeSouvenir,
+        .iconPalette = gItemIconPalette_TalismanTeal,
+    },
 
+    [ITEM_TALISMAN_GREEN] =
+    {
+        .name = ITEM_NAME("Bloom Totem"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A strange talisman\n"
+            "imbued with the power\n"
+            "of a certain Pokémon."),
+		.importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_StrangeSouvenir,
+        .iconPalette = gItemIconPalette_TalismanGreen,
+    },
+	
+    [ITEM_TALISMAN_WHITE] =
+    {
+        .name = ITEM_NAME("Fog Totem"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A strange talisman\n"
+            "imbued with the power\n"
+            "of a certain Pokémon."),
+		.importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_StrangeSouvenir,
+        .iconPalette = gItemIconPalette_TalismanWhite,
+    },
+	
+    [ITEM_TALISMAN_BLACK] =
+    {
+        .name = ITEM_NAME("Storm Totem"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A strange talisman\n"
+            "imbued with the power\n"
+            "of a certain Pokémon."),
+		.importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_StrangeSouvenir,
+        .iconPalette = gItemIconPalette_TalismanBlack,
+    },
+	
 // Fossils
 
     [ITEM_XENORESIN] =

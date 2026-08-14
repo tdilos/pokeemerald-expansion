@@ -33286,7 +33286,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_SPRITZEE"
+                "species": "SPECIES_STONJOURNER"
               }
             ]
           },
@@ -33827,6 +33827,75 @@
                 "min_level": 25,
                 "max_level": 30,
                 "species": "SPECIES_GARBODOR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_SPRING_AVALON_CASTLE_DUNGEON",
+          "base_label": "gSpring_AvalonCastle_Dungeon",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SINISTEA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SINISTEA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SINISTEA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SINISTEA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SINISTEA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SINISTEA"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_YAMASK_GALAR"
               }
             ]
           }

@@ -2658,3 +2658,19 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/MauvilleCity_NewGym/scripts.inc"
 
 	.include "data/maps/LilycoveCity_NewGym/scripts.inc"
+
+	.include "data/maps/Spring_ShireTowne_Church/scripts.inc"
+
+	.include "data/maps/Spring_ShireTowne_Building1_1F/scripts.inc"
+
+	.include "data/maps/Spring_ShireTowne_Building1_2F/scripts.inc"
+
+	.include "data/maps/Spring_ShireTowne_Building2/scripts.inc"
+
+	.include "data/maps/Spring_ShireTowne_Building4/scripts.inc"
+
+	.include "data/maps/Spring_ShireTowne_Building3/scripts.inc"
+
+	.include "data/maps/Spring_AvalonCastle_MainHall/scripts.inc"
+
+	.include "data/maps/Spring_AvalonCastle_Dungeon/scripts.inc"

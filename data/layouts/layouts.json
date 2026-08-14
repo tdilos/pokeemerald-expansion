@@ -11974,7 +11974,7 @@
     {
       "id": "LAYOUT_KIYAHA_ISLE_EXTERIOR",
       "name": "KiyahaIsle_Exterior_Layout",
-      "width": 32,
+      "width": 38,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
@@ -12014,8 +12014,8 @@
     {
       "id": "LAYOUT_PANO_ISLE_INTERIOR",
       "name": "PanoIsle_Interior_Layout",
-      "width": 40,
-      "height": 44,
+      "width": 44,
+      "height": 62,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/PanoIsle_Interior/border.bin",
@@ -12074,7 +12074,7 @@
     {
       "id": "LAYOUT_KIYAHA_ISLE_UNDERWATER",
       "name": "KiyahaIsle_Underwater_Layout",
-      "width": 24,
+      "width": 38,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Underwater",
@@ -12115,7 +12115,7 @@
       "id": "LAYOUT_SPRING_SHIRE_TOWNE",
       "name": "Spring_ShireTowne_Layout",
       "width": 46,
-      "height": 24,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_ShireTowne/border.bin",
@@ -12134,8 +12134,8 @@
     {
       "id": "LAYOUT_SPRING_FOREST_DALE",
       "name": "Spring_ForestDale_Layout",
-      "width": 20,
-      "height": 30,
+      "width": 66,
+      "height": 46,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_ForestDale/border.bin",
@@ -12144,8 +12144,8 @@
     {
       "id": "LAYOUT_SPRING_FOURFOLD_FOREST_NW",
       "name": "Spring_FourfoldForest_NW_Layout",
-      "width": 34,
-      "height": 32,
+      "width": 48,
+      "height": 50,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_FourfoldForest_NW/border.bin",
@@ -12254,8 +12254,8 @@
     {
       "id": "LAYOUT_SPRING_FOURFOLD_FOREST_NE",
       "name": "Spring_FourfoldForest_NE_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 50,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_FourfoldForest_NE/border.bin",
@@ -12264,8 +12264,8 @@
     {
       "id": "LAYOUT_SPRING_FOURFOLD_FOREST_SE",
       "name": "Spring_FourfoldForest_SE_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_FourfoldForest_SE/border.bin",
@@ -12274,8 +12274,8 @@
     {
       "id": "LAYOUT_SPRING_FOURFOLD_FOREST_SW",
       "name": "Spring_FourfoldForest_SW_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_FourfoldForest_SW/border.bin",
@@ -12310,6 +12310,66 @@
       "secondary_tileset": "gTileset_FortreeGym",
       "border_filepath": "data/layouts/LilycoveCity_NewGym/border.bin",
       "blockdata_filepath": "data/layouts/LilycoveCity_NewGym/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_SHIRE_TOWNE_CHURCH",
+      "name": "Spring_ShireTowne_Church_Layout",
+      "width": 12,
+      "height": 18,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFrontierRankingHall",
+      "border_filepath": "data/layouts/Spring_ShireTowne_Church/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_ShireTowne_Church/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_SHIRE_TOWNE_BUILDING1_1F",
+      "name": "Spring_ShireTowne_Building1_1F_Layout",
+      "width": 18,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MedievalInterior",
+      "border_filepath": "data/layouts/Spring_ShireTowne_Building1_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_ShireTowne_Building1_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_SHIRE_TOWNE_BUILDING1_2F",
+      "name": "Spring_ShireTowne_Building1_2F_Layout",
+      "width": 18,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MedievalInterior",
+      "border_filepath": "data/layouts/Spring_ShireTowne_Building1_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_ShireTowne_Building1_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_SHIRE_TOWNE_BUILDING2",
+      "name": "Spring_ShireTowne_Building2_Layout",
+      "width": 18,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MedievalInterior",
+      "border_filepath": "data/layouts/Spring_ShireTowne_Building2/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_ShireTowne_Building2/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_AVALON_CASTLE_MAIN_HALL",
+      "name": "Spring_AvalonCastle_MainHall_Layout",
+      "width": 17,
+      "height": 30,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MedievalInterior",
+      "border_filepath": "data/layouts/Spring_AvalonCastle_MainHall/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_AvalonCastle_MainHall/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPRING_AVALON_CASTLE_DUNGEON",
+      "name": "Spring_AvalonCastle_Dungeon_Layout",
+      "width": 36,
+      "height": 30,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MedievalInterior",
+      "border_filepath": "data/layouts/Spring_AvalonCastle_Dungeon/border.bin",
+      "blockdata_filepath": "data/layouts/Spring_AvalonCastle_Dungeon/map.bin"
     }
   ]
 }

@@ -401,6 +401,10 @@ const u32 gItemIcon_RelicCrown[] = INCBIN_U32("graphics/items/icons/relic_crown.
 
 const u32 gItemIcon_StrangeSouvenir[] = INCBIN_U32("graphics/items/icons/strange_souvenir.4bpp.smol");
 const u16 gItemIconPalette_StrangeSouvenir[] = INCBIN_U16("graphics/items/icon_palettes/strange_souvenir.gbapal");
+const u16 gItemIconPalette_TalismanTeal[] = INCBIN_U16("graphics/items/icon_palettes/talisman_teal.gbapal");
+const u16 gItemIconPalette_TalismanGreen[] = INCBIN_U16("graphics/items/icon_palettes/talisman_green.gbapal");
+const u16 gItemIconPalette_TalismanWhite[] = INCBIN_U16("graphics/items/icon_palettes/talisman_white.gbapal");
+const u16 gItemIconPalette_TalismanBlack[] = INCBIN_U16("graphics/items/icon_palettes/talisman_black.gbapal");
 
 // Fossils
 

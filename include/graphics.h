@@ -658,6 +658,10 @@ extern const u32 gItemIcon_RelicStatue[];
 extern const u32 gItemIcon_RelicCrown[];
 extern const u32 gItemIcon_StrangeSouvenir[];
 extern const u16 gItemIconPalette_StrangeSouvenir[];
+extern const u16 gItemIconPalette_TalismanTeal[] ;
+extern const u16 gItemIconPalette_TalismanGreen[];
+extern const u16 gItemIconPalette_TalismanWhite[];
+extern const u16 gItemIconPalette_TalismanBlack[];
 
 // Fossils
 extern const u32 gItemIcon_Xenoresin[];

@@ -28,6 +28,20 @@
       "elevation": 0,
       "dest_map": "MAP_KEOKEO_ISLE_INTERIOR",
       "dest_warp_id": "5"
+    },
+    {
+      "x": 7,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_KEOKEO_ISLE_CAVE_2F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 17,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_KEOKEO_ISLE_CAVE_2F",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],

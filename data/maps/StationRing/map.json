@@ -128,7 +128,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BIKER_M",
-      "x": 40,
+      "x": 39,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",

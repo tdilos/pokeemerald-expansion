@@ -1751,3 +1751,14 @@ const struct Tileset gTileset_XHolt =
     .metatileAttributes = gMetatileAttributes_XHolt,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_MedievalInterior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MedievalInterior,
+    .palettes = gTilesetPalettes_MedievalInterior,
+    .metatiles = gMetatiles_MedievalInterior,
+    .metatileAttributes = gMetatileAttributes_MedievalInterior,
+    .callback = NULL,
+};
