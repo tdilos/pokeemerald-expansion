@@ -120,153 +120,244 @@ const struct SwarmData gSwarmTable[] =
 	{
         .species = SPECIES_STARLY,
         .mapName = MAPSEC_ROUTE_81,
-        //.mapName = MAP_NUM(ROUTE81),
     },
 	{
         .species = SPECIES_PATRAT,
         .mapName = MAPSEC_ROUTE_82,
-        //.mapName = MAP_NUM(ROUTE82),
     },
     {
         .species = SPECIES_GULPIN,
 		.mapName = MAPSEC_ROUTE_83,
-        //.mapName = MAP_NUM(ROUTE83),
     },
 	{
         .species = SPECIES_EMOLGA,
 		.mapName = MAPSEC_RESEDA_WOODS,
-        //.mapName = MAP_NUM(ROUTE89),
     },
 	{
         .species = SPECIES_BLITZLE,
 		.mapName = MAPSEC_ROUTE_84,
-        //.mapName = MAP_NUM(ROUTE84),
     },
     {
         .species = SPECIES_MARACTUS,
 		.mapName = MAPSEC_ROUTE_86,
-        //.mapName = MAP_NUM(ROUTE86),
     },
     {
         .species = SPECIES_SANDILE,
 		.mapName = MAPSEC_ROUTE_87,
-        //.mapName = MAP_NUM(ROUTE87),
     },
     {
         .species = SPECIES_YAMASK,
 		.mapName = MAPSEC_ROUTE_88,
-        //.mapName = MAP_NUM(ROUTE88),
     },
     {
 		.species = SPECIES_DWEBBLE,
 		.mapName = MAPSEC_ROUTE_79,
-        //.mapName = MAP_NUM(ROUTE79),
     },
     {
         .species = SPECIES_SHELMET,
 		.mapName = MAPSEC_ROUTE_78,
-        //.mapName = MAP_NUM(ROUTE78),
     },
-
 	{
         .species = SPECIES_LILLIPUP,
 		.mapName = MAPSEC_ROUTE_94,
-        //.mapName = MAP_NUM(ROUTE94),
     },
 	{
         .species = SPECIES_LITLEO,
 		.mapName = MAPSEC_ROUTE_93,
-        //.mapName = MAP_NUM(ROUTE93),
     },
 	{
         .species = SPECIES_RIOLU,
 		.mapName = MAPSEC_MINDARO_GARDENS,
-        //.mapName = MAP_NUM(ROUTE95),
     },
 	{
         .species = SPECIES_GOTHITA,
 		.mapName = MAPSEC_ROUTE_96,
-        //.mapName = MAP_NUM(ROUTE96),
     },
 	{
         .species = SPECIES_BERGMITE,
 		.mapName = MAPSEC_MT_SHIRO,
-        //.mapName = MAP_NUM(ROUTE97),
     },
 	{
         .species = SPECIES_KARRABLAST,
 		.mapName = MAPSEC_ROUTE_92,
-        //.mapName = MAP_NUM(ROUTE92),
     },
 	{
         .species = SPECIES_MIENFOO,
 		.mapName = MAPSEC_ROUTE_91,
-        //.mapName = MAP_NUM(ROUTE91),
     },
 	{
         .species = SPECIES_SCRAGGY,
 		.mapName = MAPSEC_ROUTE_90,
-        //.mapName = MAP_NUM(ROUTE90),
     },	
 	{
         .species = SPECIES_JOLTIK,
 		.mapName = MAPSEC_SCARLET_WOODS,
-        //.mapName = MAP_NUM(ROUTE69),
     },
-	
     {
         .species = SPECIES_AXEW,
 		.mapName = MAPSEC_SANDSHREAF,
-        //.mapName = MAP_NUM(SANDSHREAF),
     },
 	{
         .species = SPECIES_KLINK,
 		.mapName = MAPSEC_STEEL_MILL,
-        //.mapName = MAP_NUM(ROUTE89),
     },
 	{
         .species = SPECIES_BRUXISH,
 		.mapName = MAPSEC_ROUTE_77,
-        //.mapName = MAP_NUM(ROUTE77),
     },
 	{
         .species = SPECIES_CLAUNCHER,
 		.mapName = MAPSEC_ROUTE_75,
-        //.mapName = MAP_NUM(ROUTE75),
     },
 	{
         .species = SPECIES_FRILLISH,
 		.mapName = MAPSEC_ROUTE_74,
-        //.mapName = MAP_NUM(ROUTE74),
     },
 	{
         .species = SPECIES_ALOMOMOLA,
 		.mapName = MAPSEC_ROUTE_73,
-        //.mapName = MAP_NUM(ROUTE73),
     },
 	{
         .species = SPECIES_DRUDDIGON,
 		.mapName = MAPSEC_ROUTE_70,
-        //.mapName = MAP_NUM(ROUTE70),
     },
 	{
         .species = SPECIES_PAWNIARD,
 		.mapName = MAPSEC_ROUTE_67,
-        //.mapName = MAP_NUM(ROUTE67),
     },
 	{
         .species = SPECIES_ABSOL,
 		.mapName = MAPSEC_ROUTE_66,
-        //.mapName = MAP_NUM(ROUTE66),
     },
 	{
         .species = SPECIES_CARBINK,
 		.mapName = MAPSEC_DUSK_MOUNTAIN,
-        //.mapName = MAP_NUM(ROUTE65),
+    }
+};
+
+
+const struct SwarmData gSwarmTable2[] =
+{
+	{
+        .species = SPECIES_SENTRET,
+        .mapName = MAPSEC_ROUTE_101,
+    },
+	{
+        .species = SPECIES_PIDGEY,
+        .mapName = MAPSEC_ROUTE_102,
+    },
+	{
+        .species = SPECIES_POLIWAG,
+        .mapName = MAPSEC_ROUTE_103,
+    },
+	{
+        .species = SPECIES_MEOWTH,
+        .mapName = MAPSEC_ROUTE_104,
+    },
+	{
+        .species = SPECIES_STANTLER,
+        .mapName = MAPSEC_PETALBURG_WOODS,
+    },
+	{
+        .species = SPECIES_FLABEBE,
+        .mapName = MAPSEC_ROUTE_115,
+    },
+	{
+        .species = SPECIES_VENIPEDE,
+        .mapName = MAPSEC_ROUTE_116,
+    },
+	{
+        .species = SPECIES_DIGLETT,
+        .mapName = MAPSEC_RUSTURF_TUNNEL,
+    },
+	{
+        .species = SPECIES_INKAY,
+        .mapName = MAPSEC_ROUTE_105,
+    },
+	{
+        .species = SPECIES_BUNEARY,
+        .mapName = MAPSEC_DEWFORD_MEADOW,
+    },
+	{
+        .species = SPECIES_GRUBBIN,
+        .mapName = MAPSEC_ROUTE_110,
+    },
+	{
+        .species = SPECIES_TYNAMO,
+        .mapName = MAPSEC_NEW_MAUVILLE,
+    },
+	{
+        .species = SPECIES_MUDBRAY,
+        .mapName = MAPSEC_ROUTE_117,
+    },
+	{
+        .species = SPECIES_GIBLE,
+        .mapName = MAPSEC_ROUTE_111,
+    },
+	{
+        .species = SPECIES_FLETCHLING,
+        .mapName = MAPSEC_ROUTE_112,
+    },
+	{
+        .species = SPECIES_HEATMOR,
+        .mapName = MAPSEC_FIERY_PATH,
+    },
+	{
+        .species = SPECIES_DURANT,
+        .mapName = MAPSEC_JAGGED_PASS,
+    },
+	{
+        .species = SPECIES_MINCCINO,
+        .mapName = MAPSEC_ROUTE_114,
+    },
+	{
+        .species = SPECIES_CLEFAIRY,
+        .mapName = MAPSEC_METEOR_FALLS,
+    },
+	{
+        .species = SPECIES_DUCKLETT,
+        .mapName = MAPSEC_ROUTE_118,
+    },
+	{
+        .species = SPECIES_CARNIVINE,
+        .mapName = MAPSEC_ROUTE_119,
+    },
+	{
+        .species = SPECIES_SEWADDLE,
+        .mapName = MAPSEC_ROUTE_120,
+    },
+	{
+        .species = SPECIES_SAWK,
+        .mapName = MAPSEC_ROUTE_121,
+    },
+	{
+        .species = SPECIES_GASTLY,
+        .mapName = MAPSEC_MT_PYRE,
+    },
+	{
+        .species = SPECIES_THROH,
+        .mapName = MAPSEC_ROUTE_123,
+    },
+	{
+        .species = SPECIES_SEEL,
+        .mapName = MAPSEC_ROUTE_125,
+    },
+	{
+        .species = SPECIES_SMOOCHUM,
+        .mapName = MAPSEC_SHOAL_CAVE,
+    },
+	{
+        .species = SPECIES_LAPRAS,
+        .mapName = MAPSEC_ROUTE_128,
+    },
+	{
+        .species = SPECIES_MAREANIE,
+		.mapName = MAPSEC_ROUTE_130,
     }
 };
 
 const u16 gSwarmTableLength = NELEMS(gSwarmTable);
+const u16 gSwarmTable2Length = NELEMS(gSwarmTable2);
 
 // Each fishing spot on Route 119 is given a number between 1 and NUM_FISHING_SPOTS inclusive.
 // The number is determined by counting the valid fishing spots left to right top to bottom.
@@ -908,37 +999,40 @@ u8 GetUnownLetterByPersonalityLoByte(u32 personality)
 
 void TryUpdateSwarm(void)
 {
-	//#ifdef TIME_ENABLED //Otherwise causes lags
-	//u32 backupVar = VarGet(VAR_SWARM_DAILY_EVENT) | (VarGet(VAR_SWARM_DAILY_EVENT + 1) << 16);
-
-	//if (CheckAndSetDailyEvent(VAR_SWARM_DAILY_EVENT, TRUE))
-	//{
-		u16 index = Random() % gSwarmTableLength;
-		VarSet(VAR_SWARM_INDEX, index);
-
-		//u32 daysSince = GetDaysSinceTimeInValue(backupVar);
-		//UpdatePartyPokerusTime(daysSince);
-		//ClearDailyEventFlags();
-	//}
-	//#endif
+	u16 index = Random() % gSwarmTableLength;
+	u16 index2 = Random() % gSwarmTable2Length;
+	
+	VarSet(VAR_SWARM_INDEX, index);
+	VarSet(VAR_SWARM_INDEX_2, index2);
 }
 
 #define SWARM_CHANCE 50 //Change this to the percentage that swarming Pokemon will appear if they can be found on the current route.
 
 static bool8 TryGenerateSwarmMon(u8 level)
 {
-	//if (gSwarmTableLength == 0)
-	//	return FALSE;
-
-	//u16 index = 0;
+	// Issho swarms
 	u16 index = VarGet(VAR_SWARM_INDEX);
 	u8 mapName = gSwarmTable[index].mapName;
 	u16 species = gSwarmTable[index].species;
+	
+	// Hoenn swarms
+	u16 index2 = VarGet(VAR_SWARM_INDEX_2);
+	u8 mapName2 = gSwarmTable2[index2].mapName;
+	u16 species2 = gSwarmTable2[index2].species;
+
+
 
 	if (mapName == GetCurrentRegionMapSectionId()
 	&&  Random() % 100 < SWARM_CHANCE)
 	{
 		CreateWildMon(species, level);
+		return TRUE;
+	}
+	
+	if (mapName2 == GetCurrentRegionMapSectionId()
+	&&  Random() % 100 < SWARM_CHANCE)
+	{
+		CreateWildMon(species2, level);
 		return TRUE;
 	}
 

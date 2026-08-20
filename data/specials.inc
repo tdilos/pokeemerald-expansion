@@ -703,5 +703,6 @@ gSpecials::
 	def_special DecreaseDifficulty
 	def_special CheckArceusRequirements
 	def_special StartArchonBattle
+	def_special BufferSwarmText2
 
 

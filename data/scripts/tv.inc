@@ -15,6 +15,8 @@ EventScript_TV::
 	goto EventScript_TryDoPokeNews
 	end
 
+
+
 EventScript_ShowStatic::
 	msgbox TV_Text_Static, MSGBOX_DEFAULT
 	releaseall
@@ -37,6 +39,27 @@ TV_Text_SwarmAnnouncement:
 	.string "have been spotted.\p"
 	.string "{STR_VAR_2}, as you know, is a rare\n"
 	.string "sight here in ISSHO.\p"
+	.string "If you're a POKéMON trainer, this sounds\n"
+	.string "like a great opportunity to find rare\l"
+	.string "{STR_VAR_2} in the wild!\p"
+	.string "Tune in tomorrow for more from our\n"
+	.string "rare POKéMON watch studio.$"
+
+@ Hoenn TVs
+EventScript_TV2::
+	special BufferSwarmText2
+	msgbox TV_Text_SwarmAnnouncement2, MSGBOX_DEFAULT
+	releaseall
+	end
+
+TV_Text_SwarmAnnouncement2:
+	.string "Welcome back. Here's our latest from\n"
+	.string "our rare POKéMON watch studio.\p"
+	.string "Reports from {STR_VAR_1} are\n"
+	.string "saying that wild {STR_VAR_2}\l"
+	.string "have been spotted.\p"
+	.string "{STR_VAR_2}, as you know, is a rare\n"
+	.string "sight here in HOENN.\p"
 	.string "If you're a POKéMON trainer, this sounds\n"
 	.string "like a great opportunity to find rare\l"
 	.string "{STR_VAR_2} in the wild!\p"

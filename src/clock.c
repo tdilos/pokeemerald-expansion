@@ -27,6 +27,8 @@ static void UpdatePerMinute(struct Time *localTime);
 void UpdateWeekday(u16 increment);
 void UpdateEmporiumVendors();
 
+void UpdateSeason(u16 increment);
+
 void InitTimeBasedEvents(void)
 {
     FlagSet(FLAG_SYS_CLOCK_SET);
@@ -60,6 +62,7 @@ static void UpdatePerDay(struct Time *localTime)
 		TryUpdateSwarm();
 		UpdateWeekday(daysSince);
 		UpdateEmporiumVendors();
+		UpdateSeason(daysSince);
         UpdateWeatherPerDay(daysSince);
         UpdatePartyPokerusTime(daysSince);
         UpdateMirageRnd(daysSince);
@@ -119,6 +122,16 @@ void UpdateEmporiumVendors()
 	VarSet(VAR_EMPORIUM_VENDOR_1, random1);
 	VarSet(VAR_EMPORIUM_VENDOR_2, random2);
 	VarSet(VAR_EMPORIUM_VENDOR_3, random3);
+}
+
+void UpdateSeason(u16 increment)
+{
+	u32 newSeason;
+	u32 oldSeason = VarGet(VAR_SEASON);
+	
+	newSeason = oldSeason + increment / 7;
+	newSeason %= 4;
+	VarSet(VAR_SEASON, newSeason);
 }
 
 static void ReturnFromStartWallClock(void)

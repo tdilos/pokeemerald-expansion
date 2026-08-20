@@ -500,6 +500,11 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         else
             return EventScript_TV;
     }
+    // Hoenn TVs
+	if (MetatileBehavior_IsPlayerFacingTVScreen2(metatileBehavior, direction) == TRUE)
+    {
+        return EventScript_TV2;
+    }
     if (MetatileBehavior_IsPC(metatileBehavior) == TRUE)
         return EventScript_PC;
     if (MetatileBehavior_IsClosedSootopolisDoor(metatileBehavior) == TRUE)

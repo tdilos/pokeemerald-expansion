@@ -5163,8 +5163,7 @@ void CheckIfTeamFainted(void)
 //@Details: Buffers the map name where there is currently a swarm to buffer1,
 //			and the species name where there is currently a swarm to buffer2.
 //@Returns: Species roaming.
-//u16 sp058_BufferSwarmText(void)
-void BufferSwarmText(void)
+void BufferSwarmText(void) // Issho swarms
 {
 	u8 index = VarGet(VAR_SWARM_INDEX);
 	u8 mapName = gSwarmTable[index].mapName;
@@ -5177,15 +5176,22 @@ void BufferSwarmText(void)
 	//return species;
 }
 
+void BufferSwarmText2(void) // Hoenn Swarms
+{
+	u8 index = VarGet(VAR_SWARM_INDEX_2);
+	u8 mapName = gSwarmTable[index].mapName;
+	u16 species = gSwarmTable[index].species;
+
+	GetMapName(gStringVar1, mapName, 0);
+	//StringCopy(sScriptStringVars[1], gSpeciesNames[species]);
+	StringCopy(gStringVar2, GetSpeciesName(species));
+
+	//return species;
+}
+
 void GetDifficulty(void)
 {
-	//extern const u8 gText_Hardcore[];
-	//extern const u8 gText_Insane[];
-
-	//gSaveBlock2Ptr->optionsDifficulty = 1; //normal
-
 	u8 i;
-	//i = 0;
 
 	i = gSaveBlock2Ptr->optionsDifficulty;
 

@@ -38,7 +38,33 @@ UltraWormhole_EventScript_XHolt::
 	lock
 	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
+	switch VAR_SEASON
+	case 0, UltraWormhole_EventScript_XHolt_Spring
+	case 1, UltraWormhole_EventScript_XHolt_Summer
+	case 2, UltraWormhole_EventScript_XHolt_Fall
+	case 3, UltraWormhole_EventScript_XHolt_Winter
+	end
+
+UltraWormhole_EventScript_XHolt_Spring::
 	warp MAP_SPRING_FOURFOLD_FOREST_NW, 36, 20
+	waitstate
+	release
+	end
+
+UltraWormhole_EventScript_XHolt_Summer::
+	warp MAP_SUMMER_FOURFOLD_FOREST_NW, 36, 20
+	waitstate
+	release
+	end
+
+UltraWormhole_EventScript_XHolt_Fall::
+	warp MAP_FALL_FOURFOLD_FOREST_NW, 36, 20
+	waitstate
+	release
+	end
+
+UltraWormhole_EventScript_XHolt_Winter::
+	warp MAP_WINTER_FOURFOLD_FOREST_NW, 36, 20
 	waitstate
 	release
 	end
