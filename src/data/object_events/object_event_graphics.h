@@ -428,6 +428,12 @@ const u32 gObjectEventPic_NihilegoOld[] = INCBIN_U32("graphics/object_events/pic
 const u16 gObjectEventPal_Nihilego[] = INCBIN_U16("graphics/object_events/palettes/nihilego.gbapal");
 const u32 gObjectEventPic_StakatakaOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/stakataka.4bpp");
 const u16 gObjectEventPal_Stakataka[] = INCBIN_U16("graphics/object_events/palettes/stakataka.gbapal");
+const u32 gObjectEventPic_BuzzwoleOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/buzzwole.4bpp");
+const u16 gObjectEventPal_Buzzwole[] = INCBIN_U16("graphics/object_events/palettes/buzzwole.gbapal");
+const u32 gObjectEventPic_PheromosaOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/pheromosa.4bpp");
+const u16 gObjectEventPal_Pheromosa[] = INCBIN_U16("graphics/object_events/palettes/pheromosa.gbapal");
+const u32 gObjectEventPic_KartanaOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/kartana.4bpp");
+const u16 gObjectEventPal_Kartana[] = INCBIN_U16("graphics/object_events/palettes/kartana.gbapal");
 
 //const u32 gObjectEventPic_TreeckoDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/treecko_doll.4bpp");
 //const u32 gObjectEventPic_TorchicDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/torchic_doll.4bpp");

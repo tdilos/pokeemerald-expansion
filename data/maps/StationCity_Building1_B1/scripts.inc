@@ -18,8 +18,9 @@ StationCity_Building1_B1_EventScript_Betterman::
 	case 0, StationCity_Building1_B1_EventScript_WhereAreWe
 	case 1, StationCity_Building1_B1_EventScript_WhatIsOvermind
 	case 2, StationCity_Building1_B1_EventScript_WhatAreArchons
-	case 3, StationCity_Building1_B1_EventScript_WhatAreWormholes
-	case 4, StationCity_Building1_B1_EventScript_Exit
+	case 3, StationCity_Building1_B1_EventScript_WhatAreSynderlings
+	case 4, StationCity_Building1_B1_EventScript_WhatAreWormholes
+	case 5, StationCity_Building1_B1_EventScript_Exit
 	case MULTI_B_PRESSED, StationCity_Building1_B1_EventScript_Exit
 	release
 	end
@@ -42,6 +43,12 @@ StationCity_Building1_B1_EventScript_WhatIsOvermind::
 
 StationCity_Building1_B1_EventScript_WhatAreArchons::
 	msgbox StationCity_Building1_B1_Text_WhatAreArchons, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+StationCity_Building1_B1_EventScript_WhatAreSynderlings::
+	msgbox StationCity_Building1_B1_Text_WhatAreSynderlings, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -71,14 +78,22 @@ StationCity_Building1_B1_Text_WhatIsOvermind:
 	.string "from TEAM GENESIS call it a POKéMON.\p"
 	.string "But we have no data for it. And no one\n"
 	.string "has ever seen it directly.\p"
-	.string "What we do know is that it's somehow\n"
-	.string "capable of manipulatingentire worlds.\p"
+	.string "What we do know is that it's\n"
+	.string "a vast cosmic intelligence.\p"
+	.string "And it's capable of manipulating\n"
+	.string "entire worlds.\p"
 	.string "It is the enemy's greatest weapon.\n"
 	.string "One we must inevitably face.$"
 
 StationCity_Building1_B1_Text_WhatAreArchons:
 	.string "Conduits for OVERMIND'S power.\n"
 	.string "They embody its hold on each world.$"
+
+StationCity_Building1_B1_Text_WhatAreSynderlings:
+	.string "A special kind of symbiote we've encountered\n"
+	.string "with greatly enhanced abilities.\p"
+	.string "This is only a theory, but I believe that\n"
+	.string "somehow else has enhanced ordinary symbiotes.$"
 
 StationCity_Building1_B1_Text_WhatAreWormholes:
 	.string "Well, uh...\p"

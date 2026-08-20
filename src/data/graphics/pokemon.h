@@ -28041,6 +28041,23 @@ extern const u8 gMonFootprint_Mimektiplex[];
     const u8 gMonIcon_DragapultIssho[] = INCBIN_U8("graphics/pokemon/dragapult/isshoan/icon.4bpp");
 #endif //P_ISSHOAN_FORMS	
 	
+	
+    const u32 gMonFrontPic_Toxibrate[] = INCBIN_U32("graphics/pokemon/toxibrate/front.4bpp.smol");
+    const u16 gMonPalette_Toxibrate[] = INCBIN_U16("graphics/pokemon/toxibrate/normal.gbapal");
+    const u32 gMonBackPic_Toxibrate[] = INCBIN_U32("graphics/pokemon/toxibrate/back.4bpp.smol");
+    const u16 gMonShinyPalette_Toxibrate[] = INCBIN_U16("graphics/pokemon/toxibrate/shiny.gbapal");
+    const u8 gMonIcon_Toxibrate[] = INCBIN_U8("graphics/pokemon/toxibrate/icon.4bpp");
+    const u8 gMonFootprint_Toxibrate[] = INCBIN_U8("graphics/pokemon/toxibrate/footprint.1bpp");
+	
+    const u32 gMonFrontPic_Crempera[] = INCBIN_U32("graphics/pokemon/crempera/front.4bpp.smol");
+    const u16 gMonPalette_Crempera[] = INCBIN_U16("graphics/pokemon/crempera/normal.gbapal");
+    const u32 gMonBackPic_Crempera[] = INCBIN_U32("graphics/pokemon/crempera/back.4bpp.smol");
+    const u16 gMonShinyPalette_Crempera[] = INCBIN_U16("graphics/pokemon/crempera/shiny.gbapal");
+    const u8 gMonIcon_Crempera[] = INCBIN_U8("graphics/pokemon/crempera/icon.4bpp");
+    const u8 gMonFootprint_Crempera[] = INCBIN_U8("graphics/pokemon/crempera/footprint.1bpp");
+	
+	
+	
 
     const u32 gMonFrontPic_Manipulobe[] = INCBIN_U32("graphics/pokemon/manipulobe/front.4bpp.smol");
     const u16 gMonPalette_Manipulobe[] = INCBIN_U16("graphics/pokemon/manipulobe/normal.gbapal");

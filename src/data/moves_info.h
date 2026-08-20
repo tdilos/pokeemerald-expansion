@@ -25159,4 +25159,30 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_KaleidoTongue,
         .validApprenticeMove = TRUE,
     },
+	
+    [MOVE_LULLABY] =
+    {
+        .name = COMPOUND_STRING("Lullaby"),
+        .description = COMPOUND_STRING(
+            "All POKéMON who hear this\n"
+            "song are put to Sleep."),
+        .effect = EFFECT_DARK_VOID,
+        .power = 0,
+        .type = TYPE_ECHO,
+        .accuracy = 80,
+        .pp = 10,
+        .target = TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .soundMove = TRUE,
+        .argument = { .nonVolatileStatus = MOVE_EFFECT_SLEEP },
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .magicCoatAffected = TRUE,
+        .sketchBanned = (B_SKETCH_BANS >= GEN_9),
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Lullaby,
+    },
 };

@@ -1,0 +1,26 @@
+{
+  "id": "MAP_FALL_AVALON_CASTLE_ENTRANCE",
+  "name": "Fall_AvalonCastle_Entrance",
+  "layout": "LAYOUT_FALL_AVALON_CASTLE_ENTRANCE",
+  "music": "MUS_BW_ICIRRUS",
+  "region_map_section": "MAPSEC_AVALON_CASTLE",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_FALL_SHIRE_TOWNE",
+      "offset": -8,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

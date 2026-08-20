@@ -1,7 +1,7 @@
 EventScript_Porygon2::
 	lockall
 	faceplayer
-	playmoncry SPECIES_PORYGON2, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
 	waitmoncry
 	goto EventScript_PCWithoutFee
 	end

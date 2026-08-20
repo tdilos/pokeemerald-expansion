@@ -7464,6 +7464,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .teachableLearnset = sHoundoomTeachableLearnset,
         .formSpeciesIdTable = sHoundoomFormSpeciesIdTable,
         .formChangeTable = sHoundoomFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_HOUNDEVIL, CONDITIONS({IF_KNOWS_MOVE, MOVE_HIDDEN_POWER})}),
     },
 
 #if P_MEGA_EVOLUTIONS

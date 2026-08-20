@@ -523,12 +523,15 @@
 #define OBJ_EVENT_GFX_CALYREX                    436
 #define OBJ_EVENT_GFX_NIHILEGO                   437
 #define OBJ_EVENT_GFX_STAKATAKA                  438
+#define OBJ_EVENT_GFX_BUZZWOLE                   439
+#define OBJ_EVENT_GFX_PHEROMOSA                  440
+#define OBJ_EVENT_GFX_KARTANA                    441
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
 
-#define NUM_OBJ_EVENT_GFX                        439 //388
+#define NUM_OBJ_EVENT_GFX                        442 //388
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.
@@ -680,6 +683,9 @@
 
 #define OBJ_EVENT_PAL_TAG_NIHILEGO                0x1138
 #define OBJ_EVENT_PAL_TAG_STAKATAKA               0x1139
+#define OBJ_EVENT_PAL_TAG_BUZZWOLE                0x113A
+#define OBJ_EVENT_PAL_TAG_PHEROMOSA               0x113B
+#define OBJ_EVENT_PAL_TAG_KARTANA                 0x113C
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

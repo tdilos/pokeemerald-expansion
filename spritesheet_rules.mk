@@ -1213,6 +1213,15 @@ $(OBJEVENTGFXDIR)/pokemon_old/nihilego.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokemon_old/stakataka.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 	
+$(OBJEVENTGFXDIR)/pokemon_old/buzzwole.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+	
+$(OBJEVENTGFXDIR)/pokemon_old/pheromosa.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+	
+$(OBJEVENTGFXDIR)/pokemon_old/kartana.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+	
 $(OBJEVENTGFXDIR)/pokemon_old/kecleon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 

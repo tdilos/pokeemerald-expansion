@@ -4696,6 +4696,99 @@ const struct SpeciesInfo gSpeciesInfo[] =
     },
 	
 	// Tourmaline 2.0 mons
+    [SPECIES_CREMPERA] =
+    {
+        ALCREMIE_MISC_INFO(BODY_COLOR_YELLOW),
+        .speciesName = _("Crempera"),
+        .cryId = CRY_ALCREMIE_GMAX,
+        .natDexNum = NATIONAL_DEX_CREMPERA,
+        .categoryName = _("Cream"),
+        .height = 25,
+        .weight = 455,
+        .description = COMPOUND_STRING(
+            "It launches swarms of missiles,\n"
+            "each made of cream and loaded with\n"
+            "100,000 kilocalories. Get hit by one of\n"
+            "these, and your head will swim."),
+        .pokemonScale = 530,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Crempera,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Crempera,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 8,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Crempera,
+        .shinyPalette = gMonShinyPalette_Crempera,
+        .iconSprite = gMonIcon_Crempera,
+        .iconPalIndex = 1,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(Crempera)
+        .levelUpLearnset = sCremperaLevelUpLearnset,
+        .teachableLearnset = sCremperaTeachableLearnset,
+    },
+
+    [SPECIES_TOXIBRATE] =
+    {
+        .baseHP        = 75,
+        .baseAttack    = 98,
+        .baseDefense   = 70,
+        .baseSpeed     = 75,
+        .baseSpAttack  = 114,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_ECHO, TYPE_POISON),
+        .catchRate = 45,
+        .expYield = 176,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_PUNK_ROCK, ABILITY_SYNCOPATE, ABILITY_TECHNICIAN },
+        .bodyColor = BODY_COLOR_PURPLE,
+        .speciesName = _("Toxibrate"),
+        .cryId = CRY_TOXTRICITY_LOW_KEY,
+        .natDexNum = NATIONAL_DEX_TOXTRICITY,
+        .categoryName = _("Punk"),
+        .height = 16,
+        .weight = 400,
+        .description = COMPOUND_STRING(
+            "Capable of producing sounds up to\n"
+            "150 decibels, this Pokémon looks\n"
+            "down on all that would challenge it."),
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 296,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_Toxibrate,
+        .frontPicSize = MON_COORDS_SIZE(48, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Toxibrate,
+        .backPicSize = MON_COORDS_SIZE(48, 64),
+        .backPicYOffset = 0,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Toxibrate,
+        .shinyPalette = gMonShinyPalette_Toxibrate,
+        .iconSprite = gMonIcon_Toxibrate,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(1, 12, SHADOW_SIZE_M)
+        FOOTPRINT(Toxibrate)
+        .levelUpLearnset = sToxibrateLevelUpLearnset,
+        .teachableLearnset = sToxibrateTeachableLearnset,
+    },
+
+
+
+	// New Ultra Beasts
     [SPECIES_MANIPULOBE] =
     {
         .baseHP        = 71,

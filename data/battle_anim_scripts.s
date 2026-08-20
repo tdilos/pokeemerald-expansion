@@ -32004,6 +32004,51 @@ SweetScentEffect:
 	delay 2
 	return
 
+
+gBattleAnimMove_Lullaby::
+	@goto gBattleAnimMove_SweetScent
+	
+	loadspritegfx ANIM_TAG_MUSIC_NOTES
+	monbg ANIM_DEF_PARTNER
+	createvisualtask AnimTask_MusicNotesRainbowBlend, 2
+	waitforvisualfinish
+	playsewithpan SE_M_SING, SOUND_PAN_ATTACKER
+	call LullabyEffect
+	@blend_color_cycle selector=F_PAL_DEF_SIDE, delay=1, num_blends=5, initial_blend_y=5, target_blend_y=13, color=RGB(11, 31, 21)
+	call LullabyEffect
+	clearmonbg ANIM_DEF_PARTNER
+	createvisualtask AnimTask_MusicNotesClearRainbowBlend, 2
+	waitforvisualfinish
+	end
+LullabyEffect:
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 7, 0, 12
+	delay 5
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 6, 1, 12
+	delay 5
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 1, 2, 12
+	delay 5
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 2, 3, 12
+	delay 5
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 3, 0, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 2, 1, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 5, 2, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 6, 3, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 2, 0, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 2, 1, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 1, 2, 12
+	delay 4
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 5, 3, 12
+	delay 4
+	waitforvisualfinish
+	return
+	
+
 gBattleAnimMove_HyperBeam::
 	loadspritegfx ANIM_TAG_ORBS
 	simple_palette_blend selector=F_PAL_BG, delay=4, initial_blend_y=0, target_blend_y=16, color=RGB_BLACK

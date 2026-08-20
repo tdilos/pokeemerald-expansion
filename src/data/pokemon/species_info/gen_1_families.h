@@ -11088,6 +11088,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sFarfetchdTeachableLearnset,
         .eggMoveLearnset = sFarfetchdEggMoveLearnset,
         .formSpeciesIdTable = sFarfetchdFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ZEPHYR_STONE, SPECIES_SELDAME}),
     },
 
 #if P_GALARIAN_FORMS
@@ -17162,6 +17163,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sPinsirLevelUpLearnset,
         .teachableLearnset = sPinsirTeachableLearnset,
         .eggMoveLearnset = sPinsirEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_PLUX, CONDITIONS({IF_HOLD_ITEM, ITEM_ONI_MASK})},
+                                {EVO_ITEM, ITEM_ONI_MASK, SPECIES_PLUX}),
         .formSpeciesIdTable = sPinsirFormSpeciesIdTable,
         .formChangeTable = sPinsirFormChangeTable,
     },
@@ -18063,9 +18066,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_JOLTEON},
                                 {EVO_ITEM, ITEM_WATER_STONE, SPECIES_VAPOREON},
                                 {EVO_ITEM, ITEM_FIRE_STONE, SPECIES_FLAREON}
-                            #if P_GEN_6_CROSS_EVOS
-                                ,{EVO_LEVEL, 0, SPECIES_SYLVEON, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD}, {IF_KNOWS_MOVE_TYPE, TYPE_FAIRY})}
-                            #endif
+                            //#if P_GEN_6_CROSS_EVOS
+                            //    ,{EVO_LEVEL, 0, SPECIES_SYLVEON, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD}, {IF_KNOWS_MOVE_TYPE, TYPE_FAIRY})}
+                            //#endif
                             #if P_GEN_2_CROSS_EVOS
                                 ,{EVO_LEVEL, 0, SPECIES_ESPEON, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD}, {IF_NOT_TIME, TIME_NIGHT})},
                                 {EVO_LEVEL, 0, SPECIES_UMBREON, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD}, {IF_TIME, TIME_NIGHT})}
@@ -18076,6 +18079,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
                                 {EVO_LEVEL, 0, SPECIES_GLACEON, CONDITIONS({IF_IN_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM})},
                                 {EVO_ITEM, ITEM_ICE_STONE, SPECIES_GLACEON}
                             #endif
+								,{EVO_LEVEL, 0, SPECIES_SYLVEON, CONDITIONS({IF_MIN_CUTENESS, 170})}
+								,{EVO_LEVEL, 0, SPECIES_VOXEON, CONDITIONS({IF_MIN_SMARTNESS, 170})}
+								,{EVO_LEVEL, 0, SPECIES_ATROCEON, CONDITIONS({IF_MIN_COOLNESS, 170})}
                             ),
     },
 

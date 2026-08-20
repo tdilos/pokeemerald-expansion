@@ -1,0 +1,31 @@
+{
+  "id": "MAP_WINTER_SHIRE_TOWNE",
+  "name": "Winter_ShireTowne",
+  "layout": "LAYOUT_WINTER_SHIRE_TOWNE",
+  "music": "MUS_BW_ICIRRUS",
+  "region_map_section": "MAPSEC_SHIRE_TOWNE",
+  "requires_flash": false,
+  "weather": "WEATHER_SNOW",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_WINTER_AVALON_CASTLE_ENTRANCE",
+      "offset": 8,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_WINTER_FOREST_DALE",
+      "offset": -12,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -5775,6 +5775,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sAbomasnowTeachableLearnset,
         .formSpeciesIdTable = sAbomasnowFormSpeciesIdTable,
         .formChangeTable = sAbomasnowFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_YETREE, CONDITIONS({IF_KNOWS_MOVE, MOVE_HIDDEN_POWER})}),
     },
 
 #if P_MEGA_EVOLUTIONS

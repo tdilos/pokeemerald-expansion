@@ -106,22 +106,22 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WORMHOLE_LARGE",
       "x": 12,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "UltraWormhole_EventScript_XHolt",
       "flag": "FLAG_HIDE_BONUS_WORLD_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ZYGARDE_CELL",
+      "graphics_id": "OBJ_EVENT_GFX_CYBORG",
       "x": 2,
       "y": 22,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -156,7 +156,7 @@
       "x": 9,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_STATION_CITY",
+      "dest_map": "MAP_SPRING_SHIRE_TOWNE",
       "dest_warp_id": "0"
     }
   ],

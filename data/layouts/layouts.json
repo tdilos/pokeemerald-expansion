@@ -12124,7 +12124,7 @@
     {
       "id": "LAYOUT_SPRING_AVALON_CASTLE_ENTRANCE",
       "name": "Spring_AvalonCastle_Entrance_Layout",
-      "width": 20,
+      "width": 24,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
@@ -12145,7 +12145,7 @@
       "id": "LAYOUT_SPRING_FOURFOLD_FOREST_NW",
       "name": "Spring_FourfoldForest_NW_Layout",
       "width": 48,
-      "height": 50,
+      "height": 52,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_FourfoldForest_NW/border.bin",
@@ -12254,8 +12254,8 @@
     {
       "id": "LAYOUT_SPRING_FOURFOLD_FOREST_NE",
       "name": "Spring_FourfoldForest_NE_Layout",
-      "width": 40,
-      "height": 50,
+      "width": 56,
+      "height": 59,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_FourfoldForest_NE/border.bin",
@@ -12275,7 +12275,7 @@
       "id": "LAYOUT_SPRING_FOURFOLD_FOREST_SW",
       "name": "Spring_FourfoldForest_SW_Layout",
       "width": 40,
-      "height": 40,
+      "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_FourfoldForest_SW/border.bin",
@@ -12284,8 +12284,8 @@
     {
       "id": "LAYOUT_SPRING_THIEVES_DEN",
       "name": "Spring_ThievesDen_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 30,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XHolt",
       "border_filepath": "data/layouts/Spring_ThievesDen/border.bin",
@@ -12370,6 +12370,256 @@
       "secondary_tileset": "gTileset_MedievalInterior",
       "border_filepath": "data/layouts/Spring_AvalonCastle_Dungeon/border.bin",
       "blockdata_filepath": "data/layouts/Spring_AvalonCastle_Dungeon/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINTER_AVALON_CASTLE_ENTRANCE",
+      "name": "Winter_AvalonCastle_Entrance_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Winter_AvalonCastle_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/Winter_AvalonCastle_Entrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINTER_SHIRE_TOWNE",
+      "name": "Winter_ShireTowne_Layout",
+      "width": 46,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Winter_ShireTowne/border.bin",
+      "blockdata_filepath": "data/layouts/Winter_ShireTowne/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINTER_FOREST_DALE",
+      "name": "Winter_ForestDale_Layout",
+      "width": 66,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Winter_ForestDale/border.bin",
+      "blockdata_filepath": "data/layouts/Winter_ForestDale/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINTER_FOURFOLD_FOREST_NW",
+      "name": "Winter_FourfoldForest_NW_Layout",
+      "width": 48,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Winter_FourfoldForest_NW/border.bin",
+      "blockdata_filepath": "data/layouts/Winter_FourfoldForest_NW/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINTER_FOURFOLD_FOREST_SE",
+      "name": "Winter_FourfoldForest_SE_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Winter_FourfoldForest_SE/border.bin",
+      "blockdata_filepath": "data/layouts/Winter_FourfoldForest_SE/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINTER_FOURFOLD_FOREST_NE",
+      "name": "Winter_FourfoldForest_NE_Layout",
+      "width": 48,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Winter_FourfoldForest_NE/border.bin",
+      "blockdata_filepath": "data/layouts/Winter_FourfoldForest_NE/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINTER_FOURFOLD_FOREST_SW",
+      "name": "Winter_FourfoldForest_SW_Layout",
+      "width": 40,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Winter_FourfoldForest_SW/border.bin",
+      "blockdata_filepath": "data/layouts/Winter_FourfoldForest_SW/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINTER_THIEVES_DEN",
+      "name": "Winter_ThievesDen_Layout",
+      "width": 30,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Winter_ThievesDen/border.bin",
+      "blockdata_filepath": "data/layouts/Winter_ThievesDen/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALL_SHIRE_TOWNE",
+      "name": "Fall_ShireTowne_Layout",
+      "width": 46,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Fall_ShireTowne/border.bin",
+      "blockdata_filepath": "data/layouts/Fall_ShireTowne/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALL_FOREST_DALE",
+      "name": "Fall_ForestDale_Layout",
+      "width": 66,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Fall_ForestDale/border.bin",
+      "blockdata_filepath": "data/layouts/Fall_ForestDale/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALL_AVALON_CASTLE_ENTRANCE",
+      "name": "Fall_AvalonCastle_Entrance_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Fall_AvalonCastle_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/Fall_AvalonCastle_Entrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALL_THIEVES_DEN",
+      "name": "Fall_ThievesDen_Layout",
+      "width": 30,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Fall_ThievesDen/border.bin",
+      "blockdata_filepath": "data/layouts/Fall_ThievesDen/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALL_FOURFOLD_FOREST_SW",
+      "name": "Fall_FourfoldForest_SW_Layout",
+      "width": 40,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Fall_FourfoldForest_SW/border.bin",
+      "blockdata_filepath": "data/layouts/Fall_FourfoldForest_SW/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALL_FOURFOLD_FOREST_SE",
+      "name": "Fall_FourfoldForest_SE_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Fall_FourfoldForest_SE/border.bin",
+      "blockdata_filepath": "data/layouts/Fall_FourfoldForest_SE/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALL_FOURFOLD_FOREST_NE",
+      "name": "Fall_FourfoldForest_NE_Layout",
+      "width": 56,
+      "height": 59,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Fall_FourfoldForest_NE/border.bin",
+      "blockdata_filepath": "data/layouts/Fall_FourfoldForest_NE/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALL_FOURFOLD_FOREST_NW",
+      "name": "Fall_FourfoldForest_NW_Layout",
+      "width": 48,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Fall_FourfoldForest_NW/border.bin",
+      "blockdata_filepath": "data/layouts/Fall_FourfoldForest_NW/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMER_AVALON_CASTLE_ENTRANCE",
+      "name": "Summer_AvalonCastle_Entrance_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Summer_AvalonCastle_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/Summer_AvalonCastle_Entrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMER_FOREST_DALE",
+      "name": "Summer_ForestDale_Layout",
+      "width": 66,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Summer_ForestDale/border.bin",
+      "blockdata_filepath": "data/layouts/Summer_ForestDale/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMER_SHIRE_TOWNE",
+      "name": "Summer_ShireTowne_Layout",
+      "width": 46,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Summer_ShireTowne/border.bin",
+      "blockdata_filepath": "data/layouts/Summer_ShireTowne/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMER_FOURFOLD_FOREST_SE",
+      "name": "Summer_FourfoldForest_SE_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Summer_FourfoldForest_SE/border.bin",
+      "blockdata_filepath": "data/layouts/Summer_FourfoldForest_SE/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMER_FOURFOLD_FOREST_SW",
+      "name": "Summer_FourfoldForest_SW_Layout",
+      "width": 40,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Summer_FourfoldForest_SW/border.bin",
+      "blockdata_filepath": "data/layouts/Summer_FourfoldForest_SW/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMER_FOURFOLD_FOREST_NE",
+      "name": "Summer_FourfoldForest_NE_Layout",
+      "width": 56,
+      "height": 59,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Summer_FourfoldForest_NE/border.bin",
+      "blockdata_filepath": "data/layouts/Summer_FourfoldForest_NE/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMER_FOURFOLD_FOREST_NW",
+      "name": "Summer_FourfoldForest_NW_Layout",
+      "width": 48,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Summer_FourfoldForest_NW/border.bin",
+      "blockdata_filepath": "data/layouts/Summer_FourfoldForest_NW/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMER_THIEVES_DEN",
+      "name": "Summer_ThievesDen_Layout",
+      "width": 30,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XHolt",
+      "border_filepath": "data/layouts/Summer_ThievesDen/border.bin",
+      "blockdata_filepath": "data/layouts/Summer_ThievesDen/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMER_CAVES",
+      "name": "Summer_Caves_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Summer_Caves/border.bin",
+      "blockdata_filepath": "data/layouts/Summer_Caves/map.bin"
     }
   ]
 }

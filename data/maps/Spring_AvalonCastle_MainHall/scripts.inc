@@ -1,2 +1,45 @@
 Spring_AvalonCastle_MainHall_MapScripts::
 	.byte 0
+
+
+AvalonCastle_EventScript_HollowKnight1::
+	trainerbattle_single TRAINER_HOLLOW_KNIGHT_1, AvalonCastle_Text_HollowKnightIntro, AvalonCastle_Text_HollowKnightDefeated
+	end
+
+AvalonCastle_Text_HollowKnightIntro:
+	.string "$"
+
+AvalonCastle_Text_HollowKnightDefeated:
+	.string "$"
+
+
+
+AvalonCastle_EventScript_HollowKnight2::
+	trainerbattle_single TRAINER_HOLLOW_KNIGHT_2, AvalonCastle_Text_HollowKnightIntro, AvalonCastle_Text_HollowKnightDefeated
+	end
+
+AvalonCastle_EventScript_HollowKnight3::
+	trainerbattle_single TRAINER_HOLLOW_KNIGHT_3, AvalonCastle_Text_HollowKnightIntro, AvalonCastle_Text_HollowKnightDefeated
+	end
+
+AvalonCastle_EventScript_HollowKnight4::
+	trainerbattle_single TRAINER_HOLLOW_KNIGHT_4, AvalonCastle_Text_HollowKnightIntro, AvalonCastle_Text_HollowKnightDefeated
+	end
+
+AvalonCastle_EventScript_HollowKnight5::
+	trainerbattle_single TRAINER_HOLLOW_KNIGHT_5, AvalonCastle_Text_HollowKnightIntro, AvalonCastle_Text_HollowKnightDefeated
+	end
+
+AvalonCastle_EventScript_HollowKnight6::
+	trainerbattle_single TRAINER_HOLLOW_KNIGHT_6, AvalonCastle_Text_HollowKnightIntro, AvalonCastle_Text_HollowKnightDefeated
+	end
+
+AvalonCastle_EventScript_HollowKnight7::
+	trainerbattle_single TRAINER_HOLLOW_KNIGHT_7, AvalonCastle_Text_HollowKnightIntro, AvalonCastle_Text_HollowKnightDefeated
+	end
+
+AvalonCastle_EventScript_HollowKnight8::
+	trainerbattle_single TRAINER_HOLLOW_KNIGHT_8, AvalonCastle_Text_HollowKnightIntro, AvalonCastle_Text_HollowKnightDefeated
+	end
+
+

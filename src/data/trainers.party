@@ -28876,6 +28876,40 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
 
+=== TRAINER_HOLLOW_KNIGHT_7 ===
+Name: KNIGHT
+Class: Hollow Knight
+Pic: Hollow Knight
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
+=== TRAINER_HOLLOW_KNIGHT_8 ===
+Name: KNIGHT
+Class: Hollow Knight
+Pic: Hollow Knight
+Gender: Male
+Music: Suspicious
+Battle Type: Singles
+AI: Smart Trainer
+
+
+SPECIES_DOUBLADE
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+
+
 === TRAINER_ORIN ===
 Name: ORIN
 Class: Gardener
@@ -29020,4 +29054,537 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
 
+
+
+
+
+
+
+
+=== TRAINER_ROXANNE_0 ===
+Name: ROXANNE
+Class: Leader
+Pic: Leader Roxanne
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
+Battle Type: Doubles
+AI: Smart Trainer
+
+Geodude
+Level: 13
+Ability: Sturdy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Stealth Rock
+- Rock Polish
+- Bulldoze
+- Stone Edge
+
+Lileep
+Level: 12
+Ability: Storm Drain
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Acid
+- Ingrain
+- Stone Edge
+
+Omanyte
+Level: 12
+Ability: Shell Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Toxic Spikes
+- Icy Wind
+- Water Pulse
+- Stone Edge
+
+Nosepass @ Oran Berry
+Level: 16
+Ability: Magnet Pull
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunder Wave
+- Ice Punch
+- Thunder Punch
+- Stone Edge
+
+
+
+=== TRAINER_BRAWLY_0 ===
+Name: BRAWLY
+Class: Leader
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Battle Type: Doubles
+AI: Smart Trainer
+
+Meditite @ Light Clay
+Level: 21
+Ability: Pure Power
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Force Palm
+- Light Screen
+- Reflect
+- Bulk Up
+
+Hitmontop @ Assault Vest
+Level: 22
+Ability: Intimidate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Fake Out
+- Brick Break
+- Pursuit
+- Bullet Punch
+
+Machop
+Level: 21
+Ability: Guts
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Brick Break
+- Knock Off
+- Bullet Punch
+- Bulk Up
+
+Makuhita @ Sitrus Berry
+Level: 24
+Ability: Thick Fat
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Drain Punch
+- Rock Slide
+- Knock Off
+- Bulk Up
+
+
+
+=== TRAINER_VILLO_0 ===
+Name: VILLO
+Class: Leader
+Pic: Leader Villo
+Gender: Male
+Music: Male
+Items: Hyper Potion / Hyper Potion
+Battle Type: Doubles
+AI: Smart Trainer
+
+Dusclops @ Eviolite
+Level: 37
+Ability: Pressure
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wither
+- Pain Split
+- Icy Wind
+- Shadow Ball
+
+SPECIES_MAROWAK_ALOLA @ Assault Vest
+Level: 39
+Ability: Cursed Body
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shadow Bone
+- Flame Wheel
+- Bonemerang
+- Power Up Punch
+
+Dusclops @ Eviolite
+Level: 37
+Ability: Pressure
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wither
+- Pain Split
+- Icy Wind
+- Shadow Ball
+
+
+Gemineye @ Assault Vest
+Level: 40
+Ability: Magic Bounce
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shadow Ball
+- Foul Play
+- Dazzling Gleam
+- Psychic
+
+
+
+=== TRAINER_FLANNERY_0 ===
+Name: FLANNERY
+Class: Leader
+Pic: Leader Flannery
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Battle Type: Doubles
+AI: Smart Trainer
+
+Torkoal @ White Herb
+Level: 48
+Ability: Drought
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Overheat
+- Solar Beam
+- Scorching Sands
+- Protect
+
+Magcargo @ Air Balloon
+Level: 45
+Ability: Magma Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Shell Smash
+- Lava Plume
+- Rock Slide
+- Sunny Day
+
+Combusken @ Sitrus Berry
+Level: 43
+Ability: Speed Boost
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Overheat
+- Brick Break
+- Thunder Punch
+- Bulk Up
+
+Camerupt @ White Herb
+Level: 46
+Ability: Magma Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Overheat
+- Bulldoze
+- Rock Slide
+- Sunny Day
+
+Torkoal @ White Herb
+Level: 48
+Ability: Drought
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Overheat
+- Solar Beam
+- Scorching Sands
+- Protect
+
+
+
+=== TRAINER_MADELEINE_0 ===
+Name: MADELEINE
+Class: Leader
+Pic: Leader Madeleine
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion
+Battle Type: Doubles
+AI: Smart Trainer
+
+Crempera @ Leftovers
+Level: 56
+Ability: Sweet Veil
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Calm Mind
+- Acid Armor
+- Draining Kiss
+- Stored Power
+
+Wigglytuff @ Leftovers
+Level: 53
+Ability: Competitive
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Lullaby
+- Hyper Voice
+- Dazzling Gleam
+- Psychic
+
+Ribombee 
+Level: 54
+Ability: Sweet Veil
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Quiver Dance
+- Bile Wind
+- Psychic
+- Sticky Web
+
+Wigglytuff @ Leftovers
+Level: 53
+Ability: Competitive
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Lullaby
+- Hyper Voice
+- Dazzling Gleam
+- Psychic
+
+Crempera @ Leftovers
+Level: 56
+Ability: Sweet Veil
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Calm Mind
+- Acid Armor
+- Draining Kiss
+- Stored Power
+
+
+
+=== TRAINER_WALLY_0 ===
+Name: WALLY
+Class: Leader
+Pic: Wally
+Gender: Male
+Music: Male
+Items: Max Potion / Max Potion
+Battle Type: Doubles
+AI: Smart Trainer
+
+Talonflame @ Life Orb
+Level: 68
+Ability: Gale Wings
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Swords Dance
+- Brave Bird
+- Flare Blitz
+- Roost
+
+Roserade @ Bright Powder
+Level: 69
+Ability: Poison Point
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 4 Def / 252 SpA / 252 Spe
+- Pollenspray
+- Sludge Bomb
+- Rototill
+- Toxic Spikes
+
+Magnezone @ Air Balloon
+Level: 69
+Ability: Sturdy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Discharge
+- Flash Cannon
+- Reflect
+- Magnet Rise
+
+Garchomp @ Rocky Helmet
+Level: 70
+Ability: Rough Skin
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+- Dragon Claw
+- Earthquake
+- Crunch
+- Swords Dance
+
+Indeedee @ Terrain Extender
+Level: 69
+Ability: Psychic Surge
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+- Expanding Force
+- Dazzling Gleam
+- Mystical Fire
+- Energy Ball
+
+Gallade @ Lum Berry
+Level: 72
+Ability: Sharpness
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Psycho Cut
+- Sacred Sword
+- Leaf Blade
+- Swords Dance
+
+
+
+=== TRAINER_TATE_AND_LIZA_0 ===
+Name: TATE&LIZA
+Class: Leader
+Pic: Leader Tate And Liza
+Gender: Male
+Music: Female
+Items: Max Potion / Max Potion / Max Potion / Max Potion
+Battle Type: Doubles
+AI: Smart Trainer
+
+Claydol @ Light Clay
+Level: 60
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Earthquake
+- Psychic
+- Reflect
+- Light Screen
+
+Xatu
+Level: 60
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Stored Power
+- Roost
+- Calm Mind
+- Toxic
+
+Gardevoir @ Leftovers
+Level: 62
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 4 SpA
+- Calm Mind
+- Stored Power
+- Thunderbolt
+- Signal Beam
+
+Slowking @ Assault Vest
+Level: 62
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Scald
+- Psyshock
+- Ice Beam
+- Fire Blast
+
+Lunatone @ Power Herb
+Level: 64
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Meteor Beam
+- Psyshock
+- Hypnosis
+- Calm Mind
+
+Solrock @ Sitrus Berry
+Level: 64
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Will O Wisp
+- Zen Headbutt
+- Stone Edge
+- Earthquake
+
+
+
+=== TRAINER_WALLACE_0 ===
+Name: WALLACE
+Class: Leader
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Battle Type: Doubles
+AI: Smart Trainer
+
+Politoed @ Damp Rock
+Level: 68
+Ability: Drizzle
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+- Scald
+- Hyper Voice
+- Ice Beam
+- Flip Turn
+
+Ludicolo @ Life Orb
+Level: 69
+Ability: Swift Swim
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Rain Dance
+
+Seaking @ Choice Scarf
+Level: 69
+Ability: Lightning Rod
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Fishious Rend
+- Drill Run
+- Megahorn
+- Poison Jab
+
+Gyarados @ Leftovers
+Level: 70
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Atk / 4 Spe
+- Dragon Dance
+- Earthquake
+- Waterfall
+- Crunch
+
+Whiscash @ Rindo Berry
+Level: 69
+Ability: Oblivious
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Atk / 4 Spe
+- Earthquake
+- Waterfall
+- Stone Edge
+- Dragon Dance
+
+Milotic @ Leftovers
+Level: 72
+Ability: Marvel Scale
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+- Scald
+- Recover
+- Ice Beam
+- Toxic
+
+
+=== TRAINER_STEVEN_0 ===
+Name: STEVEN
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Battle Type: Singles
+AI: Basic Trainer
+
+Skarmory @ Leftovers
+Level: 77
+Ability: Sturdy
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+- Toxic
+- Roost
+- Stealth Rock
+- Shield Strike
+
+Claydol @ Light Clay
+Level: 75
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+- Reflect
+- Light Screen
+- Rock Slide
+- Earthquake
+
+Aggron @ Choice Band
+Level: 76
+Ability: Rock Head
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Head Smash
+- Heavy Slam
+- Aqua Tail
+- Earthquake
+
+Cradily @ Leftovers
+Level: 76
+Ability: Storm Drain
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+- Giga Drain
+- Paleo Wave
+- Ingrain
+- Shore Up
+
+Archeops @ Sitrus Berry
+Level: 76
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 4 Def / 252 SpA / 252 Spe
+- Paleo Wave
+- Air Slash
+- Earth Power
+- Heat Wave
+
+Metagross @ Leftovers
+Level: 78
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 76 Atk / 64 Def / 100 SpD / 16 Spe
+- Cosmic Power
+- Shield Strike
+- Body Press
+- Rest
 

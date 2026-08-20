@@ -1023,6 +1023,7 @@ extern const u8 gBattleAnimMove_Chitinize[];
 extern const u8 gBattleAnimMove_Singularity[];
 extern const u8 gBattleAnimMove_MindBreak[];
 extern const u8 gBattleAnimMove_KaleidoTongue[];
+extern const u8 gBattleAnimMove_Lullaby[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];

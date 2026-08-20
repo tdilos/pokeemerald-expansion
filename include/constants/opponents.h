@@ -1401,14 +1401,55 @@
 #define TRAINER_SLOAN       1335
 #define TRAINER_GARRICK     1336
 
-#define TRAINER_VILLO_1          1337
-#define TRAINER_MADELEINE_1      1338
+#define TRAINER_VILLO_0          1337
+#define TRAINER_MADELEINE_0      1338
+
+#define TRAINER_HOLLOW_KNIGHT_7      1339
+#define TRAINER_HOLLOW_KNIGHT_8      1340
+
+#define TRAINER_LYCIUS      1341
+#define TRAINER_CARAX       1342
+#define TRAINER_LOCIOR      1343
+#define TRAINER_QUENTITUS   1344
+
+#define TRAINER_ROXANNE_0        1345
+#define TRAINER_BRAWLY_0         1346
+#define TRAINER_FLANNERY_0       1347
+#define TRAINER_WALLY_0          1348
+#define TRAINER_TATE_AND_LIZA_0  1349
+#define TRAINER_WALLACE_0        1350
+
+#define TRAINER_ARTHUR_R         1351
+#define TRAINER_TARA_R           1352
+#define TRAINER_MYRTLE_R         1353
+#define TRAINER_EIRA_R           1354
+#define TRAINER_CADE_R           1355
+#define TRAINER_NIKOLAUS_R       1356
+#define TRAINER_ETHEL_R          1357
+#define TRAINER_ADDERLY_R        1358
+
+#define TRAINER_ROXANNE_R        1359
+#define TRAINER_BRAWLY_R         1360
+#define TRAINER_VILLO_R          1361
+#define TRAINER_FLANNERY_R       1362
+#define TRAINER_MADELEINE_R      1363
+#define TRAINER_WALLY_R          1364
+#define TRAINER_TATE_AND_LIZA_R  1365
+#define TRAINER_WALLACE_R        1366
+
+#define TRAINER_STEVEN_0         1367
+
+#define TRAINER_LISIA_R          1370
+#define TRAINER_IAN_R            1371
+#define TRAINER_SIDNEY_R         1372
+#define TRAINER_PETRA_R          1373
+#define TRAINER_NORMAN_R         1374
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1339 //1291 //965//855
+#define TRAINERS_COUNT_EMERALD     1375 //1291 //965//855
 #define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG

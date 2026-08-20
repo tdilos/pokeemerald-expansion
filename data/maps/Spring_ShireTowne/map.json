@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_SPRING_AVALON_CASTLE_ENTRANCE",
-      "offset": 10,
+      "offset": 8,
       "direction": "up"
     }
   ],
@@ -62,7 +62,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_ZYGARDE_CELL_2"
+      "flag": "FLAG_ZYGARDE_CELL_5"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_JESTER",
@@ -171,7 +171,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_ARMOR",
       "x": 18,
-      "y": 2,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -184,7 +184,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_ARMOR",
       "x": 20,
-      "y": 2,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -197,7 +197,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_ARMOR",
       "x": 19,
-      "y": 2,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -210,7 +210,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_VIZIER",
       "x": 19,
-      "y": 3,
+      "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -225,7 +225,7 @@
       "x": 23,
       "y": 18,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -238,8 +238,8 @@
       "x": 24,
       "y": 20,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
-      "movement_range_x": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
@@ -265,8 +265,8 @@
       "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_DOWN_RIGHT",
-      "movement_range_x": 3,
-      "movement_range_y": 3,
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",

@@ -3788,6 +3788,8 @@ BattleScript_FlatterTryConfuse::
 BattleScript_EffectDarkVoid::
 .if B_DARK_VOID_FAIL >= GEN_7
 	jumpifspecies SPECIES_DARKRAI, BattleScript_EffectNonVolatileStatus
+	jumpifspecies SPECIES_JIGGLYPUFF, BattleScript_EffectNonVolatileStatus
+	jumpifspecies SPECIES_WIGGLYTUFF, BattleScript_EffectNonVolatileStatus
 	goto BattleScript_PokemonCantUseTheMove
 .endif
 BattleScript_EffectNonVolatileStatus::

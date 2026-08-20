@@ -4651,6 +4651,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sSableyeEggMoveLearnset,
         .formSpeciesIdTable = sSableyeFormSpeciesIdTable,
         .formChangeTable = sSableyeFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_GEMINEYE, CONDITIONS({IF_KNOWS_MOVE, MOVE_HIDDEN_POWER})}),
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -4809,6 +4810,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sMawileEggMoveLearnset,
         .formSpeciesIdTable = sMawileFormSpeciesIdTable,
         .formChangeTable = sMawileFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MALEVILE, CONDITIONS({IF_KNOWS_MOVE, MOVE_HIDDEN_POWER})}),
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -5351,6 +5353,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sMedichamTeachableLearnset,
         .formSpeciesIdTable = sMedichamFormSpeciesIdTable,
         .formChangeTable = sMedichamFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MEDIYOGI, CONDITIONS({IF_KNOWS_MOVE, MOVE_HIDDEN_POWER})}),
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -9751,6 +9754,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sBanetteTeachableLearnset,
         .formSpeciesIdTable = sBanetteFormSpeciesIdTable,
         .formChangeTable = sBanetteFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_ZIPPETTE, CONDITIONS({IF_KNOWS_MOVE, MOVE_HIDDEN_POWER})}),
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -10465,6 +10469,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggMoveLearnset = sAbsolEggMoveLearnset,
         .formSpeciesIdTable = sAbsolFormSpeciesIdTable,
         .formChangeTable = sAbsolFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_ARBINJ, CONDITIONS({IF_KNOWS_MOVE, MOVE_HIDDEN_POWER})}),
     },
 
 #if P_MEGA_EVOLUTIONS

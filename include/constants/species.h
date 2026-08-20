@@ -1771,7 +1771,7 @@
 #define SPECIES_DRAKLOAK_ISSHOAN                       (TOURMALINE_START + 71)
 #define SPECIES_DRAGAPULT_ISSHOAN                      (TOURMALINE_START + 72)
 
-// Misc. Forms
+// Misc. New Forms
 #define SPECIES_UNOWN_A                                (TOURMALINE_START + 73)
 #define SPECIES_CASTFORM_SANDY                         (TOURMALINE_START + 74)
 #define SPECIES_CASTFORM_LOONY                         (TOURMALINE_START + 75)
@@ -1780,13 +1780,27 @@
 #define SPECIES_ARCEUS_ECHO                            (TOURMALINE_START + 78)
 #define SPECIES_SILVALLY_ECHO                          (TOURMALINE_START + 79)
 
+// Postgame Species
+#define SPECIES_TOXIBRATE                              (TOURMALINE_START + 80)
+#define SPECIES_CREMPERA                               (TOURMALINE_START + 81)
+
+#define SPECIES_SMOGECKO                               (TOURMALINE_START + 82)
+#define SPECIES_SMOGUANA                               (TOURMALINE_START + 83)
+#define SPECIES_SMOKOMODO                              (TOURMALINE_START + 84)
+#define SPECIES_SWIRLPOOL                              (TOURMALINE_START + 85)
+#define SPECIES_CORIBALIS                              (TOURMALINE_START + 86)
+#define SPECIES_SNAELSTROM                             (TOURMALINE_START + 87)
+
+#define SPECIES_BRATTLER                               (TOURMALINE_START + 88)
+#define SPECIES_MALACONDA                              (TOURMALINE_START + 89)
+
 // Ultra Beasts
-#define SPECIES_MANIPULOBE                             (TOURMALINE_START + 80)
-#define SPECIES_SOMNIVORE                              (TOURMALINE_START + 81)
-#define SPECIES_TEROPHAGE                              (TOURMALINE_START + 82)
-#define SPECIES_REIZURGE                               (TOURMALINE_START + 83)
-#define SPECIES_THURSLUSH                              (TOURMALINE_START + 84)
-#define SPECIES_MIMEKTIPLEX                            (TOURMALINE_START + 85)
+#define SPECIES_MANIPULOBE                             (TOURMALINE_START + 90)
+#define SPECIES_SOMNIVORE                              (TOURMALINE_START + 91)
+#define SPECIES_TEROPHAGE                              (TOURMALINE_START + 92)
+#define SPECIES_REIZURGE                               (TOURMALINE_START + 93)
+#define SPECIES_THURSLUSH                              (TOURMALINE_START + 94)
+#define SPECIES_MIMEKTIPLEX                            (TOURMALINE_START + 95)
 
 
 #define SPECIES_EGG                                    (SPECIES_MIMEKTIPLEX + 1)

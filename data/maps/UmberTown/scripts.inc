@@ -703,20 +703,15 @@ UmberTown_EventScript_GiveStuffDemo::
 	lock
 	faceplayer
 	@setflag FLAG_BATTLED_OPC_CINEROUS_TOWN
-	@setflag FLAG_BADGE02_GET
+	setflag FLAG_BADGE06_GET
 	@setflag FLAG_IS_CHAMPION
 	@setflag FLAG_SYS_NATIONAL_DEX
 	@special EnableNationalPokedex
 	@playse SE_DING_DONG
 	@waitse
 
-	@call UmberTown_EventScript_GiveTMs
-
-	@setvar VAR_0x8004, 777
-	@special GiveFrontierBattlePoints
-
-	@applymovement 8, UmberTown_Movement_Dummy
-	@waitmovement 0
+	clearflag FLAG_HIDE_BONUS_WORLD_2
+	clearflag FLAG_HIDE_TIER_1_WORLDS
 
 	@playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
 	@setvar VAR_0x8004, SPECIES_LANDORUS
@@ -732,22 +727,20 @@ UmberTown_EventScript_GiveStuffDemo::
 	@setvar VAR_CINEROUS_TOWN_STATE, 2
 	@setvar VAR_CINEROUS_TOWER_STATE, 0
 
-	@msgbox UmberTown_Text_TakeThis, MSGBOX_DEFAULT
-	givemon SPECIES_CHANDELURE, 16, ITEM_LEFTOVERS
-	@givemon SPECIES_GRAVELER, 28, ITEM_ORAN_BERRY
-	@givemon SPECIES_MUMBAO, 30, ITEM_ORAN_BERRY
-	setmonmove 1, 0, MOVE_BLAST_BURN
-	@setmonmove 5, 1, MOVE_SOLAR_BEAM
-	@setmonmove 5, 2, MOVE_MOONLIGHT
-	@setmonmove 5, 3, MOVE_FULL_MOON
+	msgbox UmberTown_Text_TakeThis, MSGBOX_DEFAULT
+	givemon SPECIES_OMENDENZ, 16, ITEM_LEFTOVERS
+	givemon SPECIES_THURSLUSH, 40, ITEM_LEFTOVERS
+	givemon SPECIES_CREMPERA, 40, ITEM_LEFTOVERS
+	givemon SPECIES_TOXIBRATE, 40, ITEM_LEFTOVERS
+	setmonmove 2, 0, MOVE_SURF
 	
 	@special SavePlayerParty
 	@setwildbattle SPECIES_TYRANITAR, 100, ITEM_KINGS_ROCK, SPECIES_MIENSHAO, 100, ITEM_KINGS_ROCK
 	@call CinerousTower_Exterior_EventScript_OPCBattleSetup
 
-	@msgbox UmberTown_Text_AndThese, MSGBOX_DEFAULT
+	msgbox UmberTown_Text_AndThese, MSGBOX_DEFAULT
 	@giveitem ITEM_ULTRA_BALL, 20
-	@giveitem ITEM_POTION, 20
+	giveitem ITEM_MAX_REPEL, 50
 
 
 	@msgbox UmberTown_Text_ZartoshtIntro, MSGBOX_DEFAULT
@@ -757,7 +750,7 @@ UmberTown_EventScript_GiveStuffDemo::
 	@trainerbattle_no_intro TRAINER_NEDA_1, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_RAYNER_QUARTZ_CAVE, UmberTown_Text_ZartoshtDefeated
 
-	trainerbattle_no_intro TRAINER_ARTHUR_1, UmberTown_Text_ZartoshtDefeated
+	@trainerbattle_no_intro TRAINER_ARTHUR_1, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_TARAH_1, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_MYRTLE_1, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_EIRA_1, UmberTown_Text_ZartoshtDefeated
@@ -773,7 +766,7 @@ UmberTown_EventScript_GiveStuffDemo::
 	@trainerbattle_no_intro TRAINER_AZAMI_1, UmberTown_Text_ZartoshtDefeated
 	@setvar VAR_TERRAIN, 0
 
-	@trainerbattle_double TRAINER_ANNA_AND_MEG_1, Route117_Text_AnnaIntro, Route117_Text_AnnaDefeat, Route117_Text_AnnaNotEnoughMons, Route117_EventScript_RegisterAnna
+	@trainerbattle_double TRAINER_ANNA_AND_MEG_1, UmberTown_Text_ZartoshtIntro, Route117_Text_AnnaDefeat, Route117_Text_AnnaNotEnoughMons, Route117_EventScript_RegisterAnna
 	@trainerbattle_no_intro_no_whiteout TRAINER_NEDA_1, UmberTown_Text_ZartoshtDefeated
 	@setwildbattle SPECIES_FEAROW, 50
 	@dowildbattle

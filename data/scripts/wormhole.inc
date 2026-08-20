@@ -1,3 +1,71 @@
+UltraWormhole_EventScript_XCosmopolis::
+	lock
+	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
+	warp MAP_STATION_CITY_BUILDING1_B1, 5, 4
+	waitstate
+	release
+	end
+
+UltraWormhole_EventScript_AlteringCave::
+	lock
+	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
+	warp MAP_ALTERING_CAVE, 26, 13
+	waitstate
+	release
+	end
+
+UltraWormhole_EventScript_XPelago::
+	lock
+	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
+	warp MAP_KIYAHA_ISLE_EXTERIOR, 3, 23
+	waitstate
+	release
+	end
+
+UltraWormhole_EventScript_Route109::
+	lock
+	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
+	warp MAP_ROUTE109, 27, 46
+	waitstate
+	release
+	end
+
+UltraWormhole_EventScript_XHolt::
+	lock
+	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
+	warp MAP_SPRING_FOURFOLD_FOREST_NW, 36, 20
+	waitstate
+	release
+	end
+
+UltraWormhole_EventScript_PetalburgWoods::
+	lock
+	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
+	warp MAP_PETALBURG_WOODS, 35, 23
+	waitstate
+	release
+	end
+
+
+UltraWormhole_EventScript_Skip::
+	release
+	end
+
+UltraWormhole_Text_StepInside:
+	.string "It's a large wormhole.\n"
+	.string "Step inside?$"
+
+
+
+
+
+
 Wormhole_EventScript_Articuno::
 	lock
 	msgbox gText_ReachInsideWormhole, MSGBOX_YESNO

@@ -15,14 +15,14 @@
   "connections": [
     {
       "map": "MAP_SPRING_SHIRE_TOWNE",
-      "offset": -10,
+      "offset": -8,
       "direction": "down"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_ARMOR",
-      "x": 8,
+      "x": 10,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -35,7 +35,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_ARMOR",
-      "x": 10,
+      "x": 12,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -49,7 +49,7 @@
   ],
   "warp_events": [
     {
-      "x": 9,
+      "x": 11,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SPRING_AVALON_CASTLE_MAIN_HALL",

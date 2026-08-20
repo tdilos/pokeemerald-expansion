@@ -638,6 +638,12 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	//{gObjectEventPal_RedLeaf,                  OBJ_EVENT_PAL_TAG_LEAF},
 	{gObjectEventPal_Violet,                OBJ_EVENT_PAL_TAG_VIOLET},
     {gObjectEventPal_VioletReflection,      OBJ_EVENT_PAL_TAG_VIOLET_REFLECTION},
+    {gObjectEventPal_Calyrex,               OBJ_EVENT_PAL_TAG_CALYREX},
+	{gObjectEventPal_Nihilego,              OBJ_EVENT_PAL_TAG_NIHILEGO},
+	{gObjectEventPal_Stakataka,             OBJ_EVENT_PAL_TAG_STAKATAKA},
+	{gObjectEventPal_Buzzwole,              OBJ_EVENT_PAL_TAG_BUZZWOLE},
+	{gObjectEventPal_Pheromosa,             OBJ_EVENT_PAL_TAG_PHEROMOSA},
+	{gObjectEventPal_Kartana,               OBJ_EVENT_PAL_TAG_KARTANA},
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else

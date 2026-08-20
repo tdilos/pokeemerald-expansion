@@ -33899,6 +33899,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_SUMMER_CAVES",
+          "base_label": "gSummer_Caves",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_YAMASK_GALAR"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_RUNERIGUS"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_RUNERIGUS"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_RUNERIGUS"
+              }
+            ]
+          }
         }
       ]
     },

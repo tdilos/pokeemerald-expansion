@@ -2674,3 +2674,101 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Spring_AvalonCastle_MainHall/scripts.inc"
 
 	.include "data/maps/Spring_AvalonCastle_Dungeon/scripts.inc"
+
+	.include "data/maps/Winter_AvalonCastle_Entrance/scripts.inc"
+
+	.include "data/maps/Winter_FourfoldForest_NW/scripts.inc"
+
+	.include "data/maps/Winter_ShireTowne/scripts.inc"
+
+	.include "data/maps/Winter_ForestDale/scripts.inc"
+
+	.include "data/maps/Winter_FourfoldForest_SW/scripts.inc"
+
+	.include "data/maps/Winter_FourfoldForest_SE/scripts.inc"
+
+	.include "data/maps/Winter_FourfoldForest_NE/scripts.inc"
+
+	.include "data/maps/Winter_ThievesDen/scripts.inc"
+
+	.include "data/maps/Winter_ShireTowne_Building1_1F/scripts.inc"
+
+	.include "data/maps/Winter_ShireTowne_Church/scripts.inc"
+
+	.include "data/maps/Winter_ShireTowne_Building2/scripts.inc"
+
+	.include "data/maps/Winter_ShireTowne_Building1_2F/scripts.inc"
+
+	.include "data/maps/Winter_ShireTowne_Building3/scripts.inc"
+
+	.include "data/maps/Winter_ShireTowne_Building4/scripts.inc"
+
+	.include "data/maps/Winter_AvalonCastle_Dungeon/scripts.inc"
+
+	.include "data/maps/Winter_AvalonCastle_MainHall/scripts.inc"
+
+	.include "data/maps/Fall_ForestDale/scripts.inc"
+
+	.include "data/maps/Fall_AvalonCastle_Entrance/scripts.inc"
+
+	.include "data/maps/Fall_ShireTowne/scripts.inc"
+
+	.include "data/maps/Fall_FourfoldForest_NE/scripts.inc"
+
+	.include "data/maps/Fall_FourfoldForest_SE/scripts.inc"
+
+	.include "data/maps/Fall_ThievesDen/scripts.inc"
+
+	.include "data/maps/Fall_FourfoldForest_SW/scripts.inc"
+
+	.include "data/maps/Fall_FourfoldForest_NW/scripts.inc"
+
+	.include "data/maps/Fall_ShireTowne_Church/scripts.inc"
+
+	.include "data/maps/Fall_ShireTowne_Building1_1F/scripts.inc"
+
+	.include "data/maps/Fall_ShireTowne_Building4/scripts.inc"
+
+	.include "data/maps/Fall_ShireTowne_Building1_2F/scripts.inc"
+
+	.include "data/maps/Fall_ShireTowne_Building2/scripts.inc"
+
+	.include "data/maps/Fall_ShireTowne_Building3/scripts.inc"
+
+	.include "data/maps/Fall_AvalonCastle_Dungeon/scripts.inc"
+
+	.include "data/maps/Fall_AvalonCastle_MainHall/scripts.inc"
+
+	.include "data/maps/Summer_AvalonCastle_Entrance/scripts.inc"
+
+	.include "data/maps/Summer_ShireTowne/scripts.inc"
+
+	.include "data/maps/Summer_ForestDale/scripts.inc"
+
+	.include "data/maps/Summer_FourfoldForest_NE/scripts.inc"
+
+	.include "data/maps/Summer_FourfoldForest_SE/scripts.inc"
+
+	.include "data/maps/Summer_FourfoldForest_NW/scripts.inc"
+
+	.include "data/maps/Summer_FourfoldForest_SW/scripts.inc"
+
+	.include "data/maps/Summer_ThievesDen/scripts.inc"
+
+	.include "data/maps/Summer_ShireTowne_Building2/scripts.inc"
+
+	.include "data/maps/Summer_ShireTowne_Building4/scripts.inc"
+
+	.include "data/maps/Summer_ShireTowne_Building3/scripts.inc"
+
+	.include "data/maps/Summer_ShireTowne_Building1_2F/scripts.inc"
+
+	.include "data/maps/Summer_ShireTowne_Church/scripts.inc"
+
+	.include "data/maps/Summer_ShireTowne_Building1_1F/scripts.inc"
+
+	.include "data/maps/Summer_AvalonCastle_Dungeon/scripts.inc"
+
+	.include "data/maps/Summer_AvalonCastle_MainHall/scripts.inc"
+
+	.include "data/maps/Summer_Caves/scripts.inc"

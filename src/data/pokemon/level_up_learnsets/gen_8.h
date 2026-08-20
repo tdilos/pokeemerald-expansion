@@ -19359,9 +19359,10 @@ static const struct LevelUpMove sBarraskewdaLevelUpLearnset[] = {
 static const struct LevelUpMove sToxelLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_BELCH),
     LEVEL_UP_MOVE( 1, MOVE_TEARFUL_LOOK),
+    LEVEL_UP_MOVE( 1, MOVE_FLAIL),
     LEVEL_UP_MOVE( 1, MOVE_NUZZLE),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
-    LEVEL_UP_MOVE( 1, MOVE_FLAIL),
+    LEVEL_UP_MOVE( 1, MOVE_SONIC_PULSE),
     LEVEL_UP_MOVE( 1, MOVE_ACID),
     LEVEL_UP_END
 };

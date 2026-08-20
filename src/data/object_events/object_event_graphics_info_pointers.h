@@ -525,6 +525,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CalyrexOld;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NihilegoOld;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StakatakaOld;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BuzzwoleOld;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PheromosaOld;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KartanaOld;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
 	[OBJ_EVENT_GFX_VOLCARONA] =                &gObjectEventGraphicsInfo_Volcarona,
@@ -1020,6 +1023,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	
     [OBJ_EVENT_GFX_NIHILEGO]                 = &gObjectEventGraphicsInfo_NihilegoOld,
     [OBJ_EVENT_GFX_STAKATAKA]                = &gObjectEventGraphicsInfo_StakatakaOld,
+    [OBJ_EVENT_GFX_BUZZWOLE]                 = &gObjectEventGraphicsInfo_BuzzwoleOld,
+    [OBJ_EVENT_GFX_PHEROMOSA]                = &gObjectEventGraphicsInfo_PheromosaOld,
+    [OBJ_EVENT_GFX_KARTANA]                  = &gObjectEventGraphicsInfo_KartanaOld,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
