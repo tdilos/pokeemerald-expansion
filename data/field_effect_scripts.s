@@ -87,6 +87,7 @@ gFieldEffectScriptPointers::
 	.4byte gFldEffScript_SmileyFaceIcon    		        @ FLDEFF_SMILEY_FACE_ICON
 	.4byte gFieldEffectScript_HallOfFameRecordFrlg      @ FLDEFF_HALL_OF_FAME_RECORD_FRLG
 	.4byte gFldEffScript_PhotoFlash      		        @ FLDEFF_PHOTO_FLASH
+	.4byte gFieldEffectScript_OWE_SpawnAnim				@ FLDEFF_OW_ENCOUNTER_SPAWN_ANIM
 	.4byte gFieldEffectScript_UseHeadbutt               @ FLDEFF_USE_HEADBUTT
 	.4byte gFieldEffectScript_UseThaw                   @ FLDEFF_USE_THAW
 	.4byte gFieldEffectScript_UseMagnetRise             @ FLDEFF_USE_MAGNET_RISE
@@ -429,4 +430,8 @@ gFieldEffectScript_HallOfFameRecordFrlg::
 
 gFldEffScript_PhotoFlash::
 	field_eff_callnative FldEff_PhotoFlash
+	field_eff_end
+
+gFieldEffectScript_OWE_SpawnAnim::
+	field_eff_callnative FldEff_OWE_SpawnAnim
 	field_eff_end

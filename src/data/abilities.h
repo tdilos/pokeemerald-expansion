@@ -2160,8 +2160,6 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
-        .cantBeSuppressed = TRUE,
-        .cantBeOverwritten = TRUE,
     },
 
     [ABILITY_ELECTROMORPHOSIS] =
@@ -2238,9 +2236,6 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Orichalcum Pulse"),
         .description = COMPOUND_STRING("Summons sunlight in battle."),
         .aiRating = 8,
-        .cantBeSwapped = TRUE,
-        .cantBeCopied = TRUE,
-        .cantBeOverwritten = TRUE,
     },
 
     [ABILITY_HADRON_ENGINE] =
@@ -2248,9 +2243,6 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Hadron Engine"),
         .description = COMPOUND_STRING("Field becomes Electric."),
         .aiRating = 8,
-        .cantBeSwapped = TRUE,
-        .cantBeCopied = TRUE,
-        .cantBeOverwritten = TRUE,
     },
 
     [ABILITY_OPPORTUNIST] =
@@ -2434,6 +2426,54 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_PIERCING_DRILL] =
+    {
+        .name = _("Piercing Drill"),
+        .description = COMPOUND_STRING("Contact evades protection."),
+    },
+
+    [ABILITY_DRAGONIZE] =
+    {
+        .name = _("Dragonize"),
+        .description = COMPOUND_STRING("Normal moves turn Dragon."),
+    },
+
+    [ABILITY_EELEVATE] =
+    {
+        .name = _("Eelevate"),
+        .description = COMPOUND_STRING("Unimplemented."),
+    },
+
+    [ABILITY_314] =
+    {
+        .name = _("-------"),
+        .description = COMPOUND_STRING("No special ability."),
+    },
+
+    [ABILITY_MEGA_SOL] =
+    {
+        .name = _("Mega Sol"),
+        .description = COMPOUND_STRING("Acts like under sun."),
+    },
+
+    [ABILITY_FIRE_MANE] =
+    {
+        .name = _("Fire Mane"),
+        .description = COMPOUND_STRING("Unimplemented."),
+    },
+
+    [ABILITY_317] =
+    {
+        .name = _("-------"),
+        .description = COMPOUND_STRING("No special ability."),
+    },
+
+    [ABILITY_SPICY_SPRAY] =
+    {
+        .name = _("Spicy Spray"),
+        .description = COMPOUND_STRING("Burns the foe when damaged."),
+	},
 	
 
 	// Tourmaline abilities
@@ -2723,7 +2763,14 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 	
-    [ABILITY_ANNIHILATOR] =
+	// Postgame
+    [ABILITY_STEADY_START] =
+    {
+        .name = _("Steady Start"),
+        .description = COMPOUND_STRING("Steadily raises Atk and Spe."),
+    },
+    
+	[ABILITY_ANNIHILATOR] =
     {
         .name = _("Annihilator"),
         .description = COMPOUND_STRING("Protection from effects."),

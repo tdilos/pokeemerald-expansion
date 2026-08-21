@@ -26,7 +26,8 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_CRUSH_GIRL",
       "x": 13,
       "y": 43,
       "elevation": 3,
@@ -273,7 +274,8 @@
       "flag": "FLAG_HIDE_SEVEN_ISLAND_SEVAULT_CANYON_NUGGET"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLACKBELT",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_FRLG",
       "x": 8,
       "y": 26,
       "elevation": 3,

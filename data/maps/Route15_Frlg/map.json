@@ -169,7 +169,8 @@
       "flag": "FLAG_HIDE_ROUTE15_TM18"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BLACKBELT",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_FRLG",
       "x": 39,
       "y": 7,
       "elevation": 3,
@@ -182,7 +183,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_CRUSH_GIRL",
       "x": 40,
       "y": 7,
       "elevation": 3,

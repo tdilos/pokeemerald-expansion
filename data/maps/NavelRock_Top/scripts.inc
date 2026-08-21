@@ -59,7 +59,6 @@ NavelRock_Top_EventScript_HoOh::
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	setvar VAR_LAST_TALKED, LOCALID_NAVEL_ROCK_HO_OH
 	specialvar VAR_RESULT, GetBattleOutcome

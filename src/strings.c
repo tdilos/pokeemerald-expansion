@@ -562,7 +562,6 @@ const u8 gText_Turquoise[] = _("TURQUOISE");
 const u8 gText_Xanthos[] = _("XANTHOS");
 const u8 gText_Enter2[] = _("ENTER");
 
-
 const u8 gText_Info2[] = _("INFO");
 const u8 gText_CoolnessContest[] = _("COOLNESS CONTEST");
 const u8 gText_BeautyContest[] = _("BEAUTY CONTEST");

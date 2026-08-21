@@ -23,12 +23,6 @@ enum {
 #define TAG_BERRY_CHECK_CIRCLE_GFX 10000
 #define TAG_BERRY_PIC_PAL 30020
 
-struct TilesPal
-{
-    const u32 *tiles;
-    const u16 *pal;
-};
-
 // this file's functions
 static void SpriteCB_BagVisualSwitchingPockets(struct Sprite *sprite);
 static void SpriteCB_ShakeBagSprite(struct Sprite *sprite);
@@ -36,10 +30,10 @@ static void SpriteCB_SwitchPocketRotatingBallInit(struct Sprite *sprite);
 static void SpriteCB_SwitchPocketRotatingBallContinue(struct Sprite *sprite);
 
 // static const rom data
-static const u16 sRotatingBall_Pal[] = INCBIN_U16("graphics/bag/rotating_ball.gbapal");
-static const u8 sRotatingBall_Gfx[] = INCBIN_U8("graphics/bag/rotating_ball.4bpp");
-static const u8 sCherryUnused[] = INCBIN_U8("graphics/unused/cherry.4bpp");
-static const u16 sCherryUnused_Pal[] = INCBIN_U16("graphics/unused/cherry.gbapal");
+static const u16 sRotatingBall_Pal[] = INCGFX_U16("graphics/bag/rotating_ball.png", ".gbapal");
+static const u8 sRotatingBall_Gfx[] = INCGFX_U8("graphics/bag/rotating_ball.png", ".4bpp");
+static const u8 sCherryUnused[] = INCGFX_U8("graphics/unused/cherry.png", ".4bpp");
+static const u16 sCherryUnused_Pal[] = INCGFX_U16("graphics/unused/cherry.png", ".gbapal");
 
 static const struct OamData sBagOamData =
 {
@@ -314,7 +308,7 @@ static const struct SpriteTemplate sBerryPicRotatingSpriteTemplate =
     .affineAnims = sBerryPicRotatingAnimCmds,
 };
 
-static const struct TilesPal sBerryPicTable[] =
+/*static const struct TilesPal sBerryPicTable[] =
 {
     [ITEM_TO_BERRY(ITEM_CHERI_BERRY)  - 1]          = {gBerryPic_Cheri,  gBerryPalette_Cheri},
     [ITEM_TO_BERRY(ITEM_CHESTO_BERRY) - 1]          = {gBerryPic_Chesto, gBerryPalette_Chesto},
@@ -389,7 +383,7 @@ static const struct TilesPal sBerryPicTable[] =
     [ITEM_TO_BERRY(ITEM_KEE_BERRY)    - 1]          = {gBerryPic_Kee, gBerryPalette_Kee},
     [ITEM_TO_BERRY(ITEM_MARANGA_BERRY)- 1]          = {gBerryPic_Maranga, gBerryPalette_Maranga},
     [ITEM_TO_BERRY(ITEM_ENIGMA_BERRY_E_READER) - 1] = {gBerryPic_Enigma, gBerryPalette_Enigma},
-};
+};*/
 
 const struct CompressedSpriteSheet gBerryCheckCircleSpriteSheet =
 {
@@ -644,11 +638,11 @@ static struct BerryDynamicGfx *LoadBerryGfx(u8 berryId)
 {
     struct SpritePalette pal;
 
-    pal.data = sBerryPicTable[berryId].pal;
+    pal.data = gBerries[berryId].berryPal;
     pal.tag = TAG_BERRY_PIC_PAL + berryId;
     LoadSpritePalette(&pal);
     struct BerryDynamicGfx *gfxAlloced = Alloc(sizeof(struct BerryDynamicGfx));
-    void *buffer = malloc_and_decompress(sBerryPicTable[berryId].tiles, NULL);
+    void *buffer = malloc_and_decompress(gBerries[berryId].berryPic, NULL);
     ArrangeBerryGfx(buffer, gfxAlloced->gfx);
     Free(buffer);
 

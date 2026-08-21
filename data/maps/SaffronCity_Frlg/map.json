@@ -219,7 +219,8 @@
       "flag": "FLAG_HIDE_SAFFRON_CIVILIANS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_CRUSH_GIRL",
       "x": 47,
       "y": 24,
       "elevation": 3,

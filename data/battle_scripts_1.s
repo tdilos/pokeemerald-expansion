@@ -1154,6 +1154,7 @@ BattleScript_EffectChitinize::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+
 BattleScript_MoveEffectFeint::
 	printstring STRINGID_FELLFORFEINT
 	waitmessage B_WAIT_TIME_LONG
@@ -3792,6 +3793,7 @@ BattleScript_EffectDarkVoid::
 	jumpifspecies SPECIES_WIGGLYTUFF, BattleScript_EffectNonVolatileStatus
 	goto BattleScript_PokemonCantUseTheMove
 .endif
+
 BattleScript_EffectNonVolatileStatus::
 	attackcanceler
 	trynonvolatilestatus
@@ -4138,6 +4140,7 @@ BattleScript_EffectWaterSport::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+
 BattleScript_EffectTickle::
 	attackcanceler
 	jumpifsubstituteblocks BattleScript_ButItFailed
@@ -4283,6 +4286,7 @@ BattleScript_OverclockTrySpeed::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_OverclockEnd::
 	goto BattleScript_MoveEnd
+
 
 BattleScript_EffectCamouflage::
 	attackcanceler
@@ -5074,7 +5078,7 @@ BattleScript_SelectingUnusableMoveInPalace::
 BattleScript_EncoredNoMore::
 	printstring STRINGID_PKMNENCOREENDED
 	waitmessage B_WAIT_TIME_LONG
-	end2
+	return
 	
 BattleScript_DazedNoMore::
 	printstring STRINGID_PKMNGOTOVERDAZE
@@ -7601,6 +7605,54 @@ BattleScript_SubstituteFade::
 BattleScript_BerryCureStatusRet::
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
 	printfromtable CureStatusBerryEffectStringID
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_SCRIPTING
+	removeitem BS_SCRIPTING
+	return
+
+BattleScript_BerryCureInfEnd2::
+	call BattleScript_BerryCureInfRet
+	end2
+
+BattleScript_BerryCureInfRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
+	printstring STRINGID_PKMNSITEMDISINFECTED
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_SCRIPTING
+	removeitem BS_SCRIPTING
+	return
+	
+BattleScript_BerryCureDazEnd2::
+	call BattleScript_BerryCureDazRet
+	end2
+
+BattleScript_BerryCureDazRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
+	printstring STRINGID_PKMNSITEMCUREDDAZE
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_SCRIPTING
+	removeitem BS_SCRIPTING
+	return
+	
+BattleScript_BerryCureExhEnd2::
+	call BattleScript_BerryCureExhRet
+	end2
+
+BattleScript_BerryCureExhRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
+	printstring STRINGID_PKMNSITEMINVIGORATED
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_SCRIPTING
+	removeitem BS_SCRIPTING
+	return
+	
+BattleScript_BerryCureFerEnd2::
+	call BattleScript_BerryCureFerRet
+	end2
+
+BattleScript_BerryCureFerRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
+	printstring STRINGID_PKMNSITEMCUREDFEAR
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_SCRIPTING
 	removeitem BS_SCRIPTING
