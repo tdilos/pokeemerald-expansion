@@ -4602,8 +4602,8 @@ static void Cmd_checkteamslost(void)
 		
 		for (i = 0; i < PARTY_SIZE; i++)
         {
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
-             && (GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0))
+            if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) && !GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG)
+             && (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_HP) == 0))
             {
                 gBattleOutcome |= B_OUTCOME_LOST;
 				//return;
@@ -8744,8 +8744,8 @@ static void Cmd_tryspiteppreduce(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
 
             // Don't cut off Sky Drop if pp is brought to zero.
-            if (gBattleMons[gBattlerTarget].pp[i] == 0 && gBattleStruct->skyDropTargets[gBattlerTarget] == SKY_DROP_NO_TARGET)
-                CancelMultiTurnMoves(gBattlerTarget, SKY_DROP_IGNORE);
+            //if (gBattleMons[gBattlerTarget].pp[i] == 0 && gBattleStruct->skyDropTargets[gBattlerTarget] == SKY_DROP_NO_TARGET)
+            //    CancelMultiTurnMoves(gBattlerTarget, SKY_DROP_IGNORE);
         }
         else
         {
@@ -13060,7 +13060,7 @@ void BS_GravityOnAirborneMons(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
-void BS_TryAcupressure(void)
+/*void BS_TryAcupressure(void)
 {
     NATIVE_ARGS(const u8 *failInstr);
     u32 bits = 0;
@@ -13077,7 +13077,7 @@ void BS_TryAcupressure(void)
             statId = (Random() % (NUM_BATTLE_STATS - 1)) + 1;
         } while (!(bits & (1u << statId)));
 
-        SET_STATCHANGER(statId, 2, FALSE);
+        SetStatChanger(statId, 2, FALSE);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
     else
@@ -13103,14 +13103,14 @@ void BS_TryChitinize(void)
         //statId = GetHighestStatId(gBattlerAttacker)
 		//enum Stat statId = 0;
 
-        SET_STATCHANGER(GetHighestStatId(gBattlerAttacker), 2, FALSE);
+        SetStatChanger(GetHighestStatId(gBattlerAttacker), 2, FALSE);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
     else
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
-}
+}*/
 
 void BS_SetFairyDust(void)
 {

@@ -174,14 +174,12 @@ extern const u8 BattleScript_ItemSteal[];
 extern const u8 BattleScript_WeatherAbilityActivates[];
 extern const u8 BattleScript_OrichalcumPulseActivates[];
 extern const u8 BattleScript_OrichalcumPulseActivatesInSun[];
-extern const u8 BattleScript_SpeedBoostActivates[];
-extern const u8 BattleScript_MuscleMemoryActivates[];
+//extern const u8 BattleScript_SpeedBoostActivates[];
+//extern const u8 BattleScript_MuscleMemoryActivates[];
 extern const u8 BattleScript_TraceActivates[];
 extern const u8 BattleScript_AbilityHpHeal[];
 extern const u8 BattleScript_ShedSkinActivates[];
 extern const u8 BattleScript_IntimidateActivates[];
-extern const u8 BattleScript_IntimidatePrevented[];
-extern const u8 BattleScript_IntimidateInReverse[];
 extern const u8 BattleScript_PsychOutActivates[];
 extern const u8 BattleScript_IlluminateActivates[];
 extern const u8 BattleScript_TookAttack[];
@@ -776,17 +774,17 @@ extern const u8 BattleScript_TarShotMessage[];
 extern const u8 BattleScript_Stockpile[];
 extern const u8 BattleScript_Memento[];
 extern const u8 BattleScript_TakeHeart[];
-extern const u8 BattleScript_EffectAttackSpAttackUp[];
 
 // tourmaline
 //extern const u8 BattleScript_EffectSmaze[];
 //extern const u8 BattleScript_EffectFullMoon[];
 extern const u8 BattleScript_EffectPetrify[];
 extern const u8 BattleScript_EffectFairyDust[];
-extern const u8 BattleScript_EffectSpecialDefenseUp3[];
-extern const u8 BattleScript_EffectSpecialAttackAccUp[];
-extern const u8 BattleScript_EffectHighNote[];
-extern const u8 BattleScript_EffectOverclock[];
-extern const u8 BattleScript_EffectChitinize[];
+//extern const u8 BattleScript_EffectSpecialDefenseUp3[];
+//extern const u8 BattleScript_EffectSpecialAttackAccUp[];
+//extern const u8 BattleScript_EffectHighNote[];
+//extern const u8 BattleScript_EffectOverclock[];
+//extern const u8 BattleScript_EffectChitinize[];
+//extern const u8 BattleScript_EffectMetamorphose[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

@@ -109,7 +109,7 @@ const u8 *const gTrainerTowerChallengeTypeTexts[NUM_TOWER_CHALLENGE_TYPES] =
 };
 
 static const struct SinglesTrainerInfo sSingleBattleTrainerInfo[] = {
-    {OBJ_EVENT_GFX_POKE_MANIAC_FRLG, FACILITY_CLASS_HEX_MANIAC,         MALE},
+    /*{OBJ_EVENT_GFX_POKE_MANIAC_FRLG, FACILITY_CLASS_HEX_MANIAC,         MALE},
     {OBJ_EVENT_GFX_BOY,              FACILITY_CLASS_RICH_BOY,           MALE},
     {OBJ_EVENT_GFX_ROCKER,           FACILITY_CLASS_GUITARIST,          MALE},
     {OBJ_EVENT_GFX_ROCKER,           FACILITY_CLASS_KINDLER,            MALE},
@@ -159,17 +159,17 @@ static const struct SinglesTrainerInfo sSingleBattleTrainerInfo[] = {
     {OBJ_EVENT_GFX_PICNICKER_FRLG,   FACILITY_CLASS_PKMN_RANGER_F_FRLG, FEMALE},
     {OBJ_EVENT_GFX_WOMAN_2_FRLG,     FACILITY_CLASS_AROMA_LADY_FRLG,    FEMALE},
     {OBJ_EVENT_GFX_HIKER_FRLG,       FACILITY_CLASS_RUIN_MANIAC,        MALE},
-    {OBJ_EVENT_GFX_WOMAN_2_FRLG,     FACILITY_CLASS_LADY_FRLG,          FEMALE}
+    {OBJ_EVENT_GFX_WOMAN_2_FRLG,     FACILITY_CLASS_LADY_FRLG,          FEMALE}*/
 };
 
 static const struct DoublesTrainerInfo sDoubleBattleTrainerInfo[] = {
-    {OBJ_EVENT_GFX_BEAUTY_FRLG,      OBJ_EVENT_GFX_WOMAN_1_FRLG,     FACILITY_CLASS_SR_AND_JR,         FEMALE, FEMALE},
+    /*{OBJ_EVENT_GFX_BEAUTY_FRLG,      OBJ_EVENT_GFX_WOMAN_1_FRLG,     FACILITY_CLASS_SR_AND_JR,         FEMALE, FEMALE},
     {OBJ_EVENT_GFX_OLD_MAN_1,        OBJ_EVENT_GFX_OLD_WOMAN_FRLG,   FACILITY_CLASS_OLD_COUPLE,        MALE,   FEMALE},
     {OBJ_EVENT_GFX_LITTLE_GIRL_FRLG, OBJ_EVENT_GFX_LITTLE_GIRL_FRLG, FACILITY_CLASS_TWINS_FRLG,        FEMALE, FEMALE},
     {OBJ_EVENT_GFX_COOLTRAINER_M,    OBJ_EVENT_GFX_COOLTRAINER_F,    FACILITY_CLASS_COOL_COUPLE_FRLG,  MALE,   FEMALE},
     {OBJ_EVENT_GFX_BEAUTY_FRLG,      OBJ_EVENT_GFX_MAN,              FACILITY_CLASS_YOUNG_COUPLE_FRLG, FEMALE, MALE},
     {OBJ_EVENT_GFX_CRUSH_GIRL,       OBJ_EVENT_GFX_BLACK_BELT_FRLG,  FACILITY_CLASS_CRUSH_KIN_FRLG,    FEMALE, MALE},
-    {OBJ_EVENT_GFX_SWIMMER_F_LAND,   OBJ_EVENT_GFX_TUBER_M_LAND,     FACILITY_CLASS_SIS_AND_BRO_FRLG,  FEMALE, MALE}
+    {OBJ_EVENT_GFX_SWIMMER_F_LAND,   OBJ_EVENT_GFX_TUBER_M_LAND,     FACILITY_CLASS_SIS_AND_BRO_FRLG,  FEMALE, MALE}*/
 };
 
 static const struct TrainerEncounterMusicPairs sTrainerEncounterMusicLUT[] = {
@@ -497,7 +497,7 @@ static void SetTrainerTowerNPCGraphics(void)
         if (i != NELEMS(sSingleBattleTrainerInfo))
             trainerGfx1 = sSingleBattleTrainerInfo[i].objGfx;
         else
-            trainerGfx1 = OBJ_EVENT_GFX_YOUNGSTER_FRLG;
+            trainerGfx1 = OBJ_EVENT_GFX_YOUNGSTER; //OBJ_EVENT_GFX_YOUNGSTER_FRLG;
 
         VarSet(VAR_OBJ_GFX_ID_1, trainerGfx1);
         break;
@@ -515,8 +515,8 @@ static void SetTrainerTowerNPCGraphics(void)
         }
         else
         {
-            trainerGfx1  = OBJ_EVENT_GFX_YOUNGSTER_FRLG;
-            trainerGfx2 = OBJ_EVENT_GFX_YOUNGSTER_FRLG;
+            trainerGfx1  = OBJ_EVENT_GFX_YOUNGSTER; //OBJ_EVENT_GFX_YOUNGSTER_FRLG;
+            trainerGfx2 = OBJ_EVENT_GFX_YOUNGSTER; //OBJ_EVENT_GFX_YOUNGSTER_FRLG;
         }
         VarSet(VAR_OBJ_GFX_ID_0, trainerGfx1);
         VarSet(VAR_OBJ_GFX_ID_3, trainerGfx2);

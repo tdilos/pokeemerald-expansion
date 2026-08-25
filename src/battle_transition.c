@@ -934,11 +934,11 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOT_COLOR_COUNT] =
     [MUGSHOT_COLOR_PINK]   = sMugshotPal_Pink,
     [MUGSHOT_COLOR_BLUE]   = sMugshotPal_Blue,
     [MUGSHOT_COLOR_YELLOW] = sMugshotPal_Yellow,
-    [MUGSHOT_COLOR_LISIA]        = sMugshotPal_Lisia,
-    [MUGSHOT_COLOR_IAN]          = sMugshotPal_Ian,
-    [MUGSHOT_COLOR_SIDNEY2]      = sMugshotPal_Sidney2,
+    //[MUGSHOT_COLOR_LISIA]        = sMugshotPal_Lisia,
+    //[MUGSHOT_COLOR_IAN]          = sMugshotPal_Ian,
+    //[MUGSHOT_COLOR_SIDNEY2]      = sMugshotPal_Sidney2,
     [MUGSHOT_COLOR_PETRA]        = sMugshotPal_Petra,
-    [MUGSHOT_COLOR_NORMAN]       = sMugshotPal_Norman
+    //[MUGSHOT_COLOR_NORMAN]       = sMugshotPal_Norman
 };
 
 /*static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =

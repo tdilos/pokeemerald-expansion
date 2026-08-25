@@ -2172,7 +2172,7 @@ u16 GetKarma()
 	
 	for (i = 0; i < PARTY_SIZE; i++) // currently only averages party mons
     {
-        averageFriendship += GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
+        averageFriendship += GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_FRIENDSHIP);
     }
 	averageFriendship /= PARTY_SIZE;
 	

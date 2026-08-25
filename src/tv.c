@@ -1660,7 +1660,7 @@ static void TryStartRandomMassOutbreak(void)
         show->massOutbreak.unused4 = 0;
         show->massOutbreak.probability = 50;
         show->massOutbreak.unused5 = 0;
-        show->massOutbreak.daysLeft = 1;
+        //show->massOutbreak.daysLeft = 1;
         StorePlayerIdInNormalShow(show);
         show->massOutbreak.language = gGameLanguage;
     }

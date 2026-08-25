@@ -2171,8 +2171,8 @@ static bool32 ShouldSkipFRLGAccuracyCheck(void)
         return TRUE;
     }
 
-    if (gBattleTypeFlags & BATTLE_TYPE_POKEDUDE)
-        return TRUE;
+    //if (gBattleTypeFlags & BATTLE_TYPE_POKEDUDE)
+    //    return TRUE;
 
     return FALSE;
 }
@@ -4570,11 +4570,38 @@ static void TryAcupressureStatChange(struct BattleCalcValues *cv)
     }
 }
 
+static void TryChitinizeStatChange(struct BattleCalcValues *cv)
+{
+    //enum Stat stat = STAT_ATK;
+	enum Stat stat = GetHighestStatId(cv->battlerDef);
+
+    if (ShouldSkipStatChangeOnBattler(cv->battlerAtk, cv->battlerDef))
+        return;
+
+    //stat = GetHighestStatId(battlerDef);
+
+    if (CompareStat(cv->battlerDef, stat, MAX_STAT_STAGE, CMP_LESS_THAN, ABILITY_NONE))
+    {
+        SetStatChange(cv->battlerDef, stat, 2);
+        gBattleStruct->moveResultFlags[cv->battlerDef] = MOVE_RESULT_ATTEMPT_STAT_CHANGE;
+    }
+    else
+    {
+        gBattleStruct->moveResultFlags[cv->battlerDef] = MOVE_RESULT_FAILURE;
+    }
+}
+
 static enum MoveResult StatChangeCanAnyChange(struct BattleCalcValues *cv)
 {
     if (GetMoveEffect(cv->move) == EFFECT_ACUPRESSURE)
     {
         TryAcupressureStatChange(cv);
+        return MOVE_RESULT_CONTINUE;
+    }
+	
+    if (GetMoveEffect(cv->move) == EFFECT_CHITINIZE)
+    {
+        TryChitinizeStatChange(cv);
         return MOVE_RESULT_CONTINUE;
     }
 

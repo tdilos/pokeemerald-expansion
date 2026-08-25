@@ -1034,8 +1034,8 @@ void CheckHighTeamFriendship(void)
     for (i = 0; i < CalculatePlayerPartyCount(); i++)
     {
 		
-        //pokemon = &gPlayerParty[i];
-		friendship = GetMonFriendshipScore(&gPlayerParty[i]);
+        //pokemon = &gParties[B_TRAINER_PLAYER][i];
+		friendship = GetMonFriendshipScore(&gParties[B_TRAINER_PLAYER][i]);
         //if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG) && GetMonData(pokemon, MON_DATA_HP) != 0)
 		if (friendship < FRIENDSHIP_200_TO_254)
         {
@@ -5150,7 +5150,7 @@ void CheckIfTeamFainted(void)
     struct Pokemon *pokemon;
     for (i = 0; i < CalculatePlayerPartyCount(); i++)
     {
-        pokemon = &gPlayerParty[i];
+        pokemon = &gParties[B_TRAINER_PLAYER][i];
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG)
 		&& GetMonData(pokemon, MON_DATA_HP) != 0)
         {
@@ -5269,7 +5269,7 @@ void GetRandomInt(void)
 
 void DailyMassageService(void)
 {
-    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_MASSAGE);
+    AdjustFriendship(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], FRIENDSHIP_EVENT_MASSAGE);
     //VarSet(VAR_MASSAGE_COOLDOWN_STEP_COUNTER, 0);
 }
 
@@ -5283,59 +5283,59 @@ void GetDanceStepCount(void)
 // IV checks
 u16 GetHpIV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_HP_IV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_HP_IV, NULL);
 }
 u16 GetAtkIV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_ATK_IV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_ATK_IV, NULL);
 }
 u16 GetDefIV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_DEF_IV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_DEF_IV, NULL);
 }
 u16 GetSpAtkIV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPATK_IV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPATK_IV, NULL);
 }
 u16 GetSpDefIV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPDEF_IV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPDEF_IV, NULL);
 }
 u16 GetSpeedIV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPEED_IV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPEED_IV, NULL);
 }
 
 // EV checks
 u16 GetHpEV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_HP_EV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_HP_EV, NULL);
 }
 u16 GetAtkEV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_ATK_EV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_ATK_EV, NULL);
 }
 u16 GetDefEV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_DEF_EV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_DEF_EV, NULL);
 }
 u16 GetSpAtkEV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPATK_EV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPATK_EV, NULL);
 }
 u16 GetSpDefEV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPDEF_EV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPDEF_EV, NULL);
 }
 u16 GetSpeedEV(void)
 {
-	return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPEED_EV, NULL);
+	return GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPEED_EV, NULL);
 }
 
 void CheckIfShinyLead(void)
 {
-	//if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_IS_SHINY))
-	if (IsMonShiny(&gPlayerParty[GetLeadMonIndex()]))
+	//if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_IS_SHINY))
+	if (IsMonShiny(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()]))
     {
 			gSpecialVar_Result = TRUE;
             return;
@@ -5346,27 +5346,27 @@ void CheckIfShinyLead(void)
 
 void SmeargleQuestCheck(void)
 {
-	if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES) != SPECIES_SMEARGLE)
+	if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES) != SPECIES_SMEARGLE)
 	{
 			gSpecialVar_Result = FALSE;
             return;	
 	}
-	else if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE1) != MOVE_SOLAR_BEAM)
+	else if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_MOVE1) != MOVE_SOLAR_BEAM)
     {
 			gSpecialVar_Result = FALSE;
             return;
 	}
-	else if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE2) != MOVE_FIRE_BLAST)
+	else if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_MOVE2) != MOVE_FIRE_BLAST)
     {
 			gSpecialVar_Result = FALSE;
             return;
 	}
-	else if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE3) != MOVE_HYDRO_PUMP)
+	else if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_MOVE3) != MOVE_HYDRO_PUMP)
     {
 			gSpecialVar_Result = FALSE;
             return;
 	}
-	else if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE4) != MOVE_THUNDER)
+	else if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_MOVE4) != MOVE_THUNDER)
     {
 			gSpecialVar_Result = FALSE;
             return;
@@ -5413,9 +5413,10 @@ u16 GetTeamWeight(void)
 	//for (i = 0; i < CalculatePlayerPartyCount(); i++)
     for (i = 0; i < PARTY_SIZE; i++)
     {
-		if (GetMonData(&gPlayerParty[i],  MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG))
+		if (GetMonData(&gParties[B_TRAINER_PLAYER][i],  MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SANITY_IS_EGG))
 		{
-			weight = GetSpeciesWeight( SpeciesToNationalPokedexNum(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES)) );
+			//weight = GetSpeciesWeight( SpeciesToNationalPokedexNum(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES)) );
+			weight = GetSpeciesWeight( GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) );
 			total += weight * 0.2205; //convert to pounds
 		}
 	}
@@ -5425,7 +5426,7 @@ u16 GetTeamWeight(void)
 
 void CheckForTintedLensYanmega(void)
 {
-        if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_YANMEGA && GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_ABILITY_NUM, NULL) == 1)
+        if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_YANMEGA && GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_ABILITY_NUM, NULL) == 1)
         {
             gSpecialVar_Result = TRUE;
             return;
@@ -5453,20 +5454,20 @@ void CheckForTintedLensYanmega(void)
         personality = ((((Random() % 8) ^ (HIHALF(otid) ^ LOHALF(otid))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
     } while (newNature != GetNatureFromPersonality(personality));
 	
-    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_FRIENDSHIP, &gSpeciesInfo[gSpecialVar_0x8004].friendship); // reset friendship
-    //SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_NATURE, &newNature);
-    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_PERSONALITY, &personality);
-	CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+    SetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_FRIENDSHIP, &gSpeciesInfo[gSpecialVar_0x8004].friendship); // reset friendship
+    //SetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_NATURE, &newNature);
+    SetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_PERSONALITY, &personality);
+	CalculateMonStats(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004]);
 	
-	checksum = CalculateBoxMonCheckSum(&gPlayerParty[gSpecialVar_0x8004]);
-    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_CHECKSUM, &checksum);
+	checksum = CalculateBoxMonCheckSum(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004]);
+    SetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_CHECKSUM, &checksum);
 	
-	//CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+	//CalculateMonStats(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004]);
 }*/
 
 void CheckForCarbink(void)
 {
-    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_CARBINK)
+    if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_CARBINK)
     {
         gSpecialVar_Result = TRUE;
         return;
@@ -5484,16 +5485,16 @@ void CheckForLuvdiscPair(void)
     {
 		for (j = i; j < PARTY_SIZE; j++)
 		{
-			if ( (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_LUVDISC)
-				&& (GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL) == SPECIES_LUVDISC)
-				&& !(GetMonGender(&gPlayerParty[i]) == GetMonGender(&gPlayerParty[j])) )
+			if ( (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES, NULL) == SPECIES_LUVDISC)
+				&& (GetMonData(&gParties[B_TRAINER_PLAYER][j], MON_DATA_SPECIES, NULL) == SPECIES_LUVDISC)
+				&& !(GetMonGender(&gParties[B_TRAINER_PLAYER][i]) == GetMonGender(&gParties[B_TRAINER_PLAYER][j])) )
 			{
 				gSpecialVar_Result = TRUE;
 				//gSpecialVar_0x8004 = i;
 				//gSpecialVar_0x8005 = j;
 				
-				ZeroMonData(&gPlayerParty[j]);
-				ZeroMonData(&gPlayerParty[i]);
+				ZeroMonData(&gParties[B_TRAINER_PLAYER][j]);
+				ZeroMonData(&gParties[B_TRAINER_PLAYER][i]);
 				CompactPartySlots();
 				return;
 			}
@@ -5508,20 +5509,20 @@ void CheckForRotom(void)
 	//u8 i;
 	//u32 existingMove;
 	
-    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_FAN
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_FROST
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_HEAT
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_MOW
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_PLAY
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_WASH)
+    if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_FAN
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_FROST
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_HEAT
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_MOW
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_PLAY
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM_WASH)
     {
 		// Handle Rotom form moves
 		/*gSpecialVar_0x8002 = 4;
 		for (i = 0; i < MAX_MON_MOVES; i++)
         {
-            existingMove = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE1 + i, NULL);
-            if ((existingMove == MOVE_THUNDER_SHOCK && GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM)
+            existingMove = GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_MOVE1 + i, NULL);
+            if ((existingMove == MOVE_THUNDER_SHOCK && GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM)
 				|| existingMove == MOVE_AIR_SLASH
 				|| existingMove == MOVE_BLIZZARD
 				|| existingMove == MOVE_OVERHEAT
@@ -5538,7 +5539,7 @@ void CheckForRotom(void)
             }
         }*/
 		
-		gSpecialVar_0x8005 = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL); // Need to check for switching back to base Rotom
+		gSpecialVar_0x8005 = GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL); // Need to check for switching back to base Rotom
         gSpecialVar_Result = TRUE;
         return;
     }
@@ -5578,7 +5579,7 @@ void HandleRotomFormChange(void)
 	}
 	
 	// Return to base Rotom if already the target species
-	if (species == GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL))
+	if (species == GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL))
 	{
 		newMove = MOVE_THUNDER_SHOCK;
 		species = SPECIES_ROTOM;
@@ -5587,8 +5588,8 @@ void HandleRotomFormChange(void)
 	// Handle Rotom form moves
 	for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        existingMove = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_MOVE1 + i, NULL);
-        if ((existingMove == MOVE_THUNDER_SHOCK && GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM)
+        existingMove = GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_MOVE1 + i, NULL);
+        if ((existingMove == MOVE_THUNDER_SHOCK && GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_ROTOM)
 			|| existingMove == MOVE_AIR_SLASH
 			|| existingMove == MOVE_BLIZZARD
 			|| existingMove == MOVE_OVERHEAT
@@ -5596,38 +5597,38 @@ void HandleRotomFormChange(void)
 			|| existingMove == MOVE_BOOMBURST
 			|| existingMove == MOVE_HYDRO_PUMP)
         {
-            SetMonMoveSlot(&gPlayerParty[GetLeadMonIndex()], newMove, i);
-            RemoveMonPPBonus(&gPlayerParty[GetLeadMonIndex()], i);
+            SetMonMoveSlot(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], newMove, i);
+            RemoveMonPPBonus(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], i);
             break;
         }
     }
 	
 	// Change form
-	SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, &species);
-    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+	SetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, &species);
+    CalculateMonStats(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()]);
 }
 
 void SetSpecies(void)
 {
     u16 species = gSpecialVar_0x8004;
 
-    SetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, &species);
-    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    SetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, &species);
+    CalculateMonStats(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()]);
 }
 
 void CheckForSuperAncientPokemon(void)
 {
-    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_OMANYTE
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_OMASTAR
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_LILEEP
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_CRADILY
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_SHIELDON
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_BASTIODON
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_TYRUNT
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_TYRANTRUM
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_AERODACTYL
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_OMENDENZ
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_RELICANTH)
+    if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_OMANYTE
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_OMASTAR
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_LILEEP
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_CRADILY
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_SHIELDON
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_BASTIODON
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_TYRUNT
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_TYRANTRUM
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_AERODACTYL
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_OMENDENZ
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_RELICANTH)
     {
         gSpecialVar_Result = TRUE;
         return;
@@ -6710,10 +6711,10 @@ bool8 CheckAddCoins(void)
 
 void CheckForDeoxys(void)
 {
-    if (GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS_ATTACK
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS_DEFENSE
-		|| GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS_SPEED)
+    if (GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS_ATTACK
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS_DEFENSE
+		|| GetMonData(&gParties[B_TRAINER_PLAYER][GetLeadMonIndex()], MON_DATA_SPECIES, NULL) == SPECIES_DEOXYS_SPEED)
     {
         gSpecialVar_Result = TRUE;
         return;
@@ -6737,13 +6738,13 @@ void CheckArceusRequirements(void)
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
-		if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_DIALGA)
+		if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES, NULL) == SPECIES_DIALGA)
 			checkDialga = TRUE;
 		
-		if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_PALKIA)
+		if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES, NULL) == SPECIES_PALKIA)
 			checkPalkia = TRUE;
 		
-		if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_GIRATINA)
+		if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES, NULL) == SPECIES_GIRATINA)
 			checkGiratina = TRUE;
 	}
 

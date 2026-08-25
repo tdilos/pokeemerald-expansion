@@ -5572,7 +5572,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Victini = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 	
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GreenNormal = {
+/*const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GreenNormal = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_PLAYER_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION,
@@ -6463,7 +6463,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HikerFrlg = {
     .anims = sAnimTable_Standard,
     .images = sPicTable_HikerFrlg,
     .affineAnims = gDummySpriteAffineAnimTable,
-};
+};*/
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Diancie = {
     .tileTag = TAG_NONE,

@@ -1918,12 +1918,6 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleScript = BattleScript_EffectHit,
         .battleTvScore = 0, // TODO: Assign points
     },
-    [EFFECT_SPECIAL_DEFENSE_UP_3] =
-    {
-        .battleScript = BattleScript_EffectSpecialDefenseUp3,
-        .battleTvScore = 1,
-        .encourageEncore = TRUE,
-    },
     [EFFECT_AFTERSHOCK] =
     {
         .battleScript = BattleScript_EffectHit,
@@ -1936,30 +1930,17 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
     },
     [EFFECT_HIGH_NOTE] =
     {
-        .battleScript = BattleScript_EffectHighNote,
-        .battleTvScore = 1,
-        .encourageEncore = TRUE,
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
     },
     [EFFECT_SALT_SPRAY] =
     {
         .battleScript = BattleScript_EffectHit,
         .battleTvScore = 0, // TODO: Assign points
     },
-    [EFFECT_SPECIAL_ATTACK_ACCURACY_UP] =
-    {
-        .battleScript = BattleScript_EffectSpecialAttackAccUp,
-        .battleTvScore = 0, // TODO: Assign points
-        .encourageEncore = TRUE,
-    },
-    [EFFECT_OVERCLOCK] =
-    {
-        .battleScript = BattleScript_EffectOverclock,
-        .battleTvScore = 1,
-        .encourageEncore = TRUE,
-    },
     [EFFECT_CHITINIZE] =
     {
-        .battleScript = BattleScript_EffectChitinize,
+        .battleScript = BattleScript_EffectStatChange,
         .battleTvScore = 0, // TODO: Assign points
     },
     [EFFECT_FAIRY_DUST] =
@@ -1973,11 +1954,5 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleScript = BattleScript_TwoTurnMoveCharging,
         .battleTvScore = 1,
         .twoTurnEffect = TRUE,
-    },
-    [EFFECT_METAMORPHOSE] =
-    {
-        .battleScript = BattleScript_EffectMetamorphose,
-        .battleTvScore = 0, // TODO: Assign points
-        .encourageEncore = TRUE,
     },
 };

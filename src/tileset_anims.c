@@ -364,14 +364,14 @@ const u16 *const gTilesetAnims_Rustboro_WindyWater[] = {
     gTilesetAnims_Rustboro_WindyWater_Frame7
 };
 
-const u16 gTilesetAnims_Facility2_BlackWater_Frame0[] = INCBIN_U16("data/tilesets/secondary/facility_2/anim/black_water/0.png", ".4bpp");
-const u16 gTilesetAnims_Facility2_BlackWater_Frame1[] = INCBIN_U16("data/tilesets/secondary/facility_2/anim/black_water/1.png", ".4bpp");
-const u16 gTilesetAnims_Facility2_BlackWater_Frame2[] = INCBIN_U16("data/tilesets/secondary/facility_2/anim/black_water/2.png", ".4bpp");
-const u16 gTilesetAnims_Facility2_BlackWater_Frame3[] = INCBIN_U16("data/tilesets/secondary/facility_2/anim/black_water/3.png", ".4bpp");
-const u16 gTilesetAnims_Facility2_BlackWater_Frame4[] = INCBIN_U16("data/tilesets/secondary/facility_2/anim/black_water/4.png", ".4bpp");
-const u16 gTilesetAnims_Facility2_BlackWater_Frame5[] = INCBIN_U16("data/tilesets/secondary/facility_2/anim/black_water/5.png", ".4bpp");
-const u16 gTilesetAnims_Facility2_BlackWater_Frame6[] = INCBIN_U16("data/tilesets/secondary/facility_2/anim/black_water/6.png", ".4bpp");
-const u16 gTilesetAnims_Facility2_BlackWater_Frame7[] = INCBIN_U16("data/tilesets/secondary/facility_2/anim/black_water/7.png", ".4bpp");
+const u16 gTilesetAnims_Facility2_BlackWater_Frame0[] = INCGFX_U16("data/tilesets/secondary/facility_2/anim/black_water/0.png", ".4bpp");
+const u16 gTilesetAnims_Facility2_BlackWater_Frame1[] = INCGFX_U16("data/tilesets/secondary/facility_2/anim/black_water/1.png", ".4bpp");
+const u16 gTilesetAnims_Facility2_BlackWater_Frame2[] = INCGFX_U16("data/tilesets/secondary/facility_2/anim/black_water/2.png", ".4bpp");
+const u16 gTilesetAnims_Facility2_BlackWater_Frame3[] = INCGFX_U16("data/tilesets/secondary/facility_2/anim/black_water/3.png", ".4bpp");
+const u16 gTilesetAnims_Facility2_BlackWater_Frame4[] = INCGFX_U16("data/tilesets/secondary/facility_2/anim/black_water/4.png", ".4bpp");
+const u16 gTilesetAnims_Facility2_BlackWater_Frame5[] = INCGFX_U16("data/tilesets/secondary/facility_2/anim/black_water/5.png", ".4bpp");
+const u16 gTilesetAnims_Facility2_BlackWater_Frame6[] = INCGFX_U16("data/tilesets/secondary/facility_2/anim/black_water/6.png", ".4bpp");
+const u16 gTilesetAnims_Facility2_BlackWater_Frame7[] = INCGFX_U16("data/tilesets/secondary/facility_2/anim/black_water/7.png", ".4bpp");
 
 u16 *const gTilesetAnims_Facility2_BlackWater_VDests[] = {
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 423)),
@@ -626,10 +626,10 @@ static const u16 *const sTilesetAnims_BattleDomeFloorLightPals[] = {
     gTilesetAnims_BattleDomePals0_3,
 };
 
-const u16 gTilesetAnims_GymsIssho2_Lava_Frame0[] = INCBIN_U16("data/tilesets/secondary/gyms_issho_2/anim/lava/0.4bpp");
-const u16 gTilesetAnims_GymsIssho2_Lava_Frame1[] = INCBIN_U16("data/tilesets/secondary/gyms_issho_2/anim/lava/1.4bpp");
-const u16 gTilesetAnims_GymsIssho2_Lava_Frame2[] = INCBIN_U16("data/tilesets/secondary/gyms_issho_2/anim/lava/2.4bpp");
-const u16 gTilesetAnims_GymsIssho2_Lava_Frame3[] = INCBIN_U16("data/tilesets/secondary/gyms_issho_2/anim/lava/3.4bpp");
+const u16 gTilesetAnims_GymsIssho2_Lava_Frame0[] = INCGFX_U16("data/tilesets/secondary/gyms_issho_2/anim/lava/0.png", ".4bpp");
+const u16 gTilesetAnims_GymsIssho2_Lava_Frame1[] = INCGFX_U16("data/tilesets/secondary/gyms_issho_2/anim/lava/1.png", ".4bpp");
+const u16 gTilesetAnims_GymsIssho2_Lava_Frame2[] = INCGFX_U16("data/tilesets/secondary/gyms_issho_2/anim/lava/2.png", ".4bpp");
+const u16 gTilesetAnims_GymsIssho2_Lava_Frame3[] = INCGFX_U16("data/tilesets/secondary/gyms_issho_2/anim/lava/3.png", ".4bpp");
 
 /*u16 *const gTilesetAnims_GymsIssho2_Lava_VDests[] = {
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 920)),
@@ -649,10 +649,10 @@ const u16 *const gTilesetAnims_GymsIssho2_Lava[] = {
     gTilesetAnims_GymsIssho2_Lava_Frame3,
 };
 
-const u16 gTilesetAnims_Haewen_Lava_Frame0[] = INCBIN_U16("data/tilesets/secondary/haewen/anim/lava/0.4bpp");
-const u16 gTilesetAnims_Haewen_Lava_Frame1[] = INCBIN_U16("data/tilesets/secondary/haewen/anim/lava/1.4bpp");
-const u16 gTilesetAnims_Haewen_Lava_Frame2[] = INCBIN_U16("data/tilesets/secondary/haewen/anim/lava/2.4bpp");
-const u16 gTilesetAnims_Haewen_Lava_Frame3[] = INCBIN_U16("data/tilesets/secondary/haewen/anim/lava/3.4bpp");
+const u16 gTilesetAnims_Haewen_Lava_Frame0[] = INCGFX_U16("data/tilesets/secondary/haewen/anim/lava/0.png", ".4bpp");
+const u16 gTilesetAnims_Haewen_Lava_Frame1[] = INCGFX_U16("data/tilesets/secondary/haewen/anim/lava/1.png", ".4bpp");
+const u16 gTilesetAnims_Haewen_Lava_Frame2[] = INCGFX_U16("data/tilesets/secondary/haewen/anim/lava/2.png", ".4bpp");
+const u16 gTilesetAnims_Haewen_Lava_Frame3[] = INCGFX_U16("data/tilesets/secondary/haewen/anim/lava/3.png", ".4bpp");
 
 /*u16 *const gTilesetAnims_Haewen_Lava_VDests[] = {
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 423)),
@@ -672,10 +672,10 @@ const u16 *const gTilesetAnims_Haewen_Lava[] = {
     gTilesetAnims_Haewen_Lava_Frame3,
 };
 
-const u16 gTilesetAnims_Cave2_Lava_Frame0[] = INCBIN_U16("data/tilesets/secondary/cave_2/anim/lava/0.4bpp");
-const u16 gTilesetAnims_Cave2_Lava_Frame1[] = INCBIN_U16("data/tilesets/secondary/cave_2/anim/lava/1.4bpp");
-const u16 gTilesetAnims_Cave2_Lava_Frame2[] = INCBIN_U16("data/tilesets/secondary/cave_2/anim/lava/2.4bpp");
-const u16 gTilesetAnims_Cave2_Lava_Frame3[] = INCBIN_U16("data/tilesets/secondary/cave_2/anim/lava/3.4bpp");
+const u16 gTilesetAnims_Cave2_Lava_Frame0[] = INCGFX_U16("data/tilesets/secondary/cave_2/anim/lava/0.png", ".4bpp");
+const u16 gTilesetAnims_Cave2_Lava_Frame1[] = INCGFX_U16("data/tilesets/secondary/cave_2/anim/lava/1.png", ".4bpp");
+const u16 gTilesetAnims_Cave2_Lava_Frame2[] = INCGFX_U16("data/tilesets/secondary/cave_2/anim/lava/2.png", ".4bpp");
+const u16 gTilesetAnims_Cave2_Lava_Frame3[] = INCGFX_U16("data/tilesets/secondary/cave_2/anim/lava/3.png", ".4bpp");
 
 const u16 *const gTilesetAnims_Cave2_Lava[] = {
     gTilesetAnims_Cave2_Lava_Frame0,

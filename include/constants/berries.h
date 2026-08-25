@@ -7,6 +7,10 @@
     F(PECHA) \
     F(RAWST) \
     F(ASPEAR) \
+    F(DRASH) \
+    F(EGGANT) \
+    F(TOUGA) \
+    F(PUMKIN) \
     F(LEPPA) \
     F(ORAN) \
     F(PERSIM) \
@@ -67,6 +71,7 @@
     F(JABOCA) \
     F(ROWAP) \
     F(ROSELI) \
+    F(GINEMA) \
     F(KEE) \
     F(MARANGA)
 

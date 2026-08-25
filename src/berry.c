@@ -15,7 +15,6 @@
 #include "constants/event_object_movement.h"
 #include "constants/items.h"
 
-static enum Item BerryTypeToItemId(u16 berry);
 static u8 BerryTreeGetNumStagesWatered(struct BerryTree *tree);
 static u8 GetNumStagesWateredByBerryTreeId(u8 id);
 static u8 CalcBerryYieldInternal(u16 max, u16 min, u8 water);
@@ -4248,21 +4247,21 @@ bool32 IsEnigmaBerryValid(void)
 #endif //FREE_ENIGMA_BERRY
 }
 
-const struct Berry *GetBerryInfo(u8 berry)
+const struct BerryInfo *GetBerryInfo(enum BerryId berry)
 {
-    if (berry == ITEM_TO_BERRY(ITEM_ENIGMA_BERRY_E_READER) && IsEnigmaBerryValid())
+    if (berry == BERRY_ID_ENGIMA_E_READER && IsEnigmaBerryValid())
     {
     #if FREE_ENIGMA_BERRY == FALSE
-        return (struct Berry *)(&gSaveBlock1Ptr->enigmaBerry.berry);
+        return (struct BerryInfo *)(&gSaveBlock1Ptr->enigmaBerry.berry);
     #else
-        return &gBerries[0];    //never reached, but will appease the compiler gods
+        return &gBerries[BERRY_ID_NONE].info;    //never reached, but will appease the compiler gods
     #endif //FREE_ENIGMA_BERRY
     }
     else
     {
-        if (berry == BERRY_NONE || berry > ITEM_TO_BERRY(LAST_BERRY_INDEX))
-            berry = ITEM_TO_BERRY(FIRST_BERRY_INDEX);
-        return &gBerries[berry - 1];
+        if (berry == BERRY_ID_NONE || berry > NUM_BERRIES)
+            berry = 1;
+        return &gBerries[berry].info;
     }
 }
 
@@ -4467,7 +4466,7 @@ void BerryTreeTimeUpdate(s32 minutes)
     }
 }
 
-void PlantBerryTree(u8 id, u8 berry, u8 stage, bool8 allowGrowth)
+void PlantBerryTree(u8 id, enum BerryId berry, u8 stage, bool8 allowGrowth)
 {
     struct BerryTree *tree = GetBerryTreeInfo(id);
 
@@ -4518,7 +4517,7 @@ u8 GetMulchByBerryTreeId(u8 id)
     return gSaveBlock1Ptr->berryTrees[id].mulch;
 }
 
-u8 ItemIdToBerryType(enum Item item)
+/*u8 ItemIdToBerryType(enum Item item)
 {
     u16 berry = item - FIRST_BERRY_INDEX;
 
@@ -4526,9 +4525,9 @@ u8 ItemIdToBerryType(enum Item item)
         return ITEM_TO_BERRY(FIRST_BERRY_INDEX);
     else
         return ITEM_TO_BERRY(item);
-}
+}*/
 
-static enum Item BerryTypeToItemId(u16 berry)
+/*static enum Item BerryTypeToItemId(u16 berry)
 {
     enum Item item = berry - 1;
 
@@ -4536,7 +4535,7 @@ static enum Item BerryTypeToItemId(u16 berry)
         return FIRST_BERRY_INDEX;
     else
         return berry + FIRST_BERRY_INDEX - 1;
-}
+}*/
 
 void GetBerryNameByBerryType(u8 berry, u8 *string)
 {
@@ -4600,14 +4599,14 @@ static u8 CalcBerryYieldInternal(u16 max, u16 min, u8 water)
 
 static u8 CalcBerryYield(struct BerryTree *tree)
 {
-    const struct Berry *berry = GetBerryInfo(tree->berry);
+    const struct BerryInfo *berryInfo = GetBerryInfo(tree->berry);
     u8 min = tree->berryYield;
-    u8 max = berry->maxYield;
+    u8 max = berryInfo->maxYield;
     u8 result;
     if (OW_BERRY_MULCH_USAGE && (tree->mulch == ITEM_TO_MULCH(ITEM_RICH_MULCH) || tree->mulch == ITEM_TO_MULCH(ITEM_AMAZE_MULCH)))
         min += 2;
     if (!(OW_BERRY_MOISTURE && OW_BERRY_ALWAYS_WATERABLE))
-        min += berry->minYield;
+        min += berryInfo->minYield;
     if (min >= max)
         result = max;
     else

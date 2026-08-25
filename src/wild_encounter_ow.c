@@ -441,7 +441,7 @@ void SetOverworldObjectSpecies(struct ScriptContext *ctx)
     case OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL:
     case OBJ_EVENT_GFX_PIKACHU_DOLL:
     case OBJ_EVENT_GFX_PIKACHU:
-    case OBJ_EVENT_GFX_PIKACHU_FRLG:
+    //case OBJ_EVENT_GFX_PIKACHU_FRLG:
         speciesId = SPECIES_PIKACHU;
         break;
 
@@ -488,17 +488,17 @@ void SetOverworldObjectSpecies(struct ScriptContext *ctx)
         break;
 
     case OBJ_EVENT_GFX_JIGGLYPUFF_DOLL:
-    case OBJ_EVENT_GFX_JIGGLYPUFF:
+    //case OBJ_EVENT_GFX_JIGGLYPUFF:
         speciesId = SPECIES_JIGGLYPUFF;
         break;
 
     case OBJ_EVENT_GFX_MEOWTH_DOLL:
-    case OBJ_EVENT_GFX_MEOWTH:
+    //case OBJ_EVENT_GFX_MEOWTH:
         speciesId = SPECIES_MEOWTH;
         break;
 
     case OBJ_EVENT_GFX_CLEFAIRY_DOLL:
-    case OBJ_EVENT_GFX_CLEFAIRY:
+    //case OBJ_EVENT_GFX_CLEFAIRY:
         speciesId = SPECIES_CLEFAIRY;
         break;
 
@@ -567,7 +567,7 @@ void SetOverworldObjectSpecies(struct ScriptContext *ctx)
         break;
 
     case OBJ_EVENT_GFX_BIG_SNORLAX_DOLL:
-    case OBJ_EVENT_GFX_SNORLAX:
+    //case OBJ_EVENT_GFX_SNORLAX:
         speciesId = SPECIES_SNORLAX;
         break;
 
@@ -576,8 +576,8 @@ void SetOverworldObjectSpecies(struct ScriptContext *ctx)
         break;
 
     case OBJ_EVENT_GFX_BIG_LAPRAS_DOLL:
-    case OBJ_EVENT_GFX_LAPRAS_DOLL:
-    case OBJ_EVENT_GFX_LAPRAS:
+    //case OBJ_EVENT_GFX_LAPRAS_DOLL:
+    //case OBJ_EVENT_GFX_LAPRAS:
         speciesId = SPECIES_LAPRAS;
         break;
 
@@ -661,9 +661,9 @@ void SetOverworldObjectSpecies(struct ScriptContext *ctx)
         break;
 
     case OBJ_EVENT_GFX_DEOXYS:
-    case OBJ_EVENT_GFX_DEOXYS_D:
-    case OBJ_EVENT_GFX_DEOXYS_A:
-    case OBJ_EVENT_GFX_DEOXYS_N:
+    //case OBJ_EVENT_GFX_DEOXYS_D:
+    //case OBJ_EVENT_GFX_DEOXYS_A:
+    //case OBJ_EVENT_GFX_DEOXYS_N:
         speciesId = SPECIES_DEOXYS;
         break;
 
@@ -679,7 +679,7 @@ void SetOverworldObjectSpecies(struct ScriptContext *ctx)
         speciesId = SPECIES_SPEAROW;
         break;
 
-    case OBJ_EVENT_GFX_FEAROW:
+    /*case OBJ_EVENT_GFX_FEAROW:
         speciesId = SPECIES_FEAROW;
         break;
 
@@ -773,13 +773,13 @@ void SetOverworldObjectSpecies(struct ScriptContext *ctx)
 
     case OBJ_EVENT_GFX_ARTICUNO:
         speciesId = SPECIES_ARTICUNO;
-        break;
+        break;*/
 
     case OBJ_EVENT_GFX_MEWTWO:
         speciesId = SPECIES_MEWTWO;
         break;
 
-    case OBJ_EVENT_GFX_RAIKOU:
+    /*case OBJ_EVENT_GFX_RAIKOU:
         speciesId = SPECIES_RAIKOU;
         break;
 
@@ -789,7 +789,7 @@ void SetOverworldObjectSpecies(struct ScriptContext *ctx)
 
     case OBJ_EVENT_GFX_SUICUNE:
         speciesId = SPECIES_SUICUNE;
-        break;
+        break;*/
 
     case OBJ_EVENT_GFX_CELEBI:
         speciesId = SPECIES_CELEBI;

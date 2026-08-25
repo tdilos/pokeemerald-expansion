@@ -1430,7 +1430,7 @@ void HiddenGrottoWildEncounter(void)
 			//gEnemyParty[0].hiddenAbility = TRUE;
 			u8 value;
 			value = 2;
-			SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &value);
+			SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_ABILITY_NUM, &value);
             BattleSetup_StartWildBattle();
             gSpecialVar_Result = TRUE;
         }
@@ -1685,9 +1685,9 @@ void CutWildEncounter(void)
         {
             if (TryDoDoubleWildBattle())
             {
-                struct Pokemon mon1 = gEnemyParty[0];
+                struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
                 TryGenerateWildMon(wildPokemonInfo, WILD_AREA_CUT, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
-                gEnemyParty[1] = mon1;
+                gParties[B_TRAINER_OPPONENT_A][1] = mon1;
                 BattleSetup_StartDoubleWildBattle();
                 gSpecialVar_Result = TRUE;
             }
@@ -1754,9 +1754,9 @@ void HeadbuttWildEncounter(void)
         {
             if (TryDoDoubleWildBattle())
             {
-                struct Pokemon mon1 = gEnemyParty[0];
+                struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
                 TryGenerateWildMon(wildPokemonInfo, WILD_AREA_HEADBUTT, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
-                gEnemyParty[1] = mon1;
+                gParties[B_TRAINER_OPPONENT_A][1] = mon1;
                 BattleSetup_StartDoubleWildBattle();
                 gSpecialVar_Result = TRUE;
             }
@@ -1823,9 +1823,9 @@ void ThawWildEncounter(void)
         {
             if (TryDoDoubleWildBattle())
             {
-                struct Pokemon mon1 = gEnemyParty[0];
+                struct Pokemon mon1 = gParties[B_TRAINER_OPPONENT_A][0];
                 TryGenerateWildMon(wildPokemonInfo, WILD_AREA_THAW, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE);
-                gEnemyParty[1] = mon1;
+                gParties[B_TRAINER_OPPONENT_A][1] = mon1;
                 BattleSetup_StartDoubleWildBattle();
                 gSpecialVar_Result = TRUE;
             }
@@ -2285,13 +2285,13 @@ static u8 GetMaxLevelOfSpeciesInWildTable(const struct WildPokemon *wildMon, enu
         numMon = NUM_ROCK_SMASH_MONS_ENCOUNTER_SLOTS;
         break;
     case WILD_AREA_CUT:
-        numMon = CUT_WILD_COUNT;
+        numMon = NUM_CUT_MONS_ENCOUNTER_SLOTS;
         break;
     case WILD_AREA_HEADBUTT:
-        numMon = HEADBUTT_WILD_COUNT;
+        numMon = NUM_HEADBUTT_MONS_ENCOUNTER_SLOTS;
         break;
     case WILD_AREA_THAW:
-        numMon = THAW_WILD_COUNT;
+        numMon = NUM_THAW_MONS_ENCOUNTER_SLOTS;
         break;
     default:
     case WILD_AREA_FISHING:

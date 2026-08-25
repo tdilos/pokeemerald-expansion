@@ -137,7 +137,7 @@ static const enum NationalDexOrder sKantoToNationalOrder[KANTO_DEX_COUNT] =
 
 // Assigns all Issho Dex Indexes to a National Dex Index
 //static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
-static const enum NationalDexOrder sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
+/*static const enum NationalDexOrder sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
 {
 	HOENN_TO_NATIONAL(CHESPIN),
     HOENN_TO_NATIONAL(QUILLADIN_ISSHOAN),
@@ -525,14 +525,14 @@ static const enum NationalDexOrder sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
 	HOENN_TO_NATIONAL(VICTINI),
 	HOENN_TO_NATIONAL(DIANCIE),
 	HOENN_TO_NATIONAL(DEOXYS),
-};
+};*/
 
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
-/*static const enum NationalDexOrder sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
+static const enum NationalDexOrder sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
 {
     FOREACH_SPECIES_IN_HOENN_DEX_ORDER(HOENN_TO_NATIONAL)
-};*/
+};
 
 // In Battle Palace, moves are chosen based on the Pokémon's nature rather than by the player
 // Moves are grouped into "Attack", "Defense", or "Support" (see PALACE_MOVE_GROUP_*)
@@ -5925,8 +5925,8 @@ u16 SpeciesToPokedexNum(enum Species species)
     }
     else
     {
-        species = SpeciesToHoennPokedexNum(species);
-        if (species <= HOENN_DEX_COUNT)
+        species = SpeciesToRegionalPokedexNum(species);
+        if (species <= REGIONAL_DEX_COUNT)
             return species;
         return 0xFFFF;
     }
@@ -5961,6 +5961,31 @@ u16 GetBattleBGM(void)
     {
         switch (GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES))
         {
+        case SPECIES_MEW:
+        case SPECIES_CELEBI:
+        case SPECIES_JIRACHI:
+        case SPECIES_MANAPHY:
+        case SPECIES_VICTINI:
+        case SPECIES_DIANCIE:
+		case SPECIES_SHAYMIN:
+		case SPECIES_LATIAS:
+		case SPECIES_LATIOS:
+            return MUS_DP_VS_UXIE_MESPRIT_AZELF;
+        case SPECIES_UXIE:
+        case SPECIES_MESPRIT:
+        case SPECIES_AZELF:
+        case SPECIES_TORNADUS:
+        case SPECIES_THUNDURUS:
+        case SPECIES_LANDORUS:
+        case SPECIES_ENAMORUS:
+            return MUS_C_VS_LEGEND_BEAST;
+        case SPECIES_DIALGA:
+		case SPECIES_PALKIA:
+            return MUS_DP_VS_DIALGA_PALKIA;
+        case SPECIES_GIRATINA:
+            return MUS_PL_VS_GIRATINA;
+        case SPECIES_ARCEUS:
+            return MUS_DP_VS_ARCEUS;
         case SPECIES_RAYQUAZA:
             return MUS_VS_RAYQUAZA;
         case SPECIES_KYOGRE:
@@ -6033,6 +6058,10 @@ u16 GetBattleBGM(void)
 		case TRAINER_CLASS_UNKNOWN:
 		case TRAINER_CLASS_PKMN_TRAINER_1:
 			return MUS_PL_VS_GIRATINA;
+		case TRAINER_CLASS_SYNDERLING:
+			return MUS_BW_VS_N_FINAL;
+		case TRAINER_CLASS_ARCHON:
+			return MUS_RG_VS_DEOXYS;
         default:
             //return MUS_VS_TRAINER;
 			return MUS_RG_VS_TRAINER;
@@ -7240,8 +7269,9 @@ enum Species SanitizeSpeciesId(enum Species species)
     assertf(species == SPECIES_NONE || IsSpeciesEnabled(species), "disabled species: %d", species)
     {
         return SPECIES_NONE;
-    else
-        return species;
+	}
+	
+    return species;
 }
 
 bool32 IsSpeciesEnabled(enum Species species)
@@ -7625,7 +7655,7 @@ void ChangePartyMonNature(void)
               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
 	u16 newNature = gSpecialVar_0x8005;
 	u16 species;
-	struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+	struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004];
 	
 	species = GetMonData(mon, MON_DATA_SPECIES, NULL);
 	

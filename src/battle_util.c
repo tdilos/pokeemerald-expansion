@@ -2534,7 +2534,7 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
         //if (IsSoundMove(ctx->move))
         //    battleScript = BattleScript_AbilityProtectedTarget;
         if (ctx->moveType == TYPE_ECHO || IsSoundMove(ctx->move))
-            battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_SPDEF, 1);
+            battleScript = AbsorbedByStatIncreaseAbility(ctx, STAT_SPDEF, 1);
         break;
 		
     case ABILITY_STONE_BODY:
@@ -2560,19 +2560,19 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
         break;
     case ABILITY_UPDRAFT:
         if (ctx->moveType == TYPE_FLYING)
-            battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_SPEED, 1);
+            battleScript = AbsorbedByStatIncreaseAbility(ctx, STAT_SPEED, 1);
         break;
     case ABILITY_HOLLOW_BODY:
         if (ctx->moveType == TYPE_FLYING)
-            battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_SPATK, 1);
+            battleScript = AbsorbedByStatIncreaseAbility(ctx, STAT_SPATK, 1);
         break;
     case ABILITY_BATTERY_POWERED:
         if (ctx->moveType == TYPE_ELECTRIC)
-            battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_ATK, 1);
+            battleScript = AbsorbedByStatIncreaseAbility(ctx, STAT_ATK, 1);
         break;
     case ABILITY_MAGMA_ARMOR:
         if (ctx->moveType == TYPE_WATER || ctx->moveType == TYPE_ICE)
-            battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_EVASION, 1);
+            battleScript = AbsorbedByStatIncreaseAbility(ctx, STAT_EVASION, 1);
         break;
     case ABILITY_BULLETPROOF:
         if (IsBallisticMove(ctx->move))
@@ -3325,7 +3325,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             }
             break;
 		case ABILITY_EQUALIZE:
-			enum BattlerId diagonalBattler = BATTLE_OPPOSITE(battler);
+			enum BattlerId diagonalBattler = GetOppositeBattler(battler);
             if (IsBattlerAlive(diagonalBattler)
                 //&& !(gBattleMons[BATTLE_OPPOSITE(battler)].status2 & (STATUS2_TRANSFORMED | STATUS2_SUBSTITUTE))
                 //&& !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED)
@@ -3969,15 +3969,15 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 }
                 break;	
             case ABILITY_SOUL_FLAME:
-                if (IsBattlerWeatherAffected(battler, B_WEATHER_RAIN))
+                if (IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_RAIN))
                     goto SOLAR_POWER_HP_DROP;
-                if (IsBattlerWeatherAffected(battler, B_WEATHER_SUN)
+                if (IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_SUN)
                  && !IsBattlerAtMaxHp(battler)
 				 && !(gBattleMons[battler].status1 & STATUS1_INFECT)
                  && !gBattleMons[battler].volatiles.healBlock)
                 {
                     SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
-                    BattleScriptExecute(BattleScript_RainDishActivates);
+                    BattleScriptCall(BattleScript_AbilityHpHeal);
                     effect++;
                 }
                 break;		
@@ -3998,13 +3998,13 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 }
                 break;
             case ABILITY_MOONBATHE:
-                if (IsBattlerWeatherAffected(battler, B_WEATHER_FULLMOON)
+                if (IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_FULLMOON)
                  && !IsBattlerAtMaxHp(battler)
 				 && !(gBattleMons[battler].status1 & STATUS1_INFECT)
                  && !gBattleMons[battler].volatiles.healBlock)
                 {
                     SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
-                    BattleScriptExecute(BattleScript_RainDishActivates);
+                    BattleScriptExecute(BattleScript_AbilityHpHeal);
                     effect++;
                 }
                 break;
@@ -4152,7 +4152,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 }
                 break;
             case ABILITY_LUNAR_MIGHT:
-                if (IsBattlerWeatherAffected(battler, B_WEATHER_FULLMOON))
+                if (IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_FULLMOON))
                 {
                     SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
                     BattleScriptExecute(BattleScript_SolarPowerActivates);
@@ -4294,8 +4294,8 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
 				if (CompareStat(battler, statIdd, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
 				{
 					gEffectBattler = battler;
-					SET_STATCHANGER(statIdd, 1, FALSE);
-					BattleScriptCall(BattleScript_TargetAbilityStatRaiseRet);
+					SetStatChange(battler, statIdd, 1);
+					BattleScriptCall(BattleScript_AbilityStatChange);
 					effect++;
 				}
             }
@@ -4877,7 +4877,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             if (IsBattlerAlive(gBattlerTarget)
              && !gBattleStruct->unableToUseMove
              && !IsMoveEffectBlockedByTarget(GetBattlerAbility(gBattlerTarget))
-             && CanBeConfused(gBattlerTarget)
+			 && CanBeConfused(gBattlerAttacker, gBattlerTarget)
              && IsMoveMakingContact(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move)
              && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES) // Need to actually hit the target
              && RandomPercentage(RNG_POISON_TOUCH, 30))
@@ -7394,7 +7394,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
             if (ctx->updateFlags)
-                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+                RecordAbilityBattle(battlerDef, ctx->abilities[ctx->battlerDef]);
         }
         break;
 	case ABILITY_PLASTIC_BODY:
@@ -7402,13 +7402,13 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
             if (ctx->updateFlags)
-                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+                RecordAbilityBattle(battlerDef, ctx->abilities[ctx->battlerDef]);
         }
 		else if (moveType == TYPE_ELECTRIC || moveType == TYPE_ICE || moveType == TYPE_WATER)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
             if (ctx->updateFlags)
-                RecordAbilityBattle(battlerDef, ctx->abilityDef);
+                RecordAbilityBattle(battlerDef, ctx->abilities[ctx->battlerDef]);
         }
         break;
     case ABILITY_DRY_SKIN:
@@ -7634,7 +7634,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_LUNAR_MIGHT:
-        if (IsBattleMoveSpecial(move) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_FULLMOON))
+        if (IsBattleMoveSpecial(move) && IsBattlerWeatherAffected(ctx->holdEffects[ctx->battlerAtk], ctx->weather, B_WEATHER_FULLMOON))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_DEFEATIST:
@@ -8140,7 +8140,7 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
     return UQ_4_12(1.0);
 }
 
-static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageContext *ctx)
+/*static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageContext *ctx)
 {
     enum BattleMoveEffects moveEffect = GetMoveEffect(ctx->move);
 
@@ -8154,20 +8154,21 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageContext *ctx)
         && (GetConfig(B_BURN_FACADE_DMG) < GEN_6 || moveEffect != EFFECT_FACADE))
         return UQ_4_12(0.5);
     return UQ_4_12(1.0);
-}
+}*/
 
-static inline uq4_12_t GetBurnOrFearModifier(struct BattleContext *ctx)
+static inline uq4_12_t GetBurnOrFearModifier(struct DamageContext *ctx)
 {
     enum BattleMoveEffects moveEffect = GetMoveEffect(ctx->move);
 
     if (gBattleMons[ctx->battlerAtk].status1 & STATUS1_BURN
         && IsBattleMovePhysical(ctx->move)
         && (GetConfig(B_BURN_FACADE_DMG) < GEN_6 || moveEffect != EFFECT_FACADE)
-        && ctx->abilityAtk != ABILITY_GUTS)
+        && ctx->abilities[ctx->battlerAtk] != ABILITY_GUTS)
         return UQ_4_12(0.5);
     if (gBattleMons[ctx->battlerAtk].status1 & STATUS1_FEAR
         && IsBattleMoveSpecial(ctx->move)
-        && (GetConfig(B_BURN_FACADE_DMG) < GEN_6 || moveEffect != EFFECT_FACADE))
+        && (GetConfig(B_BURN_FACADE_DMG) < GEN_6 || moveEffect != EFFECT_FACADE)
+        && ctx->abilities[ctx->battlerAtk] != ABILITY_GUTS)
         return UQ_4_12(0.5);
     return UQ_4_12(1.0);
 }
@@ -11213,7 +11214,7 @@ u32 GetTotalAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
     if ((attackerWeather & B_WEATHER_SUN) && MoveHas50AccuracyInSun(move))
         moveAcc = 50;
     // Check UV Burst in rainy weather.
-    if (IsBattlerWeatherAffected(battlerDef, B_WEATHER_RAIN) && MoveHas50AccuracyInRain(move))
+    if ((attackerWeather & B_WEATHER_RAIN) && MoveHas50AccuracyInRain(move))
         moveAcc = 50;
     // Check Wonder Skin.
     if (defAbility == ABILITY_WONDER_SKIN && IsBattleMoveStatus(move) && moveAcc > 50)

@@ -40,28 +40,28 @@ const u16 gObjectEventPal_RubySapphireMay[] = INCGFX_U16("graphics/object_events
 const u16 gUnusedObjectEventPalette[] = INCGFX_U16("graphics/object_events/palettes/unused_palette.pal", ".gbapal");
 
 const u16 gObjectEventPal_Vert[] = INCGFX_U16("graphics/object_events/palettes/vert.pal", ".gbapal");
-const u16 gObjectEventPal_VertReflection[] = INCBIN_U16("graphics/object_events/palettes/vert_reflection.pal", ".gbapal");
-const u32 gObjectEventPic_VertDecorating[] = INCBIN_U32("graphics/object_events/pics/people/vert/decorating.png", ".4bpp");
-const u32 gObjectEventPic_VertFieldMove[] = INCBIN_U32("graphics/object_events/pics/people/vert/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VertFishing[] = INCBIN_U32("graphics/object_events/pics/people/vert/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VertMachBike[] = INCBIN_U32("graphics/object_events/pics/people/vert/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_VertReflection[] = INCGFX_U16("graphics/object_events/palettes/vert_reflection.pal", ".gbapal");
+const u32 gObjectEventPic_VertDecorating[] = INCGFX_U32("graphics/object_events/pics/people/vert/decorating.png", ".4bpp");
+const u32 gObjectEventPic_VertFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/vert/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VertFishing[] = INCGFX_U32("graphics/object_events/pics/people/vert/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VertMachBike[] = INCGFX_U32("graphics/object_events/pics/people/vert/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_VertNormal[] = INCGFX_U32("graphics/object_events/pics/people/vert/walking.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_VertRunning[] = INCGFX_U32("graphics/object_events/pics/people/vert/running.png", ".4bpp", "-mwidth 2 -mheight 4");
-const u32 gObjectEventPic_VertSurfing[] = INCBIN_U32("graphics/object_events/pics/people/vert/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VertWatering[] = INCBIN_U32("graphics/object_events/pics/people/vert/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VertUnderwater[] = INCBIN_U32("graphics/object_events/pics/people/vert/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VertSurfing[] = INCGFX_U32("graphics/object_events/pics/people/vert/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VertWatering[] = INCGFX_U32("graphics/object_events/pics/people/vert/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VertUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/vert/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
 
-const u16 gObjectEventPal_Violet[] = INCBIN_U16("graphics/object_events/palettes/violet.pal", ".gbapal");
-const u16 gObjectEventPal_VioletReflection[] = INCBIN_U16("graphics/object_events/palettes/violet_reflection.pal", ".gbapal");
-const u32 gObjectEventPic_VioletDecorating[] = INCBIN_U32("graphics/object_events/pics/people/violet/decorating.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VioletFieldMove[] = INCBIN_U32("graphics/object_events/pics/people/violet/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VioletFishing[] = INCBIN_U32("graphics/object_events/pics/people/violet/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VioletMachBike[] = INCBIN_U32("graphics/object_events/pics/people/violet/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VioletNormal[] = INCBIN_U32("graphics/object_events/pics/people/violet/walking.png", ".4bpp", "-mwidth 2 -mheight 4");
-const u32 gObjectEventPic_VioletRunning[] = INCBIN_U32("graphics/object_events/pics/people/violet/running.png", ".4bpp", "-mwidth 2 -mheight 4");
-const u32 gObjectEventPic_VioletSurfing[] = INCBIN_U32("graphics/object_events/pics/people/violet/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VioletUnderwater[] = INCBIN_U32("graphics/object_events/pics/people/violet/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_VioletWatering[] = INCBIN_U32("graphics/object_events/pics/people/violet/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Violet[] = INCGFX_U16("graphics/object_events/palettes/violet.pal", ".gbapal");
+const u16 gObjectEventPal_VioletReflection[] = INCGFX_U16("graphics/object_events/palettes/violet_reflection.pal", ".gbapal");
+const u32 gObjectEventPic_VioletDecorating[] = INCGFX_U32("graphics/object_events/pics/people/violet/decorating.png", ".4bpp");
+const u32 gObjectEventPic_VioletFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/violet/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VioletFishing[] = INCGFX_U32("graphics/object_events/pics/people/violet/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VioletMachBike[] = INCGFX_U32("graphics/object_events/pics/people/violet/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VioletNormal[] = INCGFX_U32("graphics/object_events/pics/people/violet/walking.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_VioletRunning[] = INCGFX_U32("graphics/object_events/pics/people/violet/running.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_VioletSurfing[] = INCGFX_U32("graphics/object_events/pics/people/violet/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VioletUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/violet/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_VioletWatering[] = INCGFX_U32("graphics/object_events/pics/people/violet/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
 
 const u16 gObjectEventPal_Null16[16] = {};
 const u16 gObjectEventPal_Null17[16] = {};
@@ -484,7 +484,11 @@ const u32 gObjectEventPic_Petra[] = INCGFX_U32("graphics/object_events/pics/peop
 const u32 gObjectEventPic_Justin[] = INCGFX_U32("graphics/object_events/pics/people/justin.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_Azami[] = INCGFX_U32("graphics/object_events/pics/people/azami.png", ".4bpp", "-mwidth 2 -mheight 4");
 
-const u32 gObjectEventPic_ShayminOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_shaymin.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPic_SpearowOld[] = INCGFX_U16("graphics/object_events/pics/pokemon_old/spearow.png", ".4bpp", "-mwidth 2 -mheight 2");
+const u16 gObjectEventPic_ChanseyOld[] = INCGFX_U16("graphics/object_events/pics/pokemon_old/chansey.png", ".4bpp", "-mwidth 2 -mheight 2");
+const u16 gObjectEventPic_CelebiOld[] = INCGFX_U16("graphics/object_events/pics/pokemon_old/celebi.png", ".4bpp");
+
+const u32 gObjectEventPic_ShayminOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_shaymin.png", ".4bpp", "-mwidth 2 -mheight 2");
 const u32 gObjectEventPic_MelmetalOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_melmetal.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_VolcaronaOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/volcarona.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_GlameowOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_glameow.png", ".4bpp", "-mwidth 2 -mheight 2");
@@ -496,11 +500,11 @@ const u32 gObjectEventPic_JirachiOld[] = INCGFX_U32("graphics/object_events/pics
 const u32 gObjectEventPic_ManaphyOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_manaphy.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_VictiniOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_victini.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_DiancieOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_diancie.png", ".4bpp", "-mwidth 4 -mheight 4");
-const u32 gObjectEventPic_DrifloonOld[] = INCGFX_U32("graphics/object_events/pics/pokemon/fr_drifloon.png", ".4bpp", "-mwidth 2 -mheight 2");
-const u32 gObjectEventPic_DialgaOld[] = INCGFX_U32("graphics/object_events/pics/pokemon/fr_dialga.png", ".4bpp", "-mwidth 8 -mheight 8");
-const u32 gObjectEventPic_PalkiaOld[] = INCGFX_U32("graphics/object_events/pics/pokemon/fr_palkia.png", ".4bpp", "-mwidth 8 -mheight 8");
-const u32 gObjectEventPic_GiratinaOld[] = INCGFX_U32("graphics/object_events/pics/pokemon/fr_giratina.png", ".4bpp", "-mwidth 8 -mheight 8");
-const u32 gObjectEventPic_ArceusOld[] = INCGFX_U32("graphics/object_events/pics/pokemon/fr_arceus.png", ".4bpp", "-mwidth 8 -mheight 8");
+const u32 gObjectEventPic_DrifloonOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_drifloon.png", ".4bpp", "-mwidth 2 -mheight 2");
+const u32 gObjectEventPic_DialgaOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_dialga.png", ".4bpp", "-mwidth 8 -mheight 8");
+const u32 gObjectEventPic_PalkiaOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_palkia.png", ".4bpp", "-mwidth 8 -mheight 8");
+const u32 gObjectEventPic_GiratinaOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_giratina.png", ".4bpp", "-mwidth 8 -mheight 8");
+const u32 gObjectEventPic_ArceusOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/fr_arceus.png", ".4bpp", "-mwidth 8 -mheight 8");
 
 
 
@@ -523,7 +527,7 @@ const u32 gObjectEventPic_BikerM[] = INCGFX_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_BikerF[] = INCGFX_U32("graphics/object_events/pics/people/biker_f.png", ".4bpp", "-mwidth 4 -mheight 4");
 
 const u32 gObjectEventPic_LassAlola[] = INCGFX_U32("graphics/object_events/pics/people/lass_alola.png", ".4bpp", "-mwidth 2 -mheight 4");
-const u32 gObjectEventPic_LittleGirlAlola[] = INCGFX_U32("graphics/object_events/pics/people/little_girl_alola.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_LittleGirlAlola[] = INCGFX_U32("graphics/object_events/pics/people/little_girl_alola.png", ".4bpp", "-mwidth 2 -mheight 2");
 const u32 gObjectEventPic_OldManAlola[] = INCGFX_U32("graphics/object_events/pics/people/old_man_alola.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_WomanAlola[] = INCGFX_U32("graphics/object_events/pics/people/woman_alola.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_YoungsterAlola[] = INCGFX_U32("graphics/object_events/pics/people/youngster_alola.png", ".4bpp", "-mwidth 2 -mheight 4");
@@ -531,7 +535,7 @@ const u32 gObjectEventPic_YoungsterAlola[] = INCGFX_U32("graphics/object_events/
 const u32 gObjectEventPic_BaldingManGalar[] = INCGFX_U32("graphics/object_events/pics/people/balding_man_galar.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_GirlGalar[] = INCGFX_U32("graphics/object_events/pics/people/girl_galar.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_LassGalar[] = INCGFX_U32("graphics/object_events/pics/people/lass_galar.png", ".4bpp", "-mwidth 2 -mheight 4");
-const u32 gObjectEventPic_LittleBoyGalar[] = INCGFX_U32("graphics/object_events/pics/people/little_boy_galar.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_LittleBoyGalar[] = INCGFX_U32("graphics/object_events/pics/people/little_boy_galar.png", ".4bpp", "-mwidth 2 -mheight 2");
 const u32 gObjectEventPic_ManGalar[] = INCGFX_U32("graphics/object_events/pics/people/man_galar.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_WomanGalar[] = INCGFX_U32("graphics/object_events/pics/people/woman_galar.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_YoungsterGalar[] = INCGFX_U32("graphics/object_events/pics/people/youngster_galar.png", ".4bpp", "-mwidth 2 -mheight 4");

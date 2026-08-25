@@ -87,7 +87,7 @@ static const u8 sAlteringCaveMapPreviewTiles[] = INCGFX_U8("graphics/map_preview
 static const u8 sAlteringCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/altering_cave/tilemap.bin.smolTM");
 
 static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
-    [MPS_VIRIDIAN_FOREST] = {
+    /*[MPS_VIRIDIAN_FOREST] = {
         .mapsec = MAPSEC_VIRIDIAN_FOREST,
         .type = MPS_TYPE_FADE_IN,
         .flagId = FLAG_WORLD_MAP_VIRIDIAN_FOREST,
@@ -310,7 +310,7 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .tilesptr = sMoneanChamberMapPreviewTiles,
         .tilemapptr = sMoneanChamberMapPreviewTilemap,
         .palptr = sMoneanChamberMapPreviewPalette
-    }
+    }*/
 };
 
 static const struct WindowTemplate sMapNameWindow = {

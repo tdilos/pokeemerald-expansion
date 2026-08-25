@@ -2240,11 +2240,11 @@ gBattleAnimMove_FlashCannon::
 
 
 gBattleAnimMove_AetherBeam::
-	loadspritegfx ANIM_TAG_HANDS_AND_FEET
-	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
-	loadspritegfx ANIM_TAG_ELECTRIC_ORBS
-	loadspritegfx ANIM_TAG_GUST
-	loadspritegfx ANIM_TAG_FLASH_CANNON_BALL
+	@loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	@loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
+	@loadspritegfx ANIM_TAG_ELECTRIC_ORBS
+	@loadspritegfx ANIM_TAG_GUST
+	@loadspritegfx ANIM_TAG_FLASH_CANNON_BALL
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ELECTRIC_ORBS, 0x0, 0x6, 0xD, RGB(30,30,30)
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_CIRCLE_OF_LIGHT, 0x0, 0x6, 0xD, RGB(30,30,30)
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_FLASH_CANNON_BALL, 0x0, 0x6, 0xD, RGB(30,30,30)
@@ -5837,8 +5837,8 @@ HurricaneGustCentered:
 
 
 gBattleAnimMove_UVBurst::
-	loadspritegfx ANIM_TAG_IMPACT
-	loadspritegfx ANIM_TAG_SPARK_2
+	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_SPARK_2
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG | F_PAL_BATTLERS_2, 1, 0, 6, RGB_WHITE
 	waitforvisualfinish
 	@panse_adjustnone SE_M_PETAL_DANCE, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +1, 0
@@ -5921,10 +5921,10 @@ gBattleAnimMove_Abrase::
 	
 	
 gBattleAnimMove_ShortCircuit::
-	loadspritegfx ANIM_TAG_SPARK
-	loadspritegfx ANIM_TAG_SPARK_2
-	loadspritegfx ANIM_TAG_ELECTRIC_ORBS
-	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
+	@loadspritegfx ANIM_TAG_SPARK
+	@loadspritegfx ANIM_TAG_SPARK_2
+	@loadspritegfx ANIM_TAG_ELECTRIC_ORBS
+	@loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 2, 0, 4, RGB_BLACK
@@ -5952,7 +5952,7 @@ gBattleAnimMove_ShortCircuit::
 	
 	
 gBattleAnimMove_SpitFire::
-	loadspritegfx ANIM_TAG_SMALL_EMBER
+	@loadspritegfx ANIM_TAG_SMALL_EMBER
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_foes ANIM_TARGET
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 0, -10, 0, 0, 3
@@ -5996,7 +5996,7 @@ gBattleAnimMove_Prescience::
 	end
 	
 gBattleAnimMove_SonicPulse:: 
-	loadspritegfx ANIM_TAG_PURPLE_RING
+	@loadspritegfx ANIM_TAG_PURPLE_RING
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_PURPLE_RING, 0, 6, 6, RGB(0,31,0)
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_foes ANIM_TARGET
@@ -6012,7 +6012,7 @@ gBattleAnimMove_SonicPulse::
 
 
 gBattleAnimMove_DopplerCharge::
-	loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
 	@loopsewithpan SE_M_SCREECH, SOUND_PAN_TARGET, 13, 2
@@ -6068,8 +6068,8 @@ gBattleAnimMove_DopplerCharge::
 
 
 gBattleAnimMove_Cacophony::
-	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
-	loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
+	@loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_DEF_PARTNER
 	createvisualtask AnimTask_UproarDistortion, 2, 0
 	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, 31, 8
@@ -6100,8 +6100,7 @@ gBattleAnimMove_Cacophony::
 
 
 gBattleAnimMove_WhiteNoise::
-	@loadspritegfx ANIM_TAG_METAL_SOUND_WAVES 
-	loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_ATK_PARTNER
 	@createvisualtask AnimTask_BlendBattleAnimPalExclude, 5, ANIM_ATTACKER, 0, 0, 16, RGB_BLACK
 	@waitforvisualfinish
@@ -6128,7 +6127,7 @@ gBattleAnimMove_WhiteNoise::
 	
 	
 gBattleAnimMove_ShieldStrike:: 
-	loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_IMPACT
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
 	createvisualtask AnimTask_MetallicShine, 5, 0, 0, RGB_BLACK
 	waitforvisualfinish
@@ -6158,8 +6157,7 @@ gBattleAnimMove_ShieldStrike::
 	
 
 gBattleAnimMove_SirenSong::
-	@loadspritegfx ANIM_TAG_MUSIC_NOTES_2
-	loadspritegfx ANIM_TAG_MUSIC_NOTES
+	@loadspritegfx ANIM_TAG_MUSIC_NOTES
 	createvisualtask AnimTask_MusicNotesRainbowBlend, 2
 	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 3, 0, 16, RGB_BLACK
@@ -6204,7 +6202,7 @@ gBattleAnimMove_SirenSong::
 
 
 gBattleAnimMove_ReboundArmor::
-	loadspritegfx ANIM_TAG_PROTECT @protect
+	@loadspritegfx ANIM_TAG_PROTECT @protect
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
 	createvisualtask AnimTask_MetallicShine, 5, 0, 0, RGB_BLACK
 	waitforvisualfinish
@@ -6212,8 +6210,8 @@ gBattleAnimMove_ReboundArmor::
 
 
 gBattleAnimMove_ArcaneForce::
-	loadspritegfx ANIM_TAG_IMPACT
-	loadspritegfx ANIM_TAG_SMALL_EMBER
+	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_SMALL_EMBER
 	fadetobg BG_DARK
 	waitbgfadein
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_EMBER, 0, 6, 6, RGB(31,0,31)
@@ -6313,7 +6311,7 @@ gBattleAnimMove_Thaw::
 
 
 gBattleAnimMove_BlueNoise:: 
-	loadspritegfx ANIM_TAG_PURPLE_RING
+	@loadspritegfx ANIM_TAG_PURPLE_RING
 	playsewithpan SE_M_MINIMIZE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_StartSinAnimTimer, 5, 100
 	createsoundtask SoundTask_LoopSEAdjustPanning, SE_M_MINIMIZE, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 2, 9, 0, 10
@@ -6380,7 +6378,7 @@ gBattleAnimMove_DarknessDream::
 	
 
 gBattleAnimMove_FiendFire:: 
-	loadspritegfx ANIM_TAG_SMALL_EMBER
+	@loadspritegfx ANIM_TAG_SMALL_EMBER
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_EMBER, 0, 6, 6, RGB(31,0,31)
 	@monbg ANIM_TARGET
 	fadetobg BG_DARK
@@ -6402,7 +6400,7 @@ gBattleAnimMove_FiendFire::
 	
 	
 gBattleAnimMove_SonarWave::
-	loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_THIN_RING
 	@createvisualtask AnimTask_InvertScreenColor, 2, 0x1 | 0x4 | 0x8 | 0x10
 	panse SE_M_BARRIER, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +3, 0
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -5, -5, 5, ANIM_ATTACKER, 0
@@ -6414,8 +6412,8 @@ gBattleAnimMove_SonarWave::
 
 
 gBattleAnimMove_Petrify::
-	loadspritegfx ANIM_TAG_SMALL_RED_EYE
-	loadspritegfx ANIM_TAG_EYE_SPARKLE
+	@loadspritegfx ANIM_TAG_SMALL_RED_EYE
+	@loadspritegfx ANIM_TAG_EYE_SPARKLE
 	fadetobg BG_FISSURE
 	createvisualtask AnimTask_GlareEyeDots, 5, 0
 	createvisualtask AnimTask_BlendBattleAnimPal, 5, F_PAL_BG, 0, 0, 16, RGB_BLACK
@@ -6437,10 +6435,10 @@ gBattleAnimMove_Petrify::
 	
 	
 gBattleAnimMove_Rototill::
-	loadspritegfx ANIM_TAG_ROOTS
-	loadspritegfx ANIM_TAG_IMPACT
-	loadspritegfx ANIM_TAG_MUD_SAND
-	loadspritegfx ANIM_TAG_ROCKS
+	@loadspritegfx ANIM_TAG_ROOTS
+	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_MUD_SAND
+	@loadspritegfx ANIM_TAG_ROCKS
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
 	createsprite gIngrainRootSpriteTemplate, ANIM_ATTACKER, 2, 16, 26, -1, 2, 150
@@ -6468,7 +6466,7 @@ gBattleAnimMove_Rototill::
 	
 
 gBattleAnimMove_Blight::
-	loadspritegfx ANIM_TAG_BLIGHT
+	@loadspritegfx ANIM_TAG_BLIGHT
 	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_TARGET, 10, 6
 	createsprite gBlightParticleSpriteTemplate, ANIM_TARGET, 2, -30, -22, 117, 80, 5, 1
 	createsprite gBlightParticleSpriteTemplate, ANIM_TARGET, 2, 10, -22, 117, 80, -5, 1
@@ -6493,7 +6491,7 @@ gBattleAnimMove_Blight::
 	
 	
 gBattleAnimMove_Pollenspray:: 
-	loadspritegfx ANIM_TAG_SEED
+	@loadspritegfx ANIM_TAG_SEED
 	createsprite gBulletSeedSpriteTemplate, ANIM_TARGET, 2, 20, 0
 	delay 5
 	createsprite gBulletSeedSpriteTemplate, ANIM_TARGET, 2, 20, 0
@@ -6527,8 +6525,7 @@ gBattleAnimMove_Pollenspray::
 	
 	
 gBattleAnimMove_PaleoWave::
-	loadspritegfx ANIM_TAG_ROCKS
-	@fadetobg BG_COSMIC
+	@loadspritegfx ANIM_TAG_ROCKS
 	fadetobg BG_TECTONIC_RAGE
 	waitbgfadeout
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0xf700, 0x0, TRUE, 0xffff @;Scroll right/left
@@ -6565,7 +6562,7 @@ gBattleAnimMove_PaleoWave::
 
 
 gBattleAnimMove_Mantra::
-	loadspritegfx ANIM_TAG_GOLD_RING
+	@loadspritegfx ANIM_TAG_GOLD_RING
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_GOLD_RING, 0, 6, 0xD, RGB(0,31,31)
 	@createvisualtask AnimTask_BlendMonInAndOut, 5, ANIM_ATTACKER, RGB(31, 31, 19), 12, 5, 1
 	playsewithpan SE_M_REVERSAL, SOUND_PAN_ATTACKER
@@ -6626,8 +6623,8 @@ gBattleAnimMove_Mantra::
 
 
 gBattleAnimMove_Oxidize::
-	loadspritegfx ANIM_TAG_WATER_ORB
-	loadspritegfx ANIM_TAG_WATER_IMPACT
+	@loadspritegfx ANIM_TAG_WATER_ORB
+	@loadspritegfx ANIM_TAG_WATER_IMPACT
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_WATER_ORB, 0, 6, 6, RGB(31,0,31)
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_WATER_IMPACT, 0, 6, 6, RGB(31,0,31)
 	monbg ANIM_DEF_PARTNER
@@ -6667,7 +6664,7 @@ gBattleAnimMove_Oxidize::
 gBattleAnimMove_DissonantPulse::
 	@playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
 	@playsewithpan SE_M_MINIMIZE, SOUND_PAN_ATTACKER
-	loadspritegfx ANIM_TAG_METAL_SOUND_WAVES
+	@loadspritegfx ANIM_TAG_METAL_SOUND_WAVES
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_foes ANIM_TARGET
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 2, 0, 8, 1
@@ -6693,8 +6690,8 @@ DissonantSoundWave:
 
 
 gBattleAnimMove_Aftershock::
-	loadspritegfx ANIM_TAG_IMPACT
-	loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_THIN_RING
 	@monbg ANIM_TARGET
 	setalpha 12, 8
 	playsewithpan SE_M_SWIFT, SOUND_PAN_ATTACKER
@@ -6737,9 +6734,7 @@ gBattleAnimMove_Aftershock::
 
 
 gBattleAnimMove_SonicBurst::
-	@loadspritegfx ANIM_TAG_IMPACT
-	@loadspritegfx ANIM_TAG_HANDS_AND_FEET
-	loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_THIN_RING
 	@monbg ANIM_TARGET
 	setalpha 12, 8
 
@@ -6774,8 +6769,8 @@ gBattleAnimMove_SonicBurst::
 
 
 gBattleAnimMove_Berend::
-	loadspritegfx ANIM_TAG_SHARP_TEETH
-	loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_SHARP_TEETH
+	@loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
 	createsprite gBowMonSpriteTemplate, ANIM_ATTACKER, 2, 0
 	playsewithpan SE_M_HEADBUTT, SOUND_PAN_ATTACKER
@@ -6811,7 +6806,7 @@ BerendHit:
 	
 	
 gBattleAnimMove_BileJuice:: 
-	loadspritegfx ANIM_TAG_POISON_BUBBLE
+	@loadspritegfx ANIM_TAG_POISON_BUBBLE
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_POISON_BUBBLE, 0, 6, 6, RGB(0,31,0)
 	monbg ANIM_DEF_PARTNER
 	createsprite gAcidPoisonBubbleSpriteTemplate, ANIM_TARGET, 2, 20, 0, 40, 1, 0, 0, TRUE
@@ -6846,7 +6841,7 @@ gBattleAnimMove_BileJuice::
 
 
 gBattleAnimMove_BileBreath::
-	loadspritegfx ANIM_TAG_SMALL_EMBER
+	@loadspritegfx ANIM_TAG_SMALL_EMBER
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_EMBER, 0x0, 0x6, 0xD, RGB(0,31,0)
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
@@ -6888,7 +6883,7 @@ gBattleAnimMove_BileBreath::
 	
 
 gBattleAnimMove_ToxicBreath::
-	loadspritegfx ANIM_TAG_SMALL_EMBER
+	@loadspritegfx ANIM_TAG_SMALL_EMBER
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_EMBER, 0x0, 0x6, 0xD, RGB(31,0,31)
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
@@ -6930,7 +6925,7 @@ gBattleAnimMove_ToxicBreath::
 	
 
 gBattleAnimMove_WitherBreath::
-	loadspritegfx ANIM_TAG_SMALL_EMBER
+	@loadspritegfx ANIM_TAG_SMALL_EMBER
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_EMBER, 0x0, 0x6, 0xD, RGB(0,6,24)
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
@@ -6972,7 +6967,7 @@ gBattleAnimMove_WitherBreath::
 	
 	
 gBattleAnimMove_BileWind::
-	loadspritegfx ANIM_TAG_FLYING_DIRT
+	@loadspritegfx ANIM_TAG_FLYING_DIRT
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_FLYING_DIRT, 0, 6, 6, RGB_GREEN
 	createvisualtask AnimTask_LoadSandstormBackground, 5, TRUE
 	createvisualtask AnimTask_BlendBackground, 6, 6, RGB_GREEN
@@ -6997,7 +6992,7 @@ gBattleAnimMove_BileWind::
 	
 	
 gBattleAnimMove_ToxicWind::
-	loadspritegfx ANIM_TAG_FLYING_DIRT
+	@loadspritegfx ANIM_TAG_FLYING_DIRT
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_FLYING_DIRT, 0, 6, 6, RGB_PURPLE
 	createvisualtask AnimTask_LoadSandstormBackground, 5, TRUE
 	createvisualtask AnimTask_BlendBackground, 6, 6, RGB_PURPLE
@@ -7022,7 +7017,7 @@ gBattleAnimMove_ToxicWind::
 	
 	
 gBattleAnimMove_WitherWind::
-	loadspritegfx ANIM_TAG_FLYING_DIRT
+	@loadspritegfx ANIM_TAG_FLYING_DIRT
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_FLYING_DIRT, 0, 6, 6, RGB(0,6,24)
 	createvisualtask AnimTask_LoadSandstormBackground, 5, TRUE
 	createvisualtask AnimTask_BlendBackground, 6, 6, RGB(0,6,24)
@@ -7047,8 +7042,8 @@ gBattleAnimMove_WitherWind::
 
 
 gBattleAnimMove_DustDevil::
-	loadspritegfx ANIM_TAG_FLYING_DIRT
-	loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_FLYING_DIRT
+	@loadspritegfx ANIM_TAG_IMPACT
 	playsewithpan SE_M_TWISTER, SOUND_PAN_TARGET
 	createvisualtask AnimTask_LoadSandstormBackground, 5, FALSE
 	delay 16
@@ -7078,10 +7073,9 @@ gBattleAnimMove_DustDevil::
 
 
 gBattleAnimMove_PowderpuffPunch:: 
-	loadspritegfx ANIM_TAG_IMPACT
-	loadspritegfx ANIM_TAG_HANDS_AND_FEET
-	loadspritegfx ANIM_TAG_BLACK_SMOKE
-	@loadspritegfx ANIM_TAG_MIST_CLOUD
+	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	@loadspritegfx ANIM_TAG_BLACK_SMOKE
 	monbg ANIM_DEF_PARTNER
 	monbg ANIM_TARGET
 	@setalpha 12, 8
@@ -7122,7 +7116,7 @@ gBattleAnimMove_PowderpuffPunch::
 
 
 gBattleAnimMove_Harmonize::
-	loadspritegfx ANIM_TAG_GUARD_RING
+	@loadspritegfx ANIM_TAG_GUARD_RING
 	monbg ANIM_DEF_PARTNER
 	panse SE_M_SING, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	createsprite gGuardRingSpriteTemplate, ANIM_ATTACKER, 2
@@ -7160,7 +7154,7 @@ gBattleAnimMove_Harmonize::
 
 
 gBattleAnimMove_DragonDream:: 
-	loadspritegfx ANIM_TAG_HOLLOW_ORB
+	@loadspritegfx ANIM_TAG_HOLLOW_ORB
 	@monbg ANIM_ATTACKER
 	
 	call SetPsychicBackground
@@ -7192,9 +7186,9 @@ gBattleAnimMove_DragonDream::
 
 
 gBattleAnimMove_MegahertzFist:: 
-	loadspritegfx ANIM_TAG_IMPACT
-	loadspritegfx ANIM_TAG_HANDS_AND_FEET
-	loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	@loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_TARGET
 	setalpha 12, 8
 	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
@@ -7226,8 +7220,7 @@ gBattleAnimMove_MegahertzFist::
 	
 	
 gBattleAnimMove_IllWill::
-	@loadspritegfx ANIM_TAG_WISP_FIRE
-	loadspritegfx ANIM_TAG_WISP_ORB
+	@loadspritegfx ANIM_TAG_WISP_ORB
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_WISP_ORB, 0, 6, 6, RGB_BLACK
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_foes ANIM_TARGET
@@ -7260,7 +7253,7 @@ gBattleAnimMove_Psychosis::
 
 
 gBattleAnimMove_Shriek::
-	loadspritegfx ANIM_TAG_NOISE_LINE
+	@loadspritegfx ANIM_TAG_NOISE_LINE
 	fadetobg BG_DARK
 	@waitbgfadein
 	
@@ -7278,10 +7271,10 @@ gBattleAnimMove_Shriek::
 	
 
 gBattleAnimMove_PitchBurst:: 
-	loadspritegfx ANIM_TAG_IMPACT @Hits
-	loadspritegfx ANIM_TAG_WHITE_SHADOW @Destiny Bond
-	loadspritegfx ANIM_TAG_QUICK_GUARD_HAND @Black Colour
-	loadspritegfx ANIM_TAG_POISON_BUBBLE @Poison Colour
+	@loadspritegfx ANIM_TAG_IMPACT @Hits
+	@loadspritegfx ANIM_TAG_WHITE_SHADOW @Destiny Bond
+	@loadspritegfx ANIM_TAG_QUICK_GUARD_HAND @Black Colour
+	@loadspritegfx ANIM_TAG_POISON_BUBBLE @Poison Colour
 	@launchtask AnimTask_BlendBattleAnimPal 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0x10 0x7FFF
 	@waitforvisualfinish
 	fadetobg BG_DARK
@@ -7333,7 +7326,7 @@ gBattleAnimMove_PitchBurst::
 
 
 gBattleAnimMove_ShadowSnithe::
-	loadspritegfx ANIM_TAG_SLASH
+	@loadspritegfx ANIM_TAG_SLASH
 	monbg ANIM_ATTACKER
 	fadetobg BG_GHOST
 	waitbgfadein
@@ -7422,8 +7415,8 @@ gBattleAnimMove_Wither::
 
 
 gBattleAnimMove_Threnody::
-	loadspritegfx ANIM_TAG_MUSIC_NOTES
-	loadspritegfx ANIM_TAG_MUSIC_NOTES_2
+	@loadspritegfx ANIM_TAG_MUSIC_NOTES
+	@loadspritegfx ANIM_TAG_MUSIC_NOTES_2
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_MUSIC_NOTES, 0, 6, 6, RGB(0,6,24)
 	
 	fadetobg BG_GHOST
@@ -7491,7 +7484,7 @@ gBattleAnimMove_Threnody::
 
 gBattleAnimMove_Crystalize:: 
 	playsewithpan SE_M_ICY_WIND, 0
-	loadspritegfx ANIM_TAG_ICE_CUBE
+	@loadspritegfx ANIM_TAG_ICE_CUBE
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
 	waitplaysewithpan SE_M_HAIL, SOUND_PAN_TARGET, 17
@@ -7504,7 +7497,7 @@ gBattleAnimMove_Crystalize::
 	
 	
 gBattleAnimMove_PhrenoAttack:: 
-	loadspritegfx ANIM_TAG_TRI_ATTACK_TRIANGLE
+	@loadspritegfx ANIM_TAG_TRI_ATTACK_TRIANGLE
 	@createsprite gPhrenoAttackTriangleSpriteTemplate, ANIM_TARGET, 2, 16, 0
 	createsprite gTriAttackTriangleSpriteTemplate, ANIM_TARGET, 2, 16, 0
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_TRI_ATTACK_TRIANGLE, 0x0, 0x6, 0xD, RGB(28,0,28)
@@ -7519,8 +7512,7 @@ gBattleAnimMove_PhrenoAttack::
 	delay 16
 	
 
-	loadspritegfx ANIM_TAG_RED_HEART
-	@loadspritegfx ANIM_TAG_ANGEL
+	@loadspritegfx ANIM_TAG_RED_HEART
 	@createsprite gAngelSpriteTemplate, ANIM_TARGET, 2, 16, -48
 	@playsewithpan SE_M_HEAL_BELL, SOUND_PAN_TARGET
 	@delay 23
@@ -7554,8 +7546,6 @@ gBattleAnimMove_PhrenoAttack::
 	
 	
 	
-	@loadspritegfx ANIM_TAG_THIN_RING
-	@monbg ANIM_ATK_PARTNER
 	createvisualtask AnimTask_InvertScreenColor, 2, 0x1 | 0x4 | 0x8 | 0x10
 	createvisualtask AnimTask_BlendBattleAnimPal, 5, ANIM_TARGET, 0, 0, 16, RGB_WHITE
 	@waitforvisualfinish
@@ -7589,7 +7579,7 @@ gBattleAnimMove_PhrenoAttack::
 	
 	
 gBattleAnimMove_SomaAttack:: 
-	loadspritegfx ANIM_TAG_TRI_ATTACK_TRIANGLE
+	@loadspritegfx ANIM_TAG_TRI_ATTACK_TRIANGLE
 	createsprite gTriAttackTriangleSpriteTemplate, ANIM_TARGET, 2, 16, 0
 	@createsprite gSomaAttackTriangleSpriteTemplate, ANIM_TARGET, 2, 16, 0
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_TRI_ATTACK_TRIANGLE, 0x0, 0x6, 0xD, RGB(0,28,28)
@@ -7603,7 +7593,7 @@ gBattleAnimMove_SomaAttack::
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 2, 0, 16, RGB_BLACK
 	delay 16
 	
-	loadspritegfx ANIM_TAG_POISON_BUBBLE
+	@loadspritegfx ANIM_TAG_POISON_BUBBLE
 	@monbg ANIM_DEF_PARTNER
 	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 2, 0, 10, 1
 	@createvisualtask AnimTask_ShakeMon2, 5, ANIM_DEF_PARTNER, 2, 0, 10, 1
@@ -7626,8 +7616,8 @@ gBattleAnimMove_SomaAttack::
 	@clearmonbg ANIM_DEF_PARTNER
 	@end
 	
-	loadspritegfx ANIM_TAG_HANDS_AND_FEET @black color
-	loadspritegfx ANIM_TAG_SMALL_BUBBLES @circle particles
+	@loadspritegfx ANIM_TAG_HANDS_AND_FEET @black color
+	@loadspritegfx ANIM_TAG_SMALL_BUBBLES @circle particles
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0x2, 0x0, 0x9, 0x7320
@@ -7640,7 +7630,7 @@ gBattleAnimMove_SomaAttack::
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	
-	loadspritegfx ANIM_TAG_GHOSTLY_SPIRIT
+	@loadspritegfx ANIM_TAG_GHOSTLY_SPIRIT
 	@monbg ANIM_DEF_PARTNER
 	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_TARGET
 	createsprite gCurseGhostSpriteTemplate, ANIM_TARGET, 2
@@ -7654,7 +7644,7 @@ gBattleAnimMove_SomaAttack::
 
 
 gBattleAnimMove_Attune::
-	loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_ATK_PARTNER
 	createvisualtask AnimTask_BlendBattleAnimPalExclude, 5, ANIM_ATTACKER, 0, 0, 16, RGB_WHITE
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 2, 0, 16, RGB_WHITE
@@ -7680,7 +7670,7 @@ gBattleAnimMove_Attune::
 	
 
 gBattleAnimMove_MachWave:: 
-	loadspritegfx ANIM_TAG_BLUE_RING
+	@loadspritegfx ANIM_TAG_BLUE_RING
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_BLUE_RING, 0, 6, 6, RGB_CYAN
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_foes ANIM_TARGET
@@ -7699,8 +7689,8 @@ gBattleAnimMove_MachWave::
 	
 
 gBattleAnimMove_Resound:: 
-	loadspritegfx ANIM_TAG_THIN_RING
-	loadspritegfx ANIM_TAG_EXPLOSION
+	@loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_EXPLOSION
 	createvisualtask AnimTask_GetIceBallCounter, 5, 0
 	jumpargeq 0, 4, ResoundSetInverseBg
 ResoundContinue:
@@ -7810,8 +7800,8 @@ gBattleAnimMove_HighNote::
 	
 
 gBattleAnimMove_FairyDust:: 
-	loadspritegfx ANIM_TAG_GOLD_STARS
-	loadspritegfx ANIM_TAG_SPARKLE_2
+	@loadspritegfx ANIM_TAG_GOLD_STARS
+	@loadspritegfx ANIM_TAG_SPARKLE_2
 	@monbg ANIM_DEF_PARTNER
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_TARGET, 2, F_PAL_BG, 3, 0, 10, RGB(31,19,26)
 	loopsewithpan SE_M_HEAL_BELL, SOUND_PAN_ATTACKER, 16, 3
@@ -7842,7 +7832,7 @@ gBattleAnimMove_FairyDust::
 
 
 gBattleAnimMove_ForceOfWill:: 
-	loadspritegfx ANIM_TAG_FOCUS_ENERGY
+	@loadspritegfx ANIM_TAG_FOCUS_ENERGY
 	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
 	call EndureEffect
 	delay 8
@@ -7873,8 +7863,8 @@ gBattleAnimMove_ForceOfWill::
 
 
 gBattleAnimMove_Tempest:: 
-	loadspritegfx ANIM_TAG_GUST
-	loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_GUST
+	@loadspritegfx ANIM_TAG_IMPACT
 	playsewithpan SE_M_GUST, SOUND_PAN_TARGET
 	createsprite gRazorWindTornadoSpriteTemplate, ANIM_TARGET, 2, 32, 0, 16, 16, 0, 7, 40
 	createsprite gRazorWindTornadoSpriteTemplate, ANIM_TARGET, 2, 32, 0, 16, 16, 85, 7, 40
@@ -7904,16 +7894,13 @@ gBattleAnimMove_Tempest::
 
 
 gBattleAnimMove_PhaseShift::
-	@loadspritegfx ANIM_TAG_SPIRAL
 	monbg ANIM_ATK_PARTNER
 	createvisualtask AnimTask_BlendColorCycleExclude, 2, 1, 2, 6, 1, 11, RGB_BLACK
 	setalpha 12, 8
 	loopsewithpan SE_M_MINIMIZE, SOUND_PAN_ATTACKER, 5, 10
-	@createsprite gPsychUpSpiralSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 0, 0
 	createvisualtask AnimTask_SwayMon, 5, 0, 5, 2560, 8, ANIM_ATTACKER
 	createvisualtask AnimTask_SwayMon, 5, 0, 5, 2560, 8, ANIM_TARGET
 	delay 100
-	@playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -5, -5, 10, ANIM_ATTACKER, 1
 	createvisualtask AnimTask_BlendBattleAnimPal, 9, F_PAL_ATTACKER, 2, 10, 0, RGB_YELLOW
 	delay 30
@@ -7924,7 +7911,7 @@ gBattleAnimMove_PhaseShift::
 	
 	
 gBattleAnimMove_SandSpray::
-	loadspritegfx ANIM_TAG_MUD_SAND
+	@loadspritegfx ANIM_TAG_MUD_SAND
 	monbg ANIM_ATK_PARTNER
 	splitbgprio ANIM_ATTACKER
 	setalpha 12, 8
@@ -7965,9 +7952,9 @@ gBattleAnimMove_SandSpray::
 gBattleAnimMove_IceSkate::	
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
-	loadspritegfx ANIM_TAG_ICE_CRYSTALS
-	loadspritegfx ANIM_TAG_SPEED_DUST
-	loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_ICE_CRYSTALS
+	@loadspritegfx ANIM_TAG_SPEED_DUST
+	@loadspritegfx ANIM_TAG_IMPACT
 
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 7, RGB_BLACK
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 9, RGB(12, 26, 31)
@@ -8010,11 +7997,9 @@ gBattleAnimMove_IceSkate::
 	
 	
 gBattleAnimMove_WildFrenzy::
-	loadspritegfx ANIM_TAG_IMPACT
-	loadspritegfx ANIM_TAG_ANGER
-	loadspritegfx ANIM_TAG_BREATH
-	@loadspritegfx ANIM_TAG_BLUE_LIGHT_WALL
-	@loadspritegfx ANIM_TAG_TORN_METAL
+	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_ANGER
+	@loadspritegfx ANIM_TAG_BREATH
 	monbg ANIM_TARGET
 	setalpha 12, 8
 	createsprite gBreathPuffSpriteTemplate, ANIM_ATTACKER, 2
@@ -8053,7 +8038,7 @@ gBattleAnimMove_WildFrenzy::
 
 
 gBattleAnimMove_EchoPulse::
-	loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_THIN_RING
 	@createvisualtask AnimTask_InvertScreenColor, 2, 0x1 | 0x4 | 0x8 | 0x10
 	panse SE_M_SUPERSONIC, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +3, 0
 	@playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
@@ -8074,7 +8059,7 @@ gBattleAnimMove_SaltSpray::
 	monbg ANIM_TARGET
 	splitbgprio ANIM_TARGET
 	setalpha 12, 8
-	loadspritegfx ANIM_TAG_ICE_CRYSTALS
+	@loadspritegfx ANIM_TAG_ICE_CRYSTALS
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ICE_CRYSTALS, 0x0, 0x6, 0xD, RGB(21,15,10)
 	
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 7, RGB_WHITE
@@ -8141,8 +8126,8 @@ SaltCrystalEffectShort:
 
 
 gBattleAnimMove_Windstorm::
-	loadspritegfx ANIM_TAG_AIR_WAVE_2
-	loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_AIR_WAVE_2
+	@loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
 	call SetSkyBg
 	@createvisualtask AnimTask_LoadWindstormBackground, 15, FALSE
@@ -8166,10 +8151,9 @@ gBattleAnimMove_Windstorm::
 	
 
 gBattleAnimMove_Maelstrom::
-	loadspritegfx ANIM_TAG_WATER_IMPACT
-	loadspritegfx ANIM_TAG_SMALL_BUBBLES
-	loadspritegfx ANIM_TAG_AIR_WAVE_2
-	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_WATER_IMPACT
+	@loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	@loadspritegfx ANIM_TAG_AIR_WAVE_2
 	monbg ANIM_DEF_PARTNER
 	fadetobg BG_THUNDER
 	@createvisualtask AnimTask_LoadWindstormBackground, 15, FALSE
@@ -8196,41 +8180,16 @@ gBattleAnimMove_Maelstrom::
 
 gBattleAnimMove_PressureWasher::
 	goto TechnoBlastWater
-
-	@loadspritegfx ANIM_TAG_POISON_BUBBLE
-	
-	monbg ANIM_TARGET
-	createsprite gAcidPoisonBubbleSpriteTemplate, ANIM_TARGET, 2, 20, 0, 40, 1, 0, -20, FALSE
-	playsewithpan SE_M_BUBBLE3, SOUND_PAN_ATTACKER
-	delay 33
-	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 2, 0, 10, 1
-	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_TARGET, 2, 2, 0, 12, RGB(30, 0, 31)
-	playsewithpan SE_M_DIVE, SOUND_PAN_ATTACKER
-	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 10, 15, 55, FALSE
-	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, -20, 15, 55, FALSE
-	delay 3
-	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 5, 15, 55, FALSE
-	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, -10, 15, 55, FALSE
-	delay 3
-	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 30, 15, 55, FALSE
-	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, -30, 15, 55, FALSE
-	delay 3
-	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 2, 15, 55, FALSE
-	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, -5, 15, 55, FALSE
-	delay 3
-	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 20, 15, 55, FALSE
-	waitforvisualfinish
-	clearmonbg ANIM_TARGET
-	end
 	
 	
 gBattleAnimMove_GammaDecay::
 	@goto Move_10000000_VOLT_THUNDERBOLT
-	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @charge
-	loadspritegfx ANIM_TAG_EXPLOSION @explosion
-	loadspritegfx ANIM_TAG_SPARK_2 @sparks
-	loadspritegfx ANIM_TAG_LIGHTNING @lightning
-	loadspritegfx ANIM_TAG_ELECTRIC_ORBS @charge
+	
+	@loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @charge
+	@loadspritegfx ANIM_TAG_EXPLOSION @explosion
+	@loadspritegfx ANIM_TAG_SPARK_2 @sparks
+	@loadspritegfx ANIM_TAG_LIGHTNING @lightning
+	@loadspritegfx ANIM_TAG_ELECTRIC_ORBS @charge
 	playsewithpan SE_M_CHARGE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_ElectricChargingParticles, 2, ANIM_ATTACKER, 60, 2, 12
 	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x15, 0x2c, 0x80, 0x28, 0x0, 0x8003
@@ -8292,9 +8251,9 @@ gBattleAnimMove_GammaDecay::
 
 
 gBattleAnimMove_ScourgeStinger::
-	loadspritegfx ANIM_TAG_GREEN_SPIKE
-	loadspritegfx ANIM_TAG_IMPACT
-	loadspritegfx ANIM_TAG_HORN_HIT_2
+	@loadspritegfx ANIM_TAG_GREEN_SPIKE
+	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_HORN_HIT_2
 
 	monbg ANIM_DEF_PARTNER
 	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
@@ -8383,13 +8342,11 @@ gBattleAnimMove_ScourgeStinger::
 
 
 gBattleAnimMove_ShadowHand::
-	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	@loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	splitbgprio ANIM_TARGET
-	@playsewithpan SE_M_SWAGGER, SOUND_PAN_TARGET
 	fadetobg BG_GHOST
 	delay 20
 	panse SE_M_PERISH_SONG, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
-	@delay 80
 	createsprite gArmThrustHandSpriteTemplate, ANIM_TARGET, 2, 10, -8, 14, 3
 	delay 40
 	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_TARGET, 2, 2, 0, 11, RGB_BLACK
@@ -8404,8 +8361,7 @@ gBattleAnimMove_ShadowHand::
 
 
 gBattleAnimMove_DroneWave::
-	@loadspritegfx ANIM_TAG_THIN_RING
-	loadspritegfx ANIM_TAG_METAL_SOUND_WAVES 
+	@loadspritegfx ANIM_TAG_METAL_SOUND_WAVES 
 	@createvisualtask SoundTask_PlayCryWithEcho, 5, FALSE
 	@panse SE_M_SCREECH, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	@call HyperVoiceEffect
@@ -8447,7 +8403,7 @@ gBattleAnimMove_DroneWave::
 
 
 gBattleAnimMove_Overclock::
-	loadspritegfx ANIM_TAG_SPARK_2
+	@loadspritegfx ANIM_TAG_SPARK_2
 	delay 0
 	@createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_BG | F_PAL_ATTACKER, -31, 1, 5, 5, RGB(31, 31, 22)
 	createvisualtask AnimTask_BlendMonInAndOut, 3, ANIM_ATTACKER, RGB(31, 31, 22), 12, 1, 1
@@ -8500,8 +8456,8 @@ gBattleAnimMove_Overclock::
 	
 
 gBattleAnimMove_MachForce::
-	loadspritegfx ANIM_TAG_IMPACT
-	loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_IMPACT
+	@loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
 	@playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
@@ -8537,7 +8493,7 @@ gBattleAnimMove_MachForce::
 	
 
 gBattleAnimMove_Chitinize::
-	loadspritegfx ANIM_TAG_SPARKLE_2
+	@loadspritegfx ANIM_TAG_SPARKLE_2
 	
 	loopsewithpan SE_SHINY, SOUND_PAN_ATTACKER, 28, 2
 	createvisualtask AnimTask_MetallicShine, 5, 0, 0, RGB_GREEN
@@ -10534,10 +10490,10 @@ gBattleAnimMove_FairyWind::
 	end
 
 gBattleAnimMove_Moonblast::
-	loadspritegfx ANIM_TAG_SMALL_BUBBLES
-	loadspritegfx ANIM_TAG_MOON
-	loadspritegfx ANIM_TAG_GREEN_SPARKLE
-	loadspritegfx ANIM_TAG_BLUE_STAR
+	@loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	@loadspritegfx ANIM_TAG_MOON
+	@loadspritegfx ANIM_TAG_GREEN_SPARKLE
+	@loadspritegfx ANIM_TAG_BLUE_STAR
 	choosetwoturnanim MoonblastSetUp, MoonblastUnleash
 MoonblastSetUp:
 	setalpha 0, 16
@@ -26304,9 +26260,9 @@ BellyDrumRight:
 
 
 gBattleAnimMove_EagleEye::
-	loadspritegfx ANIM_TAG_TEAL_ALERT
-	loadspritegfx ANIM_TAG_OPENING_EYE
-	loadspritegfx ANIM_TAG_ROUND_WHITE_HALO
+	@loadspritegfx ANIM_TAG_TEAL_ALERT
+	@loadspritegfx ANIM_TAG_OPENING_EYE
+	@loadspritegfx ANIM_TAG_ROUND_WHITE_HALO
 	call SetHighSpeedBg
 	monbg ANIM_DEF_PARTNER
 	@playsewithpan SE_M_CONFUSE_RAY, SOUND_PAN_TARGET
@@ -28347,7 +28303,7 @@ gBattleAnimMove_Smaze::
 	end
 	
 gBattleAnimMove_FullMoon::
-	loadspritegfx ANIM_TAG_SUNLIGHT
+	@loadspritegfx ANIM_TAG_SUNLIGHT
 	monbg ANIM_ATK_PARTNER
 	setalpha 13, 3
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG | F_PAL_BATTLERS_2, 1, 0, 6, RGB_BLACK
@@ -28977,11 +28933,11 @@ gBattleAnimMove_Lick::
 	
 
 gBattleAnimMove_KaleidoTongue::
-	loadspritegfx ANIM_TAG_LICK
-	loadspritegfx ANIM_TAG_FOCUS_ENERGY
-	loadspritegfx ANIM_TAG_WHIP_HIT @green color
-	loadspritegfx ANIM_TAG_SWEAT_BEAD @blue color
-	loadspritegfx ANIM_TAG_PAW_PRINT @yellow color
+	@loadspritegfx ANIM_TAG_LICK
+	@loadspritegfx ANIM_TAG_FOCUS_ENERGY
+	@loadspritegfx ANIM_TAG_WHIP_HIT @green color
+	@loadspritegfx ANIM_TAG_SWEAT_BEAD @blue color
+	@loadspritegfx ANIM_TAG_PAW_PRINT @yellow color
 	monbg ANIM_ATTACKER
 	@playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
 	blend_color_cycle selector=F_PAL_ATTACKER, delay=0, num_blends=6, initial_blend_y=0, target_blend_y=11, color=RGB_RED
@@ -29394,7 +29350,6 @@ gBattleAnimMove_ScaryFace::
 
 
 gBattleAnimMove_MindBreak::
-	@loadspritegfx ANIM_TAG_EYE_SPARKLE
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG | F_PAL_ATK_SIDE | F_PAL_DEF_PARTNER, 3, 0, 16, RGB_BLACK
 	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
 	waitforvisualfinish
@@ -29974,7 +29929,7 @@ SweetScentEffect:
 gBattleAnimMove_Lullaby::
 	@goto gBattleAnimMove_SweetScent
 	
-	loadspritegfx ANIM_TAG_MUSIC_NOTES
+	@loadspritegfx ANIM_TAG_MUSIC_NOTES
 	monbg ANIM_DEF_PARTNER
 	createvisualtask AnimTask_MusicNotesRainbowBlend, 2
 	waitforvisualfinish
@@ -35243,8 +35198,8 @@ ResetFromWhiteScreen:
 
 
 gBattleAnimMove_Singularity::
-	loadspritegfx ANIM_TAG_THIN_RING
-	loadspritegfx ANIM_TAG_BLACK_BALL_2 @black
+	@loadspritegfx ANIM_TAG_THIN_RING
+	@loadspritegfx ANIM_TAG_BLACK_BALL_2 @black
 	monbg ANIM_ATK_PARTNER
 	@fadetobg BG_BLACKHOLE_ECLIPSE
 	@waitbgfadeout

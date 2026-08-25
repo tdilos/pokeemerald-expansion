@@ -906,7 +906,7 @@ static u8 GetWonderTradeOT(u8 *name)
 void CreateWonderTradePokemon(void)
 {
     u16 wonderTradeSpecies = PickRandomSpecies();
-    u8 playerMonLevel = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LEVEL);
+    u8 playerMonLevel = GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_LEVEL);
     //u8 chanceToEvolve = Random() % 99;
     u16 newHeldItem = ITEM_NONE;
     //u16 playerMonHeldItem = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HELD_ITEM);
@@ -933,7 +933,7 @@ void CreateWonderTradePokemon(void)
             .otName = _("ERROR"),
             .otGender = FEMALE, // Decided by the personality generated in CreateMon->CreateBoxMon.
             .sheen = 0,
-            .requestedSpecies = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES)
+            .requestedSpecies = GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_SPECIES)
         },
     };
     struct WonderTrade *wonderTrade = &sWonderTrades[0];
@@ -941,7 +941,7 @@ void CreateWonderTradePokemon(void)
     // Creates the base of a Pokémon in the first slot of a nonexistent enemy's party.
     //CreateMon(&gEnemyParty[0], wonderTradeSpecies, playerMonLevel, USE_RANDOM_IVS, FALSE, 0, OT_ID_PRESET, ((Random() << 16) | Random()));
 	//CreateMon(&gEnemyParty[0], wonderTradeSpecies, playerMonLevel, Random32(), OTID_STRUCT_PRESET(&wonderTrade->otId));
-	CreateMon(&gEnemyParty[0], wonderTradeSpecies, playerMonLevel, Random32(), OTID_STRUCT_RANDOM_NO_SHINY);
+	CreateMon(&gParties[B_TRAINER_OPPONENT_A][0], wonderTradeSpecies, playerMonLevel, Random32(), OTID_STRUCT_RANDOM_NO_SHINY);
 
     // 10% chance of having the generated Wonder Traded 'mon carry an item.
     if ((Random() % 99) < 10)
@@ -990,29 +990,29 @@ void CreateWonderTradePokemon(void)
     }
 #endif */
 
-    SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &newHeldItem);
-    SetMonData(&gEnemyParty[0], MON_DATA_HP_IV, &wonderTrade->ivs[0]);
-    SetMonData(&gEnemyParty[0], MON_DATA_ATK_IV, &wonderTrade->ivs[1]);
-    SetMonData(&gEnemyParty[0], MON_DATA_DEF_IV, &wonderTrade->ivs[2]);
-    SetMonData(&gEnemyParty[0], MON_DATA_SPEED_IV, &wonderTrade->ivs[3]);
-    SetMonData(&gEnemyParty[0], MON_DATA_SPATK_IV, &wonderTrade->ivs[4]);
-    SetMonData(&gEnemyParty[0], MON_DATA_SPDEF_IV, &wonderTrade->ivs[5]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_HELD_ITEM, &newHeldItem);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_HP_IV, &wonderTrade->ivs[0]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_ATK_IV, &wonderTrade->ivs[1]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_DEF_IV, &wonderTrade->ivs[2]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPEED_IV, &wonderTrade->ivs[3]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPATK_IV, &wonderTrade->ivs[4]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPDEF_IV, &wonderTrade->ivs[5]);
 /*#ifdef RHH_EXPANSION
     StringCopy(monName, GetSpeciesName(wonderTradeSpecies));
 #else*/
     GetSpeciesName(wonderTradeSpecies);
 //#endif
-    SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, monName);
-    SetMonData(&gEnemyParty[0], MON_DATA_OT_NAME, otName);
-    SetMonData(&gEnemyParty[0], MON_DATA_BEAUTY, &wonderTrade->conditions[1]);
-    SetMonData(&gEnemyParty[0], MON_DATA_CUTE, &wonderTrade->conditions[2]);
-    SetMonData(&gEnemyParty[0], MON_DATA_COOL, &wonderTrade->conditions[0]);
-    SetMonData(&gEnemyParty[0], MON_DATA_SMART, &wonderTrade->conditions[3]);
-    SetMonData(&gEnemyParty[0], MON_DATA_TOUGH, &wonderTrade->conditions[4]);
-    SetMonData(&gEnemyParty[0], MON_DATA_SHEEN, &wonderTrade->sheen);
-    SetMonData(&gEnemyParty[0], MON_DATA_OT_GENDER, &genderOT);
-    SetMonData(&gEnemyParty[0], MON_DATA_MET_LOCATION, &metLocation);
-    CalculateMonStats(&gEnemyParty[0]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_NICKNAME, monName);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_OT_NAME, otName);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_BEAUTY, &wonderTrade->conditions[1]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_CUTE, &wonderTrade->conditions[2]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_COOL, &wonderTrade->conditions[0]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SMART, &wonderTrade->conditions[3]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_TOUGH, &wonderTrade->conditions[4]);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SHEEN, &wonderTrade->sheen);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_OT_GENDER, &genderOT);
+    SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_MET_LOCATION, &metLocation);
+    CalculateMonStats(&gParties[B_TRAINER_OPPONENT_A][0]);
 }
 
 /*#ifdef RHH_EXPANSION

@@ -2517,9 +2517,9 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
         break;
     case EFFECT_SNATCH:
-        if (!HasMoveWithFlag(battlerDef, MoveCanBeSnatched)
-         || DoesPartnerHaveSameMoveEffect(GetPartnerBattler(battlerAtk), battlerDef, move, aiData->partnerMove))
-            ADJUST_SCORE(-10);
+        //if (!HasMoveWithFlag(battlerDef, MoveCanBeSnatched)
+        // || DoesPartnerHaveSameMoveEffect(GetPartnerBattler(battlerAtk), battlerDef, move, aiData->partnerMove))
+        //    ADJUST_SCORE(-10);
         break;
     case EFFECT_POWER_TRICK:
         if (IsTargetingPartner(battlerAtk, battlerDef))

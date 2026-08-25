@@ -1597,7 +1597,7 @@ static void SetHideObstacleFlag(const struct ObjectEventTemplate *template)
 
 static bool8 TemplateIsObstacleAndWithinView(const struct ObjectEventTemplate *template, s16 x, s16 y)
 {
-    if (template->graphicsId == OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG || template->graphicsId == OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG)
+    /*if (template->graphicsId == OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG || template->graphicsId == OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG)
     {
         if (gSaveBlock1Ptr->pos.x < x)
         {
@@ -1614,7 +1614,7 @@ static bool8 TemplateIsObstacleAndWithinView(const struct ObjectEventTemplate *t
             if (gSaveBlock1Ptr->pos.y - (MAP_OFFSET - 1) <= y && gSaveBlock1Ptr->pos.y + (MAP_OFFSET - 1) >= y)
                 return FALSE;
         }
-    }
+    }*/
     return TRUE;
 }
 
@@ -1625,7 +1625,7 @@ static bool8 TemplateIsObstacleAndVisibleFromConnectingMap(const struct ObjectEv
         s32 width = gBackupMapLayout.width - MAP_OFFSET_W - 1;
         s32 height = gBackupMapLayout.height - MAP_OFFSET_H - 1;
 
-        if (template->graphicsId == OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG || template->graphicsId == OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG)
+        /*if (template->graphicsId == OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG || template->graphicsId == OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG)
         {
             if (gSaveBlock1Ptr->pos.x == 0 && template->x <= (MAP_OFFSET + 1))
             {
@@ -1650,7 +1650,7 @@ static bool8 TemplateIsObstacleAndVisibleFromConnectingMap(const struct ObjectEv
                 SetHideObstacleFlag(template);
                 return FALSE;
             }
-        }
+        }*/
     }
     return TRUE;
 }
@@ -9821,8 +9821,8 @@ static void UpdateObjectEventOffscreen(struct ObjectEvent *objectEvent, struct S
     y2 = y + graphicsInfo->height;
 
     s32 minX = -16;
-    if (objectEvent->graphicsId == OBJ_EVENT_GFX_SS_ANNE)
-        minX = -32;
+    //if (objectEvent->graphicsId == OBJ_EVENT_GFX_SS_ANNE)
+    //    minX = -32;
 
     if (x >= DISPLAY_WIDTH + 16 || x2 < minX)
         objectEvent->offScreen = TRUE;

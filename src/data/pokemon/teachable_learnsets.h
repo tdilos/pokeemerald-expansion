@@ -64532,7 +64532,6 @@ static const u16 sOmendenzTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_FAMILY_MILCERY
 static const u16 sCremperaTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_CALM_MIND,
@@ -64574,9 +64573,7 @@ static const u16 sCremperaTeachableLearnset[] = {
     MOVE_WONDER_ROOM,
     MOVE_UNAVAILABLE,
 };
-#endif //P_FAMILY_MILCERY
 
-#if P_FAMILY_TOXEL
 static const u16 sToxibrateTeachableLearnset[] = {
     MOVE_AFTERSHOCK,
     MOVE_ATTRACT,
@@ -64629,7 +64626,7 @@ static const u16 sToxibrateTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_UNAVAILABLE,
 };
-#endif //P_FAMILY_TOXEL
+
 static const u16 sManipulobeTeachableLearnset[] = {
     MOVE_BLOCK,
     MOVE_BRICK_BREAK,

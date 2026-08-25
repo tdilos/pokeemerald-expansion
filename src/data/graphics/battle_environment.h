@@ -2,33 +2,33 @@ const u32 gBattleEnvironmentTiles_TallGrass[] = INCGFX_U32("graphics/battle_envi
 const u16 gBattleEnvironmentPalette_TallGrass[] = INCGFX_U16("graphics/battle_environment/tall_grass/palette.pal", ".gbapal");
 const u32 gBattleEnvironmentTilemap_TallGrass[] = INCGFX_U32("graphics/battle_environment/tall_grass/map.bin", ".smolTM");
 
-const u32 gBattleEnvironmentTiles_BurgundyGrass[] = INCBIN_U32("graphics/battle_environment/burgundy_grass/tiles.png", ".4bpp.smol");
-const u16 gBattleEnvironmentPalette_BurgundyGrass[] = INCBIN_U16("graphics/battle_environment/burgundy_grass/palette.pal", ".gbapal");
-const u32 gBattleEnvironmentTilemap_BurgundyGrass[] = INCBIN_U32("graphics/battle_environment/burgundy_grass/map.bin", ".smolTM");
+const u32 gBattleEnvironmentTiles_BurgundyGrass[] = INCGFX_U32("graphics/battle_environment/burgundy_grass/tiles.png", ".4bpp.smol");
+const u16 gBattleEnvironmentPalette_BurgundyGrass[] = INCGFX_U16("graphics/battle_environment/burgundy_grass/palette.pal", ".gbapal");
+const u32 gBattleEnvironmentTilemap_BurgundyGrass[] = INCGFX_U32("graphics/battle_environment/burgundy_grass/map.bin", ".smolTM");
 
-const u32 gBattleEnvironmentTiles_HaewenGrass[] = INCBIN_U32("graphics/battle_environment/haewen_grass/tiles.png", ".4bpp.smol");
-const u16 gBattleEnvironmentPalette_HaewenGrass[] = INCBIN_U16("graphics/battle_environment/haewen_grass/palette.pal", ".gbapal");
-const u32 gBattleEnvironmentTilemap_HaewenGrass[] = INCBIN_U32("graphics/battle_environment/haewen_grass/map.bin", ".smolTM");
+const u32 gBattleEnvironmentTiles_HaewenGrass[] = INCGFX_U32("graphics/battle_environment/haewen_grass/tiles.png", ".4bpp.smol");
+const u16 gBattleEnvironmentPalette_HaewenGrass[] = INCGFX_U16("graphics/battle_environment/haewen_grass/palette.pal", ".gbapal");
+const u32 gBattleEnvironmentTilemap_HaewenGrass[] = INCGFX_U32("graphics/battle_environment/haewen_grass/map.bin", ".smolTM");
 
-const u16 gBattleEnvironmentPalette_PlainRed[] = INCBIN_U16("graphics/battle_environment/plain_red/palette.pal", ".gbapal");
+const u16 gBattleEnvironmentPalette_PlainRed[] = INCGFX_U16("graphics/battle_environment/plain_red/palette.pal", ".gbapal");
 
-const u32 gBattleEnvironmentTiles_RedGrass[] = INCBIN_U32("graphics/battle_environment/red_grass/tiles.png", ".4bpp.smol");
-const u16 gBattleEnvironmentPalette_RedGrass[] = INCBIN_U16("graphics/battle_environment/red_grass/palette.pal", ".gbapal");
-const u32 gBattleEnvironmentTilemap_RedGrass[] = INCBIN_U32("graphics/battle_environment/red_grass/map.bin", ".smolTM");
+const u32 gBattleEnvironmentTiles_RedGrass[] = INCGFX_U32("graphics/battle_environment/red_grass/tiles.png", ".4bpp.smol");
+const u16 gBattleEnvironmentPalette_RedGrass[] = INCGFX_U16("graphics/battle_environment/red_grass/palette.pal", ".gbapal");
+const u32 gBattleEnvironmentTilemap_RedGrass[] = INCGFX_U32("graphics/battle_environment/red_grass/map.bin", ".smolTM");
 
-const u32 gBattleEnvironmentTiles_Sewer[] = INCBIN_U32("graphics/battle_environment/sewer/tiles.png", ".4bpp.smol");
-const u16 gBattleEnvironmentPalette_Sewer[] = INCBIN_U16("graphics/battle_environment/sewer/palette.pal", ".gbapal");
-const u32 gBattleEnvironmentTilemap_Sewer[] = INCBIN_U32("graphics/battle_environment/sewer/map.bin", ".smolTM");
+const u32 gBattleEnvironmentTiles_Sewer[] = INCGFX_U32("graphics/battle_environment/sewer/tiles.png", ".4bpp.smol");
+const u16 gBattleEnvironmentPalette_Sewer[] = INCGFX_U16("graphics/battle_environment/sewer/palette.pal", ".gbapal");
+const u32 gBattleEnvironmentTilemap_Sewer[] = INCGFX_U32("graphics/battle_environment/sewer/map.bin", ".smolTM");
 
-const u16 gBattleEnvironmentPalette_StadiumLisia[] = INCBIN_U16("graphics/battle_environment/stadium/palette8.pal", ".gbapal");
-const u16 gBattleEnvironmentPalette_StadiumIan[] = INCBIN_U16("graphics/battle_environment/stadium/palette9.pal", ".gbapal");
-const u16 gBattleEnvironmentPalette_StadiumSidney2[] = INCBIN_U16("graphics/battle_environment/stadium/palette10.pal", ".gbapal");
-const u16 gBattleEnvironmentPalette_StadiumPetra[] = INCBIN_U16("graphics/battle_environment/stadium/palette11.pal", ".gbapal");
-const u16 gBattleEnvironmentPalette_StadiumNorman[] = INCBIN_U16("graphics/battle_environment/stadium/palette12.pal", ".gbapal");
+const u16 gBattleEnvironmentPalette_StadiumLisia[] = INCGFX_U16("graphics/battle_environment/stadium/palette8.pal", ".gbapal");
+const u16 gBattleEnvironmentPalette_StadiumIan[] = INCGFX_U16("graphics/battle_environment/stadium/palette9.pal", ".gbapal");
+const u16 gBattleEnvironmentPalette_StadiumSidney2[] = INCGFX_U16("graphics/battle_environment/stadium/palette10.pal", ".gbapal");
+const u16 gBattleEnvironmentPalette_StadiumPetra[] = INCGFX_U16("graphics/battle_environment/stadium/palette11.pal", ".gbapal");
+const u16 gBattleEnvironmentPalette_StadiumNorman[] = INCGFX_U16("graphics/battle_environment/stadium/palette12.pal", ".gbapal");
 
-const u32 gBattleEnvironmentTiles_WisteriaGrass[] = INCBIN_U32("graphics/battle_environment/wisteria_grass/tiles.png", ".4bpp.smol");
-const u16 gBattleEnvironmentPalette_WisteriaGrass[] = INCBIN_U16("graphics/battle_environment/wisteria_grass/palette.pal", ".gbapal");
-const u32 gBattleEnvironmentTilemap_WisteriaGrass[] = INCBIN_U32("graphics/battle_environment/wisteria_grass/map.bin", ".smolTM");
+const u32 gBattleEnvironmentTiles_WisteriaGrass[] = INCGFX_U32("graphics/battle_environment/wisteria_grass/tiles.png", ".4bpp.smol");
+const u16 gBattleEnvironmentPalette_WisteriaGrass[] = INCGFX_U16("graphics/battle_environment/wisteria_grass/palette.pal", ".gbapal");
+const u32 gBattleEnvironmentTilemap_WisteriaGrass[] = INCGFX_U32("graphics/battle_environment/wisteria_grass/map.bin", ".smolTM");
 
 const u32 gBattleEnvironmentTiles_LongGrass[] = INCGFX_U32("graphics/battle_environment/long_grass/tiles.png", ".4bpp.smol");
 const u16 gBattleEnvironmentPalette_LongGrass[] = INCGFX_U16("graphics/battle_environment/long_grass/palette.pal", ".gbapal");
@@ -88,20 +88,20 @@ const u32 gBattleEnvironmentTilemap_Rayquaza[] = INCGFX_U32("graphics/battle_env
 const u32 gBattleEnvironmentAnimTiles_TallGrass[] = INCGFX_U32("graphics/battle_environment/tall_grass/anim_tiles.png", ".4bpp.smol");
 const u32 gBattleEnvironmentAnimTilemap_TallGrass[] = INCGFX_U32("graphics/battle_environment/tall_grass/anim_map.bin", ".smolTM");
 
-const u32 gBattleEnvironmentAnimTiles_RedGrass[] = INCBIN_U32("graphics/battle_environment/red_grass/anim_tiles.png", ".4bpp.smol");
-const u32 gBattleEnvironmentAnimTilemap_RedGrass[] = INCBIN_U32("graphics/battle_environment/red_grass/anim_map.bin", ".smolTM");
+const u32 gBattleEnvironmentAnimTiles_RedGrass[] = INCGFX_U32("graphics/battle_environment/red_grass/anim_tiles.png", ".4bpp.smol");
+const u32 gBattleEnvironmentAnimTilemap_RedGrass[] = INCGFX_U32("graphics/battle_environment/red_grass/anim_map.bin", ".smolTM");
 
-const u32 gBattleEnvironmentAnimTiles_HaewenGrass[] = INCBIN_U32("graphics/battle_environment/haewen_grass/anim_tiles.png", ".4bpp.smol");
-const u32 gBattleEnvironmentAnimTilemap_HaewenGrass[] = INCBIN_U32("graphics/battle_environment/haewen_grass/anim_map.bin", ".smolTM");
+const u32 gBattleEnvironmentAnimTiles_HaewenGrass[] = INCGFX_U32("graphics/battle_environment/haewen_grass/anim_tiles.png", ".4bpp.smol");
+const u32 gBattleEnvironmentAnimTilemap_HaewenGrass[] = INCGFX_U32("graphics/battle_environment/haewen_grass/anim_map.bin", ".smolTM");
 
-const u32 gBattleEnvironmentAnimTiles_WisteriaGrass[] = INCBIN_U32("graphics/battle_environment/wisteria_grass/anim_tiles.png", ".4bpp.smol");
-const u32 gBattleEnvironmentAnimTilemap_WisteriaGrass[] = INCBIN_U32("graphics/battle_environment/wisteria_grass/anim_map.bin", ".smolTM");
+const u32 gBattleEnvironmentAnimTiles_WisteriaGrass[] = INCGFX_U32("graphics/battle_environment/wisteria_grass/anim_tiles.png", ".4bpp.smol");
+const u32 gBattleEnvironmentAnimTilemap_WisteriaGrass[] = INCGFX_U32("graphics/battle_environment/wisteria_grass/anim_map.bin", ".smolTM");
 
-const u32 gBattleEnvironmentAnimTiles_BurgundyGrass[] = INCBIN_U32("graphics/battle_environment/burgundy_grass/anim_tiles.png", ".4bpp.smol");
-const u32 gBattleEnvironmentAnimTilemap_BurgundyGrass[] = INCBIN_U32("graphics/battle_environment/burgundy_grass/anim_map.bin", ".smolTM");
+const u32 gBattleEnvironmentAnimTiles_BurgundyGrass[] = INCGFX_U32("graphics/battle_environment/burgundy_grass/anim_tiles.png", ".4bpp.smol");
+const u32 gBattleEnvironmentAnimTilemap_BurgundyGrass[] = INCGFX_U32("graphics/battle_environment/burgundy_grass/anim_map.bin", ".smolTM");
 
-const u32 gBattleEnvironmentAnimTiles_Sewer[] = INCBIN_U32("graphics/battle_environment/sewer/anim_tiles.png", ".4bpp.smol");
-const u32 gBattleEnvironmentAnimTilemap_Sewer[] = INCBIN_U32("graphics/battle_environment/sewer/anim_map.bin", ".smolTM");
+const u32 gBattleEnvironmentAnimTiles_Sewer[] = INCGFX_U32("graphics/battle_environment/sewer/anim_tiles.png", ".4bpp.smol");
+const u32 gBattleEnvironmentAnimTilemap_Sewer[] = INCGFX_U32("graphics/battle_environment/sewer/anim_map.bin", ".smolTM");
 
 const u32 gBattleEnvironmentAnimTiles_LongGrass[] = INCGFX_U32("graphics/battle_environment/long_grass/anim_tiles.png", ".4bpp.smol");
 const u32 gBattleEnvironmentAnimTilemap_LongGrass[] = INCGFX_U32("graphics/battle_environment/long_grass/anim_map.bin", ".smolTM");
