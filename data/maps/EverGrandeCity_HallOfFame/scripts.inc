@@ -50,7 +50,7 @@ EverGrandeCity_HallOfFame_EventScript_EnterHallOfFame::
 	setrespawn HEAL_LOCATION_UMBER_TOWN_MALE_MCHOUSE_2F
 	fadescreenspeed FADE_TO_BLACK, 24
 	special GameClear
-	waitstate
+	@waitstate
 	releaseall
 	end
 

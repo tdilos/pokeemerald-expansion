@@ -339,7 +339,7 @@ XanthosCity_XanthosUnderground_EventScript_Hairdresser::
 	goto_if_eq VAR_RESULT, NO, XanthosCity_XanthosUnderground_EventScript_DeclineGrooming
 	msgbox XanthosCity_XanthosUnderground_Text_GroomWhichOne, MSGBOX_DEFAULT
 	special ChoosePartyMon
-	waitstate
+	@waitstate
 	lock
 	faceplayer
 	goto_if_ge VAR_0x8004, PARTY_SIZE, XanthosCity_XanthosUnderground_EventScript_DeclineGrooming

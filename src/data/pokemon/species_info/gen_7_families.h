@@ -551,7 +551,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .eggMoveLearnset = sPopplioEggMoveLearnset,
         //.evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_BRIONNE}),
         .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_BRIONNE, CONDITIONS({IF_NOT_REGION, REGION_ISSHO})}
-                                ,{EVO_LEVEL, 17, SPECIES_BRIONNE_ISSHOAN, CONDITIONS({IF_REGION, REGION_ISSHO})}
+                                ,{EVO_LEVEL, 17, SPECIES_BRIONNE_ISSHO, CONDITIONS({IF_REGION, REGION_ISSHO})}
 								),
     },
 

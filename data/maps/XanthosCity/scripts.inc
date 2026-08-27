@@ -197,7 +197,7 @@ XanthosCity_EventScript_PostgameSailor::
 	msgbox XanthosCity_Text_Ahoy, MSGBOX_DEFAULT
 	@closemessage
 	special ScriptMenu_CreateLilycoveSSTidalMultichoice
-	waitstate
+	@waitstate
 	special GetLilycoveSSTidalSelection
 	switch VAR_RESULT
 	case 0, XanthosCity_EventScript_ExitFirstTimeTicketSailSelect

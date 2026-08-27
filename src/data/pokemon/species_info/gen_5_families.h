@@ -358,7 +358,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggMoveLearnset = sTepigEggMoveLearnset,
         //.evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE}),
         .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE, CONDITIONS({IF_NOT_REGION, REGION_ISSHO})}
-                                ,{EVO_LEVEL, 17, SPECIES_PIGNITE_ISSHOAN, CONDITIONS({IF_REGION, REGION_ISSHO})}),
+                                ,{EVO_LEVEL, 17, SPECIES_PIGNITE_ISSHO, CONDITIONS({IF_REGION, REGION_ISSHO})}),
     },
 
     [SPECIES_PIGNITE] =

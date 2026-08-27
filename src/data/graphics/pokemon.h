@@ -28066,30 +28066,35 @@ extern const u8 gMonFootprint_Mimektiplex[];
     const u32 gMonBackPic_Manipulobe[] = INCGFX_U32("graphics/pokemon/manipulobe/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Manipulobe[] = INCGFX_U16("graphics/pokemon/manipulobe/shiny.pal", ".gbapal");
     const u8 gMonIcon_Manipulobe[] = INCGFX_U8("graphics/pokemon/manipulobe/icon.png", ".4bpp");
+    const u8 gMonFootprint_Manipulobe[] = INCGFX_U8("graphics/pokemon/manipulobe/footprint.png", ".1bpp");
 	
     const u32 gMonFrontPic_Somnivore[] = INCGFX_U32("graphics/pokemon/somnivore/front.png", ".4bpp.smol");
     const u16 gMonPalette_Somnivore[] = INCGFX_U16("graphics/pokemon/somnivore/normal.pal", ".gbapal");
     const u32 gMonBackPic_Somnivore[] = INCGFX_U32("graphics/pokemon/somnivore/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Somnivore[] = INCGFX_U16("graphics/pokemon/somnivore/shiny.pal", ".gbapal");
     const u8 gMonIcon_Somnivore[] = INCGFX_U8("graphics/pokemon/somnivore/icon.png", ".4bpp");
+    const u8 gMonFootprint_Somnivore[] = INCGFX_U8("graphics/pokemon/somnivore/footprint.png", ".1bpp");
 	
     const u32 gMonFrontPic_Terophage[] = INCGFX_U32("graphics/pokemon/terophage/front.png", ".4bpp.smol");
     const u16 gMonPalette_Terophage[] = INCGFX_U16("graphics/pokemon/terophage/normal.pal", ".gbapal");
     const u32 gMonBackPic_Terophage[] = INCGFX_U32("graphics/pokemon/terophage/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Terophage[] = INCGFX_U16("graphics/pokemon/terophage/shiny.pal", ".gbapal");
     const u8 gMonIcon_Terophage[] = INCGFX_U8("graphics/pokemon/terophage/icon.png", ".4bpp");
+    const u8 gMonFootprint_Terophage[] = INCGFX_U8("graphics/pokemon/terophage/footprint.png", ".1bpp");
 	
     const u32 gMonFrontPic_Reizurge[] = INCGFX_U32("graphics/pokemon/reizurge/front.png", ".4bpp.smol");
     const u16 gMonPalette_Reizurge[] = INCGFX_U16("graphics/pokemon/reizurge/normal.pal", ".gbapal");
     const u32 gMonBackPic_Reizurge[] = INCGFX_U32("graphics/pokemon/reizurge/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Reizurge[] = INCGFX_U16("graphics/pokemon/reizurge/shiny.pal", ".gbapal");
     const u8 gMonIcon_Reizurge[] = INCGFX_U8("graphics/pokemon/reizurge/icon.png", ".4bpp");
+    const u8 gMonFootprint_Reizurge[] = INCGFX_U8("graphics/pokemon/reizurge/footprint.png", ".1bpp");
 	
     const u32 gMonFrontPic_Thurslush[] = INCGFX_U32("graphics/pokemon/thurslush/front.png", ".4bpp.smol");
     const u16 gMonPalette_Thurslush[] = INCGFX_U16("graphics/pokemon/thurslush/normal.pal", ".gbapal");
     const u32 gMonBackPic_Thurslush[] = INCGFX_U32("graphics/pokemon/thurslush/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Thurslush[] = INCGFX_U16("graphics/pokemon/thurslush/shiny.pal", ".gbapal");
     const u8 gMonIcon_Thurslush[] = INCGFX_U8("graphics/pokemon/thurslush/icon.png", ".4bpp");
+    const u8 gMonFootprint_Thurslush[] = INCGFX_U8("graphics/pokemon/thurslush/footprint.png", ".1bpp");
 
     const u32 gMonFrontPic_Mimektiplex[] = INCGFX_U32("graphics/pokemon/mimektiplex/front.png", ".4bpp.smol");
     const u16 gMonPalette_Mimektiplex[] = INCGFX_U16("graphics/pokemon/mimektiplex/normal.pal", ".gbapal");

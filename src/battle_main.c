@@ -2169,12 +2169,13 @@ u16 GetKarma()
 	u16 berriesPlanted = VarGet(VAR_BERRY_PLANT_COUNT);
 	u16 eggsHatched = VarGet(VAR_EGG_HATCH_COUNT); 
 	u16 i;
+	u8 count = CalculatePlayerPartyCount();
 	
-	for (i = 0; i < PARTY_SIZE; i++) // currently only averages party mons
+	for (i = 0; i < count; i++) // currently only averages party mons
     {
         averageFriendship += GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_FRIENDSHIP);
     }
-	averageFriendship /= PARTY_SIZE;
+	averageFriendship /= count;
 	
 	//return (averageFriendship + berriesPlanted + eggsHatched + 3 * questsCompleted);
 	return (averageFriendship + 4 * berriesPlanted + 4 * eggsHatched + 7 * questsCompleted);
@@ -2201,9 +2202,39 @@ u16 GetBattleCountForKarmaBattle()
 	return (800 / karma);
 }
 
+/*u32 GetDynamicOvermindTrainerLevel(void)
+{
+	u8 i;
+	u8 count = CalculatePlayerPartyCount();
+	u16 dynamicLevel = 0;
+	u16 exponent = VarGet(VAR_OVERMIND_STATE);
+	uq4_12_t scale = UQ_4_12(1.0);
+	uq4_12_t factor = UQ_4_12(1.01);
+	
+	// Difficulty setting
+    if (gSaveBlock2Ptr->optionsDifficulty == 1)
+		factor = UQ_4_12(1.02);
+    if (gSaveBlock2Ptr->optionsDifficulty == 2)
+		factor = UQ_4_12(1.03);
+	
+	// Find max level in players team
+	for(i = 0; i < count; i++)
+    {
+        if(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_LEVEL) > dynamicLevel)
+			dynamicLevel = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_LEVEL);
+	}
+	
+	// Exponential scaling
+	while (exponent-- > 0)
+	{
+		scale = uq4_12_multiply(scale, factor);
+	}
+	return UQ_4_12_TO_INT((dynamicLevel * scale) + UQ_4_12_ROUND);
+}*/
+
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 halfTeam, u32 battleTypeFlags)
 {
-	u16 karmaLevel;
+	u16 dynamicLevel;
     u32 personalityValue;
 	s32 i;
     u8 monsCount;
@@ -2261,9 +2292,17 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 			// Dynamic levels for karma boss
 			if (trainer->trainerClass == TRAINER_CLASS_UNKNOWN)
 			{
-				karmaLevel = GetLevelFromKarma(GetKarma()); //66
-				CreateMon(&party[i], partyData[monIndex].species, karmaLevel, personalityValue, otId);
+				dynamicLevel = GetLevelFromKarma(GetKarma()); //66
+				CreateMon(&party[i], partyData[monIndex].species, dynamicLevel, personalityValue, otId);
 			}
+			// Dynamic levels for Overmind trainers
+			/*else if (trainer->trainerClass == TRAINER_CLASS_ARCHON || trainer->trainerClass == TRAINER_CLASS_SYNDERLING)
+			{
+				dynamicLevel = GetDynamicOvermindTrainerLevel();
+				if (dynamicLevel < partyData[monIndex].lvl) // Minimum enemy level
+					dynamicLevel = partyData[monIndex].lvl;
+				CreateMon(&party[i], partyData[monIndex].species, dynamicLevel, personalityValue, otId);
+			}*/
 			else
 			{
 				CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, personalityValue, otId);

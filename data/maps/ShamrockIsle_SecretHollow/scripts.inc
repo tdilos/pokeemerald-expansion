@@ -12,7 +12,7 @@ ShamrockIsle_SecretHollow_EventScript_Shaymin::
 	seteventmon SPECIES_SHAYMIN, 60
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_SHAYMIN
 	setflag FLAG_BATTLED_SHAYMIN

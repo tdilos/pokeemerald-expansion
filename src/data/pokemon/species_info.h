@@ -218,7 +218,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_CircledQuestionMark,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
         .backPicSize = MON_COORDS_SIZE(64, 64),
@@ -250,8 +250,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
     */
 	
 	// Tourmaline stuff
-#if P_TOURMALINE_MONS
-	[SPECIES_QUILLADIN_ISSHOAN] =
+#if P_TOURMALINE_POKEMON
+	[SPECIES_QUILLADIN_ISSHO] =
     {
         .baseHP        = 61,
         .baseAttack    = 78,
@@ -259,7 +259,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 57,
         .baseSpAttack  = 56,
         .baseSpDefense = 58,
-        .types = { TYPE_GRASS, TYPE_GRASS},
+        .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = 142,
         .evYield_Defense   = 2,
@@ -307,7 +307,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
         SHADOW(2, 4, SHADOW_SIZE_M)
-        FOOTPRINT(QuilladinIssho)
+        FOOTPRINT(Quilladin)
         OVERWORLD(
             sPicTable_Quilladin,
             SIZE_32x32,
@@ -321,11 +321,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sQuilladinIsshoLevelUpLearnset,
         .teachableLearnset = sQuilladinIsshoTeachableLearnset,
         .formSpeciesIdTable = sQuilladinFormSpeciesIdTable,
-        .formChangeTable = sQuilladinFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_CHESNAUGHT_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_CHESNAUGHT_ISSHO}),
     },
 
-    [SPECIES_CHESNAUGHT_ISSHOAN] =
+    [SPECIES_CHESNAUGHT_ISSHO] =
     {
         .baseHP        = 88,
         .baseAttack    = 107,
@@ -333,7 +332,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 64,
         .baseSpAttack  = 74,
         .baseSpDefense = 75,
-        .types = { TYPE_GRASS, TYPE_STEEL},
+        .types = MON_TYPES(TYPE_GRASS, TYPE_STEEL),
         .catchRate = 45,
         .expYield = 239,
         .evYield_Defense   = 3,
@@ -379,7 +378,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(4, 10, SHADOW_SIZE_L)
-        FOOTPRINT(ChesnaughtIssho)
+        FOOTPRINT(Chesnaught)
         OVERWORLD(
             sPicTable_Chesnaught,
             SIZE_32x32,
@@ -396,7 +395,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formChangeTable = sChesnaughtFormChangeTable,
     },
 	
-	[SPECIES_PIGNITE_ISSHOAN] =
+	[SPECIES_PIGNITE_ISSHO] =
     {
         .baseHP        = 90,
         .baseAttack    = 93,
@@ -404,7 +403,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 55,
         .baseSpAttack  = 70,
         .baseSpDefense = 55,
-        .types = { TYPE_FIRE, TYPE_FAIRY},
+        .types = MON_TYPES(TYPE_FIRE, TYPE_FAIRY),
         .catchRate = 45,
         .expYield = 146,
         .evYield_Attack    = 2,
@@ -464,11 +463,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sPigniteIsshoLevelUpLearnset,
         .teachableLearnset = sPigniteIsshoTeachableLearnset,
         .formSpeciesIdTable = sPigniteFormSpeciesIdTable,
-        .formChangeTable = sPigniteFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_EMBOAR_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_EMBOAR_ISSHO}),
     },
 
-    [SPECIES_EMBOAR_ISSHOAN] =
+    [SPECIES_EMBOAR_ISSHO] =
     {
         .baseHP        = 110,
         .baseAttack    = 123,
@@ -476,7 +474,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 65,
         .baseSpAttack  = 100,
         .baseSpDefense = 65,
-        .types = { TYPE_FIRE, TYPE_FAIRY},
+        .types = MON_TYPES(TYPE_FIRE, TYPE_FAIRY),
         .catchRate = 45,
         .expYield = 238,
         .evYield_Attack    = 3,
@@ -542,7 +540,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 12, SHADOW_SIZE_L)
-        FOOTPRINT(EmboarIssho)
+        FOOTPRINT(Emboar)
         OVERWORLD(
             sPicTable_Emboar,
             SIZE_32x32,
@@ -559,7 +557,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formChangeTable = sEmboarFormChangeTable,
     },
 	
-	[SPECIES_BRIONNE_ISSHOAN] =
+	[SPECIES_BRIONNE_ISSHO] =
     {
         .baseHP        = 60,
         .baseAttack    = 69,
@@ -567,7 +565,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 50,
         .baseSpAttack  = 91,
         .baseSpDefense = 81,
-        .types = { TYPE_WATER, TYPE_WATER},
+        .types = MON_TYPES(TYPE_WATER, TYPE_WATER),
         .catchRate = 45,
         .expYield = 147,
         .evYield_SpAttack  = 2,
@@ -623,11 +621,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sBrionneIsshoLevelUpLearnset,
         .teachableLearnset = sBrionneIsshoTeachableLearnset,
         .formSpeciesIdTable = sBrionneFormSpeciesIdTable,
-        .formChangeTable = sBrionneFormChangeTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_PRIMARINA_ISSHO}),
     },
 
-    [SPECIES_PRIMARINA_ISSHOAN] =
+    [SPECIES_PRIMARINA_ISSHO] =
     {
         .baseHP        = 80,
         .baseAttack    = 74,
@@ -635,7 +632,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 126,
         .baseSpDefense = 116,
-        .types = { TYPE_WATER, TYPE_ECHO},
+        .types = MON_TYPES(TYPE_WATER, TYPE_ECHO),
         .catchRate = 45,
         .expYield = 239,
         .evYield_SpAttack  = 3,
@@ -692,10 +689,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sPrimarinaIsshoLevelUpLearnset,
         .teachableLearnset = sPrimarinaIsshoTeachableLearnset,
         .formSpeciesIdTable = sPrimarinaFormSpeciesIdTable,
-        .formChangeTable = sPrimarinaFormChangeTable,
     },
 	
-	[SPECIES_WOOBAT_ISSHOAN] =
+	[SPECIES_WOOBAT_ISSHO] =
     {
         .baseAttack    = 45,
         .baseDefense   = 43,
@@ -707,7 +703,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .baseHP        = 55,
         #endif
-        .types = { TYPE_ECHO, TYPE_FLYING},
+        .types = MON_TYPES(TYPE_ECHO, TYPE_FLYING),
         .catchRate = 190,
         .expYield = 65,
         .evYield_Speed     = 1,
@@ -783,13 +779,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .isIsshoanForm = TRUE,
         .levelUpLearnset = sWoobatIsshoLevelUpLearnset,
         .teachableLearnset = sWoobatIsshoTeachableLearnset,
-        .eggMoveLearnset = sWoobatIsshoEggMoveLearnset,
+        .eggMoveLearnset = sWoobatEggMoveLearnset,
         .formSpeciesIdTable = sWoobatFormSpeciesIdTable,
-        .formChangeTable = sWoobatFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_SWOOBAT_ISSHOAN, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_SWOOBAT_ISSHO, CONDITIONS({IF_MIN_FRIENDSHIP, FRIENDSHIP_EVO_THRESHOLD})}),
     },
 
-    [SPECIES_SWOOBAT_ISSHOAN] =
+    [SPECIES_SWOOBAT_ISSHO] =
     {
         .baseHP        = 67,
         .baseAttack    = 57,
@@ -797,7 +792,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 114,
         .baseSpAttack  = 77,
         .baseSpDefense = 55,
-        .types = { TYPE_ECHO, TYPE_FLYING},
+        .types = MON_TYPES(TYPE_ECHO, TYPE_FLYING),
         .catchRate = 45,
         .expYield = 149,
         .evYield_Speed     = 2,
@@ -847,7 +842,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 17, SHADOW_SIZE_M)
-        FOOTPRINT(SwoobatIssho)
+        FOOTPRINT(Swoobat)
         OVERWORLD(
             sPicTable_Swoobat,
             SIZE_32x32,
@@ -861,10 +856,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sSwoobatIsshoLevelUpLearnset,
         .teachableLearnset = sSwoobatIsshoTeachableLearnset,
         .formSpeciesIdTable = sSwoobatFormSpeciesIdTable,
-        .formChangeTable = sSwoobatFormChangeTable,
     },
 
-	[SPECIES_WOOLOO_ISSHOAN] =
+	[SPECIES_WOOLOO_ISSHO] =
     {
         .baseHP        = 42,
         .baseAttack    = 40,
@@ -872,7 +866,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 43,
         .baseSpAttack  = 40,
         .baseSpDefense = 40,
-        .types = { TYPE_NORMAL, TYPE_NORMAL},
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_NORMAL),
         .catchRate = 255,
         .expYield = 122,
         .evYield_Defense   = 1,
@@ -927,13 +921,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .isIsshoanForm = TRUE,
         .levelUpLearnset = sWoolooIsshoLevelUpLearnset,
         .teachableLearnset = sWoolooIsshoTeachableLearnset,
-        .eggMoveLearnset = sWoolooIsshoEggMoveLearnset,
+        .eggMoveLearnset = sWoolooEggMoveLearnset,
         .formSpeciesIdTable = sWoolooFormSpeciesIdTable,
-        .formChangeTable = sWoolooFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_DUBWOOL_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_DUBWOOL_ISSHO}),
     },
 
-    [SPECIES_DUBWOOL_ISSHOAN] =
+    [SPECIES_DUBWOOL_ISSHO] =
     {
         .baseHP        = 72,
         .baseAttack    = 80,
@@ -941,7 +934,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 78,
         .baseSpAttack  = 60,
         .baseSpDefense = 80,
-        .types = { TYPE_NORMAL, TYPE_STEEL},
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_STEEL),
         .catchRate = 127,
         .expYield = 172,
         .evYield_Defense   = 2,
@@ -997,10 +990,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sDubwoolIsshoLevelUpLearnset,
         .teachableLearnset = sDubwoolIsshoTeachableLearnset,
         .formSpeciesIdTable = sDubwoolFormSpeciesIdTable,
-        .formChangeTable = sDubwoolFormChangeTable,
     },
 	
-	[SPECIES_SILICOBRA_ISSHOAN] =
+	[SPECIES_SILICOBRA_ISSHO] =
     {
         .baseHP        = 52,
         .baseAttack    = 35,
@@ -1008,7 +1000,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 46,
         .baseSpAttack  = 57,
         .baseSpDefense = 50,
-        .types = { TYPE_GROUND, TYPE_ECHO},
+        .types = MON_TYPES(TYPE_GROUND, TYPE_ECHO),
         .catchRate = 255,
         .expYield = 63,
         .evYield_Defense   = 1,
@@ -1062,13 +1054,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .isIsshoanForm = TRUE,
         .levelUpLearnset = sSilicobraIsshoLevelUpLearnset,
         .teachableLearnset = sSilicobraIsshoTeachableLearnset,
-        .eggMoveLearnset = sSilicobraIsshoEggMoveLearnset,
+        .eggMoveLearnset = sSilicobraEggMoveLearnset,
         .formSpeciesIdTable = sSilicobraFormSpeciesIdTable,
-        .formChangeTable = sSilicobraFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SANDACONDA_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SANDACONDA_ISSHO}),
     },
 	
-    [SPECIES_SANDACONDA_ISSHOAN] =
+    [SPECIES_SANDACONDA_ISSHO] =
     {
         .baseHP        = 72,
         .baseAttack    = 65,
@@ -1076,7 +1067,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 71,
         .baseSpAttack  = 107,
         .baseSpDefense = 70,
-        .types = { TYPE_GROUND, TYPE_ECHO},
+        .types = MON_TYPES(TYPE_GROUND, TYPE_ECHO),
         .catchRate = 120,
         .expYield = 179,
         .evYield_Defense   = 2,
@@ -1118,7 +1109,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(2, -1, SHADOW_SIZE_XL_BATTLE_ONLY)
-        FOOTPRINT(SandacondaIssho)
+        FOOTPRINT(Sandaconda)
         OVERWORLD(
             sPicTable_Sandaconda,
             SIZE_32x32,
@@ -1135,7 +1126,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formChangeTable = sSandacondaFormChangeTable,
     },
 	
-	[SPECIES_PHANTUMP_ISSHOAN] =
+	[SPECIES_PHANTUMP_ISSHO] =
     {
         .baseHP        = 43,
         .baseAttack    = 70,
@@ -1143,7 +1134,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 38,
         .baseSpAttack  = 50,
         .baseSpDefense = 60,
-        .types = { TYPE_FIRE, TYPE_GRASS},
+        .types = MON_TYPES(TYPE_FIRE, TYPE_GRASS),
         .catchRate = 120,
         .expYield = 62,
         .evYield_Attack    = 1,
@@ -1203,14 +1194,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .isIsshoanForm = TRUE,
         .levelUpLearnset = sPhantumpIsshoLevelUpLearnset,
         .teachableLearnset = sPhantumpIsshoTeachableLearnset,
-        .eggMoveLearnset = sPhantumpIsshoEggMoveLearnset,
+        .eggMoveLearnset = sPhantumpEggMoveLearnset,
         .formSpeciesIdTable = sPhantumpFormSpeciesIdTable,
-        .formChangeTable = sPhantumpFormChangeTable,
-        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_TREVENANT_ISSHOAN},
-                                {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_TREVENANT_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_TREVENANT_ISSHO},
+                                {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_TREVENANT_ISSHO}),
     },
 
-    [SPECIES_TREVENANT_ISSHOAN] =
+    [SPECIES_TREVENANT_ISSHO] =
     {
         .baseHP        = 85,
         .baseAttack    = 110,
@@ -1218,7 +1208,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 56,
         .baseSpAttack  = 65,
         .baseSpDefense = 82,
-        .types = { TYPE_FIRE, TYPE_GRASS},
+        .types = MON_TYPES(TYPE_FIRE, TYPE_GRASS),
         .catchRate = 60,
         .expYield = 166,
         .evYield_Attack    = 2,
@@ -1267,7 +1257,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 13, SHADOW_SIZE_M)
-        FOOTPRINT(TrevenantIssho)
+        FOOTPRINT(Trevenant)
         OVERWORLD(
             sPicTable_Trevenant,
             SIZE_32x32,
@@ -1281,10 +1271,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sTrevenantIsshoLevelUpLearnset,
         .teachableLearnset = sTrevenantIsshoTeachableLearnset,
         .formSpeciesIdTable = sTrevenantFormSpeciesIdTable,
-        .formChangeTable = sTrevenantFormChangeTable,
     },
 	
-	[SPECIES_SKRELP_ISSHOAN] =
+	[SPECIES_SKRELP_ISSHO] =
     {
         .baseHP        = 50,
         .baseAttack    = 60,
@@ -1292,7 +1281,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 30,
         .baseSpAttack  = 60,
         .baseSpDefense = 60,
-        .types = { TYPE_GRASS, TYPE_WATER},
+        .types = MON_TYPES(TYPE_GRASS, TYPE_WATER),
         .catchRate = 225,
         .expYield = 64,
         .evYield_SpDefense = 1,
@@ -1356,13 +1345,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .isIsshoanForm = TRUE,
         .levelUpLearnset = sSkrelpIsshoLevelUpLearnset,
         .teachableLearnset = sSkrelpIsshoTeachableLearnset,
-        .eggMoveLearnset = sSkrelpIsshoEggMoveLearnset,
+        .eggMoveLearnset = sSkrelpEggMoveLearnset,
         .formSpeciesIdTable = sSkrelpFormSpeciesIdTable,
-        .formChangeTable = sSkrelpFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 48, SPECIES_DRAGALGE_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 48, SPECIES_DRAGALGE_ISSHO}),
     },
 
-    [SPECIES_DRAGALGE_ISSHOAN] =
+    [SPECIES_DRAGALGE_ISSHO] =
     {
         .baseHP        = 65,
         .baseAttack    = 75,
@@ -1370,7 +1358,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 44,
         .baseSpAttack  = 97,
         .baseSpDefense = 123,
-        .types = { TYPE_GRASS, TYPE_DRAGON},
+        .types = MON_TYPES(TYPE_GRASS, TYPE_DRAGON),
         .catchRate = 55,
         .expYield = 173,
         .evYield_SpDefense = 2,
@@ -1417,7 +1405,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 5,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-3, 14, SHADOW_SIZE_M)
-        FOOTPRINT(DragalgeIssho)
+        FOOTPRINT(Dragalge)
         OVERWORLD(
             sPicTable_Dragalge,
             SIZE_32x32,
@@ -1434,7 +1422,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formChangeTable = sDragalgeFormChangeTable,
     },
 	
-	[SPECIES_VANILLITE_ISSHOAN] =
+	[SPECIES_VANILLITE_ISSHO] =
     {
         .baseHP        = 36,
         .baseAttack    = 50,
@@ -1442,7 +1430,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 44,
         .baseSpAttack  = 65,
         .baseSpDefense = 60,
-        .types = { TYPE_ICE, TYPE_ROCK},
+        .types = MON_TYPES(TYPE_ICE, TYPE_ROCK),
         .catchRate = 255,
         .expYield = 61,
         .evYield_SpAttack  = 1,
@@ -1491,7 +1479,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 0, SHADOW_SIZE_S)
-        FOOTPRINT(VanilliteIssho)
+        FOOTPRINT(Vanillite)
         OVERWORLD(
             sPicTable_Vanillite,
             SIZE_32x32,
@@ -1504,13 +1492,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .isIsshoanForm = TRUE,
         .levelUpLearnset = sVanilliteIsshoLevelUpLearnset,
         .teachableLearnset = sVanilliteIsshoTeachableLearnset,
-        .eggMoveLearnset = sVanilliteIsshoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_VANILLISH_ISSHOAN}),
+        .eggMoveLearnset = sVanilliteEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_VANILLISH_ISSHO}),
         .formSpeciesIdTable = sVanilliteFormSpeciesIdTable,
-        .formChangeTable = sVanilliteFormChangeTable,
     },
 
-    [SPECIES_VANILLISH_ISSHOAN] =
+    [SPECIES_VANILLISH_ISSHO] =
     {
         .baseHP        = 51,
         .baseAttack    = 65,
@@ -1518,7 +1505,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 59,
         .baseSpAttack  = 80,
         .baseSpDefense = 75,
-        .types = { TYPE_ICE, TYPE_ROCK},
+        .types = MON_TYPES(TYPE_ICE, TYPE_ROCK),
         .catchRate = 120,
         .expYield = 138,
         .evYield_SpAttack  = 2,
@@ -1565,7 +1552,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-3, 9, SHADOW_SIZE_S)
-        FOOTPRINT(VanillishIssho)
+        FOOTPRINT(Vanillish)
         OVERWORLD(
             sPicTable_Vanillish,
             SIZE_32x32,
@@ -1579,11 +1566,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sVanillishIsshoLevelUpLearnset,
         .teachableLearnset = sVanillishIsshoTeachableLearnset,
         .formSpeciesIdTable = sVanillishFormSpeciesIdTable,
-        .formChangeTable = sVanillishFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 47, SPECIES_VANILLISH_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 47, SPECIES_VANILLISH_ISSHO}),
     },
 
-    [SPECIES_VANILLUXE_ISSHOAN] =
+    [SPECIES_VANILLUXE_ISSHO] =
     {
         .baseHP        = 71,
         .baseAttack    = 95,
@@ -1591,7 +1577,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 79,
         .baseSpAttack  = 110,
         .baseSpDefense = 95,
-        .types = { TYPE_ICE, TYPE_ROCK},
+        .types = MON_TYPES(TYPE_ICE, TYPE_ROCK),
         .catchRate = 45,
         .expYield = 241,
         .evYield_SpAttack  = 3,
@@ -1653,10 +1639,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sVanilluxeIsshoLevelUpLearnset,
         .teachableLearnset = sVanilluxeIsshoTeachableLearnset,
         .formSpeciesIdTable = sVanilluxeFormSpeciesIdTable,
-        .formChangeTable = sVanilluxeFormChangeTable,
     },
 	
-    [SPECIES_MUNNA_ISSHOAN] =
+    [SPECIES_MUNNA_ISSHO] =
     {
         .baseHP        = 76,
         .baseAttack    = 25,
@@ -1664,7 +1649,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 24,
         .baseSpAttack  = 67,
         .baseSpDefense = 55,
-        .types = { TYPE_FLYING, TYPE_FLYING},
+        .types = MON_TYPES(TYPE_FLYING, TYPE_FLYING),
         .catchRate = 190,
         .expYield = 58,
         .evYield_HP        = 1,
@@ -1716,7 +1701,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 2, SHADOW_SIZE_S)
-        FOOTPRINT(MunnaIssho)
+        FOOTPRINT(Munna)
         OVERWORLD(
             sPicTable_Munna,
             SIZE_32x32,
@@ -1730,11 +1715,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sMunnaIsshoLevelUpLearnset,
         .teachableLearnset = sMunnaIsshoTeachableLearnset,
         .formSpeciesIdTable = sMunnaFormSpeciesIdTable,
-        .formChangeTable = sMunnaFormChangeTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ZEPHYR_STONE, SPECIES_MUSHARNA_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ZEPHYR_STONE, SPECIES_MUSHARNA_ISSHO}),
     },
 
-    [SPECIES_MUSHARNA_ISSHOAN] =
+    [SPECIES_MUSHARNA_ISSHO] =
     {
         .baseHP        = 116,
         .baseAttack    = 55,
@@ -1742,7 +1726,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 29,
         .baseSpAttack  = 107,
         .baseSpDefense = 95,
-        .types = { TYPE_FLYING, TYPE_FLYING},
+        .types = MON_TYPES(TYPE_FLYING, TYPE_FLYING),
         .catchRate = 75,
         .expYield = 170,
         .evYield_HP        = 2,
@@ -1791,7 +1775,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(6, 10, SHADOW_SIZE_M)
-        FOOTPRINT(MusharnaIssho)
+        FOOTPRINT(Musharna)
         OVERWORLD(
             sPicTable_Musharna,
             SIZE_32x32,
@@ -1805,10 +1789,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sMusharnaIsshoLevelUpLearnset,
         .teachableLearnset = sMusharnaIsshoTeachableLearnset,
         .formSpeciesIdTable = sMusharnaFormSpeciesIdTable,
-        .formChangeTable = sMusharnaFormChangeTable,
     },
 	
-    [SPECIES_GOLETT_ISSHOAN] =
+    [SPECIES_GOLETT_ISSHO] =
     {
         .baseHP        = 59,
         .baseAttack    = 74,
@@ -1816,7 +1799,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 35,
         .baseSpAttack  = 35,
         .baseSpDefense = 50,
-        .types = { TYPE_STEEL, TYPE_ECHO},
+        .types = MON_TYPES(TYPE_STEEL, TYPE_ECHO),
         .catchRate = 190,
         .expYield = 61,
         .evYield_Attack    = 1,
@@ -1864,7 +1847,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 7, SHADOW_SIZE_M)
-        FOOTPRINT(GolettIssho)
+        FOOTPRINT(Golett)
         OVERWORLD(
             sPicTable_Golett,
             SIZE_32x32,
@@ -1878,11 +1861,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sGolettIsshoLevelUpLearnset,
         .teachableLearnset = sGolettIsshoTeachableLearnset,
         .formSpeciesIdTable = sGolettFormSpeciesIdTable,
-        .formChangeTable = sGolettFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 43, SPECIES_GOLURK_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 43, SPECIES_GOLURK_ISSHO}),
     },
 
-    [SPECIES_GOLURK_ISSHOAN] =
+    [SPECIES_GOLURK_ISSHO] =
     {
         .baseHP        = 89,
         .baseAttack    = 124,
@@ -1890,7 +1872,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 55,
         .baseSpAttack  = 55,
         .baseSpDefense = 80,
-        .types = { TYPE_STEEL, TYPE_ECHO},
+        .types = MON_TYPES(TYPE_STEEL, TYPE_ECHO),
         .catchRate = 90,
         .expYield = 169,
         .evYield_Attack    = 2,
@@ -1937,7 +1919,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 14, SHADOW_SIZE_L)
-        FOOTPRINT(GolurkIssho)
+        FOOTPRINT(Golurk)
         OVERWORLD(
             sPicTable_Golurk,
             SIZE_32x32,
@@ -1954,7 +1936,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formChangeTable = sGolurkFormChangeTable,
     },
 	
-    [SPECIES_CUFANT_ISSHOAN] =
+    [SPECIES_CUFANT_ISSHO] =
     {
         .baseHP        = 72,
         .baseAttack    = 40,
@@ -1962,7 +1944,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 40,
         .baseSpAttack  = 80,
         .baseSpDefense = 49,
-        .types = { TYPE_STEEL, TYPE_WATER},
+        .types = MON_TYPES(TYPE_STEEL, TYPE_WATER),
         .catchRate = 190,
         .expYield = 66,
         .evYield_Attack    = 1,
@@ -2005,7 +1987,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(5, 2, SHADOW_SIZE_M)
-        FOOTPRINT(CufantIssho)
+        FOOTPRINT(Cufant)
         OVERWORLD(
             sPicTable_Cufant,
             SIZE_32x32,
@@ -2018,13 +2000,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .isIsshoanForm = TRUE,
         .levelUpLearnset = sCufantIsshoLevelUpLearnset,
         .teachableLearnset = sCufantIsshoTeachableLearnset,
-        .eggMoveLearnset = sCufantIsshoEggMoveLearnset,
+        .eggMoveLearnset = sCufantEggMoveLearnset,
         .formSpeciesIdTable = sCufantFormSpeciesIdTable,
-        .formChangeTable = sCufantFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_COPPERAJAH_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_COPPERAJAH_ISSHO}),
     },
 
-    [SPECIES_COPPERAJAH_ISSHOAN] =
+    [SPECIES_COPPERAJAH_ISSHO] =
     {
         .baseHP        = 122,
         .baseAttack    = 80,
@@ -2032,7 +2013,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 30,
         .baseSpAttack  = 130,
         .baseSpDefense = 69,
-        .types = { TYPE_STEEL, TYPE_WATER},
+        .types = MON_TYPES(TYPE_STEEL, TYPE_WATER),
         .catchRate = 90,
         .expYield = 175,
         .evYield_Attack    = 2,
@@ -2074,7 +2055,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(6, 7, SHADOW_SIZE_L)
-        FOOTPRINT(CopperajahIssho)
+        FOOTPRINT(Copperajah)
         OVERWORLD(
             sPicTable_Copperajah,
             SIZE_32x32,
@@ -2091,7 +2072,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .formChangeTable = sCopperajahFormChangeTable,
     },
 
-    [SPECIES_MORELULL_ISSHOAN] =
+    [SPECIES_MORELULL_ISSHO] =
     {
         .baseHP        = 40,
         .baseAttack    = 35,
@@ -2099,7 +2080,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 15,
         .baseSpAttack  = 65,
         .baseSpDefense = 75,
-        .types = { TYPE_POISON, TYPE_PSYCHIC},
+        .types = MON_TYPES(TYPE_POISON, TYPE_PSYCHIC),
         .catchRate = 190,
         .expYield = 57,
         .evYield_SpDefense = 1,
@@ -2143,7 +2124,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
         SHADOW(-1, 4, SHADOW_SIZE_S)
-        FOOTPRINT(MorelullIssho)
+        FOOTPRINT(Morelull)
         OVERWORLD(
             sPicTable_Morelull,
             SIZE_32x32,
@@ -2157,12 +2138,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sMorelullIsshoLevelUpLearnset,
         .teachableLearnset = sMorelullIsshoTeachableLearnset,
         .formSpeciesIdTable = sMorelullFormSpeciesIdTable,
-        .formChangeTable = sMorelullFormChangeTable,
-        .eggMoveLearnset = sMorelullIsshoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_SHIINOTIC_ISSHOAN}),
+        .eggMoveLearnset = sMorelullEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_SHIINOTIC_ISSHO}),
     },
 
-    [SPECIES_SHIINOTIC_ISSHOAN] =
+    [SPECIES_SHIINOTIC_ISSHO] =
     {
         .baseHP        = 60,
         .baseAttack    = 45,
@@ -2170,7 +2150,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 30,
         .baseSpAttack  = 90,
         .baseSpDefense = 100,
-        .types = { TYPE_POISON, TYPE_PSYCHIC},
+        .types = MON_TYPES(TYPE_POISON, TYPE_PSYCHIC),
         .catchRate = 75,
         .expYield = 142,
         .evYield_SpDefense = 2,
@@ -2214,7 +2194,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 10, SHADOW_SIZE_S)
-        FOOTPRINT(ShiinoticIssho)
+        FOOTPRINT(Shiinotic)
         OVERWORLD(
             sPicTable_Shiinotic,
             SIZE_32x32,
@@ -2228,10 +2208,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sShiinoticIsshoLevelUpLearnset,
         .teachableLearnset = sShiinoticIsshoTeachableLearnset,
         .formSpeciesIdTable = sShiinoticFormSpeciesIdTable,
-        .formChangeTable = sShiinoticFormChangeTable,
     },
 	
-    [SPECIES_ELGYEM_ISSHOAN] =
+    [SPECIES_ELGYEM_ISSHO] =
     {
         .baseHP        = 60,
         .baseAttack    = 50,
@@ -2239,7 +2218,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 30,
         .baseSpAttack  = 85,
         .baseSpDefense = 55,
-        .types = { TYPE_PSYCHIC, TYPE_ELECTRIC},
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_ELECTRIC),
         .catchRate = 255,
         .expYield = 67,
         .evYield_SpAttack  = 1,
@@ -2290,7 +2269,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(1, 2, SHADOW_SIZE_S)
-        FOOTPRINT(ElgyemIssho)
+        FOOTPRINT(Elgyem)
         OVERWORLD(
             sPicTable_Elgyem,
             SIZE_32x32,
@@ -2303,13 +2282,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .isIsshoanForm = TRUE,
         .levelUpLearnset = sElgyemIsshoLevelUpLearnset,
         .teachableLearnset = sElgyemIsshoTeachableLearnset,
-        .eggMoveLearnset = sElgyemIsshoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_BEHEEYEM_ISSHOAN}),
+        .eggMoveLearnset = sElgyemEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_BEHEEYEM_ISSHO}),
         .formSpeciesIdTable = sElgyemFormSpeciesIdTable,
-        .formChangeTable = sElgyemFormChangeTable,
     },
 
-    [SPECIES_BEHEEYEM_ISSHOAN] =
+    [SPECIES_BEHEEYEM_ISSHO] =
     {
         .baseHP        = 80,
         .baseAttack    = 70,
@@ -2317,7 +2295,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 40,
         .baseSpAttack  = 125,
         .baseSpDefense = 95,
-        .types = { TYPE_PSYCHIC, TYPE_ELECTRIC},
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_ELECTRIC),
         .catchRate = 90,
         .expYield = 170,
         .evYield_SpAttack  = 2,
@@ -2362,7 +2340,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 10, SHADOW_SIZE_M)
-        FOOTPRINT(BeheeyemIssho)
+        FOOTPRINT(Beheeyem)
         OVERWORLD(
             sPicTable_Beheeyem,
             SIZE_32x32,
@@ -2376,10 +2354,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sBeheeyemIsshoLevelUpLearnset,
         .teachableLearnset = sBeheeyemIsshoTeachableLearnset,
         .formSpeciesIdTable = sBeheeyemFormSpeciesIdTable,
-        .formChangeTable = sBeheeyemFormChangeTable,
     },
 	
-    [SPECIES_DEINO_ISSHOAN] =
+    [SPECIES_DEINO_ISSHO] =
     {
         .baseHP        = 52,
         .baseAttack    = 45,
@@ -2387,7 +2364,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 38,
         .baseSpAttack  = 65,
         .baseSpDefense = 50,
-        .types = { TYPE_FAIRY, TYPE_DRAGON},
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_DRAGON),
         .catchRate = 45,
         .expYield = 60,
         .evYield_SpAttack    = 1,
@@ -2433,7 +2410,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(1, 3, SHADOW_SIZE_S)
-        FOOTPRINT(DeinoIssho)
+        FOOTPRINT(Deino)
         OVERWORLD(
             sPicTable_Deino,
             SIZE_32x32,
@@ -2447,12 +2424,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sDeinoIsshoLevelUpLearnset,
         .teachableLearnset = sDeinoIsshoTeachableLearnset,
         .formSpeciesIdTable = sDeinoFormSpeciesIdTable,
-        .formChangeTable = sDeinoFormChangeTable,
-        .eggMoveLearnset = sDeinoIsshoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_ZWEILOUS_ISSHOAN}),
+        .eggMoveLearnset = sDeinoEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_ZWEILOUS_ISSHO}),
     },
 
-    [SPECIES_ZWEILOUS_ISSHOAN] =
+    [SPECIES_ZWEILOUS_ISSHO] =
     {
         .baseHP        = 72,
         .baseAttack    = 65,
@@ -2460,7 +2436,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 58,
         .baseSpAttack  = 85,
         .baseSpDefense = 70,
-        .types = { TYPE_FAIRY, TYPE_DRAGON},
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_DRAGON),
         .catchRate = 45,
         .expYield = 147,
         .evYield_SpAttack    = 2,
@@ -2505,7 +2481,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(1, 6, SHADOW_SIZE_L)
-        FOOTPRINT(ZweilousIssho)
+        FOOTPRINT(Zweilous)
         OVERWORLD(
             sPicTable_Zweilous,
             SIZE_32x32,
@@ -2519,11 +2495,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sZweilousIsshoLevelUpLearnset,
         .teachableLearnset = sZweilousIsshoTeachableLearnset,
         .formSpeciesIdTable = sZweilousFormSpeciesIdTable,
-        .formChangeTable = sZweilousFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 60, SPECIES_HYDREIGON_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 60, SPECIES_HYDREIGON_ISSHO}),
     },
 
-    [SPECIES_HYDREIGON_ISSHOAN] =
+    [SPECIES_HYDREIGON_ISSHO] =
     {
         .baseHP        = 92,
         .baseAttack    = 95,
@@ -2531,7 +2506,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 98,
         .baseSpAttack  = 135,
         .baseSpDefense = 90,
-        .types = { TYPE_FAIRY, TYPE_DRAGON},
+        .types = MON_TYPES(TYPE_FAIRY, TYPE_DRAGON),
         .catchRate = 45,
         .expYield = 270,
         .evYield_SpAttack  = 3,
@@ -2583,7 +2558,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(1, 16, SHADOW_SIZE_M)
-        FOOTPRINT(HydreigonIssho)
+        FOOTPRINT(Hydreigon)
         OVERWORLD(
             sPicTable_Hydreigon,
             SIZE_32x32,
@@ -2597,10 +2572,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sHydreigonIsshoLevelUpLearnset,
         .teachableLearnset = sHydreigonIsshoTeachableLearnset,
         .formSpeciesIdTable = sHydreigonFormSpeciesIdTable,
-        .formChangeTable = sHydreigonFormChangeTable,
     },
 	
-    [SPECIES_DREEPY_ISSHOAN] =
+    [SPECIES_DREEPY_ISSHO] =
     {
         .baseHP        = 28,
         .baseAttack    = 40,
@@ -2608,7 +2582,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 82,
         .baseSpAttack  = 60,
         .baseSpDefense = 30,
-        .types = { TYPE_DRAGON, TYPE_POISON},
+        .types = MON_TYPES(TYPE_DRAGON, TYPE_POISON),
         .catchRate = 45,
         .expYield = 54,
         .evYield_Speed     = 1,
@@ -2651,7 +2625,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 2, SHADOW_SIZE_S)
-        FOOTPRINT(DreepyIssho)
+        FOOTPRINT(Dreepy)
         OVERWORLD(
             sPicTable_Dreepy,
             SIZE_32x32,
@@ -2665,12 +2639,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sDreepyIsshoLevelUpLearnset,
         .teachableLearnset = sDreepyIsshoTeachableLearnset,
         .formSpeciesIdTable = sDreepyFormSpeciesIdTable,
-        .formChangeTable = sDreepyFormChangeTable,
-        .eggMoveLearnset = sDreepyIsshoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_DRAKLOAK_ISSHOAN}),
+        .eggMoveLearnset = sDreepyEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_DRAKLOAK_ISSHO}),
     },
 
-    [SPECIES_DRAKLOAK_ISSHOAN] =
+    [SPECIES_DRAKLOAK_ISSHO] =
     {
         .baseHP        = 68,
         .baseAttack    = 60,
@@ -2678,7 +2651,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 102,
         .baseSpAttack  = 80,
         .baseSpDefense = 50,
-        .types = { TYPE_DRAGON, TYPE_POISON},
+        .types = MON_TYPES(TYPE_DRAGON, TYPE_POISON),
         .catchRate = 45,
         .expYield = 144,
         .evYield_Speed     = 2,
@@ -2720,7 +2693,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 9, SHADOW_SIZE_M)
-        FOOTPRINT(DrakloakIssho)
+        FOOTPRINT(Drakloak)
         OVERWORLD(
             sPicTable_Drakloak,
             SIZE_32x32,
@@ -2734,11 +2707,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sDrakloakIsshoLevelUpLearnset,
         .teachableLearnset = sDrakloakIsshoTeachableLearnset,
         .formSpeciesIdTable = sDrakloakFormSpeciesIdTable,
-        .formChangeTable = sDrakloakFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 60, SPECIES_DRAGAPULT_ISSHOAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 60, SPECIES_DRAGAPULT_ISSHO}),
     },
 
-    [SPECIES_DRAGAPULT_ISSHOAN] =
+    [SPECIES_DRAGAPULT_ISSHO] =
     {
         .baseHP        = 88,
         .baseAttack    = 100,
@@ -2746,7 +2718,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 142,
         .baseSpAttack  = 120,
         .baseSpDefense = 75,
-        .types = { TYPE_DRAGON, TYPE_POISON},
+        .types = MON_TYPES(TYPE_DRAGON, TYPE_POISON),
         .catchRate = 45,
         .expYield = 300,
         .evYield_Speed     = 3,
@@ -2789,7 +2761,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 12, SHADOW_SIZE_M)
-        FOOTPRINT(DragapultIssho)
+        FOOTPRINT(Dragapult)
         OVERWORLD(
             sPicTable_Dragapult,
             SIZE_32x32,
@@ -2803,7 +2775,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sDragapultIsshoLevelUpLearnset,
         .teachableLearnset = sDragapultIsshoTeachableLearnset,
         .formSpeciesIdTable = sDragapultFormSpeciesIdTable,
-        .formChangeTable = sDragapultFormChangeTable,
     },
 		
     [SPECIES_SELDAME] =
@@ -2814,7 +2785,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 71,
         .baseSpAttack  = 118,
         .baseSpDefense = 92,
-        .types = { TYPE_NORMAL, TYPE_FLYING},
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
         .catchRate = 25,
         .expYield = 179,
         .evYield_SpAttack    = 2,
@@ -2845,7 +2816,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Seldame,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Seldame,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -2866,7 +2837,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 95,
         .baseSpAttack  = 55,
         .baseSpDefense = 70,
-        .types = { TYPE_BUG, TYPE_DARK },
+        .types = MON_TYPES(TYPE_BUG, TYPE_DARK),
         .catchRate = 25,
         .expYield = 175,
         .evYield_Attack    = 3,
@@ -2895,7 +2866,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Plux,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Plux,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -2916,7 +2887,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 95,
         .baseSpAttack  = 130,
         .baseSpDefense = 65,
-        .types = { TYPE_DRAGON, TYPE_DRAGON },
+        .types = MON_TYPES(TYPE_DRAGON),
         .catchRate = 45,
         .expYield = 184,
         .evYield_SpAttack        = 2,
@@ -2946,7 +2917,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Atroceon,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 1,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Atroceon,
         .backPicSize = MON_COORDS_SIZE(40, 56),
         .backPicYOffset = 4,
@@ -2967,7 +2938,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 95,
         .baseSpDefense = 65,
-        .types = { TYPE_ECHO, TYPE_ECHO },
+        .types = MON_TYPES(TYPE_ECHO),
         .catchRate = 45,
         .expYield = 184,
         .evYield_Defense       = 2,
@@ -2997,7 +2968,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Voxeon,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Voxeon,
         .backPicSize = MON_COORDS_SIZE(64, 56),
         .backPicYOffset = 9,
@@ -3018,7 +2989,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 102,
         .baseSpAttack  = 123,
         .baseSpDefense = 80,
-        .types = { TYPE_DARK, TYPE_FIRE },
+        .types = MON_TYPES(TYPE_DARK, TYPE_FIRE),
         .catchRate = 25,
         .expYield = 241,
         .evYield_SpAttack  = 3,
@@ -3048,7 +3019,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Houndevil,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Houndevil,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -3069,7 +3040,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 50,
         .baseSpAttack  = 20,
         .baseSpDefense = 50,
-        .types = { TYPE_STEEL, TYPE_FLYING },
+        .types = MON_TYPES(TYPE_STEEL, TYPE_FLYING),
         .catchRate = 25,
         .expYield = 69,
         .evYield_Defense   = 1,
@@ -3078,7 +3049,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
+        .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_STURDY, ABILITY_WEAK_ARMOR},
         .bodyColor = BODY_COLOR_GRAY,
 
@@ -3100,7 +3071,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Skarby,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Skarby,
         .backPicSize = MON_COORDS_SIZE(48, 48),
         .backPicYOffset = 0,
@@ -3121,7 +3092,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 55,
         .baseSpAttack  = 65,
         .baseSpDefense = 85,
-        .types = { TYPE_STEEL, TYPE_FAIRY},
+        .types = MON_TYPES(TYPE_STEEL, TYPE_FAIRY),
         .catchRate = 25,
         .expYield = 193,
         .evYield_Attack    = 1,
@@ -3151,7 +3122,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Malevile,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 5,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Malevile,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 6,
@@ -3172,7 +3143,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 55,
         .baseSpAttack  = 75,
         .baseSpDefense = 95,
-        .types = { TYPE_DARK, TYPE_GHOST},
+        .types = MON_TYPES(TYPE_DARK, TYPE_GHOST),
         .catchRate = 25,
         .expYield = 193,
         .evYield_Attack    = 1,
@@ -3202,7 +3173,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Gemineye,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 5,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Gemineye,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 13,
@@ -3223,7 +3194,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 95,
         .baseSpAttack  = 80,
         .baseSpDefense = 85,
-        .types = { TYPE_FIGHTING, TYPE_PSYCHIC},
+        .types = MON_TYPES(TYPE_FIGHTING, TYPE_PSYCHIC),
         .catchRate = 40,
         .expYield = 204,
         .evYield_Speed     = 2,
@@ -3252,7 +3223,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Mediyogi,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Mediyogi,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 1,
@@ -3273,7 +3244,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 85,
         .baseSpAttack  = 100,
         .baseSpDefense = 70,
-        .types = { TYPE_DARK, TYPE_DARK},
+        .types = MON_TYPES(TYPE_DARK),
         .catchRate = 20,
         .expYield = 213,
         .evYield_Attack    = 3,
@@ -3302,7 +3273,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Arbinj,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 2,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Arbinj,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -3323,7 +3294,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 73,
         .baseSpAttack  = 86,
         .baseSpDefense = 76,
-        .types = { TYPE_GHOST, TYPE_GHOST},
+        .types = MON_TYPES(TYPE_GHOST),
         .catchRate = 25,
         .expYield = 209,
         .evYield_Attack    = 3,
@@ -3353,7 +3324,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Zippette,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 16,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Zippette,
         .backPicSize = MON_COORDS_SIZE(48, 48),
         .backPicYOffset = 14,
@@ -3374,7 +3345,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 61,
         .baseSpAttack  = 46,
         .baseSpDefense = 53,
-        .types = { TYPE_GRASS, TYPE_FLYING},
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FLYING),
         .catchRate = 225,
         .expYield = 62,
         .evYield_Speed     = 1,
@@ -3403,7 +3374,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Ptropa,
         .frontPicSize = MON_COORDS_SIZE(48, 48),
         .frontPicYOffset = 16,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Ptropa,
         .backPicSize = MON_COORDS_SIZE(48, 48),
         .backPicYOffset = 14,
@@ -3424,7 +3395,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 67,
         .baseSpAttack  = 105,
         .baseSpDefense = 110,
-        .types = { TYPE_PSYCHIC, TYPE_ECHO},
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_ECHO),
         .catchRate = 25,
         .expYield = 199,
         .evYield_SpAttack  = 2,
@@ -3454,9 +3425,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Decibelle,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 5
-        .frontAnimFrames = sAnims_Decibelle,
-        .frontAnimId = ANIM_STRETCH_AND_GROW,
+        .frontPicYOffset = 5,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 1),
+            ANIMCMD_FRAME(1, 36),
+            ANIMCMD_FRAME(0, 10),
+        ),
+        .frontAnimId = ANIM_GROW_VIBRATE,
         .backPic = gMonBackPic_Decibelle,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 5,
@@ -3478,7 +3453,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 40,
         .baseSpAttack  = 102,
         .baseSpDefense = 90,
-        .types = { TYPE_GRASS, TYPE_ICE},
+        .types = MON_TYPES(TYPE_GRASS, TYPE_ICE),
         .catchRate = 40,
         .expYield = 223,
         .evYield_Attack    = 2,
@@ -3509,7 +3484,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Yetree,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 1,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Yetree,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -3530,7 +3505,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 50,
         .baseSpAttack  = 75,
         .baseSpDefense = 106,
-        .types = { TYPE_ECHO, TYPE_FAIRY},
+        .types = MON_TYPES(TYPE_ECHO, TYPE_FAIRY),
         .catchRate = 205,
         .expYield = 420,
         .evYield_HP        = 3,
@@ -3560,7 +3535,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Noaudia,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 6,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Noaudia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -3581,7 +3556,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 30,
         .baseSpAttack  = 145,
         .baseSpDefense = 95,
-        .types = { TYPE_GHOST, TYPE_FIGHTING},
+        .types = MON_TYPES(TYPE_GHOST, TYPE_FIGHTING),
         .catchRate = 90,
         .expYield = 169,
         .evYield_SpAttack   = 2,
@@ -3611,7 +3586,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Nephtomb,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Nephtomb,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 7,
@@ -3632,7 +3607,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 110,
         .baseSpAttack  = 95,
         .baseSpDefense = 65,
-        .types = { TYPE_PSYCHIC, TYPE_DARK},
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_DARK),
         .catchRate = 50,
         .expYield = 221,
         .evYield_Speed = 3,
@@ -3662,7 +3637,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Gothiturge,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         .backPic = gMonBackPic_Gothiturge,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -3683,7 +3658,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 35,
         .baseSpAttack  = 24,
         .baseSpDefense = 58,
-        .types = { TYPE_ICE, TYPE_ICE },
+        .types = MON_TYPES(TYPE_ICE),
         .catchRate = 190,
         .expYield = 68,
         .evYield_Attack   = 1,
@@ -3735,7 +3710,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 69,
         .baseSpAttack  = 48,
         .baseSpDefense = 83,
-        .types = { TYPE_ICE, TYPE_ICE },
+        .types = MON_TYPES(TYPE_ICE),
         .catchRate = 60,
         .expYield = 172,
         .evYield_Attack   = 2,
@@ -3787,7 +3762,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 83,
         .baseSpAttack  = 33,
         .baseSpDefense = 41,
-        .types = { TYPE_DARK, TYPE_ECHO},
+        .types = MON_TYPES(TYPE_DARK, TYPE_ECHO),
         .catchRate = 190,
         .expYield = 70,
         .evYield_Speed     = 1,
@@ -3838,7 +3813,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 114,
         .baseSpAttack  = 55,
         .baseSpDefense = 73,
-        .types = { TYPE_DARK, TYPE_ECHO},
+        .types = MON_TYPES(TYPE_DARK, TYPE_ECHO),
         .catchRate = 60,
         .expYield = 168,
         .evYield_Speed     = 2,
@@ -3886,7 +3861,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 48,
         .baseSpAttack  = 65,
         .baseSpDefense = 50,
-        .types = { TYPE_FIRE, TYPE_FIRE },
+        .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 45,
         .expYield = 87,
         .evYield_Attack   = 1,
@@ -3895,7 +3870,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
-        .abilities = {ABILITY_PICKUP, ABILITY_SUNSTRIDE, ABILITY_RADIATOR},
+        .abilities = {ABILITY_PICKUP, ABILITY_DIURNAL, ABILITY_RADIATOR},
         .bodyColor = BODY_COLOR_BLACK,
 
         .speciesName = _("Volbear"),
@@ -3937,7 +3912,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 99,
         .baseSpDefense = 74,
-        .types = { TYPE_FIRE, TYPE_ELECTRIC},
+        .types = MON_TYPES(TYPE_FIRE, TYPE_ELECTRIC),
         .catchRate = 30,
         .expYield = 187,
         .evYield_Attack   = 2,
@@ -3946,7 +3921,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
-        .abilities = {ABILITY_SOLAR_POWER, ABILITY_SUNSTRIDE, ABILITY_RADIATOR},
+        .abilities = {ABILITY_SOLAR_POWER, ABILITY_DIURNAL, ABILITY_RADIATOR},
         .bodyColor = BODY_COLOR_BLACK,
 
         .speciesName = _("Dynabear"),
@@ -3987,7 +3962,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 70,
         .baseSpAttack  = 33,
         .baseSpDefense = 40,
-        .types = { TYPE_ELECTRIC, TYPE_ELECTRIC },
+        .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 190,
         .expYield = 68,
         .evYield_Attack   = 1,
@@ -4039,7 +4014,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 80,
         .baseSpAttack  = 57,
         .baseSpDefense = 77,
-        .types = { TYPE_ELECTRIC, TYPE_ELECTRIC },
+        .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 60,
         .expYield = 172,
         .evYield_Attack   = 2,
@@ -4090,7 +4065,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 91,
         .baseSpAttack  = 48,
         .baseSpDefense = 38,
-        .types = { TYPE_BUG, TYPE_ICE },
+        .types = MON_TYPES(TYPE_BUG, TYPE_ICE),
         .catchRate = 190,
         .expYield = 64,
         .evYield_Speed   = 1,
@@ -4141,7 +4116,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 121,
         .baseSpAttack  = 93,
         .baseSpDefense = 63,
-        .types = { TYPE_BUG, TYPE_ICE },
+        .types = MON_TYPES(TYPE_BUG, TYPE_ICE),
         .catchRate = 75,
         .expYield = 175,
         .evYield_Speed   = 2,
@@ -4191,7 +4166,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 76,
         .baseSpAttack  = 42,
         .baseSpDefense = 40,
-        .types = { TYPE_GRASS, TYPE_GRASS },
+        .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 120,
         .expYield = 58,
         .evYield_Speed   = 1,
@@ -4243,7 +4218,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 101,
         .baseSpAttack  = 57,
         .baseSpDefense = 55,
-        .types = { TYPE_GRASS, TYPE_ELECTRIC },
+        .types = MON_TYPES(TYPE_GRASS, TYPE_ELECTRIC),
         .catchRate = 60,
         .expYield = 123,
         .evYield_Speed   = 2,
@@ -4295,7 +4270,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 106,
         .baseSpAttack  = 77,
         .baseSpDefense = 70,
-        .types = { TYPE_GRASS, TYPE_ELECTRIC },
+        .types = MON_TYPES(TYPE_GRASS, TYPE_ELECTRIC),
         .catchRate = 30,
         .expYield = 234,
         .evYield_Speed   = 3,
@@ -4346,7 +4321,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 36,
         .baseSpAttack  = 77,
         .baseSpDefense = 73,
-        .types = { TYPE_GRASS, TYPE_FAIRY },
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FAIRY),
         .catchRate = 90,
         .expYield = 65,
         .evYield_SpAttack   = 1,
@@ -4398,7 +4373,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 56,
         .baseSpAttack  = 114,
         .baseSpDefense = 104,
-        .types = { TYPE_GRASS, TYPE_FAIRY},
+        .types = MON_TYPES(TYPE_GRASS, TYPE_FAIRY),
         .catchRate = 45,
         .expYield = 186,
         .evYield_SpAttack  = 2,
@@ -4448,7 +4423,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 44,
         .baseSpAttack  = 32,
         .baseSpDefense = 52,
-        .types = { TYPE_BUG, TYPE_DRAGON },
+        .types = MON_TYPES(TYPE_BUG, TYPE_DRAGON),
         .catchRate = 190,
         .expYield = 64,
         .evYield_Attack   = 1,
@@ -4499,7 +4474,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 99,
         .baseSpAttack  = 58,
         .baseSpDefense = 85,
-        .types = { TYPE_BUG, TYPE_DRAGON },
+        .types = MON_TYPES(TYPE_BUG, TYPE_DRAGON),
         .catchRate = 75,
         .expYield = 175,
         .evYield_Attack   = 2,
@@ -4549,7 +4524,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 30,
         .baseSpAttack  = 80,
         .baseSpDefense = 60,
-        .types = { TYPE_WATER, TYPE_FIRE},
+        .types = MON_TYPES(TYPE_WATER, TYPE_FIRE),
         .catchRate = 125,
         .expYield = 80,
         .evYield_SpAttack        = 1,
@@ -4600,7 +4575,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 45,
         .baseSpAttack  = 135,
         .baseSpDefense = 95,
-        .types = { TYPE_WATER, TYPE_FIRE},
+        .types = MON_TYPES(TYPE_WATER, TYPE_FIRE),
         .catchRate = 60,
         .expYield = 175,
         .evYield_SpAttack        = 2,
@@ -4650,7 +4625,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 108,
         .baseSpAttack  = 121,
         .baseSpDefense = 66,
-        .types = { TYPE_ROCK, TYPE_GHOST },
+        .types = MON_TYPES(TYPE_ROCK, TYPE_GHOST ),
         .catchRate = 45,
         .expYield = 180,
         .evYield_SpAttack  = 1,
@@ -4680,7 +4655,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Omendenz,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_None,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
         //.frontAnimId = ANIM_H_BACK_AND_FORTH,
         .backPic = gMonBackPic_Omendenz,
         .backPicSize = MON_COORDS_SIZE(64, 64),
@@ -4698,9 +4673,26 @@ const struct SpeciesInfo gSpeciesInfo[] =
 	// Tourmaline 2.0 mons
     [SPECIES_CREMPERA] =
     {
-        ALCREMIE_MISC_INFO(BODY_COLOR_YELLOW),
+		.baseHP = 65,
+		.baseAttack = 60,
+		.baseDefense = 75,
+		.baseSpeed = 64,
+		.baseSpAttack = 110,
+		.baseSpDefense = 121,
+		.types = MON_TYPES(TYPE_FAIRY),
+		.catchRate = 90,
+		.expYield = 54,
+		.evYield_SpAttack = 1,
+		.evYield_SpDefense = 2,
+		.genderRatio = MON_FEMALE,
+		.eggCycles = 20,
+		.friendship = STANDARD_FRIENDSHIP,
+		.growthRate = GROWTH_MEDIUM_FAST,
+		.eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_AMORPHOUS),
+		.abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_WELL_BAKED_BODY},
+		.bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Crempera"),
-        .cryId = CRY_ALCREMIE_GMAX,
+        .cryId = CRY_ALCREMIE, // PLACEHOLDER
         .natDexNum = NATIONAL_DEX_CREMPERA,
         .categoryName = _("Cream"),
         .height = 25,
@@ -4918,7 +4910,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_BEAST_BOOST, ABILITY_NONE, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_ORANGE,
+        .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Terophage"),
         .cryId = CRY_TEROPHAGE,
         .natDexNum = NATIONAL_DEX_TEROPHAGE,
@@ -5077,7 +5069,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .genderRatio = MON_GENDERLESS,
         .eggCycles = 1,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_SIMPLE,
+        .growthRate = GROWTH_ERRATIC,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
         .abilities = { ABILITY_BEAST_BOOST, ABILITY_NONE, ABILITY_ANNIHILATOR },
         .bodyColor = BODY_COLOR_BLACK,
@@ -5115,7 +5107,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sMimektiplexLevelUpLearnset,
         .teachableLearnset = sNoneTeachableLearnset,
     },
-#endif //P_TOURMALINE_MONS
+#endif //P_TOURMALINE_POKEMON
 };
 
 const struct EggData gEggDatas[EGG_ID_COUNT] =

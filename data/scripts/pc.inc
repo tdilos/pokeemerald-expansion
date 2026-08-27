@@ -61,7 +61,7 @@ EventScript_AccessPC::
 
 EventScript_SaveFromPC::
 	special SaveGame
-	waitstate
+	@waitstate
 	goto EventScript_PCMainMenu
 	end
 

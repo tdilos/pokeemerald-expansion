@@ -139,7 +139,7 @@ Route87_EventScript_RescueCouple::
 	seteventmon SPECIES_STEELIX, 20
 	totemboost_spdef1 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp

@@ -5962,7 +5962,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-    #if P_TOURMALINE_MONS
+    #if P_TOURMALINE_POKEMON
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_RADIATOR },
     #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
@@ -6041,7 +6041,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-    #if P_TOURMALINE_MONS
+    #if P_TOURMALINE_POKEMON
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_STORM_DRAIN },
     #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
@@ -6121,7 +6121,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-    #if P_TOURMALINE_MONS
+    #if P_TOURMALINE_POKEMON
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_CARBON_BODY },
     #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
@@ -6199,7 +6199,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-    #if P_TOURMALINE_MONS
+    #if P_TOURMALINE_POKEMON
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_SPEED_BOOST },
     #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
@@ -6302,7 +6302,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-    #if P_TOURMALINE_MONS
+    #if P_TOURMALINE_POKEMON
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_SHARP_BODY },
     #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
@@ -6383,7 +6383,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-    #if P_TOURMALINE_MONS
+    #if P_TOURMALINE_POKEMON
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_EQUALIZE },
     #else
         .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },

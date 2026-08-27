@@ -17,7 +17,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_GameboyKid::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_WillingToTradeIt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, BattleFrontier_ExchangeServiceCorner_EventScript_DeclineTrade
 	special ChoosePartyMon
-	waitstate
+	@waitstate
 	copyvar VAR_0x800A, VAR_0x8004
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_ExchangeServiceCorner_EventScript_DeclineTrade
 	copyvar VAR_0x8005, VAR_0x800A
@@ -28,7 +28,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_GameboyKid::
 	copyvar VAR_0x8005, VAR_0x800A
 	special CreateInGameTradePokemon
 	special DoInGameTradeScene
-	waitstate
+	@waitstate
 	bufferspeciesname STR_VAR_1, VAR_0x8009
 	giveitem ITEM_COVENANT_ORB
 	waitfanfare
@@ -488,7 +488,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseAdditional1::
 	setvar VAR_0x8004, SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_1
 	special ShowFrontierExchangeCornerItemIconWindow
 	special ShowScrollableMultichoice
-	waitstate
+	@waitstate
 	special CloseFrontierExchangeCornerItemIconWindow
 	switch VAR_RESULT
 	case 0, BattleFrontier_ExchangeServiceCorner_EventScript_Electirizer
@@ -590,7 +590,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseAdditional2::
 	setvar VAR_0x8004, SCROLL_MULTI_BF_EXCHANGE_CORNER_ADDITIONAL_VENDOR_2
 	special ShowFrontierExchangeCornerItemIconWindow
 	special ShowScrollableMultichoice
-	waitstate
+	@waitstate
 	special CloseFrontierExchangeCornerItemIconWindow
 	switch VAR_RESULT
 	case 0, BattleFrontier_ExchangeServiceCorner_EventScript_RareCandy

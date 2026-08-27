@@ -12,7 +12,7 @@ AmberCity_House1_EventScript_Trader::
 	msgbox AmberCity_House1_Text_WillingToTradeIt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, AmberCity_House1_EventScript_DeclineTrade
 	special ChoosePartyMon
-	waitstate
+	@waitstate
 	copyvar VAR_0x800A, VAR_0x8004
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, AmberCity_House1_EventScript_DeclineTrade
 	copyvar VAR_0x8005, VAR_0x800A
@@ -23,7 +23,7 @@ AmberCity_House1_EventScript_Trader::
 	copyvar VAR_0x8005, VAR_0x800A
 	special CreateInGameTradePokemon
 	special DoInGameTradeScene
-	waitstate
+	@waitstate
 	bufferspeciesname STR_VAR_1, VAR_0x8009
 	giveitem ITEM_COVENANT_ORB
 	waitfanfare

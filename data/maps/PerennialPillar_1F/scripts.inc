@@ -102,7 +102,7 @@ PerennialPillar_EventScript_Arceus::
 	seteventmon SPECIES_ARCEUS, 80
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ARCEUS
 	setflag FLAG_HIDE_ARCEUS

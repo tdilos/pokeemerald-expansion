@@ -100,7 +100,7 @@ UndergroundCity_SewerRooms_EventScript_MelmetalBattle::
 	seteventmon SPECIES_MELMETAL, 55
 	totemboost_acc2 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	delay 30
 	call UndergroundCity_SewerRooms_EventScript_RemoveMelmetal1
 	playse SE_M_ACID_ARMOR
@@ -114,7 +114,7 @@ UndergroundCity_SewerRooms_EventScript_MelmetalBattle::
 	seteventmon SPECIES_MELMETAL, 55
 	totemboost_acc2 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	delay 30
 	call UndergroundCity_SewerRooms_EventScript_RemoveMelmetal2
 	playse SE_M_ACID_ARMOR
@@ -128,7 +128,7 @@ UndergroundCity_SewerRooms_EventScript_MelmetalBattle::
 	seteventmon SPECIES_MELMETAL, 55
 	totemboost_acc2 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	delay 30
 	call UndergroundCity_SewerRooms_EventScript_RemoveMelmetal3
 	playse SE_M_ACID_ARMOR

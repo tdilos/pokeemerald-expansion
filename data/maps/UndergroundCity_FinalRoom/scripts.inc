@@ -300,7 +300,7 @@ UndergroundCity_FinalRoom_EventScript_AzamiBattle::
 
 	playse SE_M_EARTHQUAKE
 	special DoSealedChamberShakingEffect_Long
-	waitstate
+	@waitstate
 
 	@delay 50
 	applymovement LOCALID_AZAMI, Common_Movement_ExclamationMark
@@ -365,7 +365,7 @@ UndergroundCity_FinalRoom_EventScript_AzamiBattle::
 
 	delay 60
 	special DoSealedChamberShakingEffect_Long
-	waitstate
+	@waitstate
 
 
 	playse SE_M_DETECT
@@ -384,7 +384,7 @@ UndergroundCity_FinalRoom_EventScript_AzamiBattle::
 	special DrawWholeMapView
 	setvar VAR_RANGER_HQ_STATE, 8
 	special FadeOutOrbEffect
-	waitstate
+	@waitstate
 
 	delay 240
 	goto UndergroundCity_FinalRoom_EventScript_BrendanMayEncounter

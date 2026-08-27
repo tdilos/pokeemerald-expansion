@@ -65,7 +65,7 @@ Route96_CableCarStation_EventScript_RideCableCar::
 	incrementgamestat GAME_STAT_RODE_CABLE_CAR
 	special CableCarIsshoWarp
 	special CableCar
-	waitstate
+	@waitstate
 	release
 	end
 

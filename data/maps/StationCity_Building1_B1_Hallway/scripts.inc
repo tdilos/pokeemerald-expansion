@@ -7,7 +7,7 @@ StationCity_Building1_B1_Hallway_EventScript_UltraWormhole::
 	msgbox StationCity_Building1_B1_Hallway_Text_GoBackToHoenn, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, StationCity_Building1_B1_Hallway_EventScript_Skip
 	warp MAP_ALTERING_CAVE, 26, 13
-	waitstate
+	@waitstate
 	release
 	end
 

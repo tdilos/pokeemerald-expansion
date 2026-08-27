@@ -1403,11 +1403,11 @@ void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32
     SetBoxMonData(boxMon, MON_DATA_LANGUAGE, &gGameLanguage);
     SetBoxMonData(boxMon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetBoxMonData(boxMon, MON_DATA_SPECIES, &species);
-    //SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
-	if (level <= MAX_LEVEL)
+    SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
+	/*if (level <= MAX_LEVEL)
 		SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
 	else
-		SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][0]);		
+		SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][0]);*/		
     SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &gSpeciesInfo[species].friendship);
     value = GetCurrentRegionMapSectionId();
     SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
@@ -1424,49 +1424,6 @@ void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32
     if (GetSpeciesAbility(species, 1))
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
 }
-
-/*void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
-{
-    u32 personality;
-
-    do
-    {
-        personality = Random32();
-    }
-    while (nature != GetNatureFromPersonality(personality));
-
-    CreateMon(mon, species, level, fixedIV, TRUE, personality, OT_ID_PLAYER_ID, 0);
-}
-
-void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter)
-{
-    u32 personality;
-
-    if ((u8)(unownLetter - 1) < NUM_UNOWN_FORMS)
-    {
-        u16 actualLetter;
-
-        do
-        {
-            personality = Random32();
-            actualLetter = GET_UNOWN_LETTER(personality);
-        }
-        while (nature != GetNatureFromPersonality(personality)
-            || gender != GetGenderFromSpeciesAndPersonality(species, personality)
-            || actualLetter != unownLetter - 1);
-    }
-    else
-    {
-        do
-        {
-            personality = Random32();
-        }
-        while (nature != GetNatureFromPersonality(personality)
-            || gender != GetGenderFromSpeciesAndPersonality(species, personality));
-    }
-
-    CreateMon(mon, species, level, fixedIV, TRUE, personality, OT_ID_PLAYER_ID, 0);
-}*/
 
 static bool32 IsValidGender(u32 gender)
 {
@@ -1542,50 +1499,6 @@ void CreateMonWithIVsPersonality(struct Pokemon *mon, enum Species species, u8 l
     CalculateMonStats(mon);
     GiveMonInitialMoveset(mon);
 }
-
-/*void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u32 otId)
-{
-    CreateMon(mon, species, level, 0, FALSE, 0, OT_ID_PRESET, otId);
-    SetMonData(mon, MON_DATA_HP_IV, &ivs[STAT_HP]);
-    SetMonData(mon, MON_DATA_ATK_IV, &ivs[STAT_ATK]);
-    SetMonData(mon, MON_DATA_DEF_IV, &ivs[STAT_DEF]);
-    SetMonData(mon, MON_DATA_SPEED_IV, &ivs[STAT_SPEED]);
-    SetMonData(mon, MON_DATA_SPATK_IV, &ivs[STAT_SPATK]);
-    SetMonData(mon, MON_DATA_SPDEF_IV, &ivs[STAT_SPDEF]);
-    CalculateMonStats(mon);
-}
-
-void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 evSpread)
-{
-    s32 i;
-    s32 statCount = 0;
-    u16 evAmount;
-    u8 evsBits;
-
-    CreateMon(mon, species, level, fixedIV, FALSE, 0, OT_ID_PLAYER_ID, 0);
-
-    evsBits = evSpread;
-
-    for (i = 0; i < NUM_STATS; i++)
-    {
-        if (evsBits & 1)
-            statCount++;
-        evsBits >>= 1;
-    }
-
-    evAmount = MAX_TOTAL_EVS / statCount;
-
-    evsBits = 1;
-
-    for (i = 0; i < NUM_STATS; i++)
-    {
-        if (evSpread & evsBits)
-            SetMonData(mon, MON_DATA_HP_EV + i, &evAmount);
-        evsBits <<= 1;
-    }
-
-    CalculateMonStats(mon);
-}*/
 
 void CreateBattleTowerMon(struct Pokemon *mon, struct BattleTowerPokemon *src)
 {
@@ -1731,40 +1644,6 @@ void CreateApprenticeMon(struct Pokemon *mon, const struct Apprentice *src, u8 m
     CalculateMonStats(mon);
 }
 
-/*void CreateMonWithEVSpreadNatureOTID(struct Pokemon *mon, u16 species, u8 level, u8 nature, u8 fixedIV, u8 evSpread, u32 otId)
-{
-    s32 i;
-    s32 statCount = 0;
-    u8 evsBits;
-    u16 evAmount;
-
-    // i is reused as personality value
-    do
-    {
-        i = Random32();
-    } while (nature != GetNatureFromPersonality(i));
-
-    CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PRESET, otId);
-    evsBits = evSpread;
-    for (i = 0; i < NUM_STATS; i++)
-    {
-        if (evsBits & 1)
-            statCount++;
-        evsBits >>= 1;
-    }
-
-    evAmount = MAX_TOTAL_EVS / statCount;
-    evsBits = 1;
-    for (i = 0; i < NUM_STATS; i++)
-    {
-        if (evSpread & evsBits)
-            SetMonData(mon, MON_DATA_HP_EV + i, &evAmount);
-        evsBits <<= 1;
-    }
-
-    CalculateMonStats(mon);
-}*/
-
 void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerPokemon *dest)
 {
     s32 i;
@@ -1907,8 +1786,8 @@ void CalculateMonStats(struct Pokemon *mon)
 
     u8 nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE, NULL);
 
-	if (GetMonData(mon, MON_DATA_LEVEL) > MAX_LEVEL) // Only used for Ultra Space opponents
-		level = GetMonData(mon, MON_DATA_LEVEL);
+	//if (GetMonData(mon, MON_DATA_LEVEL) > MAX_LEVEL) // Only used for Ultra Space opponents
+	//	level = GetMonData(mon, MON_DATA_LEVEL);
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
@@ -3905,6 +3784,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     }
 
     dst->species = GetMonData(src, MON_DATA_SPECIES, NULL);
+    //dst->species = SPECIES_WOBBUFFET;
     dst->item = GetMonData(src, MON_DATA_HELD_ITEM, NULL);
     dst->ppBonuses = GetMonData(src, MON_DATA_PP_BONUSES, NULL);
     dst->friendship = GetMonData(src, MON_DATA_FRIENDSHIP, NULL);

@@ -163,7 +163,7 @@ PitchblakCity_KendomaCorp_RightElevator_EventScript_MoveElevator::
 	closemessage
 	waitse
 	special MoveElevator
-	waitstate
+	@waitstate
 	setflag FLAG_TEMP_2
 	return
 

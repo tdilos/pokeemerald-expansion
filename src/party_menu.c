@@ -8631,7 +8631,7 @@ void DeleteUnselectedPartyMons(void)
 	{
 		if (gSpecialVar_0x8004 != i)
 		{
-			ZeroMonData(&gPlayerParty[i]);
+			ZeroMonData(&gParties[B_TRAINER_PLAYER][i]);
 		}
 	}
 	CompactPartySlots();

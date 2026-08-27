@@ -48,7 +48,7 @@ DreamResort_EventScript_SpiritombBattle::
 	seteventmon SPECIES_SPIRITOMB, 28
 	totemboost_evas2 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_BATTLED_SPIRITOMB
 	removeobject LOCALID_SOULSHARD1

@@ -11,7 +11,7 @@ PerennialPillar_EventScript_Palkia::
 	seteventmon SPECIES_PALKIA, 70
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_PALKIA
 	setflag FLAG_HIDE_PALKIA

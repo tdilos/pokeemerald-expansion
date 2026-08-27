@@ -175,7 +175,7 @@ UndergroundCity_Entrance_EventScript_AzamiIntro::
 
 	playse SE_M_EARTHQUAKE
 	special DoSealedChamberShakingEffect_Short
-	waitstate
+	@waitstate
 	@delay 40
 
 	applymovement OBJ_EVENT_ID_CAMERA, UndergroundCity_Entrance_Movement_CameraPanUp
@@ -196,7 +196,7 @@ UndergroundCity_Entrance_EventScript_AzamiIntro::
 	fadeinbgm 0
 	@warpsilent MAP_UNDERGROUND_CITY, 3, 45
 	warpsilent MAP_MT_SHIRO_SUMMIT, 12, 9
-	waitstate
+	@waitstate
 	releaseall
 	end
 

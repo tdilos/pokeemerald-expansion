@@ -193,7 +193,7 @@ ResedaTown_EventScript_TeachTutorMove::
 	msgbox ResedaTown_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special ChooseMonForMoveTutor
-	waitstate
+	@waitstate
 	goto_if_eq VAR_RESULT, FALSE, ResedaTown_EventScript_CancelChooseMon
 	msgbox ResedaTown_Text_HandedOverGreenShards, MSGBOX_DEFAULT
 	removeitem ITEM_GREEN_SHARD, VAR_0x8008

@@ -57,7 +57,7 @@ ResedaWoods_EventScript_Celebi::
 	seteventmon SPECIES_CELEBI, 50
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_CELEBI
 	setflag FLAG_BATTLED_CELEBI

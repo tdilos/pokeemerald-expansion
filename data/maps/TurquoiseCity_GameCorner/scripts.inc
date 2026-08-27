@@ -419,13 +419,13 @@ TurquoiseCity_GameCorner_EventScript_Beldum::
 	end
 
 TurquoiseCity_GameCorner_EventScript_Deino::
-	setvar VAR_TEMP_1, SPECIES_DEINO_ISSHOAN
+	setvar VAR_TEMP_1, SPECIES_DEINO_ISSHO
 	setvar VAR_TEMP_2, DEINO_COINS
 	goto TurquoiseCity_GameCorner_EventScript_ConfirmPrizeMon
 	end
 
 TurquoiseCity_GameCorner_EventScript_Dreepy::
-	setvar VAR_TEMP_1, SPECIES_DREEPY_ISSHOAN
+	setvar VAR_TEMP_1, SPECIES_DREEPY_ISSHO
 	setvar VAR_TEMP_2, DREEPY_COINS
 	goto TurquoiseCity_GameCorner_EventScript_ConfirmPrizeMon
 	end
@@ -448,8 +448,8 @@ TurquoiseCity_GameCorner_EventScript_ConfirmPrizeMon::
 	case SPECIES_KLEFKI,         TurquoiseCity_GameCorner_EventScript_GiveKlefki
 	case SPECIES_LARVITAR,       TurquoiseCity_GameCorner_EventScript_GiveLarvitar
 	case SPECIES_BELDUM,         TurquoiseCity_GameCorner_EventScript_GiveBeldum
-	case SPECIES_DEINO_ISSHOAN,  TurquoiseCity_GameCorner_EventScript_GiveDeino
-	case SPECIES_DREEPY_ISSHOAN, TurquoiseCity_GameCorner_EventScript_GiveDreepy
+	case SPECIES_DEINO_ISSHO,  TurquoiseCity_GameCorner_EventScript_GiveDeino
+	case SPECIES_DREEPY_ISSHO, TurquoiseCity_GameCorner_EventScript_GiveDreepy
 	case SPECIES_PORYGON,        TurquoiseCity_GameCorner_EventScript_GivePorygon
 	end
 

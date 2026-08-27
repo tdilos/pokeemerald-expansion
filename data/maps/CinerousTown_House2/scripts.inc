@@ -35,7 +35,7 @@ CinerousTown_House2_EventScript_HeadbuttDeclined::
 
 CinerousTown_House2_EventScript_OpenPartyMenu::
 	special ChooseMonForMoveTutor
-	waitstate
+	@waitstate
 	lock
 	faceplayer
 	return

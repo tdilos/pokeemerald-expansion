@@ -186,9 +186,9 @@ void ScriptSetMonAbility(u8 monIndex, u8 abilityNum)
 #else
     if (monIndex > PARTY_SIZE)
 #endif
-        monIndex = gPlayerPartyCount - 1;
+        monIndex = gPartiesCount[B_TRAINER_PLAYER] - 1;
 
-    SetMonData(&gPlayerParty[monIndex], MON_DATA_ABILITY_NUM, &abilityNum);
+    SetMonData(&gParties[B_TRAINER_PLAYER][monIndex], MON_DATA_ABILITY_NUM, &abilityNum);
 }
 
 // Note: When control returns to the event script, gSpecialVar_Result will be

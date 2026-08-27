@@ -361,7 +361,8 @@ struct BattlePokemon
     enum Type types[3];
     u8 pp[MAX_MON_MOVES];
     u16 hp;
-    u8 level;
+    //u8 level;
+    u16 level;
     u8 friendship;
     u16 maxHP;
     enum Item item;

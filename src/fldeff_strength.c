@@ -69,7 +69,7 @@ bool8 FldEff_UseMagnetRise(void)
     u8 taskId = CreateFieldMoveTask();
     gTasks[taskId].data[8] = (u32)StartMagnetRiseFieldEffect >> 16;
     gTasks[taskId].data[9] = (u32)StartMagnetRiseFieldEffect;
-    GetMonNickname(&gPlayerParty[gFieldEffectArguments[0]], gStringVar1);
+    GetMonNickname(&gParties[B_TRAINER_PLAYER][gFieldEffectArguments[0]], gStringVar1);
     return FALSE;
 }
 

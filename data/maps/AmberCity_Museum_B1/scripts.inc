@@ -54,7 +54,7 @@ AmberCity_Museum_B1_EventScript_ChooseMonForTutor::
 	msgbox AmberCity_Museum_B1_Text_TeachWhichPokemon, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special ChooseMonForMoveTutor
-	waitstate
+	@waitstate
 	goto_if_eq VAR_RESULT, FALSE, AmberCity_Museum_B1_EventScript_ExitTutor
 	release
 	end

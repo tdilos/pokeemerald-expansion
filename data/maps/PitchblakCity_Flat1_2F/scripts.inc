@@ -80,7 +80,7 @@ PitchblakCity_Flat1_2F_EventScript_ChooseMonForTutor::
 	msgbox PitchblakCity_Flat1_2F_Text_TeachWhichPokemon, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special ChooseMonForMoveTutor
-	waitstate
+	@waitstate
 	goto_if_eq VAR_RESULT, FALSE, PitchblakCity_Flat1_2F_EventScript_ExitTutor
 	release
 	end

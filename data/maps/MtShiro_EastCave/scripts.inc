@@ -47,7 +47,7 @@ MtShiro_EastCave_EventScript_SprinkleRoadSalt::
 	lock
 	faceplayer
 	special DoWateringBerryTreeAnim
-	waitstate
+	@waitstate
 	msgbox MtShiro_EastCave_Text_Yetree_Attacked, MSGBOX_DEFAULT
 	closemessage
 	waitse
@@ -60,7 +60,7 @@ MtShiro_EastCave_EventScript_SprinkleRoadSalt::
 	seteventmon SPECIES_YETREE, 46
 	totemboost_def2 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome

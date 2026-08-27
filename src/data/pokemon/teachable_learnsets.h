@@ -60564,7 +60564,7 @@ static const u16 sPecharuntTeachableLearnset[] = {
 };
 #endif //P_FAMILY_PECHARUNT
 
-#if P_TOURMALINE_MONS
+#if P_TOURMALINE_POKEMON
 static const u16 sQuilladinIsshoTeachableLearnset[] = {
     MOVE_AERIAL_ACE,
     MOVE_ATTRACT,
@@ -64902,4 +64902,4 @@ static const u16 sThurslushTeachableLearnset[] = {
     MOVE_WHIRLPOOL,
     MOVE_UNAVAILABLE,
 };
-#endif //P_TOURMALINE_MONS
+#endif //P_TOURMALINE_POKEMON

@@ -685,8 +685,10 @@ const u32 gTrainerFrontPic_PainterFrlg[] = INCGFX_U32("graphics/trainers/front_p
 const u16 gTrainerPalette_PainterFrlg[] = INCGFX_U16("graphics/trainers/palettes/painter_frlg.pal", ".gbapal");
 
 static const u8 gTrainerBackPic_None[] = INCGFX_U8("graphics/trainers/back_pics/none.png", ".4bpp");
-const u8 gTrainerBackPic_Brendan[] = INCGFX_U8("graphics/trainers/back_pics/brendan.png", ".4bpp");
-const u8 gTrainerBackPic_May[] = INCGFX_U8("graphics/trainers/back_pics/may.png", ".4bpp");
+//const u8 gTrainerBackPic_Brendan[] = INCGFX_U8("graphics/trainers/back_pics/brendan.png", ".4bpp");
+//const u8 gTrainerBackPic_May[] = INCGFX_U8("graphics/trainers/back_pics/may.png", ".4bpp");
+const u8 gTrainerBackPic_Brendan[] = INCGFX_U8("graphics/trainers/back_pics/vert.png", ".4bpp");
+const u8 gTrainerBackPic_May[] = INCGFX_U8("graphics/trainers/back_pics/violet.png", ".4bpp");
 const u8 gTrainerBackPic_Red[] = INCGFX_U8("graphics/trainers/back_pics/red.png", ".4bpp");
 const u8 gTrainerBackPic_Leaf[] = INCGFX_U8("graphics/trainers/back_pics/leaf.png", ".4bpp");
 const u8 gTrainerBackPic_RubySapphireBrendan[] = INCGFX_U8("graphics/trainers/back_pics/brendan_rs.png", ".4bpp");

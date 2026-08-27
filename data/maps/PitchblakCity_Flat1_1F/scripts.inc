@@ -54,7 +54,7 @@ PitchblakCity_Flat1_1F_EventScript_AskTeachMove::
 PitchblakCity_Flat1_1F_EventScript_ChooseMon::
 	msgbox PitchblakCity_Flat1_1F_Text_TutorWhichMon, MSGBOX_DEFAULT
 	special ChooseMonForMoveRelearner
-	waitstate
+	@waitstate
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, PitchblakCity_Flat1_1F_EventScript_ComeBackWithHeartScale
 	special IsSelectedMonEgg
 	goto_if_eq VAR_RESULT, TRUE, PitchblakCity_Flat1_1F_EventScript_CantTeachEgg
@@ -65,7 +65,7 @@ PitchblakCity_Flat1_1F_EventScript_ChooseMon::
 PitchblakCity_Flat1_1F_EventScript_ChooseMove::
 	msgbox PitchblakCity_Flat1_1F_Text_TeachWhichMove, MSGBOX_DEFAULT
 	special TeachMoveRelearnerMove
-	waitstate
+	@waitstate
 	goto_if_eq VAR_0x8004, 0, PitchblakCity_Flat1_1F_EventScript_ChooseMon
 	msgbox PitchblakCity_Flat1_1F_Text_HandedOverHeartScale, MSGBOX_DEFAULT
 	removeitem ITEM_HEART_SCALE

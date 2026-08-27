@@ -64,7 +64,7 @@ Route96_EventScript_ZoroarkBattle::
 	seteventmon SPECIES_ZOROARK, 47
 	totemboost_atk2 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	fadescreen FADE_TO_BLACK
 	setvar VAR_SCARLET_WOODS_STATE, 1
 	removeobject LOCALID_BOY1

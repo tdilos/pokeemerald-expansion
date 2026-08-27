@@ -49,7 +49,7 @@ Route68_House1_EventScript_TeachTutorMove::
 	msgbox Route68_House1_Text_TeachWhichPokemon, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special ChooseMonForMoveTutor
-	waitstate
+	@waitstate
 	goto_if_eq VAR_RESULT, FALSE, Route68_House1_EventScript_ChooseTutorMove
 	release
 	end

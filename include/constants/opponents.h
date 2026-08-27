@@ -1445,11 +1445,13 @@
 #define TRAINER_PETRA_R          1373
 #define TRAINER_NORMAN_R         1374
 
+#define TRAINER_SYNDERLING_TEST  1375
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1375 //1291 //965//855
+#define TRAINERS_COUNT_EMERALD     1376 //1291 //965//855
 #define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG

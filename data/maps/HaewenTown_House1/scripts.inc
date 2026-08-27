@@ -193,7 +193,7 @@ HaewenTown_EventScript_TeachTutorMove::
 	msgbox HaewenTown_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special ChooseMonForMoveTutor
-	waitstate
+	@waitstate
 	goto_if_eq VAR_RESULT, FALSE, HaewenTown_EventScript_CancelChooseMon
 	msgbox HaewenTown_Text_HandedOverBlueShards, MSGBOX_DEFAULT
 	removeitem ITEM_BLUE_SHARD, VAR_0x8008

@@ -366,7 +366,7 @@
 #define VAR_X_SYNESTIA_STATE                             0x410F
 
 #define VAR_SEASON                                       0x4110 // Used for warping into X-Holt
-#define VAR_UNUSED_0x4111                                0x4111
+#define VAR_OVERMIND_STATE                               0x4111 // Used for dynamic level scaling in Ultra Space
 #define VAR_UNUSED_0x4112                                0x4112
 #define VAR_UNUSED_0x4113                                0x4113
 #define VAR_UNUSED_0x4114                                0x4114

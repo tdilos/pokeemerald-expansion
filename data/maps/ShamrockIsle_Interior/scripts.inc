@@ -586,7 +586,7 @@ ShamrockIsle_Interior_EventScript_BattlePoachers::
 	seteventmon SPECIES_PLUX, 49
 	totemboost_speed2 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	playbgm MUS_DUMMY, FALSE
 	@fadeoutbgm 0
 	applymovement LOCALID_POACHER1, Common_Movement_WalkInPlaceRight

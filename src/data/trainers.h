@@ -45999,7 +45999,7 @@
             },
             {
 #line 16908
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16911
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46020,7 +46020,7 @@
             },
             {
 #line 16918
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16921
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46041,7 +46041,7 @@
             },
             {
 #line 16928
-            .species = SPECIES_BRIONNE_ISSHOAN,
+            .species = SPECIES_BRIONNE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16931
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46109,7 +46109,7 @@
             },
             {
 #line 16959
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16962
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46130,7 +46130,7 @@
             },
             {
 #line 16969
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16972
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46151,7 +46151,7 @@
             },
             {
 #line 16979
-            .species = SPECIES_QUILLADIN_ISSHOAN,
+            .species = SPECIES_QUILLADIN_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16982
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46219,7 +46219,7 @@
             },
             {
 #line 17010
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17013
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46240,7 +46240,7 @@
             },
             {
 #line 17020
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17023
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46261,7 +46261,7 @@
             },
             {
 #line 17030
-            .species = SPECIES_PIGNITE_ISSHOAN,
+            .species = SPECIES_PIGNITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17033
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46329,7 +46329,7 @@
             },
             {
 #line 17062
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17065
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46350,7 +46350,7 @@
             },
             {
 #line 17072
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17075
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46371,7 +46371,7 @@
             },
             {
 #line 17082
-            .species = SPECIES_BRIONNE_ISSHOAN,
+            .species = SPECIES_BRIONNE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17085
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46439,7 +46439,7 @@
             },
             {
 #line 17113
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17116
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46460,7 +46460,7 @@
             },
             {
 #line 17123
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17126
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46481,7 +46481,7 @@
             },
             {
 #line 17133
-            .species = SPECIES_QUILLADIN_ISSHOAN,
+            .species = SPECIES_QUILLADIN_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17136
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46549,7 +46549,7 @@
             },
             {
 #line 17164
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17167
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46570,7 +46570,7 @@
             },
             {
 #line 17174
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17177
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46591,7 +46591,7 @@
             },
             {
 #line 17184
-            .species = SPECIES_PIGNITE_ISSHOAN,
+            .species = SPECIES_PIGNITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17187
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46657,7 +46657,7 @@
             },
             {
 #line 17214
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17216
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46676,7 +46676,7 @@
             },
             {
 #line 17223
-            .species = SPECIES_BRIONNE_ISSHOAN,
+            .species = SPECIES_BRIONNE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17225
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46740,7 +46740,7 @@
             },
             {
 #line 17253
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17255
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46759,7 +46759,7 @@
             },
             {
 #line 17262
-            .species = SPECIES_QUILLADIN_ISSHOAN,
+            .species = SPECIES_QUILLADIN_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17264
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46823,7 +46823,7 @@
             },
             {
 #line 17292
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17294
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46842,7 +46842,7 @@
             },
             {
 #line 17301
-            .species = SPECIES_PIGNITE_ISSHOAN,
+            .species = SPECIES_PIGNITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17303
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46906,7 +46906,7 @@
             },
             {
 #line 17330
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17332
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46925,7 +46925,7 @@
             },
             {
 #line 17339
-            .species = SPECIES_BRIONNE_ISSHOAN,
+            .species = SPECIES_BRIONNE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17341
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -46989,7 +46989,7 @@
             },
             {
 #line 17369
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17371
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -47008,7 +47008,7 @@
             },
             {
 #line 17378
-            .species = SPECIES_QUILLADIN_ISSHOAN,
+            .species = SPECIES_QUILLADIN_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17380
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -47072,7 +47072,7 @@
             },
             {
 #line 17408
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17410
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -47091,7 +47091,7 @@
             },
             {
 #line 17417
-            .species = SPECIES_PIGNITE_ISSHOAN,
+            .species = SPECIES_PIGNITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17419
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -47136,7 +47136,7 @@
         {
             {
 #line 17438
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17438
             .heldItem = ITEM_LIGHT_CLAY,
@@ -47161,7 +47161,7 @@
             },
             {
 #line 17449
-            .species = SPECIES_SANDACONDA_ISSHOAN,
+            .species = SPECIES_SANDACONDA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17449
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47236,7 +47236,7 @@
             },
             {
 #line 17482
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17482
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47261,7 +47261,7 @@
             },
             {
 #line 17493
-            .species = SPECIES_PRIMARINA_ISSHOAN,
+            .species = SPECIES_PRIMARINA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17493
             .heldItem = ITEM_MYSTIC_WATER,
@@ -47312,7 +47312,7 @@
         {
             {
 #line 17516
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17516
             .heldItem = ITEM_LIGHT_CLAY,
@@ -47337,7 +47337,7 @@
             },
             {
 #line 17527
-            .species = SPECIES_SANDACONDA_ISSHOAN,
+            .species = SPECIES_SANDACONDA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17527
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47412,7 +47412,7 @@
             },
             {
 #line 17560
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17560
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47437,7 +47437,7 @@
             },
             {
 #line 17571
-            .species = SPECIES_CHESNAUGHT_ISSHOAN,
+            .species = SPECIES_CHESNAUGHT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17571
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47488,7 +47488,7 @@
         {
             {
 #line 17594
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17594
             .heldItem = ITEM_LIGHT_CLAY,
@@ -47513,7 +47513,7 @@
             },
             {
 #line 17605
-            .species = SPECIES_SANDACONDA_ISSHOAN,
+            .species = SPECIES_SANDACONDA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17605
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47588,7 +47588,7 @@
             },
             {
 #line 17638
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17638
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47613,7 +47613,7 @@
             },
             {
 #line 17649
-            .species = SPECIES_EMBOAR_ISSHOAN,
+            .species = SPECIES_EMBOAR_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17649
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47664,7 +47664,7 @@
         {
             {
 #line 17672
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17672
             .heldItem = ITEM_LIGHT_CLAY,
@@ -47689,7 +47689,7 @@
             },
             {
 #line 17683
-            .species = SPECIES_SANDACONDA_ISSHOAN,
+            .species = SPECIES_SANDACONDA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17683
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47764,7 +47764,7 @@
             },
             {
 #line 17716
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17716
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47789,7 +47789,7 @@
             },
             {
 #line 17727
-            .species = SPECIES_PRIMARINA_ISSHOAN,
+            .species = SPECIES_PRIMARINA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17727
             .heldItem = ITEM_MYSTIC_WATER,
@@ -47840,7 +47840,7 @@
         {
             {
 #line 17750
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17750
             .heldItem = ITEM_LIGHT_CLAY,
@@ -47865,7 +47865,7 @@
             },
             {
 #line 17761
-            .species = SPECIES_SANDACONDA_ISSHOAN,
+            .species = SPECIES_SANDACONDA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17761
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47940,7 +47940,7 @@
             },
             {
 #line 17794
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17794
             .heldItem = ITEM_ASSAULT_VEST,
@@ -47965,7 +47965,7 @@
             },
             {
 #line 17805
-            .species = SPECIES_CHESNAUGHT_ISSHOAN,
+            .species = SPECIES_CHESNAUGHT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17805
             .heldItem = ITEM_ASSAULT_VEST,
@@ -48016,7 +48016,7 @@
         {
             {
 #line 17828
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17828
             .heldItem = ITEM_LIGHT_CLAY,
@@ -48041,7 +48041,7 @@
             },
             {
 #line 17839
-            .species = SPECIES_SANDACONDA_ISSHOAN,
+            .species = SPECIES_SANDACONDA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17839
             .heldItem = ITEM_ASSAULT_VEST,
@@ -48116,7 +48116,7 @@
             },
             {
 #line 17872
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17872
             .heldItem = ITEM_ASSAULT_VEST,
@@ -48141,7 +48141,7 @@
             },
             {
 #line 17883
-            .species = SPECIES_EMBOAR_ISSHOAN,
+            .species = SPECIES_EMBOAR_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17883
             .heldItem = ITEM_ASSAULT_VEST,
@@ -48687,7 +48687,7 @@
             },
             {
 #line 18130
-            .species = SPECIES_PIGNITE_ISSHOAN,
+            .species = SPECIES_PIGNITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18133
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -48797,7 +48797,7 @@
             },
             {
 #line 18182
-            .species = SPECIES_BRIONNE_ISSHOAN,
+            .species = SPECIES_BRIONNE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18185
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -48907,7 +48907,7 @@
             },
             {
 #line 18234
-            .species = SPECIES_QUILLADIN_ISSHOAN,
+            .species = SPECIES_QUILLADIN_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18237
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -49073,7 +49073,7 @@
             },
             {
 #line 18311
-            .species = SPECIES_EMBOAR_ISSHOAN,
+            .species = SPECIES_EMBOAR_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18311
             .heldItem = ITEM_PINK_BOW,
@@ -49241,7 +49241,7 @@
             },
             {
 #line 18389
-            .species = SPECIES_PRIMARINA_ISSHOAN,
+            .species = SPECIES_PRIMARINA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18389
             .heldItem = ITEM_AMPLIFIER,
@@ -49411,7 +49411,7 @@
             },
             {
 #line 18467
-            .species = SPECIES_CHESNAUGHT_ISSHOAN,
+            .species = SPECIES_CHESNAUGHT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18467
             .heldItem = ITEM_METAL_COAT,
@@ -49581,7 +49581,7 @@
             },
             {
 #line 18545
-            .species = SPECIES_EMBOAR_ISSHOAN,
+            .species = SPECIES_EMBOAR_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18545
             .heldItem = ITEM_PINK_BOW,
@@ -49749,7 +49749,7 @@
             },
             {
 #line 18623
-            .species = SPECIES_PRIMARINA_ISSHOAN,
+            .species = SPECIES_PRIMARINA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18623
             .heldItem = ITEM_AMPLIFIER,
@@ -49919,7 +49919,7 @@
             },
             {
 #line 18701
-            .species = SPECIES_CHESNAUGHT_ISSHOAN,
+            .species = SPECIES_CHESNAUGHT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18701
             .heldItem = ITEM_METAL_COAT,
@@ -50165,7 +50165,7 @@
 #line 18813
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 18814
-        .trainerPic = TRAINER_PIC_RAYNER,
+        .trainerPic = TRAINER_PIC_RAYNER_NO_GLASSES,
 #line 18815
         .gender = TRAINER_GENDER_MALE,
 #line 18816
@@ -50183,7 +50183,7 @@
         {
             {
 #line 18822
-            .species = SPECIES_GOLURK_ISSHOAN,
+            .species = SPECIES_GOLURK_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 18822
             .heldItem = ITEM_ASSAULT_VEST,
@@ -50861,7 +50861,7 @@
             },
             {
 #line 19091
-            .species = SPECIES_MUNNA_ISSHOAN,
+            .species = SPECIES_MUNNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19093
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -50933,7 +50933,7 @@
             },
             {
 #line 19117
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19119
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -51061,7 +51061,7 @@
             },
             {
 #line 19164
-            .species = SPECIES_CUFANT_ISSHOAN,
+            .species = SPECIES_CUFANT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19166
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -51131,7 +51131,7 @@
             },
             {
 #line 19190
-            .species = SPECIES_COPPERAJAH_ISSHOAN,
+            .species = SPECIES_COPPERAJAH_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19192
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -52324,7 +52324,7 @@
             },
             {
 #line 19657
-            .species = SPECIES_ELGYEM_ISSHOAN,
+            .species = SPECIES_ELGYEM_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 19660
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -53900,7 +53900,7 @@
         {
             {
 #line 20253
-            .species = SPECIES_WOOBAT_ISSHOAN,
+            .species = SPECIES_WOOBAT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 20255
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -53912,7 +53912,7 @@
             },
             {
 #line 20257
-            .species = SPECIES_WOOBAT_ISSHOAN,
+            .species = SPECIES_WOOBAT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 20259
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -53924,7 +53924,7 @@
             },
             {
 #line 20261
-            .species = SPECIES_WOOBAT_ISSHOAN,
+            .species = SPECIES_WOOBAT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 20263
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -54464,7 +54464,7 @@
         {
             {
 #line 20461
-            .species = SPECIES_SKRELP_ISSHOAN,
+            .species = SPECIES_SKRELP_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 20463
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -54500,7 +54500,7 @@
             },
             {
 #line 20473
-            .species = SPECIES_SKRELP_ISSHOAN,
+            .species = SPECIES_SKRELP_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 20475
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -55220,7 +55220,7 @@
             },
             {
 #line 20741
-            .species = SPECIES_WOOBAT_ISSHOAN,
+            .species = SPECIES_WOOBAT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 20743
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -55863,7 +55863,7 @@
             },
             {
 #line 20999
-            .species = SPECIES_QUILLADIN_ISSHOAN,
+            .species = SPECIES_QUILLADIN_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21001
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -55899,7 +55899,7 @@
         {
             {
 #line 21013
-            .species = SPECIES_SKRELP_ISSHOAN,
+            .species = SPECIES_SKRELP_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21015
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -55911,7 +55911,7 @@
             },
             {
 #line 21017
-            .species = SPECIES_SKRELP_ISSHOAN,
+            .species = SPECIES_SKRELP_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21019
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -56073,7 +56073,7 @@
             },
             {
 #line 21086
-            .species = SPECIES_DRAGALGE_ISSHOAN,
+            .species = SPECIES_DRAGALGE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21086
             .heldItem = ITEM_SITRUS_BERRY,
@@ -56141,7 +56141,7 @@
             },
             {
 #line 21117
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21120
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -56360,7 +56360,7 @@
             },
             {
 #line 21217
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21220
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -56555,7 +56555,7 @@
             },
             {
 #line 21307
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21310
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -56576,7 +56576,7 @@
             },
             {
 #line 21317
-            .species = SPECIES_ELGYEM_ISSHOAN,
+            .species = SPECIES_ELGYEM_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21320
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -57157,7 +57157,7 @@
         {
             {
 #line 21547
-            .species = SPECIES_WOOLOO_ISSHOAN,
+            .species = SPECIES_WOOLOO_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21549
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -57169,7 +57169,7 @@
             },
             {
 #line 21551
-            .species = SPECIES_WOOLOO_ISSHOAN,
+            .species = SPECIES_WOOLOO_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21553
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -57337,7 +57337,7 @@
             },
             {
 #line 21613
-            .species = SPECIES_DUBWOOL_ISSHOAN,
+            .species = SPECIES_DUBWOOL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21615
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -58083,7 +58083,7 @@
             },
             {
 #line 21902
-            .species = SPECIES_BRIONNE_ISSHOAN,
+            .species = SPECIES_BRIONNE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 21904
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -58571,7 +58571,7 @@
             },
             {
 #line 22086
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22088
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -58679,7 +58679,7 @@
             },
             {
 #line 22126
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22128
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -59512,7 +59512,7 @@
         {
             {
 #line 22447
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22449
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -59524,7 +59524,7 @@
             },
             {
 #line 22451
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22453
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -59572,7 +59572,7 @@
         {
             {
 #line 22469
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22471
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -59596,7 +59596,7 @@
             },
             {
 #line 22477
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22479
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -59704,7 +59704,7 @@
         {
             {
 #line 22516
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22518
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -59764,7 +59764,7 @@
             },
             {
 #line 22538
-            .species = SPECIES_WOOLOO_ISSHOAN,
+            .species = SPECIES_WOOLOO_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22540
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -59824,7 +59824,7 @@
         {
             {
 #line 22560
-            .species = SPECIES_PHANTUMP_ISSHOAN,
+            .species = SPECIES_PHANTUMP_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22562
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -59836,7 +59836,7 @@
             },
             {
 #line 22564
-            .species = SPECIES_PHANTUMP_ISSHOAN,
+            .species = SPECIES_PHANTUMP_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22566
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -59848,7 +59848,7 @@
             },
             {
 #line 22568
-            .species = SPECIES_PHANTUMP_ISSHOAN,
+            .species = SPECIES_PHANTUMP_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22570
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -60004,7 +60004,7 @@
         {
             {
 #line 22628
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22630
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -60200,7 +60200,7 @@
             },
             {
 #line 22700
-            .species = SPECIES_PIGNITE_ISSHOAN,
+            .species = SPECIES_PIGNITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22702
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -60368,7 +60368,7 @@
             },
             {
 #line 22762
-            .species = SPECIES_MORELULL_ISSHOAN,
+            .species = SPECIES_MORELULL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22764
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -60560,7 +60560,7 @@
         {
             {
 #line 22834
-            .species = SPECIES_MORELULL_ISSHOAN,
+            .species = SPECIES_MORELULL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22836
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -60584,7 +60584,7 @@
             },
             {
 #line 22842
-            .species = SPECIES_MORELULL_ISSHOAN,
+            .species = SPECIES_MORELULL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22844
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -60800,7 +60800,7 @@
             },
             {
 #line 22922
-            .species = SPECIES_MORELULL_ISSHOAN,
+            .species = SPECIES_MORELULL_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 22924
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -61678,7 +61678,7 @@
             },
             {
 #line 23256
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23259
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -62032,7 +62032,7 @@
         {
             {
 #line 23391
-            .species = SPECIES_VANILLISH_ISSHOAN,
+            .species = SPECIES_VANILLISH_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23394
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -62098,7 +62098,7 @@
             },
             {
 #line 23417
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23420
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -62216,7 +62216,7 @@
         {
             {
 #line 23464
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23467
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -62230,7 +62230,7 @@
             },
             {
 #line 23469
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23472
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -62296,7 +62296,7 @@
             },
             {
 #line 23494
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23497
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -62386,7 +62386,7 @@
             },
             {
 #line 23529
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23532
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -62400,7 +62400,7 @@
             },
             {
 #line 23534
-            .species = SPECIES_VANILLITE_ISSHOAN,
+            .species = SPECIES_VANILLITE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23537
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -62452,7 +62452,7 @@
             },
             {
 #line 23554
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23557
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -62640,7 +62640,7 @@
         {
             {
 #line 23628
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23630
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -62664,7 +62664,7 @@
             },
             {
 #line 23636
-            .species = SPECIES_SILICOBRA_ISSHOAN,
+            .species = SPECIES_SILICOBRA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23638
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -62748,7 +62748,7 @@
         {
             {
 #line 23668
-            .species = SPECIES_WOOBAT_ISSHOAN,
+            .species = SPECIES_WOOBAT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23670
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -62772,7 +62772,7 @@
             },
             {
 #line 23676
-            .species = SPECIES_WOOBAT_ISSHOAN,
+            .species = SPECIES_WOOBAT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23678
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -62856,7 +62856,7 @@
         {
             {
 #line 23708
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23710
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -62880,7 +62880,7 @@
             },
             {
 #line 23716
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23718
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -62965,7 +62965,7 @@
         {
             {
 #line 23754
-            .species = SPECIES_SWOOBAT_ISSHOAN,
+            .species = SPECIES_SWOOBAT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23758
             .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -63013,7 +63013,7 @@
             },
             {
 #line 23776
-            .species = SPECIES_SWOOBAT_ISSHOAN,
+            .species = SPECIES_SWOOBAT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 23780
             .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -63682,7 +63682,7 @@
         {
             {
 #line 24038
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 24040
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -64214,7 +64214,7 @@
             },
             {
 #line 24251
-            .species = SPECIES_COPPERAJAH_ISSHOAN,
+            .species = SPECIES_COPPERAJAH_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 24251
             .heldItem = ITEM_ASSAULT_VEST,
@@ -64645,7 +64645,7 @@
             },
             {
 #line 24416
-            .species = SPECIES_SHIINOTIC_ISSHOAN,
+            .species = SPECIES_SHIINOTIC_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 24418
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -64801,7 +64801,7 @@
         {
             {
 #line 24474
-            .species = SPECIES_SKRELP_ISSHOAN,
+            .species = SPECIES_SKRELP_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 24476
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -64933,7 +64933,7 @@
             },
             {
 #line 24522
-            .species = SPECIES_DRAGALGE_ISSHOAN,
+            .species = SPECIES_DRAGALGE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 24524
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -65089,7 +65089,7 @@
             },
             {
 #line 24580
-            .species = SPECIES_SKRELP_ISSHOAN,
+            .species = SPECIES_SKRELP_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 24582
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -67037,7 +67037,7 @@
             },
             {
 #line 25302
-            .species = SPECIES_ELGYEM_ISSHOAN,
+            .species = SPECIES_ELGYEM_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25304
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -67527,7 +67527,7 @@
         {
             {
 #line 25484
-            .species = SPECIES_ZWEILOUS_ISSHOAN,
+            .species = SPECIES_ZWEILOUS_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25486
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -67539,7 +67539,7 @@
             },
             {
 #line 25488
-            .species = SPECIES_ZWEILOUS_ISSHOAN,
+            .species = SPECIES_ZWEILOUS_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25490
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -67601,7 +67601,7 @@
             },
             {
 #line 25511
-            .species = SPECIES_DEINO_ISSHOAN,
+            .species = SPECIES_DEINO_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25512
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -67675,7 +67675,7 @@
             },
             {
 #line 25537
-            .species = SPECIES_DEINO_ISSHOAN,
+            .species = SPECIES_DEINO_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25539
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -67687,7 +67687,7 @@
             },
             {
 #line 25541
-            .species = SPECIES_DRAGALGE_ISSHOAN,
+            .species = SPECIES_DRAGALGE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25543
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -67723,7 +67723,7 @@
         {
             {
 #line 25555
-            .species = SPECIES_SANDACONDA_ISSHOAN,
+            .species = SPECIES_SANDACONDA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25557
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -67933,7 +67933,7 @@
             },
             {
 #line 25641
-            .species = SPECIES_HYDREIGON_ISSHOAN,
+            .species = SPECIES_HYDREIGON_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25641
             .heldItem = ITEM_WISE_GLASSES,
@@ -67982,7 +67982,7 @@
         {
             {
 #line 25662
-            .species = SPECIES_CUFANT_ISSHOAN,
+            .species = SPECIES_CUFANT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25664
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -68090,7 +68090,7 @@
         {
             {
 #line 25702
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25704
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -68102,7 +68102,7 @@
             },
             {
 #line 25706
-            .species = SPECIES_GOLETT_ISSHOAN,
+            .species = SPECIES_GOLETT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25708
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -68138,7 +68138,7 @@
         {
             {
 #line 25720
-            .species = SPECIES_CUFANT_ISSHOAN,
+            .species = SPECIES_CUFANT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25722
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -68162,7 +68162,7 @@
             },
             {
 #line 25728
-            .species = SPECIES_CUFANT_ISSHOAN,
+            .species = SPECIES_CUFANT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25730
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -68366,7 +68366,7 @@
             },
             {
 #line 25804
-            .species = SPECIES_SANDACONDA_ISSHOAN,
+            .species = SPECIES_SANDACONDA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25806
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -68526,7 +68526,7 @@
         {
             {
 #line 25864
-            .species = SPECIES_TREVENANT_ISSHOAN,
+            .species = SPECIES_TREVENANT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25866
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -68828,7 +68828,7 @@
         {
             {
 #line 25977
-            .species = SPECIES_PRIMARINA_ISSHOAN,
+            .species = SPECIES_PRIMARINA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 25979
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -69254,7 +69254,7 @@
         {
             {
 #line 26149
-            .species = SPECIES_VANILLISH_ISSHOAN,
+            .species = SPECIES_VANILLISH_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 26151
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -69314,7 +69314,7 @@
             },
             {
 #line 26171
-            .species = SPECIES_SANDACONDA_ISSHOAN,
+            .species = SPECIES_SANDACONDA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 26173
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -69422,7 +69422,7 @@
         {
             {
 #line 26211
-            .species = SPECIES_VANILLUXE_ISSHOAN,
+            .species = SPECIES_VANILLUXE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 26213
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -69434,7 +69434,7 @@
             },
             {
 #line 26215
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 26217
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -69940,7 +69940,7 @@
         {
             {
 #line 26409
-            .species = SPECIES_SHIINOTIC_ISSHOAN,
+            .species = SPECIES_SHIINOTIC_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 26411
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -69952,7 +69952,7 @@
             },
             {
 #line 26413
-            .species = SPECIES_SHIINOTIC_ISSHOAN,
+            .species = SPECIES_SHIINOTIC_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 26415
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -70126,7 +70126,7 @@
             },
             {
 #line 26487
-            .species = SPECIES_DRAGAPULT_ISSHOAN,
+            .species = SPECIES_DRAGAPULT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 26487
             .heldItem = ITEM_BLACK_SLUDGE,
@@ -70669,7 +70669,7 @@
             },
             {
 #line 26693
-            .species = SPECIES_GOLURK_ISSHOAN,
+            .species = SPECIES_GOLURK_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 26696
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -71319,7 +71319,7 @@
         {
             {
 #line 26934
-            .species = SPECIES_BEHEEYEM_ISSHOAN,
+            .species = SPECIES_BEHEEYEM_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 26937
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -71857,7 +71857,7 @@
             },
             {
 #line 27136
-            .species = SPECIES_TREVENANT_ISSHOAN,
+            .species = SPECIES_TREVENANT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27138
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -72037,7 +72037,7 @@
         {
             {
 #line 27204
-            .species = SPECIES_SHIINOTIC_ISSHOAN,
+            .species = SPECIES_SHIINOTIC_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27206
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -72061,7 +72061,7 @@
             },
             {
 #line 27212
-            .species = SPECIES_SHIINOTIC_ISSHOAN,
+            .species = SPECIES_SHIINOTIC_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27214
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -72173,7 +72173,7 @@
             },
             {
 #line 27254
-            .species = SPECIES_EMBOAR_ISSHOAN,
+            .species = SPECIES_EMBOAR_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27256
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -72223,7 +72223,7 @@
             },
             {
 #line 27273
-            .species = SPECIES_COPPERAJAH_ISSHOAN,
+            .species = SPECIES_COPPERAJAH_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27275
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -72285,7 +72285,7 @@
             },
             {
 #line 27296
-            .species = SPECIES_DRAGALGE_ISSHOAN,
+            .species = SPECIES_DRAGALGE_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27298
             .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -72583,7 +72583,7 @@
             },
             {
 #line 27411
-            .species = SPECIES_PRIMARINA_ISSHOAN,
+            .species = SPECIES_PRIMARINA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27415
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
@@ -72606,7 +72606,7 @@
             },
             {
 #line 27422
-            .species = SPECIES_MUSHARNA_ISSHOAN,
+            .species = SPECIES_MUSHARNA_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27422
             .heldItem = ITEM_LEFTOVERS,
@@ -72732,7 +72732,7 @@
             },
             {
 #line 27479
-            .species = SPECIES_TREVENANT_ISSHOAN,
+            .species = SPECIES_TREVENANT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27479
             .heldItem = ITEM_ASSAULT_VEST,
@@ -72803,7 +72803,7 @@
             },
             {
 #line 27512
-            .species = SPECIES_TREVENANT_ISSHOAN,
+            .species = SPECIES_TREVENANT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27512
             .heldItem = ITEM_ASSAULT_VEST,
@@ -73719,7 +73719,7 @@
             },
             {
 #line 27925
-            .species = SPECIES_TREVENANT_ISSHOAN,
+            .species = SPECIES_TREVENANT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27925
             .heldItem = ITEM_BIG_ROOT,
@@ -73917,7 +73917,7 @@
             },
             {
 #line 28012
-            .species = SPECIES_SHIINOTIC_ISSHOAN,
+            .species = SPECIES_SHIINOTIC_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 28012
             .heldItem = ITEM_LEFTOVERS,
@@ -74115,7 +74115,7 @@
             },
             {
 #line 28100
-            .species = SPECIES_SWOOBAT_ISSHOAN,
+            .species = SPECIES_SWOOBAT_ISSHO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 28100
             .heldItem = ITEM_LIFE_ORB,
@@ -77594,6 +77594,74 @@
                 MOVE_SHIELD_STRIKE,
                 MOVE_BODY_PRESS,
                 MOVE_REST,
+            },
+            },
+        },
+    },
+#line 29597
+    [DIFFICULTY_NORMAL][TRAINER_SYNDERLING_TEST] =
+    {
+#line 29598
+        .trainerName = _("RAYNER"),
+#line 29599
+        .trainerClass = TRAINER_CLASS_SYNDERLING,
+#line 29600
+        .trainerPic = TRAINER_PIC_RAYNER_SYNDERLING,
+#line 29601
+        .gender = TRAINER_GENDER_MALE,
+#line 29602
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+#line 29603
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+#line 29604
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 29605
+        .aiFlags = AI_FLAG_SMART_TRAINER,
+#line 0
+        .multiTeamSize = MULTI_TEAM_SIZE_FULL,
+        .partySize = 2,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 29607
+            .species = SPECIES_ROTOM,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 29607
+            .heldItem = ITEM_LEFTOVERS,
+#line 29609
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 29608
+            .lvl = 30,
+            .ball = POKEBALL_COUNT,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 29610
+                MOVE_CHARGE_BEAM,
+                MOVE_SHADOW_BALL,
+                MOVE_UPROAR,
+                MOVE_THUNDER_WAVE,
+            },
+            },
+            {
+#line 29615
+            .species = SPECIES_PORYGON_Z,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 29615
+            .heldItem = ITEM_LEFTOVERS,
+#line 29617
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 29616
+            .lvl = 30,
+            .ball = POKEBALL_COUNT,
+            .nature = NATURE_HARDY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 29618
+                MOVE_TRI_ATTACK,
+                MOVE_ICE_BEAM,
+                MOVE_THUNDERBOLT,
+                MOVE_OVERCLOCK,
             },
             },
         },

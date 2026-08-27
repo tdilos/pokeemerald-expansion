@@ -194,7 +194,7 @@ DunTown_EventScript_TeachTutorMove::
 	msgbox DunTown_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special ChooseMonForMoveTutor
-	waitstate
+	@waitstate
 	goto_if_eq VAR_RESULT, FALSE, DunTown_EventScript_CancelChooseMon
 	msgbox DunTown_Text_HandedOverYellowShards, MSGBOX_DEFAULT
 	removeitem ITEM_YELLOW_SHARD, VAR_0x8008

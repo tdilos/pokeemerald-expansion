@@ -11,7 +11,7 @@ CinerousTower_5F_EventScript_Volcarona::
 	seteventmon SPECIES_VOLCARONA, 25
 	totemboost_spatk2 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_VOLCARONA
 	@setflag FLAG_BATTLED_VOLCARONA

@@ -695,23 +695,25 @@ UmberTown_EventScript_GiveStuff2::
 	
 	seteventmon SPECIES_NIHILEGO, 219
 	special BattleSetup_StartLegendaryBattle
-	waitstate
 	release
 	end
 
 UmberTown_EventScript_GiveStuffDemo::
 	lock
 	faceplayer
-	@setflag FLAG_BATTLED_OPC_CINEROUS_TOWN
-	setflag FLAG_BADGE06_GET
+	
+	@setflag FLAG_TEMP_LEVEL_SCALING
+	@setvar VAR_OVERMIND_STATE, 2
+	
+	@setflag FLAG_BADGE06_GET
 	@setflag FLAG_IS_CHAMPION
 	@setflag FLAG_SYS_NATIONAL_DEX
 	@special EnableNationalPokedex
 	@playse SE_DING_DONG
 	@waitse
 
-	clearflag FLAG_HIDE_BONUS_WORLD_2
-	clearflag FLAG_HIDE_TIER_1_WORLDS
+@	clearflag FLAG_HIDE_BONUS_WORLD_2
+@	clearflag FLAG_HIDE_TIER_1_WORLDS
 
 	@playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
 	@setvar VAR_0x8004, SPECIES_LANDORUS
@@ -729,7 +731,7 @@ UmberTown_EventScript_GiveStuffDemo::
 
 	msgbox UmberTown_Text_TakeThis, MSGBOX_DEFAULT
 	givemon SPECIES_OMENDENZ, 16, ITEM_LEFTOVERS
-	givemon SPECIES_THURSLUSH, 40, ITEM_LEFTOVERS
+	givemon SPECIES_THURSLUSH, 100, ITEM_LEFTOVERS
 	givemon SPECIES_CREMPERA, 40, ITEM_LEFTOVERS
 	givemon SPECIES_TOXIBRATE, 40, ITEM_LEFTOVERS
 	setmonmove 2, 0, MOVE_SURF
@@ -738,12 +740,13 @@ UmberTown_EventScript_GiveStuffDemo::
 	@setwildbattle SPECIES_TYRANITAR, 100, ITEM_KINGS_ROCK, SPECIES_MIENSHAO, 100, ITEM_KINGS_ROCK
 	@call CinerousTower_Exterior_EventScript_OPCBattleSetup
 
-	msgbox UmberTown_Text_AndThese, MSGBOX_DEFAULT
-	@giveitem ITEM_ULTRA_BALL, 20
+	@msgbox UmberTown_Text_AndThese, MSGBOX_DEFAULT
+	giveitem ITEM_ULTRA_BALL, 20
 	giveitem ITEM_MAX_REPEL, 50
 
-
 	@msgbox UmberTown_Text_ZartoshtIntro, MSGBOX_DEFAULT
+	@trainerbattle_no_intro_no_whiteout TRAINER_SYNDERLING_TEST, UmberTown_Text_ZartoshtDefeated
+
 	@trainerbattle_no_intro TRAINER_GRUNT_RESEDA_WOODS, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_GRUNT_ROUTE_84, UmberTown_Text_ZartoshtDefeated
 	@trainerbattle_no_intro TRAINER_ZARTOSHT_1, UmberTown_Text_ZartoshtDefeated
@@ -767,7 +770,6 @@ UmberTown_EventScript_GiveStuffDemo::
 	@setvar VAR_TERRAIN, 0
 
 	@trainerbattle_double TRAINER_ANNA_AND_MEG_1, UmberTown_Text_ZartoshtIntro, Route117_Text_AnnaDefeat, Route117_Text_AnnaNotEnoughMons, Route117_EventScript_RegisterAnna
-	@trainerbattle_no_intro_no_whiteout TRAINER_NEDA_1, UmberTown_Text_ZartoshtDefeated
 	@setwildbattle SPECIES_FEAROW, 50
 	@dowildbattle
 

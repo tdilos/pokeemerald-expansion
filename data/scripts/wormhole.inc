@@ -2,7 +2,7 @@ UltraWormhole_EventScript_XCosmopolis::
 	lock
 	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
-	warp MAP_STATION_CITY_BUILDING1_B1, 5, 4
+	warpsilent MAP_STATION_CITY_BUILDING1_B1, 5, 4
 	waitstate
 	release
 	end
@@ -11,7 +11,7 @@ UltraWormhole_EventScript_AlteringCave::
 	lock
 	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
-	warp MAP_ALTERING_CAVE, 26, 13
+	warpsilent MAP_ALTERING_CAVE, 26, 13
 	waitstate
 	release
 	end
@@ -20,7 +20,7 @@ UltraWormhole_EventScript_XPelago::
 	lock
 	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
-	warp MAP_KIYAHA_ISLE_EXTERIOR, 3, 23
+	warpsilent MAP_KIYAHA_ISLE_EXTERIOR, 3, 23
 	waitstate
 	release
 	end
@@ -29,7 +29,7 @@ UltraWormhole_EventScript_Route109::
 	lock
 	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
-	warp MAP_ROUTE109, 27, 46
+	warpsilent MAP_ROUTE109, 27, 46
 	waitstate
 	release
 	end
@@ -46,25 +46,25 @@ UltraWormhole_EventScript_XHolt::
 	end
 
 UltraWormhole_EventScript_XHolt_Spring::
-	warp MAP_SPRING_FOURFOLD_FOREST_NW, 36, 20
+	warpsilent MAP_SPRING_FOURFOLD_FOREST_NW, 36, 20
 	waitstate
 	release
 	end
 
 UltraWormhole_EventScript_XHolt_Summer::
-	warp MAP_SUMMER_FOURFOLD_FOREST_NW, 36, 20
+	warpsilent MAP_SUMMER_FOURFOLD_FOREST_NW, 36, 20
 	waitstate
 	release
 	end
 
 UltraWormhole_EventScript_XHolt_Fall::
-	warp MAP_FALL_FOURFOLD_FOREST_NW, 36, 20
+	warpsilent MAP_FALL_FOURFOLD_FOREST_NW, 36, 20
 	waitstate
 	release
 	end
 
 UltraWormhole_EventScript_XHolt_Winter::
-	warp MAP_WINTER_FOURFOLD_FOREST_NW, 36, 20
+	warpsilent MAP_WINTER_FOURFOLD_FOREST_NW, 36, 20
 	waitstate
 	release
 	end
@@ -73,7 +73,7 @@ UltraWormhole_EventScript_PetalburgWoods::
 	lock
 	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
-	warp MAP_PETALBURG_WOODS, 35, 23
+	warpsilent MAP_PETALBURG_WOODS, 35, 23
 	waitstate
 	release
 	end
@@ -454,7 +454,7 @@ Wormhole_EventScript_TapuFini::
 Wormhole_EventScript_BattlePokemon::
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Wormhole_EventScript_DefeatedPokemon

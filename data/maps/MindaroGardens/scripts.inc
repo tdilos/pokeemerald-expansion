@@ -218,7 +218,7 @@ MindaroGardens_EventScript_EndDoubleBattle::
 MindaroGardens_EventScript_WhiteOut::
 	fadescreen FADE_TO_BLACK
 	special SetCB2WhiteOut
-	waitstate
+	@waitstate
 
 
 MindaroGardens_EventScript_VsAgnisJoel::

@@ -331,7 +331,7 @@ SteelMill_B1_EventScript_Victini::
 	seteventmon SPECIES_VICTINI, 50
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_VICTINI
 	setflag FLAG_BATTLED_VICTINI

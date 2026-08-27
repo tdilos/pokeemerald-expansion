@@ -1441,6 +1441,70 @@ void BtlController_Complete(enum BattlerId battler)
     gBattlerControllerEndFuncs[battler](battler);
 }
 
+// Calculate stats for Overmind mons here to allow for levels over 255
+//void CalculateMonStats(struct Pokemon *mon)
+u16 CalculateBattleMonStat(struct Pokemon *mon, u32 statId, u16 level)
+{
+    enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+	u16 newStat;
+
+    u8 nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE, NULL);
+
+    s32 iv = GetMonData(mon, MON_DATA_HP_IV + statId);
+    s32 ev = GetMonData(mon, MON_DATA_HP_EV + statId);
+	
+	if (statId == STAT_HP)
+	{
+		if (HasShedinjaHPHandling(species))
+		{
+			newStat = 1;
+		}
+		else
+		{
+			newStat = 2 * GetSpeciesBaseHP(species) + iv;
+			newStat = (((newStat + ev / 4) * level) / 100) + level + 10;
+		}		
+	}
+    else {
+
+        u8 baseStat = GetSpeciesBaseStat(species, statId);
+        newStat = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5;
+        newStat = ModifyStatByNature(nature, newStat, statId);
+    }
+
+	return newStat;
+}
+
+u32 GetDynamicOvermindTrainerLevel(void)
+{
+	u8 i;
+	u8 count = CalculatePlayerPartyCount();
+	u16 dynamicLevel = 0;
+	u16 exponent = VarGet(VAR_OVERMIND_STATE);
+	uq4_12_t scale = UQ_4_12(1.0);
+	uq4_12_t factor = UQ_4_12(1.01);
+	
+	// Difficulty setting
+    if (gSaveBlock2Ptr->optionsDifficulty == 1)
+		factor = UQ_4_12(1.02);
+    if (gSaveBlock2Ptr->optionsDifficulty == 2)
+		factor = UQ_4_12(1.03);
+	
+	// Find max level in players team
+	for(i = 0; i < count; i++)
+    {
+        if(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_LEVEL) > dynamicLevel)
+			dynamicLevel = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_LEVEL);
+	}
+	
+	// Exponential scaling
+	while (exponent-- > 0)
+	{
+		scale = uq4_12_multiply(scale, factor);
+	}
+	return UQ_4_12_TO_INT((dynamicLevel * scale) + UQ_4_12_ROUND);
+}
+
 static u32 GetBattlerMonData(enum BattlerId battler, struct Pokemon *party, u32 monId, u8 *dst)
 {
     struct BattlePokemon battleMon;
@@ -1450,6 +1514,7 @@ static u32 GetBattlerMonData(enum BattlerId battler, struct Pokemon *party, u32 
     s16 data16;
     u32 data32;
     s32 size = 0;
+	u16 dynamicLevel;
 
     switch (gBattleResources->bufferA[battler][1])
     {
@@ -1500,6 +1565,22 @@ static u32 GetBattlerMonData(enum BattlerId battler, struct Pokemon *party, u32 
                 gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(trainer, partyIndex);
         }
         #endif
+		// Level/stat scaling for Overmind trainers
+		if (TRUE) //((battler == B_BATTLER_1 || battler == B_BATTLER_3) && FlagGet(FLAG_TEMP_LEVEL_SCALING))
+		{
+			dynamicLevel = 120; //GetDynamicOvermindTrainerLevel();
+			battleMon.level = dynamicLevel;
+			
+			battleMon.maxHP = CalculateBattleMonStat(&party[monId], STAT_HP, dynamicLevel);	
+			battleMon.attack = CalculateBattleMonStat(&party[monId], STAT_ATK, dynamicLevel);	
+			battleMon.defense = CalculateBattleMonStat(&party[monId], STAT_DEF, dynamicLevel);	
+			battleMon.speed = CalculateBattleMonStat(&party[monId], STAT_SPEED, dynamicLevel);	
+			battleMon.spAttack = CalculateBattleMonStat(&party[monId], STAT_SPATK, dynamicLevel);	
+			battleMon.spDefense = CalculateBattleMonStat(&party[monId], STAT_SPDEF, dynamicLevel);	
+			
+			// TODO, currently copies maxHP
+			battleMon.hp = CalculateBattleMonStat(&party[monId], STAT_HP, dynamicLevel);
+		}
         break;
     case REQUEST_SPECIES_BATTLE:
         data16 = GetMonData(&party[monId], MON_DATA_SPECIES);

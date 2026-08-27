@@ -251,7 +251,7 @@ QuartzCave_Text_StillGotSomeFight:
 QuartzCave_EventScript_NotTooProudToBeg::
 	msgbox QuartzCave_Text_NotTooProudToBeg, MSGBOX_NPC
 	special ChoosePartyMon
-	waitstate
+	@waitstate
 	call_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, QuartzCave_EventScript_DeclineHealOffer
 	call_if_ne VAR_0x8004, PARTY_NOTHING_CHOSEN, QuartzCave_EventScript_SaveMon
 	return

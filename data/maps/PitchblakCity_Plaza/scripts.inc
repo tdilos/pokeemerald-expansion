@@ -153,7 +153,7 @@ PitchblakCity_Plaza_EventScript_NatureChanger::
 	goto_if_eq VAR_RESULT, NO, PitchblakCity_Plaza_EventScript_DeclineChangeNature
 	msgbox PitchblakCity_Plaza_Text_ChangeWhichOne, MSGBOX_DEFAULT
 	special ChoosePartyMon
-	waitstate
+	@waitstate
 	@lock
 	@faceplayer
 	copyvar VAR_0x800A, VAR_0x8004

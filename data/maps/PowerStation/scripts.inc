@@ -32,7 +32,7 @@ PowerStation_EventScript_RotomEncounter::
 	waitmoncry
 	setwildbattle SPECIES_ROTOM, 15
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	setflag FLAG_DAILY_POWER_STATION_ROTOM
 	release
 	end

@@ -11,7 +11,7 @@ Underwater_SunkenIsle_Interior_EventScript_Manaphy::
 	seteventmon SPECIES_MANAPHY, 50
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MANAPHY
 	setflag FLAG_BATTLED_MANAPHY

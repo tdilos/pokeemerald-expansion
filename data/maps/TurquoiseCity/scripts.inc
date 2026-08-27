@@ -163,7 +163,7 @@ TurquoiseCity_EventScript_TeachTutorMove::
 	msgbox TurquoiseCity_Text_TeachWhichPokemon, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special ChooseMonForMoveTutor
-	waitstate
+	@waitstate
 	goto_if_eq VAR_RESULT, FALSE, TurquoiseCity_EventScript_ChooseTutorMove
 	release
 	end
@@ -747,7 +747,7 @@ TurquoiseCity_EventScript_BuySmeargleParty::
 	fadescreen FADE_TO_BLACK
 	hidemoneybox
 	special ChangePokemonNickname
-	waitstate
+	@waitstate
 	goto TurquoiseCity_EventScript_BoughtSmeargle
 	end
 
@@ -758,7 +758,7 @@ TurquoiseCity_EventScript_BuySmearglePC::
 	fadescreen FADE_TO_BLACK
 	hidemoneybox
 	special ChangePokemonNickname
-	waitstate
+	@waitstate
 	lock
 	faceplayer
 	goto TurquoiseCity_EventScript_TransferSmeargle
