@@ -25,7 +25,43 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_SHIRE_TOWNE_CHURCH",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_SHIRE_TOWNE_BUILDING1_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_SHIRE_TOWNE_BUILDING2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_SHIRE_TOWNE_BUILDING3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_SHIRE_TOWNE_BUILDING4",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

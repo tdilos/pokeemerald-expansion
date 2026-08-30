@@ -14,7 +14,29 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_AVALON_CASTLE_ENTRANCE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_AVALON_CASTLE_ENTRANCE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 2,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_AVALON_CASTLE_DUNGEON",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

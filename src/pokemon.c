@@ -1404,10 +1404,11 @@ void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32
     SetBoxMonData(boxMon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetBoxMonData(boxMon, MON_DATA_SPECIES, &species);
     SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
-	/*if (level <= MAX_LEVEL)
+	// For Ultra Space enemies
+	if (level <= MAX_LEVEL)
 		SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
 	else
-		SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][0]);*/		
+		SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][0]);	
     SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &gSpeciesInfo[species].friendship);
     value = GetCurrentRegionMapSectionId();
     SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
@@ -1786,8 +1787,8 @@ void CalculateMonStats(struct Pokemon *mon)
 
     u8 nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE, NULL);
 
-	//if (GetMonData(mon, MON_DATA_LEVEL) > MAX_LEVEL) // Only used for Ultra Space opponents
-	//	level = GetMonData(mon, MON_DATA_LEVEL);
+	if (GetMonData(mon, MON_DATA_LEVEL) > MAX_LEVEL) // Only used for Ultra Space opponents
+		level = GetMonData(mon, MON_DATA_LEVEL);
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 

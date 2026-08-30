@@ -2202,7 +2202,7 @@ u16 GetBattleCountForKarmaBattle()
 	return (800 / karma);
 }
 
-/*u32 GetDynamicOvermindTrainerLevel(void)
+u32 GetDynamicOvermindTrainerLevel(void)
 {
 	u8 i;
 	u8 count = CalculatePlayerPartyCount();
@@ -2230,7 +2230,7 @@ u16 GetBattleCountForKarmaBattle()
 		scale = uq4_12_multiply(scale, factor);
 	}
 	return UQ_4_12_TO_INT((dynamicLevel * scale) + UQ_4_12_ROUND);
-}*/
+}
 
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 halfTeam, u32 battleTypeFlags)
 {
@@ -2296,13 +2296,13 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 				CreateMon(&party[i], partyData[monIndex].species, dynamicLevel, personalityValue, otId);
 			}
 			// Dynamic levels for Overmind trainers
-			/*else if (trainer->trainerClass == TRAINER_CLASS_ARCHON || trainer->trainerClass == TRAINER_CLASS_SYNDERLING)
+			else if (trainer->trainerClass == TRAINER_CLASS_ARCHON || trainer->trainerClass == TRAINER_CLASS_SYNDERLING)
 			{
 				dynamicLevel = GetDynamicOvermindTrainerLevel();
 				if (dynamicLevel < partyData[monIndex].lvl) // Minimum enemy level
 					dynamicLevel = partyData[monIndex].lvl;
 				CreateMon(&party[i], partyData[monIndex].species, dynamicLevel, personalityValue, otId);
-			}*/
+			}
 			else
 			{
 				CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, personalityValue, otId);

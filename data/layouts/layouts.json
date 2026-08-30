@@ -12620,6 +12620,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Summer_Caves/border.bin",
       "blockdata_filepath": "data/layouts/Summer_Caves/map.bin"
+    },
+    {
+      "id": "LAYOUT_STATION_CITY_BUILDING1_2F",
+      "name": "StationCity_Building1_2F_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Emporium",
+      "border_filepath": "data/layouts/StationCity_Building1_2F/border.bin",
+      "blockdata_filepath": "data/layouts/StationCity_Building1_2F/map.bin"
     }
   ]
 }

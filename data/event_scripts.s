@@ -2773,3 +2773,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Summer_AvalonCastle_MainHall/scripts.inc"
 
 	.include "data/maps/Summer_Caves/scripts.inc"
+
+	.include "data/maps/StationCity_Building1_2F/scripts.inc"

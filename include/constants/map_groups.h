@@ -1560,6 +1560,7 @@ enum
     MAP_STATION_CITY_BUILDING1_1F         = (2 | (100 << 8)),
     MAP_STATION_CITY_BUILDING1_B1         = (3 | (100 << 8)),
     MAP_STATION_CITY_BUILDING1_B1_HALLWAY = (4 | (100 << 8)),
+    MAP_STATION_CITY_BUILDING1_2F         = (5 | (100 << 8)),
 
     // gMapGroup_XStarfield
 

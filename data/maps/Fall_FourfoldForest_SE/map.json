@@ -14,7 +14,36 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 32,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_FOREST_DALE",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 33,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_FOREST_DALE",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 4,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_FOURFOLD_FOREST_SW",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 5,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_FALL_FOURFOLD_FOREST_SW",
+      "dest_warp_id": "5"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

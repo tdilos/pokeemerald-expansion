@@ -1665,7 +1665,8 @@
     "StationRing",
     "StationCity_Building1_1F",
     "StationCity_Building1_B1",
-    "StationCity_Building1_B1_Hallway"
+    "StationCity_Building1_B1_Hallway",
+    "StationCity_Building1_2F"
   ],
   "gMapGroup_XStarfield": [],
   "gMapGroup_XFunfair": [],
