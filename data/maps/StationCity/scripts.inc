@@ -2,6 +2,10 @@ StationCity_MapScripts::
 	.byte 0
 
 
+
+
+
+
 StationCity_EventScript_TownSign::
 	msgbox StationCity_Text_TownSign, MSGBOX_SIGN
 	end
@@ -13,7 +17,20 @@ StationCity_Text_TownSign:
 
 
 
-StationCity_EventScript_Boy::
+
+StationCity_EventScript_MapPreviewTest::
+	lock
+	faceplayer
+	msgbox StationCity_Text_GoodLuck, MSGBOX_DEFAULT
+	mappreview 60
+	release
+	end
+
+StationCity_Text_GoodLuck:
+	.string "Good luck.$"
+
+
+StationCity_EventScript_Boy1::
 	lock
 	faceplayer
 	msgbox StationCity_Text_SeeMyHouse, MSGBOX_DEFAULT

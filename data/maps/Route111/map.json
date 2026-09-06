@@ -3,7 +3,6 @@
   "name": "Route111",
   "layout": "LAYOUT_ROUTE111",
   "music": "MUS_ROUTE110",
-  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_111",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -644,7 +643,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WORMHOLE_LARGE",
       "x": 27,
-      "y": 29,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -686,7 +685,7 @@
     },
     {
       "x": 31,
-      "y": 113,
+      "y": 112,
       "elevation": 0,
       "dest_map": "MAP_TRAINER_HILL_ENTRANCE",
       "dest_warp_id": "0"
@@ -1086,7 +1085,7 @@
     },
     {
       "type": "secret_base",
-      "x": 27,
+      "x": 37,
       "y": 27,
       "elevation": 3,
       "secret_base_id": "SECRET_BASE_RED_CAVE4_3"
@@ -1137,5 +1136,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route111_EventScript_TrainerHillSign"
     }
-  ]
+  ],
+  "region": "REGION_HOENN"
 }

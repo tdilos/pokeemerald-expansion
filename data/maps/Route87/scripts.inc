@@ -109,7 +109,7 @@ Route87_EventScript_SteelixBattle::
 	seteventmon SPECIES_STEELIX, 20
 	totemboost_spdef2 B_POSITION_OPPONENT_LEFT
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+	@waitstate
 	applymovement LOCALID_TOURIST_M, Common_Movement_WalkLeft
 	waitmovement 0
 	applymovement LOCALID_TOURIST_M, Common_Movement_WalkLeft

@@ -1407,10 +1407,10 @@
 #define TRAINER_HOLLOW_KNIGHT_7      1339
 #define TRAINER_HOLLOW_KNIGHT_8      1340
 
-#define TRAINER_LYCIUS      1341
+#define TRAINER_LYCITUS     1341
 #define TRAINER_CARAX       1342
 #define TRAINER_LOCIOR      1343
-#define TRAINER_QUENTITUS   1344
+#define TRAINER_QUENTIUS    1344
 
 #define TRAINER_ROXANNE_0        1345
 #define TRAINER_BRAWLY_0         1346
@@ -1445,13 +1445,70 @@
 #define TRAINER_PETRA_R          1373
 #define TRAINER_NORMAN_R         1374
 
-#define TRAINER_SYNDERLING_TEST  1375
+#define TRAINER_COLE_1  1375
+#define TRAINER_COLE_2  1376
+#define TRAINER_COLE_3  1377
+#define TRAINER_COLE_4  1378
+#define TRAINER_COLE_5  1379
+
+#define TRAINER_BENGA_1  1380
+#define TRAINER_BENGA_2  1381
+#define TRAINER_BENGA_3  1382
+
+#define TRAINER_YELLOW_1  1383
+#define TRAINER_YELLOW_2  1384
+#define TRAINER_YELLOW_3  1385
+
+#define TRAINER_BRENDAN_1  1386
+#define TRAINER_BRENDAN_2  1387
+
+#define TRAINER_ZINNIA_1  1388
+#define TRAINER_ZINNIA_2  1389
+
+#define TRAINER_TIW_1  1390
+#define TRAINER_TIW_2  1391
+
+#define TRAINER_LOOKER_1  1392
+#define TRAINER_LOOKER_2  1393
+
+#define TRAINER_EMMA_1  1394
+#define TRAINER_EMMA_2  1395
+
+#define TRAINER_SILAS_1  1396
+#define TRAINER_SILAS_2  1397
+#define TRAINER_SILAS_3  1398
+#define TRAINER_SILAS_4  1399
+
+#define TRAINER_QEZIRAH_1  1400
+#define TRAINER_QEZIRAH_2  1401
+
+#define TRAINER_RED_1  1402
+#define TRAINER_RED_2  1403
+
+#define TRAINER_ARCHIE_SYNDERLING  1404
+#define TRAINER_MAXIE_SYNDERLING   1405
+
+#define TRAINER_OAKLEY_1  1406
+#define TRAINER_OAKLEY_2  1407
+
+#define TRAINER_KRELL_1  1408
+#define TRAINER_KRELL_2  1409
+
+#define TRAINER_RILEY_1  1410
+#define TRAINER_RILEY_2  1411
+
+#define TRAINER_VERT_SYNDERLING    1412
+#define TRAINER_VIOLET_SYNDERLING  1413
+
+#define TRAINER_RAYNER_SYNDERLING  1414
+
+#define TRAINER_SYNDERLING_TEST  1415
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1376 //1291 //965//855
+#define TRAINERS_COUNT_EMERALD     1416 //1291 //965//855
 #define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG

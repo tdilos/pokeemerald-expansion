@@ -1,8 +1,21 @@
+@UltraWormhole_EventScript_DoMapPreview::
+@	mappreview 120
+@	clearflag FLAG_WORMHOLE_MPS
+@	return
+
+@UltraWormhole_EventScript_PauseMusicDuringMPS::
+@	playbgm MUS_DUMMY, TRUE
+@	clearflag FLAG_WORMHOLE_MPS
+@	@delay 120
+@	@fadedefaultbgm
+@	return
+
 UltraWormhole_EventScript_XCosmopolis::
 	lock
 	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
-	warpsilent MAP_STATION_CITY_BUILDING1_B1, 5, 4
+	@setflag FLAG_WORMHOLE_MPS
+	warpsilent MAP_STATION_CITY_BUILDING1_B1_HALLWAY, 2, 5
 	waitstate
 	release
 	end
@@ -11,7 +24,7 @@ UltraWormhole_EventScript_AlteringCave::
 	lock
 	msgbox UltraWormhole_Text_StepInside, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, UltraWormhole_EventScript_Skip
-	warpsilent MAP_ALTERING_CAVE, 26, 13
+	warpsilent MAP_ALTERING_CAVE, 27, 14
 	waitstate
 	release
 	end

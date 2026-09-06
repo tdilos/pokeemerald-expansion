@@ -1870,7 +1870,7 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Hacker, gTrainerPalette_Hacker),
     },
-    [TRAINER_PIC_OAKLEY] =
+    [TRAINER_PIC_OAKLEY_SYNDERLING] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Oakley, gTrainerPalette_Oakley),
     },
@@ -1886,7 +1886,7 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_RedSynderling, gTrainerPalette_RedSynderling),
     },
-    [TRAINER_PIC_RILEY] =
+    [TRAINER_PIC_RILEY_SYNDERLING] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Riley, gTrainerPalette_Riley),
     },

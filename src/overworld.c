@@ -1086,8 +1086,9 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     }
     else
     {
-        if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER
-         || gMapHeader.regionMapSectionId != sLastMapSectionId)
+        //if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER
+        // || gMapHeader.regionMapSectionId != sLastMapSectionId)
+		if (gMapHeader.regionMapSectionId != sLastMapSectionId)
             ShowMapNamePopup();
     }
     SetMinimumOWESpawnTimer();

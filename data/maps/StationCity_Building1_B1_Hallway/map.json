@@ -3,7 +3,7 @@
   "name": "StationCity_Building1_B1_Hallway",
   "layout": "LAYOUT_STATION_CITY_BUILDING1_B1_HALLWAY",
   "music": "MUS_BW_OPELUCID_BLACK",
-  "region_map_section": "MAPSEC_STATION_HULL",
+  "region_map_section": "MAPSEC_STATION_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

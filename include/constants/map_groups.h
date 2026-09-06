@@ -1661,10 +1661,21 @@ enum
     MAP_SUMMER_CAVES                    = (64 | (104 << 8)),
 
     // gMapGroup_XGreenhouse
-    MAP_LUSH_UNDERSPIRE_B1 = (0 | (105 << 8)),
-    MAP_LUSH_UNDERSPIRE_B2 = (1 | (105 << 8)),
-    MAP_LUSH_UNDERSPIRE_B3 = (2 | (105 << 8)),
-    MAP_LUSH_UNDERSPIRE_B4 = (3 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B1                = (0 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B2                = (1 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B3                = (2 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B4                = (3 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B5                = (4 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B6                = (5 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B7                = (6 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B8                = (7 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_B9                = (8 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_BRIGHT_LEVEL      = (9 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_LEAFY_LEVEL       = (10 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_WET_LEVEL         = (11 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_DARK_LEVEL        = (12 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_SOMNIVORE_LAIR    = (13 | (105 << 8)),
+    MAP_LUSH_UNDERSPIRE_EXTERIOR_ELEVATOR = (14 | (105 << 8)),
 
     // gMapGroup_XSlough
 

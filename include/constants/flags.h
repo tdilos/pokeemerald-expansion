@@ -2357,7 +2357,9 @@
 #define FLAG_ENABLE_SHIP_PERENNIAL_PILLAR           (SYSTEM_FLAGS + 0x96)
 #define FLAG_ARRIVED_AT_PERENNIAL_PILLAR            (SYSTEM_FLAGS + 0x97)
 
-#define FLAG_TEMP_LEVEL_SCALING                     (SYSTEM_FLAGS + 0x98) // For Ultra Spaces enemies
+#define FLAG_TEMP_LEVEL_SCALING                     (SYSTEM_FLAGS + 0x98) // For archon fights, TODO
+
+#define FLAG_WORMHOLE_MPS                           (SYSTEM_FLAGS + 0x99) // Triggers the map preview screen after entering an Ultra Wormhole
 
 /*#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
 #define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
@@ -2378,8 +2380,8 @@
 #define FLAG_UNUSED_0x8F5                           (SYSTEM_FLAGS + 0x95) // Unused Flag 
 #define FLAG_UNUSED_0x8F6                           (SYSTEM_FLAGS + 0x96) // Unused Flag
 #define FLAG_UNUSED_0x8F7                           (SYSTEM_FLAGS + 0x97) // Unused Flag 
-#define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag */
-#define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag
+#define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag 
+#define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag */
 #define FLAG_UNUSED_0x8FA                           (SYSTEM_FLAGS + 0x9A) // Unused Flag
 #define FLAG_UNUSED_0x8FB                           (SYSTEM_FLAGS + 0x9B) // Unused Flag
 #define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag

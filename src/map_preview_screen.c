@@ -86,7 +86,38 @@ static const u8 sAlteringCaveMapPreviewPalette[] = INCGFX_U8("graphics/map_previ
 static const u8 sAlteringCaveMapPreviewTiles[] = INCGFX_U8("graphics/map_preview/altering_cave/tiles.png", ".4bpp.smol");
 static const u8 sAlteringCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/altering_cave/tilemap.bin.smolTM");
 
+// Black screen
+static const u8 sBlackMapPreviewTilemap[] = INCBIN_U8("graphics/map_preview/mt_moon/tilemap_black.bin.smolTM");
+
+// Ultra Space world names
+static const u8 sText_XCosmopolis[] = _("X-COSMOPOLIS");
+static const u8 sText_XStarfield[] = _("X-STARFIELD");
+static const u8 sText_XMindscape[] = _("X-MINDSCAPE");
+static const u8 sText_XPelago[] = _("X-PELAGO");
+static const u8 sText_XHolt[] = _("X-HOLT");
+static const u8 sText_XGreenhouse[] = _("X-GREENHOUSE");
+static const u8 sText_XSlough[] = _("X-SLOUGH");
+static const u8 sText_XWaste[] = _("X-WASTE");
+static const u8 sText_XLabyrinth[] = _("X-LABYRINTH");
+static const u8 sText_XCaldera[] = _("X-CALDERA");
+static const u8 sText_XJungle[] = _("X-JUNGLE");
+static const u8 sText_XCloud[] = _("X-CLOUD");
+static const u8 sText_XTundra[] = _("X-TUNDRA");
+static const u8 sText_XMere[] = _("X-MERE");
+static const u8 sText_XRuin[] = _("X-RUIN");
+static const u8 sText_XSynestia[] = _("X-SYNESTIA");
+	
+static const u8 sText_Unknown[] = _("UNKNOWN");
+	
 static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
+	[MPS_X_COSMOPOLIS] = {
+        .mapsec = MAPSEC_STATION_CITY,
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .tilesptr = sMtMoonMapPreviewTiles,
+        .tilemapptr = sBlackMapPreviewTilemap,
+        .palptr = sMtMoonMapPreviewPalette
+    },
     /*[MPS_VIRIDIAN_FOREST] = {
         .mapsec = MAPSEC_VIRIDIAN_FOREST,
         .type = MPS_TYPE_FADE_IN,
@@ -440,7 +471,23 @@ u16 MapPreview_CreateMapNameWindow(mapsec_u8_t mapsec)
     u8 color[0];
     #endif
 
-    GetMapName(gStringVar4, mapsec, 0);
+    //u8 idx;
+
+    //idx = GetMapPreviewScreenIdx(mapsec);
+	
+    //GetMapName(gStringVar4, mapsec, 0);
+	//switch (idx)
+	switch (mapsec)
+	{
+	//case MPS_X_COSMOPOLIS:
+	case MAPSEC_STATION_CITY:
+	//case MAPSEC_ALTERING_CAVE:
+		StringCopy(gStringVar4, sText_XCosmopolis);
+	default:
+		StringCopy(gStringVar4, sText_Unknown);
+	}
+	//gSpecialVar_0x8005
+	
     // Use a longer window size if the map name is too long to fit.
     fontId = GetFontIdToFit(gStringVar4, FONT_NORMAL, 0, 104);
     stringWidth = GetStringWidth(fontId, gStringVar4, 0);

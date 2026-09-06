@@ -27597,12 +27597,12 @@ extern const u8 gMonFootprint_Mimektiplex[];
     const u8 gMonIcon_Voxeon[] = INCGFX_U8("graphics/pokemon/voxeon/icon.png", ".4bpp");
     const u8 gMonFootprint_Voxeon[] = INCGFX_U8("graphics/pokemon/voxeon/footprint.png", ".1bpp");
 
-    const u32 gMonFrontPic_Houndevil[] = INCGFX_U32("graphics/pokemon/houndevil/front.png", ".4bpp.smol");
+   /* const u32 gMonFrontPic_Houndevil[] = INCGFX_U32("graphics/pokemon/houndevil/front.png", ".4bpp.smol");
     const u16 gMonPalette_Houndevil[] = INCGFX_U16("graphics/pokemon/houndevil/normal.pal", ".gbapal");
     const u32 gMonBackPic_Houndevil[] = INCGFX_U32("graphics/pokemon/houndevil/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Houndevil[] = INCGFX_U16("graphics/pokemon/houndevil/shiny.pal", ".gbapal");
     const u8 gMonIcon_Houndevil[] = INCGFX_U8("graphics/pokemon/houndevil/icon.png", ".4bpp");
-    const u8 gMonFootprint_Houndevil[] = INCGFX_U8("graphics/pokemon/houndevil/footprint.png", ".1bpp");
+    const u8 gMonFootprint_Houndevil[] = INCGFX_U8("graphics/pokemon/houndevil/footprint.png", ".1bpp");*/
 		
     const u32 gMonFrontPic_Skarby[] = INCGFX_U32("graphics/pokemon/skarby/front.png", ".4bpp.smol");
     const u16 gMonPalette_Skarby[] = INCGFX_U16("graphics/pokemon/skarby/normal.pal", ".gbapal");
@@ -27611,7 +27611,7 @@ extern const u8 gMonFootprint_Mimektiplex[];
     const u8 gMonIcon_Skarby[] = INCGFX_U8("graphics/pokemon/skarby/icon.png", ".4bpp");
     const u8 gMonFootprint_Skarby[] = INCGFX_U8("graphics/pokemon/skarby/footprint.png", ".1bpp");
 	
-    const u32 gMonFrontPic_Malevile[] = INCGFX_U32("graphics/pokemon/malevile/front.png", ".4bpp.smol");
+    /*const u32 gMonFrontPic_Malevile[] = INCGFX_U32("graphics/pokemon/malevile/front.png", ".4bpp.smol");
     const u16 gMonPalette_Malevile[] = INCGFX_U16("graphics/pokemon/malevile/normal.pal", ".gbapal");
     const u32 gMonBackPic_Malevile[] = INCGFX_U32("graphics/pokemon/malevile/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Malevile[] = INCGFX_U16("graphics/pokemon/malevile/shiny.pal", ".gbapal");
@@ -27644,7 +27644,7 @@ extern const u8 gMonFootprint_Mimektiplex[];
     const u32 gMonBackPic_Zippette[] = INCGFX_U32("graphics/pokemon/zippette/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Zippette[] = INCGFX_U16("graphics/pokemon/zippette/shiny.pal", ".gbapal");
     const u8 gMonIcon_Zippette[] = INCGFX_U8("graphics/pokemon/zippette/icon.png", ".4bpp");
-    const u8 gMonFootprint_Zippette[] = INCGFX_U8("graphics/pokemon/zippette/footprint.png", ".1bpp");
+    const u8 gMonFootprint_Zippette[] = INCGFX_U8("graphics/pokemon/zippette/footprint.png", ".1bpp");*/
 	
     const u32 gMonFrontPic_Decibelle[] = INCGFX_U32("graphics/pokemon/decibelle/anim_front.png", ".4bpp.smol");
     const u16 gMonPalette_Decibelle[] = INCGFX_U16("graphics/pokemon/decibelle/normal.pal", ".gbapal");
@@ -27653,7 +27653,7 @@ extern const u8 gMonFootprint_Mimektiplex[];
     const u8 gMonIcon_Decibelle[] = INCGFX_U8("graphics/pokemon/decibelle/icon.png", ".4bpp");
     const u8 gMonFootprint_Decibelle[] = INCGFX_U8("graphics/pokemon/decibelle/footprint.png", ".1bpp");
 	
-    const u32 gMonFrontPic_Yetree[] = INCGFX_U32("graphics/pokemon/yetree/front.png", ".4bpp.smol");
+    /*const u32 gMonFrontPic_Yetree[] = INCGFX_U32("graphics/pokemon/yetree/front.png", ".4bpp.smol");
     const u16 gMonPalette_Yetree[] = INCGFX_U16("graphics/pokemon/yetree/normal.pal", ".gbapal");
     const u32 gMonBackPic_Yetree[] = INCGFX_U32("graphics/pokemon/yetree/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Yetree[] = INCGFX_U16("graphics/pokemon/yetree/shiny.pal", ".gbapal");
@@ -27665,7 +27665,7 @@ extern const u8 gMonFootprint_Mimektiplex[];
     const u32 gMonBackPic_Noaudia[] = INCGFX_U32("graphics/pokemon/noaudia/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Noaudia[] = INCGFX_U16("graphics/pokemon/noaudia/shiny.pal", ".gbapal");
     const u8 gMonIcon_Noaudia[] = INCGFX_U8("graphics/pokemon/noaudia/icon.png", ".4bpp");
-    const u8 gMonFootprint_Noaudia[] = INCGFX_U8("graphics/pokemon/noaudia/footprint.png", ".1bpp");
+    const u8 gMonFootprint_Noaudia[] = INCGFX_U8("graphics/pokemon/noaudia/footprint.png", ".1bpp");*/
 	
     const u32 gMonFrontPic_Ptropa[] = INCGFX_U32("graphics/pokemon/ptropa/front.png", ".4bpp.smol");
     const u16 gMonPalette_Ptropa[] = INCGFX_U16("graphics/pokemon/ptropa/normal.pal", ".gbapal");
@@ -28044,7 +28044,7 @@ extern const u8 gMonFootprint_Mimektiplex[];
 	
 	
 	
-    const u32 gMonFrontPic_Toxibrate[] = INCGFX_U32("graphics/pokemon/toxibrate/front.png", ".4bpp.smol");
+    /*const u32 gMonFrontPic_Toxibrate[] = INCGFX_U32("graphics/pokemon/toxibrate/front.png", ".4bpp.smol");
     const u16 gMonPalette_Toxibrate[] = INCGFX_U16("graphics/pokemon/toxibrate/normal.pal", ".gbapal");
     const u32 gMonBackPic_Toxibrate[] = INCGFX_U32("graphics/pokemon/toxibrate/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Toxibrate[] = INCGFX_U16("graphics/pokemon/toxibrate/shiny.pal", ".gbapal");
@@ -28056,7 +28056,7 @@ extern const u8 gMonFootprint_Mimektiplex[];
     const u32 gMonBackPic_Crempera[] = INCGFX_U32("graphics/pokemon/crempera/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Crempera[] = INCGFX_U16("graphics/pokemon/crempera/shiny.pal", ".gbapal");
     const u8 gMonIcon_Crempera[] = INCGFX_U8("graphics/pokemon/crempera/icon.png", ".4bpp");
-    const u8 gMonFootprint_Crempera[] = INCGFX_U8("graphics/pokemon/crempera/footprint.png", ".1bpp");
+    const u8 gMonFootprint_Crempera[] = INCGFX_U8("graphics/pokemon/crempera/footprint.png", ".1bpp");*/
 	
 	
 	

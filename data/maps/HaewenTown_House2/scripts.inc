@@ -89,7 +89,7 @@ HaewenTown_House2_EventScript_ChooseMonForTutor::
 	msgbox HaewenTown_House2_Text_TeachWhichPokemon, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	special ChooseMonForMoveTutor
-	waitstate
+	@waitstate
 	goto_if_eq VAR_RESULT, FALSE, HaewenTown_House2_EventScript_ExitTutor
 	release
 	end

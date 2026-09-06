@@ -2,9 +2,14 @@ EventScript_Porygon2::
 	lockall
 	faceplayer
 	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
-	waitmoncry
+	msgbox gText_Porygon2Cry, MSGBOX_DEFAULT
+	closemessage
+	@waitmoncry
 	goto EventScript_PCWithoutFee
 	end
+
+gText_Porygon2Cry::
+	.string "PORYGON2: Po-ry-go-n!$"
 
 EventScript_PC::
 	lockall

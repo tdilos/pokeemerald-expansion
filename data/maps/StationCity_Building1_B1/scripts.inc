@@ -12,7 +12,7 @@ StationCity_Building1_B1_EventScript_Betterman::
 	faceplayer
 	msgbox StationCity_Building1_B1_Text_ICanExplain, MSGBOX_DEFAULT
 	special ScriptMenu_CreateLilycoveSSTidalMultichoice
-	waitstate
+	@waitstate
 	special GetLilycoveSSTidalSelection
 	switch VAR_RESULT
 	case 0, StationCity_Building1_B1_EventScript_WhereAreWe

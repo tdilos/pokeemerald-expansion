@@ -12630,6 +12630,116 @@
       "secondary_tileset": "gTileset_Emporium",
       "border_filepath": "data/layouts/StationCity_Building1_2F/border.bin",
       "blockdata_filepath": "data/layouts/StationCity_Building1_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_B5",
+      "name": "LushUnderspire_B5_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_B5/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_B5/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_B7",
+      "name": "LushUnderspire_B7_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_B7/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_B7/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_B9",
+      "name": "LushUnderspire_B9_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_B9/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_B9/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_B8",
+      "name": "LushUnderspire_B8_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_B8/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_B8/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_B6",
+      "name": "LushUnderspire_B6_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_B6/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_B6/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_DARK_LEVEL",
+      "name": "LushUnderspire_DarkLevel_Layout",
+      "width": 30,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_DarkLevel/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_DarkLevel/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_LEAFY_LEVEL",
+      "name": "LushUnderspire_LeafyLevel_Layout",
+      "width": 30,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_LeafyLevel/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_LeafyLevel/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_WET_LEVEL",
+      "name": "LushUnderspire_WetLevel_Layout",
+      "width": 30,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_WetLevel/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_WetLevel/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_SOMNIVORE_LAIR",
+      "name": "LushUnderspire_SomnivoreLair_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_SomnivoreLair/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_SomnivoreLair/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_BRIGHT_LEVEL",
+      "name": "LushUnderspire_BrightLevel_Layout",
+      "width": 30,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_XGreenhouse",
+      "border_filepath": "data/layouts/LushUnderspire_BrightLevel/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_BrightLevel/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSH_UNDERSPIRE_EXTERIOR_ELEVATOR",
+      "name": "LushUnderspire_ExteriorElevator_Layout",
+      "width": 5,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFrontier",
+      "border_filepath": "data/layouts/LushUnderspire_ExteriorElevator/border.bin",
+      "blockdata_filepath": "data/layouts/LushUnderspire_ExteriorElevator/map.bin"
     }
   ]
 }

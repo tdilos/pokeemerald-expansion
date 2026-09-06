@@ -29532,7 +29532,7 @@ Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Battle Type: Singles
-AI: Basic Trainer
+AI: Smart Trainer
 
 Skarmory @ Leftovers
 Level: 77
@@ -29594,6 +29594,80 @@ EVs: 252 HP / 76 Atk / 64 Def / 100 SpD / 16 Spe
 
 
 
+=== TRAINER_COLE_1 ===
+Name: COLE
+Class: Champion
+Pic: Cole
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Battle Type: Singles
+AI: Smart Trainer
+
+Poipole
+Level: 9
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Acid
+
+Riolu
+Level: 11
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Force Palm
+- Quick Attack
+- Counter
+
+
+
+=== TRAINER_COLE_2 ===
+Name: COLE
+Class: Champion
+Pic: Cole
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Battle Type: Singles
+AI: Smart Trainer
+
+Corvisquire @ Leftovers
+Level: 27
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+Poipole
+Level: 25
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+
+
+Lucario
+Level: 30
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Force Palm
+- Quick Attack
+- Counter
+
+
+
+=== TRAINER_BRENDAN_1 ===
+Name: BRENDAN
+Class: Champion
+Pic: Brendan
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Singles
+AI: Smart Trainer
+
+Latias @ Latiasite
+Level: 80
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 252 SpA
+- Mist Ball
+- Ice Beam
+- Thunderbolt
+- Roost
+
+
+
 === TRAINER_SYNDERLING_TEST ===
 Name: RAYNER
 Class: Synderling
@@ -29620,3 +29694,1063 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
 - Overclock
 
+
+
+
+=== TRAINER_SILAS_1 ===
+Name: SILAS
+Class: Aqua Admin
+Pic: Hacker
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Singles
+AI: Smart Trainer
+
+Arbok @ Black Sludge
+Level: 48
+Ability: Prowess
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+- Toxic Spikes
+- Sludge Bomb
+- Spit Fire
+- Glare
+
+Crobat @ Black Sludge
+Level: 47
+Ability: Infiltrator
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Toxic Wind
+- Air Slash
+- Heat Wave
+- Nasty Plot
+
+Drapion @ Black Sludge
+Level: 47
+Ability: Battle Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Toxic Spikes
+- Poison Jab
+- Earthquake
+- Swords Dance
+
+Gengar @ Black Sludge
+Level: 50
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Shadow Ball
+- Focus Blast
+- Nasty Plot
+- Hypnosis
+
+
+
+
+
+=== TRAINER_SILAS_2 ===
+Name: SILAS
+Class: Magma Admin
+Pic: Hacker
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Doubles
+AI: Smart Trainer
+
+Arbok @ Black Sludge
+Level: 48
+Ability: Prowess
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+- Toxic Spikes
+- Sludge Bomb
+- Spit Fire
+- Glare
+
+Crobat @ Black Sludge
+Level: 47
+Ability: Infiltrator
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Toxic Wind
+- Air Slash
+- Heat Wave
+- Hypnosis
+
+Mimikyu @ Red Card
+Level: 48
+Ability: Disguise
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Swords Dance
+- Shadow Claw
+- Drain Punch
+- Shadow Sneak
+
+Drapion @ Black Sludge
+Level: 47
+Ability: Battle Armor
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Toxic Spikes
+- Poison Jab
+- Earthquake
+- Swords Dance
+
+Wo-Chien @ Leftovers
+Level: 50
+Ability: Tablets of Ruin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+- Pollen Puff
+- Ruination
+- Leech Seed
+- Protect
+
+Gengar @ Black Sludge
+Level: 50
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Shadow Ball
+- Focus Blast
+- Nasty Plot
+- Hypnosis
+
+
+
+=== TRAINER_SILAS_3 ===
+Name: SILAS
+Class: Aqua Admin
+Pic: Hacker
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Battle Type: Singles
+AI: Smart Trainer
+
+Arbok @ Black Sludge
+Level: 53
+Ability: Prowess
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+- Toxic Spikes
+- Sludge Bomb
+- Spit Fire
+- Glare
+
+Mimikyu @ Red Card
+Level: 53
+Ability: Disguise
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Swords Dance
+- Shadow Claw
+- Drain Punch
+- Shadow Sneak
+
+Drapion @ Black Sludge
+Level: 53
+Ability: 
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Toxic Spikes
+- Poison Jab
+- Earthquake
+- Swords Dance
+
+Wo-Chien @ Leftovers
+Level: 56
+Ability: Tablets of Ruin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+- Foul Play
+- Ruination
+- Leech Seed
+- Protect
+
+Zamazenta @ Leftovers
+Level: 56
+Ability: Dauntless Shield
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+- Iron Defense
+- Body Press
+- Shield Strike
+- Roar
+
+Gengar @ Gengarite
+Level: 57
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Hex
+- Focus Blast
+- Protect
+- Hypnosis
+
+
+
+=== TRAINER_SILAS_4 ===
+Name: SILAS
+Class: Synderling
+Pic: Hacker
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Doubles
+AI: Smart Trainer
+
+Arbok @ Black Sludge
+Level: 53
+Ability: Prowess
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+- Toxic Spikes
+- Sludge Bomb
+- Spit Fire
+- Glare
+
+Mimikyu @ Red Card
+Level: 56
+Ability: Disguise
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Swords Dance
+- Shadow Claw
+- Drain Punch
+- Shadow Sneak
+
+Drapion @ Black Sludge
+Level: 53
+Ability: 
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Toxic Spikes
+- Poison Jab
+- Earthquake
+- Swords Dance
+
+Wo-Chien @ Leftovers
+Level: 58
+Ability: Tablets of Ruin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+- Pollen Puff
+- Ruination
+- Leech Seed
+- Protect
+
+Zamazenta @ Rusted Shield
+Level: 58
+Ability: Dauntless Shield
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+- Iron Defense
+- Body Press
+- Shield Strike
+- Rest
+
+Gengar @ Gengarite
+Level: 60
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Hex
+- Focus Blast
+- Protect
+- Hypnosis
+
+
+
+=== TRAINER_OAKLEY_1 ===
+Name: OAKLEY
+Class: Synderling
+Pic: Oakley Synderling
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Singles
+AI: Smart Trainer
+
+Glimmora @ Red Card
+Level: 56
+Ability: Toxic Debris
+Nature: Bold
+EVs: 252 HP / 252 Def / 4 SpD
+- Stealth Rock
+- Mortal Spin
+- Power Gem
+- Earth Power
+
+Great Tusk @ Rocky Helmet
+Level: 57
+Ability: Protosynthesis
+Nature: Jolly
+EVs: 252 Atk / 4 Def / 252 Spe
+- Headlong Rush
+- Ice Spinner
+- Rapid Spin
+- Close Combat
+
+Fezandipiti @ Leftovers
+Level: 57
+Ability: Toxic Chain
+EVs: 252 HP / 252 Def / 4 SpA
+- Beat Up
+- Heat Wave
+- Roost
+- U-Turn
+
+Koraidon @ Loaded Dice
+Level: 58
+Ability: Orichalcum Pulse
+Nature: Jolly
+EVs: 252 Atk / 4 Def / 252 Spe
+- Close Combat
+- Scale Shot
+- Swords Dance
+- Flare Blitz
+
+Gouging Fire @ Loaded Dice
+Level: 58
+Ability: Protosynthesis
+Nature: Jolly
+EVs: 252 HP / 252 Atk / 4 Spe
+- Heat Crash
+- Scale Shot
+- Dragon Dance
+- Morning Sun
+
+Aerodactyl @ Aerodactylite
+Level: 60
+Ability: Rock Head
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Head Smash
+- Dual Wingbeat
+- Earthquake
+- Roost
+
+
+
+=== TRAINER_QEZIRAH_1 ===
+Name: QEZIRAH
+Class: Synderling
+Pic: Witch
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Singles
+AI: Smart Trainer
+
+Zoroark-Hisui @ Focus Sash
+Level: 50
+Ability: Illusion
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Wither Wind
+- Focus Blast
+- Dark Pulse
+- Nasty Plot
+
+Espathra @ Leftovers
+Level: 47
+Ability: Speed Boost
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 Spe
+- Calm Mind
+- Stored Power
+- Tera Blast
+- Roost
+
+Sneasler @ White Herb
+Level: 48
+Ability: Poison Touch
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Swords Dance
+- Close Combat
+- Dire Claw
+- Throat Chop
+
+Flutter Mane @ Booster Energy
+Level: 50
+Ability: Protosynthesis
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Power Gem
+- Psyshock
+
+Absol @ Absolite Z
+Level: 52
+Ability: Justified
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 SpD /252 Spe
+- Swords Dance
+- Night Slash
+- Close Combat
+- Psycho Cut
+
+
+
+=== TRAINER_QEZIRAH_2 ===
+Name: QEZIRAH
+Class: Synderling
+Pic: Witch
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Doubles
+AI: Smart Trainer
+
+Zoroark-Hisui @ Focus Sash
+Level: 68
+Ability: Illusion
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Wither Wind
+- Focus Blast
+- Dark Pulse
+- Nasty Plot
+
+Darkrai @ Leftovers
+Level: 70
+Ability: Bad Dreams
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Dark Void
+- Dark Pulse
+- Sludge Bomb
+- Psyshock
+
+Sneasler @ White Herb
+Level: 67
+Ability: Poison Touch
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Swords Dance
+- Close Combat
+- Dire Claw
+- Throat Chop
+
+Flutter Mane @ Booster Energy
+Level: 68
+Ability: Protosynthesis
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Power Gem
+- Psyshock
+
+Absol @ Absolite Z
+Level: 72
+Ability: Justified
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 SpD /252 Spe
+- Swords Dance
+- Night Slash
+- Close Combat
+- Psycho Cut
+
+Chien-Pao @ Leftovers
+Level: 70
+Ability: Sword of Ruin
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Swords Dance
+- Icicle Crash
+- Crunch
+- Sacred Sword
+
+
+
+=== TRAINER_KRELL_1 ===
+Name: KRELL
+Class: Synderling
+Pic: Cyborg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Singles
+AI: Smart Trainer
+
+Archaludon @ Leftovers
+Level: 56
+Ability: Stamina
+Nature: Modest
+EVs: 252 HP / 252 SpA / 4 Spe
+- Stealth Rock
+- Draco Meteor
+- Flash Cannon
+- Electro Shot
+
+Iron Moth @ Booster Energy
+Level: 57
+Ability: Quark Drive
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 124 Def / 132 SpA / 252 Spe
+- Fiery Dance
+- Toxic Wind
+- Energy Ball
+- Dazzling Gleam
+
+Iron Bundle @ Heavy Duty Boots
+Level: 56
+Ability: Quark Drive
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Hydro Pump
+- Freeze-Dry
+- Flip Turn
+- Encore
+
+Miraidon @ Leftovers
+Level: 58
+Ability: Hadron Engine
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Draco Meteor
+- Electro Drift
+- U-Turn
+- Taunt
+
+Regieleki @ Light Clay
+Level: 58
+Ability: Transistor
+Nature: Timid
+EVs: 252 HP / 4 Def / 252 Spe
+- Reflect
+- Light Screen
+- Volt Switch
+- Tera Blast
+
+Magearna @ Magearnite
+Level: 60
+Ability: Soul-Heart
+Nature: Bold
+EVs: 248 HP / 252 Def / 8 SpD
+- Shift Gear
+- Calm Mind
+- Draining Kiss
+- Stored Power
+
+
+
+=== TRAINER_KRELL_2 ===
+Name: KRELL
+Class: Synderling
+Pic: Cyborg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Singles
+AI: Smart Trainer
+
+Iron Bundle @ Heavy Duty Boots
+Level: 56
+Ability: Quark Drive
+Nature: Timid
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Hydro Pump
+- Freeze-Dry
+- Flip Turn
+- Encore
+
+
+
+=== TRAINER_ARCHIE_SYNDERLING ===
+Name: ARCHIE
+Class: Synderling
+Pic: Archie Synderling
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Singles
+AI: Smart Trainer
+
+Kyogre @ Blue Orb
+Level: 60
+Ability: Drizzle
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 Def / 252 SpA / 252 Spe
+- Origin Pulse
+- Ice Beam
+- Thunder
+- Calm Mind
+
+Palafin @ Leftovers
+Level: 58
+Ability: Zero to Hero
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+- Bulk Up
+- Jet Punch
+- Drain Punch
+- Protect
+
+Sharpedo @ Sharpedonite
+Level: 60
+Ability: Speed Boost
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 Def / 252 Spe
+- Protect
+- Crunch
+- Waterfall
+- Ice Fang
+
+
+
+=== TRAINER_MAXIE_SYNDERLING ===
+Name: MAXIE
+Class: Synderling
+Pic: Maxie Synderling
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Singles
+AI: Smart Trainer
+
+Groudon @ Red Orb
+Level: 60
+Ability: Drought
+Nature: Impish
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 140 Def / 120 SpD
+- Precipice Blades
+- Stealth Rock
+- Dragon Tail
+- Overheat
+
+Chi-Yu @ Life Orb
+Level: 58
+Ability: Beads of Ruin
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Heat Wave
+- Dark Pulse
+- Tera Blast
+- Nasty Plot
+
+Camerupt @ Cameruptite
+Level: 60
+Ability: Magma Armor
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpA
+- Heat Wave
+- Scorching Sands
+- Solar Beam
+- Protect
+
+
+
+=== TRAINER_RED_1 ===
+Name: RED
+Class: Synderling
+Pic: Red Synderling
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Singles
+AI: Smart Trainer
+
+Raichu @ Raichunite Y
+Level: 50
+Ability: Lightning Rod
+Nature: Timid
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Zap Cannon
+- Focus Blast
+- Grass Knot
+- Sing
+
+Gyarados @ Leftovers
+Level: 47
+Ability: Intimidate
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Ice Fang
+
+Snorlax @ Leftovers
+Level: 48
+Ability: Thick Fat
+Nature: Careful
+EVs: 252 HP / 4 Def / 252 SpD
+- Curse
+- Body Slam
+- Heat Crash
+- Rest
+
+Atroceon @ Choice Scarf
+Level: 47
+Ability: Legendary Scale
+Nature: Modest
+EVs: 4 HP / 252 SpA / 252 Spe
+- Draco Meteor
+- Flamethrower
+- Thunderbolt
+- Ice Beam
+
+Mewtwo @ Leftovers
+Level: 50
+Ability: Pressure
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 Def / 252 SpA / 252 Spe
+- Psystrike
+- Flamethrower
+- Ice Beam
+- Nasty Plot
+
+
+
+=== TRAINER_RED_2 ===
+Name: RED
+Class: Synderling
+Pic: Red Synderling
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Doubles
+AI: Smart Trainer
+
+Raichu @ Raichunite Y
+Level: 80
+Ability: Lightning Rod
+- Sing
+- Protect
+- Zap Cannon
+- Tera Blast
+
+Gyarados @ Leftovers
+Level: 78
+Ability: Intimidate
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Crunch
+
+Snorlax @ Leftovers
+Level: 78
+Ability: Thick Fat
+- Yawn
+- Body Slam
+- High Horsepower
+- Heavy Slam
+
+Gothiturge @ Light Clay
+Level: 78
+Ability: Shadow Tag
+- Psyshock
+- Focus Blast
+- Reflect
+- Light Screen
+
+Ho-oh @ Leftovers
+Level: 80
+Ability: Regenerator
+- Sacred Fire
+- Brave Bird
+- Tailwind
+- Recover
+
+Mewtwo @ Leftovers
+Level: 82
+Ability: Pressure
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 Def / 252 SpA / 252 Spe
+- Psystrike
+- Flamethrower
+- Earth Power
+- Nasty Plot
+
+
+
+=== TRAINER_RILEY_1 ===
+Name: RILEY
+Class: Synderling
+Pic: Riley Synderling
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Singles
+AI: Smart Trainer
+
+Garchomp @ Rocky Helmet
+Level: 57
+Ability: Rough Skin
+Nature: Impish
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 216 Def / 40 Spe
+- Earthquake
+- Dragon Tail
+- Stealth Rock
+- Spikes
+
+Ursaluna Bloodmoon @ Leftovers
+Level: 58
+Ability: Mind's Eye
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 Def / 252 SpA / 252 Spe
+- Calm Mind
+- Blood Moon
+- Earth Power
+- Moonlight
+
+Gholdengo @ Air Balloon
+Level: 57
+Ability: Good as Gold
+Nature: Bold
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 196 Def / 60 Spe
+- Nasty Plot
+- Shadow Ball
+- Recover
+- Make It Rain
+
+Lucario @ Lucarionite
+Level: 60
+Ability: Justified
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+- Swords Dance
+- Close Combat
+- Earthquake
+- Bullet Punch
+
+
+
+=== TRAINER_RILEY_2 ===
+Name: RILEY
+Class: Synderling
+Pic: Riley Synderling
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Doubles
+AI: Smart Trainer
+
+Urshifu-Rapid Strike @ Mystic Water
+Level: 80
+Ability: Unseen Fist
+Nature: Adamant
+EVs: 252 Atk / 4 Def / 252 Spe
+- Surging Strikes
+- Close Combat
+- Aqua Jet
+- Detect
+
+Tornadus @ Sharp Beak
+Level: 78
+Ability: Prankster
+Nature: Modest
+EVs: 252 HP / 252 Def / 4 SpD
+- Bleakwind Storm
+- Tailwind
+- Taunt
+- U-Turn
+
+
+
+=== TRAINER_VERT_SYNDERLING ===
+Name: VERT
+Class: Synderling
+Pic: Vert Synderling
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Doubles
+AI: Smart Trainer
+
+Lunala @ Leftovers
+Level: 78
+- Wither
+- Moongeist Beam
+- Psyshock
+- Focus Blast
+
+Blaziken @ Blazikenite
+Level: 76
+Ability: Speed Boost
+Nature: Adamant
+EVs: 252 Atk / 4 Def / 252 Spe
+- Flare Blitz
+- Close Combat
+- Swords Dance
+- Protect
+
+Slowking Galar @ Leftovers
+Level: 75
+Ability: Regenerator
+EVs: 252 HP / 252 Def / 4 SpA
+- Sludge Bomb
+- Flamethrower
+- Darkness Dream
+- Hex
+
+Nidoking @ Life Orb
+Level: 76
+Ability: Sheer Force
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Sludge Wave
+- Earth Power
+- Fire Blast
+- Thunderbolt
+
+Spectrier @ Leftovers
+Level: 78
+Ability: Grim Neigh
+- Nasty Plot
+- Shadow Ball
+- Draining Kiss
+- Substitute
+
+Zacian @ Rusted Sword
+Level: 80
+Ability: Intrepid Sword
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Swords Dance
+- Behemoth Blade
+- Close Combat
+- Wild Charge
+
+
+
+=== TRAINER_VIOLET_SYNDERLING ===
+Name: VIOLET
+Class: Synderling
+Pic: Violet Synderling
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Doubles
+AI: Smart Trainer
+
+Lunala @ Leftovers
+Level: 78
+- Wither
+- Moongeist Beam
+- Psyshock
+- Focus Blast
+
+Blaziken @ Blazikenite
+Level: 76
+Ability: Speed Boost
+Nature: Adamant
+EVs: 252 Atk / 4 Def / 252 Spe
+- Flare Blitz
+- Close Combat
+- Swords Dance
+- Protect
+
+Slowking Galar @ Leftovers
+Level: 75
+Ability: Regenerator
+EVs: 252 HP / 252 Def / 4 SpA
+- Sludge Bomb
+- Flamethrower
+- Darkness Dream
+- Hex
+
+Nidoqueen @ Life Orb
+Level: 76
+Ability: Sheer Force
+Nature: Modest
+EVs: 252 SpA / 4 SpD / 252 Spe
+- Sludge Wave
+- Earth Power
+- Ice Beam
+- Thunderbolt
+
+Spectrier @ Leftovers
+Level: 78
+Ability: Grim Neigh
+- Nasty Plot
+- Shadow Ball
+- Draining Kiss
+- Substitute
+
+Zacian @ Rusted Sword
+Level: 80
+Ability: Intrepid Sword
+Nature: Jolly
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 4 SpD / 252 Spe
+- Swords Dance
+- Behemoth Blade
+- Close Combat
+- Wild Charge
+
+
+
+=== TRAINER_RAYNER_SYNDERLING ===
+Name: RAYNER
+Class: Synderling
+Pic: Rayner Synderling
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Doubles
+AI: Smart Trainer
+
+Regigigas @ Leftovers
+Level: 98
+Ability: Steady Start
+- Body Slam
+- Darkest Lariat
+- Drain Punch
+- Protect
+
+Yveltal @ Assault Vest
+Level: 97
+Ability: Dark Aura
+Nature: Modest
+EVs: 252 HP / 252 SpA / 4 Spe
+- Dark Pulse
+- Oblivion Wing
+- Heat Wave
+- Foul Play
+
+Eternatus-Eternamax
+Level: 100
+Ability: Pressure
+Nature: Timid
+EVs: 252 HP / 252 SpD / 4 Spe
+- Dynamax Cannon
+- Toxic Wind
+- Flamethrower
+- Recover

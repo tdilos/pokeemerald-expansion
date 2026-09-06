@@ -62,15 +62,5 @@ ShamrockIsle_Exterior_Text_WeekdaySiblingPostItem:
 
 
 
-ShamrockIsle_Exterior_EventScript_Dummy::
-	lock
-	seteventmon SPECIES_VICTINI, 50
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1
-	special BattleSetup_StartLegendaryBattle
-	waitstate
-	@playse MUS_SLOTS_WIN
-	@waitse
-	release
-	end	
 
 

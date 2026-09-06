@@ -2,6 +2,21 @@ StationRing_MapScripts::
 	.byte 0
 
 
+StationRing_EventScript_MewtwoGenesectEncounter::
+	lockall
+	playmoncry SPECIES_MEWTWO, CRY_MODE_NORMAL
+	@waitmoncry
+	delay 30
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	playse SE_PIN
+	waitmovement 0
+	delay 30
+	releaseall
+	end
+
+
+
+
 
 StationRing_EventScript_Boy::
 	lock

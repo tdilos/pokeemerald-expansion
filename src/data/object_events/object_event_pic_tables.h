@@ -718,13 +718,12 @@ static const struct SpriteFrameImage sPicTable_Riley[] = {
 
 
 static const struct SpriteFrameImage sPicTable_BikerM[] = {
-    overworld_ascending_frames(gObjectEventPic_BikerM, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_BikerM, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_BikerF[] = {
-    overworld_ascending_frames(gObjectEventPic_BikerF, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_BikerF, 4, 4),
 };
-
 
 
 static const struct SpriteFrameImage sPicTable_LassAlola[] = {

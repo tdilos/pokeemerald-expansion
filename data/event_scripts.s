@@ -1629,12 +1629,12 @@ EventScript_DoWonderTrade::
 	getpartysize
 	goto_if_eq VAR_RESULT, 0, EventScript_End
 	special ChoosePartyMon
-	waitstate
+	@waitstate
 	goto_if_ge VAR_0x8004, PARTY_SIZE, EventScript_End
 	copyvar VAR_0x8005, VAR_0x8004
 	special CreateWonderTradePokemon
 	special DoInGameTradeScene
-	waitstate
+	@waitstate
 EventScript_End:
 	end
 
@@ -2775,3 +2775,25 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Summer_Caves/scripts.inc"
 
 	.include "data/maps/StationCity_Building1_2F/scripts.inc"
+
+	.include "data/maps/LushUnderspire_B7/scripts.inc"
+
+	.include "data/maps/LushUnderspire_B5/scripts.inc"
+
+	.include "data/maps/LushUnderspire_B9/scripts.inc"
+
+	.include "data/maps/LushUnderspire_B6/scripts.inc"
+
+	.include "data/maps/LushUnderspire_B8/scripts.inc"
+
+	.include "data/maps/LushUnderspire_DarkLevel/scripts.inc"
+
+	.include "data/maps/LushUnderspire_LeafyLevel/scripts.inc"
+
+	.include "data/maps/LushUnderspire_BrightLevel/scripts.inc"
+
+	.include "data/maps/LushUnderspire_SomnivoreLair/scripts.inc"
+
+	.include "data/maps/LushUnderspire_WetLevel/scripts.inc"
+
+	.include "data/maps/LushUnderspire_ExteriorElevator/scripts.inc"
