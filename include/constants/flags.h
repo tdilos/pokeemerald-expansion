@@ -1798,11 +1798,15 @@
 #define FLAG_GOT_MELTAN_EGG                                 0x5B7
 #define FLAG_RECEIVED_EXP_ALL                               0x5B8
 #define FLAG_BATTLED_OPC_DUN_TOWN                           0x5B9 
-#define FLAG_INSURANCE	                                    0x5BA
-#define FLAG_RESET_BJ	                                    0x5BB
-#define FLAG_BLACKJACK	                                    0x5BC
+//#define FLAG_INSURANCE	                                    0x5BA
+//#define FLAG_RESET_BJ	                                    0x5BB
+//#define FLAG_BLACKJACK	                                    0x5BC
+#define FLAG_UNUSED_0x5BA                                   0x5BA
+#define FLAG_UNUSED_0x5BB                                   0x5BB
+#define FLAG_UNUSED_0x5BC                                   0x5BC
 #define FLAG_ONIX_HIGH_SCORE_ACHIEVED                       0x5BD
-#define FLAG_BLACKJACK_HIGH_SCORE_ACHIEVED                  0x5BE
+//#define FLAG_BLACKJACK_HIGH_SCORE_ACHIEVED                  0x5BE
+#define FLAG_UNUSED_0x5BE                                   0x5BE
 #define FLAG_HIDE_MISC_RANGER_HQ                            0x5BF
 
 #define FLAG_UNDERGROUND_CITY_RESCUED_MEW                   0x5C0

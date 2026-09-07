@@ -349,7 +349,6 @@ SECTIONS {
 	src/rogue_voltorbflip.o(.text);
 		src/snake.o(.text);
 		src/pinball.o(.text);
-		src/game_corner_blackjack.o(.text);
 	src/sliding_puzzle.o(.text);
     } =0
 
@@ -723,7 +722,6 @@ SECTIONS {
 	src/rogue_voltorbflip.o(.rodata);
 		src/snake.o(.rodata);
 		src/pinball.o(.rodata);
-		src/game_corner_blackjack.o(.rodata);
 	src/sliding_puzzle.o(.rodata);
     } =0
 

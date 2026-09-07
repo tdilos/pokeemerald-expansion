@@ -1503,12 +1503,28 @@
 #define TRAINER_RAYNER_SYNDERLING  1414
 
 #define TRAINER_SYNDERLING_TEST  1415
+#define TRAINER_ARCHON_TEST      1416
+
+#define TRAINER_ARCHON_NIHILEGO      1417
+#define TRAINER_ARCHON_STAKATAKA     1418
+#define TRAINER_ARCHON_SOMNIVORE     1419
+#define TRAINER_ARCHON_MANIPULON     1420
+#define TRAINER_ARCHON_BUZZWOLE      1421
+#define TRAINER_ARCHON_PHEROMOSA     1422
+#define TRAINER_ARCHON_TEROPHAGE     1423
+#define TRAINER_ARCHON_KARTANA       1424
+#define TRAINER_ARCHON_REIZURGE      1425
+#define TRAINER_ARCHON_CELESTEELA    1426
+#define TRAINER_ARCHON_THURSLUSH     1427
+#define TRAINER_ARCHON_BLACEPHALON   1428
+#define TRAINER_ARCHON_GUZZLORD      1429
+#define TRAINER_ARCHON_MIMEKTIPLEX   1430
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     1416 //1291 //965//855
+#define TRAINERS_COUNT_EMERALD     1431 //1291 //965//855
 #define MAX_TRAINERS_COUNT_EMERALD 1864 //1312 //965//864
 
 #if IS_FRLG

@@ -737,18 +737,18 @@ TurquoiseCity_GameCorner_Text_CantWinJackpot:
 
 
 TurquoiseCity_GameCorner_EventScript_Blackjack::
-	lockall
-	checkitem ITEM_COIN_CASE
-	goto_if_eq VAR_RESULT, FALSE, TurquoiseCity_GameCorner_EventScript_NoCoinCase
-	msgbox TurquoiseCity_GameCorner_Text_BlackJack, MSGBOX_YESNO
-	closemessage
+	@lockall
+	@checkitem ITEM_COIN_CASE
+	@goto_if_eq VAR_RESULT, FALSE, TurquoiseCity_GameCorner_EventScript_NoCoinCase
+	@msgbox TurquoiseCity_GameCorner_Text_BlackJack, MSGBOX_YESNO
+	@closemessage
 	goto_if_eq VAR_RESULT, NO, TurquoiseCity_GameCorner_CancelBJ
-	playbgm MUS_GAME_CORNER, FALSE
-	special StartBlackJack
-	waitstate
-	savebgm MUS_DUMMY
-	fadedefaultbgm
-	releaseall
+	@playbgm MUS_GAME_CORNER, FALSE
+	@special StartBlackJack
+	@waitstate
+	@savebgm MUS_DUMMY
+	@fadedefaultbgm
+	@releaseall
 	end
 
 TurquoiseCity_GameCorner_CancelBJ::
@@ -1153,7 +1153,7 @@ TurquoiseCity_GameCorner_EventScript_AceTrainer::
 	end	
 
 TurquoiseCity_GameCorner_EventScript_BlackjackQuestInProgress::
-	goto_if_set FLAG_BLACKJACK_HIGH_SCORE_ACHIEVED, TurquoiseCity_GameCorner_EventScript_CompleteBlackjackQuest
+	@goto_if_set FLAG_BLACKJACK_HIGH_SCORE_ACHIEVED, TurquoiseCity_GameCorner_EventScript_CompleteBlackjackQuest
 	msgbox TurquoiseCity_GameCorner_Text_BlackjackQuestInProgress, MSGBOX_DEFAULT
 	goto TurquoiseCity_GameCorner_EventScript_NPCReturnToSlots
 	end

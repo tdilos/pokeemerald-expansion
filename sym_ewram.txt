@@ -155,5 +155,4 @@
 	.include "src/rogue_voltorbflip.o"
 	.include "src/snake.o"
 	.include "src/pinball.o"
-	.include "src/game_corner_blackjack.o"
 	.include "src/sliding_puzzle.o"

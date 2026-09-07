@@ -691,7 +691,7 @@ gSpecials::
 	def_special SetSeenMon
 	def_special Special_ViewVoltorbFlip
 	def_special StartSnake
-	def_special StartBlackJack
+	@def_special StartBlackJack
 	def_special GetKarma
 	def_special GetBattleCountForKarmaBattle
 	def_special ForceReloadMap

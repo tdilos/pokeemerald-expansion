@@ -2142,14 +2142,14 @@ extern const u8 gText_ThankYou[];
 extern const u8 gText_ByeBye[];
 
 //BlackJack
-extern const u8 gText_Bust[];
-extern const u8 gText_YouLose[];
-extern const u8 gText_YouWin[];
-extern const u8 gText_Push[];
-extern const u8 gText_BlackJack[];
-extern const u8 gText_Betting[];
-extern const u8 gText_NoBetting[];
-extern const u8 gText_NoMoney[];
+//extern const u8 gText_Bust[];
+//extern const u8 gText_YouLose[];
+//extern const u8 gText_YouWin[];
+//extern const u8 gText_Push[];
+//extern const u8 gText_BlackJack[];
+//extern const u8 gText_Betting[];
+//extern const u8 gText_NoBetting[];
+//extern const u8 gText_NoMoney[];
 
 // Mystery Gift
 extern const u8 gText_MysteryGift[];
