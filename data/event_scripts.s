@@ -1900,7 +1900,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/AmberCity_Museum_1F/scripts.inc"
 
-	.include "data/maps/CobaltyCity_DreamResort/scripts.inc"
+	.include "data/maps/CobaltCity_DreamResort_1F/scripts.inc"
 
 	.include "data/maps/AmberCity_House1/scripts.inc"
 

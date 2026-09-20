@@ -24,6 +24,7 @@ DreamResort_Text_CursedDoor:
 	.string "Will you go inside?$"
 
 DreamResort_EventScript_GoToCursedRoom::
+	setvar VAR_DREAM_RESORT_STATE, 0
 	warp MAP_DREAM_RESORT_4F, 27, 4
 	waitstate
 	releaseall

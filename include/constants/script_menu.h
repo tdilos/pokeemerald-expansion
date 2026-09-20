@@ -20,7 +20,8 @@ enum
     MULTI_REGISTER_MENU,
     MULTI_SSTIDAL_LILYCOVE,             // Exit only, populated by CreateLilycoveSSTidalMultichoice
     MULTI_UNUSED_9,
-    MULTI_UNUSED_10,
+    //MULTI_UNUSED_10,
+	MULTI_UNDERSPIRE_ELEVATOR,
     MULTI_FRONTIER_PASS_INFO,
     MULTI_BIKE,
     MULTI_STATUS_INFO,

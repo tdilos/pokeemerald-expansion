@@ -1,2 +1,142 @@
 LushUnderspire_ExteriorElevator_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LushUnderspire_ExteriorElevator_OnFrame
 	.byte 0
+
+LushUnderspire_ExteriorElevator_OnFrame:
+	map_script_2 VAR_TEMP_0, 0, LushUnderspire_ExteriorElevator_EventScript_SelectFloor
+	.2byte 0
+
+
+
+	@ State descriptions for VAR_X_GREENHOUSE_STATE
+	@ 1: After getting access to Wet Level
+	@ 2: After getting access to Bright Level
+	@ 3: After getting access to Dark Level
+
+
+
+
+LushUnderspire_ExteriorElevator_Text_StateDestination:
+	.string "Please state your destination.$"
+
+LushUnderspire_ExteriorElevator_Text_AccessDenied:
+	.string "Access denied.$"
+
+
+LushUnderspire_ExteriorElevator_EventScript_SelectFloor::
+	lock
+	setvar VAR_TEMP_0, 1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	setvar VAR_0x8004, 0
+	call_if_unset FLAG_TEMP_2, LushUnderspire_ExteriorElevator_EventScript_SetFloor
+	copyvar VAR_0x8005, VAR_DEPT_STORE_FLOOR
+LushUnderspire_ExteriorElevator_EventScript_ReselectFloor::
+	special ShowDeptStoreElevatorFloorSelect
+	message LushUnderspire_ExteriorElevator_Text_StateDestination
+	waitmessage
+	setvar VAR_0x8004, 0
+	specialvar VAR_RESULT, GetDeptStoreDefaultFloorChoice
+	switch VAR_RESULT
+	case 0, LushUnderspire_ExteriorElevator_EventScript_ChooseFloorFromTop
+	case 1, LushUnderspire_ExteriorElevator_EventScript_ChooseFloorFromMiddle
+	case 2, LushUnderspire_ExteriorElevator_EventScript_ChooseFloorFromBottom
+	case 3, LushUnderspire_ExteriorElevator_EventScript_ChooseFloorFromSecret
+	end
+
+@ Below scripts ensure the cursor for floor select always starts on the current floor
+LushUnderspire_ExteriorElevator_EventScript_ChooseFloorFromTop::
+	multichoicedefault 0, 0, MULTI_UNDERSPIRE_ELEVATOR, 0, FALSE
+	goto LushUnderspire_ExteriorElevator_EventScript_ChooseFloor
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_ChooseFloorFromMiddle::
+	multichoicedefault 0, 0, MULTI_UNDERSPIRE_ELEVATOR, 1, FALSE
+	goto LushUnderspire_ExteriorElevator_EventScript_ChooseFloor
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_ChooseFloorFromBottom::
+	multichoicedefault 0, 0, MULTI_UNDERSPIRE_ELEVATOR, 2, FALSE
+	goto LushUnderspire_ExteriorElevator_EventScript_ChooseFloor
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_ChooseFloorFromSecret::
+	multichoicedefault 0, 0, MULTI_UNDERSPIRE_ELEVATOR, 3, FALSE
+	goto LushUnderspire_ExteriorElevator_EventScript_ChooseFloor
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_ChooseFloor::
+	switch VAR_RESULT
+	case 0, LushUnderspire_ExteriorElevator_EventScript_TopFloor
+	case 1, LushUnderspire_ExteriorElevator_EventScript_MiddleFloor
+	case 2, LushUnderspire_ExteriorElevator_EventScript_BottomFloor
+	case 3, LushUnderspire_ExteriorElevator_EventScript_SecretFloor
+	case 4, LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	case MULTI_B_PRESSED, LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_AccessDenied::
+	message LushUnderspire_ExteriorElevator_Text_AccessDenied
+	waitmessage
+	goto LushUnderspire_ExteriorElevator_EventScript_ReselectFloor
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_TopFloor::
+	goto_if_lt VAR_X_GREENHOUSE_STATE, 2, LushUnderspire_ExteriorElevator_EventScript_AccessDenied
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_1F
+	setdynamicwarp MAP_LUSH_UNDERSPIRE_BRIGHT_LEVEL, 32, 5
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_1F, LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	call LushUnderspire_ExteriorElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_1F
+	goto LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_MiddleFloor::
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_2F
+	setdynamicwarp MAP_LUSH_UNDERSPIRE_LEAFY_LEVEL, 32, 5
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_2F, LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	call LushUnderspire_ExteriorElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_2F
+	goto LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_BottomFloor::
+	goto_if_lt VAR_X_GREENHOUSE_STATE, 1, LushUnderspire_ExteriorElevator_EventScript_AccessDenied
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_3F
+	setdynamicwarp MAP_LUSH_UNDERSPIRE_WET_LEVEL, 32, 5
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_3F, LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	call LushUnderspire_ExteriorElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_3F
+	goto LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_SecretFloor::
+	goto_if_lt VAR_X_GREENHOUSE_STATE, 3, LushUnderspire_ExteriorElevator_EventScript_AccessDenied
+	setvar VAR_0x8006, DEPT_STORE_FLOORNUM_4F
+	setdynamicwarp MAP_LUSH_UNDERSPIRE_DARK_LEVEL, 32, 5
+	goto_if_eq VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_4F, LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	call LushUnderspire_ExteriorElevator_EventScript_MoveElevator
+	setvar VAR_DEPT_STORE_FLOOR, DEPT_STORE_FLOORNUM_4F
+	goto LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_ExitFloorSelect::
+	special CloseDeptStoreElevatorWindow
+	release
+	end
+
+LushUnderspire_ExteriorElevator_EventScript_MoveElevator::
+	special CloseDeptStoreElevatorWindow
+	closemessage
+	waitse
+	special MoveElevator
+	@waitstate
+	setflag FLAG_TEMP_2
+	return
+
+LushUnderspire_ExteriorElevator_EventScript_SetFloor::
+	special SetDeptStoreFloor
+	return
+

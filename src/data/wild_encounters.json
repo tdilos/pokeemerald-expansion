@@ -32873,8 +32873,8 @@
                 "species": "SPECIES_NONE"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 12,
+                "max_level": 18,
                 "species": "SPECIES_CUBONE"
               },
               {
@@ -32883,13 +32883,13 @@
                 "species": "SPECIES_NONE"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 14,
+                "max_level": 20,
                 "species": "SPECIES_CUBONE"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 14,
+                "max_level": 20,
                 "species": "SPECIES_CUBONE"
               },
               {
@@ -33730,12 +33730,7 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
-              },
-              {
-                "min_level": 16,
-                "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
@@ -33755,37 +33750,42 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_SINISTEA"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_RUNERIGUS"
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_RUNERIGUS"
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
               }
             ]
           }
@@ -33799,62 +33799,62 @@
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_YAMASK_GALAR"
               },
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_RUNERIGUS"
               },
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_RUNERIGUS"
               },
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_RUNERIGUS"
               }
             ]
           }
@@ -34157,17 +34157,17 @@
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_EISCUE"
+                "species": "SPECIES_EISCUE_ICE"
               },
               {
                 "min_level": 20,
                 "max_level": 25,
-                "species": "SPECIES_EISCUE"
+                "species": "SPECIES_EISCUE_ICE"
               },
               {
                 "min_level": 20,
                 "max_level": 25,
-                "species": "SPECIES_EISCUE"
+                "species": "SPECIES_EISCUE_ICE"
               }
             ]
           }
@@ -35721,17 +35721,17 @@
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_EISCUE"
+                "species": "SPECIES_EISCUE_ICE"
               },
               {
                 "min_level": 20,
                 "max_level": 25,
-                "species": "SPECIES_EISCUE"
+                "species": "SPECIES_EISCUE_ICE"
               },
               {
                 "min_level": 20,
                 "max_level": 25,
-                "species": "SPECIES_EISCUE"
+                "species": "SPECIES_EISCUE_ICE"
               }
             ]
           }
@@ -35779,12 +35779,7 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
-              },
-              {
-                "min_level": 16,
-                "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
@@ -35804,37 +35799,42 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_SINISTEA"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_RUNERIGUS"
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_RUNERIGUS"
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
               }
             ]
           }
@@ -35848,12 +35848,7 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
-              },
-              {
-                "min_level": 16,
-                "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
@@ -35873,37 +35868,42 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_SINISTEA"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_RUNERIGUS"
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_RUNERIGUS"
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
               }
             ]
           }
@@ -35917,12 +35917,7 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
-              },
-              {
-                "min_level": 16,
-                "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
@@ -35942,37 +35937,42 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_SINISTEA"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_YAMASK_GALAR"
+                "species": "SPECIES_CUFANT"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_RUNERIGUS"
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
               },
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_RUNERIGUS"
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_CUFANT"
               }
             ]
           }

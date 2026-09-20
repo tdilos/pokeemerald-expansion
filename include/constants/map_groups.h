@@ -1276,7 +1276,7 @@ enum
     MAP_COBALT_CITY_POKEMON_CENTER        = (0 | (80 << 8)),
     MAP_COBALT_CITY_MART                  = (1 | (80 << 8)),
     MAP_COBALT_CITY_HARBOR                = (2 | (80 << 8)),
-    MAP_COBALTY_CITY_DREAM_RESORT         = (3 | (80 << 8)),
+    MAP_COBALT_CITY_DREAM_RESORT_1F       = (3 | (80 << 8)),
     MAP_COBALT_CITY_DREAM_RESORT_2F       = (4 | (80 << 8)),
     MAP_COBALT_CITY_DREAM_RESORT_3F       = (5 | (80 << 8)),
     MAP_COBALT_CITY_DREAM_RESORT_4F       = (6 | (80 << 8)),

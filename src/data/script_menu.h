@@ -378,6 +378,15 @@ static const struct MenuAction MultichoiceList_Floors[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_UnderspireElevator[] =
+{
+    {COMPOUND_STRING("Level B")},
+    {COMPOUND_STRING("Level L")},
+    {COMPOUND_STRING("Level S")},
+    {COMPOUND_STRING("Level U")},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_KendomaLRElevator[] =
 {
     {gText_8F},
@@ -1222,7 +1231,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_REGISTER_MENU]              = MULTICHOICE(MultichoiceList_RegisterMenu),
     [MULTI_SSTIDAL_LILYCOVE]           = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_UNUSED_9]                   = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_UNUSED_10]                  = MULTICHOICE(MultichoiceList_Exit),
+    //[MULTI_UNUSED_10]                  = MULTICHOICE(MultichoiceList_Exit),
+	[MULTI_UNDERSPIRE_ELEVATOR]  = MULTICHOICE(MultichoiceList_UnderspireElevator),  
     [MULTI_FRONTIER_PASS_INFO]         = MULTICHOICE(MultichoiceList_FrontierPassInfo),
     [MULTI_BIKE]                       = MULTICHOICE(MultichoiceList_Bike),
     [MULTI_STATUS_INFO]                = MULTICHOICE(MultichoiceList_StatusInfo),
