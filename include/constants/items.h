@@ -2380,7 +2380,8 @@ enum BerryId
 #undef UNPACK_BERRY_ID
 
 #define ITEM_TO_MAIL(itemId) ((itemId) - FIRST_MAIL_INDEX)
-#define MAIL_NONE 0xFF
+//#define MAIL_NONE 0xFF
+#define MAIL_NONE 0x3F
 #define ITEM_TO_MULCH(itemId)(((itemId) - ITEM_GROWTH_MULCH) + 1)
 
 #define MAX_BAG_ITEM_CAPACITY         999

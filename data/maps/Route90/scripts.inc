@@ -1,6 +1,6 @@
-.set LOCALID_BETTERMAN, 18
-.set LOCALID_GRUNT1, 17
-.set LOCALID_GRUNT2, 16
+@.set LOCALID_BETTERMAN_ROUTE90, 18
+@.set LOCALID_ROUTE90_GRUNT1, 17
+@.set LOCALID_ROUTE90_GRUNT2, 16
 
 Route90_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route90_OnFrame
@@ -92,9 +92,9 @@ Route90_EventScript_GenesisEncounter2::
 
 Route90_EventScript_GenesisEncounter3::
 	lockall
-	@addobject LOCALID_BETTERMAN
-	@addobject LOCALID_GRUNT1
-	@addobject LOCALID_GRUNT2
+	@addobject LOCALID_BETTERMAN_ROUTE90
+	@addobject LOCALID_ROUTE90_GRUNT1
+	@addobject LOCALID_ROUTE90_GRUNT2
 	@special ForceReloadMap
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 	waitmovement 0
@@ -119,86 +119,86 @@ Route90_EventScript_GenesisEncounterCont::
 	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 	msgbox Route90_Text_AlrightDoc, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceLeft
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceRight
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_FaceRight
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceLeft
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceRight
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_FaceRight
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceLeft
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceRight
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_FaceRight
 	waitmovement 0
 	delay 10
 	msgbox Route90_Text_SomebodyHelp, MSGBOX_DEFAULT
 	closemessage
 	delay 20
 	playse SE_PIN
-	applymovement LOCALID_BETTERMAN, Common_Movement_ExclamationMark
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceDown
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_FaceDown
 	waitmovement 0
 	delay 40
-	applymovement LOCALID_BETTERMAN, Route90_Movement_HideBehindPlayer
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT2, Common_Movement_FaceDown
+	applymovement LOCALID_BETTERMAN_ROUTE90, Route90_Movement_HideBehindPlayer
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_FaceDown
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkRight
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
 	msgbox Route90_Text_Grunt1PreBattle, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_1_ROUTE_90, Route90_Text_Grunt1Defeated
-	applymovement LOCALID_GRUNT1, Route90_Movement_Grunt1BackOff
+	applymovement LOCALID_ROUTE90_GRUNT1, Route90_Movement_Grunt1BackOff
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkDown
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkDown
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkLeft
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_GRUNT2, Common_Movement_FaceDown
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox Route90_Text_Grunt2PreBattle, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_2_ROUTE_90, Route90_Text_Grunt2Defeated
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox Route90_Text_YoullRegretThis, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT1, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE90_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	removeobject LOCALID_GRUNT1
-	removeobject LOCALID_GRUNT2
+	removeobject LOCALID_ROUTE90_GRUNT1
+	removeobject LOCALID_ROUTE90_GRUNT2
 	fadedefaultbgm
 	delay 30
-	applymovement LOCALID_BETTERMAN, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0	
@@ -206,17 +206,17 @@ Route90_EventScript_GenesisEncounterCont::
 	closemessage
 	delay 20
 	playse SE_PIN
-	applymovement LOCALID_BETTERMAN, Common_Movement_ExclamationMark
+	applymovement LOCALID_BETTERMAN_ROUTE90, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 40
 	msgbox Route90_Text_ThankYouGoodbye, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_BETTERMAN, Route90_Movement_BettermanRunsOff
+	applymovement LOCALID_BETTERMAN_ROUTE90, Route90_Movement_BettermanRunsOff
 	delay 10
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
-	removeobject LOCALID_BETTERMAN
+	removeobject LOCALID_BETTERMAN_ROUTE90
 	setvar VAR_PITCHBLAK_CITY_STATE, 1
 	setflag FLAG_DEFEATED_GRUNTS_ROUTE_90
 	releaseall

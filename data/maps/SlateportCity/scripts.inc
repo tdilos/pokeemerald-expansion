@@ -6,8 +6,12 @@ SlateportCity_MapScripts::
 SlateportCity_OnTransition:
 	setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
 	call SlateportCity_EventScript_EnterSlateport
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
-	call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
+	@call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
+	@call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
+	call_if_eq VAR_SLATEPORT_CITY_STATE, 2, SlateportCity_EventScript_MoveLookerToShipyard
+	call_if_eq VAR_SLATEPORT_CITY_STATE, 3, SlateportCity_EventScript_HideLooker
+	call_if_eq VAR_SLATEPORT_CITY_STATE, 4, SlateportCity_EventScript_HideLooker
+	call_if_eq VAR_SLATEPORT_CITY_STATE, 5, SlateportCity_EventScript_MoveEveryoneToShipyard
 	end
 
 SlateportCity_EventScript_EnterSlateport::
@@ -16,39 +20,365 @@ SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER
 	return
 
-SlateportCity_EventScript_MovePeopleForSternInterview::
-	setobjectxyperm LOCALID_SLATEPORT_CAPT_STERN, 28, 13
-	setobjectxyperm LOCALID_SLATEPORT_OLD_WOMAN, 25, 13
-	setobjectxyperm LOCALID_SLATEPORT_RICH_BOY, 25, 14
-	setobjectxyperm LOCALID_SLATEPORT_COOK, 27, 16
-	setobjectxyperm LOCALID_SLATEPORT_GIRL, 28, 16
-	setobjectxyperm LOCALID_SLATEPORT_FAT_MAN, 29, 16
-	setobjectxyperm LOCALID_SLATEPORT_MAN_1, 31, 14
-	setobjectmovementtype LOCALID_SLATEPORT_CAPT_STERN, MOVEMENT_TYPE_FACE_DOWN
-	setobjectmovementtype LOCALID_SLATEPORT_OLD_WOMAN, MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT
-	setobjectmovementtype LOCALID_SLATEPORT_RICH_BOY, MOVEMENT_TYPE_FACE_UP_AND_RIGHT
-	setobjectmovementtype LOCALID_SLATEPORT_COOK, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype LOCALID_SLATEPORT_GIRL, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype LOCALID_SLATEPORT_FAT_MAN, MOVEMENT_TYPE_FACE_UP
-	setobjectmovementtype LOCALID_SLATEPORT_MAN_1, MOVEMENT_TYPE_FACE_LEFT
+SlateportCity_EventScript_MoveLookerToShipyard:
+	setobjectxyperm LOCALID_LOOKER_SLATEPORT_CITY, 26, 39
+	setobjectmovementtype LOCALID_LOOKER_SLATEPORT_CITY, MOVEMENT_TYPE_FACE_DOWN
 	return
 
-SlateportCity_EventScript_SetReadyForScottScene::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-	getplayerxy VAR_0x8004, VAR_0x8005
-	goto_if_eq VAR_0x8004, 30, SlateportCity_EventScript_MoveScottLeft
-	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 23, 27
-	setobjectmovementtype LOCALID_SLATEPORT_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
+SlateportCity_EventScript_HideLooker:
+	setobjectxyperm LOCALID_LOOKER_SLATEPORT_CITY, 0, 0
+	setobjectmovementtype LOCALID_LOOKER_SLATEPORT_CITY, MOVEMENT_TYPE_FACE_DOWN
 	return
 
-SlateportCity_EventScript_MoveScottLeft::
-	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 22, 27
-	setobjectmovementtype LOCALID_SLATEPORT_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
+SlateportCity_EventScript_MoveEveryoneToShipyard:
+	@setobjectxyperm LOCALID_, 69, 69
+	@setobjectmovementtype LOCALID_, MOVEMENT_TYPE_
+
 	return
+	
+
+@SlateportCity_EventScript_MovePeopleForSternInterview::
+@	setobjectxyperm LOCALID_SLATEPORT_CAPT_STERN, 28, 13
+@	setobjectxyperm LOCALID_SLATEPORT_OLD_WOMAN, 25, 13
+@	setobjectxyperm LOCALID_SLATEPORT_RICH_BOY, 25, 14
+@	setobjectxyperm LOCALID_SLATEPORT_COOK, 27, 16
+@	setobjectxyperm LOCALID_SLATEPORT_GIRL, 28, 16
+@	setobjectxyperm LOCALID_SLATEPORT_FAT_MAN, 29, 16
+@	setobjectxyperm LOCALID_SLATEPORT_MAN_1, 31, 14
+@	setobjectmovementtype LOCALID_SLATEPORT_CAPT_STERN, MOVEMENT_TYPE_FACE_DOWN
+@	setobjectmovementtype LOCALID_SLATEPORT_OLD_WOMAN, MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT
+@	setobjectmovementtype LOCALID_SLATEPORT_RICH_BOY, MOVEMENT_TYPE_FACE_UP_AND_RIGHT
+@	setobjectmovementtype LOCALID_SLATEPORT_COOK, MOVEMENT_TYPE_FACE_UP
+@	setobjectmovementtype LOCALID_SLATEPORT_GIRL, MOVEMENT_TYPE_FACE_UP
+@	setobjectmovementtype LOCALID_SLATEPORT_FAT_MAN, MOVEMENT_TYPE_FACE_UP
+@	setobjectmovementtype LOCALID_SLATEPORT_MAN_1, MOVEMENT_TYPE_FACE_LEFT
+@	return
+
+@SlateportCity_EventScript_SetReadyForScottScene::
+@	setflag FLAG_HIDE_MAP_NAME_POPUP
+@	getplayerxy VAR_0x8004, VAR_0x8005
+@	goto_if_eq VAR_0x8004, 30, SlateportCity_EventScript_MoveScottLeft
+@	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 23, 27
+@	setobjectmovementtype LOCALID_SLATEPORT_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
+@	return
+
+@SlateportCity_EventScript_MoveScottLeft::
+@	setobjectxyperm LOCALID_SLATEPORT_SCOTT, 22, 27
+@	setobjectmovementtype LOCALID_SLATEPORT_SCOTT, MOVEMENT_TYPE_FACE_RIGHT
+@	return
 
 SlateportCity_OnFrame:
-	map_script_2 VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_ScottScene
+	@map_script_2 VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_ScottScene
+	map_script_2 VAR_SLATEPORT_CITY_STATE, 0, SlateportCity_EventScript_BirchsAideScene
+	map_script_2 VAR_SLATEPORT_CITY_STATE, 5, SlateportCity_EventScript_PostRescueScene
 	.2byte 0
+
+
+	@ State descriptions for VAR_SLATEPORT_CITY_STATE
+	@ 0: Before arriving
+	@ 1: Unused, previously used for Stern interview in Emerald
+	@ 2: Before entering shipyard with Looker
+	@ 3: After Looker enters building
+	@ 4: After battling downstairs grunts
+	@ 5: After battling Silas
+	@ 6: After choosing a starter from Birch
+
+SlateportCity_EventScript_BirchsAideScene::
+	lockall
+
+	setvar VAR_SLATEPORT_CITY_STATE, 2
+	releaseall
+	end
+
+
+SlateportCity_EventScript_PostRescueScene::
+	lockall
+
+	setvar VAR_SLATEPORT_CITY_STATE, 6
+	releaseall
+	end
+
+@ Player exits harbor, Birch's aide notices and approaches
+@ Aide explains that Birch has been kidnapped by Team Aqua but doesn't know where they've taken him and wonders what to do
+@ Suddenly Looker in disguise comes out of the harbor
+@ After a comical exchange in which he forgets his disguise, he explains that he has been following Team Aqua here and deduced that they're operating in the shadows from the shipyard
+@ He invites the player to meet him there next
+
+SlateportCity_Text_BirchsAideIntro:
+	.string "Oh you! You're {PLAYER}!\n"
+	.string "Thank goodness you came along!\p"
+	.string "First let me introduce myself. I'm one\n"
+	.string "of PROF. BIRCH'S lab assistants.\p"
+	.string "I was supposed to meet him here\n"
+	.string "outside the harbor.\p"
+	.string "But the professor never came. There was\n"
+	.string "only this note left behind by TEAM AQUA.\p"
+	.string "“Bring us the full POKéDEX you keep\n"
+	.string "in your lab if you ever want to\l"
+	.string "see the professor again.”\p"
+	.string "That's all it says. And I don't know\n"
+	.string "anything about a POKéDEX in the lab.\p"
+	.string "I thought the professor carried it on\n"
+	.string "his person at all times.\p"
+	.string "Oh it's terrible! The professor's been\n"
+	.string "kidnapped and I don't know what to do!\p"
+	.string "You're ISSHO'S new CHAMPION, right?\n"
+	.string "You have to do something!\p"
+	.string "I wish I could tell you where they went,\n"
+	.string "but I honestly never saw them.\p"
+	.string "\p"
+	.string "Oh we have nothing to go on but this note.\n"
+	.string "And a ransom that I can't pay.\p"
+	.string "I don't know where to go or what to do.\n"
+	.string "Maybe it is hopeless...$"
+
+SlateportCity_Text_LookerIntro1:
+	.string "I can answer that for you.$"
+
+SlateportCity_Text_LookerIntro2:
+	@.string "Don't worry, I'm a friend.\p"
+	@.string "I've been following leads on TEAM AQUA'S\n"
+	@.string "whereabouts for some time.\p"
+	@.string "I've also been following you, {PLAYER}.\p"
+	.string "So we meet at last, {PLAYER}.\p"
+	.string "Congratulations on becoming ISSHO'S\n"
+	.string "first official CHAMPION.\p"
+	.string "My organization has taken a special\n"
+	.string "interest in you...$"
+
+SlateportCity_Text_LookerIntro3:
+	.string "But that can wait. Right now we need\n"
+	.string "to focus on rescuing the professor.$"
+
+SlateportCity_Text_WhoAreYou:
+	.string "Um, excuse me, nurse.\n"
+	.string "Who are you exactly?$"
+
+SlateportCity_Text_LookerIntro4:
+	.string "Hmmm? Oh, you must mean my disguise.\n"
+	.string "I forgot I still had it on.$"
+
+SlateportCity_Text_LookerIntro5:
+	.string "Allow me to formally introduce myself.\n"
+	.string "My name is...\p"
+	.string "No, no. Let me give you my codename.\n"
+	.string "I am special agent LOOKER.\p"
+	.string "I work for the INTERNATIONAL POLICE.$"
+
+SlateportCity_Text_LookerIntro6:
+	.string "As I was saying, I've been following\n"
+	.string "TEAM AQUA'S grunts around the city.\p"
+	.string "And I believe that they're operating\n"
+	.string "covertly from the shipyard.\p"
+	.string "If the professor was kidnapped in this city,\n"
+	.string "it's likely that they're holding him there.$"
+
+SlateportCity_Text_LookerIntro7:
+	.string "My informants also tell me that TEAM AQUA\n"
+	.string "may be collaborating with someone else.\p"
+	.string "Someone that I've spent half my life\n"
+	.string "tracking down.\p"
+	.string "Professional thief and mercenary for hire\n"
+	.string "SILAS CROSS.\p"
+	.string "With your help, CHAMPION {PLAYER}, we can\n"
+	.string "rescue the professor and deal with SILAS\l"
+	.string "in one fell swoop.$"
+
+SlateportCity_Text_LookerIntro8:
+	.string "I'm going to scope out the building\n"
+	.string "from the outside.\p"
+	.string "Meet me there when you're ready.\n"
+	.string "Let's bring these villains to justice!$"
+
+
+
+SlateportCity_EventScript_BirchsAide::
+	lock
+	faceplayer
+	msgbox SlateportCity_Text_BirchsAide, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+SlateportCity_Text_BirchsAide:
+	.string "Please save the professor!$"
+
+
+
+
+SlateportCity_EventScript_Looker::
+	lock
+	faceplayer
+	msgbox SlateportCity_Text_Looker1, MSGBOX_DEFAULT
+	closemessage
+
+	delay 60
+
+	msgbox SlateportCity_Text_Looker2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+SlateportCity_Text_Looker1:
+	.string "There you are, {PLAYER}.\p"
+	.string "This is it.\n"
+	.string "SLATEPORT SHIPYARD.\p"
+	.string "TEAM AQUA often hide their criminal work\n"
+	.string "behind legitimate businesses like this.\p"
+	.string "They don't want people to think they're\n"
+	.string "anything more than a concerned if a bit\l"
+	.string "rowdy volunteer organization.\p"
+	.string "That's how they manage to stay in the\n"
+	.string "public's good grace. At least for now.\p"
+	.string "But in truth, they're a dishonest group\n"
+	.string "of overzealous extremists.\p"
+	.string "Misguided activists at best.\n"
+	.string "Terrorist criminals at worst.\p"
+	.string "If the general public knew all the crimes\n"
+	.string "that led back to their organization,\p"
+	.string "They'd never be allowed to show their\n"
+	.string "faces in broad daylight.$"
+
+SlateportCity_Text_Looker2:
+	.string "They'll most certainly be keeping a\n"
+	.string "low profile around here.\p"
+	.string "It won't be easy to sniff them out,\n"
+	.string "I'm sure. Let alone where they're\l"
+	.string "keeping the professor.\p"
+	.string "Just play along and let me do\n"
+	.string "the talking, alright?$"
+
+
+
+
+
+
+
+
+SlateportCity_Text_EmmaIntro2:
+	.string "Yessir! Always happy to bring\n"
+	.string "criminals to justice!$"
+
+SlateportCity_Text_BirchNewLeaf:
+	.string "Wow, I never would've expected TEAM MAGMA\n"
+	.string "to work with the INTERNATIONAL POLICE.\p"
+	.string "I knew you and TEAM AQUA never got along.\n"
+	.string "But to go this far?\p"
+	.string "I guess you guys are really turning over\n"
+	.string "a new leaf, huh?$"
+
+SlateportCity_Text_EmmaIntro3:
+	.string "Hmm? Oh, you mean my disguise!$"
+
+SlateportCity_Text_EmmaIntro4:
+	.string "You can call me special agent EMMA!\n"
+	.string "I'm a cadet in the INTERNATIONAL POLICE!\p"
+	.string "$"
+
+
+
+SlateportCity_EventScript_Pokemon::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_AZUMARILL, CRY_MODE_NORMAL
+	msgbox SlateportCity_Text_Pokemon, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+SlateportCity_Text_Pokemon:
+	.string "AZUMARILL: A-zu-zu-zu!$"
+
+SlateportCity_EventScript_AquaGruntRoadblock1::
+	lock
+	faceplayer
+	msgbox SlateportCity_Text_KnowNothingAboutThat, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+SlateportCity_EventScript_AquaGruntRoadblock2::
+	lock
+	faceplayer
+	msgbox SlateportCity_Text_WaterParadise, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+SlateportCity_EventScript_AquaGruntRoadblock3::
+	lock
+	faceplayer
+	msgbox SlateportCity_Text_HereToHelp, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+SlateportCity_EventScript_AquaGruntRoadblock4::
+	lock
+	faceplayer
+	msgbox SlateportCity_Text_CradleOfLife, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+SlateportCity_EventScript_AquaGruntRoadblock5::
+	lock
+	faceplayer
+	msgbox SlateportCity_Text_TeamAquaDoesntDoThat, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+SlateportCity_EventScript_AquaGruntRoadblock6::
+	lock
+	faceplayer
+	msgbox SlateportCity_Text_ChangeTheWorld, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+SlateportCity_Text_KnowNothingAboutThat:
+	.string "Eh, kidnapping?\n"
+	.string "I don't know nothing about that.\p"
+	.string "TEAM AQUA'S actions always bring smiles!$"
+
+SlateportCity_Text_WaterParadise:
+	.string "All we want is to make a paradise\n"
+	.string "for WATER POKéMON.\p"
+	.string "What's so bad about that?$"
+
+SlateportCity_Text_HereToHelp:
+	.string "We're here to help. Anything that's good for\n"
+	.string "WATER POKéMON is good for the rest of us.$"
+
+SlateportCity_Text_CradleOfLife:
+	.string "The sea is the cradle for all life.\n"
+	.string "Everything depends on the sea.\p"
+	.string "Why can't some people understand that?$"
+
+SlateportCity_Text_TeamAquaDoesntDoThat:
+	.string "Kidnapping?\n"
+	.string "TEAM AQUA doesn't do that.\p"
+	.string "You shouldn't believe everything\n"
+	.string "you hear, kid.$"
+
+SlateportCity_Text_ChangeTheWorld:
+	.string "TEAM AQUA'S gonna change the world!\n"
+	.string "Just wait and see.$"
+
+
+
+
+
+
+
+
+
 
 SlateportCity_EventScript_ScottScene::
 	lockall
@@ -530,16 +860,16 @@ SlateportCity_EventScript_PowerTMClerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart SlateportCity_Pokemart_PowerTMs
+	@pokemart SlateportCity_Pokemart_PowerTMs
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
-	.align 2
-SlateportCity_Pokemart_PowerTMs:
-	.2byte ITEM_TM_HIDDEN_POWER
-	@.2byte ITEM_TM_SECRET_POWER
-	pokemartlistend
+@	.align 2
+@SlateportCity_Pokemart_PowerTMs:
+@	.2byte ITEM_TM_HIDDEN_POWER
+@	@.2byte ITEM_TM_SECRET_POWER
+@	pokemartlistend
 
 @ Scene with Capt Sterns interview and Team Aqua announcing plans to steal Submarine
 SlateportCity_EventScript_CaptStern::

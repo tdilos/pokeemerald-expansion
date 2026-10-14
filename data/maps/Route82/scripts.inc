@@ -1,5 +1,5 @@
-.set LOCALID_GRUNT1, 11
-.set LOCALID_GRUNT2, 10
+@.set LOCALID_ROUTE82_GRUNT1, 11
+@.set LOCALID_ROUTE82_GRUNT2, 10
 
 Route82_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route82_OnTransition
@@ -138,7 +138,7 @@ Route82_EventScript_Grunt1::
 	lockall
 	faceplayer
 	msgbox Route82_Text_Scram, MSGBOX_NPC
-	applymovement LOCALID_GRUNT2, Common_Movement_FaceDown
+	applymovement LOCALID_ROUTE82_GRUNT2, Common_Movement_FaceDown
 	waitmovement 0
 	releaseall
 	end
@@ -147,7 +147,7 @@ Route82_EventScript_Grunt2::
 	lockall
 	faceplayer
 	msgbox Route82_Text_Scram, MSGBOX_NPC
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceUp
+	applymovement LOCALID_ROUTE82_GRUNT1, Common_Movement_FaceUp
 	waitmovement 0
 	releaseall
 	end

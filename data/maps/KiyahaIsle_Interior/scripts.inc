@@ -15,6 +15,33 @@ KiyahaIsle_Interior_Text_LittleGirl1:
 	.string "My sand castle moved! Did you\n"
 	.string "see where it went?$"
 
+KiyahaIsle_Interior_EventScript_LittleGirl2::
+	lock
+	msgbox KiyahaIsle_Interior_Text_LittleGirl2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+KiyahaIsle_Interior_Text_LittleGirl2:
+	.string "Sit still, sand castle!$"
+
+KiyahaIsle_Interior_EventScript_Youngster::
+	lock
+	faceplayer
+	msgbox KiyahaIsle_Interior_Text_AncestorsBuiltAShrine, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+KiyahaIsle_Interior_Text_AncestorsBuiltAShrine:
+	.string "There's a shrine on the other side\n"
+	.string "of the lagoon.\p"
+	.string "Our ancestors built it there to honor\n"
+	.string "the ISLAND GUARDIAN.\p"
+	.string "The elders say that the GUARDIANS have\n"
+	.string "protected these islands for generations.\p"
+	.string "But no one's seen them since the\n"
+	.string "SEA DEMON attacked.$"
 
 KiyahaIsle_Interior_EventScript_OldMan::
 	lock
@@ -27,12 +54,41 @@ KiyahaIsle_Interior_EventScript_OldMan::
 KiyahaIsle_Interior_Text_OldMan:
 	@.string "You defeated the wicked sea god\n"
 	@.string "and brought the guardians back.\p"
-	.string "Legends tell of strong trainers\n"
-	.string "in the past who earned the respect\l"
-	.string "of the guardians and fought alongside\l"
-	.string "them in the past.\p"
-	.string "What I would give for a trainer\n"
-	.string "like that in times like these...$"
+	.string "For years, we have lived in harmony\n"
+	.string "with the ISLAND GUARDIANS.\p"
+	.string "But everything changed the day we were\n"
+	.string "attacked by a monster from the sea.\p"
+	.string "The SEA DEMON and the GUARDIANS fought\n"
+	.string "in a great battle for five long days.\p"
+	.string "The GUARDIANS managed to repel the\n"
+	.string "SEA DEMON and imprison it underwater.\p"
+	.string "But our victory came at great cost.\p"
+	.string "And no one knows what became of\n"
+	.string "the GUARDIANS.\p"
+	.string "Some say they are still out there\n"
+	.string "somewhere.\p"
+	.string "Fighting to protect these islands\n"
+	.string "even now.\p"
+	.string "But it's been many years since anyone\n"
+	.string "has seen them.\p"
+	.string "And some people are beginning to lose hope.$"
+
+
+
+KiyahaIsle_Interior_EventScript_Woman::
+	lock
+	faceplayer
+	msgbox KiyahaIsle_Interior_Text_Woman, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+KiyahaIsle_Interior_Text_Woman:
+	.string "Legends tell of great heroes in the past\n"
+	.string "who earned the respect of the GUARDIANS\l"
+	.string "and fought alongside them.\p"
+	.string "If only we had a hero to bring\n"
+	.string "the GUARDIANS back...$"
 	
 
 

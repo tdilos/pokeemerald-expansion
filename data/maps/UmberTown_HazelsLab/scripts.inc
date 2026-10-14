@@ -1,10 +1,10 @@
-.set LOCALID_RIVAL, 1
-.set LOCALID_BIRCH, 3
-.set LOCALID_HAZEL, 6
+@.set LOCALID_RIVAL_HAZELS_LAB, 1
+@.set LOCALID_MAY_HAZELS_LAB, 3
+@.set LOCALID_HAZEL, 6
 
-.set LOCALID_CHESPIN, 2
-.set LOCALID_TEPIG, 4
-.set LOCALID_POPPLIO, 5
+@.set LOCALID_CHESPIN, 2
+@.set LOCALID_TEPIG, 4
+@.set LOCALID_POPPLIO, 5
 
 UmberTown_HazelsLab_MapScripts::
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, UmberTown_HazelsLab_OnWarp
@@ -55,9 +55,9 @@ UmberTown_HazelsLab_OnTransition::
 
 @UmberTown_HazelsLab_EventScript_RevealJaceAndMay:
 @	clearflag FLAG_HIDE_JACE
-@	@addobject LOCALID_RIVAL
+@	@addobject LOCALID_RIVAL_HAZELS_LAB
 @	clearflag FLAG_HIDE_MAY
-@	@addobject LOCALID_BIRCH
+@	@addobject LOCALID_MAY_HAZELS_LAB
 @	return
 
 @UmberTown_HazelsLab_EventScript_HideJace:
@@ -74,7 +74,7 @@ UmberTown_HazelsLab_EventScript_RevealHazel:
 	return
 
 UmberTown_HazelsLab_EventScript_HideMayAndPokeballs::
-	removeobject LOCALID_BIRCH
+	removeobject LOCALID_MAY_HAZELS_LAB
 	@setflag FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_CHESPIN
 	@setflag FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_TEPIG
 	@setflag FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_POPPLIO
@@ -102,7 +102,7 @@ UmberTown_HazelsLab_EventScript_LabIntro::
 
 
 UmberTown_HazelsLab_EventScript_Slowpoke::
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_Slowpoke, MSGBOX_DEFAULT
 	closemessage
@@ -110,7 +110,7 @@ UmberTown_HazelsLab_EventScript_Slowpoke::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceUp
 	waitmovement 0
 	goto UmberTown_HazelsLab_EventScript_MeetingMay
 	end
@@ -123,12 +123,12 @@ UmberTown_HazelsLab_Text_Slowpoke::
 
 UmberTown_HazelsLab_EventScript_MeetingMay::
 	delay 20
-	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_MeetingMay, MSGBOX_DEFAULT
 	closemessage
 	delay 40
-	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 5
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
@@ -136,51 +136,51 @@ UmberTown_HazelsLab_EventScript_MeetingMay::
 	msgbox UmberTown_HazelsLab_Text_JaceRarePokemon, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceUp
 	@waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_MeetingMay2, MSGBOX_DEFAULT
 	closemessage
 	delay 40
-	applymovement LOCALID_BIRCH, Common_Movement_FaceLeft
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 40
 	msgbox UmberTown_HazelsLab_Text_MayLookingForHazel, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_JaceHurryUp, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_BIRCH, Common_Movement_FaceDown
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceDown
 	waitmovement 0
 	delay 20
 	msgbox UmberTown_HazelsLab_Text_MayGettingToThat, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_BIRCH, Common_Movement_FaceUp
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_BIRCH, Common_Movement_FaceDown
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceDown
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_BIRCH, Common_Movement_WalkDown
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkDown
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_MayGivesPokedex, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_BIRCH, Common_Movement_WalkLeft
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_FaceDown
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceDown
 	waitmovement 0
 	playfanfare MUS_OBTAIN_ITEM
 	message UmberTown_HazelsLab_Text_ReceivedPokedex
@@ -194,16 +194,16 @@ UmberTown_HazelsLab_EventScript_MeetingMay::
 	delay 20
 	msgbox UmberTown_HazelsLab_Text_MayTalksAboutPokedex, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_BIRCH, Common_Movement_WalkRight
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_WalkUp
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkUp
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_BIRCH, Common_Movement_WalkRight
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_WalkRight
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_FaceUp
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceUp
 	waitmovement 0
 	delay 20
 	@clearflag FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_CHESPIN
@@ -218,18 +218,18 @@ UmberTown_HazelsLab_EventScript_MeetingMay::
 	addobject LOCALID_POPPLIO
 	playse SE_BALL_OPEN
 	waitse
-	applymovement LOCALID_BIRCH, Common_Movement_WalkLeft
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_WalkLeft
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_WalkLeft
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_FaceDown
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_MayRevealsPokemon, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_JaceVolunteersPlayer, MSGBOX_DEFAULT
 	closemessage
@@ -242,7 +242,7 @@ UmberTown_HazelsLab_EventScript_MeetingMay::
 	call_if_eq VAR_RESULT, MALE, UmberTown_HazelsLab_EventScript_HisBirthday
 	call_if_eq VAR_RESULT, FEMALE, UmberTown_HazelsLab_EventScript_HerBirthday
 
-	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 5
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
@@ -327,18 +327,18 @@ UmberTown_HazelsLab_Text_MayReallyJace:
 
 
 UmberTown_HazelsLab_EventScript_HisBirthday::
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_HisBirthday, MSGBOX_DEFAULT
 	closemessage
 	return
 
 UmberTown_HazelsLab_EventScript_HerBirthday::
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_HerBirthday, MSGBOX_DEFAULT
 	closemessage
@@ -369,10 +369,10 @@ UmberTown_HazelsLab_EventScript_JaceGoFirst::
 	msgbox UmberTown_HazelsLab_Text_MayOhDear, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceDown
 	waitmovement 0
 	delay 20
-	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 20
 	msgbox UmberTown_HazelsLab_Text_JaceCoinFlip, MSGBOX_YESNO
@@ -428,7 +428,7 @@ UmberTown_HazelsLab_Text_PlayerCallsTails:
 
 UmberTown_HazelsLab_EventScript_PlayerGoFirst::
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
@@ -457,7 +457,7 @@ UmberTown_HazelsLab_EventScript_MayDontBeNervous::
 
 UmberTown_HazelsLab_EventScript_JaceTurnPlayerAround::
 	lockall
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_JaceChooseAPokemon, MSGBOX_DEFAULT
 	closemessage
@@ -468,7 +468,7 @@ UmberTown_HazelsLab_EventScript_JaceTurnPlayerAround::
 
 UmberTown_HazelsLab_EventScript_JaceTurnPlayerAround2::
 	lockall
-	applymovement LOCALID_RIVAL, Common_Movement_FaceRight
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_JaceChooseAPokemon, MSGBOX_DEFAULT
 	closemessage
@@ -610,92 +610,92 @@ UmberTown_HazelsLab_EventScript_JaceChooses::
 	end
 
 UmberTown_HazelsLab_EventScript_JaceChoosesTepig::
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkUp
 	waitmovement 0
 	@setflag FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_TEPIG
 	msgbox UmberTown_HazelsLab_Text_JaceChoseThisOne, MSGBOX_DEFAULT
 	closemessage
 	removeobject LOCALID_TEPIG
 	delay 40
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
 	goto UmberTown_HazelsLab_EventScript_JaceLeaves
 	end
 
 UmberTown_HazelsLab_EventScript_JaceChoosesPopplio::
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkUp
 	waitmovement 0
 	@setflag FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_POPPLIO
 	msgbox UmberTown_HazelsLab_Text_JaceChoseThisOne, MSGBOX_DEFAULT
 	closemessage
 	removeobject LOCALID_POPPLIO
 	delay 40
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
 	goto UmberTown_HazelsLab_EventScript_JaceLeaves
 	end
 
 UmberTown_HazelsLab_EventScript_JaceChoosesChespin::
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkUp
 	waitmovement 0
 	@setflag FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_CHESPIN
 	msgbox UmberTown_HazelsLab_Text_JaceChoseThisOne, MSGBOX_DEFAULT
 	closemessage
 	removeobject LOCALID_CHESPIN
 	delay 40
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
 	goto UmberTown_HazelsLab_EventScript_JaceLeaves
 	end
 
 UmberTown_HazelsLab_EventScript_JaceLeaves::
 	@delay 40
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_FaceUp
 	@waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_FaceDown
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceDown
 	@waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_JaceBye, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkDown
 	waitmovement 0	
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_RIVAL_HAZELS_LAB, Common_Movement_WalkDown
 	waitmovement 0	
 	delay 40
-	removeobject LOCALID_RIVAL
+	removeobject LOCALID_RIVAL_HAZELS_LAB
 	playse SE_EXIT
 	waitse
 	delay 60
@@ -711,7 +711,7 @@ UmberTown_HazelsLab_Text_JaceBye:
 	.string "Thanks MAY!$"
 
 UmberTown_HazelsLab_EventScript_MayGivesTownMap::
-	applymovement LOCALID_BIRCH, Common_Movement_FaceRight
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceRight
 	waitmovement 0
 	delay 5
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
@@ -730,10 +730,10 @@ UmberTown_HazelsLab_EventScript_MayGivesTownMap::
 
 	msgbox UmberTown_HazelsLab_Text_ExplainTownMap, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_BIRCH, Common_Movement_FaceLeft
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 40
-	applymovement LOCALID_BIRCH, Common_Movement_FaceRight
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox UmberTown_HazelsLab_Text_MayNiceMeetingYou, MSGBOX_DEFAULT
 	closemessage
@@ -771,26 +771,26 @@ UmberTown_HazelsLab_Text_MayNiceMeetingYou:
 	.string "you record in that POKéDEX!$"
 
 UmberTown_HazelsLab_EventScript_MayWalkToPopplio::
-	applymovement LOCALID_BIRCH, Common_Movement_WalkRight
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
 UmberTown_HazelsLab_EventScript_MayWalkToTepig::
-	applymovement LOCALID_BIRCH, Common_Movement_WalkRight
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
 UmberTown_HazelsLab_EventScript_MayWalkToChespin::
-	applymovement LOCALID_BIRCH, Common_Movement_WalkRight
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkRight
 	waitmovement 0
 	return
 
 UmberTown_HazelsLab_EventScript_MayWalkFromPopplio::
-	applymovement LOCALID_BIRCH, Common_Movement_WalkLeft
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
 UmberTown_HazelsLab_EventScript_MayWalkFromTepig::
-	applymovement LOCALID_BIRCH, Common_Movement_WalkLeft
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
 UmberTown_HazelsLab_EventScript_MayWalkFromChespin::
-	applymovement LOCALID_BIRCH, Common_Movement_WalkLeft
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_WalkUp
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_WalkUp
 	waitmovement 0
 	return
 
@@ -811,7 +811,7 @@ UmberTown_HazelsLab_EventScript_MayDontMindMe::
 	faceplayer
 	msgbox UmberTown_HazelsLab_Text_MayDontMindMe, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_BIRCH, Common_Movement_FaceUp
+	applymovement LOCALID_MAY_HAZELS_LAB, Common_Movement_FaceUp
 	waitmovement 0
 	releaseall
 	end

@@ -352,7 +352,7 @@ Route103_Text_RouteSign:
 	.string "{DOWN_ARROW} OLDALE TOWN$"
 
 
-Route103_EventScript_Man1::
+Route103_EventScript_LookerEncounter::
 	msgbox Route103_Text_PleaseEnter, MSGBOX_NPC
 	end
 

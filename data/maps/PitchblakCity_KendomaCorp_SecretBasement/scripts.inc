@@ -1,4 +1,4 @@
-.set LOCALID_BETTERMAN, 1
+@.set LOCALID_BETTERMAN_KENDOM_CORP, 1
 
 PitchblakCity_KendomaCorp_SecretBasement_MapScripts::
 	.byte 0
@@ -183,7 +183,7 @@ PitchblakCity_KendomaCorp_EventScript_DrBetterman::
 	lock
 	faceplayer
 	goto_if_eq VAR_BETTERMAN_STATE, 1, PitchblakCity_KendomaCorp_EventScript_DrBettermanPostMasterBall
-	applymovement LOCALID_BETTERMAN, Common_Movement_ExclamationMark
+	applymovement LOCALID_BETTERMAN_KENDOM_CORP, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	@fadeoutbgm 0
@@ -191,7 +191,7 @@ PitchblakCity_KendomaCorp_EventScript_DrBetterman::
 	msgbox PitchblakCity_KendomaCorp_Text_IKnowYou, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceUp
+	applymovement LOCALID_BETTERMAN_KENDOM_CORP, Common_Movement_FaceUp
 	waitmovement 0
 	delay 120
 	faceplayer
@@ -202,7 +202,7 @@ PitchblakCity_KendomaCorp_EventScript_DrBetterman::
 	msgbox PitchblakCity_KendomaCorp_Text_WorkAtKendomaCorp, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceUp
+	applymovement LOCALID_BETTERMAN_KENDOM_CORP, Common_Movement_FaceUp
 	waitmovement 0
 	delay 120
 	faceplayer
@@ -210,7 +210,7 @@ PitchblakCity_KendomaCorp_EventScript_DrBetterman::
 	msgbox PitchblakCity_KendomaCorp_Text_Tools, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceUp
+	applymovement LOCALID_BETTERMAN_KENDOM_CORP, Common_Movement_FaceUp
 	waitmovement 0
 	delay 120
 	msgbox PitchblakCity_KendomaCorp_Text_WereFinished, MSGBOX_DEFAULT
@@ -229,7 +229,7 @@ PitchblakCity_KendomaCorp_EventScript_DrBetterman::
 	msgbox PitchblakCity_KendomaCorp_Text_ExplainMasterBall, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_BETTERMAN, Common_Movement_FaceUp
+	applymovement LOCALID_BETTERMAN_KENDOM_CORP, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
 	faceplayer

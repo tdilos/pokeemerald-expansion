@@ -431,10 +431,19 @@ static const struct WindowTemplate sNewGameBirchSpeechTextWindows[] =
         .tilemapLeft = 3,
         .tilemapTop = 5,
         .width = 7,
-        .height = 6,
+        .height = 8,
         .paletteNum = 15,
         .baseBlock = 0x6D
     },
+	/*{
+        .bg = 0,
+        .tilemapLeft = 3,
+        .tilemapTop = 5,
+        .width = 7,
+        .height = 6,
+        .paletteNum = 15,
+        .baseBlock = 0x6D
+    },*/
     /*{
         .bg = 0,
         .tilemapLeft = 3,
@@ -502,6 +511,7 @@ static const struct MenuAction sMenuActions_Gender[] = {
 };
 
 static const struct MenuAction sMenuActions_Difficulty[] = {
+    {gText_Wimpy, {NULL}},
     {gText_Normal, {NULL}},
     {gText_Hardcore, {NULL}},
     {gText_Insane, {NULL}}
@@ -1670,29 +1680,30 @@ static void Task_NewGameBirchSpeech_ChooseDifficulty(u8 taskId)
     int difficulty = NewGameBirchSpeech_ProcessDifficultyMenuInput();
     switch (difficulty)
     {
-        case 0:
+        case DIFFICULTY_WIMPY:
             PlaySE(SE_SELECT);
-            gSaveBlock2Ptr->optionsDifficulty = 0; //easy
-            //FlagClear(FLAG_DIFFICULTY_HARD);
-			//VarSet(VAR_DIFFICULTY, DIFFICULTY_NORMAL); //normal
+            gSaveBlock2Ptr->optionsDifficulty = DIFFICULTY_WIMPY;
             NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
             break;
-        case 1:
+        case DIFFICULTY_NORMAL:
             PlaySE(SE_SELECT);
-            gSaveBlock2Ptr->optionsDifficulty = 1; //normal
-			gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET; //forces SET in case the player changed it before loading a new game
-            //FlagClear(FLAG_DIFFICULTY_HARD);
-			//VarSet(VAR_DIFFICULTY, DIFFICULTY_HARDCORE); //hardcore
+            gSaveBlock2Ptr->optionsDifficulty = DIFFICULTY_NORMAL;
             NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
             break;
-        case 2:
+		//default:
+        case DIFFICULTY_HARDCORE:
             PlaySE(SE_SELECT);
-            gSaveBlock2Ptr->optionsDifficulty = 2; //hard
+            gSaveBlock2Ptr->optionsDifficulty = DIFFICULTY_HARDCORE;
 			gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET; //forces SET in case the player changed it before loading a new game
-            //FlagSet(FLAG_DIFFICULTY_HARD);
-			//VarSet(VAR_DIFFICULTY, DIFFICULTY_INSANE); //insane
+            NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
+            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
+            break;
+        case DIFFICULTY_INSANE:
+            PlaySE(SE_SELECT);
+            gSaveBlock2Ptr->optionsDifficulty = DIFFICULTY_INSANE;
+			gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET; //forces SET in case the player changed it before loading a new game
             NewGameBirchSpeech_ClearDifficultyWindow(1, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
             break;
@@ -2234,8 +2245,8 @@ static void NewGameBirchSpeech_ShowDifficultyMenu(void)
 {
     DrawMainMenuWindowBorder(&sNewGameBirchSpeechTextWindows[3], 0xF3);
     FillWindowPixelBuffer(3, PIXEL_FILL(1));
-    PrintMenuTable(3, 3, sMenuActions_Difficulty);
-    InitMenuInUpperLeftCornerNormal(3, 3, 0); //1);
+    PrintMenuTable(3, ARRAY_COUNT(sMenuActions_Difficulty), sMenuActions_Difficulty);
+    InitMenuInUpperLeftCornerNormal(3, ARRAY_COUNT(sMenuActions_Difficulty), 0); //1);
     PutWindowTilemap(3);
     CopyWindowToVram(3, COPYWIN_FULL);
 }
@@ -2386,7 +2397,8 @@ static void NewGameBirchSpeech_ClearGenderWindow(u8 windowId, bool8 copyToVram)
 
 static void NewGameBirchSpeech_ClearDifficultyWindowTilemap(u8 bg, u8 x, u8 y, u8 width, u8 height, u8 unused)
 {
-    FillBgTilemapBufferRect(bg, 0, x + 255, y + 255, width + 3, height + 4, 2);
+    //FillBgTilemapBufferRect(bg, 0, x + 255, y + 255, width + 3, height + 4, 2);
+    FillBgTilemapBufferRect(bg, 0, x + 255, y + 255, width + 3, height + 6, 2);
 }
 
 static void NewGameBirchSpeech_ClearDifficultyWindow(u8 windowId, bool8 copyToVram)

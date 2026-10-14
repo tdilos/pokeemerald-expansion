@@ -1,5 +1,5 @@
-.set LOCALID_RIVAL, 4
-.set LOCALID_BIRCH, 5
+@.set LOCALID_RIVAL_UMBER_TOWN, 4
+@.set LOCALID_MAY_UMBER_TOWN, 5
 
 UmberTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, UmberTown_OnTransition
@@ -45,8 +45,8 @@ UmberTown_OnTransition:
 UmberTown_EventScript_HideJaceAndMay:
 	setflag FLAG_HIDE_JACE
 	setflag FLAG_HIDE_MAY
-	@removeobject LOCALID_RIVAL
-	@removeobject LOCALID_BIRCH
+	@removeobject LOCALID_RIVAL_UMBER_TOWN
+	@removeobject LOCALID_MAY_UMBER_TOWN
 	return
 
 UmberTown_EventScript_HideLabMayAndPokeballs:
@@ -61,9 +61,9 @@ UmberTown_EventScript_HideLabMayAndPokeballs:
 UmberTown_EventScript_MoveJaceToLab::
 	@clearflag FLAG_HIDE_UMBER_TOWN_JACE
 	clearflag FLAG_HIDE_JACE
-	setobjectxyperm LOCALID_RIVAL, 4, 21
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_RIVAL
+	setobjectxyperm LOCALID_RIVAL_UMBER_TOWN, 4, 21
+	setobjectmovementtype LOCALID_RIVAL_UMBER_TOWN, MOVEMENT_TYPE_FACE_UP
+	addobject LOCALID_RIVAL_UMBER_TOWN
 	return
 
 UmberTown_EventScript_JaceBattle::
@@ -78,7 +78,7 @@ UmberTown_EventScript_JaceBattle::
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	msgbox UmberTown_Text_Surprised, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, UmberTown_Movement_JaceGetReady
+	applymovement LOCALID_RIVAL_UMBER_TOWN, UmberTown_Movement_JaceGetReady
 	@waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, UmberTown_Movement_PlayerGetReady
 	waitmovement 0
@@ -145,9 +145,9 @@ UmberTown_EventScript_AfterJaceBattle::
 
 UmberTown_EventScript_WonJaceBattle::
 	@playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkUp
 	waitmovement 0
 	delay 20
 	msgbox UmberTown_Text_WonJaceBattle, MSGBOX_DEFAULT
@@ -163,9 +163,9 @@ UmberTown_EventScript_WonJaceBattle::
 
 UmberTown_EventScript_LostJaceBattle::
 	@playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkUp
 	waitmovement 0
 	delay 20
 	msgbox UmberTown_Text_LostJaceBattle, MSGBOX_DEFAULT
@@ -199,11 +199,11 @@ UmberTown_EventScript_MayExitsLab::
 	playse SE_DOOR
 	@clearflag FLAG_HIDE_UMBER_TOWN_MAY
 	clearflag FLAG_HIDE_MAY
-	addobject LOCALID_BIRCH
+	addobject LOCALID_MAY_UMBER_TOWN
 	delay 30
-	applymovement LOCALID_BIRCH, Common_Movement_WalkDown
+	applymovement LOCALID_MAY_UMBER_TOWN, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_ExclamationMark
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
@@ -213,11 +213,11 @@ UmberTown_EventScript_MayExitsLab::
 	waitmovement 0
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkUp
 	waitmovement 0
 	delay 20
 	msgbox UmberTown_Text_MaySigh, MSGBOX_DEFAULT
@@ -229,93 +229,93 @@ UmberTown_EventScript_MayExitsLab::
 	delay 40
 	fadescreen FADE_FROM_BLACK
 	delay 30
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkInPlaceUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox UmberTown_Text_YouBet, MSGBOX_DEFAULT
-	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 5
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox UmberTown_Text_TakeOnLeague, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox UmberTown_Text_JaceNewChamp, MSGBOX_DEFAULT
 	closemessage
 	delay 40
 
-	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_MAY_UMBER_TOWN, Common_Movement_WalkInPlaceDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_FaceUp
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox UmberTown_Text_TakeCare, MSGBOX_DEFAULT
 	closemessage
 	delay 40
-	applymovement LOCALID_BIRCH, Common_Movement_WalkRight
+	applymovement LOCALID_MAY_UMBER_TOWN, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_WalkRight
+	applymovement LOCALID_MAY_UMBER_TOWN, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_WalkRight
+	applymovement LOCALID_MAY_UMBER_TOWN, Common_Movement_WalkRight
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_RIVAL, Common_Movement_FaceRight
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_FaceRight
 	waitmovement 0
-	applymovement LOCALID_BIRCH, Common_Movement_FaceLeft
+	applymovement LOCALID_MAY_UMBER_TOWN, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 20
 	msgbox UmberTown_Text_MayBye, MSGBOX_DEFAULT
 
 	@May turns and uses fly
 	closemessage
-	applymovement LOCALID_BIRCH, Common_Movement_FaceDown
+	applymovement LOCALID_MAY_UMBER_TOWN, Common_Movement_FaceDown
 	waitmovement 0
 	delay 50
 	setfieldeffectargument 0, 1
 	dofieldeffect FLDEFF_NPCFLY_OUT
 	delay 15
-	removeobject LOCALID_BIRCH
+	removeobject LOCALID_MAY_UMBER_TOWN
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	call UmberTown_EventScript_HideLabMayAndPokeballs
 	delay 60
 
 	@Jace talks to player
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	msgbox UmberTown_Text_JaceBye, MSGBOX_DEFAULT
 	closemessage
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
-	applymovement LOCALID_RIVAL, UmberTown_Movement_JaceExit1
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
+	applymovement LOCALID_RIVAL_UMBER_TOWN, UmberTown_Movement_JaceExit1
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 60
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkLeft
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkLeft
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkLeft
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkLeft
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkLeft
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
-	applymovement LOCALID_RIVAL, UmberTown_Movement_JaceExit2
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkLeft
+	applymovement LOCALID_RIVAL_UMBER_TOWN, UmberTown_Movement_JaceExit2
 	waitmovement 0
 	delay 20
 	msgbox UmberTown_Text_JaceBye2
@@ -323,20 +323,20 @@ UmberTown_EventScript_MayExitsLab::
 	waitfanfare
 	msgbox UmberTown_Text_JaceBye3, MSGBOX_DEFAULT
 	closemessage
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkRight
-	applymovement LOCALID_RIVAL, UmberTown_Movement_JaceExit3
+	@applymovement LOCALID_RIVAL_UMBER_TOWN, Common_Movement_WalkRight
+	applymovement LOCALID_RIVAL_UMBER_TOWN, UmberTown_Movement_JaceExit3
 	waitmovement 0
-	removeobject LOCALID_RIVAL
+	removeobject LOCALID_RIVAL_UMBER_TOWN
 	@setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	setvar VAR_LITTLEROOT_INTRO_STATE, 6
 	@savebgm MUS_DUMMY
@@ -559,10 +559,10 @@ UmberTown_EventScript_JaceStopsPlayer::
 	delay 60
 	@setflag FLAG_HIDE_UMBER_TOWN_JACE
 	@clearflag FLAG_HIDE_JACE
-	addobject LOCALID_RIVAL
+	addobject LOCALID_RIVAL_UMBER_TOWN
 	@delay 60
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	applymovement LOCALID_RIVAL, UmberTown_Movement_JaceWalkToPlayer
+	applymovement LOCALID_RIVAL_UMBER_TOWN, UmberTown_Movement_JaceWalkToPlayer
 	waitmovement 0
 	msgbox UmberTown_Text_YouDunce, MSGBOX_DEFAULT
 	warp MAP_UMBER_TOWN_HAZELS_LAB, 6, 5
@@ -681,20 +681,17 @@ UmberTown_Movement_Dummy:
 UmberTown_EventScript_GiveStuff2::
 	lock
 	faceplayer
-	playmoncry SPECIES_GENESECT, CRY_MODE_NORMAL
-	msgbox UmberTown_Text_ZartoshtIntro, MSGBOX_DEFAULT
+	playmoncry SPECIES_TEROPHAGE, CRY_MODE_NORMAL
+	@msgbox UmberTown_Text_ZartoshtIntro, MSGBOX_DEFAULT
 	waitmoncry
 
 	setflag FLAG_IS_CHAMPION
-	givemon SPECIES_JIRACHI, 100
-
-	@playse SE_DING_DONG
-	@waitse
-	@setwildbattle SPECIES_NIHILEGO, 120
-	@dowildbattle
+	givemon SPECIES_JIRACHI, 50
+	givemon SPECIES_SYLVEON, 75
+	givemon SPECIES_SNORLAX, 100
 	
-	seteventmon SPECIES_NIHILEGO, 219
-	special BattleSetup_StartLegendaryBattle
+	@setwildbattle SPECIES_TEROPHAGE, 144
+	@special BattleSetup_StartLegendaryBattle
 	release
 	end
 

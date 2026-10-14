@@ -23,6 +23,7 @@
 #include "item.h"
 #include "regions.h"
 #include "malloc.h"
+#include "constants/difficulty.h"
 #include "constants/form_change_types.h"
 #include "constants/items.h"
 #include "constants/moves.h"
@@ -357,6 +358,7 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 	//Level cap stuff
 	u8 cap = 16;
 
+	//level caps for normal
     if (FlagGet(FLAG_BADGE01_GET))
         cap = 24;
 	if (FlagGet(FLAG_BADGE02_GET))
@@ -376,7 +378,7 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 	if (FlagGet(FLAG_DEFEATED_AZAMI))
 		cap = 64;
 	
-	if (gSaveBlock2Ptr->optionsDifficulty == 1) //level caps for hardcore
+	if (gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_HARDCORE) //level caps for hardcore
 	{
 		cap = 15;
 		
@@ -399,7 +401,7 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 		if (FlagGet(FLAG_DEFEATED_AZAMI))
 			cap = 60;
 	}
-	else if (gSaveBlock2Ptr->optionsDifficulty == 2) //level caps for insane
+	else if (gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_INSANE) //level caps for insane
 	{
 		cap = 14;
 		
@@ -423,7 +425,7 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
 			cap = 57;
 	}
 	
-	if (FlagGet(FLAG_IS_CHAMPION))
+	if (FlagGet(FLAG_IS_CHAMPION) || gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_WIMPY) //no level caps for wimpy or postgame
 		cap = 100;
 	
 

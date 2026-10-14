@@ -16,6 +16,7 @@
 #include "text_window.h"
 #include "window.h"
 #include "gba/m4a_internal.h"
+#include "constants/difficulty.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
@@ -512,10 +513,7 @@ static u8 BattleStyle_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
     {
-        //selection ^= 1;
-        //sArrowPressed = TRUE;
-		//if (VarGet(VAR_DIFFICULTY) != DIFFICULTY_NORMAL)
-		if (gSaveBlock2Ptr->optionsDifficulty != 0)
+		if (gSaveBlock2Ptr->optionsDifficulty > DIFFICULTY_NORMAL)
         {
             PlaySE(SE_FAILURE);
         }

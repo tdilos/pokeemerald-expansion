@@ -111,7 +111,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_3",
       "x": 15,
-      "y": 7,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -306,6 +306,19 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "x": 15,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route110_EventScript_Protestor4",
+      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
       "x": 13,
       "y": 3,
       "elevation": 3,
@@ -318,7 +331,7 @@
       "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 14,
       "y": 3,
       "elevation": 3,
@@ -328,19 +341,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route110_EventScript_Protestor3",
-      "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
-      "x": 15,
-      "y": 3,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route110_EventScript_Protestor4",
       "flag": "FLAG_HIDE_ROUTE_110_TEAM_AQUA"
     },
     {
@@ -490,7 +490,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE110_BIRCH",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
       "x": 12,
       "y": 3,
       "elevation": 3,
@@ -512,7 +512,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "UltraWormhole_EventScript_XSlough",
       "flag": "FLAG_HIDE_TIER_2_WORLDS"
     }
   ],

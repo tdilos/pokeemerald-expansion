@@ -4210,7 +4210,14 @@ static void Cmd_getexp(void)
             if (orderId < PARTY_SIZE)
                 gBattleStruct->expGettersOrder[orderId] = PARTY_SIZE;
 
-            calculatedExp = gSpeciesInfo[faintedSpecies].expYield * gBattleMons[gBattlerFainted].level;
+            //calculatedExp = gSpeciesInfo[faintedSpecies].expYield * gBattleMons[gBattlerFainted].level;
+			// Prevent EXP overflows and other balance issues by capping level parameter at 100
+			u32 expCalculationLevel = gBattleMons[gBattlerFainted].level;
+			if (expCalculationLevel > MAX_LEVEL)
+			{
+				expCalculationLevel = MAX_LEVEL; 
+			}
+			calculatedExp = gSpeciesInfo[faintedSpecies].expYield * expCalculationLevel;
             if (GetConfig(B_SCALED_EXP) >= GEN_5 && GetConfig(B_SCALED_EXP) != GEN_6)
                 calculatedExp /= 5;
             else
@@ -11721,6 +11728,16 @@ void ApplyExperienceMultipliers(s32 *expAmount, u8 expGetterMonId, u8 faintedBat
         u64 value = *expAmount;
         u8 faintedLevel = gBattleMons[faintedBattler].level;
         u8 expGetterLevel = GetMonData(&gParties[B_TRAINER_PLAYER][expGetterMonId], MON_DATA_LEVEL);
+		
+		// Prevents overflows by defaulting to level 100
+		if (faintedLevel > MAX_LEVEL)
+		{
+			faintedLevel = MAX_LEVEL; 
+		}
+		if (expGetterLevel > MAX_LEVEL)
+		{
+			expGetterLevel = MAX_LEVEL; 
+		}
 
         value *= sExperienceScalingFactors[(faintedLevel * 2) + 10];
         value /= sExperienceScalingFactors[faintedLevel + expGetterLevel + 10];

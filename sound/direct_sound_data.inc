@@ -8860,11 +8860,11 @@ Cry_Slaybelle::
 .if P_FAMILY_SHIFUR == TRUE
 	.align 2
 Cry_Shifur::
-	.incbin "sound/direct_sound_samples/cries/cry_unused_265.bin"
+	.incbin "sound/direct_sound_samples/cries/sneasel.bin"
 
 	.align 2
 Cry_Burserker::
-	.incbin "sound/direct_sound_samples/cries/cry_unused_268.bin"
+	.incbin "sound/direct_sound_samples/cries/beartic.bin"
 .endif @ P_FAMILY_SHIFUR
 
 .if P_FAMILY_VOLBEAR == TRUE

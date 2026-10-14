@@ -195,6 +195,7 @@ extern const u8 gText_BattlePyramidConfirmRest[];
 extern const u8 gText_BattlePyramidConfirmRetire[];
 
 // difficulty settings
+extern const u8 gText_Wimpy[];
 extern const u8 gText_Hardcore[];
 extern const u8 gText_Insane[];
 
@@ -1517,6 +1518,7 @@ extern const u8 gText_PickCancel[];
 extern const u8 gText_AButtonExit[];
 extern const u8 gText_HOFCorrupted[];
 extern const u8 gText_WelcomeToHOF[];
+extern const u8 gText_HOFWimpy[];
 extern const u8 gText_HOFNormal[];
 extern const u8 gText_HOFHardcore[];
 extern const u8 gText_HOFInsane[];

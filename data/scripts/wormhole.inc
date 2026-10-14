@@ -92,6 +92,26 @@ UltraWormhole_EventScript_PetalburgWoods::
 	end
 
 
+
+
+
+UltraWormhole_EventScript_XGreenhouse::
+	end
+
+UltraWormhole_EventScript_XStarfield::
+UltraWormhole_EventScript_XSlough::
+UltraWormhole_EventScript_XWaste::
+UltraWormhole_EventScript_XLabyrinth::
+UltraWormhole_EventScript_XMindscape::
+UltraWormhole_EventScript_XCaldera::
+UltraWormhole_EventScript_XJungle::
+UltraWormhole_EventScript_XCloud::
+UltraWormhole_EventScript_XTundra::
+UltraWormhole_EventScript_XMere::
+UltraWormhole_EventScript_XRuin::
+UltraWormhole_EventScript_XSynestia::
+	end
+
 UltraWormhole_EventScript_Skip::
 	release
 	end

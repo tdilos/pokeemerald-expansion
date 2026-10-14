@@ -1,5 +1,5 @@
-.set LOCALID_OSRIC, 1
-.set LOCALID_NEDA, 2
+@.set LOCALID_OSRIC_KENDOM_CORP, 1
+@.set LOCALID_NEDA_KENDOM_CORP, 2
 
 PitchblakCity_KendomaCorp_10F_MapScripts::
 	.byte 0
@@ -51,7 +51,7 @@ PitchblakCity_KendomaCorp_EventScript_NedaEncounter::
 	waitmovement 0
 	playbgm MUS_WEATHER_GROUDON, FALSE
 	delay 50
-	applymovement LOCALID_OSRIC, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_OSRIC_KENDOM_CORP, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PitchblakCity_KendomaCorp_Text_YouGotTheWrongIdea, MSGBOX_DEFAULT
 	closemessage
@@ -59,7 +59,7 @@ PitchblakCity_KendomaCorp_EventScript_NedaEncounter::
 	msgbox PitchblakCity_KendomaCorp_Text_WeKnowEverything, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_OSRIC, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_OSRIC_KENDOM_CORP, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PitchblakCity_KendomaCorp_Text_WhatWasISupposedToDo, MSGBOX_DEFAULT
 	closemessage
@@ -67,7 +67,7 @@ PitchblakCity_KendomaCorp_EventScript_NedaEncounter::
 	msgbox PitchblakCity_KendomaCorp_Text_SoThatsIt, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_OSRIC, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_OSRIC_KENDOM_CORP, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PitchblakCity_KendomaCorp_Text_NotYourFriend, MSGBOX_DEFAULT
 	closemessage
@@ -78,11 +78,11 @@ PitchblakCity_KendomaCorp_EventScript_NedaEncounter::
 	msgbox PitchblakCity_KendomaCorp_Text_TakeWhatYouLike, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_NEDA, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_NEDA_KENDOM_CORP, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox PitchblakCity_KendomaCorp_Text_YoureComingWithMe, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_OSRIC, Common_Movement_ExclamationMark
+	applymovement LOCALID_OSRIC_KENDOM_CORP, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 48
 	msgbox PitchblakCity_KendomaCorp_Text_WhyMe, MSGBOX_DEFAULT
@@ -97,22 +97,22 @@ PitchblakCity_KendomaCorp_EventScript_NedaEncounter::
 	msgbox PitchblakCity_KendomaCorp_Text_YoureCrazy2, MSGBOX_DEFAULT
 	closemessage
 	@fadeoutbgm 0
-	applymovement LOCALID_OSRIC, KendomaCorp_Movement_EscapeAttempt
+	applymovement LOCALID_OSRIC_KENDOM_CORP, KendomaCorp_Movement_EscapeAttempt
 	waitmovement 0
 	playse SE_M_SUPERSONIC
 	waitse
-	applymovement LOCALID_OSRIC, Common_Movement_ExclamationMark
+	applymovement LOCALID_OSRIC_KENDOM_CORP, Common_Movement_ExclamationMark
 	waitmovement 0
 	@delay 48
 	fadeoutbgm 0
-	applymovement LOCALID_NEDA, Common_Movement_FaceDown
+	applymovement LOCALID_NEDA_KENDOM_CORP, Common_Movement_FaceDown
 	waitmovement 0
 	delay 60
 	msgbox PitchblakCity_KendomaCorp_Text_RestrainHim, MSGBOX_DEFAULT
 	closemessage
 	playmoncry SPECIES_DEOXYS, CRY_MODE_NORMAL
 	delay 30
-	applymovement LOCALID_OSRIC, Common_Movement_FaceDown
+	applymovement LOCALID_OSRIC_KENDOM_CORP, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
 	msgbox PitchblakCity_KendomaCorp_Text_Gyah, MSGBOX_DEFAULT
@@ -124,7 +124,7 @@ PitchblakCity_KendomaCorp_EventScript_NedaEncounter::
 	msgbox PitchblakCity_KendomaCorp_Text_OsricHelp, MSGBOX_DEFAULT
 	closemessage
 	delay 40
-	applymovement LOCALID_NEDA, Common_Movement_WalkDown
+	applymovement LOCALID_NEDA_KENDOM_CORP, Common_Movement_WalkDown
 	waitmovement 0
 	delay 20
 	playbgm MUS_ENCOUNTER_MAGMA, TRUE
@@ -143,7 +143,7 @@ PitchblakCity_KendomaCorp_EventScript_NedaPreBattle::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_NEDA, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_NEDA_KENDOM_CORP, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, PitchblakCity_KendomaCorp_EventScript_BraveBoy
@@ -168,7 +168,7 @@ PitchblakCity_KendomaCorp_EventScript_NedaBattle::
 	msgbox PitchblakCity_KendomaCorp_Text_NedaPostBattle, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_OSRIC, Common_Movement_ExclamationMark
+	applymovement LOCALID_OSRIC_KENDOM_CORP, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 48
 	msgbox PitchblakCity_KendomaCorp_Text_WaitNeda, MSGBOX_DEFAULT

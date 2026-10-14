@@ -72,6 +72,7 @@
 #include "constants/battle_string_ids.h"
 #include "constants/battle_partner.h"
 #include "constants/battle_setup.h"
+#include "constants/difficulty.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
@@ -2202,20 +2203,24 @@ u16 GetBattleCountForKarmaBattle()
 	return (800 / karma);
 }
 
-u32 GetDynamicOvermindTrainerLevel(void)
+u32 GetDynamicOvermindTrainerLevel()
 {
 	u8 i;
 	u8 count = CalculatePlayerPartyCount();
 	u16 dynamicLevel = 0;
 	u16 exponent = VarGet(VAR_OVERMIND_STATE);
 	uq4_12_t scale = UQ_4_12(1.0);
-	uq4_12_t factor = UQ_4_12(1.01);
+	uq4_12_t factor;
 	
 	// Difficulty setting
-    if (gSaveBlock2Ptr->optionsDifficulty == 1)
+    if (gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_WIMPY)
+		factor = UQ_4_12(1.01);
+    if (gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_NORMAL)
 		factor = UQ_4_12(1.02);
-    if (gSaveBlock2Ptr->optionsDifficulty == 2)
+    if (gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_HARDCORE)
 		factor = UQ_4_12(1.03);
+    if (gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_INSANE)
+		factor = UQ_4_12(1.04);
 	
 	// Find max level in players team
 	for(i = 0; i < count; i++)
@@ -2295,8 +2300,17 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 				dynamicLevel = GetLevelFromKarma(GetKarma()); //66
 				CreateMon(&party[i], partyData[monIndex].species, dynamicLevel, personalityValue, otId);
 			}
-			// Dynamic levels for Overmind trainers
-			else if (trainer->trainerClass == TRAINER_CLASS_ARCHON || trainer->trainerClass == TRAINER_CLASS_SYNDERLING)
+			// Dynamic levels for Archons
+			//else if (trainer->trainerClass == TRAINER_CLASS_ARCHON)
+            /*else if (trainer->battleType != TRAINER_BATTLE_TYPE_ARCHON)
+			{
+				dynamicLevel = GetDynamicOvermindLevel(TRUE);
+				if (dynamicLevel < partyData[monIndex].lvl) // Minimum enemy level
+					dynamicLevel = partyData[monIndex].lvl;
+				CreateMon(&party[i], partyData[monIndex].species, dynamicLevel, personalityValue, otId);
+			}*/
+			// Dynamic levels for Synderling trainers
+			else if (trainer->trainerClass == TRAINER_CLASS_SYNDERLING)
 			{
 				dynamicLevel = GetDynamicOvermindTrainerLevel();
 				if (dynamicLevel < partyData[monIndex].lvl) // Minimum enemy level

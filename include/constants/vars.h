@@ -367,7 +367,7 @@
 
 #define VAR_SEASON                                       0x4110 // Used for warping into X-Holt
 #define VAR_OVERMIND_STATE                               0x4111 // Used for dynamic level scaling in Ultra Space
-#define VAR_UNUSED_0x4112                                0x4112
+#define VAR_ZYGARDE_CELLS                                0x4112 // Number of found cells
 #define VAR_UNUSED_0x4113                                0x4113
 #define VAR_UNUSED_0x4114                                0x4114
 #define VAR_UNUSED_0x4115                                0x4115

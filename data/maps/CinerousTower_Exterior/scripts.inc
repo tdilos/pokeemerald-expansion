@@ -1,5 +1,5 @@
-.set LOCALID_RIVAL, 5
-.set LOCALID_TUTOR, 6
+@.set LOCALID_OPC_CINEROUS_TOWER, 5
+@.set LOCALID_TUTOR_CINEROUS_TOWER, 6
 
 CinerousTower_Exterior_MapScripts::
 	@map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, CinerousTower_Exterior_OnWarp
@@ -21,13 +21,13 @@ CinerousTower_Exterior_OnTransition:
 	end
 
 CinerousTower_Exterior_EventScript_PostRescue:
-	@removeobject LOCALID_RIVAL
-	@removeobject LOCALID_TUTOR
+	@removeobject LOCALID_OPC_CINEROUS_TOWER
+	@removeobject LOCALID_TUTOR_CINEROUS_TOWER
 	@setflag FLAG_RESCUED_HEADBUTT_TUTOR
-	setobjectxyperm LOCALID_RIVAL, 47, 0
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
-	setobjectxyperm LOCALID_TUTOR, 47, 0
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
+	setobjectmovementtype LOCALID_OPC_CINEROUS_TOWER, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_TUTOR_CINEROUS_TOWER, 47, 0
+	setobjectmovementtype LOCALID_OPC_CINEROUS_TOWER, MOVEMENT_TYPE_FACE_UP
 	end
 
 @CinerousTower_Exterior_OnWarp:
@@ -50,22 +50,22 @@ CinerousTower_Exterior_EventScript_RescueInitial::
 CinerousTower_Exterior_EventScript_ResetHoundoom::
 	@clearflag FLAG_HIDE_UMBER_TOWN_JACE
 	@turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
-	setobjectxyperm LOCALID_RIVAL, 16, 33
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 16, 33
+	setobjectmovementtype LOCALID_OPC_CINEROUS_TOWER, MOVEMENT_TYPE_FACE_UP
 	setvar VAR_CINEROUS_TOWER_STATE, 0
 	return
 
 CinerousTower_Exterior_EventScript_MoveTutorAndOPC::
-	@removeobject LOCALID_RIVAL
-	@removeobject LOCALID_TUTOR
+	@removeobject LOCALID_OPC_CINEROUS_TOWER
+	@removeobject LOCALID_TUTOR_CINEROUS_TOWER
 	@setobjectxyperm OBJ_EVENT_ID_PLAYER, 15, 33
 	@setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm LOCALID_RIVAL, 16, 33
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm LOCALID_TUTOR, 16, 34
-	setobjectmovementtype LOCALID_TUTOR, MOVEMENT_TYPE_FACE_UP
-	@addobject LOCALID_RIVAL
-	@addobject LOCALID_TUTOR
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 16, 33
+	setobjectmovementtype LOCALID_OPC_CINEROUS_TOWER, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm LOCALID_TUTOR_CINEROUS_TOWER, 16, 34
+	setobjectmovementtype LOCALID_TUTOR_CINEROUS_TOWER, MOVEMENT_TYPE_FACE_UP
+	@addobject LOCALID_OPC_CINEROUS_TOWER
+	@addobject LOCALID_TUTOR_CINEROUS_TOWER
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	return
 
@@ -181,30 +181,30 @@ CinerousTower_Exterior_EventScript_RescueIntro::
 	@fadeoutbgm 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkUp
 	waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, CinerousTower_Exterior_EventScript_SmokeyViolet
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_SmokeyVert
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_Danger, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_Delay48
-	waitmovement 0
-	delay 60
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
-	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
-	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_Delay48
 	waitmovement 0
 	delay 60
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkUp
+	waitmovement 0
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkUp
+	waitmovement 0
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkUp
+	waitmovement 0
+	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
@@ -213,39 +213,39 @@ CinerousTower_Exterior_EventScript_RescueIntro::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_HoundoomTracks, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_FreshTracks, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_HumanFootprints, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	delay 10
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceDown
 	delay 30
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkLeft
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_SomeonesInDanger, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkLeft
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	@setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_COPY_PLAYER
-	@addobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	@setobjectmovementtype LOCALID_OPC_CINEROUS_TOWER, MOVEMENT_TYPE_COPY_PLAYER
+	@addobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	@fadeinbgm 0
 	@setvar VAR_CINEROUS_TOWER_STATE, 1
@@ -349,21 +349,21 @@ CinerousTower_Exterior_EventScript_FirstHoundoomEncounter1::
 	setvar VAR_BAG_RESTRICTION, 0
 	special LoadPlayerParty
 	special HealPlayerParty
-	setobjectxyperm LOCALID_RIVAL, 32, 26
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 32, 26
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
 	@applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	@waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, CinerousTower_Exterior_EventScript_HoundoomNearbyViolet
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_HoundoomNearbyVert
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkUp
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
@@ -391,21 +391,21 @@ CinerousTower_Exterior_EventScript_FirstHoundoomEncounter2::
 	setvar VAR_BAG_RESTRICTION, 0
 	special LoadPlayerParty
 	special HealPlayerParty
-	setobjectxyperm LOCALID_RIVAL, 33, 26
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 33, 26
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
 	@applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	@waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, CinerousTower_Exterior_EventScript_HoundoomNearbyViolet
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_HoundoomNearbyVert
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkUp
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
@@ -467,19 +467,19 @@ CinerousTower_Exterior_EventScript_SecondHoundoomEncounter::
 	setvar VAR_BAG_RESTRICTION, 0
 	special LoadPlayerParty
 	special HealPlayerParty
-	setobjectxyperm LOCALID_RIVAL, 34, 20
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 34, 20
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceLeft
 	waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, CinerousTower_Exterior_EventScript_CloseToTheTopViolet
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_CloseToTheTopVert
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkLeft
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	releaseall
 	end
@@ -511,32 +511,32 @@ CinerousTower_Exterior_EventScript_HoundevilEncounter::
 	lockall
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
-	setobjectxyperm LOCALID_RIVAL, 31, 12
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 31, 12
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
-	applymovement LOCALID_TUTOR, Common_Movement_ExclamationMark
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
-	applymovement LOCALID_TUTOR, Common_Movement_FaceDown
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_FaceDown
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_TUTOR, Common_Movement_WalkDown
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_TUTOR, Common_Movement_WalkDown
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_FoundTutor, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, CinerousTower_Exterior_EventScript_SafeAfterAllViolet
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_SafeAfterAllVert
-	applymovement LOCALID_TUTOR, Common_Movement_FaceLeft
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_FaceLeft
 	delay 40
-	applymovement LOCALID_TUTOR, Common_Movement_FaceRight
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_FaceRight
 	delay 40
 	msgbox CinerousTower_Exterior_Text_Shhh, MSGBOX_DEFAULT
 	closemessage
@@ -553,30 +553,30 @@ CinerousTower_Exterior_EventScript_HoundevilEncounter::
 	@delay 20
 	@playmoncry SPECIES_HOUNDOOM, CRY_MODE_NORMAL
 	@delay 20
-	applymovement LOCALID_TUTOR, Common_Movement_ExclamationMark
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_ExclamationMark
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_ExclamationMark
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
-	applymovement LOCALID_TUTOR, Common_Movement_Delay48
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_TUTOR, Common_Movement_FaceUp
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_TooLate, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_TUTOR, CinerousTower_Exterior_Movement_TutorHide
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, CinerousTower_Exterior_Movement_TutorHide
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_WereSurrounded, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_RIVAL, Common_Movement_FaceRight
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_HaveToFight, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, CinerousTower_Exterior_EventScript_LetsDoThis
 	call_if_eq VAR_RESULT, NO, CinerousTower_Exterior_EventScript_DontWorry
 	delay 40
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 20
@@ -600,20 +600,20 @@ CinerousTower_Exterior_EventScript_HoundevilEncounter::
 	msgbox CinerousTower_Exterior_Text_HoundoomFled, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_RIVAL, Common_Movement_FaceRight
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, CinerousTower_Exterior_EventScript_WeDidItViolet
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_WeDidItVert
 	delay 50
-	applymovement LOCALID_TUTOR, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 10
 	msgbox CinerousTower_Exterior_Text_GottaGo, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceDown
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_RightLetsGo, MSGBOX_DEFAULT
@@ -621,16 +621,16 @@ CinerousTower_Exterior_EventScript_HoundevilEncounter::
 	@fadescreen FADE_TO_BLACK
 	@playse SE_EXIT
 	@removeobject OBJ_EVENT_ID_PLAYER
-	@removeobject LOCALID_RIVAL
-	@removeobject LOCALID_TUTOR
+	@removeobject LOCALID_OPC_CINEROUS_TOWER
+	@removeobject LOCALID_TUTOR_CINEROUS_TOWER
 	@setobjectxyperm OBJ_EVENT_ID_PLAYER, 15, 33
 	@setobjectmovementtype OBJ_EVENT_ID_PLAYER, MOVEMENT_TYPE_FACE_DOWN
-	@setobjectxyperm LOCALID_RIVAL, 16, 33
-	@setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_DOWN
-	@setobjectxyperm LOCALID_TUTOR, 16, 34
-	@setobjectmovementtype LOCALID_TUTOR, MOVEMENT_TYPE_FACE_UP
-	@addobject LOCALID_RIVAL
-	@addobject LOCALID_TUTOR
+	@setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 16, 33
+	@setobjectmovementtype LOCALID_OPC_CINEROUS_TOWER, MOVEMENT_TYPE_FACE_DOWN
+	@setobjectxyperm LOCALID_TUTOR_CINEROUS_TOWER, 16, 34
+	@setobjectmovementtype LOCALID_TUTOR_CINEROUS_TOWER, MOVEMENT_TYPE_FACE_UP
+	@addobject LOCALID_OPC_CINEROUS_TOWER
+	@addobject LOCALID_TUTOR_CINEROUS_TOWER
 	warp MAP_CINEROUS_TOWER_EXTERIOR, 15, 33
 	waitstate
 	releaseall
@@ -664,28 +664,28 @@ CinerousTower_Exterior_EventScript_RescueFinish::
 	@delay 40
 	@fadescreen FADE_FROM_BLACK
 	delay 20
-	applymovement LOCALID_TUTOR, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox CinerousTower_Exterior_Text_TutorExit, MSGBOX_DEFAULT
 	closemessage
-	@applymovement LOCALID_TUTOR, Common_Movement_WalkDown
+	@applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkDown
 	@waitmovement 0
-	@applymovement LOCALID_TUTOR, Common_Movement_WalkDown
+	@applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkDown
 	@waitmovement 0
-	@applymovement LOCALID_TUTOR, Common_Movement_WalkDown
+	@applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkDown
 	@waitmovement 0
-	@applymovement LOCALID_TUTOR, Common_Movement_WalkDown
+	@applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkDown
 	@waitmovement 0
-	applymovement LOCALID_TUTOR, Common_Movement_WalkDown
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_TUTOR, Common_Movement_WalkDown
+	applymovement LOCALID_TUTOR_CINEROUS_TOWER, Common_Movement_WalkDown
 	delay 30
 	playse SE_EXIT
-	@setobjectxyperm LOCALID_TUTOR, 31, 9
-	@addobject LOCALID_TUTOR
-	removeobject LOCALID_TUTOR
+	@setobjectxyperm LOCALID_TUTOR_CINEROUS_TOWER, 31, 9
+	@addobject LOCALID_TUTOR_CINEROUS_TOWER
+	removeobject LOCALID_TUTOR_CINEROUS_TOWER
 	delay 60
-	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceLeft
 	delay 10
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
@@ -693,22 +693,22 @@ CinerousTower_Exterior_EventScript_RescueFinish::
 	call_if_eq VAR_RESULT, MALE, CinerousTower_Exterior_EventScript_VioletExit
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_VertExit
 	delay 30
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	@applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	@applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	@waitmovement 0
-	@applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	@applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	@waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	delay 30
 	playse SE_EXIT
-	removeobject LOCALID_RIVAL
+	removeobject LOCALID_OPC_CINEROUS_TOWER
 	setflag FLAG_RESCUED_HEADBUTT_TUTOR
 	setvar VAR_CINEROUS_TOWN_STATE, 3
 	@questmenu QUEST_MENU_COMPLETE_QUEST QUEST_11
@@ -857,11 +857,11 @@ CinerousTower_Exterior_EventScript_SkipTurnback::
 CinerousTower_Exterior_EventScript_TowerTurnback1::
 	goto_if_set FLAG_RESCUED_HEADBUTT_TUTOR, CinerousTower_Exterior_EventScript_SkipTurnback
 	lockall
-	setobjectxyperm LOCALID_RIVAL, 14, 18
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 14, 18
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
 	checkplayergender
@@ -869,8 +869,8 @@ CinerousTower_Exterior_EventScript_TowerTurnback1::
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_TowerTurnbackVert
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	releaseall
 	end
@@ -878,11 +878,11 @@ CinerousTower_Exterior_EventScript_TowerTurnback1::
 CinerousTower_Exterior_EventScript_TowerTurnback2::
 	goto_if_set FLAG_RESCUED_HEADBUTT_TUTOR, CinerousTower_Exterior_EventScript_SkipTurnback
 	lockall
-	setobjectxyperm LOCALID_RIVAL, 15, 18
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 15, 18
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
 	checkplayergender
@@ -890,8 +890,8 @@ CinerousTower_Exterior_EventScript_TowerTurnback2::
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_TowerTurnbackVert
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	releaseall
 	end
@@ -899,11 +899,11 @@ CinerousTower_Exterior_EventScript_TowerTurnback2::
 CinerousTower_Exterior_EventScript_TowerTurnback3::
 	goto_if_set FLAG_RESCUED_HEADBUTT_TUTOR, CinerousTower_Exterior_EventScript_SkipTurnback
 	lockall
-	setobjectxyperm LOCALID_RIVAL, 16, 18
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 16, 18
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
 	checkplayergender
@@ -911,8 +911,8 @@ CinerousTower_Exterior_EventScript_TowerTurnback3::
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_TowerTurnbackVert
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	releaseall
 	end
@@ -920,11 +920,11 @@ CinerousTower_Exterior_EventScript_TowerTurnback3::
 CinerousTower_Exterior_EventScript_TowerTurnback4::
 	goto_if_set FLAG_RESCUED_HEADBUTT_TUTOR, CinerousTower_Exterior_EventScript_SkipTurnback
 	lockall
-	setobjectxyperm LOCALID_RIVAL, 17, 18
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 17, 18
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
 	checkplayergender
@@ -932,8 +932,8 @@ CinerousTower_Exterior_EventScript_TowerTurnback4::
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_TowerTurnbackVert
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	releaseall
 	end
@@ -978,19 +978,19 @@ CinerousTower_Exterior_EventScript_GateTurnback1::
 	goto_if_eq VAR_CINEROUS_TOWER_STATE, 4, CinerousTower_Exterior_EventScript_SkipTurnback
 	goto_if_set FLAG_RESCUED_HEADBUTT_TUTOR, CinerousTower_Exterior_EventScript_SkipTurnback
 	lockall
-	setobjectxyperm LOCALID_RIVAL, 15, 35
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 15, 35
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceDown
 	waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, CinerousTower_Exterior_EventScript_GateTurnbackViolet
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_GateTurnbackVert
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	releaseall
 	end
@@ -999,19 +999,19 @@ CinerousTower_Exterior_EventScript_GateTurnback2::
 	goto_if_eq VAR_CINEROUS_TOWER_STATE, 4, CinerousTower_Exterior_EventScript_SkipTurnback
 	goto_if_set FLAG_RESCUED_HEADBUTT_TUTOR, CinerousTower_Exterior_EventScript_SkipTurnback
 	lockall
-	setobjectxyperm LOCALID_RIVAL, 16, 35
-	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 16, 35
+	addobject LOCALID_OPC_CINEROUS_TOWER
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_OPC_CINEROUS_TOWER, Common_Movement_FaceDown
 	waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, CinerousTower_Exterior_EventScript_GateTurnbackViolet
 	call_if_eq VAR_RESULT, FEMALE, CinerousTower_Exterior_EventScript_GateTurnbackVert
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
-	removeobject LOCALID_RIVAL
-	setobjectxyperm LOCALID_RIVAL, 47, 0
+	removeobject LOCALID_OPC_CINEROUS_TOWER
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWER, 47, 0
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	releaseall
 	end

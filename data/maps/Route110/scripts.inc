@@ -80,21 +80,21 @@ Route110_EventScript_Protestor1::
 Route110_EventScript_Protestor2::
 	lock
 	faceplayer
-	msgbox Route110_Text_Roadblock, MSGBOX_DEFAULT
+	msgbox Route110_Text_TeamMagma1, MSGBOX_DEFAULT
 	release
 	end
 
 Route110_EventScript_Protestor3::
 	lock
 	faceplayer
-	msgbox Route110_Text_Roadblock, MSGBOX_DEFAULT
+	msgbox Route110_Text_TeamMagma2, MSGBOX_DEFAULT
 	release
 	end
 
 Route110_EventScript_Protestor4::
 	lock
 	faceplayer
-	msgbox Route110_Text_Roadblock, MSGBOX_DEFAULT
+	msgbox Route110_Text_DontMindMe, MSGBOX_DEFAULT
 	release
 	end
 
@@ -105,10 +105,31 @@ Route110_EventScript_Protestor5::
 	release
 	end
 
+Route110_Text_TeamMagma3:
+	.string "We're here to make a stand\n"
+	.string "against TEAM MAGMA!\p"
+	.string "We're letting everyone know that\n"
+	.string "enough is enough!$"
+
+Route110_Text_TeamMagma1:
+	.string "TEAM MAGMA stole my POKéMON!\n"
+	.string "Can you believe that?\p"
+	.string "They're a menace!\n"
+	.string "Someone needs to stop them!$"
+
+Route110_Text_TeamMagma2:
+	.string "Do you know about TEAM MAGMA?\p"
+	.string "They want to set our houses on fire\n"
+	.string "and pollute the atmosphere!$"
+
+Route110_Text_DontMindMe:
+	.string "Dont mind me. I'm just here for\n"
+	.string "the free food.$"
+
 Route110_Text_Roadblock:
 	.string "Are you upset that we blocked\n"
 	.string "the road to MAUVILLE?\p"
-	.string "Good. That means our protest is working!$"
+	.string "Good! That means our protest is working!$"
 
 
 
@@ -644,8 +665,11 @@ Route110_Text_MyFirstJobInAqua:
 	.string "TEAM AQUA. It's a little scary.$"
 
 Route110_Text_AquaActionsBringSmiles:
-	.string "TEAM AQUA's actions should bring\n"
-	.string "smiles to people's faces!$"
+	@.string "TEAM AQUA's actions should bring\n"
+	.string "TEAM AQUA's actions will bring\n"
+	.string "smiles to people's faces!\p"
+	.string "You wouldn't be interested\n"
+	.string "in joining, would you?$"
 
 Route110_Text_MayLetsBattle:
 	.string "MAY: Hi, {PLAYER}{KUN}, long time no see!\p"

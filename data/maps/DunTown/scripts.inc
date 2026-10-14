@@ -1,4 +1,4 @@
-.set LOCALID_OPC, 8
+@.set LOCALID_OPC_DUN_TOWN, 8
 
 DunTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DunTown_OnTransition
@@ -158,7 +158,7 @@ DunTown_EventScript_OPC::
 DunTown_EventScript_OPCLeaves::
 	fadescreen FADE_TO_BLACK
 	delay 30
-	removeobject LOCALID_OPC
+	removeobject LOCALID_OPC_DUN_TOWN
 	setflag FLAG_BATTLED_OPC_DUN_TOWN	
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -278,7 +278,7 @@ DunTown_Text_VertDefeated:
 
 
 DunTown_EventScript_AfterOPCBattle::
-	@applymovement LOCALID_OPC, Common_Movement_WalkInPlaceRight
+	@applymovement LOCALID_OPC_DUN_TOWN, Common_Movement_WalkInPlaceRight
 	@waitmovement 0
 	delay 60
 	msgbox DunTown_Text_AfterOPCBattle, MSGBOX_DEFAULT

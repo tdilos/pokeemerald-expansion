@@ -1,4 +1,4 @@
-.set LOCALID_RIVAL, 5
+@.set LOCALID_RIVAL_ROUTE80, 5
 
 Route80_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route80_OnTransition
@@ -6,7 +6,7 @@ Route80_MapScripts::
 
 Route80_OnTransition:
 	@setflag FLAG_HIDE_ROUTE_80_JACE
-	removeobject LOCALID_RIVAL
+	removeobject LOCALID_RIVAL_ROUTE80
 	end
 
 Route80_EventScript_Hiker::
@@ -75,9 +75,9 @@ Route80_EventScript_JaceStopsPlayer1::
 	delay 60
 	@setflag FLAG_HIDE_ROUTE_80_JACE
 	clearflag FLAG_HIDE_JACE
-	addobject LOCALID_RIVAL
+	addobject LOCALID_RIVAL_ROUTE80
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	applymovement LOCALID_RIVAL, Route80_Movement_JaceWalkToPlayer1
+	applymovement LOCALID_RIVAL_ROUTE80, Route80_Movement_JaceWalkToPlayer1
 	waitmovement 0
 	msgbox Route80_Text_YouDunce, MSGBOX_DEFAULT
 	setvar VAR_LITTLEROOT_INTRO_STATE, 2
@@ -101,9 +101,9 @@ Route80_EventScript_JaceStopsPlayer2::
 	delay 60
 	@setflag FLAG_HIDE_ROUTE_80_JACE
 	clearflag FLAG_HIDE_JACE
-	addobject LOCALID_RIVAL
+	addobject LOCALID_RIVAL_ROUTE80
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	applymovement LOCALID_RIVAL, Route80_Movement_JaceWalkToPlayer2
+	applymovement LOCALID_RIVAL_ROUTE80, Route80_Movement_JaceWalkToPlayer2
 	waitmovement 0
 	msgbox Route80_Text_YouDunce, MSGBOX_DEFAULT
 	setvar VAR_LITTLEROOT_INTRO_STATE, 2
@@ -127,9 +127,9 @@ Route80_EventScript_JaceStopsPlayer3::
 	delay 60
 	@setflag FLAG_HIDE_ROUTE_80_JACE
 	clearflag FLAG_HIDE_JACE
-	addobject LOCALID_RIVAL
+	addobject LOCALID_RIVAL_ROUTE80
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	applymovement LOCALID_RIVAL, Route80_Movement_JaceWalkToPlayer3
+	applymovement LOCALID_RIVAL_ROUTE80, Route80_Movement_JaceWalkToPlayer3
 	waitmovement 0
 	msgbox Route80_Text_YouDunce, MSGBOX_DEFAULT
 	setvar VAR_LITTLEROOT_INTRO_STATE, 2

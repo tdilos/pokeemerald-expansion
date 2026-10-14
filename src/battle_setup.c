@@ -678,6 +678,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_NAGANADEL:
     case SPECIES_STAKATAKA:
     case SPECIES_BLACEPHALON:
+    case SPECIES_MANIPULOBE:
+    case SPECIES_SOMNIVORE:
+    case SPECIES_TEROPHAGE:
+    case SPECIES_REIZURGE:
+    case SPECIES_THURSLUSH:
     case SPECIES_MIMEKTIPLEX:
         CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_RG_VS_DEOXYS);
         break;

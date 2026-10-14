@@ -1,4 +1,4 @@
-.set LOCALID_RIVAL, 4
+@.set LOCALID_OPC_CINEROUS_TOWN, 4
 
 CinerousTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CinerousTown_OnTransition
@@ -16,14 +16,14 @@ CinerousTown_OnTransition:
 
 CinerousTown_EventScript_MoveOPCToTown::
 	setvar VAR_CINEROUS_TOWN_STATE, 1
-	setobjectxyperm LOCALID_RIVAL, 10, 13
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWN, 10, 13
+	setobjectmovementtype LOCALID_OPC_CINEROUS_TOWN, MOVEMENT_TYPE_FACE_UP
 	end
 
 CinerousTown_EventScript_MoveOPCToGate::
 	setvar VAR_CINEROUS_TOWN_STATE, 2
-	setobjectxyperm LOCALID_RIVAL, 10, 6
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWN, 10, 6
+	setobjectmovementtype LOCALID_OPC_CINEROUS_TOWN, MOVEMENT_TYPE_FACE_UP
 	end
 
 CinerousTown_EventScript_PostTutorRescue::
@@ -128,61 +128,61 @@ CinerousTown_Text_NoOneKnows:
 
 CinerousTown_EventScript_OPCTrigger1::
 	lockall
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_FaceDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_Delay48
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkLeft
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkDown
 	waitmovement 0
 	goto CinerousTown_EventScript_OPCEncounter
 	end
 
 CinerousTown_EventScript_OPCTrigger2::
 	lockall
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_FaceDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_Delay48
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkDown
 	waitmovement 0
 	goto CinerousTown_EventScript_OPCEncounter
 	end
 
 CinerousTown_EventScript_OPCTrigger3::
 	lockall
-	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_FaceDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_Delay48
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_Delay48
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkRight
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkDown
 	waitmovement 0
 	goto CinerousTown_EventScript_OPCEncounter
 	end
@@ -284,7 +284,7 @@ CinerousTown_Text_VertDefeated:
 
 
 CinerousTown_EventScript_AfterOPCBattle::
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, CinerousTown_EventScript_ImViolet
@@ -380,23 +380,23 @@ CinerousTown_Text_RejectOPC:
 	.string "If you change your mind, meet me there.$"
 
 CinerousTown_EventScript_OPCExit::
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_WalkUp
 	waitmovement 0
-	removeobject LOCALID_RIVAL
+	removeobject LOCALID_OPC_CINEROUS_TOWN
 	setflag FLAG_BATTLED_OPC_CINEROUS_TOWN	
 	setvar VAR_CINEROUS_TOWN_STATE, 2
-	setobjectxyperm LOCALID_RIVAL, 10, 6
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_OPC_CINEROUS_TOWN, 10, 6
+	setobjectmovementtype LOCALID_OPC_CINEROUS_TOWN, MOVEMENT_TYPE_FACE_UP
 	@special DrawWholeMapView
-	addobject LOCALID_RIVAL
+	addobject LOCALID_OPC_CINEROUS_TOWN
 	clearflag FLAG_RESCUED_HEADBUTT_TUTOR
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -416,7 +416,7 @@ CinerousTown_EventScript_OpenGate::
 	faceplayer
 	msgbox CinerousTown_Text_ThereYouAre, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_RIVAL, Common_Movement_FaceUp
+	applymovement LOCALID_OPC_CINEROUS_TOWN, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
 	msgbox CinerousTown_Text_DoorJammed, MSGBOX_DEFAULT

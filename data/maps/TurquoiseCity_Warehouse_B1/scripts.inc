@@ -1,14 +1,14 @@
-.set LOCALID_JACE_WAREHOUSE, 6
-.set LOCALID_LITTLEGIRL, 7
-.set LOCALID_BRENDAN_WAREHOUSE, 5
-.set LOCALID_ZARTOSHT, 11
-.set LOCALID_GRUNT1, 3
-.set LOCALID_GRUNT2, 1
-.set LOCALID_GRUNT3, 4
-.set LOCALID_GRUNT4, 2
-.set LOCALID_GRUNT5, 12
-.set LOCALID_DEVON_WAREHOUSE, 9
-.set LOCALID_MILO_WAREHOUSE, 10
+@.set LOCALID_JACE_WAREHOUSE, 6
+@.set LOCALID_LITTLEGIRL_WAREHOUSE, 7
+@.set LOCALID_BRENDAN_WAREHOUSE, 5
+@.set LOCALID_ZARTOSHT_WAREHOUSE, 11
+@.set LOCALID_TURQUOISE_GRUNT1, 3
+@.set LOCALID_TURQUOISE_GRUNT2, 1
+@.set LOCALID_TURQUOISE_GRUNT3, 4
+@.set LOCALID_TURQUOISE_GRUNT4, 2
+@.set LOCALID_TURQUOISE_GRUNT5, 12
+@.set LOCALID_DEVON_WAREHOUSE, 9
+@.set LOCALID_MILO_WAREHOUSE, 10
 
 TurquoiseCity_Warehouse_B1_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, TurquoiseCity_Warehouse_B1_OnTransition
@@ -45,12 +45,12 @@ TurquoiseCity_Warehouse_B1_EventScript_MeetJaceAgain::
 	msgbox TurquoiseCity_Warehouse_B1_Text_JustAsIThought, MSGBOX_DEFAULT
 	closemessage
 	delay 10
-	applymovement LOCALID_LITTLEGIRL, Common_Movement_FaceUp
+	applymovement LOCALID_LITTLEGIRL_WAREHOUSE, Common_Movement_FaceUp
 	waitmovement 0
 	delay 20
 	msgbox TurquoiseCity_Warehouse_B1_Text_TookPokemonAway, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_LITTLEGIRL, Common_Movement_FaceDown
+	applymovement LOCALID_LITTLEGIRL_WAREHOUSE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 60
 	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceRight
@@ -132,7 +132,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	waitmovement 0
 	playbgm MUS_WEATHER_GROUDON, FALSE
 	delay 60
-	applymovement LOCALID_ZARTOSHT, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_WhatAJoke, MSGBOX_DEFAULT
 	closemessage
@@ -141,19 +141,19 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_Urgh, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ZARTOSHT, Common_Movement_WalkRight
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceDown
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 20
 	msgbox TurquoiseCity_Warehouse_B1_Text_WontNeedThose, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_ZARTOSHT, Common_Movement_WalkLeft
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_ZARTOSHT, Common_Movement_WalkLeft
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceDown
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
 	msgbox TurquoiseCity_Warehouse_B1_Text_ZartoshtInterrogates, MSGBOX_DEFAULT
@@ -169,16 +169,16 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_OhDear, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_ZARTOSHT, Common_Movement_WalkRight
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_WalkRight
 	waitmovement 0
 	delay 60
 	msgbox TurquoiseCity_Warehouse_B1_Text_NotGoodForMe, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceUp
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceUp
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceDown
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
 	msgbox TurquoiseCity_Warehouse_B1_Text_WeldPokeball, MSGBOX_DEFAULT
@@ -205,19 +205,19 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	closemessage
 	delay 30
 	@fadeoutbgm 0
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT2, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT3, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT4, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT5, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_FaceDown
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_GRUNT5, Common_Movement_ExclamationMark
-	applymovement LOCALID_GRUNT1, Common_Movement_ExclamationMark
-	applymovement LOCALID_GRUNT2, Common_Movement_ExclamationMark
-	applymovement LOCALID_GRUNT3, Common_Movement_ExclamationMark
-	applymovement LOCALID_GRUNT4, Common_Movement_ExclamationMark
-	applymovement LOCALID_ZARTOSHT, Common_Movement_ExclamationMark
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_ExclamationMark
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_ExclamationMark
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_ExclamationMark
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_ExclamationMark
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_ExclamationMark
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_ExclamationMark
 	waitmovement 0
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
 	applymovement LOCALID_JACE_WAREHOUSE, TurquoiseCity_Warehouse_B1_Movement_JaceEntrance
@@ -246,68 +246,68 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	delay 30
 	msgbox TurquoiseCity_Warehouse_B1_Text_ComingOutOfTheWoodwork, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceLeft
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceLeft
 	waitmovement 0
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceRight
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_IThoughtIToldYou, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT3, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	applymovement LOCALID_GRUNT4, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_WeDidBoss, MSGBOX_DEFAULT
 	closemessage
 	delay 40
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceDown
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 80
 	msgbox TurquoiseCity_Warehouse_B1_Text_BeenHereTooLong, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT3, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_WereSorryBoss, MSGBOX_DEFAULT
 	closemessage
 	delay 40
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceUp
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceUp
 	waitmovement 0
 	delay 80
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceDown
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_ChangeOfPlans, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkLeft
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_GRUNT2, Common_Movement_FaceUp
-	waitmovement 0
-	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_FaceUp
 	waitmovement 0
 	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
 	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
 	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
 	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
 	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
 	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
-	applymovement LOCALID_GRUNT2, Common_Movement_WalkUp
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceRight
+	applymovement LOCALID_DEVON_WAREHOUSE, Common_Movement_WalkUp
+	applymovement LOCALID_TURQUOISE_GRUNT2, Common_Movement_WalkUp
+	waitmovement 0
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_WhatAboutPokeballs, MSGBOX_DEFAULT
 	closemessage
 	delay 20
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceLeft
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 40
 	msgbox TurquoiseCity_Warehouse_B1_Text_DumpInBay, MSGBOX_DEFAULT
@@ -321,7 +321,7 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_HowCanYouSayThat, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_ZARTOSHT, Common_Movement_FaceDown
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_FaceDown
 	waitmovement 0
 	delay 60
 	msgbox TurquoiseCity_Warehouse_B1_Text_WhatAreYouGonnaDoAboutIt, MSGBOX_DEFAULT
@@ -350,47 +350,47 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_LessonOnPower, MSGBOX_DEFAULT
 	closemessage
 	@delay 20
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT5, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT3, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT4, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_FaceDown
 	waitmovement 0
 	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 	msgbox TurquoiseCity_Warehouse_B1_Text_YesSir, MSGBOX_DEFAULT
 	closemessage
 	@delay 40
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
-	applymovement LOCALID_GRUNT5, Common_Movement_WalkDown
-	applymovement LOCALID_GRUNT3, Common_Movement_WalkDown
-	applymovement LOCALID_GRUNT4, Common_Movement_WalkDown
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_WalkDown
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_WalkDown
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
-	applymovement LOCALID_GRUNT5, Common_Movement_WalkDown
-	applymovement LOCALID_GRUNT3, Common_Movement_WalkDown
-	applymovement LOCALID_GRUNT4, Common_Movement_WalkDown
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_WalkDown
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_WalkDown
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceRight
-	applymovement LOCALID_GRUNT5, Common_Movement_FaceRight
-	applymovement LOCALID_GRUNT3, Common_Movement_FaceLeft
-	applymovement LOCALID_GRUNT4, Common_Movement_FaceLeft
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_FaceRight
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_FaceRight
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_FaceLeft
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_FaceLeft
 	waitmovement 0
 	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_GRUNT5, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_Grunt1Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_TURQUOISE_CITY_1, TurquoiseCity_Warehouse_B1_Text_Grunt1Defeated
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_GRUNT5, TurquoiseCity_Warehouse_B1_Movement_KnockedBackLeft
+	applymovement LOCALID_TURQUOISE_GRUNT5, TurquoiseCity_Warehouse_B1_Movement_KnockedBackLeft
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_Grunt2Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_TURQUOISE_CITY_2, TurquoiseCity_Warehouse_B1_Text_Grunt2Defeated
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_GRUNT1, TurquoiseCity_Warehouse_B1_Movement_KnockedBackLeft
+	applymovement LOCALID_TURQUOISE_GRUNT1, TurquoiseCity_Warehouse_B1_Movement_KnockedBackLeft
 	waitmovement 0
 	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_WalkInPlaceRight
 	waitmovement 0
@@ -410,13 +410,13 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	delay 80
-	applymovement LOCALID_ZARTOSHT, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_ZartoshtIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_ZARTOSHT_1, TurquoiseCity_Warehouse_B1_Text_ZartoshtDefeated
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_GRUNT3, TurquoiseCity_Warehouse_B1_Movement_KnockedBackRight
-	applymovement LOCALID_GRUNT4, TurquoiseCity_Warehouse_B1_Movement_KnockedBackRight
+	applymovement LOCALID_TURQUOISE_GRUNT3, TurquoiseCity_Warehouse_B1_Movement_KnockedBackRight
+	applymovement LOCALID_TURQUOISE_GRUNT4, TurquoiseCity_Warehouse_B1_Movement_KnockedBackRight
 	waitmovement 0
 	delay 30
 	msgbox TurquoiseCity_Warehouse_B1_Text_WeaponS, MSGBOX_DEFAULT
@@ -436,19 +436,19 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT5, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT3, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT4, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_FaceDown
 	waitmovement 0
 	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	applymovement LOCALID_JACE_WAREHOUSE, Common_Movement_ExclamationMark
-	applymovement LOCALID_GRUNT1, Common_Movement_ExclamationMark
-	applymovement LOCALID_GRUNT5, Common_Movement_ExclamationMark
-	applymovement LOCALID_GRUNT3, Common_Movement_ExclamationMark
-	applymovement LOCALID_GRUNT4, Common_Movement_ExclamationMark
-	applymovement LOCALID_ZARTOSHT, Common_Movement_ExclamationMark
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_ExclamationMark
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_ExclamationMark
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_ExclamationMark
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_ExclamationMark
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 80
 	playbgm MUS_RG_TITLE, FALSE
@@ -458,9 +458,9 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	applymovement LOCALID_BRENDAN_WAREHOUSE, TurquoiseCity_Warehouse_B1_Movement_BrendanEntrance
 	waitmovement 0
 	delay 40
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_GruntMasaka, MSGBOX_DEFAULT
 	closemessage
@@ -474,25 +474,25 @@ TurquoiseCity_Warehouse_B1_EventScript_TeamGenesisScene::
 	msgbox TurquoiseCity_Warehouse_B1_Text_ItsAHat, MSGBOX_DEFAULT
 	closemessage
 	@fadedefaultbgm
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceRight
-	applymovement LOCALID_GRUNT5, Common_Movement_FaceUp
-	applymovement LOCALID_GRUNT3, Common_Movement_FaceUp
-	applymovement LOCALID_GRUNT4, Common_Movement_FaceLeft
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_FaceRight
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_FaceUp
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_FaceUp
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_FaceLeft
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceDown
-	applymovement LOCALID_GRUNT5, Common_Movement_FaceRight
-	applymovement LOCALID_GRUNT3, Common_Movement_FaceLeft
-	applymovement LOCALID_GRUNT4, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_FaceDown
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_FaceRight
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_FaceLeft
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceUp
-	applymovement LOCALID_GRUNT5, Common_Movement_FaceUp
-	applymovement LOCALID_GRUNT3, Common_Movement_FaceUp
-	applymovement LOCALID_GRUNT4, Common_Movement_FaceUp
+	applymovement LOCALID_TURQUOISE_GRUNT1, Common_Movement_FaceUp
+	applymovement LOCALID_TURQUOISE_GRUNT5, Common_Movement_FaceUp
+	applymovement LOCALID_TURQUOISE_GRUNT3, Common_Movement_FaceUp
+	applymovement LOCALID_TURQUOISE_GRUNT4, Common_Movement_FaceUp
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_ZARTOSHT, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_ZARTOSHT_WAREHOUSE, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox TurquoiseCity_Warehouse_B1_Text_WasntPreparedForThis, MSGBOX_DEFAULT
 	closemessage

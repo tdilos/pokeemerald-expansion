@@ -232,7 +232,8 @@
     "Underground_HaewenTown",
     "Route100",
     "Underwater_Route100",
-    "Underground_Route70_Stairs"
+    "Underground_Route70_Stairs",
+    "FortreeCity_Crater"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -781,7 +782,16 @@
     "Route110_TrickHousePuzzle7",
     "Route110_TrickHousePuzzle8",
     "Route110_SeasideCyclingRoadSouthEntrance",
-    "Route110_SeasideCyclingRoadNorthEntrance"
+    "Route110_SeasideCyclingRoadNorthEntrance",
+    "Route110_TrickHousePuzzle9",
+    "Route110_TrickHousePuzzle10",
+    "Route110_TrickHousePuzzle11",
+    "Route110_TrickHousePuzzle12",
+    "Route110_TrickHousePuzzle13",
+    "Route110_TrickHousePuzzle14",
+    "Route110_TrickHousePuzzle15",
+    "Route110_TrickHousePuzzle16",
+    "Route110_TrickHousePuzzle17"
   ],
   "gMapGroup_IndoorRoute113": [
     "Route113_GlassWorkshop"

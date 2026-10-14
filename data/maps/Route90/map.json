@@ -221,6 +221,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ROUTE90_GRUNT2",
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
       "x": 11,
       "y": 2,
@@ -234,6 +235,7 @@
       "flag": "FLAG_DEFEATED_GRUNTS_ROUTE_90"
     },
     {
+      "local_id": "LOCALID_ROUTE90_GRUNT1",
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
       "x": 9,
       "y": 2,
@@ -247,6 +249,7 @@
       "flag": "FLAG_DEFEATED_GRUNTS_ROUTE_90"
     },
     {
+      "local_id": "LOCALID_BETTERMAN_ROUTE90",
       "graphics_id": "OBJ_EVENT_GFX_BETTERMAN",
       "x": 10,
       "y": 2,

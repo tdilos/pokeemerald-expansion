@@ -9,7 +9,7 @@ KiyahaIsle_EventScript_Nalu::
 	end
 
 KiyahaIsle_Text_NaluIntro:
-	.string "Hey! Did you just come from the sea?$"
+	.string "Have you tried fishing in the ocean before?$"
 
 KiyahaIsle_Text_NaluDefeated:
 	.string "Uh-oh.$"

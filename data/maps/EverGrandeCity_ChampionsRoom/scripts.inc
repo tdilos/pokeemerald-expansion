@@ -1,7 +1,7 @@
 @.set LOCALID_WALLACE, 1
-.set LOCALID_NORMAN, 1
-.set LOCALID_RIVAL, 2
-.set LOCALID_BIRCH, 3
+@.set LOCALID_CHAMPIONS_ROOM_NORMAN, 1
+@.set LOCALID_RIVAL, 2
+@.set LOCALID_BIRCH, 3
 
 EverGrandeCity_ChampionsRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_ChampionsRoom_OnTransition
@@ -83,24 +83,24 @@ EverGrandeCity_ChampionsRoom_EventScript_NormanDefeated::
 	msgbox EverGrandeCity_ChampionsRoom_Text_NormanPostBattleSpeech2, MSGBOX_DEFAULT
 	closemessage
 	delay 60
-	applymovement LOCALID_NORMAN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_CHAMPIONS_ROOM_NORMAN, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox EverGrandeCity_ChampionsRoom_Text_NormanPostBattleSpeech3, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_NORMAN, Common_Movement_FaceUp
+	applymovement LOCALID_CHAMPIONS_ROOM_NORMAN, Common_Movement_FaceUp
 	waitmovement 0
 	delay 20
-	applymovement LOCALID_NORMAN, Common_Movement_FaceDown
+	applymovement LOCALID_CHAMPIONS_ROOM_NORMAN, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox EverGrandeCity_ChampionsRoom_Text_NormanComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_NORMAN, EverGrandeCity_ChampionsRoom_Movement_WallaceExitStart
+	applymovement LOCALID_CHAMPIONS_ROOM_NORMAN, EverGrandeCity_ChampionsRoom_Movement_WallaceExitStart
 	applymovement OBJ_EVENT_ID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerExitStart
 	waitmovement 0
 	completequest QUEST_1
 	delay 20
-	applymovement LOCALID_NORMAN, EverGrandeCity_ChampionsRoom_Movement_WallaceExit
+	applymovement LOCALID_CHAMPIONS_ROOM_NORMAN, EverGrandeCity_ChampionsRoom_Movement_WallaceExit
 	applymovement OBJ_EVENT_ID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerExit
 	waitmovement 0
 	setflag FLAG_HIDE_PETALBURG_GYM_GREETER
@@ -215,15 +215,15 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF::
 	msgbox EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex, MSGBOX_DEFAULT
 	call ProfBirch_EventScript_RatePokedex
 	msgbox EverGrandeCity_ChampionsRoom_Text_BirchCongratulations, MSGBOX_DEFAULT
-	applymovement LOCALID_CHAMPIONS_ROOM_WALLACE, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_CHAMPIONS_ROOM_NORMAN, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 20
-	applymovement LOCALID_CHAMPIONS_ROOM_WALLACE, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_CHAMPIONS_ROOM_NORMAN, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox EverGrandeCity_ChampionsRoom_Text_WallaceComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_CHAMPIONS_ROOM_WALLACE, EverGrandeCity_ChampionsRoom_Movement_WallaceExitStart
+	applymovement LOCALID_CHAMPIONS_ROOM_NORMAN, EverGrandeCity_ChampionsRoom_Movement_WallaceExitStart
 	applymovement LOCALID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerExitStart
 	applymovement LOCALID_CHAMPIONS_ROOM_BIRCH, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_CHAMPIONS_ROOM_RIVAL, EverGrandeCity_ChampionsRoom_Movement_RivalFollows
@@ -236,7 +236,7 @@ EverGrandeCity_ChampionsRoom_EventScript_BirchArrivesExitForHoF::
 	call_if_eq VAR_RESULT, MALE, EverGrandeCity_ChampionsRoom_EventScript_MayCongratulations
 	call_if_eq VAR_RESULT, FEMALE, EverGrandeCity_ChampionsRoom_EventScript_BrendanCongratulations
 	closemessage
-	applymovement LOCALID_CHAMPIONS_ROOM_WALLACE, EverGrandeCity_ChampionsRoom_Movement_WallaceExit
+	applymovement LOCALID_CHAMPIONS_ROOM_NORMAN, EverGrandeCity_ChampionsRoom_Movement_WallaceExit
 	applymovement LOCALID_PLAYER, EverGrandeCity_ChampionsRoom_Movement_PlayerExit
 	waitmovement 0
 	setflag FLAG_HIDE_PETALBURG_GYM_GREETER

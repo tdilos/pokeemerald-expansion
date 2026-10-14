@@ -127,6 +127,7 @@ enum
     MAP_ROUTE100                   = (112 | (0 << 8)),
     MAP_UNDERWATER_ROUTE100        = (113 | (0 << 8)),
     MAP_UNDERGROUND_ROUTE70_STAIRS = (114 | (0 << 8)),
+    MAP_FORTREE_CITY_CRATER        = (115 | (0 << 8)),
 
     // gMapGroup_IndoorLittleroot
     MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    = (0 | (1 << 8)),
@@ -676,6 +677,15 @@ enum
     MAP_ROUTE110_TRICK_HOUSE_PUZZLE8                 = (10 | (29 << 8)),
     MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE = (11 | (29 << 8)),
     MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE = (12 | (29 << 8)),
+    MAP_ROUTE110_TRICK_HOUSE_PUZZLE9                 = (13 | (29 << 8)),
+    MAP_ROUTE110_TRICK_HOUSE_PUZZLE10                = (14 | (29 << 8)),
+    MAP_ROUTE110_TRICK_HOUSE_PUZZLE11                = (15 | (29 << 8)),
+    MAP_ROUTE110_TRICK_HOUSE_PUZZLE12                = (16 | (29 << 8)),
+    MAP_ROUTE110_TRICK_HOUSE_PUZZLE13                = (17 | (29 << 8)),
+    MAP_ROUTE110_TRICK_HOUSE_PUZZLE14                = (18 | (29 << 8)),
+    MAP_ROUTE110_TRICK_HOUSE_PUZZLE15                = (19 | (29 << 8)),
+    MAP_ROUTE110_TRICK_HOUSE_PUZZLE16                = (20 | (29 << 8)),
+    MAP_ROUTE110_TRICK_HOUSE_PUZZLE17                = (21 | (29 << 8)),
 
     // gMapGroup_IndoorRoute113
     MAP_ROUTE113_GLASS_WORKSHOP = (0 | (30 << 8)),

@@ -114,7 +114,8 @@ bool8 DoesPartyHaveEnigmaBerry(void)
     return hasItem;
 }
 
-void CreateScriptedWildMon(enum Species species, u8 level, enum Item item)
+//void CreateScriptedWildMon(enum Species species, u8 level, enum Item item)
+void CreateScriptedWildMon(enum Species species, u16 level, enum Item item)
 {
     u8 heldItem[2];
 
@@ -132,7 +133,8 @@ void CreateScriptedWildMon(enum Species species, u8 level, enum Item item)
         SetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_HELD_ITEM, heldItem);
     }
 }
-void CreateScriptedDoubleWildMon(enum Species species1, u8 level1, enum Item item1, enum Species species2, u8 level2, enum Item item2)
+//void CreateScriptedDoubleWildMon(enum Species species1, u8 level1, enum Item item1, enum Species species2, u8 level2, enum Item item2)
+void CreateScriptedDoubleWildMon(enum Species species1, u16 level1, enum Item item1, enum Species species2, u16 level2, enum Item item2)
 {
     u8 heldItem1[2];
     u8 heldItem2[2];

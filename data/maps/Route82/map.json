@@ -148,6 +148,7 @@
       "flag": "FLAG_TEMP_13"
     },
     {
+      "local_id": "LOCALID_ROUTE82_GRUNT2",
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
       "x": 23,
       "y": 29,
@@ -161,6 +162,7 @@
       "flag": "FLAG_BATTLED_RAYNER_ROUTE79"
     },
     {
+      "local_id": "LOCALID_ROUTE82_GRUNT1",
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
       "x": 23,
       "y": 30,

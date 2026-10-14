@@ -65,6 +65,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_RIVAL_UMBER_TOWN",
       "graphics_id": "OBJ_EVENT_GFX_JACE",
       "x": 15,
       "y": 22,
@@ -78,6 +79,7 @@
       "flag": "FLAG_HIDE_JACE"
     },
     {
+      "local_id": "LOCALID_MAY_UMBER_TOWN",
       "graphics_id": "OBJ_EVENT_GFX_LEAF",
       "x": 4,
       "y": 19,
@@ -113,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0",
+      "script": "UltraWormhole_EventScript_XMindscape",
       "flag": "FLAG_HIDE_BONUS_WORLD_2"
     },
     {
@@ -126,7 +128,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "UmberTown_EventScript_GiveStuffDemo",
+      "script": "UmberTown_EventScript_GiveStuff2",
       "flag": "0"
     }
   ],
@@ -156,7 +158,7 @@
       "x": 9,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_ALTERING_CAVE",
+      "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
       "dest_warp_id": "0"
     }
   ],

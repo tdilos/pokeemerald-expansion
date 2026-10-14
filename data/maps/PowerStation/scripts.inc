@@ -1,5 +1,5 @@
-.set LOCALID_GRUNT1, 6
-.set LOCALID_GRUNT2, 7
+@.set LOCALID_POWER_STATION_GRUNT1, 6
+@.set LOCALID_POWER_STATION_GRUNT2, 7
 
 PowerStation_MapScripts::
 	.byte 0
@@ -189,18 +189,18 @@ PowerStation_EventScript_GruntEncounter1::
 	msgbox PowerStation_Text_Grunt1PreBattle1, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_FaceDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_ExclamationMark
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	delay 30
 	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 	msgbox PowerStation_Text_Grunt1PreBattle2, MSGBOX_DEFAULT
 	closemessage
-	setobjectxyperm LOCALID_GRUNT2, 18, 31
-	setobjectmovementtype LOCALID_GRUNT2, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_GRUNT2
+	setobjectxyperm LOCALID_POWER_STATION_GRUNT2, 18, 31
+	setobjectmovementtype LOCALID_POWER_STATION_GRUNT2, MOVEMENT_TYPE_FACE_UP
+	addobject LOCALID_POWER_STATION_GRUNT2
 	applymovement OBJ_EVENT_ID_CAMERA, PowerStation_Movement_CameraPanDown
 	waitmovement 0
 	special RemoveCameraObject
@@ -215,28 +215,28 @@ PowerStation_EventScript_GruntEncounter1::
 	closemessage
 	trainerbattle_no_intro TRAINER_GRUNT_POWER_STATION_1, PowerStation_Text_Grunt1Defeated
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkLeft
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkLeft
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
 	msgbox PowerStation_Text_YouIdiot, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_GRUNT_POWER_STATION_2, PowerStation_Text_Grunt2Defeated
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PowerStation_Text_ScrewYouKid, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
 	@setflag FLAG_RECOVERED_MACHINE_PART
-	removeobject LOCALID_GRUNT1
-	removeobject LOCALID_GRUNT2
+	removeobject LOCALID_POWER_STATION_GRUNT1
+	removeobject LOCALID_POWER_STATION_GRUNT2
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	fadescreen FADE_FROM_BLACK
@@ -254,18 +254,18 @@ PowerStation_EventScript_GruntEncounter2::
 	msgbox PowerStation_Text_Grunt1PreBattle1, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_FaceDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_ExclamationMark
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	delay 30
 	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 	msgbox PowerStation_Text_Grunt1PreBattle2, MSGBOX_DEFAULT
 	closemessage
-	setobjectxyperm LOCALID_GRUNT2, 19, 31
-	setobjectmovementtype LOCALID_GRUNT2, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_GRUNT2
+	setobjectxyperm LOCALID_POWER_STATION_GRUNT2, 19, 31
+	setobjectmovementtype LOCALID_POWER_STATION_GRUNT2, MOVEMENT_TYPE_FACE_UP
+	addobject LOCALID_POWER_STATION_GRUNT2
 	applymovement OBJ_EVENT_ID_CAMERA, PowerStation_Movement_CameraPanDown
 	waitmovement 0
 	special RemoveCameraObject
@@ -280,26 +280,26 @@ PowerStation_EventScript_GruntEncounter2::
 	closemessage
 	trainerbattle_no_intro TRAINER_GRUNT_POWER_STATION_1, PowerStation_Text_Grunt1Defeated
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
 	msgbox PowerStation_Text_YouIdiot, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_GRUNT_POWER_STATION_2, PowerStation_Text_Grunt2Defeated
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PowerStation_Text_ScrewYouKid, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
 	@setflag FLAG_RECOVERED_MACHINE_PART
-	removeobject LOCALID_GRUNT1
-	removeobject LOCALID_GRUNT2
+	removeobject LOCALID_POWER_STATION_GRUNT1
+	removeobject LOCALID_POWER_STATION_GRUNT2
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	fadescreen FADE_FROM_BLACK
@@ -317,18 +317,18 @@ PowerStation_EventScript_GruntEncounter3::
 	msgbox PowerStation_Text_Grunt1PreBattle1, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement LOCALID_GRUNT1, Common_Movement_FaceDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_FaceDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_ExclamationMark
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_ExclamationMark
 	playse SE_PIN
 	waitmovement 0
 	delay 30
 	playbgm MUS_ENCOUNTER_MAGMA, TRUE
 	msgbox PowerStation_Text_Grunt1PreBattle2, MSGBOX_DEFAULT
 	closemessage
-	setobjectxyperm LOCALID_GRUNT2, 20, 31
-	setobjectmovementtype LOCALID_GRUNT2, MOVEMENT_TYPE_FACE_UP
-	addobject LOCALID_GRUNT2
+	setobjectxyperm LOCALID_POWER_STATION_GRUNT2, 20, 31
+	setobjectmovementtype LOCALID_POWER_STATION_GRUNT2, MOVEMENT_TYPE_FACE_UP
+	addobject LOCALID_POWER_STATION_GRUNT2
 	applymovement OBJ_EVENT_ID_CAMERA, PowerStation_Movement_CameraPanDown
 	waitmovement 0
 	special RemoveCameraObject
@@ -343,28 +343,28 @@ PowerStation_EventScript_GruntEncounter3::
 	closemessage
 	trainerbattle_no_intro TRAINER_GRUNT_POWER_STATION_1, PowerStation_Text_Grunt1Defeated
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkRight
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkRight
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkDown
 	waitmovement 0
 	msgbox PowerStation_Text_YouIdiot, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_GRUNT_POWER_STATION_2, PowerStation_Text_Grunt2Defeated
 	@playbgm MUS_ENCOUNTER_MAGMA, FALSE
-	applymovement LOCALID_GRUNT1, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_POWER_STATION_GRUNT1, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PowerStation_Text_ScrewYouKid, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
 	@setflag FLAG_RECOVERED_MACHINE_PART
-	removeobject LOCALID_GRUNT1
-	removeobject LOCALID_GRUNT2
+	removeobject LOCALID_POWER_STATION_GRUNT1
+	removeobject LOCALID_POWER_STATION_GRUNT2
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	fadescreen FADE_FROM_BLACK

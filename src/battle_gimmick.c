@@ -366,6 +366,9 @@ void UpdateIndicatorLevelData(u32 healthboxId, u32 level)
     else if (level < 10)
         xDelta += 5;
 
+    // If your text box is overflowing horizontally, you may need an extra nudge for 3 digits:
+    //if (level >= 100) xDelta -= 6; 
+	
     gSprites[GetIndicatorSpriteId(healthboxId)].tLevelXDelta = xDelta;
 }
 

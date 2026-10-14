@@ -609,7 +609,7 @@ struct SaveBlock2
 //			 u16 optionsDifficulty:2; //0=Normal, 1=Hardcore, 2=Insane
     /*0x18*/ struct Pokedex pokedex;
 //    /*0x90*/ u8 filler_90[0x8];
-    /*0x90*/ u8 optionsDifficulty;  //0=Normal, 1=Hardcore, 2=Insane
+    /*0x90*/ u8 optionsDifficulty;  //0=Wimpy, 1=Normal, 2=Hardcore, 3=Insane
 	/*0x91*/ u8 optionsBattleFlow;
     /*0x92*/ u8 filler_91[0x6];
     /*0x98*/ struct Time localTimeOffset;

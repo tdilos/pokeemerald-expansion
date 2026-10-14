@@ -290,8 +290,10 @@ struct Pokemon
 {
     struct BoxPokemon box;
     u32 status;
-    u8 level;
-    u8 mail;
+	u16 level:10;   // Allows levels 0 to 1023
+    u16 mail:6;   // Allows Mail IDs / internal pointer indices 0 to 63
+    //u8 level;
+    //u8 mail;
     u16 hp;
     u16 maxHP;
     u16 attack;
@@ -340,6 +342,22 @@ struct Volatiles
     // etc.
 };
 
+/*struct Pokemon
+{
+    struct BoxPokemon box;
+    u32 status;
+	u16 level:10;   // Allows levels 0 to 1023
+    u16 mail:6;   // Allows Mail IDs / internal pointer indices 0 to 63
+    //u8 level;
+    //u8 mail;
+    u16 hp;
+    u16 maxHP;
+    u16 attack;
+    u16 defense;
+    u16 speed;
+    u16 spAttack;
+    u16 spDefense;
+};*/
 struct BattlePokemon
 {
     enum Species species;
@@ -360,14 +378,20 @@ struct BattlePokemon
     enum Ability ability;
     enum Type types[3];
     u8 pp[MAX_MON_MOVES];
+	
+    // Adjustments to accomodate new levels
+	// Group all u16 variables back-to-back
     u16 hp;
-    //u8 level;
-    u16 level;
+    u16 level:10;    // Allows levels 0 to 1023
+	u16 mail:6;      // Match the padding layout perfectly so the byte offset aligns
+    u16 maxHP;   
+    
+    // Group your u8 variables together below them
     u8 friendship;
-    u16 maxHP;
+    u8 ppBonuses; // Moved up to pack tightly with other u8 items
     enum Item item;
+	
     u8 nickname[POKEMON_NAME_LENGTH + 1];
-    u8 ppBonuses;
     u8 otName[PLAYER_NAME_LENGTH + 1];
     u32 experience;
     u32 personality;
@@ -763,15 +787,15 @@ void ZeroPlayerPartyMons(void);
 void ZeroEnemyPartyMons(void);
 u32 GetMonPersonality(enum Species species, u8 gender, u8 nature, u8 unownLetter);
 bool32 ComputePlayerShinyOdds(u32 personality, u32 value);
-void CreateMon(struct Pokemon *mon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId);
-void CreateRandomMon(struct Pokemon *mon, enum Species species, u8 level);
-void CreateRandomMonWithIVs(struct Pokemon *mon, enum Species species, u8 level, u8 fixedIv);
-void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId);
-void CreateMonWithIVs(struct Pokemon *mon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId trainerId, u8 fixedIV);
+void CreateMon(struct Pokemon *mon, enum Species species, u16 level, u32 personality, struct OriginalTrainerId);
+void CreateRandomMon(struct Pokemon *mon, enum Species species, u16 level);
+void CreateRandomMonWithIVs(struct Pokemon *mon, enum Species species, u16 level, u8 fixedIv);
+void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u16 level, u32 personality, struct OriginalTrainerId);
+void CreateMonWithIVs(struct Pokemon *mon, enum Species species, u16 level, u32 personality, struct OriginalTrainerId trainerId, u8 fixedIV);
 void SetBoxMonIVs(struct BoxPokemon *mon, u8 fixedIV);
 void SetBoxMonPerfectIVs(struct BoxPokemon *mon, u32 numPerfect);
-void CreateMaleMon(struct Pokemon *mon, enum Species species, u8 level);
-void CreateMonWithIVsPersonality(struct Pokemon *mon, enum Species species, u8 level, u32 ivs, u32 personality);
+void CreateMaleMon(struct Pokemon *mon, enum Species species, u16 level);
+void CreateMonWithIVsPersonality(struct Pokemon *mon, enum Species species, u16 level, u32 ivs, u32 personality);
 void CreateBattleTowerMon(struct Pokemon *mon, struct BattleTowerPokemon *src);
 void CreateBattleTowerMon_HandleLevel(struct Pokemon *mon, struct BattleTowerPokemon *src, bool8 lvl50);
 void CreateApprenticeMon(struct Pokemon *mon, const struct Apprentice *src, u8 monId);

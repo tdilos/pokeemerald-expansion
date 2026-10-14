@@ -413,8 +413,8 @@ const u32 gTrainerFrontPic_MaxieSynderling[] = INCGFX_U32("graphics/trainers/fro
 const u32 gTrainerFrontPic_Hacker[] = INCGFX_U32("graphics/trainers/front_pics/hacker.png", ".4bpp.smol");
 const u16 gTrainerPalette_Hacker[] = INCGFX_U16("graphics/trainers/front_pics/hacker.pal", ".gbapal");
 
-const u32 gTrainerFrontPic_Oakley[] = INCGFX_U32("graphics/trainers/front_pics/oakley_synderling.png", ".4bpp.smol");
-const u16 gTrainerPalette_Oakley[] = INCGFX_U16("graphics/trainers/front_pics/oakley.pal", ".gbapal");
+const u32 gTrainerFrontPic_OakleySynderling[] = INCGFX_U32("graphics/trainers/front_pics/oakley_synderling.png", ".4bpp.smol");
+const u16 gTrainerPalette_OakleySynderling[] = INCGFX_U16("graphics/trainers/front_pics/oakley.pal", ".gbapal");
 
 const u32 gTrainerFrontPic_Cyborg[] = INCGFX_U32("graphics/trainers/front_pics/cyborg.png", ".4bpp.smol");
 const u16 gTrainerPalette_Cyborg[] = INCGFX_U16("graphics/trainers/front_pics/cyborg.pal", ".gbapal");
@@ -425,8 +425,8 @@ const u16 gTrainerPalette_Witch[] = INCGFX_U16("graphics/trainers/front_pics/wit
 const u32 gTrainerFrontPic_RedSynderling[] = INCGFX_U32("graphics/trainers/front_pics/red_synderling.png", ".4bpp.smol");
 const u16 gTrainerPalette_RedSynderling[] = INCGFX_U16("graphics/trainers/front_pics/red_synderling.pal", ".gbapal");
 
-const u32 gTrainerFrontPic_Riley[] = INCGFX_U32("graphics/trainers/front_pics/riley_synderling.png", ".4bpp.smol");
-const u16 gTrainerPalette_Riley[] = INCGFX_U16("graphics/trainers/front_pics/riley_synderling.pal", ".gbapal");
+const u32 gTrainerFrontPic_RileySynderling[] = INCGFX_U32("graphics/trainers/front_pics/riley_synderling.png", ".4bpp.smol");
+const u16 gTrainerPalette_RileySynderling[] = INCGFX_U16("graphics/trainers/front_pics/riley_synderling.pal", ".gbapal");
 
 const u32 gTrainerFrontPic_VertSynderling[] = INCGFX_U32("graphics/trainers/front_pics/vert_synderling.png", ".4bpp.smol");
 
@@ -1872,7 +1872,7 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     },
     [TRAINER_PIC_OAKLEY_SYNDERLING] =
     {
-        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Oakley, gTrainerPalette_Oakley),
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_OakleySynderling, gTrainerPalette_OakleySynderling),
     },
     [TRAINER_PIC_CYBORG] =
     {
@@ -1888,7 +1888,7 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     },
     [TRAINER_PIC_RILEY_SYNDERLING] =
     {
-        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Riley, gTrainerPalette_Riley),
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_RileySynderling, gTrainerPalette_RileySynderling),
     },
     [TRAINER_PIC_VERT_SYNDERLING] =
     {
@@ -1960,4 +1960,12 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_LeaderMadeleine, gTrainerPalette_LeaderMadeleine),
 	},
+	
+    /*[TRAINER_PIC_ARCHON_SOMNIVORE] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gMonFrontPic_Somnivore, gMonPalette_Somnivore),
+	},*/
 };
+
+    //const u32 gMonFrontPic_Somnivore[] = INCGFX_U32("graphics/pokemon/somnivore/front.png", ".4bpp.smol");
+    //const u16 gMonPalette_Somnivore[] = INCGFX_U16("graphics/pokemon/somnivore/normal.pal", ".gbapal");

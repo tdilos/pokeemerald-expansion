@@ -1,8 +1,35 @@
 StationCity_Building1_B1_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, StationCity_Building1_B1_OnFrame
+	@map_script MAP_SCRIPT_ON_TRANSITION, StationCity_Building1_B1_OnTransition
 	.byte 0
 
+StationCity_Building1_B1_OnFrame:
+	map_script_2 VAR_X_COSMOPOLIS_STATE, 0, StationCity_Building1_B1_EventScript_BettermanIntro
+	.2byte 0
 
 
+	@ State descriptions for VAR_X_COSMOPOLIS_STATE
+	@ 0: First entering with Looker
+	@ 1: While exploring Tier 1 worlds
+	@ 2: Tier 2, before finding Tew
+	@ 3: Tier 2, after finding Tew
+	@ 4: During Xurkitree invasion
+
+
+@StationCity_Building1_B1_OnTransition:
+@	setrespawn HEAL_LOCATION_UMBER_TOWN_MALE_MCHOUSE_2F
+@	end
+
+
+
+
+
+StationCity_Building1_B1_EventScript_BettermanIntro::
+	lockall
+
+	setvar VAR_X_COSMOPOLIS_STATE, 1
+	releaseall
+	end
 
 
 

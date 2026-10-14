@@ -83,7 +83,14 @@ OmaomaIsle_Text_LaniPostBattle:
 
 
 OmaomaIsle_EventScript_Leihua::
+	goto_if_set FLAG_RECEIVED_TALISMAN_OMAOMA_ISLE, OmaomaIsle_EventScript_LeihuaPostBattle
 	trainerbattle_single TRAINER_LEIHUA, OmaomaIsle_Text_LeihuaIntro, OmaomaIsle_Text_LeihuaDefeated
+	msgbox OmaomaIsle_Text_LeihuaPostBattle, MSGBOX_AUTOCLOSE
+	giveitem ITEM_TALISMAN_GREEN
+	setflag FLAG_RECEIVED_TALISMAN_OMAOMA_ISLE
+	end
+
+OmaomaIsle_EventScript_LeihuaPostBattle::
 	msgbox OmaomaIsle_Text_LeihuaPostBattle2, MSGBOX_AUTOCLOSE
 	end
 
@@ -103,7 +110,7 @@ OmaomaIsle_Text_LeihuaPostBattle:
 OmaomaIsle_Text_LeihuaPostBattle2:
 	@.string "That OMAOMA TALISMAN was $"
 	.string "That talisman was supposedly left here\n"
-	.string "by the guardians before they disappeared.\p"
+	.string "by the GUARDIANS before they disappeared.\p"
 	.string "They're said to be magical. But I could\n"
 	.string "ever get it to do was dumb rock things.\p"
 	.string "Maybe it will work its magic\n"

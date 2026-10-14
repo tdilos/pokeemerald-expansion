@@ -24684,9 +24684,10 @@ static const struct LevelUpMove sThurslushLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sMimektiplexLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_TRANSFORM),
+    //LEVEL_UP_MOVE( 1, MOVE_TRANSFORM),
+    //LEVEL_UP_MOVE( 1, MOVE_COPYCAT),
+	//LEVEL_UP_MOVE( 1, MOVE_REFLECT_TYPE),
     LEVEL_UP_MOVE( 1, MOVE_MIMIC),
-    LEVEL_UP_MOVE( 1, MOVE_COPYCAT),
-    LEVEL_UP_MOVE( 1, MOVE_REFLECT_TYPE),
+    //LEVEL_UP_MOVE( 1, MOVE_SEISMIC_TOSS),
     LEVEL_UP_END
 };

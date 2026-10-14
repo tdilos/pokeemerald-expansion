@@ -194,6 +194,7 @@ const u8 gText_EmptySpace[] = _(" "); // Unused
 //const u8 gText_HOFDexSaving[] = _("Saving…\nDon't turn off the power.");
 //const u8 gText_HOFCorrupted[] = _("The Hall of Fame data is corrupted.");
 const u8 gText_WelcomeToHOF[] = _("Welcome to the HALL OF FAME!");
+const u8 gText_HOFWimpy[] = _("Wimpy Difficulty");
 const u8 gText_HOFNormal[] = _("Normal Difficulty");
 const u8 gText_HOFHardcore[] = _("Hardcore Difficulty");
 const u8 gText_HOFInsane[] = _("Insane Difficulty");
@@ -896,6 +897,7 @@ const u8 gText_BattleArena[] = _("BATTLE ARENA");
 const u8 gText_BattlePike[] = _("BATTLE PIKE");
 const u8 gText_BattlePyramid[] = _("BATTLE PYRAMID");
 
+const u8 gText_Wimpy[] = _("WIMPY");
 const u8 gText_Hardcore[] = _("HARDCORE");
 const u8 gText_Insane[] = _("INSANE");
 

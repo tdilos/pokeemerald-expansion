@@ -1112,6 +1112,9 @@ static void HallOfFame_PrintWelcomeText(u8 unusedPossiblyWindowId, u8 unused2)
 	//i = gSaveBlock2Ptr->optionsDifficulty;
 	switch (gSaveBlock2Ptr->optionsDifficulty)
         {
+        case DIFFICULTY_WIMPY:
+            AddTextPrinterParameterized3(0, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, gText_HOFWimpy, 0xD0), 0x11, sMonInfoTextColors, 0, gText_HOFWimpy);
+            break;
         case DIFFICULTY_NORMAL:
             AddTextPrinterParameterized3(0, FONT_NORMAL, GetStringCenterAlignXOffset(FONT_NORMAL, gText_HOFNormal, 0xD0), 0x11, sMonInfoTextColors, 0, gText_HOFNormal);
             break;

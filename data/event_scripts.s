@@ -1759,6 +1759,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/mirage_palace.inc"
 	.include "data/scripts/underground_city_doors.inc"
 	.include "data/scripts/wormhole.inc"
+	.include "data/scripts/zygarde_cell.inc"
 
 	.include "data/maps/UmberTown/scripts.inc"
 
@@ -2797,3 +2798,23 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/LushUnderspire_WetLevel/scripts.inc"
 
 	.include "data/maps/LushUnderspire_ExteriorElevator/scripts.inc"
+
+	.include "data/maps/FortreeCity_Crater/scripts.inc"
+
+	.include "data/maps/Route110_TrickHousePuzzle11/scripts.inc"
+
+	.include "data/maps/Route110_TrickHousePuzzle16/scripts.inc"
+
+	.include "data/maps/Route110_TrickHousePuzzle12/scripts.inc"
+
+	.include "data/maps/Route110_TrickHousePuzzle9/scripts.inc"
+
+	.include "data/maps/Route110_TrickHousePuzzle15/scripts.inc"
+
+	.include "data/maps/Route110_TrickHousePuzzle13/scripts.inc"
+
+	.include "data/maps/Route110_TrickHousePuzzle17/scripts.inc"
+
+	.include "data/maps/Route110_TrickHousePuzzle14/scripts.inc"
+
+	.include "data/maps/Route110_TrickHousePuzzle10/scripts.inc"

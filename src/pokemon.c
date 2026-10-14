@@ -61,6 +61,7 @@
 #include "constants/battle_script_commands.h"
 #include "constants/battle_string_ids.h"
 #include "constants/cries.h"
+#include "constants/difficulty.h"
 #include "constants/event_objects.h"
 #include "constants/form_change_types.h"
 #include "constants/item_effects.h"
@@ -1238,18 +1239,21 @@ void ZeroEnemyPartyMons(void)
     gPartiesCount[B_TRAINER_OPPONENT_B] = 0;
 }
 
-void CreateRandomMon(struct Pokemon *mon, enum Species species, u8 level)
+//void CreateRandomMon(struct Pokemon *mon, enum Species species, u8 level)
+void CreateRandomMon(struct Pokemon *mon, enum Species species, u16 level)
 {
     CreateRandomMonWithIVs(mon, species, level, USE_RANDOM_IVS);
 }
 
-void CreateRandomMonWithIVs(struct Pokemon *mon, enum Species species, u8 level, u8 fixedIv)
+//void CreateRandomMonWithIVs(struct Pokemon *mon, enum Species species, u8 level, u8 fixedIv)
+void CreateRandomMonWithIVs(struct Pokemon *mon, enum Species species, u16 level, u8 fixedIv)
 {
     CreateMonWithIVs(mon, species, level, Random32(), OTID_STRUCT_PLAYER_ID, fixedIv);
     GiveMonInitialMoveset(mon);
 }
 
-void CreateMon(struct Pokemon *mon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId trainerId)
+//void CreateMon(struct Pokemon *mon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId trainerId)
+void CreateMon(struct Pokemon *mon, enum Species species, u16 level, u32 personality, struct OriginalTrainerId trainerId)
 {
     u32 mail;
     ZeroMonData(mon);
@@ -1259,7 +1263,8 @@ void CreateMon(struct Pokemon *mon, enum Species species, u8 level, u32 personal
     SetMonData(mon, MON_DATA_MAIL, &mail);
 }
 
-void CreateMonWithIVs(struct Pokemon *mon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId trainerId, u8 fixedIV)
+//void CreateMonWithIVs(struct Pokemon *mon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId trainerId, u8 fixedIV)
+void CreateMonWithIVs(struct Pokemon *mon, enum Species species, u16 level, u32 personality, struct OriginalTrainerId trainerId, u8 fixedIV)
 {
     CreateMon(mon, species, level, personality, trainerId);
     SetBoxMonIVs(&mon->box, fixedIV);
@@ -1366,7 +1371,8 @@ void SetBoxMonPerfectIVs(struct BoxPokemon *mon, u32 numPerfect)
     }
 }
 
-void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId trainerId)
+//void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId trainerId)
+void CreateBoxMon(struct BoxPokemon *boxMon, enum Species species, u16 level, u32 personality, struct OriginalTrainerId trainerId)
 {
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
     u32 value;
@@ -1486,14 +1492,16 @@ u32 GetMonPersonality(enum Species species, u8 gender, u8 nature, u8 unownLetter
 }
 
 // This is only used to create Wally's Ralts.
-void CreateMaleMon(struct Pokemon *mon, enum Species species, u8 level)
+//void CreateMaleMon(struct Pokemon *mon, enum Species species, u8 level)
+void CreateMaleMon(struct Pokemon *mon, enum Species species, u16 level)
 {
     u32 personality = GetMonPersonality(species, MON_MALE, NATURE_RANDOM, RANDOM_UNOWN_LETTER);
     CreateMonWithIVs(mon, species, level, personality, OTID_STRUCT_PLAYER_ID, USE_RANDOM_IVS);
     GiveMonInitialMoveset(mon);
 }
 
-void CreateMonWithIVsPersonality(struct Pokemon *mon, enum Species species, u8 level, u32 ivs, u32 personality)
+//void CreateMonWithIVsPersonality(struct Pokemon *mon, enum Species species, u8 level, u32 ivs, u32 personality)
+void CreateMonWithIVsPersonality(struct Pokemon *mon, enum Species species, u16 level, u32 ivs, u32 personality)
 {
     CreateMon(mon, species, level, personality, OTID_STRUCT_PLAYER_ID);
     SetMonData(mon, MON_DATA_IVS, &ivs);
@@ -1558,7 +1566,8 @@ void CreateBattleTowerMon_HandleLevel(struct Pokemon *mon, struct BattleTowerPok
 {
     s32 i;
     u8 nickname[max(32, POKEMON_NAME_BUFFER_SIZE)];
-    u8 level;
+    //u8 level;
+    u16 level;
     enum Language language;
     u8 value;
 
@@ -1682,7 +1691,8 @@ void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerP
     GetMonData(mon, MON_DATA_NICKNAME10, dest->nickname);
 }
 
-static void CreateEventMon(struct Pokemon *mon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId otId)
+//static void CreateEventMon(struct Pokemon *mon, enum Species species, u8 level, u32 personality, struct OriginalTrainerId otId)
+static void CreateEventMon(struct Pokemon *mon, enum Species species, u16 level, u32 personality, struct OriginalTrainerId otId)
 {
     bool32 isModernFatefulEncounter = TRUE;
 
@@ -1776,6 +1786,8 @@ static u16 CalculateBoxMonChecksumReencrypt(struct BoxPokemon *boxMon)
     return checksum;
 }
 
+#define OVERMIND_STATS_VALUE 10000 // To be determined after future testing 
+
 void CalculateMonStats(struct Pokemon *mon)
 {
     s32 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP);
@@ -1818,6 +1830,12 @@ void CalculateMonStats(struct Pokemon *mon)
         n = ModifyStatByNature(nature, n, i);
         if (B_FRIENDSHIP_BOOST == TRUE)
             n = n + ((n * 10 * friendship) / (MAX_FRIENDSHIP * 100));
+		
+		// Exception handling for Mimektiplex over level 100
+		if (species == SPECIES_MIMEKTIPLEX && level > MAX_LEVEL)
+			n = OVERMIND_STATS_VALUE;
+		
+		
         SetMonData(mon, MON_DATA_MAX_HP + i, &n);
     }
 
@@ -1830,6 +1848,11 @@ void CalculateMonStats(struct Pokemon *mon)
     {
         newMaxHP = 1;
     }
+	// Exception handling for Mimektiplex over level 100
+	else if (species == SPECIES_MIMEKTIPLEX && level > MAX_LEVEL)
+	{
+		newMaxHP = OVERMIND_STATS_VALUE;	
+	}
     else
     {
         s32 n = 2 * GetSpeciesBaseHP(species) + iv[STAT_HP];
@@ -2964,7 +2987,8 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg)
         SetBoxMonData(&mon->box, MON_DATA_STATUS, dataArg);
         break;
     case MON_DATA_LEVEL:
-        SET8(mon->level);
+        //SET8(mon->level);
+        SET16(mon->level);
         break;
     case MON_DATA_HP:
     {
@@ -3001,7 +3025,11 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg)
         SET16(mon->spDefense);
         break;
     case MON_DATA_MAIL:
-        SET8(mon->mail);
+        //SET8(mon->mail);
+        if (*data == 0xFF)
+            mon->mail = 0x3F; // Clamped to our new 6-bit empty sentinel
+        else
+            mon->mail = *data;
         break;
     case MON_DATA_SPECIES_OR_EGG:
         break;
@@ -5098,7 +5126,8 @@ bool8 IsMonPastEvolutionLevel(struct Pokemon *mon)
 {
     int i;
     enum Species species = GetMonData(mon, MON_DATA_SPECIES, 0);
-    u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
+    //u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
+    u16 level = GetMonData(mon, MON_DATA_LEVEL, 0);
     const struct Evolution *evolutions = GetSpeciesEvolutions(species);
 
     if (evolutions == NULL)
@@ -5680,12 +5709,14 @@ void PartySpreadPokerus(struct Pokemon *party)
 bool8 TryIncrementMonLevel(struct Pokemon *mon)
 {
     enum Species species = GetMonData(mon, MON_DATA_SPECIES, 0);
-    u8 nextLevel = GetMonData(mon, MON_DATA_LEVEL, 0) + 1;
+    //u8 nextLevel = GetMonData(mon, MON_DATA_LEVEL, 0) + 1;
+    u16 nextLevel = GetMonData(mon, MON_DATA_LEVEL, 0) + 1;
     u32 expPoints = GetMonData(mon, MON_DATA_EXP, 0);
 	
 	//Level cap stuff
 	u8 cap = 16;
 
+	//level caps for normal
     if (FlagGet(FLAG_BADGE01_GET))
         cap = 24;
 	if (FlagGet(FLAG_BADGE02_GET))
@@ -5705,7 +5736,7 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 	if (FlagGet(FLAG_DEFEATED_AZAMI))
 		cap = 64;
 	
-	if (gSaveBlock2Ptr->optionsDifficulty == 1) //level caps for hardcore
+	if (gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_HARDCORE) //level caps for hardcore
 	{
 		cap = 15;
 		
@@ -5728,7 +5759,7 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 		if (FlagGet(FLAG_DEFEATED_AZAMI))
 			cap = 60;
 	}
-	else if (gSaveBlock2Ptr->optionsDifficulty == 2) //level caps for insane
+	else if (gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_INSANE) //level caps for insane
 	{
 		cap = 14;
 		
@@ -5752,7 +5783,7 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 			cap = 57;
 	}
 	
-	if (FlagGet(FLAG_IS_CHAMPION))
+	if (FlagGet(FLAG_IS_CHAMPION) || gSaveBlock2Ptr->optionsDifficulty == DIFFICULTY_WIMPY) //no level caps for wimpy and postgame
 			cap = 100;
 	
 	
@@ -6979,7 +7010,8 @@ bool32 DoesSpeciesHaveFormChangeMethod(enum Species species, enum FormChanges me
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
 {
     enum Species species = GetMonData(mon, MON_DATA_SPECIES);
-    u8 level = GetMonData(mon, MON_DATA_LEVEL);
+    //u8 level = GetMonData(mon, MON_DATA_LEVEL);
+    u16 level = GetMonData(mon, MON_DATA_LEVEL);
     const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
 
     // Since you can learn more than one move per level,

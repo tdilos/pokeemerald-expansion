@@ -8077,9 +8077,15 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
 }
 
 // base damage formula before adding any modifiers
-static inline s32 CalculateBaseDamage(u32 power, u32 userFinalAttack, u32 level, u32 targetFinalDefense)
+/*static inline s32 CalculateBaseDamage(u32 power, u32 userFinalAttack, u32 level, u32 targetFinalDefense)
 {
     return power * userFinalAttack * (2 * level / 5 + 2) / targetFinalDefense / 50 + 2;
+}*/
+static inline s32 CalculateBaseDamage(u32 power, u32 userFinalAttack, u32 level, u32 targetFinalDefense)
+{
+    // Casting the first term to (u64) forces the entire multiplication chain into 64-bit registers
+	// Prevents overflow in edge cases like a super-boss with 45,000 atk using a high damage move like Explosion
+    return (u64)power * userFinalAttack * (2 * level / 5 + 2) / targetFinalDefense / 50 + 2;
 }
 
 static inline uq4_12_t GetTargetDamageModifier(struct DamageContext *ctx)

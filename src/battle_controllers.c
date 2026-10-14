@@ -1850,6 +1850,7 @@ static void SetBattlerMonData(enum BattlerId battler, struct Pokemon *party, u32
     case REQUEST_ALL_BATTLE:
         {
             u8 iv;
+			u16 tempLevel = battlePokemon->level; // 1. Pull the bit-field value into a normal variable
 
             SetMonData(&party[monId], MON_DATA_SPECIES, &battlePokemon->species);
             SetMonData(&party[monId], MON_DATA_HELD_ITEM, &battlePokemon->item);
@@ -1875,7 +1876,8 @@ static void SetBattlerMonData(enum BattlerId battler, struct Pokemon *party, u32
             SetMonData(&party[monId], MON_DATA_SPDEF_IV, &iv);
             SetMonData(&party[monId], MON_DATA_PERSONALITY, &battlePokemon->personality);
             SetMonData(&party[monId], MON_DATA_STATUS, &battlePokemon->status1);
-            SetMonData(&party[monId], MON_DATA_LEVEL, &battlePokemon->level);
+            //SetMonData(&party[monId], MON_DATA_LEVEL, &battlePokemon->level);
+			SetMonData(&party[monId], MON_DATA_LEVEL, &tempLevel); // 2. Pass the address of the normal variable
             SetMonData(&party[monId], MON_DATA_HP, &battlePokemon->hp);
             SetMonData(&party[monId], MON_DATA_MAX_HP, &battlePokemon->maxHP);
             SetMonData(&party[monId], MON_DATA_ATK, &battlePokemon->attack);
@@ -2380,7 +2382,8 @@ void BtlController_HandleGetRawMonData(enum BattlerId battler)
 
     u8 *src = (u8 *)mon + gBattleResources->bufferA[battler][1];
     u8 *dst = (u8 *)&battleMon + gBattleResources->bufferA[battler][1];
-    u8 i;
+    //u8 i;
+	u32 i;
 
     for (i = 0; i < gBattleResources->bufferA[battler][2]; i++)
         dst[i] = src[i];

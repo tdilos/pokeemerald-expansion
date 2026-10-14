@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_TURQUOISE_GRUNT2",
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
       "x": 4,
       "y": 7,
@@ -28,6 +29,7 @@
       "flag": "FLAG_TURQUOISE_CITY_FREED"
     },
     {
+      "local_id": "LOCALID_TURQUOISE_GRUNT4",
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
       "x": 6,
       "y": 6,
@@ -41,6 +43,7 @@
       "flag": "FLAG_TURQUOISE_CITY_FREED"
     },
     {
+      "local_id": "LOCALID_TURQUOISE_GRUNT1",
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
       "x": 2,
       "y": 6,
@@ -54,6 +57,7 @@
       "flag": "FLAG_TURQUOISE_CITY_FREED"
     },
     {
+      "local_id": "LOCALID_TURQUOISE_GRUNT3",
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
       "x": 6,
       "y": 7,
@@ -67,6 +71,7 @@
       "flag": "FLAG_TURQUOISE_CITY_FREED"
     },
     {
+      "local_id": "LOCALID_BRENDAN_WAREHOUSE",
       "graphics_id": "OBJ_EVENT_GFX_RED",
       "x": 4,
       "y": 13,
@@ -80,6 +85,7 @@
       "flag": "FLAG_HIDE_BRENDAN"
     },
     {
+      "local_id": "LOCALID_JACE_WAREHOUSE",
       "graphics_id": "OBJ_EVENT_GFX_JACE",
       "x": 16,
       "y": 3,
@@ -93,6 +99,7 @@
       "flag": "FLAG_TURQUOISE_CITY_FREED"
     },
     {
+      "local_id": "LOCALID_LITTLEGIRL_WAREHOUSE",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 17,
       "y": 3,
@@ -119,6 +126,7 @@
       "flag": "FLAG_TURQUOISE_CITY_FREED"
     },
     {
+      "local_id": "LOCALID_DEVON_WAREHOUSE",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 3,
       "y": 6,
@@ -132,6 +140,7 @@
       "flag": "FLAG_TURQUOISE_CITY_FREED"
     },
     {
+      "local_id": "LOCALID_MILO_WAREHOUSE",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 5,
       "y": 6,
@@ -145,6 +154,7 @@
       "flag": "FLAG_TURQUOISE_CITY_FREED"
     },
     {
+      "local_id": "LOCALID_ZARTOSHT_WAREHOUSE",
       "graphics_id": "OBJ_EVENT_GFX_ZARTOSHT",
       "x": 4,
       "y": 5,
@@ -158,6 +168,7 @@
       "flag": "FLAG_TURQUOISE_CITY_FREED"
     },
     {
+      "local_id": "LOCALID_TURQUOISE_GRUNT5",
       "graphics_id": "OBJ_EVENT_GFX_GENESIS_GRUNT_M",
       "x": 2,
       "y": 7,

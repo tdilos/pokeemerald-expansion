@@ -924,7 +924,8 @@ void InitBattlerHealthboxCoords(enum BattlerId battler)
     UpdateSpritePos(gHealthboxSpriteIds[battler], x, y);
 }
 
-static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
+//static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
+static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u16 lvl)
 {
     u8 text[16];
     enum BattlerId battler = gSprites[healthboxSpriteId].hMain_Battler;
@@ -942,7 +943,7 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
         text[0] = CHAR_EXTRA_SYMBOL;
         text[1] = CHAR_LV_2;
 
-        ConvertIntToDecimalStringN(text + 2, lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
+		ConvertIntToDecimalStringN(text + 2, lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
         UpdateIndicatorVisibilityAndType(healthboxSpriteId, TRUE);
     }
 
@@ -2124,7 +2125,8 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
             enum Species species;
             u32 exp, currLevelExp;
             s32 currExpBarValue, maxExpBarValue;
-            u8 level;
+            //u8 level;
+			u16 level;
 
             LoadBattleBarGfx(3);
             species = GetMonData(mon, MON_DATA_SPECIES);
@@ -2217,7 +2219,8 @@ s32 MoveBattleBar(enum BattlerId battler, u8 healthboxSpriteId, u8 whichBar, u8 
 static void MoveBattleBarGraphically(enum BattlerId battler, u8 whichBar)
 {
     u8 array[8];
-    u8 level;
+    //u8 level;
+    u16 level;
     u8 barElementId;
     u8 i;
     s32 currValue, maxValue;

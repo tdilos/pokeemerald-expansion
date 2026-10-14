@@ -19,7 +19,7 @@
       "direction": "down"
     },
     {
-      "map": "MAP_FORTREE_CITY",
+      "map": "MAP_FORTREE_CITY_CRATER",
       "offset": 0,
       "direction": "right"
     }
@@ -588,22 +588,9 @@
       "flag": "FLAG_HIDE_ROUTE_119_SCOTT"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WORMHOLE_LARGE",
-      "x": 5,
-      "y": 90,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_TIER_3_WORLDS"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_WORMHOLE_SMALL",
-      "x": 5,
-      "y": 83,
+      "x": 26,
+      "y": 81,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -889,7 +876,7 @@
     {
       "type": "secret_base",
       "x": 26,
-      "y": 81,
+      "y": 79,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_RED_CAVE3_3"
     },

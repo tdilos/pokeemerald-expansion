@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_RIVAL_HAZELS_LAB",
       "graphics_id": "OBJ_EVENT_GFX_JACE",
       "x": 7,
       "y": 5,
@@ -28,6 +29,7 @@
       "flag": "FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_JACE"
     },
     {
+      "local_id": "LOCALID_CHESPIN",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 8,
       "y": 2,
@@ -41,6 +43,7 @@
       "flag": "FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_CHESPIN"
     },
     {
+      "local_id": "LOCALID_MAY_HAZELS_LAB",
       "graphics_id": "OBJ_EVENT_GFX_LEAF",
       "x": 7,
       "y": 3,
@@ -54,6 +57,7 @@
       "flag": "FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_MAY"
     },
     {
+      "local_id": "LOCALID_TEPIG",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 9,
       "y": 2,
@@ -67,6 +71,7 @@
       "flag": "FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_TEPIG"
     },
     {
+      "local_id": "LOCALID_POPPLIO",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 10,
       "y": 2,
@@ -80,6 +85,7 @@
       "flag": "FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_POPPLIO"
     },
     {
+      "local_id": "LOCALID_HAZEL",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
       "x": 2,
       "y": 3,

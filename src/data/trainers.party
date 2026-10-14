@@ -29668,6 +29668,80 @@ EVs: 252 HP / 252 Def / 252 SpA
 
 
 
+=== TRAINER_TIW_1 ===
+Name: TIW
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Battle Type: Singles
+AI: Smart Trainer
+
+Scolipede @ Black Sludge
+Level: 46
+Ability: Speed Boost
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 4 SpD / 252 Spe
+- Protect
+- Iron Defense
+- Toxic
+- Baton Pass
+
+Electrode @ Light Clay
+Level: 47
+Ability: 
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+- Pollenspray
+- Charge Beam
+- Light Screen 
+- Reflect
+
+Decibelle @ Leftovers
+Level: 48
+Ability: Levitate
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 4 SpA
+- Calm Mind
+- Blue Noise
+- Psyshock
+- Dazzling Gleam
+
+Magearna @ Assault Vest
+Level: 50
+Ability: Soul Heart
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 252 HP / 252 Def / 4 SpA
+- Flash Cannon
+- Draining Kiss
+- Aura Sphere
+- Charge Beam
+
+
+
+=== TRAINER_TIW_2 ===
+Name: TIW
+Class: Rival
+Pic: Steven
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Battle Type: Singles
+AI: Smart Trainer
+
+Magearna @ Magearnite
+Level: 70
+Ability: Soul Heart
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 4 Def / 252 SpA / 252 Spe
+- Flash Cannon
+- Dazzling Gleam
+- Aura Sphere
+- Thunderbolt
+
+
+
 === TRAINER_SYNDERLING_TEST ===
 Name: RAYNER
 Class: Synderling
@@ -30730,7 +30804,9 @@ AI: Smart Trainer
 Regigigas @ Leftovers
 Level: 98
 Ability: Steady Start
-- Body Slam
+Nature: Adamant
+EVs: 252 HP / 252 Atk / 4 SpD
+- Thunder Wave
 - Darkest Lariat
 - Drain Punch
 - Protect
@@ -30754,3 +30830,45 @@ EVs: 252 HP / 252 SpD / 4 Spe
 - Toxic Wind
 - Flamethrower
 - Recover
+
+
+
+
+=== TRAINER_ARCHON_TEST ===
+Name: SOMNIVORE
+Class: Archon
+Pic: Archon Somnivore
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Max Revive
+Battle Type: Doubles
+AI: Smart Trainer
+
+Sunflora
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Sunflora
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Sunflora
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Sunflora
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Sunflora
+Level: 30
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Somnivore @ Black Sludge
+Level: 30
+Ability: Beast Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Spore
+- Sludge Bomb
+- Energy Ball
+- Rototill

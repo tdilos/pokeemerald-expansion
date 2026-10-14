@@ -12674,8 +12674,8 @@
     {
       "id": "LAYOUT_LUSH_UNDERSPIRE_B6",
       "name": "LushUnderspire_B6_Layout",
-      "width": 10,
-      "height": 10,
+      "width": 22,
+      "height": 12,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XGreenhouse",
       "border_filepath": "data/layouts/LushUnderspire_B6/border.bin",
@@ -12694,7 +12694,7 @@
     {
       "id": "LAYOUT_LUSH_UNDERSPIRE_LEAFY_LEVEL",
       "name": "LushUnderspire_LeafyLevel_Layout",
-      "width": 63,
+      "width": 65,
       "height": 23,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XGreenhouse",
@@ -12704,7 +12704,7 @@
     {
       "id": "LAYOUT_LUSH_UNDERSPIRE_WET_LEVEL",
       "name": "LushUnderspire_WetLevel_Layout",
-      "width": 30,
+      "width": 31,
       "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XGreenhouse",
@@ -12740,6 +12740,106 @@
       "secondary_tileset": "gTileset_BattleFrontier",
       "border_filepath": "data/layouts/LushUnderspire_ExteriorElevator/border.bin",
       "blockdata_filepath": "data/layouts/LushUnderspire_ExteriorElevator/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_CITY_CRATER",
+      "name": "FortreeCity_Crater_Layout",
+      "width": 40,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/FortreeCity_Crater/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeCity_Crater/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE16",
+      "name": "Route110_TrickHousePuzzle16_Layout",
+      "width": 15,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TrickHousePuzzle",
+      "border_filepath": "data/layouts/Route110_TrickHousePuzzle16/border.bin",
+      "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle16/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE14",
+      "name": "Route110_TrickHousePuzzle14_Layout",
+      "width": 15,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TrickHousePuzzle",
+      "border_filepath": "data/layouts/Route110_TrickHousePuzzle14/border.bin",
+      "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle14/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE13",
+      "name": "Route110_TrickHousePuzzle13_Layout",
+      "width": 15,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TrickHousePuzzle",
+      "border_filepath": "data/layouts/Route110_TrickHousePuzzle13/border.bin",
+      "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle13/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE10",
+      "name": "Route110_TrickHousePuzzle10_Layout",
+      "width": 15,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TrickHousePuzzle",
+      "border_filepath": "data/layouts/Route110_TrickHousePuzzle10/border.bin",
+      "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle10/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE11",
+      "name": "Route110_TrickHousePuzzle11_Layout",
+      "width": 15,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TrickHousePuzzle",
+      "border_filepath": "data/layouts/Route110_TrickHousePuzzle11/border.bin",
+      "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle11/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE12",
+      "name": "Route110_TrickHousePuzzle12_Layout",
+      "width": 15,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TrickHousePuzzle",
+      "border_filepath": "data/layouts/Route110_TrickHousePuzzle12/border.bin",
+      "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle12/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE17",
+      "name": "Route110_TrickHousePuzzle17_Layout",
+      "width": 15,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TrickHousePuzzle",
+      "border_filepath": "data/layouts/Route110_TrickHousePuzzle17/border.bin",
+      "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle17/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE15",
+      "name": "Route110_TrickHousePuzzle15_Layout",
+      "width": 15,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TrickHousePuzzle",
+      "border_filepath": "data/layouts/Route110_TrickHousePuzzle15/border.bin",
+      "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle15/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE110_TRICK_HOUSE_PUZZLE9",
+      "name": "Route110_TrickHousePuzzle9_Layout",
+      "width": 15,
+      "height": 22,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TrickHousePuzzle",
+      "border_filepath": "data/layouts/Route110_TrickHousePuzzle9/border.bin",
+      "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle9/map.bin"
     }
   ]
 }

@@ -50,6 +50,7 @@
 #include "dexnav.h"
 #include "wild_encounter.h"
 #include "constants/battle_frontier.h"
+#include "constants/difficulty.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
@@ -359,7 +360,7 @@ static void BuildNormalStartMenu(void)
         AddStartMenuAction(MENU_ACTION_QUEST_MENU);
 	
     //AddStartMenuAction(MENU_ACTION_SAVE);
-    if (!FlagGet(FLAG_SYS_INSIDE_MIRAGE_PALACE) && (gSaveBlock2Ptr->optionsDifficulty < 2))
+    if (!FlagGet(FLAG_SYS_INSIDE_MIRAGE_PALACE) && (gSaveBlock2Ptr->optionsDifficulty < DIFFICULTY_INSANE))
         AddStartMenuAction(MENU_ACTION_SAVE);
 	
     AddStartMenuAction(MENU_ACTION_OPTION);
