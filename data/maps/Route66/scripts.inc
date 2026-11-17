@@ -1,5 +1,17 @@
 Route66_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route66_OnTransition
 	.byte 0
+
+Route66_OnTransition:
+	goto_if_unset FLAG_IS_CHAMPION, Route66_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_YVELTAL, Route66_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_YVELTAL
+	end
+
+Route66_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_YVELTAL
+	end
+
 
 Route66_EventScript_RouteSign::
 	msgbox Route66_Text_RouteSign, MSGBOX_SIGN

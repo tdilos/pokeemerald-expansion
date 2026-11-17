@@ -1032,6 +1032,15 @@ static const union AnimCmd sAnim_TreeCut[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_SynderlingDissolve[] =
+{
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(2, 12),
+    ANIMCMD_FRAME(3, 12),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_TakeOutRodSouth[] =
 {
     ANIMCMD_FRAME(8, 4),
@@ -1600,6 +1609,11 @@ static const union AnimCmd *const sAnimTable_ThawableIce[] = {
 static const union AnimCmd *const sAnimTable_BulldozableSand[] = {
     [ANIM_STAY_STILL] = sAnim_StayStill,
     [ANIM_REMOVE_OBSTACLE] = sAnim_TreeCut,
+};
+
+static const union AnimCmd *const sAnimTable_Synderling[] = {
+    [ANIM_STAY_STILL] = sAnim_StayStill,
+    [ANIM_REMOVE_OBSTACLE] = sAnim_SynderlingDissolve,
 };
 
 static const union AnimCmd *const sAnimTable_Fishing[] = {

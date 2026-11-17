@@ -1,2 +1,16 @@
 OmaomaIsle_Shrine_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, OmaomaIsle_Shrine_OnTransition
 	.byte 0
+
+OmaomaIsle_Shrine_OnTransition:
+	goto_if_unset FLAG_DEFEATED_ARCHON_NIHILEGO, OmaomaIsle_Shrine_EventScript_HideWormhole
+	goto_if_unset FLAG_DEFEATED_ARCHON_STAKATAKA, OmaomaIsle_Shrine_EventScript_HideWormhole
+	goto_if_unset FLAG_DEFEATED_ARCHON_SOMNIVORE, OmaomaIsle_Shrine_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_TAPU_BULU, OmaomaIsle_Shrine_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_TAPU_BULU
+	end
+
+OmaomaIsle_Shrine_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_TAPU_BULU
+	end
+

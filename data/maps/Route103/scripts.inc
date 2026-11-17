@@ -6,6 +6,7 @@ Route103_MapScripts::
 Route103_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call ProfBirch_EventScript_UpdateLocation
+	call_if_gt VAR_SLATEPORT_CITY_STATE, 6, Route103_EventScript_HideLooker
 	end
 
 Route103_OnLoad:
@@ -16,6 +17,15 @@ Route103_EventScript_OpenAlteringCave::
 	setmetatile 45, 5, METATILE_General_CaveEntrance_Top, TRUE
 	setmetatile 45, 6, METATILE_General_CaveEntrance_Bottom, FALSE
 	return
+
+Route103_EventScript_HideLooker:
+	setflag FLAG_HIDE_LOOKER
+	return
+
+
+
+
+
 
 Route103_EventScript_Rival::
 	lockall
@@ -353,10 +363,19 @@ Route103_Text_RouteSign:
 
 
 Route103_EventScript_LookerEncounter::
-	msgbox Route103_Text_PleaseEnter, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox Route103_Text_PleaseEnter, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE103_LOOKER, Common_Movement_WalkUp
+	waitmovement 0
+	playse SE_EXIT
+	removeobject LOCALID_ROUTE103_LOOKER
+	setvar VAR_SLATEPORT_CITY_STATE, 7
+	release
 	end
 
 Route103_Text_PleaseEnter:
-	.string "CHAMPION of ISSHO!\n"
-	.string "Please enter!$"
+	.string "There you are, {PLAYER}.\n"
+	.string "Please follow me.$"
 

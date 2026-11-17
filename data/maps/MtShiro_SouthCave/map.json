@@ -229,6 +229,13 @@
       "elevation": 0,
       "dest_map": "MAP_MT_SHIRO_CENTRAL_ROOM",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 54,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_MT_SHIRO_TUNNEL",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],

@@ -329,7 +329,7 @@
       "id": "HEAL_LOCATION_X_COSMOPOLIS",
       "map": "MAP_STATION_CITY",
       "x": 16,
-      "y": 14,
+      "y": 26,
       "respawn_map": "MAP_STATION_CITY",
       "respawn_npc": "0"
     }

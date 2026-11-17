@@ -158,7 +158,7 @@
       "x": 9,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_SLATEPORT_CITY_HARBOR",
+      "dest_map": "MAP_STATION_CITY",
       "dest_warp_id": "0"
     }
   ],

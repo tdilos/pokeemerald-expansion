@@ -21,7 +21,7 @@ Common_EventScript_PkmnCenterNurse::
 .endif
 	@goto_if_eq VAR_DIFFICULTY, 0, EventScript_PkmnCenterNurseWithoutFee
 	special GetDifficulty
-	goto_if_lt VAR_RESULT, 2, EventScript_PkmnCenterNurseWithoutFee
+	goto_if_le VAR_RESULT, 2, EventScript_PkmnCenterNurseWithoutFee
 	showmoneybox 0, 0
 	msgbox gText_RestPkmnWithFee, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_HealFee

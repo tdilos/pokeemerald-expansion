@@ -1,41 +1,41 @@
 	.align 2
 voicegroup229:: @ HGSS main
-	voice_keysplit voicegroup233, KeySplitTable35    @ piano
-	voice_keysplit voicegroup234, KeySplitTable36    @ piano 2
+	voice_keysplit voicegroup195, KeySplitTable35    @ piano
+	voice_keysplit voicegroup196, KeySplitTable36    @ piano 2
 	voice_keysplit voicegroup235, KeySplitTable37    @ piano octave
 	voice_keysplit voicegroup236, KeySplitTable9     @ rhodes 1
 	voice_keysplit voicegroup237, KeySplitTable9     @ rhodes 2
-	voice_keysplit voicegroup238, KeySplitTable36    @ vibraphone
+	voice_keysplit voicegroup200, KeySplitTable36	 @ vibraphone
 	voice_keysplit voicegroup239, KeySplitTable38    @ marimba
-	voice_keysplit voicegroup240, KeySplitTable39    @ xylophone
+	voice_keysplit voicegroup202, KeySplitTable13    @ xylophone
 	voice_keysplit voicegroup241, KeySplitTable25    @ tubular bell
 	voice_keysplit voicegroup242, KeySplitTable36    @ glockenspiel
 	voice_keysplit voicegroup243, KeySplitTable38    @ music box
-	voice_keysplit voicegroup244, KeySplitTable40    @ drawbar organ
-	voice_keysplit voicegroup245, KeySplitTable40    @ jazz organ
-	voice_keysplit voicegroup246, KeySplitTable40    @ accordion
+	voice_keysplit voicegroup205, KeySplitTable16    @ rotary organ
+	voice_keysplit voicegroup206, KeySplitTable17    @ straight organ
+	voice_keysplit voicegroup207, KeySplitTable18    @ accordion
 	voice_keysplit voicegroup247, KeySplitTable41    @ nylon guitar
-	voice_keysplit voicegroup248, KeySplitTable41    @ martin guitar
-	voice_keysplit voicegroup249, KeySplitTable32    @ distortion guitar 1
-	voice_keysplit voicegroup250, KeySplitTable32    @ distortion guitar 2
-	voice_keysplit voicegroup251, KeySplitTable41    @ clean guitar
-	voice_keysplit voicegroup252, KeySplitTable42    @ upright bass
-	voice_keysplit voicegroup253, KeySplitTable43    @ fingered bass
+	voice_keysplit voicegroup208, KeySplitTable19    @ acoustic guitar
+	voice_keysplit voicegroup210, KeySplitTable21    @ distortion guitar 1
+	voice_keysplit voicegroup224, KeySplitTable32    @ distortion guitar 2
+	voice_keysplit voicegroup209, KeySplitTable20    @ clean guitar
+	voice_keysplit voicegroup212, KeySplitTable42    @ upright bass 1
+	voice_keysplit voicegroup225, KeySplitTable43    @ upright bass 2
 	voice_directsound 60, 0, DirectSoundWaveData_dp_slapbass_c1_16, 255, 0, 255, 192
 	voice_keysplit voicegroup254, KeySplitTable44    @ synth bass
-	voice_keysplit voicegroup255, KeySplitTable45    @ strings
-	voice_keysplit voicegroup256, KeySplitTable46    @ violin
+	voice_keysplit voicegroup217, KeySplitTable28    @ strings
+	voice_keysplit voicegroup213, KeySplitTable24    @ violin
 	voice_keysplit voicegroup257, KeySplitTable47    @ cello
-	voice_keysplit voicegroup258, KeySplitTable48    @ pizzicato
-	voice_keysplit voicegroup259, KeySplitTable40    @ harp
-	voice_keysplit voicegroup260, KeySplitTable40    @ timpani
-	voice_keysplit voicegroup261, KeySplitTable39    @ trumpets
-	voice_keysplit voicegroup262, KeySplitTable47    @ trombones
-	voice_keysplit voicegroup263, KeySplitTable49    @ french horn solo
-	voice_keysplit voicegroup264, KeySplitTable50    @ french horns
+	voice_keysplit voicegroup214, KeySplitTable25    @ pizzicato
+	voice_keysplit voicegroup215, KeySplitTable26    @ harp
+	voice_keysplit voicegroup216, KeySplitTable27    @ timpani 1
+	voice_keysplit voicegroup219, KeySplitTable29    @ trumpets 1
+	voice_keysplit voicegroup220, KeySplitTable30    @ trombone
+	voice_keysplit voicegroup223, KeySplitTable49    @ french horn solo
+	voice_keysplit voicegroup223, KeySplitTable50    @ french horns
 	voice_keysplit voicegroup265, KeySplitTable51    @ oboe
 	voice_keysplit voicegroup266, KeySplitTable52    @ clarinet
-	voice_keysplit voicegroup267, KeySplitTable53    @ flute
+	voice_keysplit voicegroup226, KeySplitTable33    @ flute
 	voice_keysplit voicegroup268, KeySplitTable54    @ bassoon
 	voice_keysplit voicegroup269, KeySplitTable55    @ orchestra hit
 	voice_keysplit voicegroup270, KeySplitTable38    @ square wave

@@ -1214,7 +1214,7 @@ static const struct InGameTrade sIngameTrades[] =
     },
 	
 	
-// New in-game trade NPCs
+// Tourmaline trade NPCs
 	[INGAME_TRADE_STUNFISK] =
     {
         .nickname = _("Flapjack"),
@@ -1340,10 +1340,12 @@ static const struct InGameTrade sIngameTrades[] =
         .sheen = 10,
         .requestedSpecies = SPECIES_NOCTOWL
     },
-	[INGAME_TRADE_TRUBBISH] =
+	
+// Postgame trade NPCs
+	[INGAME_TRADE_ESPURR] =
     {
-        .nickname = _("Oscar"),
-        .species = SPECIES_TRUBBISH,
+        .nickname = _("Darcy"),
+        .species = SPECIES_ESPURR,
         .ivs = {14, 10, 14, 20, 15, 15},
         .abilityNum = 2,
         .otId = 67889,
@@ -1354,12 +1356,12 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("BILL"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_GRIMER
+        .requestedSpecies = SPECIES_SKITTY
     },
-	[INGAME_TRADE_GASTLY] =
+	[INGAME_TRADE_CUFANT] =
     {
-        .nickname = _("Casper"),
-        .species = SPECIES_GASTLY,
+        .nickname = _("Dumbo"),
+        .species = SPECIES_CUFANT,
         .ivs = {14, 10, 14, 20, 15, 15},
         .abilityNum = 2,
         .otId = 75321,
@@ -1370,12 +1372,12 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("DASTAN"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_SHUPPET
+        .requestedSpecies = SPECIES_PHANPY
     },
-	[INGAME_TRADE_SNEASEL] =
+	[INGAME_TRADE_HONEDGE] =
     {
         .nickname = _("Razor"),
-        .species = SPECIES_SNEASEL,
+        .species = SPECIES_HONEDGE,
         .ivs = {14, 10, 14, 20, 15, 15},
         .abilityNum = 2,
         .otId = 04200,
@@ -1386,12 +1388,12 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("ARVIND"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_SCRAGGY
+        .requestedSpecies = SPECIES_GASTLY
     },
-	[INGAME_TRADE_CLOBBOPUS] =
+	[INGAME_TRADE_ROCKRUFF] =
     {
-        .nickname = _("Tako"),
-        .species = SPECIES_CLOBBOPUS,
+        .nickname = _("Rocco"),
+        .species = SPECIES_ROCKRUFF,
         .ivs = {14, 10, 14, 20, 15, 15},
         .abilityNum = 2,
         .otId = 38405,
@@ -1402,7 +1404,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("CHASE"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_FRILLISH
+        .requestedSpecies = SPECIES_GROWLITHE
     }
 };
 

@@ -2,7 +2,19 @@
 @.set LOCALID_POWER_STATION_GRUNT2, 7
 
 PowerStation_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PowerStation_OnTransition
 	.byte 0
+
+PowerStation_OnTransition:
+	goto_if_unset FLAG_IS_CHAMPION, PowerStation_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_ZAPDOS, PowerStation_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_ZAPDOS
+	end
+
+PowerStation_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_ZAPDOS
+	end
+
 
 PowerStation_EventScript_TV::
 	lock

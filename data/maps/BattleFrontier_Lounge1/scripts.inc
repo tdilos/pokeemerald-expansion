@@ -18,7 +18,7 @@ BattleFrontier_Lounge1_EventScript_GameboyKid::
 	lock
 	faceplayer
 	goto_if_set FLAG_FRONTIER_NPC_TRADE_2_COMPLETED, BattleFrontier_Lounge1_EventScript_TradeCompleted
-	setvar VAR_0x8008, INGAME_TRADE_GASTLY
+	setvar VAR_0x8008, INGAME_TRADE_CUFANT
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT

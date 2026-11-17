@@ -1,2 +1,16 @@
 KiyahaIsle_Shrine_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, KiyahaIsle_Shrine_OnTransition
 	.byte 0
+
+KiyahaIsle_Shrine_OnTransition:
+	goto_if_unset FLAG_DEFEATED_ARCHON_NIHILEGO, KiyahaIsle_Shrine_EventScript_HideWormhole
+	goto_if_unset FLAG_DEFEATED_ARCHON_STAKATAKA, KiyahaIsle_Shrine_EventScript_HideWormhole
+	goto_if_unset FLAG_DEFEATED_ARCHON_SOMNIVORE, KiyahaIsle_Shrine_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_TAPU_FINI, KiyahaIsle_Shrine_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_TAPU_FINI
+	end
+
+KiyahaIsle_Shrine_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_TAPU_FINI
+	end
+

@@ -633,6 +633,8 @@ $(MID_SUBDIR)/mus_vs_rayquaza.s: %.s: %.mid
 $(MID_SUBDIR)/mus_encounter_hiker.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G097 -V076
 
+
+
 $(MID_SUBDIR)/mus_dp_canalave_night.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V110
 
@@ -684,6 +686,8 @@ $(MID_SUBDIR)/mus_dp_mt_coronet.s: %.s: %.mid
 $(MID_SUBDIR)/mus_dp_vs_arceus.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V092
 	
+	
+	
 $(MID_SUBDIR)/mus_hg_dragons_den.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V087
 	
@@ -708,13 +712,22 @@ $(MID_SUBDIR)/mus_hg_viridian_forest.s: %.s: %.mid
 $(MID_SUBDIR)/mus_hg_vs_champion.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G229 -V113	
 
+
+
 $(MID_SUBDIR)/mus_pl_b_factory.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V110
+	
+$(MID_SUBDIR)/mus_pl_looker.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G191 -V115
 	
 $(MID_SUBDIR)/mus_pl_vs_giratina.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G191 -V105
 
 
+
+$(MID_SUBDIR)/mus_bw_dragonspiral_tower.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V089
+	
 $(MID_SUBDIR)/mus_bw_dreamyard.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V093
 	
@@ -723,6 +736,9 @@ $(MID_SUBDIR)/mus_bw_icirrus.s: %.s: %.mid
 
 $(MID_SUBDIR)/mus_bw_lostlorn_forest.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V062
+	
+$(MID_SUBDIR)/mus_bw_n_castle_bridge.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V110
 	
 $(MID_SUBDIR)/mus_bw_opelucid_black.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G275 -V058
@@ -742,8 +758,8 @@ $(MID_SUBDIR)/mus_bw_route6_autumn.s: %.s: %.mid
 $(MID_SUBDIR)/mus_bw_route12_spring.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V071
 	
-$(MID_SUBDIR)/mus_bw_undella_summer.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G274 -V094
+$(MID_SUBDIR)/mus_bw_undella_winter.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G274 -V077
 	
 $(MID_SUBDIR)/mus_bw_underwater.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V084
@@ -751,17 +767,22 @@ $(MID_SUBDIR)/mus_bw_underwater.s: %.s: %.mid
 $(MID_SUBDIR)/mus_bw_vs_n_final.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V105
 
+
+
 $(MID_SUBDIR)/mus_b2_hidden_grotto.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V127
 	
 $(MID_SUBDIR)/mus_b2_lentimas.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V078
 	
-$(MID_SUBDIR)/mus_b2_reversal_mountain_black.s: %.s: %.mid
-	$(MID) $< $@ -E -R0 -G274 -V095
-	
 $(MID_SUBDIR)/mus_b2_road_to_reversal_mountain.s: %.s: %.mid
 	$(MID) $< $@ -E -R0 -G274 -V103
+	
+	
+	
+$(MID_SUBDIR)/mus_xtra_cascade_capers.s: %.s: %.mid
+	$(MID) $< $@ -E -R0 -G_custom1 -V100
+	
 	
 	
 $(MID_SUBDIR)/ph_choice_blend.s: %.s: %.mid

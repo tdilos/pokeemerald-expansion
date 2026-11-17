@@ -411,9 +411,10 @@ PitchblakCity_Gym_EventScript_CadePostBattle::
 	call Common_EventScript_PlayGymBadgeFanfare
 	special GetDifficulty
 	switch VAR_RESULT
-	case 0, PitchblakCity_Gym_EventScript_EventScript_ExplainBadgeNormal
-	case 1, PitchblakCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
-	case 2, PitchblakCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	case 0, PitchblakCity_Gym_EventScript_EventScript_ExplainBadgeWimpy
+	case 1, PitchblakCity_Gym_EventScript_EventScript_ExplainBadgeNormal
+	case 2, PitchblakCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
+	case 3, PitchblakCity_Gym_EventScript_EventScript_ExplainBadgeInsane
 	end
 
 
@@ -427,6 +428,14 @@ PitchblakCity_Gym_EventScript_CadePostBattle::
 
 @PitchblakCity_Gym_EventScript_AlreadyBeatEira::
 
+
+PitchblakCity_Gym_EventScript_EventScript_ExplainBadgeWimpy::
+	msgbox PitchblakCity_Gym_Text_RhythmBadgeWimpyInfoTakeThis2, MSGBOX_DEFAULT
+	setflag FLAG_BADGE05_GET
+	setvar VAR_0x8008, 13
+	call Common_EventScript_SetGymTrainers
+	goto PitchblakCity_Gym_EventScript_GiveAttune
+	end
 
 PitchblakCity_Gym_EventScript_EventScript_ExplainBadgeNormal::
 	msgbox PitchblakCity_Gym_Text_RhythmBadgeNormalInfoTakeThis2, MSGBOX_DEFAULT
@@ -511,6 +520,13 @@ PitchblakCity_Gym_Text_ReceivedRhythmBadge:
 	@.string "that might forestay you.\p"
 @	.string "And I want you to have this,\n"
 @	.string "you protégé, you.$"
+
+PitchblakCity_Gym_Text_RhythmBadgeWimpyInfoTakeThis2:
+	.string "With the RHYTHM BADGE, you can\n"
+	.string "revisit old places with HM FLY.\p"
+	.string "And I'll give you this too,\n"
+	.string "cuz I'm such a nice guy.$"
+
 
 PitchblakCity_Gym_Text_RhythmBadgeNormalInfoTakeThis2:
 	.string "With the RHYTHM BADGE, all POKéMON\n"

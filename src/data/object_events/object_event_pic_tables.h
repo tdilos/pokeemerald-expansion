@@ -692,6 +692,11 @@ static const struct SpriteFrameImage sPicTable_Cole[] = {
     overworld_ascending_frames(gObjectEventPic_Cole, 2, 4),
 };
 
+
+static const struct SpriteFrameImage sPicTable_Synderling[] = {
+    overworld_ascending_frames(gObjectEventPic_Synderling, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Hacker[] = {
     overworld_ascending_frames(gObjectEventPic_Hacker, 2, 4),
 };

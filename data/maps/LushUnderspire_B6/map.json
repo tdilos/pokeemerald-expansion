@@ -2,7 +2,7 @@
   "id": "MAP_LUSH_UNDERSPIRE_B6",
   "name": "LushUnderspire_B6",
   "layout": "LAYOUT_LUSH_UNDERSPIRE_B6",
-  "music": "MUS_DUMMY",
+  "music": "MUS_BW_DRAGONSPIRAL_TOWER",
   "region_map_section": "MAPSEC_LUSH_UNDERSPIRE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -13,8 +13,132 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
-  "warp_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 0,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 25,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 45,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 50,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 2,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_LEAFY_LEVEL",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 3,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_LEAFY_LEVEL",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 27,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_LEAFY_LEVEL",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 28,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_LEAFY_LEVEL",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 39,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_LEAFY_LEVEL",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 40,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_LEAFY_LEVEL",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 40,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_B5",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 41,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_B5",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 56,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_B5",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 57,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_B5",
+      "dest_warp_id": "5"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

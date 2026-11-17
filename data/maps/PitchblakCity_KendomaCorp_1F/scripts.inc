@@ -6,7 +6,7 @@ PitchblakCity_KendomaCorp_1F_OnTransition:
 	call_if_eq VAR_PITCHBLAK_CITY_STATE, 1, PitchblakCity_KendomaCorp_1F_EventScript_HidePolice
 	call_if_eq VAR_PITCHBLAK_CITY_STATE, 2, PitchblakCity_KendomaCorp_1F_EventScript_AfterNedaBattle
 	special GetDifficulty
-	goto_if_eq VAR_RESULT, 0, PitchblakCity_KendomaCorp_1F_EventScript_RevealBurglar
+	goto_if_le VAR_RESULT, 1, PitchblakCity_KendomaCorp_1F_EventScript_RevealBurglar
 	setflag FLAG_HIDE_SHORTCUT_NPCS
 	end
 

@@ -24,12 +24,63 @@ StationCity_Building1_B1_OnFrame:
 
 
 
-StationCity_Building1_B1_EventScript_BettermanIntro::
-	lockall
+
+StationCity_Building1_B1_EventScript_BettermanIntro2::
+	msgbox StationCity_Building1_B1_Text_WillYouHelpUs, MSGBOX_YESNO
 
 	setvar VAR_X_COSMOPOLIS_STATE, 1
 	releaseall
 	end
+
+StationCity_Building1_B1_Text_WillYouHelpUs:
+	.string "$"
+
+
+
+
+StationCity_Building1_B1_EventScript_BettermanIntro::
+	lockall
+
+
+	msgbox StationCity_Building1_B1_Text_BettermanJustAsWeFeared, MSGBOX_DEFAULT
+	closemessage
+
+	msgbox StationCity_Building1_B1_Text_BettermanSomethingWorse, MSGBOX_DEFAULT
+	closemessage
+
+	msgbox StationCity_Building1_B1_Text_BettermanWhereToBegin, MSGBOX_DEFAULT
+	closemessage
+	goto StationCity_Building1_B1_EventScript_BettermanQuestions2
+
+
+
+
+
+
+
+StationCity_Building1_B1_Text_BettermanJustAsWeFeared:
+	.string "BETTERMAN: I see.\n"
+	.string "So it's just as we feared.\p"
+	.string "A small remnant of TEAM GENESIS really did\n"
+	.string "escape into ULTRA SPACE that day.\p"
+	.string "Including my renegade son.\n"
+	.string "The one you know as RAYNER.$"
+
+StationCity_Building1_B1_Text_BettermanSomethingWorse:
+	.string "TEAM GENESIS'S plans were foiled,\n"
+	.string "but their activity in ULTRA SPACE\l"
+	.string "may have attracted the attention of\l"
+	.string "an even greater threat...$"
+
+StationCity_Building1_B1_Text_BettermanWhereToBegin:
+	.string "There is much to discuss and frankly\n"
+	.string "I'm not sure where to begin.\p"
+	.string "You must have a lot of questions, yes?\n"
+	.string "Why don't we start there.$"
+
+
+
+
 
 
 
@@ -37,18 +88,21 @@ StationCity_Building1_B1_EventScript_BettermanIntro::
 StationCity_Building1_B1_EventScript_Betterman::
 	lock
 	faceplayer
+StationCity_Building1_B1_EventScript_BettermanQuestions::
 	msgbox StationCity_Building1_B1_Text_ICanExplain, MSGBOX_DEFAULT
+StationCity_Building1_B1_EventScript_BettermanQuestions2::
 	special ScriptMenu_CreateLilycoveSSTidalMultichoice
 	@waitstate
 	special GetLilycoveSSTidalSelection
 	switch VAR_RESULT
 	case 0, StationCity_Building1_B1_EventScript_WhereAreWe
-	case 1, StationCity_Building1_B1_EventScript_WhatIsOvermind
-	case 2, StationCity_Building1_B1_EventScript_WhatAreArchons
-	case 3, StationCity_Building1_B1_EventScript_WhatAreSynderlings
-	case 4, StationCity_Building1_B1_EventScript_WhatAreWormholes
-	case 5, StationCity_Building1_B1_EventScript_Exit
-	case MULTI_B_PRESSED, StationCity_Building1_B1_EventScript_Exit
+	case 1, StationCity_Building1_B1_EventScript_WhatAreTheseWormholes
+	case 2, StationCity_Building1_B1_EventScript_WhatIsAWormhole
+	case 3, StationCity_Building1_B1_EventScript_WhoAreTheEnemy
+	case 4, StationCity_Building1_B1_EventScript_WhatsSoDangerousAboutThem
+	case 5, StationCity_Building1_B1_EventScript_WhatCanWeDoToStopThem
+	case 6, StationCity_Building1_B1_EventScript_FinishQuestions
+	case MULTI_B_PRESSED, StationCity_Building1_B1_EventScript_FinishQuestions
 	release
 	end
 
@@ -59,32 +113,33 @@ StationCity_Building1_B1_Text_ICanExplain:
 StationCity_Building1_B1_EventScript_WhereAreWe::
 	msgbox StationCity_Building1_B1_Text_WhereAreWe, MSGBOX_DEFAULT
 	closemessage
-	release
-	end
+	goto StationCity_Building1_B1_EventScript_BettermanQuestions
 
-StationCity_Building1_B1_EventScript_WhatIsOvermind::
-	msgbox StationCity_Building1_B1_Text_WhatIsOvermind, MSGBOX_DEFAULT
+StationCity_Building1_B1_EventScript_WhatAreTheseWormholes::
+	msgbox StationCity_Building1_B1_Text_BettermanWormholes, MSGBOX_DEFAULT
 	closemessage
-	release
-	end
+	goto StationCity_Building1_B1_EventScript_BettermanQuestions
 
-StationCity_Building1_B1_EventScript_WhatAreArchons::
-	msgbox StationCity_Building1_B1_Text_WhatAreArchons, MSGBOX_DEFAULT
+StationCity_Building1_B1_EventScript_WhatIsAWormhole::
+	msgbox StationCity_Building1_B1_Text_WhatIsAWormhole, MSGBOX_DEFAULT
 	closemessage
-	release
-	end
+	goto StationCity_Building1_B1_EventScript_BettermanQuestions
 
-StationCity_Building1_B1_EventScript_WhatAreSynderlings::
-	msgbox StationCity_Building1_B1_Text_WhatAreSynderlings, MSGBOX_DEFAULT
+StationCity_Building1_B1_EventScript_WhoAreTheEnemy::
+	msgbox StationCity_Building1_B1_Text_BettermanSynderlings, MSGBOX_DEFAULT
 	closemessage
-	release
-	end
+	goto StationCity_Building1_B1_EventScript_BettermanQuestions
 
-StationCity_Building1_B1_EventScript_WhatAreWormholes::
-	msgbox StationCity_Building1_B1_Text_WhatAreWormholes, MSGBOX_DEFAULT
+StationCity_Building1_B1_EventScript_WhatsSoDangerousAboutThem::
+	msgbox StationCity_Building1_B1_Text_BettermanDanger, MSGBOX_DEFAULT
 	closemessage
-	release
-	end
+	goto StationCity_Building1_B1_EventScript_BettermanQuestions
+
+StationCity_Building1_B1_EventScript_WhatCanWeDoToStopThem::
+	msgbox StationCity_Building1_B1_Text_BettermanWontLie, MSGBOX_DEFAULT
+	closemessage
+	goto StationCity_Building1_B1_EventScript_BettermanQuestions
+
 
 StationCity_Building1_B1_Text_WhereAreWe:
 	.string "Oh, this place? Believe it or not,\n"
@@ -99,6 +154,62 @@ StationCity_Building1_B1_Text_WhereAreWe:
 	.string "the enemy's crucible of worlds.$"
 	@.string "From here, we can more easily\n"
 	@.string "observe distant worlds.$"
+
+StationCity_Building1_B1_Text_BettermanWormholes:
+	.string "$"
+
+StationCity_Building1_B1_Text_WhatIsAWormhole:
+	.string "Well, uh...\p"
+	.string "Imagine you attach a handle to a\n"
+	.string "ball and...\p"
+	.string "Oh, nevermind.\p"
+	.string "Just know that stepping inside one will\n"
+	.string "take you to a distant place.\p"
+	.string "The smaller ones seem to connect only\n"
+	.string "to regions of our own world.\p"
+	.string "But the largest will take you to\n"
+	.string "extraterrestrial worlds!\p"
+	.string "From here, we've been monitoring wormhole\n"
+	.string "activity in the HOENN and ISSHO regions.\p"
+	.string "Feel free to ask SELWYN for more\n"
+	.string "about that.$"
+
+StationCity_Building1_B1_Text_BettermanSynderlings:
+	.string "They call themselves SYNDERLINGS.\n"
+	.string "We don't know where they come from.\p"
+	.string "But they've managed to conquer a whole\n"
+	.string "host of worlds.\p"
+	.string "And we fear that they may come after\n"
+	.string "our world next.\p"
+	.string "So far we've tried to minimize our\n"
+	.string "contact with them.\p"
+	.string "But we'll need to face them eventually.\p"
+	.string "$"
+
+StationCity_Building1_B1_Text_BettermanDanger:
+	.string "Somehow they've developed a way to\n"
+	.string "assimilate outsiders.\p"
+	.string "And force them to do their bidding.\p"
+	.string "We don't fully understand it. But we've\n"
+	.string "already lost some good people to it.\p"
+	.string "And we're doing everything we can to\n"
+	.string "avoid future losses.\p"
+	.string "That is why we've elected to keep our\n"
+	.string "team small and concentrate on sabotage\l"
+	.string "rather than all-out war.$"
+
+StationCity_Building1_B1_Text_BettermanWontLie:
+	.string "I won't lie to you, {PLAYER}.\n"
+	.string "Our odds of success are slim.\p"
+	.string "The enemy is stronger than anything\n"
+	.string "we've ever faced.\p"
+	.string "And the more we fight them,\n"
+	.string "the stronger they become.\p"
+	.string "But we may be able to use the\n"
+	.string "enemy's powers against them.\p"
+	.string "Thanks to some new allies, we've learned\n"
+	.string "about a device called a MEGA RING.\p"
+	.string "$"
 
 StationCity_Building1_B1_Text_WhatIsOvermind:
 	.string "We're not sure. The files we've retrieved\n"
@@ -116,33 +227,16 @@ StationCity_Building1_B1_Text_WhatAreArchons:
 	.string "Conduits for OVERMIND'S power.\n"
 	.string "They embody its hold on each world.$"
 
-StationCity_Building1_B1_Text_WhatAreSynderlings:
-	.string "A special kind of symbiote we've encountered\n"
-	.string "with greatly enhanced abilities.\p"
-	.string "This is only a theory, but I believe that\n"
-	.string "somehow else has enhanced ordinary symbiotes.$"
-
-StationCity_Building1_B1_Text_WhatAreWormholes:
-	.string "Well, uh...\p"
-	.string "Imagine you attach a handle to a\n"
-	.string "ball and...\p"
-	.string "Oh, nevermind.\p"
-	.string "Just know that stepping inside one will\n"
-	.string "take you to a distant place.\p"
-	.string "The smaller ones seem to connect only\n"
-	.string "to regions of our own world.\p"
-	.string "But the largest will take you to\n"
-	.string "extraterrestrial worlds!\p"
-	.string "From here, we've been monitoring wormhole\n"
-	.string "activity in the HOENN and ISSHO regions.\p"
-	.string "Feel free to ask SELWYN for more\n"
-	.string "about that.$"
-
-StationCity_Building1_B1_EventScript_Exit::
+StationCity_Building1_B1_EventScript_FinishQuestions::
+	goto_if_lt VAR_X_COSMOPOLIS_STATE, 1, StationCity_Building1_B1_EventScript_BettermanIntro2
+	msgbox StationCity_Building1_B1_Text_AskMeAgain, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
+StationCity_Building1_B1_Text_AskMeAgain:
+	.string "This is all a lot to take in, I'm sure.\n"
+	.string "Feel free to ask me again.$"
 
 
 
@@ -165,7 +259,7 @@ StationCity_Building1_B1_Text_Tier2Worlds:
 	.string "and METEOR FALLS.$"
 
 StationCity_Building1_B1_Text_Tier3Worlds:
-	.string "MT. CHIMNEY, ROUTE 119,\n"
+	.string "JAGGED PASS, FORTREE CITY,\n"
 	.string "and MT. PYRE.$"
 
 StationCity_Building1_B1_Text_Tier4Worlds:

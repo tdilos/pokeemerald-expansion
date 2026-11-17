@@ -815,6 +815,7 @@
 //#define FLAG_UNUSED_0x289  0x289 // Unused Flag
 //#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
 //#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
+
 #define FLAG_UNUSED_0x28C  0x28C // Unused Flag
 #define FLAG_UNUSED_0x28D  0x28D // Unused Flag
 #define FLAG_UNUSED_0x28E  0x28E // Unused Flag
@@ -826,9 +827,13 @@
 #define FLAG_UNUSED_0x294  0x294 // Unused Flag
 #define FLAG_UNUSED_0x295  0x295 // Unused Flag
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
+//#define FLAG_UNUSED_0x297  0x297 // Unused Flag
+//#define FLAG_UNUSED_0x298  0x298 // Unused Flag
+//#define FLAG_UNUSED_0x299  0x299 // Unused Flag
+#define FLAG_HIDE_SILAS    0x297 // Unused Flag
+#define FLAG_HIDE_EMMA     0x298 // Unused Flag
+#define FLAG_HIDE_LOOKER   0x299 // Unused Flag
+
 //#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
 //#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
 //#define FLAG_UNUSED_0x29C  0x29C // Unused Flag
@@ -1998,20 +2003,20 @@
 
 #define FLAG_HIDE_WORMHOLE_CRESSELIA                        0x670
 #define FLAG_HIDE_WORMHOLE_DARKRAI                          0x671
-#define FLAG_UNUSED_0x672                                   0x672
-#define FLAG_UNUSED_0x673                                   0x673
-#define FLAG_UNUSED_0x674                                   0x674
-#define FLAG_UNUSED_0x675                                   0x675
-#define FLAG_UNUSED_0x676                                   0x676
-#define FLAG_UNUSED_0x677                                   0x677
-#define FLAG_UNUSED_0x678                                   0x678
-#define FLAG_UNUSED_0x679                                   0x679
-#define FLAG_UNUSED_0x67A                                   0x67A
-#define FLAG_UNUSED_0x67B                                   0x67B
-#define FLAG_UNUSED_0x67C                                   0x67C
-#define FLAG_UNUSED_0x67D                                   0x67D
-#define FLAG_UNUSED_0x67E                                   0x67E
-#define FLAG_UNUSED_0x67F                                   0x67F
+#define FLAG_DEFEATED_ARCHON_MANIPULOBE                     0x672
+#define FLAG_DEFEATED_ARCHON_XURKITREE                      0x673
+#define FLAG_DEFEATED_ARCHON_NIHILEGO                       0x674
+#define FLAG_DEFEATED_ARCHON_STAKATAKA                      0x675
+#define FLAG_DEFEATED_ARCHON_SOMNIVORE                      0x676
+#define FLAG_DEFEATED_ARCHON_BUZZWOLE                       0x677
+#define FLAG_DEFEATED_ARCHON_PHEROMOSA                      0x678
+#define FLAG_DEFEATED_ARCHON_TEROPHAGE                      0x679
+#define FLAG_DEFEATED_ARCHON_CELESTEELA                     0x67A
+#define FLAG_DEFEATED_ARCHON_KARTANA                        0x67B
+#define FLAG_DEFEATED_ARCHON_REIZURGE                       0x67C
+#define FLAG_DEFEATED_ARCHON_THURSLUSH                      0x67D
+#define FLAG_DEFEATED_ARCHON_BLACEPHALON                    0x67E
+#define FLAG_DEFEATED_ARCHON_GUZZLORD                       0x67F
 
 #define FLAG_UNUSED_0x680                                   0x680
 #define FLAG_UNUSED_0x681                                   0x681

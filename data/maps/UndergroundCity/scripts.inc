@@ -13,7 +13,7 @@ UndergroundCity_EventScript_SetForceOffscreenLoad::
 
 UndergroundCity_OnTransition:
 	special GetDifficulty
-	goto_if_eq VAR_RESULT, 0, UndergroundCity_EventScript_RevealBurglar
+	goto_if_le VAR_RESULT, 1, UndergroundCity_EventScript_RevealBurglar
 	setflag FLAG_HIDE_SHORTCUT_NPCS
 	end
 

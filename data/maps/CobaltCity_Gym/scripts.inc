@@ -19,9 +19,18 @@ CobaltCity_Gym_EventScript_MyrtlePostBattle::
 	call Common_EventScript_PlayGymBadgeFanfare
 	special GetDifficulty
 	switch VAR_RESULT
-	case 0, CobaltCity_Gym_EventScript_EventScript_ExplainBadgeNormal
-	case 1, CobaltCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
-	case 2, CobaltCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	case 0, CobaltCity_Gym_EventScript_EventScript_ExplainBadgeWimpy
+	case 1, CobaltCity_Gym_EventScript_EventScript_ExplainBadgeNormal
+	case 2, CobaltCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
+	case 3, CobaltCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	end
+
+CobaltCity_Gym_EventScript_EventScript_ExplainBadgeWimpy::
+	msgbox CobaltCity_Gym_Text_HyacinthBadgeWimpyInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_BADGE03_GET
+	setvar VAR_0x8008, 11
+	call Common_EventScript_SetGymTrainers
+	goto CobaltCity_Gym_EventScript_GivePollenspray
 	end
 
 CobaltCity_Gym_EventScript_EventScript_ExplainBadgeNormal::
@@ -88,6 +97,12 @@ CobaltCity_Gym_Text_MyrtleDefeated:
 CobaltCity_Gym_Text_ReceivedHyacinthBadge:
 	.string "{PLAYER} received the HYACINTH BADGE\n"
 	.string "from MYRTLE.$"
+
+CobaltCity_Gym_Text_HyacinthBadgeWimpyInfoTakeThis:
+	.string "The HYACINTH BADGE enables your\n"
+	.string "POKéMON to use the HM move\l"
+	.string "STRENGTH outside of battle.\p"
+	.string "And you can have this as well.$"
 
 CobaltCity_Gym_Text_HyacinthBadgeNormalInfoTakeThis:
 	.string "The HYACINTH BADGE makes all POKéMON\n"

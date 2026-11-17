@@ -4,7 +4,17 @@ Route123_MapScripts::
 
 Route123_OnTransition:
 	special SetRoute123Weather
+
+	goto_if_unset FLAG_IS_CHAMPION, Route123_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_RESHIRAM, Route123_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_RESHIRAM
+
 	end
+
+Route123_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_RESHIRAM
+	end
+
 
 Route123_EventScript_GigaDrainGirl::
 	lock

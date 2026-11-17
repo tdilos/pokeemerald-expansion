@@ -516,49 +516,50 @@
 #define MUS_HG_VIRIDIAN_FOREST      582 // Viridian Forest
 #define MUS_HG_VS_CHAMPION          583 // Also used for Red battle
 #define MUS_PL_B_FACTORY            584 // Battle Factory
-#define MUS_PL_VS_GIRATINA          585 // Battle! (Giratina)
-#define MUS_BW_DREAMYARD            586 // The Dreamyard
-#define MUS_BW_ICIRRUS              587 // Icirrus City
-#define MUS_BW_LOSTLORN_FOREST      588 // Lostlorn Forest
-#define MUS_BW_OPELUCID_BLACK       589 // Opelucid City (Pokémon Black)
-#define MUS_BW_OPELUCID_WHITE       590 // Opelucid City (Pokémon White)
-#define MUS_BW_RELIC_CASTLE         591 // Relic Castle
-#define MUS_BW_ROUTE2_SPRING        592 // Route 2 (Spring)
-#define MUS_BW_ROUTE6_AUTUMN        593 // Route 6 (Autumn)
-#define MUS_BW_ROUTE12_SPRING       594 // Route 12 (Spring)
-#define MUS_BW_UNDELLA_SUMMER       595 // Undella Town (Summer)
-#define MUS_BW_UNDERWATER           596 // Abyssal Ruins
-#define MUS_BW_VS_N_FINAL           597 // Decisive Battle! (N)
-#define MUS_B2_HIDDEN_GROTTO        598 // Hidden Grottos
-#define MUS_B2_LENTIMAS             599 // Lentimas Town
-#define MUS_B2_REVERSAL_MOUNTAIN_BLACK 600 // Reversal Mountain (Pokémon Black 2)
-#define MUS_B2_ROAD_TO_REVERSAL_MOUNTAIN 601 // Reversal Mountain exterior
+#define MUS_PL_LOOKER               585 // Looker
+#define MUS_PL_VS_GIRATINA          586 // Battle! (Giratina)
+#define MUS_BW_DRAGONSPIRAL_TOWER   587 // Dragonspiral Tower
+#define MUS_BW_DREAMYARD            588 // The Dreamyard
+#define MUS_BW_ICIRRUS              589 // Icirrus City
+#define MUS_BW_LOSTLORN_FOREST      590 // Lostlorn Forest
+#define MUS_BW_N_CASTLE_BRIDGE      591 // Embracing One's Duty
+#define MUS_BW_OPELUCID_BLACK       592 // Opelucid City (Pokémon Black)
+#define MUS_BW_OPELUCID_WHITE       593 // Opelucid City (Pokémon White)
+#define MUS_BW_RELIC_CASTLE         594 // Relic Castle
+#define MUS_BW_ROUTE2_SPRING        595 // Route 2 (Spring)
+#define MUS_BW_ROUTE6_AUTUMN        596 // Route 6 (Autumn)
+#define MUS_BW_ROUTE10              597 // Route 10
+#define MUS_BW_ROUTE12_SPRING       598 // Route 12 (Spring)
+#define MUS_BW_UNDELLA_WINTER       599 // Undella Town (Winter)
+#define MUS_BW_UNDERWATER           600 // Abyssal Ruins
+#define MUS_BW_VS_N_FINAL           601 // Decisive Battle! (N)
+#define MUS_B2_HIDDEN_GROTTO        602 // Hidden Grottos
+#define MUS_B2_LENTIMAS             603 // Lentimas Town
+#define MUS_B2_ROAD_TO_REVERSAL_MOUNTAIN 604 // Reversal Mountain exterior
 
-#define MUS_PLACEHOLDER_1            602
-#define MUS_PLACEHOLDER_2            603
-#define MUS_PLACEHOLDER_3            604
-#define MUS_PLACEHOLDER_4            605
-#define MUS_PLACEHOLDER_5            606
-#define MUS_PLACEHOLDER_6            607
+#define MUS_XTRA_CASCADE_CAPERS     605 // DKC3 
 
-#define MUS_PLACEHOLDER_7            608
-#define MUS_PLACEHOLDER_8            609
-#define MUS_PLACEHOLDER_9            610
-#define MUS_PLACEHOLDER_10           611
-#define MUS_PLACEHOLDER_11           612
-#define MUS_PLACEHOLDER_12           613
-#define MUS_PLACEHOLDER_13           614
-#define MUS_PLACEHOLDER_14           615
-#define MUS_PLACEHOLDER_15           616
-#define MUS_PLACEHOLDER_16           617
-#define MUS_PLACEHOLDER_17           618
-#define MUS_PLACEHOLDER_18           619
-#define MUS_PLACEHOLDER_19           620
-#define MUS_PLACEHOLDER_20           621
-#define MUS_PLACEHOLDER_21           622
-#define MUS_PLACEHOLDER_22           623
+#define MUS_PLACEHOLDER_18          606
+#define MUS_PLACEHOLDER_17          607
 
-#define END_MUS                     MUS_PLACEHOLDER_22
+#define MUS_PLACEHOLDER_16          608
+#define MUS_PLACEHOLDER_15          609
+#define MUS_PLACEHOLDER_14          610
+#define MUS_PLACEHOLDER_13          611
+#define MUS_PLACEHOLDER_12          612
+#define MUS_PLACEHOLDER_11          613
+#define MUS_PLACEHOLDER_10          614
+#define MUS_PLACEHOLDER_9           615
+#define MUS_PLACEHOLDER_8           616
+#define MUS_PLACEHOLDER_7           617
+#define MUS_PLACEHOLDER_6           618
+#define MUS_PLACEHOLDER_5           619
+#define MUS_PLACEHOLDER_4           620
+#define MUS_PLACEHOLDER_3           621
+#define MUS_PLACEHOLDER_2           622
+#define MUS_PLACEHOLDER_1           623
+
+#define END_MUS                     MUS_PLACEHOLDER_1
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.

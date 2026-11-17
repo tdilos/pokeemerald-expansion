@@ -1,8 +1,22 @@
 Sandshraf_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
-	map_script MAP_SCRIPT_ON_TRANSITION, CaveHole_FixCrackedGround
+	map_script MAP_SCRIPT_ON_TRANSITION, Sandshraf_1F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, Sandshraf_1F_SetHoleWarp
 	.byte 0
+
+
+Sandshraf_1F_OnTransition:
+	goto_if_unset FLAG_IS_CHAMPION, Sandshraf_1F_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_TERRAKION, Sandshraf_1F_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_TERRAKION
+	goto CaveHole_FixCrackedGround
+	end
+
+Sandshraf_1F_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_TERRAKION
+	goto CaveHole_FixCrackedGround
+	end
+
 
 Sandshraf_1F_SetHoleWarp:
 	setstepcallback STEP_CB_CRACKED_FLOOR

@@ -355,9 +355,18 @@ HaewenTown_Gym_EventScript_EthelPostBattle::
 	call Common_EventScript_PlayGymBadgeFanfare
 	special GetDifficulty
 	switch VAR_RESULT
-	case 0, HaewenTown_Gym_EventScript_EventScript_ExplainBadgeNormal
-	case 1, HaewenTown_Gym_EventScript_EventScript_ExplainBadgeHardcore
-	case 2, HaewenTown_Gym_EventScript_EventScript_ExplainBadgeInsane
+	case 0, HaewenTown_Gym_EventScript_EventScript_ExplainBadgeWimpy
+	case 1, HaewenTown_Gym_EventScript_EventScript_ExplainBadgeNormal
+	case 2, HaewenTown_Gym_EventScript_EventScript_ExplainBadgeHardcore
+	case 3, HaewenTown_Gym_EventScript_EventScript_ExplainBadgeInsane
+	end
+
+HaewenTown_Gym_EventScript_EventScript_ExplainBadgeWimpy::
+	msgbox HaewenTown_Gym_Text_WyrmBadgeWimpyInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_BADGE07_GET
+	setvar VAR_0x8008, 15
+	call Common_EventScript_SetGymTrainers
+	goto HaewenTown_Gym_EventScript_GiveDragonClaw
 	end
 
 HaewenTown_Gym_EventScript_EventScript_ExplainBadgeNormal::
@@ -448,6 +457,12 @@ HaewenTown_Gym_Text_EthelDefeated:
 HaewenTown_Gym_Text_ReceivedWyrmBadge:
 	.string "{PLAYER} received the WYRM BADGE\n"
 	.string "from MOTHER ETHEL.$"
+
+HaewenTown_Gym_Text_WyrmBadgeWimpyInfoTakeThis:
+	.string "The WYRM BADGE enables your\n"
+	.string "POKéMON to use the HM move\l"
+	.string "MAGNET RISE outside of battle.\p"
+	.string "And lastly, a gift from me.$"
 
 HaewenTown_Gym_Text_WyrmBadgeNormalInfoTakeThis:
 	.string "The WYRM BADGE makes all POKéMON up to\n"

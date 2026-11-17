@@ -13,7 +13,17 @@ Route115_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_WEST, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_115_EAST, AbnormalWeather_StartGroudonWeather
+
+	goto_if_unset FLAG_IS_CHAMPION, Route115_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_CRESSELIA, Route115_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_CRESSELIA
+
 	end
+
+Route115_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_CRESSELIA
+	end
+
 
 Route115_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1

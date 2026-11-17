@@ -14,6 +14,13 @@ StationCity_Text_TownSign:
 	.string "STATION CITY\n"
 	.string "“The threshhold of the cosmos.”$"
 
+StationCity_EventScript_LabSign::
+	msgbox StationCity_Text_LabSign, MSGBOX_SIGN
+	end
+
+StationCity_Text_LabSign:
+	.string "BETTERMAN'S LAB$"
+
 
 
 
@@ -38,7 +45,9 @@ StationCity_EventScript_Boy1::
 	end
 
 StationCity_Text_SeeMyHouse:
-	.string "Hah! You can see our roof from here!$"
+	@.string "Hah! You can see our roof from here!$"
+	.string "We're standing right underneath\n"
+	.string "my house!$"
 	@.string "Heh. If you look up, you can\n"
 	@.string "see my room from here.$"
 

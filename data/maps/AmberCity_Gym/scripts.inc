@@ -117,9 +117,18 @@ AmberCity_Gym_EventScript_TaraPostBattle::
 	call Common_EventScript_PlayGymBadgeFanfare
 	special GetDifficulty
 	switch VAR_RESULT
-	case 0, AmberCity_Gym_EventScript_EventScript_ExplainBadgeNormal
-	case 1, AmberCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
-	case 2, AmberCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	case 0, AmberCity_Gym_EventScript_EventScript_ExplainBadgeWimpy
+	case 1, AmberCity_Gym_EventScript_EventScript_ExplainBadgeNormal
+	case 2, AmberCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
+	case 3, AmberCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	end
+
+AmberCity_Gym_EventScript_EventScript_ExplainBadgeWimpy::
+	msgbox AmberCity_Gym_Text_SiliconBadgeWimpyInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_BADGE02_GET
+	setvar VAR_0x8008, 10
+	call Common_EventScript_SetGymTrainers
+	goto AmberCity_Gym_EventScript_GiveDustDevil
 	end
 
 AmberCity_Gym_EventScript_EventScript_ExplainBadgeNormal::
@@ -180,6 +189,13 @@ AmberCity_Gym_Text_TaraDefeated:
 AmberCity_Gym_Text_ReceivedSiliconBadge:
 	.string "{PLAYER} received the SILICON BADGE\n"
 	.string "from TARA.$"
+
+
+AmberCity_Gym_Text_SiliconBadgeWimpyInfoTakeThis:
+	.string "The SILICON BADGE enables your\n"
+	.string "POKéMON to use the HM move\l"
+	.string "ROCK SMASH outside of battle.\p"
+	.string "And I'd like you to take this too.$"
 
 AmberCity_Gym_Text_SiliconBadgeNormalInfoTakeThis:
 	.string "The SILICON BADGE will make all\n"

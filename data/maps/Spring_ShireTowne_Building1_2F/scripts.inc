@@ -28,6 +28,6 @@ ShireTowne_Building1_2F_EventScript_Scientist2::
 	end
 
 ShireTowne_Building1_2F_Text_ChangingSeasons:
-	.string "The seasons on this world change so rapidly.\n"
+	.string "The seasons here change so rapidly.\n"
 	.string "I should've brought a heavier coat...$"
 

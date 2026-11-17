@@ -477,6 +477,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Benga;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zinnia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cole;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Synderling;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hacker;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Witch;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cyborg;
@@ -986,6 +987,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BENGA]                    = &gObjectEventGraphicsInfo_Benga,
     [OBJ_EVENT_GFX_ZINNIA]                   = &gObjectEventGraphicsInfo_Zinnia,
     [OBJ_EVENT_GFX_COLE]                     = &gObjectEventGraphicsInfo_Cole,
+    [OBJ_EVENT_GFX_SYNDERLING]               = &gObjectEventGraphicsInfo_Synderling,
     [OBJ_EVENT_GFX_HACKER]                   = &gObjectEventGraphicsInfo_Hacker,
     [OBJ_EVENT_GFX_WITCH]                    = &gObjectEventGraphicsInfo_Witch,
     [OBJ_EVENT_GFX_CYBORG]                   = &gObjectEventGraphicsInfo_Cyborg,

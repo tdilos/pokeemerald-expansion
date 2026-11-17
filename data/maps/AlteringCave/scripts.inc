@@ -4,7 +4,10 @@ AlteringCave_MapScripts::
 
 AlteringCave_OnTransition:
 	setflag FLAG_LANDMARK_ALTERING_CAVE
+	call_if_gt VAR_SLATEPORT_CITY_STATE, 7, AlteringCave_EventScript_HideLooker
 	end
 
-
+AlteringCave_EventScript_HideLooker:
+	setflag FLAG_HIDE_LOOKER
+	return
 

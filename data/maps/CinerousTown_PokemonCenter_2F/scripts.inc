@@ -107,9 +107,10 @@ Common_EventScript_DifficultyChecker::
 	faceplayer
 	special GetDifficulty
 	switch VAR_RESULT
-	case 0, Common_EventScript_NormalDifficultyCheck
-	case 1, Common_EventScript_HardcoreDifficultyCheck
-	case 2, Common_EventScript_InsaneDifficultyCheck
+	case 0, Common_EventScript_WimpyDifficultyCheck
+	case 1, Common_EventScript_NormalDifficultyCheck
+	case 2, Common_EventScript_HardcoreDifficultyCheck
+	case 3, Common_EventScript_InsaneDifficultyCheck
 	end
 
 Common_EventScript_InsaneDifficultyCheck::
@@ -139,7 +140,20 @@ Common_EventScript_HardcoreDifficultyCheck::
 	end
 
 Common_EventScript_NormalDifficultyCheck::
-	msgbox Common_Text_NormalDifficulty, MSGBOX_DEFAULT
+	msgbox Common_Text_NormalDifficulty, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Common_EventScript_DontChangeDifficulty
+	msgbox Common_Text_ChangeToWimpy, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Common_EventScript_DontChangeDifficulty
+	closemessage
+	special DecreaseDifficulty
+	playfanfare MUS_MOVE_DELETED
+	waitfanfare
+	msgbox Common_Text_ChangedToWimpy, MSGBOX_DEFAULT
+	release
+	end
+
+Common_EventScript_WimpyDifficultyCheck::
+	msgbox Common_Text_WimpyDifficulty, MSGBOX_DEFAULT
 	release
 	end
 
@@ -158,7 +172,13 @@ Common_Text_HardcoreDifficulty:
 
 Common_Text_NormalDifficulty:
 	.string "You're a NORMAL adventurer, huh?\p"
-	.string "Meh, you're boring.$"
+	.string "Meh, you're boring.\p"
+	.string "Or maybe you don't think you're\n"
+	.string "cut out for this anymore?$"
+
+Common_Text_WimpyDifficulty:
+	.string "You're a WIMPY adventurer, huh?\p"
+	.string "You said it, not me.$"
 
 Common_Text_ChangeToHardcore:
 	.string "I see. So would you rather be\n"
@@ -168,6 +188,10 @@ Common_Text_ChangeToNormal:
 	.string "I see. So would you rather be\n"
 	.string "a NORMAL adventurer instead?$"
 
+Common_Text_ChangeToWimpy:
+	.string "I see. So would you rather be\n"
+	.string "a WIMPY adventurer instead?$"
+
 Common_Text_ChangedToHardcore:
 	.string "Done. From now on, you'll be\n"
 	.string "known as a HARDCORE adventurer.$"
@@ -175,6 +199,10 @@ Common_Text_ChangedToHardcore:
 Common_Text_ChangedToNormal:
 	.string "Done. From now on, you'll be\n"
 	.string "known as a NORMAL adventurer.$"
+
+Common_Text_ChangedToWimpy:
+	.string "Done. From now on, you'll be\n"
+	.string "known as a WIMPY adventurer.$"
 
 Common_EventScript_DontChangeDifficulty::
 	msgbox Common_Text_DontChangeDifficulty, MSGBOX_DEFAULT

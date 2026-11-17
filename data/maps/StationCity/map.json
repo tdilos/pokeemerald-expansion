@@ -38,7 +38,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
       "x": 25,
-      "y": 20,
+      "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -51,7 +51,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 26,
-      "y": 8,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -64,7 +64,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
       "x": 19,
-      "y": 13,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -77,7 +77,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_3",
       "x": 25,
-      "y": 8,
+      "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -90,7 +90,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WITCH",
       "x": 20,
-      "y": 19,
+      "y": 38,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -102,8 +102,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OAKLEY",
-      "x": 22,
-      "y": 23,
+      "x": 32,
+      "y": 53,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -116,7 +116,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_RED_EVIL",
       "x": 21,
-      "y": 7,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -129,7 +129,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_RILEY",
       "x": 32,
-      "y": 22,
+      "y": 34,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -142,11 +142,11 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BIKER_M",
       "x": 22,
-      "y": 27,
+      "y": 42,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
       "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_y": 10,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -155,7 +155,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CYBORG",
       "x": 13,
-      "y": 15,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -169,17 +169,38 @@
   "warp_events": [
     {
       "x": 16,
-      "y": 13,
+      "y": 25,
       "elevation": 0,
       "dest_map": "MAP_STATION_CITY_BUILDING1_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 8,
-      "y": 13,
+      "x": 28,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_KIYAHA_ISLE_INTERIOR",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 36,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_SPRING_FOURFOLD_FOREST_NW",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_LUSH_UNDERSPIRE_LEAFY_LEVEL",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_STATION_CITY_BUILDING2_1F",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],
@@ -187,10 +208,18 @@
     {
       "type": "sign",
       "x": 24,
-      "y": 11,
+      "y": 15,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "StationCity_EventScript_TownSign"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "StationCity_EventScript_LabSign"
     }
   ]
 }

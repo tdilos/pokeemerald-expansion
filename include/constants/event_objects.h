@@ -542,6 +542,8 @@ enum
     OBJ_EVENT_GFX_PHEROMOSA,
     OBJ_EVENT_GFX_KARTANA,
 
+    OBJ_EVENT_GFX_SYNDERLING,
+	
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -1206,11 +1208,12 @@ enum
 #define OBJ_EVENT_PAL_TAG_VIOLET                  0x1136
 #define OBJ_EVENT_PAL_TAG_VIOLET_REFLECTION       0x1137
 
-#define OBJ_EVENT_PAL_TAG_NIHILEGO                0x1138
-#define OBJ_EVENT_PAL_TAG_STAKATAKA               0x1139
-#define OBJ_EVENT_PAL_TAG_BUZZWOLE                0x113A
-#define OBJ_EVENT_PAL_TAG_PHEROMOSA               0x113B
-#define OBJ_EVENT_PAL_TAG_KARTANA                 0x113C
+#define OBJ_EVENT_PAL_TAG_COLE                    0x1138
+#define OBJ_EVENT_PAL_TAG_NIHILEGO                0x1139
+#define OBJ_EVENT_PAL_TAG_STAKATAKA               0x113A
+#define OBJ_EVENT_PAL_TAG_BUZZWOLE                0x113B
+#define OBJ_EVENT_PAL_TAG_PHEROMOSA               0x113C
+#define OBJ_EVENT_PAL_TAG_KARTANA                 0x113D
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

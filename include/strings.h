@@ -490,6 +490,10 @@ extern const u8 gText_B2F[];
 extern const u8 gText_B3F[];
 extern const u8 gText_B4F[];
 extern const u8 gText_Rooftop[];
+extern const u8 gText_UnderspireLevelB[];
+extern const u8 gText_UnderspireLevelL[];
+extern const u8 gText_UnderspireLevelS[];
+extern const u8 gText_UnderspireLevelU[];
 extern const u8 gText_ElevatorNowOn[];
 
 /*extern const u8 gText_BlueFlute[];

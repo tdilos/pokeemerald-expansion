@@ -1,2 +1,16 @@
 KeokeoIsle_Shrine_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, KeokeoIsle_Shrine_OnTransition
 	.byte 0
+
+KeokeoIsle_Shrine_OnTransition:
+	goto_if_unset FLAG_DEFEATED_ARCHON_NIHILEGO, KeokeoIsle_Shrine_EventScript_HideWormhole
+	goto_if_unset FLAG_DEFEATED_ARCHON_STAKATAKA, KeokeoIsle_Shrine_EventScript_HideWormhole
+	goto_if_unset FLAG_DEFEATED_ARCHON_SOMNIVORE, KeokeoIsle_Shrine_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_TAPU_LELE, KeokeoIsle_Shrine_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_TAPU_LELE
+	end
+
+KeokeoIsle_Shrine_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_TAPU_LELE
+	end
+

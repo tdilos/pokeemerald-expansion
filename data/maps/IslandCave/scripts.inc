@@ -31,7 +31,18 @@ IslandCave_OnTransition:
 	setflag FLAG_LANDMARK_ISLAND_CAVE
 	call IslandCave_EventScript_ClearSteps
 	@call_if_unset FLAG_DEFEATED_REGICE, IslandCave_EventScript_ShowRegice
+
+	goto_if_unset FLAG_IS_CHAMPION, IslandCave_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_REGICE, IslandCave_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_REGICE
+
 	end
+
+IslandCave_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_REGICE
+	end
+
+
 
 @IslandCave_EventScript_ShowRegice::
 @	clearflag FLAG_HIDE_REGICE

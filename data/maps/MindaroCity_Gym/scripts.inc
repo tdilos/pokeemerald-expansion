@@ -196,9 +196,18 @@ MindaroCity_Gym_EventScript_EiraPostBattle::
 	call Common_EventScript_PlayGymBadgeFanfare
 	special GetDifficulty
 	switch VAR_RESULT
-	case 0, MindaroCity_Gym_EventScript_EventScript_ExplainBadgeNormal
-	case 1, MindaroCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
-	case 2, MindaroCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	case 0, MindaroCity_Gym_EventScript_EventScript_ExplainBadgeWimpy
+	case 1, MindaroCity_Gym_EventScript_EventScript_ExplainBadgeNormal
+	case 2, MindaroCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
+	case 3, MindaroCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	end
+
+MindaroCity_Gym_EventScript_EventScript_ExplainBadgeWimpy::
+	msgbox MindaroCity_Gym_Text_RimeBadgeWimpyInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_BADGE04_GET
+	setvar VAR_0x8008, 12
+	call Common_EventScript_SetGymTrainers
+	goto MindaroCity_Gym_EventScript_GiveIceSkate
 	end
 
 MindaroCity_Gym_EventScript_EventScript_ExplainBadgeNormal::
@@ -275,6 +284,13 @@ MindaroCity_Gym_Text_EiraDefeated:
 MindaroCity_Gym_Text_ReceivedRimeBadge:
 	.string "{PLAYER} received the RIME BADGE\n"
 	.string "from EIRA.$"
+
+MindaroCity_Gym_Text_RimeBadgeWimpyInfoTakeThis:
+	.string "The RIME BADGE enables your\n"
+	.string "POKéMON to use the HM move\l"
+	.string "THAW outside of battle.\p"
+	.string "And since that battle was so much fun,\n"
+	.string "I want you to take this too.$"
 
 MindaroCity_Gym_Text_RimeBadgeNormalInfoTakeThis:
 	.string "The RIME BADGE makes all POKéMON\n"

@@ -68,8 +68,9 @@ UmberTown_MaleMCHouse_EventScript_MomPostgame::
 	special EnableNationalPokedex
 	delay 20
 	msgbox UmberTown_MaleMCHouse_Text_MomPostgame2, MSGBOX_DEFAULT
-	giveitem ITEM_HM10
+	giveitem ITEM_OLD_SEA_MAP
 	goto_if_eq VAR_RESULT, 0, UmberTown_MaleMCHouse_EventScript_NoRoomForWaterfall
+	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
 	msgbox UmberTown_MaleMCHouse_Text_MomPostgame3, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MOM, Common_Movement_WalkDown
@@ -155,7 +156,7 @@ UmberTown_MaleMCHouse_EventScript_MomIntro::
 	setvar VAR_LITTLEROOT_INTRO_STATE, 1
 	@call_if_ge VAR_DIFFICULTY, 1, UmberTown_MaleMCHouse_EventScript_DisableBagUse
 	special GetDifficulty
-	call_if_ge VAR_RESULT, 1, UmberTown_MaleMCHouse_EventScript_DisableBagUse
+	call_if_ge VAR_RESULT, 2, UmberTown_MaleMCHouse_EventScript_DisableBagUse
 	applymovement LOCALID_MOM, Common_Movement_FaceLeft
 	waitmovement 0
 	applymovement LOCALID_MOM, Common_Movement_ExclamationMark
@@ -290,13 +291,13 @@ UmberTown_MaleMCHouse_Text_DontPushYourselfTooHard:
 	.string "Go for it, honey!$"
 
 UmberTown_MaleMCHouse_EventScript_TryGiveWaterfall::
-	goto_if_set FLAG_RECEIVED_HM10, UmberTown_MaleMCHouse_EventScript_Mom7
+	goto_if_set FLAG_ENABLE_SHIP_FARAWAY_ISLAND, UmberTown_MaleMCHouse_EventScript_Mom7
 	lockall
 	faceplayer
 	msgbox UmberTown_MaleMCHouse_Text_TryGiveWaterfall, MSGBOX_DEFAULT
-	giveitem ITEM_HM10
+	giveitem ITEM_OLD_SEA_MAP
 	goto_if_eq VAR_RESULT, 0, UmberTown_MaleMCHouse_EventScript_CantGiveWaterfall
-	setflag FLAG_RECEIVED_HM10
+	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
 	applymovement LOCALID_MOM, Common_Movement_FaceRight
 	releaseall
 	end

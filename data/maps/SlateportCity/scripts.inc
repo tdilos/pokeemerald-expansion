@@ -8,10 +8,13 @@ SlateportCity_OnTransition:
 	call SlateportCity_EventScript_EnterSlateport
 	@call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
 	@call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
+	call_if_eq VAR_SLATEPORT_CITY_STATE, 0, SlateportCity_EventScript_ChangeMusic
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 2, SlateportCity_EventScript_MoveLookerToShipyard
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 3, SlateportCity_EventScript_HideLooker
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 4, SlateportCity_EventScript_HideLooker
 	call_if_eq VAR_SLATEPORT_CITY_STATE, 5, SlateportCity_EventScript_MoveEveryoneToShipyard
+	@call_if_gt VAR_SLATEPORT_CITY_STATE, 5, SlateportCity_EventScript_HideLooker
+	@call_if_gt VAR_SLATEPORT_CITY_STATE, 5, SlateportCity_EventScript_HideEmma
 	end
 
 SlateportCity_EventScript_EnterSlateport::
@@ -20,14 +23,25 @@ SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER
 	return
 
+SlateportCity_EventScript_ChangeMusic:
+	playbgm MUS_ABNORMAL_WEATHER, TRUE
+	return
+
 SlateportCity_EventScript_MoveLookerToShipyard:
+	removeobject LOCALID_LOOKER_SLATEPORT_CITY
+	setvar OBJ_EVENT_GFX_VAR_0, OBJ_EVENT_GFX_LOOKER
 	setobjectxyperm LOCALID_LOOKER_SLATEPORT_CITY, 26, 39
 	setobjectmovementtype LOCALID_LOOKER_SLATEPORT_CITY, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_LOOKER
+	addobject LOCALID_LOOKER_SLATEPORT_CITY
 	return
 
 SlateportCity_EventScript_HideLooker:
+	removeobject LOCALID_LOOKER_SLATEPORT_CITY
 	setobjectxyperm LOCALID_LOOKER_SLATEPORT_CITY, 0, 0
 	setobjectmovementtype LOCALID_LOOKER_SLATEPORT_CITY, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA
+	addobject LOCALID_LOOKER_SLATEPORT_CITY
 	return
 
 SlateportCity_EventScript_MoveEveryoneToShipyard:
@@ -82,10 +96,143 @@ SlateportCity_OnFrame:
 	@ 4: After battling downstairs grunts
 	@ 5: After battling Silas
 	@ 6: After choosing a starter from Birch
+	@ 7: After talking to Looker on Route 103
+	@ 8: After entering Wormhole to X-Cosmopolis
+
+
+SlateportCity_EventScript_MoveLookerToHarbor:
+	removeobject LOCALID_LOOKER_DISGUISED_SLATEPORT_CITY
+	setobjectxyperm LOCALID_LOOKER_DISGUISED_SLATEPORT_CITY, 28, 13
+	setobjectmovementtype LOCALID_LOOKER_DISGUISED_SLATEPORT_CITY, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA
+	addobject LOCALID_LOOKER_DISGUISED_SLATEPORT_CITY
+	return
+
+SlateportCity_EventScript_LookerRemoveDisguise:
+	applymovement LOCALID_LOOKER_DISGUISED_SLATEPORT_CITY, Slateport_Movement_RemoveDisguise
+	waitmovement 10
+	removeobject LOCALID_LOOKER_DISGUISED_SLATEPORT_CITY
+	setobjectxyperm LOCALID_LOOKER_DISGUISED_SLATEPORT_CITY, 4, 1
+	addobject LOCALID_LOOKER_DISGUISED_SLATEPORT_CITY
+	removeobject LOCALID_LOOKER_SLATEPORT_CITY
+	setobjectxyperm LOCALID_LOOKER_SLATEPORT_CITY, 28, 13
+	setobjectmovementtype LOCALID_LOOKER_SLATEPORT_CITY, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_LOOKER
+	addobject LOCALID_LOOKER_SLATEPORT_CITY
+	playse SE_M_WING_ATTACK
+	waitse
+	return
+
+Slateport_Movement_RemoveDisguise:
+	face_left
+	delay_8
+	face_up
+	delay_8
+	face_right
+	delay_8
+	face_down
+	step_end
+
+
+
 
 SlateportCity_EventScript_BirchsAideScene::
 	lockall
+	delay 30
+	playse SE_PIN
+	applymovement LOCALID_BIRCHS_AIDE, Common_Movement_FaceUp
+	applymovement LOCALID_BIRCHS_AIDE, Common_Movement_ExclamationMark
+	waitmovement 60
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 30
+	applymovement LOCALID_BIRCHS_AIDE, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox SlateportCity_Text_BirchsAideIntro1, MSGBOX_DEFAULT
+	closemessage
+	delay 60
+	applymovement LOCALID_BIRCHS_AIDE, Common_Movement_FaceDown
+	waitmovement 60
+	msgbox SlateportCity_Text_BirchsAideIntro2, MSGBOX_DEFAULT
+	closemessage
+	delay 60
+	msgbox SlateportCity_Text_LookerIntro1, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_BIRCHS_AIDE, Common_Movement_ExclamationMark
+	waitmovement 30
 
+	call SlateportCity_EventScript_MoveLookerToHarbor
+	playse SE_EXIT
+	waitse
+	delay 30
+
+	msgbox SlateportCity_Text_LookerIntro2, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	applymovement LOCALID_LOOKER_DISGUISED_SLATEPORT_CITY, Movement_PkmnCenterNurse_Bow
+	waitmovement 30
+
+	msgbox SlateportCity_Text_LookerIntro3, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	applymovement LOCALID_BIRCHS_AIDE, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox SlateportCity_Text_WhoAreYou, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+
+	msgbox SlateportCity_Text_LookerIntro4, MSGBOX_DEFAULT
+	closemessage
+	
+	call SlateportCity_EventScript_LookerRemoveDisguise
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkDown
+	waitmovement 0
+	playbgm MUS_PL_LOOKER, FALSE
+
+	msgbox SlateportCity_Text_LookerIntro5, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+
+	msgbox SlateportCity_Text_LookerIntro6, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+
+	msgbox SlateportCity_Text_LookerIntro7, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	applymovement LOCALID_BIRCHS_AIDE, Common_Movement_FaceLeft
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_FaceRight
+	waitmovement 30
+
+	msgbox SlateportCity_Text_LookerIntro8, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkLeft
+	waitmovement 0
+	call SlateportCity_EventScript_MoveLookerToShipyard
 	setvar VAR_SLATEPORT_CITY_STATE, 2
 	releaseall
 	end
@@ -93,10 +240,53 @@ SlateportCity_EventScript_BirchsAideScene::
 
 SlateportCity_EventScript_PostRescueScene::
 	lockall
+	applymovement LOCALID_LOOKER_SLATEPORT_CITY, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	msgbox SlateportCity_Text_AreYouAlright, MSGBOX_DEFAULT
+	closemessage
 
 	setvar VAR_SLATEPORT_CITY_STATE, 6
 	releaseall
 	end
+
+SlateportCity_Text_AreYouAlright:
+	.string "LOOKER: Are you alright, professor?$"
+
+SlateportCity_Text_BirchImFine:
+	.string "BIRCH: I'm fine, thanks to you\n"
+	.string "and {PLAYER}.$"
+
+SlateportCity_Text_LookerInPursuit:
+	.string "LOOKER: TEAM AQUA fled the premises,\n"
+	.string "but our people are on their trail.\p"
+	.string "My insider should be regrouping\n"
+	.string "with us right about...$"
+
+
+
+SlateportCity_Text_BirchStarterChoice:
+	.string "\p"
+	.string "I have to say, {PLAYER}, this isn't how\n"
+	.string "I expected to meet you today.\p"
+	.string "But I thank you for rescuing me from\n"
+	.string "those TEAM AQUA nuts.\p"
+	.string "And to show my thanks, I'd like you to\n"
+	.string "take one of these POKéMON off my hands.\p"
+	.string "This is the first time you've been\n"
+	.string "to HOENN, correct?\p"
+	.string "A new adventure in a new region\n"
+	.string "deserves a new partner\p"
+	.string "Why don't you choose one?$"
+
+SlateportCity_Text_BirchFarewell:
+	.string "BIRCH: I know you'll raise that POKéMON well.\p"
+	.string "\p"
+	.string "Now then, I must get back to my lab.\p"
+	.string "If you're ever in LITTLEROOT TOWN,\n"
+	.string "feel free to stop by.\p"
+	.string "I'd be more than happy to rate your\n"
+	.string "POKéDEX for you.\p"
+	.string "Safe travels, {PLAYER}.$"
 
 @ Player exits harbor, Birch's aide notices and approaches
 @ Aide explains that Birch has been kidnapped by Team Aqua but doesn't know where they've taken him and wonders what to do
@@ -104,7 +294,7 @@ SlateportCity_EventScript_PostRescueScene::
 @ After a comical exchange in which he forgets his disguise, he explains that he has been following Team Aqua here and deduced that they're operating in the shadows from the shipyard
 @ He invites the player to meet him there next
 
-SlateportCity_Text_BirchsAideIntro:
+SlateportCity_Text_BirchsAideIntro1:
 	.string "Oh you! You're {PLAYER}!\n"
 	.string "Thank goodness you came along!\p"
 	.string "First let me introduce myself. I'm one\n"
@@ -125,9 +315,10 @@ SlateportCity_Text_BirchsAideIntro:
 	.string "You're ISSHO'S new CHAMPION, right?\n"
 	.string "You have to do something!\p"
 	.string "I wish I could tell you where they went,\n"
-	.string "but I honestly never saw them.\p"
-	.string "\p"
-	.string "Oh we have nothing to go on but this note.\n"
+	.string "but I honestly never saw them...$"
+
+SlateportCity_Text_BirchsAideIntro2:
+	.string "We have nothing to go on but this note.\n"
 	.string "And a ransom that I can't pay.\p"
 	.string "I don't know where to go or what to do.\n"
 	.string "Maybe it is hopeless...$"

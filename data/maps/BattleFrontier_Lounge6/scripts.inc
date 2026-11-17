@@ -22,7 +22,7 @@ BattleFrontier_Lounge6_EventScript_GameboyKid::
 	lock
 	faceplayer
 	goto_if_set FLAG_FRONTIER_NPC_TRADE_1_COMPLETED, BattleFrontier_Lounge6_EventScript_TradeCompleted
-	setvar VAR_0x8008, INGAME_TRADE_TRUBBISH
+	setvar VAR_0x8008, INGAME_TRADE_ESPURR
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT

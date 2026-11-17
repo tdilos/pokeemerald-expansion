@@ -13,17 +13,26 @@ Route97_EventScript_UnsetForceOffscreenLoad::
 
 Route97_OnTransition:
 	special GetWeekday
-	goto_if_eq VAR_RESULT, 3, Route97_EventScript_RevealWeekdaySibling
-	goto Route97_EventScript_HideWeekdaySibling
+	call_if_eq VAR_RESULT, 3, Route97_EventScript_RevealWeekdaySibling
+	call_if_ne VAR_RESULT, 3, Route97_EventScript_HideWeekdaySibling
+
+	goto_if_unset FLAG_IS_CHAMPION, Route97_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_ARTICUNO, Route97_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_ARTICUNO
+
+	end
+
+Route97_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_ARTICUNO
 	end
 
 Route97_EventScript_RevealWeekdaySibling:
 	clearflag FLAG_HIDE_WEEKDAY_SIBLING
-	end
+	return
 
 Route97_EventScript_HideWeekdaySibling:
 	setflag FLAG_HIDE_WEEKDAY_SIBLING
-	end
+	return
 
 Route97_EventScript_Wendy::
 	lock

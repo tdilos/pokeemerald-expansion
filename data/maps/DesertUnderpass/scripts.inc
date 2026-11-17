@@ -4,7 +4,17 @@ DesertUnderpass_MapScripts::
 
 DesertUnderpass_OnTransition:
 	setflag FLAG_LANDMARK_DESERT_UNDERPASS
+
+	goto_if_unset FLAG_IS_CHAMPION, DesertUnderpass_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_HOOPA, DesertUnderpass_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_HOOPA
+
 	end
+
+DesertUnderpass_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_HOOPA
+	end
+
 
 DesertUnderpass_EventScript_Fossil::
 	lock

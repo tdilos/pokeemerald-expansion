@@ -10,7 +10,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_GameboyKid::
 	lock
 	faceplayer
 	goto_if_set FLAG_FRONTIER_NPC_TRADE_4_COMPLETED, BattleFrontier_ExchangeServiceCorner_EventScript_TradeCompleted
-	setvar VAR_0x8008, INGAME_TRADE_CLOBBOPUS
+	setvar VAR_0x8008, INGAME_TRADE_ROCKRUFF
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT

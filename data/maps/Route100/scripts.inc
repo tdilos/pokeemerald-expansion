@@ -16,7 +16,7 @@ Route100_OnTransition:
 	setflag FLAG_LANDMARK_ROUTE_100
 	setrespawn HEAL_LOCATION_ROUTE_100
 	special GetDifficulty
-	goto_if_eq VAR_RESULT, 0, Route100_EventScript_RevealDragonTamer
+	goto_if_le VAR_RESULT, 1, Route100_EventScript_RevealDragonTamer
 	setflag FLAG_HIDE_SHORTCUT_NPCS
 	end
 

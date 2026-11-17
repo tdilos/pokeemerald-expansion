@@ -127,7 +127,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WORMHOLE_SMALL",
       "x": 12,
-      "y": 8,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,

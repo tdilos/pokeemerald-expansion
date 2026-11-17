@@ -12,8 +12,8 @@ KiyahaIsle_Interior_EventScript_LittleGirl1::
 	end
 
 KiyahaIsle_Interior_Text_LittleGirl1:
-	.string "My sand castle moved! Did you\n"
-	.string "see where it went?$"
+	.string "My other sand castle moved.\n"
+	.string "Did you see where it went?$"
 
 KiyahaIsle_Interior_EventScript_LittleGirl2::
 	lock
@@ -38,8 +38,8 @@ KiyahaIsle_Interior_Text_AncestorsBuiltAShrine:
 	.string "of the lagoon.\p"
 	.string "Our ancestors built it there to honor\n"
 	.string "the ISLAND GUARDIAN.\p"
-	.string "The elders say that the GUARDIANS have\n"
-	.string "protected these islands for generations.\p"
+	.string "The elders say that the GUARDIANS\n"
+	.string "have always protected these islands.\p"
 	.string "But no one's seen them since the\n"
 	.string "SEA DEMON attacked.$"
 
@@ -68,10 +68,10 @@ KiyahaIsle_Interior_Text_OldMan:
 	.string "Some say they are still out there\n"
 	.string "somewhere.\p"
 	.string "Fighting to protect these islands\n"
-	.string "even now.\p"
-	.string "But it's been many years since anyone\n"
-	.string "has seen them.\p"
-	.string "And some people are beginning to lose hope.$"
+	.string "even now.$"
+	@.string "But it's been many years since anyone\n"
+	@.string "has seen them.\p"
+	@.string "And some people are beginning to lose hope.$"
 
 
 
@@ -85,10 +85,11 @@ KiyahaIsle_Interior_EventScript_Woman::
 
 KiyahaIsle_Interior_Text_Woman:
 	.string "Legends tell of great heroes in the past\n"
-	.string "who earned the respect of the GUARDIANS\l"
-	.string "and fought alongside them.\p"
-	.string "If only we had a hero to bring\n"
-	.string "the GUARDIANS back...$"
+	.string "who fought alongside the GUARDIANS\p"
+	@.string "If only we had a hero to bring\n"
+	@.string "the GUARDIANS back...$"
+	.string "What I would give for a hero\n"
+	.string "right now...$"
 	
 
 

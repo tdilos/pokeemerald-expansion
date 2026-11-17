@@ -28,9 +28,18 @@ ResedaTown_Gym_EventScript_ArthurPostBattle::
 	call Common_EventScript_PlayGymBadgeFanfare
 	special GetDifficulty
 	switch VAR_RESULT
-	case 0, ResedaTown_Gym_EventScript_EventScript_ExplainBadgeNormal
-	case 1, ResedaTown_Gym_EventScript_EventScript_ExplainBadgeHardcore
-	case 2, ResedaTown_Gym_EventScript_EventScript_ExplainBadgeInsane
+	case 0, ResedaTown_Gym_EventScript_EventScript_ExplainBadgeWimpy
+	case 1, ResedaTown_Gym_EventScript_EventScript_ExplainBadgeNormal
+	case 2, ResedaTown_Gym_EventScript_EventScript_ExplainBadgeHardcore
+	case 3, ResedaTown_Gym_EventScript_EventScript_ExplainBadgeInsane
+	end
+
+ResedaTown_Gym_EventScript_EventScript_ExplainBadgeWimpy::
+	msgbox ResedaTown_Gym_Text_MandibleBadgeWimpyInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_BADGE01_GET
+	setvar VAR_0x8008, 9
+	call Common_EventScript_SetGymTrainers
+	goto ResedaTown_Gym_EventScript_GiveInfestation
 	end
 
 ResedaTown_Gym_EventScript_EventScript_ExplainBadgeNormal::
@@ -86,6 +95,12 @@ ResedaTown_Gym_Text_ArthurDefeated:
 ResedaTown_Gym_Text_ReceivedMandibleBadge:
 	.string "{PLAYER} received the MANDIBLE BADGE\n"
 	.string "from ARTHUR.$"
+
+ResedaTown_Gym_Text_MandibleBadgeWimpyInfoTakeThis:
+	.string "The MANDIBLE BADGE enables your\n"
+	.string "POKéMON to use the HM move\l"
+	.string "CUT outside of battle.\p"
+	.string "And you can have this too.$"
 
 ResedaTown_Gym_Text_MandibleBadgeNormalInfoTakeThis:
 	.string "The MANDIBLE BADGE makes all POKéMON\n"

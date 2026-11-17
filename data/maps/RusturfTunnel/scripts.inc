@@ -10,7 +10,16 @@ RusturfTunnel_OnFrame:
 
 RusturfTunnel_OnTransition:
 	call_if_eq VAR_RUSTURF_TUNNEL_STATE, 2, RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos
+
+	goto_if_unset FLAG_IS_CHAMPION, RusturfTunnel_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_COBALION, RusturfTunnel_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_COBALION
 	end
+
+RusturfTunnel_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_COBALION
+	end
+
 
 RusturfTunnel_EventScript_SetAquaGruntAndPeekoPos::
 	setobjectxyperm LOCALID_RUSTURF_TUNNEL_PEEKO, 13, 4

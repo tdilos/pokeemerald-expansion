@@ -1,5 +1,17 @@
 Route121_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route121_OnTransition
 	.byte 0
+
+Route121_OnTransition:
+	goto_if_unset FLAG_IS_CHAMPION, Route121_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_KELDEO, Route121_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_KELDEO
+	end
+
+Route121_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_KELDEO
+	end
+
 
 Route121_EventScript_Woman::
 	msgbox Route121_Text_AheadLoomsMtPyre, MSGBOX_NPC

@@ -30,7 +30,17 @@ DesertRuins_EventScript_HideRegiEntrance::
 DesertRuins_OnTransition:
 	setflag FLAG_LANDMARK_DESERT_RUINS
 	@call_if_unset FLAG_DEFEATED_REGIROCK, DesertRuins_EventScript_ShowRegirock
+
+	goto_if_unset FLAG_IS_CHAMPION, DesertRuins_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_REGIROCK, DesertRuins_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_REGIROCK
+
 	end
+
+DesertRuins_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_REGIROCK
+	end
+
 
 @DesertRuins_EventScript_ShowRegirock::
 @	clearflag FLAG_HIDE_REGIROCK

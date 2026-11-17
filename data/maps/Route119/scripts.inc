@@ -18,7 +18,17 @@ Route119_OnTransition:
 	call Common_EventScript_SetupRivalOnBikeGfxId
 	call_if_eq VAR_WEATHER_INSTITUTE_STATE, 1, Route119_EventScript_MoveInstituteWorkersDownstairs
 	special SetRoute119Weather
+
+	goto_if_unset FLAG_IS_CHAMPION, Route119_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_RAIKOU, Route119_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_RAIKOU
+
 	end
+
+Route119_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_RAIKOU
+	end
+
 
 Route119_EventScript_MoveInstituteWorkersDownstairs::
 	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS

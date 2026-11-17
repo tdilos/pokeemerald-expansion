@@ -515,7 +515,9 @@ const u32 gObjectEventPic_Emma[] = INCGFX_U32("graphics/object_events/pics/peopl
 const u32 gObjectEventPic_Benga[] = INCGFX_U32("graphics/object_events/pics/people/benga.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_Zinnia[] = INCGFX_U32("graphics/object_events/pics/people/zinnia.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_Cole[] = INCGFX_U32("graphics/object_events/pics/people/cole.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_Cole[] = INCGFX_U16("graphics/object_events/palettes/cole.pal", ".gbapal");
 
+const u32 gObjectEventPic_Synderling[] = INCGFX_U32("graphics/object_events/pics/people/silhouette.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_Hacker[] = INCGFX_U32("graphics/object_events/pics/people/hacker.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_Witch[] = INCGFX_U32("graphics/object_events/pics/people/witch.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_Cyborg[] = INCGFX_U32("graphics/object_events/pics/people/cyborg.png", ".4bpp", "-mwidth 2 -mheight 4");

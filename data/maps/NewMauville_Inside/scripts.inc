@@ -22,7 +22,18 @@ NewMauville_Inside_OnTransition:
 	call_if_unset FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb1
 	call_if_unset FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb2
 	call_if_unset FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
+
+	goto_if_unset FLAG_IS_CHAMPION, NewMauville_Inside_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_ZEKROM, NewMauville_Inside_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_ZEKROM
+
 	end
+
+NewMauville_Inside_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_ZEKROM
+	end
+
+
 
 NewMauville_Inside_EventScript_ShowVoltorb1::
 	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1

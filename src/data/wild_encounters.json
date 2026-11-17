@@ -32393,9 +32393,9 @@
             "encounter_rate": 50,
             "mons": [
               {
-                "min_level": 5,
-                "max_level": 15,
-                "species": "SPECIES_PIDOVE"
+                "min_level": 1,
+                "max_level": 10,
+                "species": "SPECIES_SCATTERBUG"
               },
               {
                 "min_level": 5,
@@ -32408,14 +32408,14 @@
                 "species": "SPECIES_PIDOVE"
               },
               {
-                "min_level": 5,
+                "min_level": 10,
                 "max_level": 15,
-                "species": "SPECIES_PIDOVE"
+                "species": "SPECIES_SCATTERBUG"
               },
               {
-                "min_level": 5,
+                "min_level": 10,
                 "max_level": 15,
-                "species": "SPECIES_PIDOVE"
+                "species": "SPECIES_SCATTERBUG"
               }
             ]
           }
@@ -33730,7 +33730,7 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
@@ -33755,37 +33755,37 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_CHARCADET"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_CHARCADET"
               }
             ]
           }
@@ -35779,7 +35779,7 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
@@ -35804,37 +35804,37 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_CHARCADET"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_CHARCADET"
               }
             ]
           }
@@ -35848,7 +35848,7 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
@@ -35873,37 +35873,37 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_CHARCADET"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_CHARCADET"
               }
             ]
           }
@@ -35917,7 +35917,7 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
@@ -35942,37 +35942,37 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_CHARCADET"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_NONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_CUFANT"
+                "species": "SPECIES_CHARCADET"
               }
             ]
           }

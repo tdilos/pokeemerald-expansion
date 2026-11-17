@@ -11904,8 +11904,8 @@
     {
       "id": "LAYOUT_STATION_RING",
       "name": "StationRing_Layout",
-      "width": 110,
-      "height": 36,
+      "width": 109,
+      "height": 60,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_StationCity",
       "border_filepath": "data/layouts/StationRing/border.bin",
@@ -11915,7 +11915,7 @@
       "id": "LAYOUT_STATION_CITY",
       "name": "StationCity_Layout",
       "width": 45,
-      "height": 36,
+      "height": 60,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_StationCity",
       "border_filepath": "data/layouts/StationCity/border.bin",
@@ -12174,8 +12174,8 @@
     {
       "id": "LAYOUT_PANO_ISLE_SHRINE",
       "name": "PanoIsle_Shrine_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 22,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/PanoIsle_Shrine/border.bin",
@@ -12185,7 +12185,7 @@
       "id": "LAYOUT_KIYAHA_ISLE_SHRINE",
       "name": "KiyahaIsle_Shrine_Layout",
       "width": 10,
-      "height": 20,
+      "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/KiyahaIsle_Shrine/border.bin",
@@ -12194,8 +12194,8 @@
     {
       "id": "LAYOUT_KEOKEO_ISLE_SHRINE",
       "name": "KeokeoIsle_Shrine_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 22,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/KeokeoIsle_Shrine/border.bin",
@@ -12205,7 +12205,7 @@
       "id": "LAYOUT_OMAOMA_ISLE_SHRINE",
       "name": "OmaomaIsle_Shrine_Layout",
       "width": 10,
-      "height": 20,
+      "height": 22,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XPelago",
       "border_filepath": "data/layouts/OmaomaIsle_Shrine/border.bin",
@@ -12244,7 +12244,7 @@
     {
       "id": "LAYOUT_LUSH_UNDERSPIRE_B4",
       "name": "LushUnderspire_B4_Layout",
-      "width": 20,
+      "width": 25,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XGreenhouse",
@@ -12634,8 +12634,8 @@
     {
       "id": "LAYOUT_LUSH_UNDERSPIRE_B5",
       "name": "LushUnderspire_B5_Layout",
-      "width": 10,
-      "height": 10,
+      "width": 30,
+      "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XGreenhouse",
       "border_filepath": "data/layouts/LushUnderspire_B5/border.bin",
@@ -12654,8 +12654,8 @@
     {
       "id": "LAYOUT_LUSH_UNDERSPIRE_B9",
       "name": "LushUnderspire_B9_Layout",
-      "width": 10,
-      "height": 10,
+      "width": 24,
+      "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XGreenhouse",
       "border_filepath": "data/layouts/LushUnderspire_B9/border.bin",
@@ -12674,7 +12674,7 @@
     {
       "id": "LAYOUT_LUSH_UNDERSPIRE_B6",
       "name": "LushUnderspire_B6_Layout",
-      "width": 22,
+      "width": 60,
       "height": 12,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_XGreenhouse",
@@ -12840,6 +12840,26 @@
       "secondary_tileset": "gTileset_TrickHousePuzzle",
       "border_filepath": "data/layouts/Route110_TrickHousePuzzle9/border.bin",
       "blockdata_filepath": "data/layouts/Route110_TrickHousePuzzle9/map.bin"
+    },
+    {
+      "id": "LAYOUT_STATION_CITY_BUILDING2_2F",
+      "name": "StationCity_Building2_2F_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Emporium",
+      "border_filepath": "data/layouts/StationCity_Building2_2F/border.bin",
+      "blockdata_filepath": "data/layouts/StationCity_Building2_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_STATION_CITY_BUILDING3_2F",
+      "name": "StationCity_Building3_2F_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Emporium",
+      "border_filepath": "data/layouts/StationCity_Building3_2F/border.bin",
+      "blockdata_filepath": "data/layouts/StationCity_Building3_2F/map.bin"
     }
   ]
 }

@@ -5,10 +5,21 @@ FieryPath_MapScripts::
 FieryPath_OnTransition:
 	call_if_unset FLAG_LANDMARK_FIERY_PATH, FieryPath_EventScript_MoveScottToFallarbor
 	setflag FLAG_LANDMARK_FIERY_PATH
+
+	goto_if_unset FLAG_IS_CHAMPION, FieryPath_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_ENTEI, FieryPath_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_ENTEI
+
+	end
+
+FieryPath_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_ENTEI
 	end
 
 FieryPath_EventScript_MoveScottToFallarbor::
 	setflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
 	clearflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
 	return
+
+
 

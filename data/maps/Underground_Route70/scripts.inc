@@ -1,2 +1,13 @@
 Underground_Route70_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Underground_Route70_OnTransition
 	.byte 0
+
+Underground_Route70_OnTransition:
+	goto_if_unset FLAG_IS_CHAMPION, Underground_Route70_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_MOLTRES, Underground_Route70_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_MOLTRES
+	end
+
+Underground_Route70_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_MOLTRES
+	end

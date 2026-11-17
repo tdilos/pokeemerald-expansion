@@ -15,7 +15,7 @@ EventScript_PC::
 	lockall
 	setvar VAR_0x8004, PC_LOCATION_OTHER
 	special GetDifficulty
-	goto_if_lt VAR_RESULT, 2, EventScript_PCWithoutFee
+	goto_if_le VAR_RESULT, 2, EventScript_PCWithoutFee
 	showmoneybox 0, 0
 	msgbox gText_PCWithFee, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventScript_PCTryPayFee

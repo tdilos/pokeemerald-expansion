@@ -17,7 +17,17 @@ AncientTomb_EventScript_TryRemoveRegisteel::
 AncientTomb_OnTransition:
 	setflag FLAG_LANDMARK_ANCIENT_TOMB
 	@call_if_unset FLAG_DEFEATED_REGISTEEL, AncientTomb_EventScript_ShowRegisteel
+
+	goto_if_unset FLAG_IS_CHAMPION, AncientTomb_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_REGISTEEL, AncientTomb_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_REGISTEEL
+
 	end
+
+AncientTomb_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_REGISTEEL
+	end
+
 
 @AncientTomb_EventScript_ShowRegisteel::
 @	clearflag FLAG_HIDE_REGISTEEL

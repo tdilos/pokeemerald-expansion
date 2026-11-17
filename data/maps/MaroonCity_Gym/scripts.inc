@@ -322,9 +322,18 @@ MaroonCity_Gym_EventScript_NikolausPostBattle::
 	call Common_EventScript_PlayGymBadgeFanfare
 	special GetDifficulty
 	switch VAR_RESULT
-	case 0, MaroonCity_Gym_EventScript_EventScript_ExplainBadgeNormal
-	case 1, MaroonCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
-	case 2, MaroonCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	case 0, MaroonCity_Gym_EventScript_EventScript_ExplainBadgeWimpy
+	case 1, MaroonCity_Gym_EventScript_EventScript_ExplainBadgeNormal
+	case 2, MaroonCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
+	case 3, MaroonCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	end
+
+MaroonCity_Gym_EventScript_EventScript_ExplainBadgeWimpy::
+	msgbox MaroonCity_Gym_Text_AlloyBadgeWimpyInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_BADGE06_GET
+	setvar VAR_0x8008, 14
+	call Common_EventScript_SetGymTrainers
+	goto MaroonCity_Gym_EventScript_GiveShieldStrike
 	end
 
 MaroonCity_Gym_EventScript_EventScript_ExplainBadgeNormal::
@@ -396,6 +405,12 @@ MaroonCity_Gym_Text_NikolausDefeated:
 MaroonCity_Gym_Text_ReceivedAlloyBadge:
 	.string "{PLAYER} received the ALLOY BADGE\n"
 	.string "from NIKOLAUS.$"
+
+MaroonCity_Gym_Text_AlloyBadgeWimpyInfoTakeThis:
+	.string "The ALLOY BADGE enables your\n"
+	.string "POKéMON to use the HM move\l"
+	.string "SURF outside of battle.\p"
+	.string "And I want you to take this too.$"
 
 MaroonCity_Gym_Text_AlloyBadgeNormalInfoTakeThis:
 	.string "The ALLOY BADGE makes all POKéMON\n"

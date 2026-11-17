@@ -2818,3 +2818,11 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Route110_TrickHousePuzzle14/scripts.inc"
 
 	.include "data/maps/Route110_TrickHousePuzzle10/scripts.inc"
+
+	.include "data/maps/StationCity_Building2_1F/scripts.inc"
+
+	.include "data/maps/StationCity_Building2_2F/scripts.inc"
+
+	.include "data/maps/StationCity_Building3_2F/scripts.inc"
+
+	.include "data/maps/StationCity_Building3_1F/scripts.inc"

@@ -1,2 +1,14 @@
 MtShiro_Tunnel_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MtShiro_Tunnel_OnTransition
 	.byte 0
+
+MtShiro_Tunnel_OnTransition:
+	goto_if_unset FLAG_IS_CHAMPION, MtShiro_Tunnel_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_KYUREM, MtShiro_Tunnel_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_KYUREM
+
+	end
+
+MtShiro_Tunnel_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_KYUREM
+	end

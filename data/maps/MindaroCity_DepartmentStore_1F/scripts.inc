@@ -19,47 +19,6 @@ MindaroCity_DepartmentStore_1F_Text_FloorNamesSign:
 
 
 
-MindaroCity_EventScript_CheckDifficulty::
-	lock
-	faceplayer
-	msgbox MindaroCity_Text_Difficulty, MSGBOX_DEFAULT
-	closemessage
-	special GetDifficulty
-	switch VAR_RESULT
-	case 0, MindaroCity_EventScript_NormalDifficulty
-	case 1, MindaroCity_EventScript_HardcoreDifficulty
-	case 2, MindaroCity_EventScript_InsaneDifficulty
-	end
-
-MindaroCity_EventScript_NormalDifficulty::
-	msgbox MindaroCity_Text_NormalDifficulty, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-MindaroCity_EventScript_HardcoreDifficulty::
-	msgbox MindaroCity_Text_HardcoreDifficulty, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-MindaroCity_EventScript_InsaneDifficulty::
-	msgbox MindaroCity_Text_InsaneDifficulty, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-MindaroCity_Text_Difficulty:
-	.string "This is a test.$"
-
-MindaroCity_Text_NormalDifficulty:
-	.string "The current difficulty is NORMAL.$"
-
-MindaroCity_Text_HardcoreDifficulty:
-	.string "The current difficulty is HARDCORE.$"
-
-MindaroCity_Text_InsaneDifficulty:
-	.string "The current difficulty is INSANE.$"
 
 
 

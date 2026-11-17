@@ -4,17 +4,27 @@ Route68_MapScripts::
 
 Route68_OnTransition:
 	special GetWeekday
-	goto_if_eq VAR_RESULT, 2, Route68_EventScript_RevealWeekdaySibling
-	goto Route68_EventScript_HideWeekdaySibling
+	call_if_eq VAR_RESULT, 2, Route68_EventScript_RevealWeekdaySibling
+	call_if_ne VAR_RESULT, 2, Route68_EventScript_HideWeekdaySibling
+
+	goto_if_unset FLAG_IS_CHAMPION, Route68_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_VIRIZION, Route68_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_VIRIZION
+
 	end
+
+Route68_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_VIRIZION
+	end
+
 
 Route68_EventScript_RevealWeekdaySibling:
 	clearflag FLAG_HIDE_WEEKDAY_SIBLING
-	end
+	return
 
 Route68_EventScript_HideWeekdaySibling:
 	setflag FLAG_HIDE_WEEKDAY_SIBLING
-	end
+	return
 
 Route68_EventScript_Tucker::
 	lock

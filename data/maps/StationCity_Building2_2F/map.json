@@ -1,0 +1,28 @@
+{
+  "id": "MAP_STATION_CITY_BUILDING2_2F",
+  "name": "StationCity_Building2_2F",
+  "layout": "LAYOUT_STATION_CITY_BUILDING2_2F",
+  "music": "MUS_BW_VS_N_FINAL",
+  "region_map_section": "MAPSEC_STATION_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_STATION_CITY_BUILDING2_1F",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -758,7 +758,7 @@ WisteriaCity_Gym_Text_GymGuidePostVictory:
 
 WisteriaCity_Gym_EventScript_Adderly::
 	trainerbattle_single TRAINER_ADDERLY_1, WisteriaCity_Gym_Text_AdderlyIntro, WisteriaCity_Gym_Text_AdderlyDefeated, WisteriaCity_Gym_EventScript_AdderlyPostBattle, NO_MUSIC
-	goto_if_unset FLAG_DEFEATED_WISTERIA_GYM, WisteriaCity_Gym_EventScript_GiveOxidize
+	goto_if_unset FLAG_DEFEATED_WISTERIA_GYM, WisteriaCity_Gym_EventScript_GiveSludgeBomb
 	msgbox WisteriaCity_Gym_Text_AdderlyPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -769,9 +769,18 @@ WisteriaCity_Gym_EventScript_AdderlyPostBattle::
 	call Common_EventScript_PlayGymBadgeFanfare
 	special GetDifficulty
 	switch VAR_RESULT
-	case 0, WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeNormal
-	case 1, WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
-	case 2, WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	case 0, WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeWimpy
+	case 1, WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeNormal
+	case 2, WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeHardcore
+	case 3, WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeInsane
+	end
+
+WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeWimpy::
+	msgbox WisteriaCity_Gym_Text_AtterBadgeWimpyInfoTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_BADGE08_GET
+	setvar VAR_0x8008, 16
+	call Common_EventScript_SetGymTrainers
+	goto WisteriaCity_Gym_EventScript_GiveSludgeBomb
 	end
 
 WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeNormal::
@@ -780,7 +789,7 @@ WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeNormal::
 	setflag FLAG_BADGE08_GET
 	setvar VAR_0x8008, 16
 	call Common_EventScript_SetGymTrainers
-	goto WisteriaCity_Gym_EventScript_GiveOxidize
+	goto WisteriaCity_Gym_EventScript_GiveSludgeBomb
 	end
 
 WisteriaCity_Gym_EventScript_AlreadyBeatEthelNormal::
@@ -788,7 +797,7 @@ WisteriaCity_Gym_EventScript_AlreadyBeatEthelNormal::
 	setflag FLAG_BADGE08_GET
 	setvar VAR_0x8008, 16
 	call Common_EventScript_SetGymTrainers
-	goto WisteriaCity_Gym_EventScript_GiveOxidize
+	goto WisteriaCity_Gym_EventScript_GiveSludgeBomb
 	end
 
 WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeHardcore::
@@ -797,7 +806,7 @@ WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeHardcore::
 	setflag FLAG_BADGE08_GET
 	setvar VAR_0x8008, 16
 	call Common_EventScript_SetGymTrainers
-	goto WisteriaCity_Gym_EventScript_GiveOxidize
+	goto WisteriaCity_Gym_EventScript_GiveSludgeBomb
 	end
 
 WisteriaCity_Gym_EventScript_AlreadyBeatEthelHardcore::
@@ -805,7 +814,7 @@ WisteriaCity_Gym_EventScript_AlreadyBeatEthelHardcore::
 	setflag FLAG_BADGE08_GET
 	setvar VAR_0x8008, 16
 	call Common_EventScript_SetGymTrainers
-	goto WisteriaCity_Gym_EventScript_GiveOxidize
+	goto WisteriaCity_Gym_EventScript_GiveSludgeBomb
 	end
 
 WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeInsane::
@@ -814,7 +823,7 @@ WisteriaCity_Gym_EventScript_EventScript_ExplainBadgeInsane::
 	setflag FLAG_BADGE08_GET
 	setvar VAR_0x8008, 16
 	call Common_EventScript_SetGymTrainers
-	goto WisteriaCity_Gym_EventScript_GiveOxidize
+	goto WisteriaCity_Gym_EventScript_GiveSludgeBomb
 	end
 
 WisteriaCity_Gym_EventScript_AlreadyBeatEthelInsane::
@@ -822,14 +831,14 @@ WisteriaCity_Gym_EventScript_AlreadyBeatEthelInsane::
 	setflag FLAG_BADGE08_GET
 	setvar VAR_0x8008, 16
 	call Common_EventScript_SetGymTrainers
-	goto WisteriaCity_Gym_EventScript_GiveOxidize
+	goto WisteriaCity_Gym_EventScript_GiveSludgeBomb
 	end
 
-WisteriaCity_Gym_EventScript_GiveOxidize::
+WisteriaCity_Gym_EventScript_GiveSludgeBomb::
 	giveitem ITEM_TM36
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_DEFEATED_WISTERIA_GYM
-	msgbox WisteriaCity_Gym_Text_ExplainOxidize, MSGBOX_DEFAULT
+	msgbox WisteriaCity_Gym_Text_ExplainSludgeBomb, MSGBOX_DEFAULT
 	closemessage
 	delay 60
 	msgbox WisteriaCity_Gym_Text_GiveLabKey, MSGBOX_DEFAULT
@@ -918,6 +927,13 @@ WisteriaCity_Gym_Text_ReceivedAtterBadge:
 	.string "{PLAYER} received the ATTER BADGE\n"
 	.string "from DR. ADDERLY.$"
 
+WisteriaCity_Gym_Text_AtterBadgeWimpyInfoTakeThis:
+	.string "The ATTER BADGE enables your\n"
+	.string "POKéMON to use the HM move\l"
+	.string "DIVE outside of battle.\p"
+	.string "Hmph!\n"
+	.string "And this suits you too, I think.$"
+
 WisteriaCity_Gym_Text_AtterBadgeNormalInfoTakeThis:
 	.string "The ATTER BADGE makes all POKéMON up to\n"
 	.string "Level 56 obey without question.\p"
@@ -966,7 +982,7 @@ WisteriaCity_Gym_Text_AtterBadgeInsaneInfoTakeThis2:
 	.string "Hmph!\n"
 	.string "And this suits you too, I think.$"
 
-WisteriaCity_Gym_Text_ExplainOxidize:
+WisteriaCity_Gym_Text_ExplainSludgeBomb:
 	.string "That TM contains the move SLUDGE BOMB,\n"
 	.string "a powerful POISON type move.$"
 

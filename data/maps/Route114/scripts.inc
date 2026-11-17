@@ -8,7 +8,17 @@ Route114_OnTransition:
 	call_if_eq VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_HideMapNamePopup
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_NORTH, AbnormalWeather_StartGroudonWeather
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_SOUTH, AbnormalWeather_StartGroudonWeather
+
+	goto_if_unset FLAG_IS_CHAMPION, Route114_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_SUICUNE, Route114_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_SUICUNE
+
 	end
+
+Route114_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_SUICUNE
+	end
+
 
 Route114_OnLoad:
 	call_if_eq VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_NORTH, AbnormalWeather_EventScript_PlaceTilesRoute114North

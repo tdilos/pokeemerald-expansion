@@ -329,6 +329,12 @@ const u16 gDayFilter = RGB2(0, 0, 0);   //0000
 //const u16 gLabFilter = RGB2(5, 25, 25);
 const u16 gLabFilter = RGB2(10, 28, 28);
 
+/* Filters used in X Cosmopolis*/
+//const u16 gCosmopolisFilter = RGB2(10, 14, 5);
+//const u16 gCosmopolisFilter = RGB2(20, 28, 10);
+//const u16 gCosmopolisFilter = RGB2(15, 30, 10);
+const u16 gCosmopolisFilter = RGB2(8, 14, 0);
+
 /* Filters used at sunset. (30 filters).        *
  * From 19:00 to 20:00 filters are cycled every *
  * 2 minutes.                                   */
@@ -476,7 +482,9 @@ void DnsApplyFilters()
 
     //rgbFilter = GetDNSFilter();
 	if (gMapHeader.mapType == MAP_TYPE_UNKNOWN) // Special case for PKMN Laboratory 
-		rgbFilter = gLabFilter;
+		rgbFilter = gLabFilter;	
+	else if	(gMapHeader.regionMapSectionId == MAPSEC_STATION_CITY || gMapHeader.regionMapSectionId == MAPSEC_STATION_RING) // X Cosmopolis violet lights
+		rgbFilter = gCosmopolisFilter;
 	else
 		rgbFilter = GetDNSFilter();
 

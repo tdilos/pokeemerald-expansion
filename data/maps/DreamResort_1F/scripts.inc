@@ -10,11 +10,20 @@ DreamResort_1F_MapScripts::
 	.byte 0
 
 DreamResort_1F_OnTransition::
-	goto_if_le VAR_DREAM_RESORT_STATE, 6, DreamResort_1F_RevealShards
+	call_if_le VAR_DREAM_RESORT_STATE, 6, DreamResort_1F_RevealShards
+
+	goto_if_unset FLAG_IS_CHAMPION, DreamResort_1F_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_DARKRAI, DreamResort_1F_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_DARKRAI
+
+	end
+
+DreamResort_1F_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_DARKRAI
 	end
 
 
-DreamResort_1F_RevealShards::
+DreamResort_1F_RevealShards:
 	clearflag FLAG_BATTLED_SPIRITOMB
 	addobject LOCALID_SOULSHARD1
 	addobject LOCALID_SOULSHARD2
@@ -22,7 +31,7 @@ DreamResort_1F_RevealShards::
 	addobject LOCALID_SOULSHARD4
 	addobject LOCALID_SOULSHARD5
 	addobject LOCALID_SOULSHARD6
-	end
+	return
 
 DreamResort_EventScript_Barrier::
 	lock

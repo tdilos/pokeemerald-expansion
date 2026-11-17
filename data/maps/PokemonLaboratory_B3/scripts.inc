@@ -114,12 +114,6 @@ PokemonLaboratory_B3_Movement_PlayerEnter:
 	walk_slow_up
 	step_end
 
-@ Rayner, mass-produced in a cold uncaring world
-@ rejects morality and embraces the absurdity of existence
-
-@ The ultimate fear we all have, being alone in an uncaring universe
-
-
 PokemonLaboratory_B3_EventScript_DefeatedEntity::
 	fadeoutbgm 0
 	playmoncry SPECIES_ETERNATUS, CRY_MODE_FAINT
@@ -507,11 +501,8 @@ PokemonLaboratory_B3_Text_RaynerPlayedYou:
 	.string "TEAM GENESIS needs this LOST TECH\n"
 	.string "to complete their plan.\p"
 	.string "And I'm going to deliver it to them.\p"
-	@.string "I just needed some sorry sap to take\n"
-	@.string "care of whatever that thing was.\p"
 	.string "I just needed the right guinea pigs\n"
 	.string "to deal with whatever that was.$"
-	@.string "And well, you two came along just in time.$"
 
 PokemonLaboratory_B3_Text_JaceYoureWithTeamGenesis:
 	.string "JACE: You've been working for\n"
@@ -549,8 +540,6 @@ PokemonLaboratory_B3_Text_RaynerBestTools:
 	.string "You need the best tools if you want\n"
 	.string "to be the best trainer.\p"
 	.string "I know I've told you that before.\p"
-	@.string "Is it because you're still attached\n"
-	@.string "to them somehow?\p"
 	.string "Is it because you still can't\n"
 	.string "let go of your POKéMON?\p"
 	.string "Are you still letting your feelings\n"
@@ -618,15 +607,12 @@ PokemonLaboratory_B3_Text_JaceWhatsThat:
 	.string "JACE: And what's that?$"
 
 PokemonLaboratory_B3_Text_RaynerRetroviruses:
-	@.string "Ever heard of endogenous retroviruses?$"
 	.string "RAYNER: Endogenous retroviruses.$"
 
 PokemonLaboratory_B3_Text_JaceWhat:
 	.string "JACE: Endogewhat?$"
 
 PokemonLaboratory_B3_Text_RaynerExplainsVirus:
-	@.string "Sigh. Think of it like a disease only\n"
-	@.string "most people don't get sick from it.\p"
 	.string "RAYNER: Sigh. Think of it like a disease\n"
 	.string "that doesn't make you sick.\p"
 	.string "Except for people like me.\p"
@@ -635,15 +621,8 @@ PokemonLaboratory_B3_Text_RaynerExplainsVirus:
 	.string "There's no cure for it, only treatment.\n"
 	.string "And TEAM GENESIS has the only supply.\p"
 	.string "Well, they did anyway...$"
-	@.string "I need constant medication to suppress it.\n"
-	@.string "And TEAM GENESIS has the only supply.\p"
-	@.string "Well, they did anyway...$"
 
 PokemonLaboratory_B3_Text_RaynerDoYouRemember:
-	@.string "Remember the last time we met, {PLAYER}?\n"
-	@.string "At the mansion in MINDARO CITY.\p"
-	@.string "It was then that I finally found\n"
-	@.string "my own supply.\p"
 	.string "Thanks to some other sentimentalists,\n"
 	.string "I obtained an alternative supply.\p"
 	.string "Now TEAM GENESIS only thinks that\n"
@@ -770,9 +749,6 @@ PokemonLaboratory_B3_Text_RaynerDoSomething:
 	.string "about it, then?!\p"
 	.string "Show me how much you want it.\n"
 	.string "Just try and stop me!$"
-	@.string "You know I'm still not satisfied\n"
-	@.string "from that first battle.\p"
-	@.string "Why don't you try and stop me?$"
 
 PokemonLaboratory_B3_Text_JaceWontFight:
 	.string "JACE: ...\p"

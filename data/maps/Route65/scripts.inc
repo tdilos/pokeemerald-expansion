@@ -8,7 +8,17 @@ Route65_OnTransition:
 	@call Route65_EventScript_RevealRayner
 	@call_if_eq VAR_RAYNER_STATE, 2, Route65_EventScript_RevealRayner
 	@call_if_ge VAR_RAYNER_STATE, 3, Route65_EventScript_HideRayner
+
+	goto_if_unset FLAG_IS_CHAMPION, Route65_EventScript_HideWormhole
+	@goto_if_set FLAG_BATTLED_XERNEAS, Route65_EventScript_HideWormhole
+	clearflag FLAG_HIDE_WORMHOLE_XERNEAS
+
 	end
+
+Route65_EventScript_HideWormhole:
+	setflag FLAG_HIDE_WORMHOLE_XERNEAS
+	end
+
 
 Route65_EventScript_RevealRayner:
 	clearflag FLAG_HIDE_ROUTE65_RAYNER

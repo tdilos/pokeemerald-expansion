@@ -1848,7 +1848,11 @@ static const u8 *const sDeptStoreFloorNames[] =
     [DEPT_STORE_FLOORNUM_9F] = gText_9F,
     [DEPT_STORE_FLOORNUM_10F] = gText_10F,
     [DEPT_STORE_FLOORNUM_11F] = gText_11F,
-    [DEPT_STORE_FLOORNUM_ROOFTOP] = gText_Rooftop
+    [DEPT_STORE_FLOORNUM_ROOFTOP] = gText_Rooftop,
+    [DEPT_STORE_FLOORNUM_LEVEL_B] = gText_UnderspireLevelB,
+    [DEPT_STORE_FLOORNUM_LEVEL_L] = gText_UnderspireLevelL,
+    [DEPT_STORE_FLOORNUM_LEVEL_S] = gText_UnderspireLevelS,
+    [DEPT_STORE_FLOORNUM_LEVEL_U] = gText_UnderspireLevelU
 };
 
 static const u16 sElevatorWindowTiles_Ascending[ELEVATOR_WINDOW_HEIGHT][ELEVATOR_LIGHT_STAGES] =
@@ -5936,7 +5940,11 @@ static const u8 *const sFloorNamePointers[] = {
     gText_9F,
     gText_10F,
     gText_11F,
-    gText_Rooftop
+    gText_Rooftop,
+    gText_UnderspireLevelB,
+    gText_UnderspireLevelL,
+    gText_UnderspireLevelS,
+    gText_UnderspireLevelU
 };
 
 static const u16 sElevatorWindowMetatilesGoingUp[][3] = {
