@@ -52,31 +52,26 @@
 #else
 
 // New NPC trades
-#define FLAG_XANTHOS_NPC_TRADE_COMPLETED    0x20
-#define FLAG_RESEDA_NPC_TRADE_COMPLETED     0x21
-#define FLAG_AMBER_NPC_TRADE_COMPLETED      0x22
-#define FLAG_COBALT_NPC_TRADE_COMPLETED     0x23
-#define FLAG_TURQUOISE_NPC_TRADE_COMPLETED  0x24
-#define FLAG_MINDARO_NPC_TRADE_COMPLETED    0x25
-#define FLAG_PITCHBLAK_NPC_TRADE_COMPLETED  0x26
-//#define FLAG_HAEWEN_NPC_TRADE_COMPLETED     0x27
+#define FLAG_XANTHOS_NPC_TRADE_COMPLETED         0x20
+#define FLAG_RESEDA_NPC_TRADE_COMPLETED          0x21
+#define FLAG_AMBER_NPC_TRADE_COMPLETED           0x22
+#define FLAG_COBALT_NPC_TRADE_COMPLETED          0x23
+#define FLAG_TURQUOISE_NPC_TRADE_COMPLETED       0x24
+#define FLAG_MINDARO_NPC_TRADE_COMPLETED         0x25
+#define FLAG_PITCHBLAK_NPC_TRADE_COMPLETED       0x26
+//#define FLAG_RUSTBORO_NPC_TRADE_COMPLETED        Use old flag 
+#define FLAG_OLDALE_NPC_TRADE_COMPLETED          0x27
+#define FLAG_SLATEPORT_NPC_TRADE_1_COMPLETED     0x28
+#define FLAG_SLATEPORT_NPC_TRADE_2_COMPLETED     0x29
+#define FLAG_SLATEPORT_NPC_TRADE_3_COMPLETED     0x2A
+#define FLAG_SLATEPORT_NPC_TRADE_4_COMPLETED     0x2B
+#define FLAG_FALLARBOR_NPC_TRADE_COMPLETED       0x2C
+#define FLAG_LILYCOVE_NPC_TRADE_COMPLETED        0x2D
+#define FLAG_MOSSDEEP_NPC_TRADE_COMPLETED        0x2E
+//#define FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED      Use old flag
+#define FLAG_X_COSMOPOLIS_NPC_TRADE_1_COMPLETED  0x2F
 
-//#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-//#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-//#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-//#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-//#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-//#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-//#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
+
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
@@ -90,25 +85,8 @@
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-//#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-//#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-//#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-//#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-//#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-//#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-//#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-//#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-//#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-//#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-//#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-//#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-//#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-//#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-//#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-//#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-//#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-//#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-//#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+
+
 #define FLAG_WISTERIA_GYM_SWITCH_1                            0x3D
 #define FLAG_WISTERIA_GYM_SWITCH_2                            0x3E
 #define FLAG_WISTERIA_GYM_SWITCH_3                            0x3F
@@ -123,8 +101,6 @@
 #define FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_MAY                   0x48 
 #define FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_JACE                  0x49
 #define FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_HAZEL                 0x4A
-//#define FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_MAY                   0x4B
-//#define FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_JACE                  0x4C
 #define FLAG_HIDE_MAY                                         0x4B
 #define FLAG_HIDE_JACE                                        0x4C
 #define FLAG_HIDE_UMBER_TOWN_HAZELS_LAB_POKEBALL_CHESPIN      0x4D
@@ -221,8 +197,8 @@
 #define FLAG_BATTLED_RAYNER_ROUTE_79         0X96
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
-#define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
-#define FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED  0x9A
+#define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99  // Repurposed for new trades
+#define FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED  0x9A  // Repurposed for new trades
 #define FLAG_FORTREE_NPC_TRADE_COMPLETED     0x9B
 #define FLAG_BATTLE_FRONTIER_TRADE_DONE      0x9C
 #define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
@@ -830,9 +806,9 @@
 //#define FLAG_UNUSED_0x297  0x297 // Unused Flag
 //#define FLAG_UNUSED_0x298  0x298 // Unused Flag
 //#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_HIDE_SILAS    0x297 // Unused Flag
-#define FLAG_HIDE_EMMA     0x298 // Unused Flag
-#define FLAG_HIDE_LOOKER   0x299 // Unused Flag
+#define FLAG_HIDE_SILAS    0x297
+#define FLAG_HIDE_EMMA     0x298
+#define FLAG_HIDE_LOOKER   0x299 
 
 //#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
 //#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
@@ -2370,6 +2346,12 @@
 
 #define FLAG_WORMHOLE_MPS                           (SYSTEM_FLAGS + 0x99) // Triggers the map preview screen after entering an Ultra Wormhole
 
+// Ultra Space worlds (used for MPS)
+#define FLAG_WORLD_MAP_X_COSMOPOLIS                 (SYSTEM_FLAGS + 0x9A) 
+#define FLAG_WORLD_MAP_X_PELAGO                     (SYSTEM_FLAGS + 0x9B) 
+#define FLAG_WORLD_MAP_X_HOLT                       (SYSTEM_FLAGS + 0x9C) 
+#define FLAG_WORLD_MAP_X_GREENHOUSE                 (SYSTEM_FLAGS + 0x9D) 
+
 /*#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
 #define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
 #define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
@@ -2390,11 +2372,11 @@
 #define FLAG_UNUSED_0x8F6                           (SYSTEM_FLAGS + 0x96) // Unused Flag
 #define FLAG_UNUSED_0x8F7                           (SYSTEM_FLAGS + 0x97) // Unused Flag 
 #define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag 
-#define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag */
+#define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag
 #define FLAG_UNUSED_0x8FA                           (SYSTEM_FLAGS + 0x9A) // Unused Flag
 #define FLAG_UNUSED_0x8FB                           (SYSTEM_FLAGS + 0x9B) // Unused Flag
 #define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
-#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
+#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag */
 #define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
 #define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
 #define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag

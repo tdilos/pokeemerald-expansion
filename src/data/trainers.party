@@ -28219,7 +28219,11 @@ AI: Smart Trainer
 
 
 Yungoos
-Level: 5
+Level: 7
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Wishiwashi
+Level: 8
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28235,7 +28239,15 @@ AI: Check Bad Move
 
 
 Yungoos
-Level: 5
+Level: 12
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Pikipek
+Level: 12
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Passimian
+Level: 14
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28250,8 +28262,12 @@ Battle Type: Singles
 AI: Check Bad Move
 
 
-Yungoos
-Level: 5
+Cubone
+Level: 13
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Wattrel
+Level: 13
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28266,8 +28282,8 @@ Battle Type: Singles
 AI: Check Bad Move
 
 
-Yungoos
-Level: 5
+Gumshoos
+Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28282,8 +28298,12 @@ Battle Type: Singles
 AI: Check Bad Move
 
 
-Yungoos
-Level: 5
+Skrelp
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Crabrawler
+Level: 18
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28298,8 +28318,12 @@ Battle Type: Singles
 AI: Check Bad Move
 
 
-Yungoos
-Level: 5
+Pikipek
+Level: 7
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Meowth Alola
+Level: 8
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28314,8 +28338,12 @@ Battle Type: Singles
 AI: Check Bad Move
 
 
-Yungoos
-Level: 5
+Exeggcute
+Level: 13
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Cutiefly
+Level: 13
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28381,7 +28409,7 @@ AI: Smart Trainer
 
 
 SPECIES_TRUMBEAK
-Level: 18
+Level: 19
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 SPECIES_ORANGURU
@@ -28389,7 +28417,7 @@ Level: 18
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 SPECIES_TSAREENA
-Level: 20
+Level: 22
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28408,6 +28436,14 @@ Poochyena
 Level: 18
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
+Zubat
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Numel
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
 
 
 === TRAINER_GRUNT_PANO_ISLE_2 ===
@@ -28420,8 +28456,12 @@ Battle Type: Singles
 AI: Check Bad Move
 
 
-Poochyena
-Level: 18
+Salandit
+Level: 19
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Mightyena
+Level: 19
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28436,8 +28476,20 @@ Battle Type: Singles
 AI: Check Bad Move
 
 
+Zubat
+Level: 17
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Slugma
+Level: 17
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
 Poochyena
-Level: 18
+Level: 17
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Simisear
+Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28456,6 +28508,14 @@ Poochyena
 Level: 18
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
+Salandit
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Koffing
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
 
 
 === TRAINER_GRUNT_PANO_ISLE_5 ===
@@ -28468,8 +28528,12 @@ Battle Type: Singles
 AI: Check Bad Move
 
 
-Poochyena
-Level: 18
+Houndour
+Level: 19
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Mightyena
+Level: 19
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28484,8 +28548,22 @@ Battle Type: Singles
 AI: Smart Trainer
 
 
+Mightyena
+Level: 24
+Ability: Intimidate
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Fletchinder
+Level: 23
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Golbat
+Level: 23
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
 Camerupt
-Level: 25
+Ability: Magma Armor
+Level: 26
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
@@ -28731,7 +28809,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 
 === TRAINER_RUBER ===
-Name: RUBER
+Name: ROTHBART
 Class: Kingsman
 Pic: Kingsman
 Gender: Male
@@ -28748,10 +28826,9 @@ SPECIES_DOUBLADE
 Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-SPECIES_DARUMAKA
+SPECIES_RUNERIGUS
 Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-- MOVE_FIRE_PUNCH
 
 
 === TRAINER_TANCRED ===
@@ -28764,7 +28841,7 @@ Battle Type: Singles
 AI: Smart Trainer
 
 
-SPECIES_LYCANROC
+SPECIES_FLAPPLE
 Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -29605,16 +29682,9 @@ Battle Type: Singles
 AI: Smart Trainer
 
 Poipole
-Level: 9
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Acid
-
-Riolu
 Level: 11
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Force Palm
-- Quick Attack
-- Counter
+- Acid Spray
 
 
 
@@ -29669,7 +29739,7 @@ EVs: 252 HP / 252 Def / 252 SpA
 
 
 === TRAINER_TIW_1 ===
-Name: TIW
+Name: TEW
 Class: Rival
 Pic: Steven
 Gender: Male
@@ -29721,7 +29791,7 @@ EVs: 252 HP / 252 Def / 4 SpA
 
 
 === TRAINER_TIW_2 ===
-Name: TIW
+Name: TEW
 Class: Rival
 Pic: Steven
 Gender: Male

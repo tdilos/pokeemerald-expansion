@@ -26,14 +26,14 @@ StationCity_Building1_B1_OnFrame:
 
 
 StationCity_Building1_B1_EventScript_BettermanIntro2::
-	msgbox StationCity_Building1_B1_Text_WillYouHelpUs, MSGBOX_YESNO
+	@msgbox StationCity_Building1_B1_Text_WillYouHelpUs, MSGBOX_YESNO
 
 	setvar VAR_X_COSMOPOLIS_STATE, 1
 	releaseall
 	end
 
-StationCity_Building1_B1_Text_WillYouHelpUs:
-	.string "$"
+@StationCity_Building1_B1_Text_WillYouHelpUs:
+@	.string "$"
 
 
 
@@ -45,13 +45,15 @@ StationCity_Building1_B1_EventScript_BettermanIntro::
 	msgbox StationCity_Building1_B1_Text_BettermanJustAsWeFeared, MSGBOX_DEFAULT
 	closemessage
 
-	msgbox StationCity_Building1_B1_Text_BettermanSomethingWorse, MSGBOX_DEFAULT
+	msgbox StationCity_Building1_B1_Text_BettermanTheSynderlings, MSGBOX_DEFAULT
 	closemessage
 
-	msgbox StationCity_Building1_B1_Text_BettermanWhereToBegin, MSGBOX_DEFAULT
-	closemessage
-	goto StationCity_Building1_B1_EventScript_BettermanQuestions2
+	@msgbox StationCity_Building1_B1_Text_BettermanWhereToBegin, MSGBOX_DEFAULT
+	@closemessage
+	@goto StationCity_Building1_B1_EventScript_BettermanQuestions2
 
+	releaseall
+	end
 
 
 
@@ -61,22 +63,38 @@ StationCity_Building1_B1_EventScript_BettermanIntro::
 StationCity_Building1_B1_Text_BettermanJustAsWeFeared:
 	.string "BETTERMAN: I see.\n"
 	.string "So it's just as we feared.\p"
-	.string "A small remnant of TEAM GENESIS really did\n"
-	.string "escape into ULTRA SPACE that day.\p"
-	.string "Including my renegade son.\n"
-	.string "The one you know as RAYNER.$"
+	@.string "A small remnant of TEAM GENESIS really did\n"
+	@.string "escape into ULTRA SPACE that day.\p"
+	@.string "Including my renegade son.\n"
+	@.string "The one you know as RAYNER.$"
+	.string "TEAM GENESIS used the device from AB LABS\n"
+	.string "to probe ULTRA SPACE again.\p"
+	.string "And this time they may have attracted\n"
+	.string "the attention of something far worse...$"
 
-StationCity_Building1_B1_Text_BettermanSomethingWorse:
-	.string "TEAM GENESIS'S plans were foiled,\n"
-	.string "but their activity in ULTRA SPACE\l"
-	.string "may have attracted the attention of\l"
-	.string "an even greater threat...$"
+@StationCity_Building1_B1_Text_BettermanSomethingWorse:
+@	.string "TEAM GENESIS'S plans were foiled,\n"
+@	.string "but their activity in ULTRA SPACE\l"
+@	.string "may have attracted the attention of\l"
+@	.string "an even greater threat...$"
 
-StationCity_Building1_B1_Text_BettermanWhereToBegin:
-	.string "There is much to discuss and frankly\n"
-	.string "I'm not sure where to begin.\p"
-	.string "You must have a lot of questions, yes?\n"
-	.string "Why don't we start there.$"
+@StationCity_Building1_B1_Text_BettermanWhereToBegin:
+@	.string "There is much to discuss and frankly\n"
+@	.string "I'm not sure where to begin.\p"
+@	.string "You must have a lot of questions, yes?\n"
+@	.string "Why don't we start there.$"
+
+
+
+StationCity_Building1_B1_Text_BettermanTheSynderlings:
+	.string "They call themselves SYNDERLINGS.\n"
+	.string "We don't yet know much about them.\p"
+	.string "But so far, all encounters with them\n"
+	.string "have been hostile.\p"
+	.string "And their activities seem to be the cause\n"
+	.string "of all these wormholes appearing.\p"
+	.string "$"
+
 
 
 
@@ -143,7 +161,7 @@ StationCity_Building1_B1_EventScript_WhatCanWeDoToStopThem::
 
 StationCity_Building1_B1_Text_WhereAreWe:
 	.string "Oh, this place? Believe it or not,\n"
-	.string "it's a space station!\p"
+	.string "it's an Ultra Space station!\p"
 	.string "We're not sure who built it nor the why\n"
 	.string "nor the how.\p"
 	.string "Apparently it was abandoned when the\n"
@@ -151,7 +169,7 @@ StationCity_Building1_B1_Text_WhereAreWe:
 	.string "We've since converted it into our main\n"
 	.string "base of operations.\p"
 	.string "From here, we can more easily observe\n"
-	.string "the enemy's crucible of worlds.$"
+	.string "the enemy's constellation of worlds.$"
 	@.string "From here, we can more easily\n"
 	@.string "observe distant worlds.$"
 
@@ -246,7 +264,7 @@ StationCity_Building1_B1_Text_AskMeAgain:
 
 
 StationCity_Building1_B1_Text_NewWormholes:
-	.string "We've detected three new Ultra Wormholes\n"
+	.string "We've detected new Ultra Wormholes\n"
 	.string "around the HOENN region.\p"
 	.string "They're in...$"
 

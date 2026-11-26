@@ -1,6 +1,72 @@
 FallarborTown_MoveRelearnersHouse_MapScripts::
 	.byte 0
 
+FallarborTown_MoveRelearnersHouse_EventScript_Trader::
+	lock
+	faceplayer
+	goto_if_set FLAG_FALLARBOR_NPC_TRADE_COMPLETED, FallarborTown_MoveRelearnersHouse_EventScript_TradeCompleted
+	setvar VAR_0x8008, INGAME_TRADE_HAWLUCHA
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	msgbox FallarborTown_MoveRelearnersHouse_Text_WillingToTradeIt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FallarborTown_MoveRelearnersHouse_EventScript_DeclineTrade
+	special ChoosePartyMon
+	copyvar VAR_0x800A, VAR_0x8004
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, FallarborTown_MoveRelearnersHouse_EventScript_DeclineTrade
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	goto_if_ne VAR_RESULT, VAR_0x8009, FallarborTown_MoveRelearnersHouse_EventScript_NotRequestedMon
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	giveitem ITEM_COVENANT_ORB
+	waitfanfare
+	msgbox FallarborTown_MoveRelearnersHouse_Text_UrAwesome, MSGBOX_DEFAULT
+	setflag FLAG_FALLARBOR_NPC_TRADE_COMPLETED
+	release
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_DeclineTrade::
+	release
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_NotRequestedMon::
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox FallarborTown_MoveRelearnersHouse_Text_WontAcceptAnyLessThanRealMon, MSGBOX_DEFAULT
+	release
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_TradeCompleted::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_TradeWithOthers, MSGBOX_DEFAULT
+	release
+	end
+
+FallarborTown_MoveRelearnersHouse_Text_WillingToTradeIt:
+	.string "Hi! Do you have a {STR_VAR_1}!\p"
+	.string "Would you trade it for my {STR_VAR_2}?$"
+
+FallarborTown_MoveRelearnersHouse_Text_UrAwesome:
+	.string "You're awesome! Thanks!$"
+
+FallarborTown_MoveRelearnersHouse_Text_WontAcceptAnyLessThanRealMon:
+	.string "No, no, no! I won't accept any\n"
+	.string "less than a real {STR_VAR_1}!$"
+
+FallarborTown_MoveRelearnersHouse_Text_TradeWithOthers:
+	.string "I trade with my friends in other\n"
+	.string "cities all the time.$"
+
+
+
+
+
+
+
+
 FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	lockall
 	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer

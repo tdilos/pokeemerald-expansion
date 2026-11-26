@@ -6,7 +6,7 @@ Route103_MapScripts::
 Route103_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call ProfBirch_EventScript_UpdateLocation
-	call_if_gt VAR_SLATEPORT_CITY_STATE, 6, Route103_EventScript_HideLooker
+	call_if_gt VAR_X_COSMOPOLIS_STATE, 0, Route103_EventScript_HideLooker
 	end
 
 Route103_OnLoad:
@@ -362,20 +362,80 @@ Route103_Text_RouteSign:
 	.string "{DOWN_ARROW} OLDALE TOWN$"
 
 
+
+
+
+
+Route103_EventScript_LookerRemoveDisguise:
+	applymovement LOCALID_ROUTE103_LOOKER_DISGUISED Route103_Movement_RemoveDisguise
+	waitmovement 10
+	removeobject LOCALID_ROUTE103_LOOKER_DISGUISED
+	setobjectxyperm LOCALID_ROUTE103_LOOKER_DISGUISED, 52, 21
+	addobject LOCALID_ROUTE103_LOOKER_DISGUISED
+	removeobject LOCALID_ROUTE103_LOOKER
+	setobjectxyperm LOCALID_ROUTE103_LOOKER, 45, 7
+	setobjectmovementtype LOCALID_ROUTE103_LOOKER, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_LOOKER
+	addobject LOCALID_ROUTE103_LOOKER
+	playse SE_M_WING_ATTACK
+	waitse
+	return
+
+Route103_Movement_RemoveDisguise:
+	face_left
+	delay_8
+	face_up
+	delay_8
+	face_right
+	delay_8
+	face_down
+	step_end
+
 Route103_EventScript_LookerEncounter::
 	lock
 	faceplayer
-	msgbox Route103_Text_PleaseEnter, MSGBOX_DEFAULT
+	msgbox Route103_Text_MysteriousOldMan, MSGBOX_DEFAULT
+	closemessage
+	call Route103_EventScript_LookerRemoveDisguise
+	msgbox Route103_Text_LookerEncounter1, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE103_LOOKER, Common_Movement_FaceDown
+	waitmovement 60
+	applymovement LOCALID_ROUTE103_LOOKER, Common_Movement_FaceRight
+	waitmovement 30
+	msgbox Route103_Text_LookerEncounter2, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ROUTE103_LOOKER, Common_Movement_WalkUp
+	waitmovement 60
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	playse SE_EXIT
-	removeobject LOCALID_ROUTE103_LOOKER
-	setvar VAR_SLATEPORT_CITY_STATE, 7
+	warp MAP_ALTERING_CAVE, 18, 22
+	waitstate
 	release
 	end
 
-Route103_Text_PleaseEnter:
-	.string "There you are, {PLAYER}.\n"
-	.string "Please follow me.$"
+Route103_Text_MysteriousOldMan:
+	.string "Only those trainers who've proven\n"
+	.string "themselves worthy may enter here.\p"
+	.string "\p"
+	.string "Oh {PLAYER}, it's you!\p"
+	.string "Forgive me, it's hard to see\n"
+	.string "in this disguise.$"
+
+Route103_Text_LookerEncounter1:
+	.string "Our base of operations is hidden\n"
+	.string "inside this cave.\p"
+	.string "Well, in a manner of speaking...$"
+
+Route103_Text_LookerEncounter2:
+	.string "There's much to explain here and\n"
+	.string "too little time.\p"
+	.string "I think it's best for you to see\n"
+	.string "some things with your own eyes.\p"
+	.string "Let's go inside.$"
+
+
 

@@ -2,7 +2,7 @@
   "id": "MAP_LUSH_UNDERSPIRE_WET_LEVEL",
   "name": "LushUnderspire_WetLevel",
   "layout": "LAYOUT_LUSH_UNDERSPIRE_WET_LEVEL",
-  "music": "MUS_DUMMY",
+  "music": "MUS_XTRA_CASCADE_CAPERS",
   "region_map_section": "MAPSEC_LUSH_UNDERSPIRE",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

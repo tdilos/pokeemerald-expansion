@@ -43,25 +43,26 @@ SlateportCity_SternsShipyard_2F_Text_SilasIntro1:
 	.string "this copy and make my escape.\p"
 	.string "This useless POKéDEX was not\n"
 	.string "even worth the effort.\p"
-	.string "At least I'll have something\n"
-	.string "to show for this.$"
+	@.string "At least I'll have something\n"
+	@.string "to show for this.$"
 	
-SlateportCity_SternsShipyard_2F_Text_SilasIntro2:
-	.string "As for you, young CHAMPION.\n"
-	.string "You might think you're pretty strong.\p"
-	.string "But you're no match for the brains\n"
-	.string "of SILAS the SIDEWINDER!\p"
-	.string "I'll defeat you right here\n"
-	.string "and make my escape!$"
+@SlateportCity_SternsShipyard_2F_Text_SilasIntro2:
+@	.string "As for you, young CHAMPION.\n"
+@	.string "You might think you're pretty strong.\p"
+@	.string "But you're no match for the brains\n"
+@	.string "of SILAS the SIDEWINDER!\p"
+@	.string "I'll defeat you right here\n"
+@	.string "and make my escape!$"
 
 SlateportCity_SternsShipyard_2F_Text_SilasDefeated:
-	.string "Fufufufufu...$"
+	.string "Uh uh uh...$"
 
 SlateportCity_SternsShipyard_2F_Text_SilasEscapes:
 	.string "You think you've won. But the real\n"
 	.string "battle was just stalling for time.\p"
 	.string "I got everything I wanted here.\p"
-	.string "Better luck next time, {PLAYER}.$"
+	.string "Better luck next time, {PLAYER}.\n"
+	.string "Ngh-ni-hi-hi-hi-hi-hi-hi-hi-hi.$"
 
 
 SlateportCity_SternsShipyard_2F_Text_LookerEntrance1:

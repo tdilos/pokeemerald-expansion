@@ -113,11 +113,61 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
 	[MPS_X_COSMOPOLIS] = {
         .mapsec = MAPSEC_STATION_CITY,
         .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
+        //.flagId = FLAG_WORLD_MAP_STATION_CITY,
+        .flagId = FLAG_WORLD_MAP_X_COSMOPOLIS,
+        //.tilesptr = sMtMoonMapPreviewTiles,
+        //.tilemapptr = sBlackMapPreviewTilemap,
+        //.palptr = sMtMoonMapPreviewPalette
+        .tilesptr = sPowerPlantMapPreviewTiles,
+        .tilemapptr = sPowerPlantMapPreviewTilemap,
+        .palptr = sPowerPlantMapPreviewPalette
+    },
+    [MPS_X_PELAGO] = {
+        .mapsec = MAPSEC_PANTHALASSA,
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = FLAG_WORLD_MAP_X_PELAGO,
+        .tilesptr = sSeafoamIslandsMapPreviewTiles,
+        .tilemapptr = sSeafoamIslandsMapPreviewTilemap,
+        .palptr = sSeafoamIslandsMapPreviewPalette
+    },
+	[MPS_X_HOLT] = {
+        .mapsec = MAPSEC_FOURFOLD_FOREST,
+        .type = MPS_TYPE_FADE_IN,
+        //.flagId = FLAG_WORLD_MAP_FOURFOLD_FOREST,
+        .flagId = FLAG_WORLD_MAP_X_HOLT,
+        .tilesptr = sViridianForestMapPreviewTiles,
+        .tilemapptr = sViridianForestMapPreviewTilemap,
+        .palptr = sViridianForestMapPreviewPalette
+    },
+    [MPS_X_GREENHOUSE] = {
+        .mapsec = MAPSEC_LUSH_UNDERSPIRE,
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = FLAG_WORLD_MAP_X_GREENHOUSE,
+        .tilesptr = sSilphCoMapPreviewTiles,
+        .tilemapptr = sSilphCoMapPreviewTilemap,
+        .palptr = sSilphCoMapPreviewPalette
+    },
+	
+    /*[MPS_X_LABYRINTH] = {
+        .mapsec = MAPSEC_MT_MOON,
+        .type = MPS_TYPE_CAVE,
+        .flagId = FLAG_WORLD_MAP_MT_MOON_1F,
         .tilesptr = sMtMoonMapPreviewTiles,
-        .tilemapptr = sBlackMapPreviewTilemap,
+        .tilemapptr = sMtMoonMapPreviewTilemap,
         .palptr = sMtMoonMapPreviewPalette
     },
+	
+    [MPS_X_CALDERA] = {
+        .mapsec = MAPSEC_MT_EMBER,
+        .type = MPS_TYPE_CAVE,
+        .flagId = FLAG_WORLD_MAP_MT_EMBER_EXTERIOR,
+        .tilesptr = sMtEmberMapPreviewTiles,
+        .tilemapptr = sMtEmberMapPreviewTilemap,
+        .palptr = sMtEmberMapPreviewPalette
+    },*/
+	
+	
+	
     /*[MPS_VIRIDIAN_FOREST] = {
         .mapsec = MAPSEC_VIRIDIAN_FOREST,
         .type = MPS_TYPE_FADE_IN,
@@ -471,13 +521,13 @@ u16 MapPreview_CreateMapNameWindow(mapsec_u8_t mapsec)
     u8 color[0];
     #endif
 
-    //u8 idx;
+    u8 idx;
 
-    //idx = GetMapPreviewScreenIdx(mapsec);
+    idx = GetMapPreviewScreenIdx(mapsec);
 	
     //GetMapName(gStringVar4, mapsec, 0);
-	//switch (idx)
-	switch (mapsec)
+	switch (idx)
+	//switch (mapsec)
 	{
 	//case MPS_X_COSMOPOLIS:
 	case MAPSEC_STATION_CITY:

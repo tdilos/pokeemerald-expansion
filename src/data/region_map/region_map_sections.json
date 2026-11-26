@@ -1504,12 +1504,12 @@
       "name": "STATION HULL"
     },
     {
-      "id": "MAPSEC_MENTAL_MONASTERY",
-      "name": "??????"
+      "id": "MAPSEC_WIGHT_SPACE",
+      "name": "WIGHT SPACE"
     },
     {
-      "id": "MAPSEC_DERELICT_SHIP",
-      "name": "DERELICT SHIP"
+      "id": "MAPSEC_SPACE_FORGE",
+      "name": "SPACE FORGE"
     },
     {
       "id": "MAPSEC_PANTHALASSA",
@@ -1565,8 +1565,12 @@
       "name": "POLAR SINK"
     },
     {
-      "id": "MAPSEC_DESERT_SLOPE",
-      "name": "DESERT SLOPE"
+      "id": "MAPSEC_RUBER_PLANITIA",
+      "name": "RUBER PLANITIA"
+    },
+    {
+      "id": "MAPSEC_LIBERTY_OUTPOST",
+      "name": "LIBERTY OUTPOST"
     },
     {
       "id": "MAPSEC_UNDERGROUND_LAKE",
@@ -1577,10 +1581,12 @@
       "name": "SHATTERLANDS"
     },
     {
-      "id": "MAPSEC_CRYSTAL_MINE"
+      "id": "MAPSEC_CRYSTAL_MINE",
+      "name": "CRYSTAL MINE"
     },
     {
-      "id": "MAPSEC_X_CALDERA"
+      "id": "MAPSEC_X_CALDERA",
+      "name": "NEO MAGMA BASE"
     },
     {
       "id": "MAPSEC_X_JUNGLE"
@@ -1593,13 +1599,16 @@
       "id": "MAPSEC_X_TUNDRA"
     },
     {
-      "id": "MAPSEC_X_MERE"
+      "id": "MAPSEC_X_MERE",
+      "name": "DRILL SITE 9"
     },
     {
-      "id": "MAPSEC_X_RUIN"
+      "id": "MAPSEC_X_RUIN",
+      "name": "RUINED CITY"
     },
     {
-      "id": "MAPSEC_X_SYNESTIA"
+      "id": "MAPSEC_X_SYNESTIA",
+      "name": "ULTRA SPACE"
     }
   ]
 }

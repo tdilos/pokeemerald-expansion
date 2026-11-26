@@ -59,7 +59,67 @@
 #define QUEST_42        41
 #define QUEST_43        42
 #define QUEST_44        43
-#define QUEST_COUNT     (QUEST_44 + 1)
+
+// Postgame
+#define QUEST_45        44
+#define QUEST_46        45
+#define QUEST_47        46
+#define QUEST_48        47
+#define QUEST_49        48
+#define QUEST_50        49
+
+#define QUEST_51        50
+#define QUEST_52        51
+#define QUEST_53        52
+#define QUEST_54        53
+#define QUEST_55        54
+#define QUEST_56        55
+#define QUEST_57        56
+#define QUEST_58        57
+#define QUEST_59        58
+#define QUEST_60        59
+
+#define QUEST_61        60
+#define QUEST_62        61
+#define QUEST_63        62
+#define QUEST_64        63
+#define QUEST_65        64
+#define QUEST_66        65
+#define QUEST_67        66
+#define QUEST_68        67
+#define QUEST_69        68
+#define QUEST_70        69
+
+#define QUEST_71        70
+#define QUEST_72        71
+#define QUEST_73        72
+#define QUEST_74        73
+#define QUEST_75        74
+#define QUEST_76        75
+#define QUEST_77        76
+#define QUEST_78        77
+#define QUEST_79        78
+#define QUEST_80        79
+
+#define QUEST_81        80
+#define QUEST_82        81
+#define QUEST_83        82
+#define QUEST_84        83
+#define QUEST_85        84
+#define QUEST_86        85
+#define QUEST_87        86
+#define QUEST_88        87
+#define QUEST_89        88
+#define QUEST_90        89
+
+#define QUEST_91        90
+#define QUEST_92        91
+#define QUEST_93        92
+#define QUEST_94        93
+#define QUEST_95        94
+#define QUEST_96        95
+
+#define QUEST_COUNT     (QUEST_96 + 1)
 
 #define SUB_QUEST_1          0
 #define SUB_QUEST_2          1

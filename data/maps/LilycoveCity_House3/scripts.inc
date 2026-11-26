@@ -7,6 +7,73 @@ LilycoveCity_House3_OnTransition:
 	copyvar VAR_TEMP_1, VAR_RESULT
 	end
 
+
+
+LilycoveCity_House3_EventScript_Trader::
+	lock
+	faceplayer
+	goto_if_set FLAG_LILYCOVE_NPC_TRADE_COMPLETED, LilycoveCity_House3_EventScript_TradeCompleted
+	setvar VAR_0x8008, INGAME_TRADE_FIDOUGH
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	msgbox LilycoveCity_House3_Text_WillingToTradeIt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LilycoveCity_House3_EventScript_DeclineTrade
+	special ChoosePartyMon
+	copyvar VAR_0x800A, VAR_0x8004
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, LilycoveCity_House3_EventScript_DeclineTrade
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	goto_if_ne VAR_RESULT, VAR_0x8009, LilycoveCity_House3_EventScript_NotRequestedMon
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	giveitem ITEM_COVENANT_ORB
+	waitfanfare
+	msgbox LilycoveCity_House3_Text_UrAwesome, MSGBOX_DEFAULT
+	setflag FLAG_LILYCOVE_NPC_TRADE_COMPLETED
+	release
+	end
+
+LilycoveCity_House3_EventScript_DeclineTrade::
+	release
+	end
+
+LilycoveCity_House3_EventScript_NotRequestedMon::
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox LilycoveCity_House3_Text_WontAcceptAnyLessThanRealMon, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_House3_EventScript_TradeCompleted::
+	msgbox LilycoveCity_House3_Text_TradeWithOthers, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_House3_Text_WillingToTradeIt:
+	.string "Hi! Do you have a {STR_VAR_1}!\p"
+	.string "Would you trade it for my {STR_VAR_2}?$"
+
+LilycoveCity_House3_Text_UrAwesome:
+	.string "You're awesome! Thanks!$"
+
+LilycoveCity_House3_Text_WontAcceptAnyLessThanRealMon:
+	.string "No, no, no! I won't accept any\n"
+	.string "less than a real {STR_VAR_1}!$"
+
+LilycoveCity_House3_Text_TradeWithOthers:
+	.string "I trade with my friends in other\n"
+	.string "cities all the time.$"
+
+
+
+
+
+
+
 LilycoveCity_House3_EventScript_PokefanF::
 	lock
 	faceplayer
